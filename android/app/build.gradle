@@ -1,0 +1,68 @@
+plugins {
+    id 'com.android.application'
+}
+
+// O app abre este endereço em tela cheia (Trusted Web Activity), usando o Chrome do celular.
+def twa = [
+    applicationId: 'com.inforprime.naoesquece',
+    hostName     : 'inforprimetecnologiadev.github.io',
+    launchUrl    : '/nao-esquece/',
+    name         : 'Não Esquece',
+    launcherName : 'Não Esquece',
+    themeColor   : '#0A1122',
+    navColor     : '#0A1122',
+    bgColor      : '#0A1122',
+]
+
+android {
+    namespace 'com.inforprime.naoesquece'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId twa.applicationId
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName '1.0.0'
+
+        resValue 'string', 'appName', twa.name
+        resValue 'string', 'launcherName', twa.launcherName
+        resValue 'string', 'launchUrl', 'https://' + twa.hostName + twa.launchUrl
+        resValue 'string', 'hostName', twa.hostName
+        resValue 'string', 'assetStatements',
+            '[{ \\"relation\\": [\\"delegate_permission/common.handle_all_urls\\"], ' +
+            '\\"target\\": {\\"namespace\\": \\"web\\", \\"site\\": \\"https://' + twa.hostName + '\\"}}]'
+        resValue 'color', 'colorPrimary', twa.themeColor
+        resValue 'color', 'navigationColor', twa.navColor
+        resValue 'color', 'backgroundColor', twa.bgColor
+    }
+
+    // A chave de assinatura não fica no GitHub: aqui o APK sai sem assinatura e é assinado à parte.
+    def ks = rootProject.file('release.keystore')
+    if (ks.exists()) {
+        signingConfigs {
+            release {
+                storeFile ks
+                storePassword System.getenv('KEYSTORE_PASSWORD')
+                keyAlias System.getenv('KEY_ALIAS')
+                keyPassword System.getenv('KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            if (ks.exists()) signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+}

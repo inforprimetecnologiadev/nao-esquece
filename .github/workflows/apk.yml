@@ -1,0 +1,49 @@
+name: Gerar APK
+
+on:
+  push:
+    branches: [main]
+    paths: ['android/**', '.github/workflows/apk.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Compilar o APK
+        run: gradle -p android assembleRelease --no-daemon --stacktrace
+
+      - name: Separar o APK e as ferramentas de assinatura
+        run: |
+          mkdir -p out/lib64
+          cp android/app/build/outputs/apk/release/*.apk out/
+          BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+          echo "build-tools: $BT"
+          cp "$BT/lib/apksigner.jar" out/
+          cp "$BT/zipalign" out/ || true
+          cp "$BT"/lib64/libc++.so* out/lib64/ 2>/dev/null || true
+          ls -la out out/lib64
+
+      - name: Guardar no ramo apk-build
+        run: |
+          cd out
+          git init -q -b apk-build
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -qm "APK de ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" apk-build
