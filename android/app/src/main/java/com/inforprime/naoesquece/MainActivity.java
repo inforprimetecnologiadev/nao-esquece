@@ -3,7 +3,9 @@ package com.inforprime.naoesquece;
 import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.app.StatusBarManager;
 import android.appwidget.AppWidgetManager;
+import android.graphics.drawable.Icon;
 import android.content.ComponentName;
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
@@ -1130,6 +1132,70 @@ public class MainActivity extends AppCompatActivity {
                     });
                 } catch (Exception e) {
                     done(id, false, "erro");
+                }
+            });
+        }
+
+        /* ler o texto de fotos e PDFs (no celular, sem internet) */
+        @JavascriptInterface
+        public void ocr(String id, String mime, String b64) {
+            if (!trusted()) { done(id, false, "origem"); return; }
+            io.execute(() -> {
+                try {
+                    done(id, true, Ocr.run(getApplicationContext(), mime, Base64.decode(b64, Base64.DEFAULT)));
+                } catch (Throwable e) {
+                    Log.w(TAG, "ocr", e);
+                    done(id, false, "erro");
+                }
+            });
+        }
+
+        /* nota rápida e áudio feitos pelo bloco das configurações rápidas ou pelo widget */
+        @JavascriptInterface
+        public String quickList() {
+            if (!trusted()) return "[]";
+            return Quick.list(getApplicationContext());
+        }
+
+        @JavascriptInterface
+        public void quickData(String id, String qid) {
+            if (!trusted()) { done(id, false, "origem"); return; }
+            io.execute(() -> {
+                try {
+                    done(id, true, Quick.data(getApplicationContext(), qid));
+                } catch (Exception e) {
+                    done(id, false, "erro");
+                }
+            });
+        }
+
+        @JavascriptInterface
+        public void quickDone(String qid) {
+            if (!trusted()) return;
+            Quick.remove(getApplicationContext(), qid);
+        }
+
+        @JavascriptInterface
+        public void quickOpen(String mode) {
+            if (!trusted()) return;
+            runOnUiThread(() -> startActivity(QuickActivity.intent(MainActivity.this, mode)));
+        }
+
+        /* colocar os botões nas configurações rápidas (Android 13 ou mais novo pergunta direto) */
+        @JavascriptInterface
+        public void tileAdd(String id, String which) {
+            if (!trusted()) { done(id, false, "origem"); return; }
+            if (Build.VERSION.SDK_INT < 33) { done(id, true, "manual"); return; }
+            runOnUiThread(() -> {
+                try {
+                    boolean audio = "audio".equals(which);
+                    StatusBarManager sb = getSystemService(StatusBarManager.class);
+                    sb.requestAddTileService(new ComponentName(MainActivity.this, audio ? QuickAudioTile.class : QuickNoteTile.class),
+                            audio ? "Gravar áudio" : "Nota rápida",
+                            Icon.createWithResource(MainActivity.this, audio ? R.drawable.ic_tile_mic : R.drawable.ic_tile_note),
+                            getMainExecutor(), r -> done(id, true, String.valueOf(r)));
+                } catch (Exception e) {
+                    done(id, true, "manual");
                 }
             });
         }

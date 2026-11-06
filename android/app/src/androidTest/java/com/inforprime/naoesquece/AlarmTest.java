@@ -5,8 +5,13 @@ import android.app.UiAutomation;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.pdf.PdfDocument;
+import java.io.ByteArrayOutputStream;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RemoteViews;
@@ -273,6 +278,70 @@ public class AlarmTest {
         assertEquals(2, Reminders.today(c).size());
         TodayWidget.refresh(c);
         Reminders.sync(c, "[]");
+    }
+
+    private static Bitmap textBitmap(String a, String b) {
+        Bitmap bm = Bitmap.createBitmap(1400, 600, Bitmap.Config.ARGB_8888);
+        Canvas cv = new Canvas(bm);
+        cv.drawColor(Color.WHITE);
+        Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+        p.setColor(Color.BLACK);
+        p.setTextSize(90);
+        cv.drawText(a, 60, 220, p);
+        cv.drawText(b, 60, 400, p);
+        return bm;
+    }
+
+    @Test
+    public void i_lerTexto() throws Exception {
+        ByteArrayOutputStream jpg = new ByteArrayOutputStream();
+        textBitmap("NOTA FISCAL 4521", "Entregar na sala 2").compress(Bitmap.CompressFormat.JPEG, 92, jpg);
+        String t = Ocr.run(c, "image/jpeg", jpg.toByteArray());
+        Log.i(TAG, "texto da foto: " + t);
+        assertTrue("foto: " + t, t.toUpperCase(Locale.ROOT).contains("NOTA FISCAL") && t.contains("4521"));
+        // PDF de 2 páginas
+        PdfDocument doc = new PdfDocument();
+        for (int i = 1; i <= 2; i++) {
+            PdfDocument.Page pg = doc.startPage(new PdfDocument.PageInfo.Builder(595, 842, i).create());
+            Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+            p.setTextSize(36);
+            pg.getCanvas().drawColor(Color.WHITE);
+            pg.getCanvas().drawText("CONTRATO PAGINA " + i, 60, 140, p);
+            doc.finishPage(pg);
+        }
+        ByteArrayOutputStream pdf = new ByteArrayOutputStream();
+        doc.writeTo(pdf);
+        doc.close();
+        String tp = Ocr.run(c, "application/pdf", pdf.toByteArray());
+        Log.i(TAG, "texto do PDF: " + tp);
+        assertTrue("pdf: " + tp, tp.toUpperCase(Locale.ROOT).contains("CONTRATO") && tp.contains("2"));
+    }
+
+    @Test
+    public void j_rapidos() throws Exception {
+        JSONObject o = new JSONObject();
+        o.put("id", "q1");
+        o.put("type", "nota");
+        o.put("text", "Comprar toner");
+        Quick.add(c, o);
+        assertTrue(Quick.list(c).contains("Comprar toner"));
+        Quick.remove(c, "q1");
+        assertEquals(0, Quick.count(c));
+        // a janela rápida abre por cima de tudo
+        for (String m : new String[]{"nota", "audio"}) {
+            c.startActivity(QuickActivity.intent(c, m).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            Thread.sleep(2500);
+            shot("7-rapido-" + m);
+            sh("input keyevent KEYCODE_BACK");
+            Thread.sleep(1500);
+        }
+        // o áudio gravado (ou a tentativa) fica na fila e vira nota quando o app abre
+        Log.i(TAG, "fila rápida: " + Quick.list(c));
+        for (int k = 0; k < 5 && Quick.count(c) > 0; k++) {
+            JSONObject x = new org.json.JSONArray(Quick.list(c)).getJSONObject(0);
+            if ("audio".equals(x.optString("type"))) assertTrue(Quick.data(c, x.optString("id")).length() > 100);
+            Quick.remove(c, x.optString("id"));
+        }
     }
 
     private int events(ContentResolver cr, String id, String[] title) {

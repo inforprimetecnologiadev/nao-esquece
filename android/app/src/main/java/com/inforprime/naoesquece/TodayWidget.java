@@ -113,10 +113,11 @@ public class TodayWidget extends AppWidgetProvider {
         int left = items.size() - from - ROW.length;
         v.setViewVisibility(R.id.w_more, left > 0 ? View.VISIBLE : View.GONE);
         v.setTextViewText(R.id.w_more, "+" + left + (left == 1 ? " lembrete" : " lembretes") + " hoje");
-        Intent nova = new Intent(c, MainActivity.class).setAction(Intent.ACTION_VIEW)
-                .setData(Uri.parse(Links.BASE + "?nova=1"))
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        v.setOnClickPendingIntent(R.id.w_new, PendingIntent.getActivity(c, 1, nova, IMM));
+        // Nota e Áudio: janela rápida, sem abrir o app
+        v.setOnClickPendingIntent(R.id.w_new, PendingIntent.getActivity(c, 1,
+                QuickActivity.intent(c, "nota").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK), IMM));
+        v.setOnClickPendingIntent(R.id.w_audio, PendingIntent.getActivity(c, 3,
+                QuickActivity.intent(c, "audio").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK), IMM));
         Intent hoje = new Intent(c, MainActivity.class).setAction(Intent.ACTION_VIEW)
                 .setData(Uri.parse(Links.BASE + "?hoje=1"))
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

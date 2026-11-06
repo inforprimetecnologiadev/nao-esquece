@@ -613,6 +613,9 @@ final class Reminders {
             o.put("pending", pending(c));
             o.put("widgets", TodayWidget.count(c));
             o.put("scanner", true);
+            o.put("ocr", true);
+            o.put("tilesAuto", Build.VERSION.SDK_INT >= 33);
+            o.put("quick", Quick.count(c));
             o.put("sdk", Build.VERSION.SDK_INT);
             o.put("maker", Build.MANUFACTURER == null ? "" : Build.MANUFACTURER.toLowerCase(Locale.US));
         } catch (Exception e) {
