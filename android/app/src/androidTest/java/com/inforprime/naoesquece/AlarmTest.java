@@ -24,6 +24,7 @@ import org.junit.runners.MethodSorters;
 import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Callable;
 
@@ -184,6 +185,49 @@ public class AlarmTest {
         assertEquals(1, Reminders.pending(c));
         Reminders.sync(c, "[]");
         assertEquals(0, Reminders.pending(c));
+    }
+
+    private static JSONObject rep(String id, String at, String repeat) throws Exception {
+        JSONObject a = new JSONObject();
+        a.put("id", id);
+        a.put("at", at);
+        a.put("before", 0);
+        a.put("repeat", repeat);
+        a.put("title", "Repete " + repeat);
+        return a;
+    }
+
+    @Test
+    public void f_repeticao() throws Exception {
+        // 06/11/2026 é sexta-feira
+        assertEquals(local(Reminders.parseLocal("2026-11-07T08:00")), local(Reminders.occAfter(rep("r", "2026-11-06T08:00", "dia"), Reminders.parseLocal("2026-11-06T09:00"))));
+        assertEquals("dias úteis pulam o fim de semana", local(Reminders.parseLocal("2026-11-09T08:00")), local(Reminders.occAfter(rep("r", "2026-11-06T08:00", "uteis"), Reminders.parseLocal("2026-11-06T09:00"))));
+        assertEquals(local(Reminders.parseLocal("2026-11-09T08:00")), local(Reminders.occAfter(rep("r", "2026-11-02T08:00", "semana"), Reminders.parseLocal("2026-11-02T09:00"))));
+        assertEquals("31 vira o último dia de fevereiro", local(Reminders.parseLocal("2026-02-28T08:00")), local(Reminders.occAfter(rep("r", "2026-01-31T08:00", "mes"), Reminders.parseLocal("2026-01-31T09:00"))));
+        assertEquals(local(Reminders.parseLocal("2026-03-31T08:00")), local(Reminders.occAfter(rep("r", "2026-01-31T08:00", "mes"), Reminders.parseLocal("2026-02-28T09:00"))));
+        // lembrete antigo que repete todo dia: o próximo alarme é nas próximas 24 h
+        long now = System.currentTimeMillis();
+        long r = Reminders.nextRing(rep("r", "2025-01-01T08:00", "dia"), now);
+        assertTrue(r > now && r - now <= 86_400_000L);
+    }
+
+    @Test
+    public void g_repeteTocaEMarcaOProximo() throws Exception {
+        // começou ontem; a ocorrência de hoje toca em ~2 min
+        long today = ((System.currentTimeMillis() + 150_000L) / 60_000L) * 60_000L;
+        JSONArray l = new JSONArray().put(rep("r2", local(today - 86_400_000L), "dia"));
+        assertEquals(1, Reminders.sync(c, l.toString()));
+        List<JSONObject> hoje = Reminders.today(c);
+        assertEquals("aparece no widget de hoje", 1, hoje.size());
+        TodayWidget.refresh(c);
+        assertTrue("alarme do dia", waitFor(AlarmService::isRinging, 200_000));
+        Thread.sleep(2000);
+        shot("5-alarme-que-repete");
+        Reminders.act(c, "stop", AlarmService.current());
+        assertTrue(waitFor(() -> !AlarmService.isRinging(), 8000));
+        assertEquals("o de amanhã já ficou marcado", 1, Reminders.pending(c));
+        Log.i(TAG, "depois de tocar: " + sh("dumpsys alarm | grep -A3 naoesquece | head -20"));
+        Reminders.sync(c, "[]");
     }
 
     private int events(ContentResolver cr, String id, String[] title) {

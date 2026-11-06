@@ -14,6 +14,7 @@ public class BootReceiver extends BroadcastReceiver {
         new Thread(() -> {
             try {
                 Reminders.rescheduleAll(c.getApplicationContext(), boot);
+                TodayWidget.refresh(c.getApplicationContext());
             } finally {
                 r.finish();
             }

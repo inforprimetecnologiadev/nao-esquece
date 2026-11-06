@@ -3,6 +3,8 @@ package com.inforprime.naoesquece;
 import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.content.ClipData;
@@ -66,12 +68,17 @@ import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.common.api.Scope;
+import com.google.mlkit.vision.documentscanner.GmsDocumentScannerOptions;
+import com.google.mlkit.vision.documentscanner.GmsDocumentScanning;
+import com.google.mlkit.vision.documentscanner.GmsDocumentScanningResult;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.KeyStore;
 import java.util.ArrayList;
@@ -108,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
     private PermissionRequest micRequest;
     private String authId, authScopes, authAccount;
     private String dictId;
-    private String notifId, calId;
+    private String notifId, calId, scanId;
 
     private ActivityResultLauncher<Intent> fileLauncher, accountLauncher, dictLauncher;
-    private ActivityResultLauncher<IntentSenderRequest> authLauncher;
+    private ActivityResultLauncher<IntentSenderRequest> authLauncher, scanLauncher;
     private ActivityResultLauncher<String> micLauncher, notifLauncher;
     private ActivityResultLauncher<String[]> calLauncher;
 
@@ -195,7 +202,10 @@ public class MainActivity extends AppCompatActivity {
         setIntent(intent);
         Uri d = intent == null ? null : intent.getData();
         if (d != null && Links.isApp(d) && "1".equals(d.getQueryParameter("nova")) && web != null) {
-            web.evaluateJavascript("try{ if(appReady&&!locked&&document.querySelector('#sheet').hidden) newNote(); }catch(e){}", null);
+            web.evaluateJavascript("try{ if(window.__newFromNative) __newFromNative(); else if(appReady&&!locked&&document.querySelector('#sheet').hidden) newNote(); }catch(e){}", null);
+        }
+        if (d != null && Links.isApp(d) && "1".equals(d.getQueryParameter("hoje")) && web != null) {
+            web.evaluateJavascript("try{ window.__todayFromNative&&__todayFromNative(); }catch(e){}", null);
         }
         String nota = d != null && Links.isApp(d) ? d.getQueryParameter("nota") : null;
         if (nota != null && web != null) {
@@ -350,6 +360,34 @@ public class MainActivity extends AppCompatActivity {
             String id = calId;
             calId = null;
             if (id != null) done(id, true, DeviceCalendar.perm(this) ? "ok" : "no");
+        });
+
+        scanLauncher = registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), res -> {
+            String id = scanId;
+            scanId = null;
+            if (id == null) return;
+            if (res.getResultCode() != RESULT_OK) { done(id, false, "cancel"); return; }
+            GmsDocumentScanningResult r = GmsDocumentScanningResult.fromActivityResultIntent(res.getData());
+            GmsDocumentScanningResult.Pdf pdf = r == null ? null : r.getPdf();
+            if (pdf == null) { done(id, false, "erro"); return; }
+            Uri u = pdf.getUri();
+            int pages = pdf.getPageCount();
+            io.execute(() -> {
+                try (InputStream in = getContentResolver().openInputStream(u)) {
+                    if (in == null) throw new Exception("pdf");
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    byte[] buf = new byte[65536];
+                    int n;
+                    while ((n = in.read(buf)) > 0) out.write(buf, 0, n);
+                    JSONObject o = new JSONObject();
+                    o.put("b64", Base64.encodeToString(out.toByteArray(), Base64.NO_WRAP));
+                    o.put("pages", pages);
+                    done(id, true, o.toString());
+                } catch (Exception e) {
+                    Log.w(TAG, "scanner", e);
+                    done(id, false, "erro");
+                }
+            });
         });
 
         dictLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), res -> {
@@ -1036,6 +1074,84 @@ public class MainActivity extends AppCompatActivity {
         public void alarmClear() {
             if (!trusted()) return;
             Reminders.clearAll(getApplicationContext());
+        }
+
+        /* escanear documento (scanner do Google) */
+        @JavascriptInterface
+        public void scanDoc(String id) {
+            if (!trusted()) { done(id, false, "origem"); return; }
+            runOnUiThread(() -> {
+                try {
+                    GmsDocumentScannerOptions o = new GmsDocumentScannerOptions.Builder()
+                            .setGalleryImportAllowed(true)
+                            .setPageLimit(30)
+                            .setResultFormats(GmsDocumentScannerOptions.RESULT_FORMAT_PDF)
+                            .setScannerMode(GmsDocumentScannerOptions.SCANNER_MODE_FULL)
+                            .build();
+                    GmsDocumentScanning.getClient(o).getStartScanIntent(MainActivity.this)
+                            .addOnSuccessListener(MainActivity.this, sender -> {
+                                scanId = id;
+                                try {
+                                    scanLauncher.launch(new IntentSenderRequest.Builder(sender).build());
+                                } catch (Exception e) {
+                                    scanId = null;
+                                    done(id, false, "indisponivel");
+                                }
+                            })
+                            .addOnFailureListener(MainActivity.this, e -> {
+                                Log.w(TAG, "scanner", e);
+                                done(id, false, "indisponivel");
+                            });
+                } catch (Exception e) {
+                    done(id, false, "indisponivel");
+                }
+            });
+        }
+
+        /* abrir um anexo (PDF) no app certo do celular */
+        @JavascriptInterface
+        public void viewFile(String id, String name, String mime, String b64) {
+            if (!trusted()) { done(id, false, "origem"); return; }
+            io.execute(() -> {
+                try {
+                    File f = writeShareFile(name, Base64.decode(b64, Base64.DEFAULT));
+                    Uri u = FileProvider.getUriForFile(MainActivity.this, getPackageName() + ".files", f);
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setDataAndType(u, TextUtils.isEmpty(mime) ? "application/pdf" : mime);
+                    i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    i.setClipData(ClipData.newRawUri("", u));
+                    runOnUiThread(() -> {
+                        try {
+                            startActivity(i);
+                            done(id, true, "");
+                        } catch (Exception e) {
+                            done(id, false, "sem_app");
+                        }
+                    });
+                } catch (Exception e) {
+                    done(id, false, "erro");
+                }
+            });
+        }
+
+        /* widget da tela inicial */
+        @JavascriptInterface
+        public String widgetPin() {
+            if (Build.VERSION.SDK_INT < 26) return "no";
+            AppWidgetManager m = getSystemService(AppWidgetManager.class);
+            if (m == null || !m.isRequestPinAppWidgetSupported()) return "no";
+            runOnUiThread(() -> {
+                try {
+                    m.requestPinAppWidget(new ComponentName(MainActivity.this, TodayWidget.class), null, null);
+                } catch (Exception ignored) {
+                }
+            });
+            return "ok";
+        }
+
+        @JavascriptInterface
+        public int widgetCount() {
+            return TodayWidget.count(getApplicationContext());
         }
 
         /* calendário do celular */

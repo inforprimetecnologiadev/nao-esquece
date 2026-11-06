@@ -41,6 +41,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         if (a.optBoolean("snooze")) Reminders.dropSnooze(c, a.optString("id"));
         else if (!Reminders.stillWanted(c, a)) return;
         Reminders.markFired(c, a);
+        Reminders.scheduleNext(c, a); // lembrete que repete: já marca o próximo
         NotificationManagerCompat.from(c).cancel("aviso:" + a.optString("id"), 1);
         Intent s = new Intent(c, AlarmService.class).setAction(AlarmService.ACT_START).putExtra("a", a.toString());
         try {

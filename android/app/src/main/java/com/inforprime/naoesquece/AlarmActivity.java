@@ -35,6 +35,7 @@ public class AlarmActivity extends AppCompatActivity {
     private JSONObject a;
     private boolean loud; // alarme de reserva (sem o serviço tocando)
     private TextView clock, title, line, text;
+    private Button doneBtn;
     private final Handler h = new Handler(Looper.getMainLooper());
     private final Runnable tick = new Runnable() {
         @Override
@@ -205,6 +206,7 @@ public class AlarmActivity extends AppCompatActivity {
         Button snooze = button("Adiar " + Reminders.SNOOZE_MIN + " min", SOFT, INK, 56);
         snooze.setOnClickListener(v -> op("snooze", "Toca de novo às " + Reminders.hhmm(System.currentTimeMillis() + Reminders.SNOOZE_MIN * 60_000L)));
         Button done = button("Concluída", SOFT, INK, 56);
+        doneBtn = done;
         done.setOnClickListener(v -> op("done", "Pronto. A nota fica como concluída quando você abrir o app."));
         LinearLayout.LayoutParams half = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f);
         row.addView(snooze, half);
@@ -228,8 +230,20 @@ public class AlarmActivity extends AppCompatActivity {
         title.setText(Reminders.titleOf(a));
         line.setText(a.optBoolean("test") ? "Teste do alarme" : Reminders.alarmLine(a));
         String t = a.optString("text", "").trim();
+        if (doneBtn != null) doneBtn.setVisibility(Reminders.isRepeat(a) ? View.GONE : View.VISIBLE);
+        if (Reminders.isRepeat(a)) line.setText(Reminders.alarmLine(a) + " · " + repeatLabel(Reminders.repeat(a)));
         text.setText(t);
         text.setVisibility(t.isEmpty() ? View.GONE : View.VISIBLE);
+    }
+
+    private static String repeatLabel(String r) {
+        switch (r) {
+            case "dia": return "todo dia";
+            case "uteis": return "dias úteis";
+            case "semana": return "toda semana";
+            case "mes": return "todo mês";
+            default: return "";
+        }
     }
 
     private void op(String o, String msg) {

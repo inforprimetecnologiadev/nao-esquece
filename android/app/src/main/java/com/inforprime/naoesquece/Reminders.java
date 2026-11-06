@@ -25,6 +25,8 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -112,17 +114,95 @@ final class Reminders {
         }
     }
 
-    /** Hora em que o alarme toca: dia e hora da atividade menos o "tocar antes". */
-    static long ringOf(JSONObject a) {
-        long r = a.optLong("ring", 0);
-        if (r > 0) return r;
+    static String repeat(JSONObject a) {
+        String r = a.optString("repeat", "");
+        return r.equals("dia") || r.equals("uteis") || r.equals("semana") || r.equals("mes") ? r : "";
+    }
+
+    static boolean isRepeat(JSONObject a) {
+        return !repeat(a).isEmpty() && !a.optBoolean("snooze") && !a.optBoolean("test");
+    }
+
+    private static long beforeMs(JSONObject a) {
+        return Math.max(0, Math.min(40320, a.optInt("before", 0))) * 60_000L;
+    }
+
+    /** k-ésima ocorrência de um lembrete que repete (null = dia que não conta, como sábado em "dias úteis"). */
+    private static Calendar occ(Calendar base, String rep, int k) {
+        Calendar o = (Calendar) base.clone();
+        switch (rep) {
+            case "dia":
+                o.add(Calendar.DAY_OF_MONTH, k);
+                return o;
+            case "uteis": {
+                o.add(Calendar.DAY_OF_MONTH, k);
+                int w = o.get(Calendar.DAY_OF_WEEK);
+                return w == Calendar.SATURDAY || w == Calendar.SUNDAY ? null : o;
+            }
+            case "semana":
+                o.add(Calendar.DAY_OF_MONTH, 7 * k);
+                return o;
+            case "mes": {
+                int day = base.get(Calendar.DAY_OF_MONTH);
+                o.set(Calendar.DAY_OF_MONTH, 1);
+                o.add(Calendar.MONTH, k);
+                o.set(Calendar.DAY_OF_MONTH, Math.min(day, o.getActualMaximum(Calendar.DAY_OF_MONTH)));
+                return o;
+            }
+            default:
+                return k == 0 ? o : null;
+        }
+    }
+
+    /** Primeira ocorrência (dia e hora da atividade) depois de t. */
+    static long occAfter(JSONObject a, long t) {
         long st = parseLocal(a.optString("at", ""));
         if (st <= 0) return 0;
-        return st - Math.max(0, Math.min(40320, a.optInt("before", 0))) * 60_000L;
+        String rep = repeat(a);
+        if (rep.isEmpty()) return st > t ? st : 0;
+        Calendar base = Calendar.getInstance();
+        base.setTimeInMillis(st);
+        int k0 = 0;
+        if (t > st) {
+            long days = (t - st) / 86_400_000L;
+            k0 = (int) Math.max(0, (rep.equals("semana") ? days / 7 : rep.equals("mes") ? days / 31 : days) - 2);
+        }
+        for (int k = k0; k < k0 + 800; k++) {
+            Calendar o = occ(base, rep, k);
+            if (o != null && o.getTimeInMillis() > t) return o.getTimeInMillis();
+        }
+        return 0;
+    }
+
+    /** Hora do próximo alarme depois de "after" (um lembrete que não repete tem uma hora só, mesmo que já tenha passado). */
+    static long nextRing(JSONObject a, long after) {
+        long r = a.optLong("ring", 0);
+        if (r > 0) return r;
+        long b = beforeMs(a);
+        if (repeat(a).isEmpty()) {
+            long st = parseLocal(a.optString("at", ""));
+            return st <= 0 ? 0 : st - b;
+        }
+        long o = occAfter(a, after + b);
+        return o <= 0 ? 0 : o - b;
+    }
+
+    /** Hora em que o alarme toca: dia e hora da atividade menos o "tocar antes". */
+    static long ringOf(JSONObject a) {
+        return nextRing(a, System.currentTimeMillis());
     }
 
     private static String key(JSONObject a) {
         return a.optString("id") + "@" + ringOf(a);
+    }
+
+    /** Próximo alarme que ainda não tocou (pula os já tocados ou dispensados). */
+    private static long upcoming(JSONObject a, Set<String> fired) {
+        long now = System.currentTimeMillis();
+        String id = a.optString("id");
+        long ring = nextRing(a, now);
+        for (int g = 0; g < 400 && ring > 0 && fired.contains(id + "@" + ring) && isRepeat(a); g++) ring = nextRing(a, ring);
+        return ring > now && !fired.contains(id + "@" + ring) ? ring : 0;
     }
 
     static String hhmm(long t) {
@@ -143,7 +223,8 @@ final class Reminders {
 
     /** "Alarme das 13:50 · atividade às 14:00" */
     static String alarmLine(JSONObject a) {
-        long ring = ringOf(a), st = parseLocal(a.optString("at", ""));
+        long ring = ringOf(a), st = a.optLong("occ", 0);
+        if (st <= 0) st = parseLocal(a.optString("at", ""));
         String s = "Alarme das " + hhmm(ring);
         if (st > 0 && st - ring >= 60_000L) s += " · atividade " + (st - ring >= 86_400_000L ? "em " : "às ") + dayHour(st);
         return s;
@@ -177,13 +258,17 @@ final class Reminders {
         return PendingIntent.getBroadcast(c, 0, alarmIntent(c, action, kind, a), fl);
     }
 
-    private static void schedule(Context c, JSONObject a, String kind, boolean withPre, Set<String> fired) {
+    private static void schedule(Context c, JSONObject a0, String kind, boolean withPre, Set<String> fired) {
         AlarmManager am = (AlarmManager) c.getSystemService(Context.ALARM_SERVICE);
         if (am == null) return;
-        long ring = ringOf(a), now = System.currentTimeMillis();
-        if (ring <= now || fired.contains(key(a))) return;
+        long ring = upcoming(a0, fired), now = System.currentTimeMillis();
+        if (ring <= now) return;
         boolean exact = exactOk(c);
         try {
+            // o alarme leva a hora exata desta ocorrência (num lembrete que repete, cada dia é uma)
+            JSONObject a = new JSONObject(a0.toString());
+            a.put("ring", ring);
+            if (!a.has("occ")) a.put("occ", ring + beforeMs(a0));
             PendingIntent r = pi(c, ACT_RING, kind, a, true);
             if (exact) {
                 PendingIntent show = PendingIntent.getActivity(c, 0, openIntent(c, a.optString("id")), IMM | PendingIntent.FLAG_UPDATE_CURRENT);
@@ -228,6 +313,7 @@ final class Reminders {
                 o.put("title", clip(a.optString("title", ""), 200));
                 o.put("text", clip(a.optString("text", ""), 300));
                 o.put("mode", mode(a.optString("mode")));
+                if (!repeat(a).isEmpty()) o.put("repeat", repeat(a));
                 next.put(o);
             }
         } catch (Exception e) {
@@ -246,8 +332,9 @@ final class Reminders {
         for (int k = 0; k < next.length(); k++) {
             JSONObject a = next.optJSONObject(k);
             schedule(c, a, "tocar", true, fired);
-            if (ringOf(a) > now && !fired.contains(key(a))) n++;
+            if (upcoming(a, fired) > now) n++;
         }
+        TodayWidget.refresh(c);
         return n;
     }
 
@@ -260,11 +347,17 @@ final class Reminders {
         for (int k = 0; k < list.length(); k++) {
             JSONObject a = list.optJSONObject(k);
             if (a == null) continue;
-            long r = ringOf(a);
-            if (boot && r <= now && r > now - 3_600_000L && !fired.contains(key(a))) {
-                postMissed(c, a);
-                markFired(c, a);
-                continue;
+            long r = nextRing(a, now - 3_600_000L);
+            if (boot && r > 0 && r <= now && r > now - 3_600_000L && !fired.contains(a.optString("id") + "@" + r)) {
+                try {
+                    JSONObject m = new JSONObject(a.toString());
+                    m.put("ring", r);
+                    m.put("occ", r + beforeMs(a));
+                    postMissed(c, m);
+                    markFired(c, m);
+                    fired.add(a.optString("id") + "@" + r);
+                } catch (Exception ignored) {
+                }
             }
             cancel(c, a, "tocar", "aviso");
             schedule(c, a, "tocar", true, fired);
@@ -283,19 +376,33 @@ final class Reminders {
             }
         }
         save(c, K_SNOOZE, keep);
+        TodayWidget.refresh(c);
     }
 
     /** O alarme ainda vale? (a nota pode ter mudado de hora ou o lembrete pode ter sido removido) */
     static boolean stillWanted(Context c, JSONObject a) {
         if (a.optBoolean("test") || a.optBoolean("snooze")) return true;
+        return item(c, a) != null;
+    }
+
+    /** O lembrete da lista que gerou este alarme (mesma nota, mesmo dia e hora, mesma repetição). */
+    static JSONObject item(Context c, JSONObject a) {
         JSONArray list = load(c, K_LIST);
         String id = a.optString("id");
-        long r = ringOf(a);
         for (int k = 0; k < list.length(); k++) {
             JSONObject x = list.optJSONObject(k);
-            if (x != null && id.equals(x.optString("id")) && Math.abs(ringOf(x) - r) < 1000) return true;
+            if (x != null && id.equals(x.optString("id")) && x.optString("at").equals(a.optString("at"))
+                    && x.optInt("before") == a.optInt("before") && repeat(x).equals(repeat(a))) return x;
         }
-        return false;
+        return null;
+    }
+
+    /** Depois de tocar (ou de dispensar) uma ocorrência de um lembrete que repete, marca a próxima. */
+    static synchronized void scheduleNext(Context c, JSONObject a) {
+        if (!isRepeat(a)) return;
+        JSONObject x = item(c, a);
+        if (x != null) schedule(c, x, "tocar", true, firedSet(c));
+        TodayWidget.refresh(c);
     }
 
     private static Set<String> firedSet(Context c) {
@@ -316,6 +423,7 @@ final class Reminders {
         try {
             JSONObject s = new JSONObject(a.toString());
             s.remove("test");
+            if (!s.has("occ")) s.put("occ", ringOf(a) + beforeMs(a));
             s.put("ring", System.currentTimeMillis() + min * 60_000L);
             s.put("snooze", true);
             JSONArray list = load(c, K_SNOOZE), out = new JSONArray();
@@ -347,6 +455,7 @@ final class Reminders {
         markFired(c, a);
         cancel(c, a, a.optBoolean("snooze") ? "adiado" : "tocar");
         NotificationManagerCompat.from(c).cancel("aviso:" + a.optString("id"), 1);
+        scheduleNext(c, a);
     }
 
     /** Parar, adiar ou concluir a partir da tela do alarme ou do alarme de reserva. */
@@ -414,9 +523,40 @@ final class Reminders {
         JSONArray l = load(c, K_LIST);
         for (int k = 0; k < l.length(); k++) {
             JSONObject a = l.optJSONObject(k);
-            if (a != null && ringOf(a) > now && !fired.contains(key(a))) n++;
+            if (a != null && upcoming(a, fired) > now) n++;
         }
         return n + load(c, K_SNOOZE).length();
+    }
+
+    /** Lembretes de hoje, em ordem de horário (para o widget). */
+    static synchronized List<JSONObject> today(Context c) {
+        Calendar s = Calendar.getInstance();
+        s.set(Calendar.HOUR_OF_DAY, 0);
+        s.set(Calendar.MINUTE, 0);
+        s.set(Calendar.SECOND, 0);
+        s.set(Calendar.MILLISECOND, 0);
+        long start = s.getTimeInMillis();
+        s.add(Calendar.DAY_OF_MONTH, 1);
+        long end = s.getTimeInMillis();
+        List<JSONObject> out = new ArrayList<>();
+        JSONArray l = load(c, K_LIST);
+        for (int k = 0; k < l.length(); k++) {
+            JSONObject a = l.optJSONObject(k);
+            if (a == null) continue;
+            long t = occAfter(a, start - 1);
+            if (t <= 0 || t >= end) continue;
+            try {
+                JSONObject o = new JSONObject();
+                o.put("id", a.optString("id"));
+                o.put("title", titleOf(a));
+                o.put("t", t);
+                o.put("repeat", repeat(a));
+                out.add(o);
+            } catch (Exception ignored) {
+            }
+        }
+        Collections.sort(out, (x, y) -> Long.compare(x.optLong("t"), y.optLong("t")));
+        return out;
     }
 
     /* ---------- recados para o app (concluir pela tela do alarme) ---------- */
@@ -471,6 +611,8 @@ final class Reminders {
             o.put("volMax", au == null ? -1 : au.getStreamMaxVolume(AudioManager.STREAM_ALARM));
             o.put("cal", DeviceCalendar.perm(c));
             o.put("pending", pending(c));
+            o.put("widgets", TodayWidget.count(c));
+            o.put("scanner", true);
             o.put("sdk", Build.VERSION.SDK_INT);
             o.put("maker", Build.MANUFACTURER == null ? "" : Build.MANUFACTURER.toLowerCase(Locale.US));
         } catch (Exception e) {
@@ -642,8 +784,8 @@ final class Reminders {
                 .setContentIntent(full)
                 .setDeleteIntent(opPI(c, "stop", a))
                 .addAction(0, "Parar", opPI(c, "stop", a))
-                .addAction(0, "Adiar " + SNOOZE_MIN + " min", opPI(c, "snooze", a))
-                .addAction(0, "Concluída", opPI(c, "done", a));
+                .addAction(0, "Adiar " + SNOOZE_MIN + " min", opPI(c, "snooze", a));
+        if (!isRepeat(a)) b.addAction(0, "Concluída", opPI(c, "done", a));
         if (Build.VERSION.SDK_INT < 26) {
             b.setSound(alarmUri(c), AudioManager.STREAM_ALARM);
             b.setVibrate(VIB_ALARM);

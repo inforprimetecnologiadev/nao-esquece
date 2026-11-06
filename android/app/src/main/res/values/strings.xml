@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">Não Esquece</string>
     <string name="sc_new">Nova nota</string>
+    <string name="widget_label">Não Esquece · Hoje</string>
+    <string name="widget_desc">Os lembretes de hoje em ordem de horário e o botão Nova nota.</string>
 </resources>

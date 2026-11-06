@@ -169,8 +169,8 @@ public class AlarmService extends Service {
                 .setDeleteIntent(svc(ACT_STOP, 11))
                 .addAction(0, "Parar", svc(ACT_STOP, 12))
                 .addAction(0, "Adiar " + Reminders.SNOOZE_MIN + " min", svc(ACT_SNOOZE, 13))
-                .addAction(0, "Concluída", svc(ACT_DONE, 14))
                 .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE);
+        if (!Reminders.isRepeat(a)) b.addAction(0, "Concluída", svc(ACT_DONE, 14));
         return b.build();
     }
 
