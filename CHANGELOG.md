@@ -2,6 +2,17 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.5.0 — 6 de novembro de 2026
+
+- Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.
+- Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.
+- Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.
+- Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.
+- Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.
+- Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.
+- Histórico da nota: volte a nota para como ela estava antes.
+- Nota secreta: pede o PIN ou a digital para abrir.
+
 ## 1.4.1 — 6 de novembro de 2026
 
 - Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).

@@ -80,12 +80,47 @@ public class QuickActivity extends AppCompatActivity {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, v, getResources().getDisplayMetrics());
     }
 
+    private static String modeOf(Intent i) {
+        String m = i == null ? null : i.getStringExtra(EXTRA_MODE);
+        if (m == null && i != null && i.getData() != null) m = i.getData().getLastPathSegment();
+        return "audio".equals(m) ? "audio" : "nota";
+    }
+
+    @Override
+    protected void onNewIntent(Intent i) {
+        super.onNewIntent(i);
+        setIntent(i);
+        // já estava aberta (ex.: nota rápida e depois o botão de áudio): guarda o que tinha e troca
+        if (!saved) {
+            if (mode.equals("nota")) keepNote();
+            else keepAudio();
+        }
+        releaseRec();
+        saved = false;
+        mode = modeOf(i);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+                | (mode.equals("nota") ? WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE : WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN));
+        input = null;
+        timer = null;
+        status = null;
+        dot = null;
+        setContentView(build());
+        startIfAudio();
+    }
+
+    private void startIfAudio() {
+        if (!mode.equals("audio")) return;
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) startRec();
+        else {
+            asking = true;
+            micPerm.launch(Manifest.permission.RECORD_AUDIO);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle state) {
         super.onCreate(state);
-        String m = getIntent() == null ? null : getIntent().getStringExtra(EXTRA_MODE);
-        if (m == null && getIntent() != null && getIntent().getData() != null) m = getIntent().getData().getLastPathSegment();
-        mode = "audio".equals(m) ? "audio" : "nota";
+        mode = modeOf(getIntent());
         dark = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
         bg = dark ? 0xFF111A2E : 0xFFFFFFFF;
         ink = dark ? 0xFFE4EAF5 : 0xFF121A2B;
@@ -109,13 +144,7 @@ public class QuickActivity extends AppCompatActivity {
                 else stopAndSave();
             }
         });
-        if (mode.equals("audio")) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) startRec();
-            else {
-                asking = true;
-                micPerm.launch(Manifest.permission.RECORD_AUDIO);
-            }
-        }
+        startIfAudio();
     }
 
     private GradientDrawable round(int color, int r) {
@@ -232,9 +261,15 @@ public class QuickActivity extends AppCompatActivity {
     /* ---------- nota ---------- */
     private void saveNote(boolean quiet) {
         if (saved) return;
+        keepNote();
+        finish();
+    }
+
+    private void keepNote() {
+        if (saved) return;
         String t = input == null ? "" : input.getText().toString().trim();
         saved = true;
-        if (t.isEmpty()) { finish(); return; }
+        if (t.isEmpty()) return;
         try {
             JSONObject o = new JSONObject();
             o.put("id", "q" + System.currentTimeMillis());
@@ -246,7 +281,6 @@ public class QuickActivity extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(this, "Não consegui salvar a nota.", Toast.LENGTH_SHORT).show();
         }
-        finish();
     }
 
     /* ---------- áudio ---------- */
@@ -309,8 +343,14 @@ public class QuickActivity extends AppCompatActivity {
 
     private void stopAndSave() {
         if (saved) return;
+        keepAudio();
+        finish();
+    }
+
+    private void keepAudio() {
+        if (saved) return;
         saved = true;
-        if (rec == null) { finish(); return; }
+        if (rec == null) return;
         long dur = Math.max(1, (System.currentTimeMillis() - recStart) / 1000);
         boolean ok = true;
         try {
@@ -338,7 +378,6 @@ public class QuickActivity extends AppCompatActivity {
                 recFile.delete();
             Toast.makeText(this, "A gravação ficou curta demais.", Toast.LENGTH_SHORT).show();
         }
-        finish();
     }
 
     private void discard() {

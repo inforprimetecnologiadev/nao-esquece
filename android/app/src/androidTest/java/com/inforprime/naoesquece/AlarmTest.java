@@ -63,6 +63,7 @@ public class AlarmTest {
         sh("pm grant " + p + " android.permission.POST_NOTIFICATIONS");
         sh("pm grant " + p + " android.permission.READ_CALENDAR");
         sh("pm grant " + p + " android.permission.WRITE_CALENDAR");
+        sh("pm grant " + p + " android.permission.RECORD_AUDIO");
         sh("input keyevent KEYCODE_WAKEUP");
         sh("wm dismiss-keyguard");
         sh("mkdir -p /sdcard/Download/ne");
@@ -328,15 +329,21 @@ public class AlarmTest {
         Quick.remove(c, "q1");
         assertEquals(0, Quick.count(c));
         // a janela rápida abre por cima de tudo
-        for (String m : new String[]{"nota", "audio"}) {
-            c.startActivity(QuickActivity.intent(c, m).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            Thread.sleep(2500);
-            shot("7-rapido-" + m);
-            sh("input keyevent KEYCODE_BACK");
-            Thread.sleep(1500);
-        }
-        // o áudio gravado (ou a tentativa) fica na fila e vira nota quando o app abre
-        Log.i(TAG, "fila rápida: " + Quick.list(c));
+        c.startActivity(QuickActivity.intent(c, "nota").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        Thread.sleep(2500);
+        shot("7-rapido-nota");
+        sh("input text Comprar%stoner");
+        Thread.sleep(700);
+        // com a janela de nota ainda aberta, toca o botão de áudio: guarda a nota e troca para gravar
+        c.startActivity(QuickActivity.intent(c, "audio").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        Thread.sleep(3500);
+        shot("7-rapido-audio");
+        sh("input keyevent KEYCODE_BACK");
+        Thread.sleep(1500);
+        String fila = Quick.list(c);
+        Log.i(TAG, "fila rápida: " + fila);
+        assertTrue("nota rápida guardada", fila.contains("Comprar toner"));
+        assertTrue("áudio rápido guardado", fila.contains("\"audio\""));
         for (int k = 0; k < 5 && Quick.count(c) > 0; k++) {
             JSONObject x = new org.json.JSONArray(Quick.list(c)).getJSONObject(0);
             if ("audio".equals(x.optString("type"))) assertTrue(Quick.data(c, x.optString("id")).length() > 100);
