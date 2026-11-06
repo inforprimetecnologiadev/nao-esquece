@@ -19,5 +19,7 @@ tar -xzf "$T/lame.tgz" -C "$T"
 mkdir -p "$DEST/include" "$DEST/libmp3lame"
 cp "$T"/lame-3.100/include/lame.h "$DEST/include/"
 cp "$T"/lame-3.100/libmp3lame/*.c "$T"/lame-3.100/libmp3lame/*.h "$DEST/libmp3lame/"
+mkdir -p "$DEST/libmp3lame/vector"
+cp "$T"/lame-3.100/libmp3lame/vector/*.h "$DEST/libmp3lame/vector/"   # só os cabeçalhos (sem o código SSE do PC)
 cp "$T"/lame-3.100/COPYING "$DEST/COPYING"
 ls "$DEST/libmp3lame" | wc -l
