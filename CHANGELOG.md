@@ -2,6 +2,14 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.3.0 — 6 de novembro de 2026
+
+- Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.
+- Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.
+- Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.
+- Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.
+- Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.
+
 ## 1.2.0 — 6 de novembro de 2026
 
 - APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.

@@ -387,7 +387,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
     <ul>
       <li><span data-i="check"></span><span>Funciona sem internet: cada letra, foto e áudio fica salvo no aparelho na hora.</span></li>
       <li><span data-i="check"></span><span>Com internet, cada nota vira uma pasta em <b>Meu Drive › Não Esquece</b>, separada pelas suas pastas.</span></li>
-      <li><span data-i="check"></span><span>Lembretes tocam pelo Google Agenda, mesmo com o app fechado.</span></li>
+      <li><span data-i="check"></span><span>Lembretes com alarme no celular e aviso 1 minuto antes, mesmo com o app fechado.</span></li>
       <li><span data-i="check"></span><span>Trocou de celular? Entre com a mesma conta e tudo volta.</span></li>
     </ul>
     <button class="gbtn" id="gLogin"><span data-i="google"></span>Entrar com Google</button>
@@ -418,7 +418,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
   <article class="rd-body" id="rdBody"></article>
 </div>
 <template id="tplTerms">
-<p class="lg-meta">Versão de 5 de novembro de 2026 (revisão 2).</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026.</p>
 
 <h2>1. Aceitação</h2>
 <p>Ao tocar em "Aceitar e continuar", você concorda com estes Termos de Uso e com a Política de Privacidade. Se não concordar, não use o aplicativo.</p>
@@ -427,7 +427,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <p>Um bloco de notas pessoal e gratuito para anotar atividades, gravar áudios, guardar fotos, organizar pastas, marcar o que foi concluído e receber lembretes. O app não tem servidor próprio: os dados ficam no seu celular e, se você conectar, na sua conta Google.</p>
 
 <h2>3. Conta Google e serviços de terceiros</h2>
-<p>A cópia no Google Drive e os lembretes no Google Agenda dependem da sua conta Google e seguem os termos do Google. A disponibilidade desses serviços não depende do app.</p>
+<p>A cópia no Google Drive e os lembretes na agenda da sua conta Google dependem da sua conta Google e seguem os termos do Google. A disponibilidade desses serviços não depende do app.</p>
 
 <h2>4. Suas responsabilidades</h2>
 <ul>
@@ -442,10 +442,10 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <p>Se você esquecer o PIN, só é possível criar um novo com a chave de recuperação. <b>Sem o PIN e sem a chave, os dados criptografados no celular não podem ser recuperados.</b> O que já estiver no seu Google Drive pode ser recuperado entrando novamente com a mesma conta Google.</p>
 
 <h2>6. Cancelamento</h2>
-<p>Você pode cancelar a inscrição a qualquer momento pelo app. O cancelamento apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados do celular, desconecta sua conta Google e encerra notificações e mensagens. <b>É irreversível e impede a recuperação da senha.</b> As cópias no Drive e na Agenda só são apagadas se você escolher isso na hora de cancelar.</p>
+<p>Você pode cancelar a inscrição a qualquer momento pelo app. O cancelamento apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados do celular, desconecta sua conta Google e encerra notificações e mensagens. <b>É irreversível e impede a recuperação da senha.</b> As cópias no Drive e na agenda só são apagadas se você escolher isso na hora de cancelar.</p>
 
 <h2>7. Lembretes</h2>
-<p>Os avisos com o app fechado são entregues pelo Google Agenda. Eles dependem das notificações do celular estarem ativas, de internet para criar o lembrete e de configurações como economia de bateria e modo "não perturbe". O app não garante a entrega de todos os avisos.</p>
+<p>No app para Android, o alarme e o aviso de 1 minuto antes são do próprio celular: tocam com o app fechado, a tela bloqueada e sem internet. Eles dependem de o Android permitir notificações e alarmes do app, do volume de alarme e de configurações como economia de bateria e modo "não perturbe". Em <b>Ajustes › Alarmes e calendário</b> o app mostra o que falta liberar e permite testar o alarme. Na versão aberta pelo navegador, os avisos com o app fechado são entregues pelo Google Agenda. O app não garante a entrega de todos os avisos.</p>
 
 <h2>8. Proteções e uso proibido</h2>
 <p>É proibido tentar burlar o PIN, a criptografia ou os limites de tentativas, usar robôs ou automação para acessar o app, ou explorar falhas. O app bloqueia tentativas repetidas e navegadores automatizados.</p>
@@ -466,11 +466,11 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <p>Central de ajuda e formulário de contato: <span class="lg-url">inforprimetecnologiadev.github.io/nao-esquece/suporte</span>. E-mail: <span class="lg-url">inforprimetecnologia@gmail.com</span>. Respondemos em até 5 dias úteis; pedidos de titular (LGPD), em até 15 dias.</p>
 </template>
 <template id="tplPrivacy">
-<p class="lg-meta">Versão de 5 de novembro de 2026 (revisão 2). Responsável: <b>Não Esquece</b>.</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026. Responsável: <b>Não Esquece</b>.</p>
 
 <h2>1. Resumo</h2>
 <ul>
-<li>O Não Esquece <b>não tem servidor próprio</b>. Suas notas, fotos e áudios ficam no seu celular e, se você conectar, no <b>seu</b> Google Drive e na <b>sua</b> Google Agenda.</li>
+<li>O Não Esquece <b>não tem servidor próprio</b>. Suas notas, fotos e áudios ficam no seu celular e, se você conectar, no <b>seu</b> Google Drive e na agenda da <b>sua</b> conta Google.</li>
 <li>Não vendemos, não alugamos e não compartilhamos seus dados com anunciantes. O app não tem propaganda nem rastreadores.</li>
 <li>Os dados guardados no celular ficam <b>criptografados</b> e o app pede <b>PIN ou digital/rosto</b> para abrir.</li>
 <li>Você pode ver, exportar, corrigir e apagar tudo pelo próprio app, e cancelar a inscrição a qualquer momento.</li>
@@ -501,6 +501,8 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 </ul>
 <h3>3.4 Permissões do celular</h3>
 <p>Microfone e câmera são usados somente quando você toca para gravar um áudio, ditar um texto, tirar uma foto ou gravar um vídeo. A galeria é aberta somente quando você escolhe anexar um arquivo.</p>
+<p><b>Notificações e alarmes</b> (app para Android): usados para o aviso de 1 minuto antes e para o alarme de cada lembrete, que tocam no próprio celular. Para o alarme tocar com o app fechado e bloqueado, o título, um trecho do texto e o horário de cada lembrete ficam guardados também na área privada do app no Android, fora do cofre criptografado. Esses dados não saem do celular e são apagados quando o lembrete é removido ou quando você cancela a inscrição.</p>
+<p><b>Calendário</b> (opcional, app para Android): se você permitir, o app coloca os lembretes no calendário do celular, na agenda da conta Google conectada. Para isso, ele lê a lista de agendas do aparelho para achar a da sua conta e só cria, muda ou apaga os eventos que ele mesmo criou. Você pode desligar em <b>Ajustes › Alarmes e calendário</b>.</p>
 <h3>3.5 Mensagens de suporte</h3>
 <p>Se você nos escrever pelo formulário de contato ou por e-mail, recebemos o seu nome, e-mail, assunto, mensagem e, se você informar, a versão do app e o modelo do aparelho. Esses dados são usados só para responder e registrar o atendimento.</p>
 <h3>3.6 O que o app não coleta</h3>
@@ -509,7 +511,8 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <h2>4. Para que os dados são usados e com qual base legal</h2>
 <ul>
 <li><b>Guardar e mostrar suas notas, pastas, anexos e lembretes:</b> execução do serviço que você pediu (LGPD, art. 7º, V).</li>
-<li><b>Copiar para o seu Google Drive e criar lembretes na sua Google Agenda:</b> seu consentimento, dado ao conectar a conta (art. 7º, I). Você pode retirar a qualquer momento.</li>
+<li><b>Copiar para o seu Google Drive e colocar lembretes na agenda da sua conta Google:</b> seu consentimento, dado ao conectar a conta e ao permitir o calendário (art. 7º, I). Você pode retirar a qualquer momento.</li>
+<li><b>Tocar o alarme e o aviso dos lembretes no celular:</b> execução do serviço que você pediu ao marcar o lembrete (art. 7º, V).</li>
 <li><b>Biometria, e-mail de recuperação, microfone e câmera:</b> seu consentimento, pedido no momento do uso (art. 7º, I; e art. 11, I, quando o conteúdo for dado sensível).</li>
 <li><b>Responder mensagens de suporte e pedidos de titular:</b> atendimento ao seu pedido (art. 7º, V) e cumprimento da LGPD (art. 7º, II).</li>
 <li><b>Proteger o acesso (PIN, criptografia, limite de tentativas):</b> segurança do próprio titular e legítimo interesse em evitar acessos indevidos (art. 7º, IX), sempre a seu favor.</li>
@@ -517,7 +520,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 
 <h2>5. Com quem os dados são compartilhados</h2>
 <ul>
-<li><b>Google</b> (Google Drive, Google Agenda e login com Google): somente se você conectar sua conta. O app pede acesso apenas aos <b>arquivos que ele mesmo cria</b> no Drive e à <b>agenda que ele mesmo cria</b>, sem ver o restante da sua conta. O uso desses serviços segue os termos e a política de privacidade do Google.</li>
+<li><b>Google</b> (Google Drive, Google Agenda e login com Google): somente se você conectar sua conta. O app pede acesso apenas aos <b>arquivos que ele mesmo cria</b> no Drive e, na versão pelo navegador, à <b>agenda que ele mesmo cria</b>, sem ver o restante da sua conta. No app para Android, se você permitir o calendário, os lembretes entram na agenda da sua conta pelo calendário do próprio celular, e o Google sincroniza essa agenda com os seus outros aparelhos. O uso desses serviços segue os termos e a política de privacidade do Google.</li>
 <li><b>GitHub</b> (GitHub Pages): hospeda os arquivos do aplicativo. Para entregá-los, o GitHub pode registrar dados técnicos de acesso, como endereço IP.</li>
 <li><b>Google Fonts:</b> fornece as fontes de texto do app e também pode registrar dados técnicos de acesso.</li>
 <li><b>FormSubmit:</b> entrega ao nosso e-mail as mensagens enviadas pelo formulário da central de ajuda.</li>
@@ -529,7 +532,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <ul>
 <li><b>No celular:</b> criptografados, até você apagar, cancelar a inscrição ou limpar os dados do app.</li>
 <li><b>Lixeira do app:</b> notas apagadas ficam 30 dias e depois são eliminadas.</li>
-<li><b>No seu Google Drive e na sua Google Agenda:</b> até você apagar por lá ou escolher apagar ao cancelar a inscrição.</li>
+<li><b>No seu Google Drive e na agenda da sua conta Google:</b> até você apagar por lá, desligar o calendário em Ajustes ou escolher apagar ao cancelar a inscrição.</li>
 <li><b>Backups (.json) que você exportar:</b> ficam sob seu controle, onde você salvar.</li>
 <li><b>Mensagens de suporte:</b> no e-mail de atendimento, pelo tempo necessário para responder e, depois, por até 5 anos para comprovar o atendimento (LGPD, art. 7º, VI, e art. 16). Você pode pedir a eliminação antes, quando a lei permitir.</li>
 </ul>
@@ -561,7 +564,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <p>Se você esquecer o PIN, a <b>chave de recuperação</b> permite criar um PIN novo. Recomendamos cadastrar um <b>e-mail de recuperação</b> para receber uma cópia dessa chave. <b>Sem o PIN e sem a chave, os dados criptografados no celular não podem ser recuperados por ninguém</b>, nem pelo app. O que já foi copiado para o seu Google Drive volta quando você entra novamente com a mesma conta Google.</p>
 
 <h2>10. Cancelar a inscrição</h2>
-<p>Você pode cancelar a qualquer momento em <b>Ajustes › Privacidade e termos › Cancelar inscrição</b>. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e desconecta sua conta Google. A partir daí o app não envia notificações nem mensagens ao e-mail cadastrado. Você pode escolher apagar também a pasta no Drive e a agenda de lembretes. <b>O cancelamento não pode ser desfeito e não há como recuperar a senha depois dele.</b></p>
+<p>Você pode cancelar a qualquer momento em <b>Ajustes › Privacidade e termos › Cancelar inscrição</b>. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e desconecta sua conta Google. A partir daí o app não envia notificações nem mensagens ao e-mail cadastrado. Você pode escolher apagar também a pasta no Drive e os lembretes da agenda. <b>O cancelamento não pode ser desfeito e não há como recuperar a senha depois dele.</b></p>
 
 <h2>11. Crianças e adolescentes</h2>
 <p>O app não é direcionado a menores de 18 anos sem a autorização e o acompanhamento de um responsável legal (LGPD, art. 14).</p>
@@ -589,7 +592,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -679,6 +682,10 @@ window.__nativeDone=(id,ok,data)=>{ const p=nativeWait.get(id); if(!p) return; n
 function nativeCall(method,...args){ return new Promise((res,rej)=>{ const id='n'+(++nativeSeq); nativeWait.set(id,{res,rej}); try{ NA[method](id,...args); }catch(e){ nativeWait.delete(id); rej(e); } }); }
 const blobB64=b=>new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(String(r.result).replace(/^data:[^,]*,/,'')); r.onerror=()=>rej(r.error); r.readAsDataURL(b instanceof Blob?b:new Blob([b])); });
 function nativeVersion(){ try{ return JSON.parse(NA.info()).version||''; }catch(e){ return ''; } }
+// APK 1.3.0+: alarme do próprio Android e calendário do celular
+const HAS_ALARM=IS_APK&&typeof NA.alarmSet==='function';
+const APK_URL='https://inforprimetecnologiadev.github.io/nao-esquece/NaoEsquece.apk';
+function alarmState(){ try{ return JSON.parse(NA.alarmState()||'{}'); }catch(e){ return {}; } }
 if(IS_APK){
   document.documentElement.classList.add('apk');
   // compartilhar arquivos e textos pelo menu "Compartilhar" do Android
@@ -806,7 +813,7 @@ const now = () => Date.now();
 const SPECIAL=['all','none','recent','pending','done','trash'];
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.2.0', TERMS_VERSION='2026-11-05.2';
+const APP_VERSION='1.3.0', TERMS_VERSION='2026-11-06';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
@@ -853,7 +860,7 @@ function dropUntouchedExamples(){
   if(!SPECIAL.includes(cur.folder)&&!folderById(cur.folder)) cur.folder='all';
   persist();
 }
-function changed(){ db.rev=(db.rev||0)+1; db.dirty=true; persist(); renderStatus(); scheduleSync(); }
+function changed(){ db.rev=(db.rev||0)+1; db.dirty=true; persist(); renderStatus(); scheduleSync(); scheduleAlarms(); }
 
 /* ---------- utilidades de texto ---------- */
 /* HTML das notas é sempre lido num documento inerte (não carrega imagens nem executa nada). */
@@ -1715,6 +1722,7 @@ function merge(local, remote){
     if('calEvId' in c && c.calEvId!=='' && !okId(c.calEvId)) delete c.calEvId;
     if('remindAt' in c && !/^\d{4}-\d\d-\d\dT\d\d:\d\d(:\d\d)?$/.test(String(c.remindAt))) delete c.remindAt;
     if('remindBefore' in c) c.remindBefore=Math.max(0,Math.min(40320,+c.remindBefore||0));
+    if('remindMode' in c && !['ambos','som','vibra'].includes(c.remindMode)) delete c.remindMode;
     if('calSyncedAt' in c) c.calSyncedAt=+c.calSyncedAt||0;
     return c; };
   if(remote){ remote={folders:(Array.isArray(remote.folders)?remote.folders:[]).map(fromOutside).filter(Boolean),notes:(Array.isArray(remote.notes)?remote.notes:[]).map(fromOutside).filter(Boolean)}; }
@@ -1738,10 +1746,11 @@ async function syncNow(manual){
     if(id){ try{ remote=await (await api(`${DRIVE}/${id}?alt=media`)).json(); }catch(e){ if(e.message==='auth') throw e; remote=null; } }
     const rmeta=(remote&&remote.meta&&typeof remote.meta==='object')?remote.meta:{};
     if(!okCal(cfg.calendarId)&&okCal(rmeta.calendarId)){ cfg.calendarId=rmeta.calendarId; saveCfg(); }
+    if(rmeta.alarmsBy==='android'&&cfg.alarmsBy!=='android'){ cfg.alarmsBy='android'; saveCfg(); }
     const rev=db.rev, m=merge(db,remote);
     try{ await mirrorDrive(m); }catch(e){ if(e.message==='auth') throw e; logErr('Pastas no Drive: '+e.message); }
     try{ await mirrorCalendar(m); }catch(e){ if(e.message==='auth') throw e; logErr('Agenda: '+e.message); }
-    const body=JSON.stringify({app:'nao-esquece',versao:2,salvoEm:new Date().toISOString(),conta:cfg.email,meta:{calendarId:okCal(cfg.calendarId)?cfg.calendarId:undefined},folders:m.folders,notes:m.notes},(k,v)=>k==='up'?undefined:v);
+    const body=JSON.stringify({app:'nao-esquece',versao:2,salvoEm:new Date().toISOString(),conta:cfg.email,meta:{calendarId:okCal(cfg.calendarId)?cfg.calendarId:undefined,alarmsBy:cfg.alarmsBy==='android'?'android':undefined},folders:m.folders,notes:m.notes},(k,v)=>k==='up'?undefined:v);
     if(id) await api(`${UP}/${id}?uploadType=media`,{method:'PATCH',headers:{'Content-Type':'application/json'},body});
     else { const dir=await ensureDir(); const fd=new FormData();
       fd.append('metadata',new Blob([JSON.stringify({name:FILE_NAME,mimeType:'application/json',parents:[dir]})],{type:'application/json'}));
@@ -1749,7 +1758,7 @@ async function syncNow(manual){
       const j=await (await api(`${UP}?uploadType=multipart&fields=id`,{method:'POST',body:fd})).json(); cfg.fileId=j.id; }
     if(db.rev===rev){ db.folders=m.folders; db.notes=m.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); db.dirty=false; }
     else { const m2=merge(db,{folders:m.folders,notes:m.notes}); db.folders=m2.folders; db.notes=m2.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); }
-    cfg.lastSync=now(); saveCfg(); persist();
+    cfg.lastSync=now(); saveCfg(); persist(); scheduleAlarms();
     if(cur.noteId){ const n=noteById(cur.noteId); if(!n) closeEditor(); else if(document.activeElement!==ed && document.activeElement!==titleIn && ed.innerHTML!==n.html){ ed.innerHTML=cleanHTML(n.html); titleIn.value=n.title; } }
     if(!SPECIAL.includes(cur.folder)&&!folderById(cur.folder)) cur.folder='all';
     renderFolders(); renderList(); if(cur.noteId) renderAtts();
@@ -1796,6 +1805,7 @@ function openSettings(){
         ${GOOGLE_CLIENT_ID?'':`<input class="field" id="cid" placeholder="ID do cliente OAuth (…apps.googleusercontent.com)" value="${esc(cfg.clientId)}" autocomplete="off">`}
         <div class="btns"><button class="btn pri" id="sIn">Entrar com Google</button></div>`}
     </div>
+    ${alarmBlock()}
     <div class="blk"><div class="lbl">Segurança</div>
       ${Vault.exists()?`<button class="row" id="sPin"><span data-i="lock"></span><span class="grow">Trocar PIN</span></button>
       ${bioAvail?`<button class="row" id="sBio"><span data-i="finger"></span><span class="grow">${Vault.meta.bio?'Desativar digital ou rosto':'Usar digital ou rosto para desbloquear'}</span></button>`:''}
@@ -1831,6 +1841,7 @@ function openSettings(){
     s.querySelectorAll('[data-la]').forEach(b=>b.onclick=()=>{ cfg.lockAfter=+b.dataset.la; saveCfg(); s.querySelectorAll('[data-la]').forEach(x=>x.setAttribute('aria-pressed',x===b)); toast('O PIN será pedido '+(cfg.lockAfter?'depois de '+LOCK_OPTS.find(x=>x[0]===cfg.lockAfter)[1]+' fora do app':'sempre que você sair do app')); });
     if(q('#sRec')) q('#sRec').onclick=recoverySheet;
     q('#sProt').onclick=protSheet;
+    bindAlarmBlock(s);
     q('#sTerms').onclick=()=>openReader('Termos de Uso','tplTerms');
     q('#sPriv').onclick=()=>openReader('Política de Privacidade','tplPrivacy');
     q('#sCancel').onclick=cancelFlow;
@@ -2865,7 +2876,7 @@ function cancelFlow(){
       <li>As notas, fotos e áudios deste celular são apagados.</li>
       <li>Sua conta Google é desconectada e o app não envia mais notificações nem mensagens ao e-mail cadastrado.</li>
       <li><b>Depois de cancelar, não há como recuperar a senha.</b></li></ul></div>
-    <label class="tcheck"><input type="checkbox" id="cxCal" checked><span>Apagar a agenda <b>Não Esquece</b> e os lembretes do Google Agenda. Se deixar desmarcado, os lembretes já criados continuam tocando.</span></label>
+    <label class="tcheck"><input type="checkbox" id="cxCal" checked><span>${HAS_ALARM?'Tirar também os lembretes do <b>calendário do celular</b>. Os alarmes do app são apagados de qualquer jeito.':'Apagar a agenda <b>Não Esquece</b> e os lembretes do Google Agenda. Se deixar desmarcado, os lembretes já criados continuam tocando.'}</span></label>
     <label class="tcheck"><input type="checkbox" id="cxDrive"><span>Apagar também a pasta <b>Não Esquece</b> do meu Google Drive (ela vai para a lixeira do Drive).</span></label>
     <label class="tcheck"><input type="checkbox" id="cxOk"><span>Entendo que o cancelamento é definitivo e que <b>não poderei recuperar a senha</b> depois dele.</span></label>
     <input class="field" id="cxType" placeholder="Digite CANCELAR para confirmar" autocomplete="off" autocapitalize="characters" aria-label="Digite CANCELAR para confirmar">
@@ -2880,17 +2891,19 @@ function cancelFlow(){
 async function doCancel({cal,drive}){
   secShow('<h1>Cancelando…</h1><p class="lk-sub">Não feche o app.</p>');
   const notes=[];
-  if((cal||drive)&&cfg.linked&&hasToken()&&navigator.onLine){
-    if(cal&&okCal(cfg.calendarId)){ try{ await api(`${CAL}/calendars/${encodeURIComponent(cfg.calendarId)}`,{method:'DELETE'}); notes.push('agenda Não Esquece apagada'); }catch(e){ notes.push('não consegui apagar a agenda; apague pelo Google Agenda'); } }
+  if(cal&&HAS_ALARM&&cfg.devCal===true){ try{ await nativeCall('calWipe'); notes.push('lembretes tirados do calendário do celular'); }catch(e){ notes.push('não consegui tirar os lembretes do calendário do celular'); } }
+  const gcal=cal&&okCal(cfg.calendarId);
+  if((gcal||drive)&&cfg.linked&&hasToken()&&navigator.onLine){
+    if(gcal){ try{ await api(`${CAL}/calendars/${encodeURIComponent(cfg.calendarId)}`,{method:'DELETE'}); notes.push('agenda Não Esquece apagada'); }catch(e){ notes.push('não consegui apagar a agenda; apague pelo Google Agenda'); } }
     if(drive&&okId(cfg.folderId)){ try{ await trashDrive(cfg.folderId); notes.push('pasta do Drive enviada para a lixeira do Drive'); }catch(e){ notes.push('não consegui apagar a pasta; apague pelo Google Drive'); } }
-  } else if(cal||drive) notes.push('sem conexão com o Google: apague a agenda e a pasta direto no Google Agenda e no Drive');
+  } else if(gcal||drive) notes.push('sem conexão com o Google: apague a agenda e a pasta direto no Google Agenda e no Drive');
   if(token) revokeToken(token);
   await wipeAll();
   secShow(`${logoTag()}<h1>Inscrição cancelada</h1><p class="lk-sub">Os dados deste celular foram apagados e o app não enviará mais notificações nem mensagens.${notes.length?'<br><br>'+esc(notes.join('. '))+'.':''}</p><button class="btn pri" id="cxEnd">Fechar</button>`,
     s=>{ s.querySelector('#cxEnd').onclick=()=>location.reload(); });
 }
 async function wipeAll(){
-  if(IS_APK){ try{ NA.signOut(token||''); NA.bioDisable(); }catch(e){} }
+  if(IS_APK){ try{ NA.signOut(token||''); NA.bioDisable(); if(HAS_ALARM) NA.alarmClear(); }catch(e){} }
   appReady=false; token=null; tokenExp=0; Vault.dek=null; Vault.meta=null;
   try{ if(IDB.d){ IDB.d.close(); IDB.d=null; } }catch(e){}
   await new Promise(r=>{ try{ const q=indexedDB.deleteDatabase('nao-esquece'); q.onsuccess=q.onerror=q.onblocked=()=>r(); setTimeout(r,3000); }catch(e){ r(); } });
@@ -2911,9 +2924,11 @@ $('#rdClose').onclick=()=>{ $('#reader').hidden=true; guardCheck(); };
 $('#tReadTerms').onclick=()=>openReader('Termos de Uso','tplTerms');
 $('#tReadPriv').onclick=()=>openReader('Política de Privacidade','tplPrivacy');
 
-/* ---------- lembretes (Google Agenda) ---------- */
+/* ---------- lembretes: alarme do celular (APK) ou Google Agenda (navegador) ---------- */
 const CAL='https://www.googleapis.com/calendar/v3';
 const BEFORE=[[0,'Na hora'],[5,'5 min'],[10,'10 min'],[15,'15 min'],[30,'30 min'],[60,'1 hora'],[1440,'1 dia']];
+const RMODES=[['ambos','Som e vibração'],['som','Só som'],['vibra','Só vibração']];
+const hm=d=>d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
 function remInfo(n){ if(!n||!n.remindAt) return null; const d=new Date(n.remindAt); if(isNaN(d)) return null; return {d,txt:fmtRem(d),late:d.getTime()<now()}; }
 function fmtRem(d){ const t=new Date(), tm=d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}), tom=new Date(t); tom.setDate(t.getDate()+1);
   if(d.toDateString()===t.toDateString()) return 'Hoje às '+tm; if(d.toDateString()===tom.toDateString()) return 'Amanhã às '+tm;
@@ -2921,26 +2936,203 @@ function fmtRem(d){ const t=new Date(), tm=d.toLocaleTimeString('pt-BR',{hour:'2
 const toLocalInput = d => { const p=x=>String(x).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`; };
 function renderRemChip(n){ const r=remInfo(n); $('#remBtn').setAttribute('aria-pressed',!!r); $('#remTxt').textContent=r?r.txt:'Lembrete'; }
 $('#remBtn').onclick=()=>{ const n=noteById(cur.noteId); if(n){ flushEdit(); reminderSheet(n); } };
+
+// pedir uma permissão ao Android (ou abrir o ajuste certo)
+async function askPerm(w){ if(!HAS_ALARM) return 'no'; extLaunch=now(); try{ return await nativeCall('alarmAsk',w); }catch(e){ return 'erro'; } }
+function askSheet({title,sub,ok,no='Agora não',onOk,onNo}){
+  openSheet(`<h3>${title}</h3><p class="sub">${sub}</p><div class="btns"><button class="btn" id="aqNo">${no}</button><button class="btn pri" id="aqYes">${ok}</button></div>`,
+  s=>{ s.querySelector('#aqNo').onclick=()=>{ closeSheet(); onNo&&onNo(); }; s.querySelector('#aqYes').onclick=()=>{ closeSheet(); onOk&&onOk(); }; });
+}
+// o que falta liberar para o alarme tocar
+function alarmWarnHtml(st){
+  const it=[];
+  if(!st.notif) it.push(['notif','As notificações do app estão desligadas: sem elas o aviso e a tela do alarme não aparecem.','Permitir']);
+  else if(st.channels===false) it.push(['notifSettings','Algum aviso do app está desligado nos ajustes do Android.','Abrir ajustes']);
+  if(st.exact===false) it.push(['exact','O Android não deixou o alarme tocar na hora exata.','Liberar']);
+  if(st.vol===0) it.push(['','O volume de alarme do celular está no zero: aumente para ouvir o alarme.','']);
+  if(!it.length) return '';
+  return `<div class="warnbox" id="alWarn" style="margin:0 0 12px">${it.map(([w,t,b])=>`<div style="display:flex;gap:10px;align-items:center;margin:4px 0"><span style="flex:1">${t}</span>${b?`<button class="btn" data-perm="${w}" style="flex:none;height:36px;padding:0 12px">${b}</button>`:''}</div>`).join('')}</div>`;
+}
+function refreshAlarmWarn(){ const w=document.querySelector('#sheet:not([hidden]) #alWarn'); if(!w) return; const h=alarmWarnHtml(alarmState()); if(h) w.outerHTML=h; else w.remove(); }
+
 function reminderSheet(n){
   let at=n.remindAt; if(!at){ const d=new Date(now()+3600e3); d.setMinutes(0,0,0); at=toLocalInput(d); }
-  let before=n.remindBefore!=null?+n.remindBefore:10;
-  const hint=!cfg.linked?'Entre com sua conta Google (Ajustes) para o aviso tocar com o app fechado. Por enquanto, o aviso aparece só com o app aberto.'
+  let before=n.remindBefore!=null?+n.remindBefore:(HAS_ALARM?0:10);
+  let mode=RMODES.some(x=>x[0]===n.remindMode)?n.remindMode:(cfg.remMode||'ambos');
+  const st=HAS_ALARM?alarmState():null;
+  const hint=HAS_ALARM?'O alarme toca neste celular na hora marcada, mesmo com o app fechado, a tela bloqueada e sem internet. 1 minuto antes chega um aviso.'
+    :IS_APK?'Esta versão do app ainda não tem o alarme do celular. Baixe a versão nova para o alarme tocar.'
+    :cfg.alarmsBy==='android'?'O alarme toca no app Não Esquece do celular, assim que esta nota sincronizar com o Drive.'
+    :!cfg.linked?'Entre com sua conta Google (Ajustes) para o aviso tocar com o app fechado. Por enquanto, o aviso aparece só com o app aberto.'
     :cfg.calOk===false?'Falta permitir o Google Agenda: em Ajustes, saia e entre de novo com o Google e marque a permissão da agenda. Por enquanto, o aviso aparece só com o app aberto.'
     :'O aviso chega pelo Google Agenda, na agenda “Não Esquece”, mesmo com o app fechado.';
-  openSheet(`<h3>Lembrete</h3><p class="sub">${hint}</p>
+  openSheet(`<h3>Lembrete</h3><p class="sub">${hint}</p>${st?alarmWarnHtml(st):''}
+    ${IS_APK&&!HAS_ALARM?'<div class="btns" style="margin:0 0 12px"><button class="btn pri" id="rmUpd">Baixar a versão nova</button></div>':''}
     <div class="blk"><div class="lbl">Dia e hora da atividade</div><input type="datetime-local" class="field" id="rmAt" value="${at.slice(0,16)}"></div>
-    <div class="blk"><div class="lbl">Avisar antes</div><div class="seg wrap" id="rmB">${BEFORE.map(([m,l])=>`<button data-m="${m}" aria-pressed="${m===before}">${l}</button>`).join('')}</div></div>
+    <div class="blk"><div class="lbl">${HAS_ALARM?'Tocar o alarme':'Avisar antes'}</div><div class="seg wrap" id="rmB">${BEFORE.map(([m,l])=>`<button data-m="${m}" aria-pressed="${m===before}">${HAS_ALARM&&m?l+' antes':l}</button>`).join('')}</div></div>
+    ${HAS_ALARM?`<div class="blk"><div class="lbl">Aviso de 1 minuto antes e alarme</div><div class="seg wrap" id="rmM">${RMODES.map(([k,l])=>`<button data-k="${k}" aria-pressed="${k===mode}">${l}</button>`).join('')}</div></div>
+    <p class="sub" id="rmSum" style="margin:0 0 4px"></p>`:''}
     <div class="btns">${n.remindAt?'<button class="btn" id="rmDel">Remover</button>':''}<button class="btn pri" id="rmOk">Salvar lembrete</button></div>`,
   s=>{
-    s.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{ before=+b.dataset.m; s.querySelectorAll('[data-m]').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+    const sum=()=>{ const el=s.querySelector('#rmSum'); if(!el) return; const v=s.querySelector('#rmAt').value, d=new Date(v);
+      if(!v||isNaN(d)){ el.textContent=''; return; }
+      const ring=new Date(d.getTime()-before*60000), pre=new Date(ring.getTime()-60000);
+      el.innerHTML=ring.getTime()<=now()?'<b style="color:var(--danger)">Esse horário já passou: o alarme não vai tocar.</b>'
+        :`Aviso às <b>${hm(pre)}</b> e alarme às <b>${hm(ring)}</b>${ring.toDateString()===new Date().toDateString()?' de hoje':' do dia '+ring.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}.`; };
+    s.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{ before=+b.dataset.m; s.querySelectorAll('[data-m]').forEach(x=>x.setAttribute('aria-pressed',x===b)); sum(); });
+    s.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{ mode=b.dataset.k; s.querySelectorAll('[data-k]').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+    s.addEventListener('click',async e=>{ const b=e.target.closest&&e.target.closest('[data-perm]'); if(!b) return; await askPerm(b.dataset.perm); refreshAlarmWarn(); });
+    s.querySelector('#rmAt').oninput=sum; sum();
+    const u=s.querySelector('#rmUpd'); if(u) u.onclick=()=>openLink(APK_URL);
     s.querySelector('#rmOk').onclick=()=>{ const v=s.querySelector('#rmAt').value; if(!v||isNaN(new Date(v))){ toast('Escolha o dia e a hora.'); return; }
-      n.remindAt=v.slice(0,16); n.remindBefore=before; n.updatedAt=now(); delete n._fresh; changed(); closeSheet(); renderRemChip(n); renderList();
-      toast('Lembrete: '+fmtRem(new Date(n.remindAt))+(before?' · aviso '+BEFORE.find(x=>x[0]===before)[1]+' antes':'')); };
-    const d=s.querySelector('#rmDel'); if(d) d.onclick=()=>{ delete n.remindAt; delete n.remindBefore; n.updatedAt=now(); changed(); closeSheet(); renderRemChip(n); renderList(); toast('Lembrete removido'); };
+      n.remindAt=v.slice(0,16); n.remindBefore=before; if(HAS_ALARM){ n.remindMode=mode; cfg.remMode=mode; saveCfg(); }
+      n.updatedAt=now(); delete n._fresh; changed(); closeSheet(); renderRemChip(n); renderList();
+      if(HAS_ALARM){ const ring=new Date(new Date(n.remindAt).getTime()-before*60000);
+        toast(ring.getTime()<=now()?'Lembrete salvo, mas esse horário já passou: o alarme não vai tocar.':'Alarme: '+fmtRem(ring)+' · aviso 1 minuto antes');
+        afterReminderSaved(); }
+      else toast('Lembrete: '+fmtRem(new Date(n.remindAt))+(before?' · aviso '+BEFORE.find(x=>x[0]===before)[1]+' antes':'')); };
+    const d=s.querySelector('#rmDel'); if(d) d.onclick=()=>{ delete n.remindAt; delete n.remindBefore; delete n.remindMode; n.updatedAt=now(); changed(); closeSheet(); renderRemChip(n); renderList(); toast('Lembrete removido'); };
   });
 }
+// depois de salvar: confere o que o Android precisa liberar, uma coisa de cada vez
+async function afterReminderSaved(){
+  syncAlarmsNow();
+  let st=alarmState();
+  if(!st.notif){ await askPerm('notif'); st=alarmState();
+    if(!st.notif){ toast('Sem notificações, o aviso e a tela do alarme não aparecem.','Permitir',()=>askPerm('notifSettings')); return; } }
+  if(st.exact===false){ askSheet({title:'Liberar o alarme na hora certa',sub:'O Android precisa deixar o Não Esquece usar <b>Alarmes e lembretes</b>. Na próxima tela, ligue a opção e volte para o app.',ok:'Abrir ajustes',onOk:()=>askPerm('exact')}); return; }
+  if(cfg.devCal===undefined&&typeof NA.calSync==='function'){ calendarOffer(); return; }
+  if(!cfg.batAsked&&st.battery===false){ cfg.batAsked=true; saveCfg();
+    askSheet({title:'Não deixar a bateria atrasar o alarme',sub:'Alguns celulares (Samsung, Xiaomi, Motorola…) param apps para economizar bateria, e o alarme pode atrasar. Na próxima tela, toque em <b>Permitir</b>.',ok:'Continuar',onOk:()=>askPerm('battery')}); return; }
+  syncDevCal(false);
+}
+function testAlarm(){
+  const st=alarmState();
+  if(!st.notif){ askPerm('notif').then(()=>{ if(alarmState().notif) testAlarm(); }); return; }
+  try{ NA.alarmTest(cfg.remMode||'ambos'); }catch(e){ toast('Não consegui marcar o teste.'); return; }
+  toast('O aviso chegou. O alarme toca em 20 segundos: pode bloquear a tela.');
+}
+
+/* alarmes marcados no Android: a lista inteira vai a cada mudança */
+let alarmSig='', alarmTimer=0;
+function syncAlarmsNow(){
+  if(!HAS_ALARM||!appReady||!db||!Array.isArray(db.notes)) return;
+  if(Vault.exists()&&!Vault.unlocked()) return;
+  const list=db.notes.filter(n=>!n.deleted&&!n.trashed&&!n.done&&n.remindAt).map(n=>({id:n.id,at:n.remindAt,before:+n.remindBefore||0,mode:n.remindMode||'ambos',
+    title:noteTitle(n).slice(0,200),text:txt(n.html).replace(/\s+/g,' ').trim().slice(0,300)}));
+  const sig=JSON.stringify(list); if(sig===alarmSig) return;
+  try{ if(+NA.alarmSet(sig)>=0) alarmSig=sig; }catch(e){ alarmSig=''; }
+}
+function scheduleAlarms(){ if(!HAS_ALARM) return; clearTimeout(alarmTimer); alarmTimer=setTimeout(()=>{ syncAlarmsNow(); syncDevCal(false); },400); }
+
+/* calendário do celular, na agenda da mesma conta Google do app */
+const fnv=s=>{ let h=0x811c9dc5; for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619)>>>0; } return h.toString(36); };
+let devCalBusy=false;
+async function syncDevCal(force){
+  if(!HAS_ALARM||typeof NA.calSync!=='function'||cfg.devCal!==true||devCalBusy||!appReady||!db) return;
+  if(Vault.exists()&&!Vault.unlocked()) return;
+  const map=cfg.devCalMap||{}, want=new Map();
+  for(const n of db.notes) if(!n.deleted&&!n.trashed&&!n.done&&n.remindAt){
+    const it={id:n.id,at:n.remindAt,title:noteTitle(n).slice(0,200),text:txt(n.html).trim().slice(0,900)};
+    want.set(n.id,{it,sig:fnv(it.at+'|'+it.title+'|'+it.text)}); }
+  const up=[], del=[];
+  for(const [id,w] of want) if(force||map[id]!==w.sig) up.push(w.it);
+  for(const id of Object.keys(map)) if(!want.has(id)) del.push(id);
+  if(!up.length&&!del.length) return;
+  devCalBusy=true;
+  try{
+    const r=JSON.parse(await nativeCall('calSync',cfg.email||'',JSON.stringify({up,del}))||'{}');
+    if(r.ok){ const ok=new Set(r.done||[]);
+      for(const it of up) if(ok.has(it.id)) map[it.id]=want.get(it.id).sig;
+      for(const id of del) if(ok.has(id)) delete map[id];
+      cfg.devCalMap=map; cfg.devCalInfo={cal:r.cal||'',account:r.account||'',google:!!r.google,syncOn:r.syncOn!==false,at:now()}; saveCfg(); }
+    else if(r.err==='perm'){ cfg.devCal=false; saveCfg(); toast('O app perdeu a permissão do calendário. Ligue de novo em Ajustes › Alarmes e calendário.'); }
+  }catch(e){ logErr('Calendário do celular: '+e.message); }
+  devCalBusy=false;
+}
+function calendarOffer(){
+  askSheet({title:'Colocar no calendário do celular?',
+    sub:`O lembrete também aparece no app de calendário do celular, na agenda da conta <b>${esc(cfg.email||'Google')}</b>, e sincroniza com os outros aparelhos dessa conta. O alarme continua tocando pelo Não Esquece.`,
+    ok:'Colocar no calendário',onOk:()=>enableDevCal(),
+    onNo:()=>{ cfg.devCal=false; saveCfg(); toast('Tudo bem. Dá para ligar depois em Ajustes › Alarmes e calendário.'); }});
+}
+async function enableDevCal(){
+  const r=await askPerm('cal');
+  if(r!=='ok'){ cfg.devCal=false; saveCfg(); toast('Sem a permissão do calendário, os lembretes ficam só no app.','Ajustes',()=>askPerm('app')); refreshAlarmBlock(); return false; }
+  cfg.devCal=true; cfg.devCalMap={}; saveCfg();
+  await syncDevCal(true);
+  const i=cfg.devCalInfo||{};
+  toast(i.google?'Lembretes no calendário da conta '+i.account:'Lembretes no calendário do celular');
+  refreshAlarmBlock();
+  return true;
+}
+
+/* Ajustes › Alarmes e calendário */
+function alarmBlock(){
+  if(!IS_APK) return '';
+  if(!HAS_ALARM) return `<div class="blk" id="alBlk"><div class="lbl">Alarmes e calendário</div><button class="row" id="aUpd"><span data-i="bell"></span><span class="grow">Atualize o app para o alarme tocar<small>Baixar o Não Esquece ${APP_VERSION}</small></span></button></div>`;
+  const st=alarmState(); let ci={};
+  if(cfg.devCal===true){ try{ ci=JSON.parse(NA.calInfo(cfg.email||'')||'{}'); }catch(e){} }
+  const bad=t=>`<b style="color:var(--danger)">${t}</b>`;
+  const row=(id,icon,title,ok,okTxt,badTxt)=>`<button class="row" id="${id}"><span data-i="${icon}"></span><span class="grow">${title}<small>${ok?okTxt:bad(badTxt)}</small></span>${ok?'<span data-i="check" style="color:var(--ok)"></span>':''}</button>`;
+  let cal;
+  if(cfg.devCal!==true) cal='Desligado · toque para ligar';
+  else if(!ci.perm) cal=bad('Sem permissão do calendário: toque para permitir');
+  else if(ci.found&&ci.google) cal='Ligado · agenda da conta '+esc(ci.account)+(ci.syncOn===false?'<br>'+bad('A sincronização da agenda dessa conta está desligada no celular'):'');
+  else if(ci.found) cal='Ligado · agenda “Não Esquece” só neste celular'+(cfg.email?'<br>'+bad('A agenda da conta '+esc(cfg.email)+' não está neste celular: ligue a Agenda nessa conta, em Contas do Android'):'');
+  else cal='Ligado · a agenda é escolhida no próximo lembrete';
+  return `<div class="blk" id="alBlk"><div class="lbl">Alarmes e calendário</div>
+    ${row('aNotif','bell','Notificações',st.notif&&st.channels!==false,'Permitidas',st.notif?'Algum aviso do app está desligado: toque para ver':'Desligadas: toque para permitir')}
+    ${row('aExact','clock','Alarme na hora exata',st.exact!==false,'Permitido','Não permitido: toque para liberar')}
+    ${st.sdk>=34?row('aFull','lock','Alarme na tela bloqueada',st.full!==false,'Permitido','Não permitido: toque para liberar'):''}
+    ${row('aBat','shield','Bateria',!!st.battery,'Sem restrição: o alarme não atrasa','Com economia: toque para liberar (recomendado)')}
+    ${st.vol===0?`<div class="row static"><span data-i="info"></span><span class="grow">Volume de alarme<small>${bad('Está no zero: aumente o volume de alarme do celular')}</small></span></div>`:''}
+    <button class="row" id="aCal"><span data-i="note"></span><span class="grow">Calendário do celular<small>${cal}</small></span></button>
+    ${cfg.devCal===true&&ci.found&&ci.google&&ci.syncOn===false?'<button class="row" id="aSync"><span data-i="sync"></span><span class="grow">Ligar a sincronização da agenda<small>Abre as contas do celular</small></span></button>':''}
+    <button class="row" id="aTest"><span data-i="bell"></span><span class="grow">Testar o alarme<small>O aviso chega agora e o alarme toca em 20 segundos</small></span></button>
+  </div>`;
+}
+function bindAlarmBlock(s){
+  const on=(id,f)=>{ const e=s.querySelector(id); if(e) e.onclick=f; };
+  on('#aUpd',()=>openLink(APK_URL));
+  on('#aNotif',async()=>{ await askPerm(alarmState().notif?'notifSettings':'notif'); refreshAlarmBlock(); });
+  on('#aExact',()=>askPerm('exact'));
+  on('#aFull',()=>askPerm('full'));
+  on('#aBat',()=>askPerm('battery'));
+  on('#aSync',()=>askPerm('sync'));
+  on('#aTest',testAlarm);
+  on('#aCal',async()=>{
+    if(cfg.devCal===true&&alarmState().cal){
+      askSheet({title:'Desligar o calendário do celular?',sub:'Os lembretes do Não Esquece saem do calendário do celular e da agenda da sua conta Google. O alarme continua tocando pelo app.',ok:'Desligar',no:'Cancelar',
+        onOk:async()=>{ try{ await nativeCall('calWipe'); }catch(e){} cfg.devCal=false; cfg.devCalMap={}; saveCfg(); toast('Calendário do celular desligado'); }});
+    } else await enableDevCal();
+  });
+}
+function refreshAlarmBlock(){ const b=document.querySelector('#sheet:not([hidden]) #alBlk'); if(!b) return; b.outerHTML=alarmBlock(); const nb=document.querySelector('#alBlk'); if(nb){ paintIcons(nb); bindAlarmBlock(nb); } }
+
+/* recados do alarme (Concluída) e abrir a nota pelo aviso */
+let pendingOpen=null, evCheck=true;
+{ const q=new URLSearchParams(location.search); if(q.has('nota')){ pendingOpen=q.get('nota')||''; q.delete('nota');
+  try{ history.replaceState(history.state,'',location.pathname+(q.toString()?'?'+q:'')+location.hash); }catch(e){} } }
+window.__openFromNative=id=>{ pendingOpen=String(id||''); evCheck=true; };
+function processAlarmEvents(){
+  if(!HAS_ALARM||!appReady||locked||!db) return;
+  if(Vault.exists()&&!Vault.unlocked()) return;
+  let ev=[]; try{ ev=JSON.parse(NA.alarmEvents()||'[]'); }catch(e){}
+  let k=0; for(const e of ev){ if(e&&e.act==='done'){ const x=noteById(e.id); if(x&&!x.done&&!x.deleted){ setDone(x,true); k++; } } }
+  if(k){ changed(); render(); toast(k>1?k+' lembretes marcados como concluídos pelo alarme':'Lembrete marcado como concluído pelo alarme'); }
+}
+function flushPendingOpen(){
+  if(pendingOpen===null) return;
+  const id=pendingOpen; pendingOpen=null;
+  const n=id?noteById(id):null;
+  if(n&&!n.deleted&&!n.trashed){ if(!$('#sheet').hidden) closeSheet(); openNote(id); }
+}
+setInterval(()=>{ if(!appReady||locked||secOpen) return; if(evCheck){ evCheck=false; processAlarmEvents(); } flushPendingOpen(); },700);
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState!=='visible') return; evCheck=true; if(HAS_ALARM){ refreshAlarmBlock(); refreshAlarmWarn(); scheduleAlarms(); } });
+
 function checkReminders(){
-  if(!appReady||locked) return;
+  if(HAS_ALARM||!appReady||locked) return; // no app do celular quem avisa é o alarme do Android
   const t=now(), seen=new Set(cfg.alerted||[]);
   for(const n of liveNotes()){
     if(!n.remindAt||n.done) continue;
@@ -2971,7 +3163,17 @@ async function ensureCalendar(){
   return j.id;
 }
 async function mirrorCalendar(st){
-  if(cfg.calOk===false) return;
+  if(HAS_ALARM){
+    // No app do celular o alarme é do Android: a agenda "Não Esquece" que o app criava no Google sai, para não avisar em dobro.
+    if(okCal(cfg.calendarId)&&cfg.calOk!==false){
+      try{ await api(`${CAL}/calendars/${encodeURIComponent(cfg.calendarId)}`,{method:'DELETE'}); }
+      catch(e){ if(e.message==='auth') throw e; if(!/http 40[34]|http 410/.test(e.message)) return; }
+    }
+    if(cfg.calendarId||cfg.alarmsBy!=='android'){ cfg.calendarId=''; cfg.alarmsBy='android'; saveCfg(); }
+    for(const n of st.notes) if(n.calEvId){ n.calEvId=''; n.calSyncedAt=0; }
+    return;
+  }
+  if(cfg.calOk===false||cfg.alarmsBy==='android') return;
   const want=n=>!n.deleted&&!n.trashed&&!n.done&&!n._fresh&&!!n.remindAt;
   const todo=st.notes.filter(n=>want(n)?(!okId(n.calEvId)||(n.calSyncedAt||0)<n.updatedAt):okId(n.calEvId));
   if(!todo.length) return;
@@ -3031,7 +3233,7 @@ async function boot(){
     const d=LS.get('ne.db',null); db=(d&&Array.isArray(d.notes))?d:null; if(!db) seed();
   }
   try{ localStorage.removeItem('ne.session'); }catch(e){}
-  appReady=true; persist();
+  appReady=true; persist(); scheduleAlarms();
   { const old=trashNotes().filter(n=>now()-(n.trashedAt||n.updatedAt)>30*86400e3); if(old.length) purgeNotes(old); } // lixeira: 30 dias
   render();
   const ret=await handleRedirectReturn();

@@ -246,7 +246,7 @@ footer .fine{grid-column:1/-1;border-top:1px solid var(--hero-line);padding-top:
       <div class="facts">
         <div class="fact"><b>Até 5 dias úteis</b><span>para responder dúvidas e problemas</span></div>
         <div class="fact"><b>Até 15 dias</b><span>para pedidos de titular (LGPD, art. 19)</span></div>
-        <div class="fact"><b>Versão <span id="ver">1.1.1</span></b><span>atualiza sozinha, sem reinstalar</span></div>
+        <div class="fact"><b>Versão <span id="ver">1.3.0</span></b><span>atualiza sozinha, sem reinstalar</span></div>
       </div>
     </div>
   </div>
@@ -285,8 +285,8 @@ footer .fine{grid-column:1/-1;border-top:1px solid var(--hero-line);padding-top:
             </div>
           </div>
 
-          <div class="group" data-cat="google" data-name="Google Drive e Agenda" data-icon="i-cloud">
-            <h3><svg class="i"><use href="#i-cloud"/></svg>Google Drive e Agenda</h3>
+          <div class="group" data-cat="google" data-name="Google Drive, alarmes e calendário" data-icon="i-cloud">
+            <h3><svg class="i"><use href="#i-cloud"/></svg>Google Drive, alarmes e calendário</h3>
             <div class="qa">
               <details id="q-drive"><summary>Onde ficam minhas notas no Google Drive?</summary><div class="ans">
                 <p>Em <span class="path">Meu Drive › Não Esquece</span>. Lá dentro, cada pasta do app tem a sua, e cada nota vira uma pasta com o título, a data e a hora. Dentro dela ficam o texto da nota, as fotos e os áudios.</p>
@@ -298,15 +298,20 @@ footer .fine{grid-column:1/-1;border-top:1px solid var(--hero-line);padding-top:
               <details id="q-login"><summary>Ao entrar com o Google aparece "Acesso bloqueado"</summary><div class="ans">
                 <p>Toque em <b>Entrar depois</b> para continuar usando o app, com as notas salvas no celular. Depois, fale com a gente pelo formulário abaixo e envie um print da tela de erro. Você conecta a conta mais tarde em <span class="path">Ajustes › Conta do Google Drive</span>.</p>
               </div></details>
-              <details id="q-lembrete"><summary>O lembrete não tocou. O que verificar?</summary><div class="ans">
+              <details id="q-lembrete"><summary>O alarme do lembrete não tocou. O que verificar?</summary><div class="ans">
+                <p>No app para Android (versão 1.3.0 ou mais nova), o alarme é do próprio celular: toca com o app fechado, a tela bloqueada e sem internet. 1 minuto antes chega um aviso com som, vibração ou os dois.</p>
                 <ol>
-                  <li>O app está conectado à sua conta Google e você permitiu a <b>Google Agenda</b> ao entrar.</li>
-                  <li>O app <b>Google Agenda</b> está instalado e com notificações ativadas.</li>
-                  <li>No Google Agenda, a agenda <b>Não Esquece</b> está marcada (visível).</li>
-                  <li>O celular não está em modo "não perturbe" e a economia de bateria não está bloqueando o Google Agenda.</li>
-                  <li>O lembrete foi salvo com internet. Sem internet, ele vai para a agenda assim que a conexão voltar.</li>
+                  <li>Abra <span class="path">Ajustes › Alarmes e calendário</span>. Tudo o que estiver em vermelho falta liberar: toque na linha e o app abre o ajuste certo do Android.</li>
+                  <li>Toque em <b>Testar o alarme</b>: o aviso chega na hora e o alarme toca em 20 segundos. Bloqueie a tela para ver a tela do alarme.</li>
+                  <li>Confira o <b>volume de alarme</b> do celular (não é o mesmo da música nem do toque).</li>
+                  <li>Em <b>Bateria</b>, deixe o Não Esquece sem restrição. Em celulares Xiaomi, ligue também a <b>Inicialização automática</b> do app; em Samsung, tire o app de <b>Apps em suspensão</b>.</li>
+                  <li>Se o horário do alarme já tinha passado quando você salvou, ele não toca. O app avisa na hora de salvar.</li>
                 </ol>
-                <p>Com o app aberto, o aviso também aparece dentro dele.</p>
+                <p>Na versão aberta pelo navegador do computador, os avisos com o app fechado chegam pelo Google Agenda.</p>
+              </div></details>
+              <details id="q-calendario"><summary>O lembrete aparece no calendário do celular?</summary><div class="ans">
+                <p>Sim, se você permitir. No primeiro lembrete o app pergunta se pode colocá-lo no calendário do celular. Ele usa a agenda da <b>mesma conta Google</b> que entrou no Não Esquece, então o lembrete também aparece no Google Agenda, no calendário da Samsung e nos outros aparelhos dessa conta.</p>
+                <p>Se a agenda da conta não aparecer, ligue a sincronização da Agenda em <span class="path">Configurações do Android › Contas › Google</span>. Para desligar, toque em <span class="path">Ajustes › Alarmes e calendário › Calendário do celular</span>: os lembretes do app saem do calendário e o alarme continua.</p>
               </div></details>
               <details id="q-trocar"><summary>Troquei de celular. Como trago minhas notas?</summary><div class="ans">
                 <p>Instale o app no celular novo, aceite os termos, entre com a <b>mesma conta Google</b> e crie um PIN. Tudo o que estava no Drive volta sozinho.</p>
@@ -344,7 +349,7 @@ footer .fine{grid-column:1/-1;border-top:1px solid var(--hero-line);padding-top:
                 <p><b>Apagar:</b> apague notas pela lixeira ("Apagar de vez") ou use <b>Cancelar inscrição</b> para apagar tudo do celular.</p>
               </div></details>
               <details id="q-cancelar"><summary>Como cancelo a inscrição?</summary><div class="ans">
-                <p>Em <span class="path">Ajustes › Privacidade e termos › Cancelar inscrição</span>. O app explica tudo antes, pede para digitar CANCELAR e confirmar o PIN. Você escolhe se apaga também a agenda de lembretes e a pasta no Drive.</p>
+                <p>Em <span class="path">Ajustes › Privacidade e termos › Cancelar inscrição</span>. O app explica tudo antes, pede para digitar CANCELAR e confirmar o PIN. Você escolhe se apaga também os lembretes da agenda e a pasta no Drive.</p>
                 <div class="note"><svg class="i"><use href="#i-alert"/></svg><span><b>O cancelamento não pode ser desfeito.</b> O PIN, a chave e o e-mail de recuperação são apagados, e não há como recuperar a senha depois. O app deixa de enviar notificações e mensagens.</span></div>
               </div></details>
               <details id="q-pedido"><summary>Como faço um pedido de titular (LGPD)?</summary><div class="ans">
