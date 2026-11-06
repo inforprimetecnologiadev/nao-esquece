@@ -4,6 +4,9 @@ name: Testar no emulador Android
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   emulador:
     runs-on: ubuntu-latest
@@ -46,3 +49,15 @@ jobs:
         with:
           name: emulador
           path: out/
+
+      - name: Publicar o resultado no ramo emulador-resultado
+        if: always()
+        run: |
+          [ -d out ] || exit 0
+          cd out
+          git init -q -b emulador-resultado
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -qm "Resultado de ${GITHUB_SHA::7}" || exit 0
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" emulador-resultado
