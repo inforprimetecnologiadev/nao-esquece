@@ -1,0 +1,29 @@
+name: Versão (tag e release)
+
+on:
+  push:
+    branches: [main]
+    paths: ['site/index.html', 'CHANGELOG.md', '.github/workflows/release.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Criar a versão no GitHub (se ainda não existir)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          V=$(grep -oP "APP_VERSION='\K[0-9.]+" site/index.html | head -1)
+          echo "Versão do app: $V"
+          if git rev-parse "v$V" >/dev/null 2>&1; then echo "v$V já existe"; exit 0; fi
+          awk -v v="$V" '$0 ~ "^## "v" " {f=1; next} /^## / {f=0} f' CHANGELOG.md > notas.md
+          cat notas.md
+          gh release create "v$V" site/NaoEsquece.apk --title "Não Esquece $V" --notes-file notas.md --target "$GITHUB_SHA"
