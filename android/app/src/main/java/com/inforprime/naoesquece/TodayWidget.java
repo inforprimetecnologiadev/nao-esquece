@@ -83,7 +83,7 @@ public class TodayWidget extends AppWidgetProvider {
         return s == null || s.isEmpty() ? "" : Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
 
-    private static RemoteViews build(Context c) {
+    static RemoteViews build(Context c) {
         RemoteViews v = new RemoteViews(c.getPackageName(), R.layout.widget_hoje);
         Locale br = new Locale("pt", "BR");
         v.setTextViewText(R.id.w_date, cap(new SimpleDateFormat("EEEE, d 'de' MMMM", br).format(new Date())));

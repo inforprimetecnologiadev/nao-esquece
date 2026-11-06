@@ -5,6 +5,11 @@ import android.app.UiAutomation;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.RemoteViews;
 import android.os.ParcelFileDescriptor;
 import android.provider.CalendarContract;
 import android.service.notification.StatusBarNotification;
@@ -21,7 +26,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -125,7 +132,7 @@ public class AlarmTest {
         Log.i(TAG, "atividade em cima: " + sh("dumpsys activity activities | grep -E 'topResumedActivity|ResumedActivity' "));
         Reminders.act(c, "stop", AlarmService.current());
         assertTrue("alarme parou", waitFor(() -> !AlarmService.isRinging(), 8000));
-        assertFalse(fgs());
+        assertTrue("notificação do alarme sumiu", waitFor(() -> !fgs(), 8000));
         sh("input keyevent KEYCODE_WAKEUP");
         sh("wm dismiss-keyguard");
     }
@@ -227,6 +234,44 @@ public class AlarmTest {
         assertTrue(waitFor(() -> !AlarmService.isRinging(), 8000));
         assertEquals("o de amanhã já ficou marcado", 1, Reminders.pending(c));
         Log.i(TAG, "depois de tocar: " + sh("dumpsys alarm | grep -A3 naoesquece | head -20"));
+        Reminders.sync(c, "[]");
+    }
+
+    @Test
+    public void h_widget() throws Exception {
+        long t = System.currentTimeMillis() + 3_600_000L;
+        JSONObject a = new JSONObject();
+        a.put("id", "w1");
+        a.put("at", local(t));
+        a.put("before", 0);
+        a.put("title", "Reunião com o gerente");
+        JSONObject b = rep("w2", local(t - 7_200_000L - 86_400_000L), "dia");
+        b.put("title", "Bater o ponto");
+        Reminders.sync(c, new JSONArray().put(a).put(b).toString());
+        File f = new File(c.getExternalFilesDir(null), "6-widget.png");
+        InstrumentationRegistry.getInstrumentation().runOnMainSync(() -> {
+            try {
+                RemoteViews rv = TodayWidget.build(c);
+                View v = rv.apply(c, new FrameLayout(c));
+                float d = c.getResources().getDisplayMetrics().density;
+                int w = (int) (340 * d), h = (int) (190 * d);
+                v.measure(View.MeasureSpec.makeMeasureSpec(w, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(h, View.MeasureSpec.EXACTLY));
+                v.layout(0, 0, w, h);
+                Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+                Canvas cv = new Canvas(bm);
+                cv.drawColor(0xFF3A4A66);
+                v.draw(cv);
+                try (FileOutputStream o = new FileOutputStream(f)) {
+                    bm.compress(Bitmap.CompressFormat.PNG, 100, o);
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+        assertTrue(f.length() > 0);
+        sh("cp " + f.getAbsolutePath() + " /sdcard/Download/ne/6-widget.png");
+        assertEquals(2, Reminders.today(c).size());
+        TodayWidget.refresh(c);
         Reminders.sync(c, "[]");
     }
 
