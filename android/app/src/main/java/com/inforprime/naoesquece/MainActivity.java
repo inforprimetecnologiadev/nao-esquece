@@ -992,7 +992,7 @@ public class MainActivity extends AppCompatActivity {
                         File f = writeShareFile(safe, data);
                         ArrayList<Uri> uris = new ArrayList<>();
                         uris.add(FileProvider.getUriForFile(MainActivity.this, getPackageName() + ".files", f));
-                        runOnUiThread(() -> startShare(safe, "", uris, type));
+                        runOnUiThread(() -> startShare(safe, "", uris, type, null));
                         done(id, true, "share");
                     }
                 } catch (Exception e) {
