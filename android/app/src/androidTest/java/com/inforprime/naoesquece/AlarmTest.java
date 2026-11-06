@@ -351,6 +351,56 @@ public class AlarmTest {
         }
     }
 
+    @Test
+    public void k_mp3() throws Exception {
+        assertTrue("biblioteca do MP3 carregada", Mp3.available());
+        Log.i(TAG, "LAME " + Mp3.lameVersion());
+        Context tc = InstrumentationRegistry.getInstrumentation().getContext();
+        File dir = new File(c.getCacheDir(), "teste-mp3");
+        //noinspection ResultOfMethodCallIgnored
+        dir.mkdirs();
+        // gravação do Chrome/WebView (WebM/Opus, sem duração no cabeçalho), M4A/AAC (nota rápida) e WAV estéreo
+        for (String name : new String[]{"teste.webm", "teste.m4a", "teste.wav"}) {
+            File in = new File(dir, name), out = new File(dir, name + ".mp3");
+            try (java.io.InputStream is = tc.getAssets().open(name); FileOutputStream os = new FileOutputStream(in)) {
+                byte[] b = new byte[8192];
+                int n;
+                while ((n = is.read(b)) > 0) os.write(b, 0, n);
+            }
+            long t0 = System.currentTimeMillis();
+            double dur = Mp3.convert(in, out);
+            Log.i(TAG, "mp3 " + name + ": " + out.length() + " bytes, " + dur + " s, " + (System.currentTimeMillis() - t0) + " ms");
+            assertTrue(name + ": duração " + dur, dur > 2.4 && dur < 3.8);
+            assertTrue(name + ": tamanho " + out.length(), out.length() > 12000 && out.length() < 60000);
+            byte[] h = new byte[4];
+            try (FileInputStream fi = new FileInputStream(out)) {
+                assertEquals(4, fi.read(h));
+            }
+            assertTrue(name + ": começa com quadro MP3", (h[0] & 0xFF) == 0xFF && (h[1] & 0xE0) == 0xE0);
+            // o próprio Android lê o MP3 gerado
+            android.media.MediaExtractor ex = new android.media.MediaExtractor();
+            ex.setDataSource(out.getPath());
+            android.media.MediaFormat f = ex.getTrackFormat(0);
+            assertEquals("audio/mpeg", f.getString(android.media.MediaFormat.KEY_MIME));
+            double d2 = f.containsKey(android.media.MediaFormat.KEY_DURATION) ? f.getLong(android.media.MediaFormat.KEY_DURATION) / 1e6 : -1;
+            Log.i(TAG, "mp3 " + name + " lido pelo Android: " + d2 + " s, " + f.getInteger(android.media.MediaFormat.KEY_SAMPLE_RATE) + " Hz");
+            assertTrue(name + ": Android lê " + d2 + " s", d2 > 2.4 && d2 < 3.9);
+            ex.release();
+            if (name.equals("teste.webm")) { // guarda uma cópia para conferir fora do emulador
+                File ext = c.getExternalFilesDir(null);
+                if (ext != null) {
+                    File keep = new File(ext, "gravacao-convertida.mp3");
+                    try (FileInputStream fi = new FileInputStream(out); FileOutputStream fo = new FileOutputStream(keep)) {
+                        byte[] b = new byte[8192];
+                        int n;
+                        while ((n = fi.read(b)) > 0) fo.write(b, 0, n);
+                    }
+                    sh("cp " + keep.getPath() + " /sdcard/Download/ne/gravacao-convertida.mp3");
+                }
+            }
+        }
+    }
+
     private int events(ContentResolver cr, String id, String[] title) {
         int n = 0;
         try (Cursor q = cr.query(CalendarContract.Events.CONTENT_URI, new String[]{CalendarContract.Events.TITLE, CalendarContract.Events.DESCRIPTION},

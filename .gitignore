@@ -4,3 +4,4 @@ android/app/build/
 android/local.properties
 *.keystore
 *.jks
+android/app/src/main/cpp/lame/

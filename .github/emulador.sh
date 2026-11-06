@@ -3,7 +3,8 @@
 mkdir -p out
 adb shell settings put system screen_off_timeout 600000 || true
 adb logcat -c || true
-gradle -p android connectedDebugAndroidTest --no-daemon --stacktrace > out/gradle-testes.txt 2>&1
+NDK=$(basename "${ANDROID_NDK_LATEST_HOME:-$ANDROID_NDK_HOME}")
+gradle -p android connectedDebugAndroidTest --no-daemon --stacktrace -PndkVer="$NDK" > out/gradle-testes.txt 2>&1
 STATUS=$?
 adb pull /sdcard/Download/ne out/prints || true
 adb logcat -d -v time > out/logcat.txt || true

@@ -109,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
     private View offline;
     private SharedPreferences prefs;
     private final ExecutorService io = Executors.newSingleThreadExecutor();
+    private final ExecutorService media = Executors.newSingleThreadExecutor(); // MP3 (pode demorar)
     private volatile String pageUrl = "";
 
     private ValueCallback<Uri[]> fileCb;
@@ -633,7 +634,21 @@ public class MainActivity extends AppCompatActivity {
         return "*/*";
     }
 
-    private void startShare(String title, String text, ArrayList<Uri> uris, String type) {
+    /** WhatsApp instalado (o normal ou o Business). Com os dois, deixa a pessoa escolher. */
+    private String whatsApp() {
+        String found = null;
+        for (String p : new String[]{"com.whatsapp", "com.whatsapp.w4b"}) {
+            try {
+                getPackageManager().getPackageInfo(p, 0);
+                if (found != null) return null;
+                found = p;
+            } catch (Exception ignored) {
+            }
+        }
+        return found;
+    }
+
+    private void startShare(String title, String text, ArrayList<Uri> uris, String type, String pkg) {
         Intent i;
         if (uris.isEmpty()) {
             i = new Intent(Intent.ACTION_SEND);
@@ -656,6 +671,14 @@ public class MainActivity extends AppCompatActivity {
             i.setClipData(c);
         }
         i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        if (pkg != null) {
+            try {
+                startActivity(new Intent(i).setPackage(pkg));
+                return;
+            } catch (Exception e) {
+                Log.w(TAG, "whatsapp direto", e);
+            }
+        }
         startActivity(Intent.createChooser(i, null));
     }
 
@@ -987,6 +1010,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject o = new JSONObject(json);
                     String text = o.optString("text", "");
                     String title = o.optString("title", "");
+                    String app = o.optString("app", "");
                     JSONArray fs = o.optJSONArray("files");
                     ArrayList<Uri> uris = new ArrayList<>();
                     String type = null;
@@ -1001,7 +1025,7 @@ public class MainActivity extends AppCompatActivity {
                     final String t = type;
                     runOnUiThread(() -> {
                         try {
-                            startShare(title, text, uris, t);
+                            startShare(title, text, uris, t, "whatsapp".equals(app) ? whatsApp() : null);
                             done(id, true, "");
                         } catch (Exception e) {
                             done(id, false, "erro");
@@ -1134,6 +1158,47 @@ public class MainActivity extends AppCompatActivity {
                     done(id, false, "erro");
                 }
             });
+        }
+
+        /* áudio em MP3 (para tocar no PDF, no WhatsApp e no Word) */
+        @JavascriptInterface
+        public void toMp3(String id, String mime, String b64) {
+            if (!trusted()) { done(id, false, "origem"); return; }
+            media.execute(() -> {
+                File dir = new File(getCacheDir(), "mp3");
+                //noinspection ResultOfMethodCallIgnored
+                dir.mkdirs();
+                long k = System.nanoTime();
+                File in = new File(dir, "in-" + k), out = new File(dir, "out-" + k + ".mp3");
+                try {
+                    try (FileOutputStream os = new FileOutputStream(in)) {
+                        os.write(Base64.decode(b64, Base64.DEFAULT));
+                    }
+                    double dur = Mp3.convert(in, out);
+                    byte[] data = new byte[(int) out.length()];
+                    try (java.io.FileInputStream is = new java.io.FileInputStream(out)) {
+                        int o = 0, n;
+                        while (o < data.length && (n = is.read(data, o, data.length - o)) > 0) o += n;
+                    }
+                    JSONObject r = new JSONObject();
+                    r.put("dur", dur);
+                    r.put("b64", Base64.encodeToString(data, Base64.NO_WRAP));
+                    done(id, true, r.toString());
+                } catch (Throwable e) {
+                    Log.w(TAG, "mp3 " + mime, e);
+                    done(id, false, "erro");
+                } finally {
+                    //noinspection ResultOfMethodCallIgnored
+                    in.delete();
+                    //noinspection ResultOfMethodCallIgnored
+                    out.delete();
+                }
+            });
+        }
+
+        @JavascriptInterface
+        public String mp3Info() {
+            return Mp3.available() ? Mp3.lameVersion() : "";
         }
 
         /* ler o texto de fotos e PDFs (no celular, sem internet) */

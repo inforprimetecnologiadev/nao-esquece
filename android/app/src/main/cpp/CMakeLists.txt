@@ -1,0 +1,11 @@
+# MP3 dentro do app: LAME (baixado e conferido pelo .github/lame.sh) + a ponte para o Java.
+cmake_minimum_required(VERSION 3.18.1)
+project(nemp3 C)
+set(LAME ${CMAKE_CURRENT_SOURCE_DIR}/lame)
+file(GLOB LAME_SRC ${LAME}/libmp3lame/*.c)
+add_library(mp3lame STATIC ${LAME_SRC})
+target_include_directories(mp3lame PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${LAME}/include ${LAME}/libmp3lame)
+target_compile_definitions(mp3lame PRIVATE HAVE_CONFIG_H)
+target_compile_options(mp3lame PRIVATE -O2 -w)
+add_library(nemp3 SHARED nemp3.c)
+target_link_libraries(nemp3 mp3lame m)

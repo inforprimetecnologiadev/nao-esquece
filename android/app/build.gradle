@@ -6,14 +6,25 @@ plugins {
 android {
     namespace 'com.inforprime.naoesquece'
     compileSdk 34
+    // NDK do próprio servidor de compilação (o GitHub passa -PndkVer); o MP3 (LAME) é compilado em C
+    if (project.hasProperty('ndkVer')) ndkVersion project.property('ndkVer')
 
     defaultConfig {
         applicationId 'com.inforprime.naoesquece'
         minSdk 24
         targetSdk 34
-        versionCode 7
-        versionName '1.6.0'
+        versionCode 8
+        versionName '1.7.0'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64', 'x86'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
+        }
     }
 
     buildFeatures {
