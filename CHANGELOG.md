@@ -1,0 +1,17 @@
+# Novidades do Não Esquece
+
+Cada versão também aparece no app em **Ajustes › Sobre**.
+
+## 1.1.0 — 5 de novembro de 2026
+
+- Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.
+- Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.
+- Dados do celular criptografados (AES-256) e limite de tentativas de PIN.
+- Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.
+- Lembretes com aviso no Google Agenda, mesmo com o app fechado.
+- Gerente de requisições ao Google e bloqueio de navegadores automatizados.
+- ID próprio do Google para o Não Esquece.
+
+## 1.0.0 — 5 de novembro de 2026
+
+- Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.

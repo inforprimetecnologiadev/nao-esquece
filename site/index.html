@@ -294,6 +294,72 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .toast button{flex:none;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-soft);padding:4px 2px}
 .drivebtn{display:flex;align-items:center;gap:10px;width:100%;margin-top:10px;height:46px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-weight:700}
 .drivebtn svg{width:20px;height:20px}
+/* segurança: aceite, PIN, leitura */
+#terms{z-index:32}
+.tsum{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.tsum li{display:flex;gap:12px;align-items:flex-start;line-height:1.45;font-size:14.5px}
+.tsum li svg{color:var(--accent);width:22px;height:22px;margin-top:1px}
+.tlinks{display:flex;gap:8px;flex-wrap:wrap}
+.tcheck{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.45;cursor:pointer;text-align:left}
+.tcheck input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--accent)}
+.gbtn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.gbtn:disabled,.btn:disabled{opacity:.45}
+.secscr{position:fixed;inset:0;z-index:60;background:var(--bg);overflow:auto;display:flex;flex-direction:column;padding-block:calc(28px + env(safe-area-inset-top,0px)) calc(24px + env(safe-area-inset-bottom,0px));padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+.sec-in{width:100%;max-width:400px;margin:auto;display:flex;flex-direction:column;gap:14px}
+.secscr .lk-logo{width:64px;height:64px;border-radius:16px;align-self:center;box-shadow:0 8px 22px rgba(10,40,120,.3)}
+.secscr h1{margin:0;text-align:center;font-family:var(--f-display);font-size:24px;line-height:1.15;letter-spacing:-.02em;text-wrap:balance}
+.secscr .lk-sub{margin:0;text-align:center;color:var(--muted);font-size:14.5px;line-height:1.5}
+.secscr .left{text-align:left}
+.secscr .field{box-sizing:border-box}
+.secscr .btn{width:100%;flex:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.secscr .btn svg{width:18px;height:18px}
+.secscr .alt{color:var(--muted);font-size:14px;text-decoration:underline;text-underline-offset:3px;padding:8px 4px}
+.dots{display:flex;gap:14px;justify-content:center;margin:6px 0 2px}
+.dots i{width:14px;height:14px;border-radius:50%;border:2px solid var(--muted);box-sizing:border-box;transition:background .12s,border-color .12s}
+.dots i.on{background:var(--accent);border-color:var(--accent)}
+.dots.shake{animation:shake .35s}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.lk-msg{margin:0;min-height:20px;text-align:center;color:var(--danger);font-size:13.5px;font-weight:600;line-height:1.4}
+.pad{display:grid;grid-template-columns:repeat(3,72px);gap:14px 26px;justify-content:center;margin-top:4px}
+.pad button{width:72px;height:72px;border-radius:50%;background:var(--surface);border:1px solid var(--line);font:600 26px/1 var(--f-body);color:var(--ink);display:grid;place-items:center;box-sizing:border-box}
+.pad button:active{background:var(--accent-soft)}
+.pad button:disabled{opacity:.35}
+.pad button[data-act]{background:none;border-color:transparent;color:var(--accent)}
+.pad button[data-act="del"]{color:var(--muted)}
+.pad button svg{width:30px;height:30px}
+.lk-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.rkey{font:600 20px/1.35 'JetBrains Mono',ui-monospace,Consolas,monospace;letter-spacing:.03em;text-align:center;padding:16px 10px;border-radius:14px;background:var(--surface);border:1.5px dashed var(--accent);color:var(--ink);-webkit-user-select:all;user-select:all;word-break:break-all}
+.rkin{font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;letter-spacing:.04em;text-transform:uppercase;text-align:center}
+.warnbox{padding:12px 14px;border-radius:12px;border:1px solid color-mix(in srgb,var(--warn) 55%,transparent);background:color-mix(in srgb,var(--warn) 12%,transparent);font-size:13.5px;line-height:1.5;color:var(--ink);text-align:left}
+.warnbox ul{margin:6px 0 0;padding-left:1.15em}
+.warnbox li{margin:3px 0}
+.linkbtn{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px;padding:0;font-size:inherit}
+.lbl2{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.reader{position:fixed;inset:0;z-index:70;background:var(--surface);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
+.rd-bar{display:flex;align-items:center;gap:6px;padding-block:8px;padding-left:max(6px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line)}
+.rd-bar b{font-family:var(--f-display);font-size:18px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rd-body{flex:1;overflow:auto;padding-block:6px calc(28px + env(safe-area-inset-bottom,0px));padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));line-height:1.6;font-size:15px}
+.rd-body>*{max-width:68ch;margin-left:auto;margin-right:auto}
+.rd-body h2{font-family:var(--f-display);font-size:18px;line-height:1.25;margin-top:22px;margin-bottom:6px}
+.rd-body h3{font-size:15px;margin-top:14px;margin-bottom:4px}
+.rd-body p,.rd-body ul{margin-top:6px;margin-bottom:6px}
+.rd-body ul{padding-left:1.2em}
+.rd-body li{margin:5px 0}
+.lg-meta{color:var(--muted);font-size:13.5px}
+.lg-url{font-weight:600;word-break:break-all}
+.remchip[aria-pressed="true"]{background:var(--accent-soft)!important;color:var(--accent)!important}
+.meta .rem{display:inline-flex;align-items:center;gap:3px;font-weight:700;color:var(--accent)}
+.meta .rem.late{color:var(--danger)}
+.meta .rem svg{width:13px;height:13px}
+.seg.wrap{flex-wrap:wrap}
+.seg.wrap button{flex:1 0 28%}
+.row.static{box-sizing:border-box;cursor:default}
+.row.static:hover{background:none}
+.sheet .field{box-sizing:border-box}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:13.5px;line-height:1.4;margin:6px 0 0}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;font-weight:600;min-width:0}
+.row .seg{margin-top:8px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
@@ -306,6 +372,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
     <ul>
       <li><span data-i="check"></span><span>Funciona sem internet: cada letra, foto e áudio fica salvo no aparelho na hora.</span></li>
       <li><span data-i="check"></span><span>Com internet, cada nota vira uma pasta em <b>Meu Drive › Não Esquece</b>, separada pelas suas pastas.</span></li>
+      <li><span data-i="check"></span><span>Lembretes tocam pelo Google Agenda, mesmo com o app fechado.</span></li>
       <li><span data-i="check"></span><span>Trocou de celular? Entre com a mesma conta e tudo volta.</span></li>
     </ul>
     <button class="gbtn" id="gLogin"><span data-i="google"></span>Entrar com Google</button>
@@ -314,6 +381,188 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
   </div>
 </div>
 
+<div class="gate" id="terms" hidden>
+  <div class="in">
+    <img class="logo" id="tLogo" alt="Não Esquece">
+    <h1>Antes de começar</h1>
+    <p>Veja como o Não Esquece cuida das suas informações. Você pode rever tudo depois em Ajustes › Privacidade e termos.</p>
+    <ul class="tsum">
+      <li><span data-i="shield"></span><span><b>Seus dados são seus.</b> Notas, fotos e áudios ficam no seu celular e no <b>seu</b> Google Drive. O app não tem servidor próprio e não vende nem compartilha nada.</span></li>
+      <li><span data-i="lock"></span><span><b>Protegido por PIN.</b> O que fica no celular é criptografado, e o app pede PIN ou digital/rosto para abrir.</span></li>
+      <li><span data-i="key"></span><span><b>Guarde a chave de recuperação.</b> Sem o PIN e sem a chave, o que está só neste celular não pode ser recuperado.</span></li>
+      <li><span data-i="user"></span><span><b>Seus direitos (LGPD).</b> Ver, exportar, corrigir e apagar seus dados pelo app, e cancelar a inscrição quando quiser.</span></li>
+    </ul>
+    <div class="tlinks"><button class="lbtn" id="tReadTerms">Ler os Termos de Uso</button><button class="lbtn" id="tReadPriv">Ler a Política de Privacidade</button></div>
+    <label class="tcheck"><input type="checkbox" id="tOk"><span>Li e aceito os <b>Termos de Uso</b> e a <b>Política de Privacidade</b>, e confirmo que tenho 18 anos ou mais (ou uso o app com autorização do meu responsável legal).</span></label>
+    <button class="gbtn pri" id="tAccept" disabled>Aceitar e continuar</button>
+  </div>
+</div>
+<div class="secscr" id="secScr" hidden role="dialog" aria-modal="true"></div>
+<div class="reader" id="reader" hidden role="dialog" aria-modal="true" aria-labelledby="rdTitle">
+  <div class="rd-bar"><button class="ib" id="rdClose" aria-label="Voltar" data-i="back"></button><b id="rdTitle"></b></div>
+  <article class="rd-body" id="rdBody"></article>
+</div>
+<template id="tplTerms">
+<p class="lg-meta">Versão de 5 de novembro de 2026.</p>
+
+<h2>1. Aceitação</h2>
+<p>Ao tocar em "Aceitar e continuar", você concorda com estes Termos de Uso e com a Política de Privacidade. Se não concordar, não use o aplicativo.</p>
+
+<h2>2. O que é o Não Esquece</h2>
+<p>Um bloco de notas pessoal e gratuito para anotar atividades, gravar áudios, guardar fotos, organizar pastas, marcar o que foi concluído e receber lembretes. O app não tem servidor próprio: os dados ficam no seu celular e, se você conectar, na sua conta Google.</p>
+
+<h2>3. Conta Google e serviços de terceiros</h2>
+<p>A cópia no Google Drive e os lembretes no Google Agenda dependem da sua conta Google e seguem os termos do Google. A disponibilidade desses serviços não depende do app.</p>
+
+<h2>4. Suas responsabilidades</h2>
+<ul>
+<li>Criar um PIN que só você saiba e não compartilhá-lo.</li>
+<li>Guardar a <b>chave de recuperação</b> em lugar seguro e, se quiser, enviá-la ao seu e-mail de recuperação.</li>
+<li>Manter sua conta Google protegida (recomendamos a verificação em duas etapas).</li>
+<li>Usar o app para fins lícitos e respeitar direitos de outras pessoas nas fotos, áudios e textos que guardar.</li>
+<li>Fazer backup do que for importante.</li>
+</ul>
+
+<h2>5. Recuperação de acesso</h2>
+<p>Se você esquecer o PIN, só é possível criar um novo com a chave de recuperação. <b>Sem o PIN e sem a chave, os dados criptografados no celular não podem ser recuperados.</b> O que já estiver no seu Google Drive pode ser recuperado entrando novamente com a mesma conta Google.</p>
+
+<h2>6. Cancelamento</h2>
+<p>Você pode cancelar a inscrição a qualquer momento pelo app. O cancelamento apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados do celular, desconecta sua conta Google e encerra notificações e mensagens. <b>É irreversível e impede a recuperação da senha.</b> As cópias no Drive e na Agenda só são apagadas se você escolher isso na hora de cancelar.</p>
+
+<h2>7. Lembretes</h2>
+<p>Os avisos com o app fechado são entregues pelo Google Agenda. Eles dependem das notificações do celular estarem ativas, de internet para criar o lembrete e de configurações como economia de bateria e modo "não perturbe". O app não garante a entrega de todos os avisos.</p>
+
+<h2>8. Proteções e uso proibido</h2>
+<p>É proibido tentar burlar o PIN, a criptografia ou os limites de tentativas, usar robôs ou automação para acessar o app, ou explorar falhas. O app bloqueia tentativas repetidas e navegadores automatizados.</p>
+
+<h2>9. Disponibilidade e atualizações</h2>
+<p>O app é oferecido como está e pode receber atualizações para corrigir problemas, melhorar a segurança ou mudar funções. As novidades de cada versão aparecem em Ajustes › Sobre. Não há garantia de funcionamento ininterrupto.</p>
+
+<h2>10. Responsabilidade</h2>
+<p>Nos limites da lei, o app não responde por perdas causadas por esquecimento do PIN sem chave de recuperação, por cancelamento da inscrição, por falhas de serviços de terceiros (como Google e GitHub) ou por acesso indevido a partir da sua conta Google. Nada nestes termos afasta direitos garantidos pelo Código de Defesa do Consumidor.</p>
+
+<h2>11. Seu conteúdo</h2>
+<p>Tudo o que você escreve, grava ou anexa é seu. O app usa esse conteúdo somente para guardar, mostrar e sincronizar as suas notas.</p>
+
+<h2>12. Lei aplicável</h2>
+<p>Estes termos seguem as leis do Brasil, incluindo a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Fica eleito o foro do domicílio do usuário.</p>
+
+<h2>13. Contato</h2>
+<p>Pelo app, em Ajustes › Privacidade e termos, ou pela página do projeto em <span class="lg-url">github.com/inforprimetecnologiadev/nao-esquece</span>.</p>
+</template>
+<template id="tplPrivacy">
+<p class="lg-meta">Versão de 5 de novembro de 2026. Responsável: <b>Não Esquece</b>.</p>
+
+<h2>1. Resumo</h2>
+<ul>
+<li>O Não Esquece <b>não tem servidor próprio</b>. Suas notas, fotos e áudios ficam no seu celular e, se você conectar, no <b>seu</b> Google Drive e na <b>sua</b> Google Agenda.</li>
+<li>Não vendemos, não alugamos e não compartilhamos seus dados com anunciantes. O app não tem propaganda nem rastreadores.</li>
+<li>Os dados guardados no celular ficam <b>criptografados</b> e o app pede <b>PIN ou digital/rosto</b> para abrir.</li>
+<li>Você pode ver, exportar, corrigir e apagar tudo pelo próprio app, e cancelar a inscrição a qualquer momento.</li>
+</ul>
+
+<h2>2. Quem é o responsável</h2>
+<p>O aplicativo Não Esquece é o responsável por esta política. Como o app não recebe seus dados em servidores próprios, o tratamento acontece no seu aparelho e nos serviços Google que você escolhe conectar à sua conta.</p>
+<p><b>Canal de atendimento ao titular:</b> pelo próprio app, em <b>Ajustes › Privacidade e termos</b>, e pela página do projeto em <span class="lg-url">github.com/inforprimetecnologiadev/nao-esquece</span>.</p>
+
+<h2>3. Quais dados são tratados</h2>
+<h3>3.1 Dados que você cria no app</h3>
+<p>Títulos e textos das notas, listas de tarefas (checklists), pastas, situação (pendente ou concluída), datas e horários de lembretes, fotos, vídeos e áudios que você grava ou anexa. Você decide o que escreve: se colocar informações sensíveis (por exemplo, sobre saúde), elas são tratadas apenas para guardar e mostrar a sua própria nota.</p>
+<h3>3.2 Dados da sua conta Google (se você conectar)</h3>
+<p>Nome e e-mail da conta, usados só para mostrar qual conta está conectada e evitar misturar dados de contas diferentes. O acesso temporário (token) concedido pelo Google fica apenas na memória do app enquanto ele está aberto.</p>
+<h3>3.3 Dados de segurança</h3>
+<ul>
+<li><b>PIN:</b> não é guardado. O app guarda só uma chave derivada dele, que serve para abrir os dados criptografados.</li>
+<li><b>Chave de recuperação:</b> não é guardada pelo app. Ela é mostrada uma vez para você guardar ou enviar ao seu e-mail.</li>
+<li><b>E-mail de recuperação (opcional):</b> fica salvo no seu celular e é usado só para abrir o seu aplicativo de e-mail com a chave já escrita. Quem envia a mensagem é você, pelo seu e-mail.</li>
+<li><b>Biometria (opcional):</b> sua digital ou seu rosto nunca saem do sistema do celular. O app recebe apenas uma confirmação criptográfica de que o desbloqueio foi feito.</li>
+<li><b>Controle de tentativas:</b> o número de PINs errados e o horário do último bloqueio ficam no celular.</li>
+</ul>
+<h3>3.4 Permissões do celular</h3>
+<p>Microfone e câmera são usados somente quando você toca para gravar um áudio, ditar um texto, tirar uma foto ou gravar um vídeo. A galeria é aberta somente quando você escolhe anexar um arquivo.</p>
+<h3>3.5 O que o app não coleta</h3>
+<p>Localização, contatos, histórico de navegação, identificadores de publicidade e estatísticas de uso.</p>
+
+<h2>4. Para que os dados são usados e com qual base legal</h2>
+<ul>
+<li><b>Guardar e mostrar suas notas, pastas, anexos e lembretes:</b> execução do serviço que você pediu (LGPD, art. 7º, V).</li>
+<li><b>Copiar para o seu Google Drive e criar lembretes na sua Google Agenda:</b> seu consentimento, dado ao conectar a conta (art. 7º, I). Você pode retirar a qualquer momento.</li>
+<li><b>Biometria, e-mail de recuperação, microfone e câmera:</b> seu consentimento, pedido no momento do uso (art. 7º, I; e art. 11, I, quando o conteúdo for dado sensível).</li>
+<li><b>Proteger o acesso (PIN, criptografia, limite de tentativas):</b> segurança do próprio titular e legítimo interesse em evitar acessos indevidos (art. 7º, IX), sempre a seu favor.</li>
+</ul>
+
+<h2>5. Com quem os dados são compartilhados</h2>
+<ul>
+<li><b>Google</b> (Google Drive, Google Agenda e login com Google): somente se você conectar sua conta. O app pede acesso apenas aos <b>arquivos que ele mesmo cria</b> no Drive e à <b>agenda que ele mesmo cria</b>, sem ver o restante da sua conta. O uso desses serviços segue os termos e a política de privacidade do Google.</li>
+<li><b>GitHub</b> (GitHub Pages): hospeda os arquivos do aplicativo. Para entregá-los, o GitHub pode registrar dados técnicos de acesso, como endereço IP.</li>
+<li><b>Google Fonts:</b> fornece as fontes de texto do app e também pode registrar dados técnicos de acesso.</li>
+</ul>
+<p>Esses serviços podem guardar dados fora do Brasil (por exemplo, nos Estados Unidos). Essa transferência acontece para cumprir o serviço que você pediu e conforme as garantias desses fornecedores (LGPD, art. 33).</p>
+
+<h2>6. Onde e por quanto tempo os dados ficam</h2>
+<ul>
+<li><b>No celular:</b> criptografados, até você apagar, cancelar a inscrição ou limpar os dados do app.</li>
+<li><b>Lixeira do app:</b> notas apagadas ficam 30 dias e depois são eliminadas.</li>
+<li><b>No seu Google Drive e na sua Google Agenda:</b> até você apagar por lá ou escolher apagar ao cancelar a inscrição.</li>
+<li><b>Backups (.json) que você exportar:</b> ficam sob seu controle, onde você salvar.</li>
+</ul>
+
+<h2>7. Segurança</h2>
+<ul>
+<li>Criptografia AES-256-GCM dos dados guardados no celular (notas, fotos, áudios e vídeos).</li>
+<li>Chave protegida pelo seu PIN (PBKDF2-SHA-256 com 310 mil repetições) e pela chave de recuperação.</li>
+<li>Bloqueio automático ao sair do app, com PIN ou biometria para voltar.</li>
+<li>Limite de tentativas: depois de 5 PINs errados, o app espera cada vez mais (até 1 hora) antes de aceitar outra tentativa.</li>
+<li>Bloqueio de navegadores controlados por automação (robôs).</li>
+<li>Gerente de requisições: limita quantas chamadas ao Google acontecem ao mesmo tempo e por minuto, e repete com espera quando o Google pede.</li>
+<li>Toda comunicação usa conexão segura (HTTPS/TLS).</li>
+</ul>
+<p><b>Importante:</b> por sua escolha, as cópias no Google Drive ficam <b>legíveis na sua conta Google</b>, para você abrir notas, fotos e áudios direto no Drive. Elas são protegidas pela segurança do Google e da sua conta, mas <b>não são criptografadas de ponta a ponta pelo app</b>. Recomendamos ativar a verificação em duas etapas na sua conta Google. Nenhum sistema é totalmente imune a falhas.</p>
+
+<h2>8. Seus direitos (LGPD, art. 18)</h2>
+<ul>
+<li><b>Confirmar e acessar:</b> tudo o que o app guarda aparece nas suas notas, pastas e Ajustes.</li>
+<li><b>Corrigir:</b> edite qualquer nota a qualquer momento.</li>
+<li><b>Eliminar:</b> apague notas (lixeira e "apagar de vez") ou use <b>Cancelar inscrição</b>.</li>
+<li><b>Portabilidade:</b> exporte um backup em Ajustes ou use os arquivos do seu Google Drive.</li>
+<li><b>Revogar o consentimento:</b> saia da conta Google, desative a biometria ou cancele a inscrição. Você também pode remover o acesso do app em <span class="lg-url">myaccount.google.com/permissions</span>.</li>
+<li><b>Informação:</b> esta política descreve com quem os dados são compartilhados e as consequências de não consentir.</li>
+<li><b>Reclamar:</b> você pode peticionar à Autoridade Nacional de Proteção de Dados (ANPD).</li>
+</ul>
+
+<h2>9. Recuperação de acesso</h2>
+<p>Se você esquecer o PIN, a <b>chave de recuperação</b> permite criar um PIN novo. Recomendamos cadastrar um <b>e-mail de recuperação</b> para receber uma cópia dessa chave. <b>Sem o PIN e sem a chave, os dados criptografados no celular não podem ser recuperados por ninguém</b>, nem pelo app. O que já foi copiado para o seu Google Drive volta quando você entra novamente com a mesma conta Google.</p>
+
+<h2>10. Cancelar a inscrição</h2>
+<p>Você pode cancelar a qualquer momento em <b>Ajustes › Privacidade e termos › Cancelar inscrição</b>. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e desconecta sua conta Google. A partir daí o app não envia notificações nem mensagens ao e-mail cadastrado. Você pode escolher apagar também a pasta no Drive e a agenda de lembretes. <b>O cancelamento não pode ser desfeito e não há como recuperar a senha depois dele.</b></p>
+
+<h2>11. Crianças e adolescentes</h2>
+<p>O app não é direcionado a menores de 18 anos sem a autorização e o acompanhamento de um responsável legal (LGPD, art. 14).</p>
+
+<h2>12. Incidentes de segurança</h2>
+<p>Se identificarmos uma falha no aplicativo que possa afetar seus dados, publicaremos a correção e avisaremos em <b>Ajustes › Sobre › Novidades</b>, além de comunicar a ANPD e os titulares quando a lei exigir (art. 48). Incidentes nos serviços do Google ou do GitHub seguem as regras desses fornecedores.</p>
+
+<h2>13. Mudanças nesta política</h2>
+<p>Quando esta política mudar de forma relevante, o app mostrará a nova versão e pedirá seu aceite antes de continuar.</p>
+</template>
+<template id="tplRecovery">
+<h2>Como funciona a proteção</h2>
+<p>O <b>PIN</b> abre o app e destrava a chave que criptografa os dados guardados neste celular. Sem ele, as notas, fotos e áudios do celular ficam ilegíveis.</p>
+
+<h2>Chave de recuperação</h2>
+<p>Quando você cria o PIN, o app mostra uma <b>chave de recuperação</b> com 20 letras e números. Ela é a única forma de criar um PIN novo se você esquecer o atual. O app não guarda essa chave: anote, salve num lugar seguro ou envie para o seu e-mail.</p>
+
+<h2>E-mail de recuperação</h2>
+<p>Ao cadastrar um e-mail de recuperação, o app abre o seu Gmail com uma mensagem pronta contendo a chave. <b>Você só precisa tocar em Enviar.</b> Se um dia esquecer o PIN, procure esse e-mail e digite a chave em "Esqueci o PIN".</p>
+<p><b>Você precisa cadastrar o e-mail de recuperação (ou guardar a chave) para conseguir recuperar o acesso.</b> Se perder o PIN sem ter feito isso, não há como recuperar o que está guardado só neste celular.</p>
+
+<h2>E o que está no Google Drive?</h2>
+<p>O que já foi copiado para o seu Google Drive volta quando você entra novamente com a mesma conta Google, mesmo que o PIN tenha sido perdido. Só se perde o que ainda não tinha sido enviado.</p>
+
+<h2>Cancelar a inscrição</h2>
+<p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
+</template>
+<template id="tplNews"><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -344,6 +593,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
       <div class="emeta">
         <button id="folderBtn"><span data-i="folder"></span><span id="folderName">Sem pasta</span></button>
         <button id="doneBtn" class="donechip" aria-pressed="false"></button>
+        <button id="remBtn" class="remchip" aria-pressed="false"><span data-i="bell"></span><span id="remTxt">Lembrete</span></button>
         <span id="edTime"></span>
       </div>
       <div class="paper" id="paper">
@@ -449,6 +699,15 @@ const ICONS = {
   stop:'<rect x="6" y="6" width="12" height="12" rx="2.5" fill="currentColor"/>',
   drive:'<path d="M8.6 3.5h6.8l6 10.4-3.4 5.9H6l-3.4-5.9z"/><path d="M8.6 3.5l6 10.4h6.8M2.6 13.9L8.6 3.5M6 19.8l3.4-5.9"/>',
   wave:'<path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 10.5v3"/>',
+  lock:'<rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/>',
+  key:'<circle cx="7.5" cy="15.5" r="4"/><path d="M10.4 12.6L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/>',
+  shield:'<path d="M12 3l8 3v5.5c0 4.6-3.3 8.4-8 9.5-4.7-1.1-8-4.9-8-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+  finger:'<path d="M12 11.5v4M8.6 10a3.4 3.4 0 0 1 6.8 0v5.2a6 6 0 0 1-1.1 3.4M5.6 15.5V10a6.4 6.4 0 0 1 11.8-3.4M18.4 10.5v3.8M9.2 20.6A8.6 8.6 0 0 1 8.6 17.4V12.5"/>',
+  backspace:'<path d="M9 5h11a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H9l-6-7z"/><path d="M12.5 9.5l5 5M17.5 9.5l-5 5"/>',
+  bell:'<path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/>',
+  user:'<circle cx="12" cy="8" r="4"/><path d="M4 20.5a8 8 0 0 1 16 0"/>',
+  info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',
   google:'<path d="M21.6 12.2c0-.7-.1-1.3-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z" fill="#4285F4" stroke="none"/><path d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z" fill="#34A853" stroke="none"/><path d="M6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2z" fill="#FBBC05" stroke="none"/><path d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.4 10c.8-2.3 3-4.1 5.6-4.1z" fill="#EA4335" stroke="none"/>'
 };
 const svg = (k) => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]||''}</svg>`;
@@ -490,10 +749,15 @@ const uid = () => Date.now().toString(36)+Math.random().toString(36).slice(2,8);
 const now = () => Date.now();
 const SPECIAL=['all','none','recent','pending','done','trash'];
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
+const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
+const APP_VERSION='1.1.0', TERMS_VERSION='2026-11-05';
+const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
+const sleep = ms => new Promise(r=>setTimeout(r,ms));
 const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 let cfg = Object.assign({theme:'system',clientId:'',linked:false,email:'',name:'',fileId:'',folderId:'',lastSync:0,guest:false,recents:[]}, LS.get('ne.cfg',{}));
-let db = LS.get('ne.db', null);
+let db = {rev:1,dirty:false,folders:[],notes:[]}; // as notas de verdade são carregadas no início, depois do PIN
+let appReady=false;
 const saveCfg = () => LS.set('ne.cfg', cfg);
 const clientId = () => GOOGLE_CLIENT_ID || cfg.clientId;
 
@@ -511,11 +775,20 @@ function seed(){
       {id:uid(),example:true,folderId:f1,title:'Assinar contrato de experiência (exemplo)',font:'sans',size:17,pinned:false,done:true,doneAt:t-86400e3,createdAt:t-2*86400e3,updatedAt:t-2*86400e3,
        html:'<p>Assinado no RH. Guardar a cópia junto com os documentos.</p>'}
     ]};
-  persist();
 }
-if(!db || !Array.isArray(db.notes)) seed();
 
-function persist(){ if(!LS.set('ne.db', db)) toast('Não consegui salvar no aparelho. Libere espaço no navegador.'); }
+/* Salvar no aparelho: com PIN criado, tudo vai criptografado (AES-256-GCM) para o IndexedDB. */
+let pWriting=false, pAgain=false;
+function persist(){
+  if(!appReady) return;
+  if(Vault.unlocked()){
+    if(pWriting){ pAgain=true; return; }
+    pWriting=true;
+    (async()=>{ try{ do{ pAgain=false; await IDB.rawPut(DB_KEY, await encObj(db)); }while(pAgain); }catch(e){ toast('Não consegui salvar no aparelho. Libere espaço no celular.'); } pWriting=false; })();
+    return;
+  }
+  if(!LS.set('ne.db', db)) toast('Não consegui salvar no aparelho. Libere espaço no navegador.');
+}
 function dropUntouchedExamples(){
   // Notas de exemplo nunca editadas não vão para o Drive do usuário; pastas de exemplo vazias também saem.
   db.notes=db.notes.filter(n=>!(n.example && n.updatedAt===n.createdAt));
@@ -606,7 +879,7 @@ function hl(text, q, around){
 function ckProgress(html){ const h=String(html||''); const all=(h.match(/<li[^>]*data-done=/g)||[]).length; return all?{done:(h.match(/data-done="1"/g)||[]).length,all}:null; }
 function noteCard(n,q){
   const body=txt(n.html), fname=n.folderId&&folderById(n.folderId)?.name, inTrash=!!n.trashed;
-  const title=n.title||body.split('\n')[0]||'Sem título', pr=ckProgress(n.html), picked=sel.ids.has(n.id), k=(n.attachments||[]).length;
+  const title=n.title||body.split('\n')[0]||'Sem título', pr=ckProgress(n.html), picked=sel.ids.has(n.id), k=(n.attachments||[]).length, rm=remInfo(n);
   let when;
   if(inTrash) when='Na lixeira desde '+fmtTime(n.trashedAt||n.updatedAt).toLowerCase();
   else if(cur.folder==='recent'&&!q) when='Criada '+fmtTime(n.createdAt).toLowerCase();
@@ -618,7 +891,7 @@ function noteCard(n,q){
   return `<div class="note${n.done?' done':''}${picked?' sel':''}${inTrash?' trash':''}" data-id="${n.id}" role="button" tabindex="0" aria-current="${n.id===cur.noteId}">${chk}
     <div class="nbody"><h3>${n.pinned&&!inTrash?svg('pin'):''}<span>${hl(title,q)}</span></h3>
     <p>${hl(body.replace(/\n+/g,' · '),q,true)||'<i>Nota vazia</i>'}</p>
-    <div class="meta">${k?`<span class="clip">${svg('clip')}${k}</span>`:''}${pr?`<span class="prog${pr.done===pr.all?' full':''}">${svg('checklist')}${pr.done}/${pr.all}</span>`:''}<span>${when}</span>${n.done&&!inTrash&&(cur.folder!=='done'||q)?'<span class="tag ok">Concluída</span>':''}${showFolder&&fname?`<span class="tag">${esc(fname)}</span>`:''}</div></div></div>`;
+    <div class="meta">${k?`<span class="clip">${svg('clip')}${k}</span>`:''}${pr?`<span class="prog${pr.done===pr.all?' full':''}">${svg('checklist')}${pr.done}/${pr.all}</span>`:''}${rm&&!n.done&&!inTrash?`<span class="rem${rm.late?' late':''}">${svg('bell')}${rm.txt}</span>`:''}<span>${when}</span>${n.done&&!inTrash&&(cur.folder!=='done'||q)?'<span class="tag ok">Concluída</span>':''}${showFolder&&fname?`<span class="tag">${esc(fname)}</span>`:''}</div></div></div>`;
 }
 function renderList(){
   const list=visible(), q=cur.q.trim();
@@ -774,7 +1047,7 @@ function openNote(id, opts={}){
   ed.style.fontFamily=(FONTS[n.font]||FONTS.sans).css;
   ed.style.fontSize=(n.size||17)+'px';
   $('#folderName').textContent=folderById(n.folderId)?.name||'Sem pasta';
-  renderDoneChip(n);
+  renderDoneChip(n); renderRemChip(n);
   $('#app').classList.add('show-editor');
   if(innerWidth<900) guardPush();
   $('#paper').scrollTop=0;
@@ -963,7 +1236,7 @@ $('#micBtn').onclick=()=>{
    Enquanto houver algo aberto (nota, folha, foto, seleção), fica uma entrada extra no histórico:
    o Voltar fecha o que está por cima em vez de sair do app. */
 let ignorePop=false;
-function anyOverlay(){ return !$('#viewer').hidden || !$('#sheet').hidden || sel.on || (!!cur.noteId && innerWidth<900); }
+function anyOverlay(){ return !$('#reader').hidden || !$('#viewer').hidden || !$('#sheet').hidden || sel.on || (!!cur.noteId && innerWidth<900); }
 function guardPush(){ if(!(history.state&&history.state.ne==='guard')){ try{ history.pushState({ne:'guard'},''); }catch(e){} } }
 function guardCheck(){ setTimeout(()=>{ if(!anyOverlay() && history.state&&history.state.ne==='guard'){ ignorePop=true; try{ history.back(); }catch(e){ ignorePop=false; } } },0); }
 
@@ -1039,7 +1312,7 @@ $('#fontBtn').onclick=()=>{ const s=document.getSelection(); if(s.rangeCount&&ed
 
 /* compartilhar / exportar */
 async function shareText(title,text){
-  if(navigator.share){ try{ await navigator.share({title,text}); return; }catch(e){ if(e.name==='AbortError') return; } }
+  if(navigator.share){ try{ await nshare({title,text}); return; }catch(e){ if(e.name==='AbortError') return; } }
   try{ await navigator.clipboard.writeText(text); toast('Texto copiado. Cole no WhatsApp, e-mail ou onde quiser.'); }
   catch(e){ toast('Não consegui compartilhar daqui. Selecione o texto e copie manualmente.'); }
 }
@@ -1074,7 +1347,7 @@ $('#folderBtn').onclick=moveNote;
 /* ---------- Google Drive ---------- */
 const FILE_NAME='Não Esquece - dados do app (não apague).json', DIR_NAME='Não Esquece';
 const FOLDER_MIME='application/vnd.google-apps.folder', NONE_DIR='Sem pasta', TRASH_DIR='Lixeira';
-const SCOPE='https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile';
+const SCOPE='https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/calendar.app.created https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile';
 function loadGIS(){
   return new Promise((res,rej)=>{
     if(window.google?.accounts?.oauth2) return res();
@@ -1091,6 +1364,7 @@ function revokeToken(tk){ try{ fetch('https://oauth2.googleapis.com/revoke?token
 async function acceptToken(tk, expiresIn, scopeStr){
   if(!tk) return false;
   if(scopeStr && !String(scopeStr).includes('https://www.googleapis.com/auth/drive.file')){ revokeToken(tk); toast('Para salvar no Drive, marque a permissão do Google Drive ao entrar.'); logErr('Permissão do Drive não marcada'); return false; }
+  if(scopeStr) cfg.calOk=String(scopeStr).includes('calendar.app.created');
   const exp=now()+((+expiresIn||3600)-90)*1000;
   let u=null; try{ const ur=await fetch('https://www.googleapis.com/oauth2/v3/userinfo',{headers:{Authorization:'Bearer '+tk}}); if(ur.ok) u=await ur.json(); }catch(e){}
   if(cfg.email && u?.email && u.email!==cfg.email){
@@ -1110,8 +1384,9 @@ function useRedirect(){
   try{ if(localStorage.getItem('ne.forceRedirect')) return true; }catch(e){}
   try{ return matchMedia('(display-mode: standalone)').matches||matchMedia('(display-mode: fullscreen)').matches||matchMedia('(display-mode: minimal-ui)').matches||navigator.standalone===true; }catch(e){ return false; }
 }
-function startRedirectLogin(prompt){
+async function startRedirectLogin(prompt){
   flushEdit(); saveSessionPos();
+  try{ if(Vault.unlocked()) await handoffSave(); }catch(e){}
   const st=uid()+uid();
   LS.set('ne.oauth',{state:st,at:now(),note:cur.noteId||null,silent:prompt==='none'});
   const p=new URLSearchParams({client_id:clientId(),redirect_uri:REDIRECT_URI,response_type:'token',scope:SCOPE,include_granted_scopes:'true',state:st});
@@ -1165,15 +1440,49 @@ async function googleLogin(firstTime){
     tokenClient.requestAccessToken({prompt: firstTime?'consent':''});
   });
 }
+/* ---------- gerente de requisições ----------
+   Toda chamada ao Google passa por aqui: no máximo 3 ao mesmo tempo e 120 por minuto,
+   pedidos iguais em andamento viram um só, e quando o Google pede para esperar (429/5xx) o app espera e tenta de novo. */
+const RQ={max:3,perMin:120,active:0,q:[],stamps:[],total:0,retries:0,waits:0};
+let rqTimer=0;
+function rqTake(){ return new Promise(res=>{ RQ.q.push(res); rqPump(); }); }
+function rqPump(){
+  while(RQ.active<RQ.max&&RQ.q.length){
+    const t=now(); RQ.stamps=RQ.stamps.filter(x=>t-x<60000);
+    if(RQ.stamps.length>=RQ.perMin){ RQ.waits++; clearTimeout(rqTimer); rqTimer=setTimeout(rqPump,60000-(t-RQ.stamps[0])+30); return; }
+    RQ.active++; RQ.total++; RQ.stamps.push(t); RQ.q.shift()();
+  }
+}
+function rqDone(){ RQ.active=Math.max(0,RQ.active-1); rqPump(); }
+const inflight=new Map();
 async function api(url,opt={},ms=30000){
-  opt.headers=Object.assign({},opt.headers,{Authorization:'Bearer '+token});
-  const ac=new AbortController(), t=setTimeout(()=>ac.abort(),ms); let r;
-  try{ r=await fetch(url,{...opt,signal:ac.signal}); }
-  catch(e){ throw new Error(e.name==='AbortError'?'timeout':'net'); }
-  finally{ clearTimeout(t); }
-  if(r.status===401){ token=null; tokenExp=0; throw new Error('auth'); }
-  if(!r.ok) throw new Error('http '+r.status);
-  return r;
+  const method=(opt.method||'GET').toUpperCase();
+  if(method==='GET'&&!opt.body){
+    let p=inflight.get(url);
+    if(!p){ p=apiRun(url,opt,ms,method).finally(()=>inflight.delete(url)); inflight.set(url,p); }
+    return (await p).clone();
+  }
+  return apiRun(url,opt,ms,method);
+}
+async function apiRun(url,opt,ms,method){
+  for(let attempt=0;;attempt++){
+    await rqTake();
+    let r=null, err='';
+    const ac=new AbortController(), t=setTimeout(()=>ac.abort(),ms);
+    try{ r=await fetch(url,{...opt,headers:Object.assign({},opt.headers,{Authorization:'Bearer '+token}),signal:ac.signal}); }
+    catch(e){ err=e.name==='AbortError'?'timeout':'net'; }
+    finally{ clearTimeout(t); rqDone(); }
+    if(r&&r.status===401){ token=null; tokenExp=0; throw new Error('auth'); }
+    let limited=!!r&&[429,500,502,503,504].includes(r.status);
+    if(r&&r.status===403){ try{ limited=/rateLimitExceeded|userRateLimitExceeded/.test(await r.clone().text()); }catch(e){} }
+    if(attempt<4 && navigator.onLine && (limited || (!r && method!=='POST'))){
+      RQ.retries++; const ra=r?parseFloat(r.headers.get('Retry-After')):NaN;
+      await sleep(isFinite(ra)?Math.min(60,ra)*1000:Math.min(30000,700*2**attempt)+Math.random()*500); continue;
+    }
+    if(!r) throw new Error(err);
+    if(!r.ok) throw new Error('http '+r.status);
+    return r;
+  }
 }
 const DRIVE='https://www.googleapis.com/drive/v3/files', UP='https://www.googleapis.com/upload/drive/v3/files';
 async function ensureDir(){
@@ -1292,6 +1601,7 @@ function merge(local, remote){
     if(!okId(w.dirId)&&okId(l.dirId)){ C(); for(const k of ['dirId','txtId','dirName','dirParent','mirroredAt']) if(l[k]!=null) c[k]=l[k]; }
     else if(okId(w.dirId)&&w.dirId===l.dirId){ if(!okId(w.txtId)&&okId(l.txtId)) C().txtId=l.txtId; if((l.mirroredAt||0)>(w.mirroredAt||0)) C().mirroredAt=l.mirroredAt; }
     if(!okId(w.driveId)&&okId(l.driveId)){ C(); c.driveId=l.driveId; c.driveName=l.driveName; }
+    if(!okId(w.calEvId)&&okId(l.calEvId)&&w.calEvId!==''){ C(); c.calEvId=l.calEvId; c.calSyncedAt=l.calSyncedAt; }
     if(Array.isArray(w.attachments)&&Array.isArray(l.attachments)){ const ids=new Map(l.attachments.filter(a=>okId(a.driveId)).map(a=>[a.id,a.driveId]));
       if(w.attachments.some(a=>!a.driveId&&ids.has(a.id))) C().attachments=w.attachments.map(a=>!a.driveId&&ids.has(a.id)?{...a,driveId:ids.get(a.id)}:a); }
     return c||w; };
@@ -1306,13 +1616,17 @@ function merge(local, remote){
     for(const k of ['dirName','driveName']) if(k in c) c[k]=String(c[k]).slice(0,200);
     for(const k of ['mirroredAt','doneAt','trashedAt','createdAt']) if(k in c) c[k]=+c[k]||0;
     for(const k of ['done','trashed','pinned']) if(k in c) c[k]=c[k]===true;
+    if('calEvId' in c && c.calEvId!=='' && !okId(c.calEvId)) delete c.calEvId;
+    if('remindAt' in c && !/^\d{4}-\d\d-\d\dT\d\d:\d\d(:\d\d)?$/.test(String(c.remindAt))) delete c.remindAt;
+    if('remindBefore' in c) c.remindBefore=Math.max(0,Math.min(40320,+c.remindBefore||0));
+    if('calSyncedAt' in c) c.calSyncedAt=+c.calSyncedAt||0;
     return c; };
   if(remote){ remote={folders:(Array.isArray(remote.folders)?remote.folders:[]).map(fromOutside).filter(Boolean),notes:(Array.isArray(remote.notes)?remote.notes:[]).map(fromOutside).filter(Boolean)}; }
   return { folders:clean(pick(local.folders,remote?.folders)), notes:clean(pick(local.notes.filter(n=>!n._fresh||n.title||n.html),remote?.notes)) };
 }
 function scheduleSync(){ clearTimeout(syncTimer); syncTimer=setTimeout(()=>syncNow(false),4000); }
 async function syncNow(manual){
-  if(syncing) return;
+  if(syncing||!appReady) return;
   if(uploading&&!manual){ scheduleSync(); return; }
   if(!cfg.linked){ if(manual) openSettings(); return; }
   if(!navigator.onLine){ if(manual) toast('Sem internet. As notas estão salvas no aparelho e vão para o Drive quando a conexão voltar.'); renderStatus(); return; }
@@ -1322,9 +1636,12 @@ async function syncNow(manual){
     await deletePendingMedia();
     const id=await findFile(); let remote=null;
     if(id){ try{ remote=await (await api(`${DRIVE}/${id}?alt=media`)).json(); }catch(e){ if(e.message==='auth') throw e; remote=null; } }
+    const rmeta=(remote&&remote.meta&&typeof remote.meta==='object')?remote.meta:{};
+    if(!okCal(cfg.calendarId)&&okCal(rmeta.calendarId)){ cfg.calendarId=rmeta.calendarId; saveCfg(); }
     const rev=db.rev, m=merge(db,remote);
     try{ await mirrorDrive(m); }catch(e){ if(e.message==='auth') throw e; logErr('Pastas no Drive: '+e.message); }
-    const body=JSON.stringify({app:'nao-esquece',versao:1,salvoEm:new Date().toISOString(),conta:cfg.email,folders:m.folders,notes:m.notes},(k,v)=>k==='up'?undefined:v);
+    try{ await mirrorCalendar(m); }catch(e){ if(e.message==='auth') throw e; logErr('Agenda: '+e.message); }
+    const body=JSON.stringify({app:'nao-esquece',versao:2,salvoEm:new Date().toISOString(),conta:cfg.email,meta:{calendarId:okCal(cfg.calendarId)?cfg.calendarId:undefined},folders:m.folders,notes:m.notes},(k,v)=>k==='up'?undefined:v);
     if(id) await api(`${UP}/${id}?uploadType=media`,{method:'PATCH',headers:{'Content-Type':'application/json'},body});
     else { const dir=await ensureDir(); const fd=new FormData();
       fd.append('metadata',new Blob([JSON.stringify({name:FILE_NAME,mimeType:'application/json',parents:[dir]})],{type:'application/json'}));
@@ -1376,10 +1693,25 @@ function openSettings(){
         ${GOOGLE_CLIENT_ID?'':`<input class="field" id="cid" placeholder="ID do cliente OAuth (…apps.googleusercontent.com)" value="${esc(cfg.clientId)}" autocomplete="off">`}
         <div class="btns"><button class="btn pri" id="sIn">Entrar com Google</button></div>`}
     </div>
-    <div class="blk"><div class="lbl">Cópia de segurança</div>
-      <button class="row" id="bDown"><span data-i="download"></span><span class="grow">Baixar backup (.json)</span></button>
+    <div class="blk"><div class="lbl">Segurança</div>
+      ${Vault.exists()?`<button class="row" id="sPin"><span data-i="lock"></span><span class="grow">Trocar PIN</span></button>
+      ${bioAvail?`<button class="row" id="sBio"><span data-i="finger"></span><span class="grow">${Vault.meta.bio?'Desativar digital ou rosto':'Usar digital ou rosto para desbloquear'}</span></button>`:''}
+      <div class="row static" style="display:block"><div style="display:flex;gap:12px;align-items:center"><span data-i="clock"></span><span class="grow">Pedir o PIN quando voltar ao app</span></div>
+        <div class="seg" id="laSeg">${LOCK_OPTS.map(([v,l])=>`<button data-la="${v}" aria-pressed="${(cfg.lockAfter??30)===v}">${l}</button>`).join('')}</div></div>
+      <button class="row" id="sRec"><span data-i="key"></span><span class="grow">Chave e e-mail de recuperação<small>${Vault.meta.recEmail?'E-mail: '+esc(maskEmail(Vault.meta.recEmail)):'<b style="color:var(--danger)">Nenhum e-mail de recuperação cadastrado</b>'}</small></span></button>`
+      :`<button class="row" id="sSetup"><span data-i="lock"></span><span class="grow">Criar PIN e proteger as notas</span></button>`}
+      <button class="row" id="sProt"><span data-i="shield"></span><span class="grow">Proteções ativas<small>Criptografia, tentativas, robôs e requisições</small></span></button>
+    </div>
+    <div class="blk"><div class="lbl">Privacidade e termos</div>
+      <button class="row" id="sTerms"><span data-i="note"></span><span class="grow">Termos de Uso</span></button>
+      <button class="row" id="sPriv"><span data-i="shield"></span><span class="grow">Política de Privacidade (LGPD)<small>${cfg.terms?'Aceita em '+fmtFull(cfg.terms.at):''}</small></span></button>
+      <button class="row" id="bDown"><span data-i="download"></span><span class="grow">Exportar meus dados (backup .json)</span></button>
       <label class="row" for="bFile" style="cursor:pointer"><span data-i="upload"></span><span class="grow">Importar backup</span></label>
       <input type="file" id="bFile" accept="application/json,.json" hidden>
+      <button class="row danger" id="sCancel"><span data-i="trash"></span><span class="grow">Cancelar inscrição<small>Apaga PIN, chave, e-mail de recuperação e os dados deste celular</small></span></button>
+    </div>
+    <div class="blk"><div class="lbl">Sobre</div>
+      <button class="row" id="sNews"><span data-i="info"></span><span class="grow">Não Esquece · versão ${APP_VERSION}<small>Ver as novidades de cada versão</small></span></button>
     </div>`,
   s=>{
     s.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ cfg.theme=b.dataset.t; saveCfg(); applyTheme(); s.querySelectorAll('[data-t]').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
@@ -1388,6 +1720,17 @@ function openSettings(){
     const sD=s.querySelector('#sDrive'); if(sD) sD.onclick=()=>{ closeSheet(); openDrive(cfg.folderId); };
     const sSync=s.querySelector('#sSync'); if(sSync) sSync.onclick=()=>{ closeSheet(); syncNow(true); };
     const so=s.querySelector('#sOut2'); if(so) so.onclick=()=>{ closeSheet(); signOutFlow(); };
+    const q=id=>s.querySelector(id);
+    if(q('#sPin')) q('#sPin').onclick=changePin;
+    if(q('#sBio')) q('#sBio').onclick=toggleBio;
+    if(q('#sSetup')) q('#sSetup').onclick=()=>{ closeSheet(); setupFlow(); };
+    s.querySelectorAll('[data-la]').forEach(b=>b.onclick=()=>{ cfg.lockAfter=+b.dataset.la; saveCfg(); s.querySelectorAll('[data-la]').forEach(x=>x.setAttribute('aria-pressed',x===b)); toast('O PIN será pedido '+(cfg.lockAfter?'depois de '+LOCK_OPTS.find(x=>x[0]===cfg.lockAfter)[1]+' fora do app':'sempre que você sair do app')); });
+    if(q('#sRec')) q('#sRec').onclick=recoverySheet;
+    q('#sProt').onclick=protSheet;
+    q('#sTerms').onclick=()=>openReader('Termos de Uso','tplTerms');
+    q('#sPriv').onclick=()=>openReader('Política de Privacidade','tplPrivacy');
+    q('#sCancel').onclick=cancelFlow;
+    q('#sNews').onclick=()=>openReader('Novidades','tplNews');
     s.querySelector('#bDown').onclick=()=>download('nao-esquece-backup.json',JSON.stringify({app:'nao-esquece',folders:db.folders,notes:db.notes},null,1),'application/json');
     s.querySelector('#bFile').onchange=e=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader();
       r.onload=()=>{ try{ const j=JSON.parse(r.result); if(!Array.isArray(j.notes)) throw 0; const m=merge(db,j); db.folders=m.folders; db.notes=m.notes; changed(); render(); closeSheet(); toast('Backup importado'); }catch(err){ toast('Esse arquivo não é um backup do Não Esquece.'); } };
@@ -1406,7 +1749,7 @@ async function signOutFlow(){
       if(token) revokeToken(token);
       token=null; tokenExp=0; stopMic(); if(cur.noteId){ cur.noteId=null; $('#app').classList.remove('show-editor'); $('#edWrap').hidden=true; $('#noed').hidden=false; }
       endSession();
-      try{ (await IDB.open()); await IDB.op('readwrite',st=>st.clear()); }catch(e){}
+      try{ await IDB.op('readwrite',st=>{ const r=st.getAllKeys(); r.onsuccess=()=>r.result.forEach(k=>{ if(k!=='__bio__') st.delete(k); }); return r; }); }catch(e){}
       for(const u of urlCache.values()) URL.revokeObjectURL(u); urlCache.clear();
       db={rev:1,dirty:false,folders:[],notes:[]}; persist();
       Object.assign(cfg,{linked:false,email:'',name:'',fileId:'',folderId:'',noneDirId:'',trashDirId:'',lastSync:0,pendingDel:[],recents:[],lastErr:null,silentFailAt:0}); saveCfg();
@@ -1424,10 +1767,11 @@ function showGate(){
 }
 $('#gLogin').onclick=async()=>{
   if(!clientId()){ toast('Falta configurar o ID do cliente do Google.'); return; }
-  if(await googleLogin(true)){ $('#gate').hidden=true; toast('Bem-vindo! Suas notas serão salvas no Drive.'); checkRecovery(); }
+  if(automated()){ toast('Bloqueado: navegador controlado por automação.'); return; }
+  if(await googleLogin(true)){ $('#gate').hidden=true; toast('Bem-vindo! Suas notas serão salvas no Drive.'); afterLogin(null); }
   else loginFailed();
 };
-$('#gSkip').onclick=()=>{ cfg.guest=true; saveCfg(); $('#gate').hidden=true; checkRecovery(); };
+$('#gSkip').onclick=()=>{ cfg.guest=true; saveCfg(); $('#gate').hidden=true; afterLogin(null); };
 
 /* ---------- eventos da lista ---------- */
 document.addEventListener('click',e=>{
@@ -1446,7 +1790,9 @@ $('#backBtn').onclick=()=>closeEditor();
 /* botão Voltar do Android: fecha o que estiver aberto antes de sair do app */
 window.addEventListener('popstate',()=>{
   if(ignorePop){ ignorePop=false; return; }
-  if(!$('#viewer').hidden) closeViewer();
+  if(!$('#reader').hidden){ $('#reader').hidden=true; }
+  else if(locked||secOpen){ guardPush(); return; }
+  else if(!$('#viewer').hidden) closeViewer();
   else if(!$('#sheet').hidden) closeSheet();
   else if(sel.on) endSelect(true);
   else if(cur.noteId&&innerWidth<900) closeEditor(true);
@@ -1457,11 +1803,13 @@ window.addEventListener('popstate',()=>{
 /* ---------- nota em edição: salvar ao fechar e retomar ---------- */
 const SKEY='ne.session';
 function startSession(n, resume){
-  const s=LS.get(SKEY,null); if(resume && s && s.noteId===n.id) return;
-  LS.set(SKEY,{noteId:n.id,wasFresh:!!n._fresh,caret:0,scroll:0,inTitle:false,
+  const s=sessGet(); if(resume && s && s.noteId===n.id) return;
+  sessSet({noteId:n.id,wasFresh:!!n._fresh,caret:0,scroll:0,inTitle:false,
     original:{title:n.title,html:n.html,font:n.font,size:n.size,folderId:n.folderId,attachments:JSON.parse(JSON.stringify(n.attachments||[]))}});
 }
-function endSession(){ try{ localStorage.removeItem(SKEY); }catch(e){} }
+function sessGet(){ return db._session||null; }
+function sessSet(v){ if(v) db._session=v; else delete db._session; persist(); }
+function endSession(){ if(db._session) sessSet(null); }
 function caretOffset(){
   const r=savedRange; if(!r||!ed.contains(r.startContainer)) return 0;
   const pre=document.createRange(); pre.selectNodeContents(ed); pre.setEnd(r.startContainer,r.startOffset); return pre.toString().length;
@@ -1473,15 +1821,15 @@ function setCaret(off){
   const sel=document.getSelection(); sel.removeAllRanges(); sel.addRange(r); savedRange=r.cloneRange();
 }
 function saveSessionPos(){
-  const s=LS.get(SKEY,null); if(!s||s.noteId!==cur.noteId) return;
-  s.caret=caretOffset(); s.scroll=$('#paper').scrollTop; s.inTitle=document.activeElement===titleIn; LS.set(SKEY,s);
+  const s=sessGet(); if(!s||s.noteId!==cur.noteId) return;
+  s.caret=caretOffset(); s.scroll=$('#paper').scrollTop; s.inTitle=document.activeElement===titleIn; sessSet(s);
 }
 let posTimer=null; function saveSessionPosSoon(){ clearTimeout(posTimer); posTimer=setTimeout(saveSessionPos,600); }
 document.addEventListener('selectionchange',()=>{ if(cur.noteId) saveSessionPosSoon(); });
 $('#paper').addEventListener('scroll',()=>{ if(cur.noteId) saveSessionPosSoon(); },{passive:true});
 
 function checkRecovery(){
-  const s=LS.get(SKEY,null); if(!s) return;
+  const s=sessGet(); if(!s) return;
   const n=noteById(s.noteId); if(!n){ endSession(); return; }
   const has=(n.title||'').trim()||txt(n.html)||(n.attachments||[]).length;
   if(!has){ if(n._fresh){ db.notes=db.notes.filter(x=>x.id!==n.id); persist(); render(); } endSession(); return; }
@@ -1510,7 +1858,10 @@ function checkRecovery(){
 const IDB={ d:null,
   open(){ if(this.d) return Promise.resolve(this.d); return new Promise((res,rej)=>{ const r=indexedDB.open('nao-esquece',1); r.onupgradeneeded=()=>r.result.createObjectStore('files'); r.onsuccess=()=>{ this.d=r.result; res(this.d); }; r.onerror=()=>rej(r.error); }); },
   async op(mode,fn){ const d=await this.open(); return new Promise((res,rej)=>{ const tx=d.transaction('files',mode); const rq=fn(tx.objectStore('files')); tx.oncomplete=()=>res(rq?rq.result:undefined); tx.onerror=()=>rej(tx.error); tx.onabort=()=>rej(tx.error); }); },
-  get(k){ return this.op('readonly',st=>st.get(k)); }, put(k,v){ return this.op('readwrite',st=>st.put(v,k)); }, del(k){ return this.op('readwrite',st=>st.delete(k)); }
+  rawGet(k){ return this.op('readonly',st=>st.get(k)); }, rawPut(k,v){ return this.op('readwrite',st=>st.put(v,k)); }, del(k){ return this.op('readwrite',st=>st.delete(k)); },
+  // anexos: com o PIN criado, ficam criptografados no aparelho
+  async get(k){ const v=await this.rawGet(k); if(v&&v.enc===2){ if(!Vault.dek) return null; const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:v.iv},Vault.dek,v.ct); return new Blob([pt],{type:v.type||''}); } return v; },
+  async put(k,b){ if(Vault.dek && b instanceof Blob){ const iv=rnd(12); const ct=await crypto.subtle.encrypt({name:'AES-GCM',iv},Vault.dek,await b.arrayBuffer()); return this.rawPut(k,{enc:2,iv,ct,type:b.type}); } return this.rawPut(k,b); }
 };
 const urlCache=new Map(), fetching=new Set();
 async function attURL(a){ if(urlCache.has(a.id)) return urlCache.get(a.id); const b=await IDB.get(a.id).catch(()=>null); if(!b) return null; const u=URL.createObjectURL(b); urlCache.set(a.id,u); return u; }
@@ -1651,7 +2002,7 @@ function audioMenu(id){
 async function shareAtt(a){
   const b=await IDB.get(a.id).catch(()=>null); if(!b){ toast('Este anexo ainda não foi baixado neste aparelho.'); return; }
   const file=new File([b],a.name,{type:a.type});
-  if(navigator.canShare&&navigator.canShare({files:[file]})){ try{ await navigator.share({files:[file]}); }catch(e){} } else download(a.name,b,a.type);
+  if(navigator.canShare&&navigator.canShare({files:[file]})){ try{ await nshare({files:[file]}); }catch(e){} } else download(a.name,b,a.type);
 }
 function removeAtt(n,a){
   confirmSheet({title:'Remover anexo?',sub:'Ele sai desta nota e também do seu Google Drive.',ok:'Remover',onOk:()=>{
@@ -1677,7 +2028,8 @@ const CHUNK=8*1024*1024; // múltiplo de 256 KB, exigência do Drive
 let uploading=false, upProg=null, mediaFailShown=false;
 function pendingMedia(){ let c=0; for(const n of keptNotes()) for(const a of (n.attachments||[])) if(!a.driveId) c++; return c; }
 function liveAtt(noteId,attId){ const n=noteById(noteId); return n&&(n.attachments||[]).find(x=>x.id===attId)?{n,a:n.attachments.find(x=>x.id===attId)}:null; }
-function xhr(method,url,headers,body,onProg,stallMs=60000){
+async function xhr(...a){ await rqTake(); try{ return await xhr0(...a); } finally{ rqDone(); } }
+function xhr0(method,url,headers,body,onProg,stallMs=60000){
   return new Promise((res,rej)=>{
     const x=new XMLHttpRequest(); x.open(method,url);
     for(const k in headers) x.setRequestHeader(k,headers[k]);
@@ -1729,7 +2081,7 @@ async function deletePendingMedia(){
   }
 }
 async function uploadMedia(){
-  if(uploading||syncing||!cfg.linked||!navigator.onLine||!hasToken()||!pendingMedia()) return;
+  if(!appReady||uploading||syncing||!cfg.linked||!navigator.onLine||!hasToken()||!pendingMedia()) return;
   uploading=true; let done=0;
   try{
     const queue=[]; for(const n of keptNotes()) for(const a of (n.attachments||[])) if(!a.driveId) queue.push([n.id,a.id]);
@@ -1800,7 +2152,8 @@ function waText(n){
   body=body.replace(/[ \t]+\n/g,'\n').replace(/\n{3,}/g,'\n\n').trim();
   return (n.title?'*'+n.title.trim()+'*\n\n':'')+body;
 }
-function openLink(url){ const a=document.createElement('a'); a.href=url; a.target='_blank'; a.rel='noopener'; document.body.appendChild(a); a.click(); a.remove(); }
+function nshare(d){ extLaunch=now(); return navigator.share(d); }
+function openLink(url){ extLaunch=now(); const a=document.createElement('a'); a.href=url; a.target='_blank'; a.rel='noopener'; document.body.appendChild(a); a.click(); a.remove(); }
 const openWaText = text => openLink('https://api.whatsapp.com/send?text='+encodeURIComponent(text));
 function sendWhatsApp(n){
   const text=waText(n), atts=n.attachments||[];
@@ -1817,7 +2170,7 @@ function sendWhatsApp(n){
       if(!files.length){ toast('Os anexos ainda não estão neste aparelho. Abrindo o WhatsApp só com o texto.'); openWaText(text); return; }
       if(files.length<atts.length) toast('Alguns anexos ainda não foram baixados do Drive e não irão.');
       if(navigator.canShare && navigator.canShare({files})){
-        try{ await navigator.share({files,text}); }
+        try{ await nshare({files,text}); }
         catch(e){ if(e.name!=='AbortError'){ toast('Não consegui enviar os anexos. Abrindo o WhatsApp só com o texto.'); openWaText(text); } }
       } else { toast('Este aparelho não envia arquivos por aqui. Abrindo o WhatsApp só com o texto.'); openWaText(text); }
     };
@@ -2060,28 +2413,481 @@ async function exportPDF(n){
   const canShare=navigator.canShare&&navigator.canShare({files:[file]});
   if(canShare){
     // Abre direto a lista de apps (WhatsApp, Gmail, Drive…). Se o navegador exigir um toque, mostra o botão abaixo.
-    try{ await navigator.share({files:[file],title:name}); return; }
+    try{ await nshare({files:[file],title:name}); return; }
     catch(e){ if(e.name==='AbortError') return; }
   }
   openSheet(`<h3>PDF pronto</h3><p class="sub">${esc(name)} · ${blob.size>1048576?(blob.size/1048576).toFixed(1)+' MB':(blob.size/1024).toFixed(0)+' KB'}${nv?'<br>O vídeo está dentro do PDF (toca no Adobe Acrobat do computador)'+(missing<nv?' e a imagem dele abre o vídeo no Google Drive.':'.'):''}${canShare?'<br>Toque em Compartilhar para escolher o app (WhatsApp, Gmail, Drive…).':''}</p>
     <div class="btns">${canShare?`<button class="btn pri" id="pShare">Compartilhar PDF</button>`:''}<button class="btn ${canShare?'':'pri'}" id="pDown">Baixar PDF</button></div>`,
   s=>{
-    const sh=s.querySelector('#pShare'); if(sh) sh.onclick=async()=>{ closeSheet(); try{ await navigator.share({files:[file],title:name}); }catch(e){} };
+    const sh=s.querySelector('#pShare'); if(sh) sh.onclick=async()=>{ closeSheet(); try{ await nshare({files:[file],title:name}); }catch(e){} };
     s.querySelector('#pDown').onclick=()=>{ closeSheet(); download(name,blob,'application/pdf'); };
   });
 }
 
+/* =====================================================================
+   SEGURANÇA
+   - Cofre: uma chave aleatória (AES-256-GCM) criptografa as notas e os anexos no aparelho.
+     Essa chave fica guardada "embrulhada" pelo PIN (PBKDF2-SHA-256) e pela chave de recuperação.
+     O PIN e a chave de recuperação nunca são salvos.
+   - Biometria: WebAuthn (digital/rosto do Android). Com PRF, a chave sai da própria biometria;
+     sem PRF, a assinatura do aparelho é conferida antes de liberar uma chave guardada no celular.
+   - Tentativas: depois de 5 PINs errados, espera de 30 s que dobra a cada erro (até 1 h).
+   ===================================================================== */
+const enc=new TextEncoder(), dec=new TextDecoder();
+const rnd = n => crypto.getRandomValues(new Uint8Array(n));
+function b64(buf){ const a=new Uint8Array(buf instanceof ArrayBuffer?buf:buf.buffer?new Uint8Array(buf.buffer,buf.byteOffset,buf.byteLength):buf); let s=''; for(let i=0;i<a.length;i+=0x8000) s+=String.fromCharCode.apply(null,a.subarray(i,i+0x8000)); return btoa(s); }
+const ub64 = s => Uint8Array.from(atob(s), c=>c.charCodeAt(0));
+const b64url = buf => b64(buf).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const PIN_ITER=310000, REC_ITER=150000, DB_KEY='__db__';
+async function kdf(secret,salt,iter){ const base=await crypto.subtle.importKey('raw',enc.encode(secret),'PBKDF2',false,['deriveKey']); return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:iter,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['wrapKey','unwrapKey']); }
+async function wrapK(dek,kek){ const iv=rnd(12); return {iv:b64(iv),ct:b64(await crypto.subtle.wrapKey('raw',dek,kek,{name:'AES-GCM',iv}))}; }
+function unwrapK(w,kek){ return crypto.subtle.unwrapKey('raw',ub64(w.ct),kek,{name:'AES-GCM',iv:ub64(w.iv)},{name:'AES-GCM'},true,['encrypt','decrypt']); }
+async function encObj(obj){ const iv=rnd(12); return {enc:1,iv,ct:await crypto.subtle.encrypt({name:'AES-GCM',iv},Vault.dek,enc.encode(JSON.stringify(obj)))}; }
+async function decObj(r){ return JSON.parse(dec.decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:r.iv},Vault.dek,r.ct))); }
+const REC_ABC='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+function newRecKey(){ const b=rnd(20); let k=''; for(let i=0;i<20;i++){ k+=REC_ABC[b[i]%32]; if(i%4===3&&i<19) k+='-'; } return k; }
+const normRec = v => String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+
+const Vault={
+  meta:LS.get('ne.vault',null), dek:null,
+  exists(){ return !!(this.meta&&this.meta.wPin); },
+  unlocked(){ return !!this.dek; },
+  save(){ LS.set('ne.vault',this.meta); },
+  async create(pin){
+    const dek=await crypto.subtle.generateKey({name:'AES-GCM',length:256},true,['encrypt','decrypt']);
+    const sPin=rnd(16), sRec=rnd(16), rec=newRecKey();
+    this.meta={v:1,iter:PIN_ITER,iterRec:REC_ITER,sPin:b64(sPin),wPin:await wrapK(dek,await kdf(pin,sPin,PIN_ITER)),
+      sRec:b64(sRec),wRec:await wrapK(dek,await kdf(normRec(rec),sRec,REC_ITER)),recAt:now(),recEmail:'',bio:null,createdAt:now()};
+    this.save(); this.dek=dek; return rec;
+  },
+  async unlockPin(pin){ try{ this.dek=await unwrapK(this.meta.wPin,await kdf(pin,ub64(this.meta.sPin),this.meta.iter)); return true; }catch(e){ return false; } },
+  async unlockRec(code){ try{ this.dek=await unwrapK(this.meta.wRec,await kdf(normRec(code),ub64(this.meta.sRec),this.meta.iterRec)); return true; }catch(e){ return false; } },
+  async setPin(pin){ const s=rnd(16); this.meta.sPin=b64(s); this.meta.iter=PIN_ITER; this.meta.wPin=await wrapK(this.dek,await kdf(pin,s,PIN_ITER)); this.save(); },
+  async newRecovery(){ const s=rnd(16), rec=newRecKey(); this.meta.sRec=b64(s); this.meta.iterRec=REC_ITER; this.meta.wRec=await wrapK(this.dek,await kdf(normRec(rec),s,REC_ITER)); this.meta.recAt=now(); this.save(); return rec; }
+};
+const Guard={
+  get(){ return LS.get('ne.guard',{fails:0,until:0}); }, set(g){ LS.set('ne.guard',g); },
+  wait(){ return Math.max(0,(this.get().until||0)-now()); },
+  fail(){ const g=this.get(); g.fails=(g.fails||0)+1; if(g.fails>=5) g.until=now()+Math.min(3600e3,30e3*2**(g.fails-5)); this.set(g); return g; },
+  ok(){ this.set({fails:0,until:0}); }
+};
+function failMsg(g){ if(g.fails<5){ const r=5-g.fails; return 'PIN incorreto. '+(r===1?'Resta 1 tentativa':'Restam '+r+' tentativas')+' antes de uma espera.'; } return 'PIN incorreto.'; }
+function automated(){ try{ return navigator.webdriver===true; }catch(e){ return false; } }
+
+/* Biometria (WebAuthn) */
+function derToRaw(der){
+  let i=2; if(der[1]&0x80) i=2+(der[1]&0x7f);
+  const rl=der[i+1], r=der.slice(i+2,i+2+rl); i=i+2+rl; const sl=der[i+1], s=der.slice(i+2,i+2+sl);
+  const fix=x=>{ while(x.length>32&&x[0]===0) x=x.slice(1); const o=new Uint8Array(32); o.set(x,32-x.length); return o; };
+  const out=new Uint8Array(64); out.set(fix(r)); out.set(fix(s),32); return out;
+}
+async function verifyAssertion(a,challenge,b){
+  const cdj=a.response.clientDataJSON, cd=JSON.parse(dec.decode(cdj));
+  if(cd.type!=='webauthn.get'||cd.challenge!==b64url(challenge)||cd.origin!==location.origin) return false;
+  const ad=new Uint8Array(a.response.authenticatorData); if(!(ad[32]&1)||!(ad[32]&4)) return false; // presença e verificação do usuário
+  const rp=new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(location.hostname))); for(let i=0;i<32;i++) if(ad[i]!==rp[i]) return false;
+  const h=new Uint8Array(await crypto.subtle.digest('SHA-256',cdj)), data=new Uint8Array(ad.length+32); data.set(ad); data.set(h,ad.length);
+  const es=b.alg===-7;
+  const key=await crypto.subtle.importKey('spki',ub64(b.pub),es?{name:'ECDSA',namedCurve:'P-256'}:{name:'RSASSA-PKCS1-v1_5',hash:'SHA-256'},false,['verify']);
+  let sig=new Uint8Array(a.response.signature); if(es) sig=derToRaw(sig);
+  return crypto.subtle.verify(es?{name:'ECDSA',hash:'SHA-256'}:{name:'RSASSA-PKCS1-v1_5'},key,sig,data);
+}
+async function prfKek(bytes){ const base=await crypto.subtle.importKey('raw',bytes,'HKDF',false,['deriveKey']); return crypto.subtle.deriveKey({name:'HKDF',hash:'SHA-256',salt:enc.encode('nao-esquece/bio'),info:enc.encode('kek')},base,{name:'AES-GCM',length:256},false,['wrapKey','unwrapKey']); }
+let bioAvail=false;
+const Bio={
+  async available(){ try{ return !!(window.PublicKeyCredential&&PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable&&await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()); }catch(e){ return false; } },
+  async assert(b){
+    const challenge=rnd(32);
+    const a=await navigator.credentials.get({publicKey:{challenge,rpId:location.hostname,allowCredentials:[{type:'public-key',id:ub64(b.id),transports:['internal','hybrid']}],userVerification:'required',timeout:60000,extensions:{prf:{eval:{first:ub64(b.salt)}}}}});
+    if(!a||!await verifyAssertion(a,challenge,b)) throw new Error('assinatura');
+    const r=a.getClientExtensionResults?a.getClientExtensionResults():{}; const p=r&&r.prf&&r.prf.results&&r.prf.results.first;
+    return p?new Uint8Array(p):null;
+  },
+  async enable(){
+    const cred=await navigator.credentials.create({publicKey:{rp:{name:'Não Esquece',id:location.hostname},user:{id:rnd(16),name:cfg.email||'nao-esquece',displayName:cfg.name||'Não Esquece'},challenge:rnd(32),
+      pubKeyCredParams:[{type:'public-key',alg:-7},{type:'public-key',alg:-257}],authenticatorSelection:{authenticatorAttachment:'platform',userVerification:'required',residentKey:'preferred'},attestation:'none',timeout:60000,extensions:{prf:{}}}});
+    const pub=cred.response.getPublicKey&&cred.response.getPublicKey(), alg=cred.response.getPublicKeyAlgorithm&&cred.response.getPublicKeyAlgorithm();
+    if(!pub||(alg!==-7&&alg!==-257)) throw new Error('chave');
+    const b={id:b64(cred.rawId),pub:b64(pub),alg,salt:b64(rnd(32)),mode:'device',at:now()};
+    const prf=await this.assert(b); let kek;
+    if(prf){ kek=await prfKek(prf); b.mode='prf'; }
+    else { kek=await crypto.subtle.generateKey({name:'AES-GCM',length:256},false,['wrapKey','unwrapKey']); await IDB.rawPut('__bio__',kek); }
+    b.w=await wrapK(Vault.dek,kek); Vault.meta.bio=b; Vault.save();
+  },
+  async unlock(){
+    const b=Vault.meta&&Vault.meta.bio; if(!b) throw new Error('off');
+    const prf=await this.assert(b);
+    const kek = b.mode==='prf' ? (prf?await prfKek(prf):null) : await IDB.rawGet('__bio__');
+    if(!kek) throw new Error('semchave');
+    Vault.dek=await unwrapK(b.w,kek); return true;
+  },
+  disable(){ if(Vault.meta){ Vault.meta.bio=null; Vault.save(); } IDB.del('__bio__').catch(()=>{}); }
+};
+
+/* Volta do login do Google: a página recarrega; a chave passa adiante por poucos minutos, só nesta aba. */
+async function handoffSave(){ sessionStorage.setItem('ne.hk',JSON.stringify({k:b64(await crypto.subtle.exportKey('raw',Vault.dek)),at:now()})); }
+async function handoffTake(){
+  let h=null; try{ h=JSON.parse(sessionStorage.getItem('ne.hk')||'null'); sessionStorage.removeItem('ne.hk'); }catch(e){}
+  if(!h||now()-h.at>5*60e3) return false;
+  Vault.dek=await crypto.subtle.importKey('raw',ub64(h.k),{name:'AES-GCM'},true,['encrypt','decrypt']); return true;
+}
+async function loadVaultDb(){
+  const r=await IDB.rawGet(DB_KEY).catch(()=>null);
+  if(r&&r.enc===1) db=await decObj(r);
+  else { const d=LS.get('ne.db',null); db=(d&&Array.isArray(d.notes))?d:null; }
+  if(!db||!Array.isArray(db.notes)) seed();
+}
+async function migrateToVault(){
+  await IDB.rawPut(DB_KEY,await encObj(db));
+  try{ localStorage.removeItem('ne.db'); localStorage.removeItem('ne.session'); }catch(e){}
+  for(const n of db.notes) for(const a of (n.attachments||[])){ try{ const raw=await IDB.rawGet(a.id); if(raw instanceof Blob) await IDB.put(a.id,raw); }catch(e){} }
+}
+
+/* ---------- telas de segurança ---------- */
+let secOpen=false, padKeys=null, locked=false;
+function secShow(html,mount){ const s=$('#secScr'); s.innerHTML='<div class="sec-in">'+html+'</div>'; paintIcons(s); s.hidden=false; secOpen=true; padKeys=null; s.scrollTop=0; if(mount) mount(s); }
+function secHide(){ const s=$('#secScr'); s.hidden=true; s.innerHTML=''; secOpen=false; padKeys=null; }
+document.addEventListener('keydown',e=>{ if(secOpen&&padKeys&&!(e.target.matches&&e.target.matches('input,textarea'))) padKeys(e); });
+const logoTag = () => `<img class="lk-logo" src="${LOGO}" alt="">`;
+function pinPad({title,sub,err,bio,forgot,cancel,guard,onPin,onBio,onForgot,onCancel}){
+  secShow(`${logoTag()}<h1>${title}</h1>${sub?`<p class="lk-sub">${sub}</p>`:''}
+    <div class="dots" id="pDots" aria-hidden="true">${'<i></i>'.repeat(6)}</div><p class="lk-msg" id="pMsg" role="alert">${err||''}</p>
+    <div class="pad" id="pPad">${[1,2,3,4,5,6,7,8,9].map(d=>`<button type="button" data-d="${d}">${d}</button>`).join('')}${bio?`<button type="button" data-act="bio" aria-label="Usar digital ou rosto">${svg('finger')}</button>`:'<span></span>'}<button type="button" data-d="0">0</button><button type="button" data-act="del" aria-label="Apagar o último número">${svg('backspace')}</button></div>
+    <div class="lk-links">${forgot?'<button class="alt" data-act="forgot">Esqueci o PIN</button>':''}${cancel?'<button class="alt" data-act="cancel">Cancelar</button>':''}</div>`);
+  const s=$('#secScr'); let pin='', busy=false, tick=null;
+  const dots=()=>s.querySelectorAll('#pDots i').forEach((d,i)=>d.classList.toggle('on',i<pin.length));
+  const msg=t=>{ const m=s.querySelector('#pMsg'); if(m) m.textContent=t||''; };
+  const shake=()=>{ const d=s.querySelector('#pDots'); if(!d) return; d.classList.remove('shake'); void d.offsetWidth; d.classList.add('shake'); try{ navigator.vibrate&&navigator.vibrate(80); }catch(e){} };
+  const waiting=()=>{
+    if(!guard) return false; const w=Guard.wait(), btns=s.querySelectorAll('#pPad [data-d]');
+    clearTimeout(tick);
+    if(w>0){ btns.forEach(b=>b.disabled=true); msg('Muitas tentativas erradas. Tente de novo em '+fmtDur(Math.ceil(w/1000))+'.'); tick=setTimeout(waiting,1000); return true; }
+    btns.forEach(b=>b.disabled=false); return false;
+  };
+  const submit=async()=>{
+    busy=true; msg('Conferindo…'); let r;
+    try{ r=await onPin(pin); }catch(e){ r='Não deu para conferir. Tente de novo.'; }
+    busy=false; if(r===true){ clearTimeout(tick); return; }
+    pin=''; dots(); shake(); msg(typeof r==='string'?r:''); if(guard&&Guard.wait()>0) setTimeout(waiting,1500);
+  };
+  const press=d=>{ if(busy||waiting()) return; if(pin.length<6){ pin+=d; dots(); if(pin.length<6) msg(''); } if(pin.length===6) submit(); };
+  const del=()=>{ if(!busy){ pin=pin.slice(0,-1); dots(); } };
+  s.querySelector('#pPad').onclick=async e=>{ const b=e.target.closest('button'); if(!b||b.disabled) return;
+    if(b.dataset.d!=null) press(b.dataset.d); else if(b.dataset.act==='del') del();
+    else if(b.dataset.act==='bio'&&onBio&&!busy){ busy=true; msg(''); const r=await onBio(); busy=false; if(r!==true&&typeof r==='string') msg(r); } };
+  s.querySelectorAll('.lk-links [data-act]').forEach(b=>b.onclick=()=>{ clearTimeout(tick); if(b.dataset.act==='forgot') onForgot&&onForgot(); else onCancel&&onCancel(); });
+  padKeys=e=>{ if(/^[0-9]$/.test(e.key)) press(e.key); else if(e.key==='Backspace') del(); };
+  waiting();
+}
+function askPin(title,sub,{err,cancel}={}){ return new Promise(res=>pinPad({title,sub,err,cancel,onCancel:()=>res(null),onPin:async p=>{ res(p); return true; }})); }
+const weakPin = p => /^(\d)\1{5}$/.test(p)||'01234567890'.includes(p)||'09876543210'.includes(p);
+async function newPin(title,sub,cancel){
+  let err='';
+  for(;;){
+    const a=await askPin(title,sub,{err,cancel}); if(a==null) return null;
+    if(weakPin(a)){ err='Esse PIN é fácil de adivinhar. Escolha outro.'; continue; }
+    const b=await askPin('Repita o PIN','Digite o mesmo PIN mais uma vez.',{cancel}); if(b==null) return null;
+    if(a===b) return a; err='Os PINs não são iguais. Crie de novo.';
+  }
+}
+function lockScreen(cold){
+  return new Promise(res=>{
+    locked=true;
+    const done=()=>{ locked=false; Guard.ok(); secHide(); res(); };
+    const show=()=>{
+      const bio=!!(Vault.meta.bio&&bioAvail);
+      pinPad({title:'Digite seu PIN',sub:cold?'Para abrir o Não Esquece.':'O app foi bloqueado para proteger suas notas.',bio,forgot:true,guard:true,
+        onPin:async pin=>{ if(automated()) return 'Bloqueado: navegador controlado por automação.'; if(Guard.wait()>0) return ''; if(await Vault.unlockPin(pin)){ done(); return true; } return failMsg(Guard.fail()); },
+        onBio:async()=>{ if(automated()) return 'Bloqueado: navegador controlado por automação.'; try{ await Bio.unlock(); done(); return true; }catch(e){ return 'Não deu para usar a digital ou o rosto agora. Digite o PIN.'; } },
+        onForgot:()=>forgotFlow(done,show)});
+      if(bio&&cold&&!automated()) setTimeout(async()=>{ if(!locked) return; try{ await Bio.unlock(); if(locked) done(); }catch(e){} },400);
+    };
+    show();
+  });
+}
+const maskEmail = e => { const [u,d]=String(e).split('@'); return d?(u.slice(0,2)+'•••@'+d):e; };
+function forgotFlow(onUnlocked,back){
+  secShow(`${logoTag()}<h1>Esqueceu o PIN?</h1>
+    <p class="lk-sub">Digite a chave de recuperação: as 20 letras e números que você guardou${Vault.meta.recEmail?` ou recebeu no e-mail <b>${esc(maskEmail(Vault.meta.recEmail))}</b>`:''}.</p>
+    <input class="field rkin" id="fgKey" placeholder="XXXX-XXXX-XXXX-XXXX-XXXX" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Chave de recuperação">
+    <p class="lk-msg" id="fgMsg" role="alert"></p>
+    <button class="btn pri" id="fgGo">Usar a chave</button>
+    <div class="lk-links"><button class="alt" id="fgNo">Não tenho a chave</button><button class="alt" id="fgMore">Saiba mais</button><button class="alt" id="fgBack">Voltar</button></div>`,
+  s=>{
+    const m=t=>{ s.querySelector('#fgMsg').textContent=t; };
+    s.querySelector('#fgBack').onclick=back;
+    s.querySelector('#fgMore').onclick=()=>openReader('Recuperação de acesso','tplRecovery');
+    s.querySelector('#fgNo').onclick=()=>noKeyScreen(()=>forgotFlow(onUnlocked,back));
+    s.querySelector('#fgGo').onclick=async()=>{
+      if(automated()){ m('Bloqueado: navegador controlado por automação.'); return; }
+      const w=Guard.wait(); if(w>0){ m('Muitas tentativas erradas. Tente de novo em '+fmtDur(Math.ceil(w/1000))+'.'); return; }
+      const v=s.querySelector('#fgKey').value; if(normRec(v).length!==20){ m('A chave tem 20 letras e números.'); return; }
+      m('Conferindo…');
+      if(!await Vault.unlockRec(v)){ const g=Guard.fail(); m(g.fails<5?'Chave incorreta. Confira letra por letra.':'Chave incorreta.'); return; }
+      Guard.ok();
+      const p=await newPin('Crie um PIN novo','A chave de recuperação continua valendo.');
+      secShow('<h1>Salvando o PIN novo…</h1>'); await Vault.setPin(p); toast('PIN novo criado'); onUnlocked();
+    };
+  });
+}
+function noKeyScreen(back){
+  secShow(`<h1>Sem a chave de recuperação</h1>
+    <div class="warnbox"><b>Sem o PIN e sem a chave, o que está criptografado neste celular não pode ser recuperado</b>, por ninguém, nem pelo app.
+      <ul><li>O que já foi copiado para o seu Google Drive volta quando você entra de novo com a mesma conta Google.</li><li>O que ainda não tinha sido enviado ao Drive será perdido.</li></ul></div>
+    <p class="lk-sub left">Para começar de novo, apague os dados deste celular. Depois, entre com a sua conta Google para trazer de volta o que está no Drive.</p>
+    <input class="field" id="nkType" placeholder="Digite APAGAR para confirmar" autocomplete="off" autocapitalize="characters" aria-label="Digite APAGAR para confirmar">
+    <button class="btn dan" id="nkGo" disabled>Apagar os dados deste celular</button>
+    <button class="btn" id="nkBack">Voltar</button>`,
+  s=>{ const t=s.querySelector('#nkType'), go=s.querySelector('#nkGo');
+    t.oninput=()=>{ go.disabled=t.value.trim().toUpperCase()!=='APAGAR'; };
+    s.querySelector('#nkBack').onclick=back;
+    go.onclick=async()=>{ secShow('<h1>Apagando…</h1>'); await wipeAll(); location.reload(); }; });
+}
+function sendRecMail(email,rec){
+  const body=`Esta é a chave de recuperação do app Não Esquece.\n\nChave: ${rec}\n\nSe você esquecer o PIN, abra o app, toque em "Esqueci o PIN" e digite esta chave para criar um PIN novo.\nGuarde este e-mail e não compartilhe a chave com ninguém.\n\nGerada em ${fmtFull(now())}${cfg.email?' no app conectado à conta '+cfg.email:''}.`;
+  extLaunch=now();
+  const a=document.createElement('a'); a.href='mailto:'+encodeURIComponent(email)+'?subject='+encodeURIComponent('Chave de recuperação — Não Esquece')+'&body='+encodeURIComponent(body);
+  document.body.appendChild(a); a.click(); a.remove();
+}
+function showRecKey(rec){
+  return new Promise(res=>{
+    secShow(`<h1>Sua chave de recuperação</h1>
+      <p class="lk-sub">Com ela você cria um PIN novo se esquecer o atual. <b>O app não guarda esta chave.</b></p>
+      <div class="rkey" id="rkVal">${rec}</div>
+      <button class="btn" id="rkCopy">${svg('copy')}Copiar a chave</button>
+      <div><div class="lbl2">E-mail de recuperação</div><input class="field" type="email" id="rkEmail" placeholder="seuemail@gmail.com" value="${esc(Vault.meta.recEmail||cfg.email||'')}" autocomplete="email" inputmode="email"></div>
+      <button class="btn pri" id="rkSend">${svg('mail')}Enviar a chave para este e-mail</button>
+      <p class="lk-sub" style="font-size:13px;margin-top:-6px">O Gmail abre com a mensagem pronta. Toque em <b>Enviar</b> e volte para o app.</p>
+      <div class="warnbox"><b>Você precisa guardar esta chave ou enviá-la ao seu e-mail de recuperação.</b> Se perder o PIN sem ela, não há como recuperar o que está guardado neste celular. <button class="linkbtn" id="rkMore">Saiba mais</button></div>
+      <label class="tcheck"><input type="checkbox" id="rkAck"><span>Guardei a chave (anotei, salvei ou enviei para o meu e-mail de recuperação).</span></label>
+      <button class="btn pri" id="rkDone" disabled>Continuar</button>`,
+    s=>{
+      const ack=s.querySelector('#rkAck'), done=s.querySelector('#rkDone');
+      ack.onchange=()=>{ done.disabled=!ack.checked; };
+      s.querySelector('#rkMore').onclick=()=>openReader('Recuperação de acesso','tplRecovery');
+      s.querySelector('#rkCopy').onclick=async()=>{ try{ await navigator.clipboard.writeText(rec); toast('Chave copiada. Cole num lugar seguro.'); }catch(e){ const r=document.createRange(); r.selectNodeContents(s.querySelector('#rkVal')); const sl=getSelection(); sl.removeAllRanges(); sl.addRange(r); toast('Selecione e copie a chave.'); } };
+      s.querySelector('#rkSend').onclick=()=>{ const em=s.querySelector('#rkEmail').value.trim();
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ toast('Digite um e-mail válido.'); return; }
+        Vault.meta.recEmail=em; Vault.meta.recSentAt=now(); Vault.save(); sendRecMail(em,rec); toast('Depois de enviar no Gmail, volte para o app.'); };
+      done.onclick=()=>{ if(ack.checked) res(); };
+    });
+  });
+}
+async function setupFlow(){
+  await new Promise(res=>secShow(`${logoTag()}<h1>Proteja suas notas</h1>
+    <p class="lk-sub">Crie um PIN de 6 números. Ele abre o app e criptografa tudo o que fica guardado neste celular.</p>
+    <ul class="tsum">
+      <li><span data-i="lock"></span><span>O app pede o PIN (ou a digital/rosto) ao abrir e quando você volta para ele.</span></li>
+      <li><span data-i="shield"></span><span>Depois de 5 PINs errados, o app espera cada vez mais antes de aceitar outra tentativa.</span></li>
+      <li><span data-i="key"></span><span>Você recebe uma chave de recuperação para criar um PIN novo se esquecer o atual.</span></li>
+    </ul>
+    <button class="btn pri" id="suGo">Criar PIN</button>`, s=>{ s.querySelector('#suGo').onclick=res; }));
+  const pin=await newPin('Crie seu PIN','6 números que só você saiba.');
+  secShow('<h1>Protegendo suas notas…</h1><p class="lk-sub">Criptografando o que já está neste celular.</p>');
+  const rec=await Vault.create(pin); await migrateToVault();
+  await showRecKey(rec);
+  if(bioAvail) await new Promise(res=>secShow(`${logoTag()}<h1>Usar digital ou rosto?</h1>
+    <p class="lk-sub">Desbloqueie o app com a biometria do celular. O PIN continua valendo.</p>
+    <p class="lk-msg" id="bMsg"></p>
+    <button class="btn pri" id="bYes">${svg('finger')}Usar digital ou rosto</button><button class="btn" id="bNo">Agora não</button>`,
+    s=>{ s.querySelector('#bNo').onclick=res; s.querySelector('#bYes').onclick=async()=>{ try{ await Bio.enable(); toast('Digital ou rosto ativado'); res(); }catch(e){ s.querySelector('#bMsg').textContent='Não deu para ativar agora. Você pode tentar depois em Ajustes › Segurança.'; } }; }));
+  secHide(); toast('Pronto. Suas notas estão protegidas.'); render();
+}
+function confirmPin(title){
+  return new Promise(res=>{
+    const bio=!!(Vault.meta.bio&&bioAvail);
+    pinPad({title,sub:'Para continuar, confirme que é você.',bio,guard:true,cancel:true,onCancel:()=>{ secHide(); res(false); },
+      onPin:async pin=>{ if(automated()) return 'Bloqueado: navegador controlado por automação.'; if(Guard.wait()>0) return ''; if(await Vault.unlockPin(pin)){ Guard.ok(); secHide(); res(true); return true; } return failMsg(Guard.fail()); },
+      onBio:async()=>{ try{ await Bio.unlock(); Guard.ok(); secHide(); res(true); return true; }catch(e){ return 'Não deu para usar a digital ou o rosto. Digite o PIN.'; } }});
+  });
+}
+async function changePin(){
+  closeSheet(); if(!await confirmPin('Digite o PIN atual')) return;
+  const p=await newPin('Novo PIN','6 números que só você saiba.',true); if(!p){ secHide(); return; }
+  secShow('<h1>Salvando…</h1>'); await Vault.setPin(p); secHide(); toast('PIN alterado');
+}
+async function toggleBio(){
+  closeSheet();
+  if(Vault.meta.bio){ Bio.disable(); toast('Digital ou rosto desativado'); return; }
+  if(!await confirmPin('Confirme seu PIN')) return;
+  try{ await Bio.enable(); toast('Digital ou rosto ativado'); }catch(e){ toast('Não deu para ativar a digital ou o rosto neste aparelho.'); }
+}
+function recoverySheet(){
+  const m=Vault.meta;
+  openSheet(`<h3>Recuperação de acesso</h3>
+    <p class="sub">Se você esquecer o PIN, a chave de recuperação cria um PIN novo sem perder nada.</p>
+    <div class="warnbox"><b>Cadastre um e-mail de recuperação ou guarde a chave.</b> Sem o PIN e sem a chave, o que está criptografado neste celular não pode ser recuperado por ninguém. <button class="linkbtn" id="rkMore2">Saiba mais</button></div>
+    <dl class="kv"><dt>Chave atual</dt><dd>criada em ${fmtFull(m.recAt||m.createdAt)}</dd><dt>E-mail</dt><dd>${m.recEmail?esc(m.recEmail)+(m.recSentAt?' · enviada em '+fmtFull(m.recSentAt):''):'<span style="color:var(--danger)">não cadastrado</span>'}</dd></dl>
+    <button class="row" id="rkNew"><span data-i="mail"></span><span class="grow">${m.recEmail?'Gerar nova chave e enviar por e-mail':'Cadastrar e-mail de recuperação'}<small>A chave anterior deixa de funcionar</small></span></button>`,
+  s=>{ s.querySelector('#rkMore2').onclick=()=>openReader('Recuperação de acesso','tplRecovery');
+    s.querySelector('#rkNew').onclick=async()=>{ closeSheet(); if(!await confirmPin('Confirme seu PIN')) return; secShow('<h1>Gerando a chave…</h1>'); const rec=await Vault.newRecovery(); await showRecKey(rec); secHide(); toast('Nova chave criada. A anterior não funciona mais.'); }; });
+}
+const LOCK_OPTS=[[0,'Na hora'],[30,'30 s'],[60,'1 min'],[300,'5 min']];
+function protSheet(){
+  const g=Guard.get(), la=LOCK_OPTS.find(x=>x[0]===(cfg.lockAfter??30));
+  openSheet(`<h3>Proteções ativas</h3><p class="sub">Como o app protege os seus dados.</p>
+    <dl class="kv">
+      <dt>Criptografia</dt><dd>${Vault.exists()?'AES-256-GCM nas notas, fotos, áudios e vídeos deste celular':'Ainda não ativada: crie o PIN'}</dd>
+      <dt>Chave</dt><dd>Protegida pelo PIN (PBKDF2-SHA-256, 310 mil repetições) e pela chave de recuperação</dd>
+      <dt>Bloqueio</dt><dd>PIN ${la&&la[0]?'depois de '+la[1]+' fora do app':'sempre que sair do app'}${Vault.meta&&Vault.meta.bio?' · digital/rosto ativo':''}</dd>
+      <dt>Tentativas</dt><dd>Depois de 5 erros, espera de 30 s que dobra a cada erro (até 1 h). Erros seguidos agora: ${g.fails||0}</dd>
+      <dt>Robôs</dt><dd>Navegadores controlados por automação são bloqueados</dd>
+      <dt>Requisições</dt><dd>Até ${RQ.max} ao mesmo tempo e ${RQ.perMin} por minuto. Nesta sessão: ${RQ.total} feitas, ${RQ.retries} repetidas com espera, ${RQ.q.length} na fila</dd>
+      <dt>Google</dt><dd>Acesso só aos arquivos e à agenda que o app criou</dd>
+      <dt>Conexão</dt><dd>HTTPS (TLS)</dd>
+      <dt>No Drive</dt><dd>Cópias legíveis na sua conta Google (sua escolha), protegidas pela segurança da conta</dd>
+    </dl>`);
+}
+function cancelFlow(){
+  closeSheet();
+  secShow(`<h1>Cancelar inscrição</h1>
+    <div class="warnbox"><b>Leia com atenção: isto não pode ser desfeito.</b>
+      <ul><li>O PIN, a digital/rosto, a chave e o e-mail de recuperação são apagados.</li>
+      <li>As notas, fotos e áudios deste celular são apagados.</li>
+      <li>Sua conta Google é desconectada e o app não envia mais notificações nem mensagens ao e-mail cadastrado.</li>
+      <li><b>Depois de cancelar, não há como recuperar a senha.</b></li></ul></div>
+    <label class="tcheck"><input type="checkbox" id="cxCal" checked><span>Apagar a agenda <b>Não Esquece</b> e os lembretes do Google Agenda. Se deixar desmarcado, os lembretes já criados continuam tocando.</span></label>
+    <label class="tcheck"><input type="checkbox" id="cxDrive"><span>Apagar também a pasta <b>Não Esquece</b> do meu Google Drive (ela vai para a lixeira do Drive).</span></label>
+    <label class="tcheck"><input type="checkbox" id="cxOk"><span>Entendo que o cancelamento é definitivo e que <b>não poderei recuperar a senha</b> depois dele.</span></label>
+    <input class="field" id="cxType" placeholder="Digite CANCELAR para confirmar" autocomplete="off" autocapitalize="characters" aria-label="Digite CANCELAR para confirmar">
+    <button class="btn dan" id="cxGo" disabled>Cancelar inscrição</button>
+    <button class="btn" id="cxBack">Voltar</button>`,
+  s=>{ const ok=s.querySelector('#cxOk'), ty=s.querySelector('#cxType'), go=s.querySelector('#cxGo');
+    const upd=()=>{ go.disabled=!(ok.checked&&ty.value.trim().toUpperCase()==='CANCELAR'); }; ok.onchange=upd; ty.oninput=upd;
+    s.querySelector('#cxBack').onclick=secHide;
+    go.onclick=async()=>{ const o={cal:s.querySelector('#cxCal').checked,drive:s.querySelector('#cxDrive').checked};
+      if(Vault.exists()&&!await confirmPin('Confirme com seu PIN')) return; doCancel(o); }; });
+}
+async function doCancel({cal,drive}){
+  secShow('<h1>Cancelando…</h1><p class="lk-sub">Não feche o app.</p>');
+  const notes=[];
+  if((cal||drive)&&cfg.linked&&hasToken()&&navigator.onLine){
+    if(cal&&okCal(cfg.calendarId)){ try{ await api(`${CAL}/calendars/${encodeURIComponent(cfg.calendarId)}`,{method:'DELETE'}); notes.push('agenda Não Esquece apagada'); }catch(e){ notes.push('não consegui apagar a agenda; apague pelo Google Agenda'); } }
+    if(drive&&okId(cfg.folderId)){ try{ await trashDrive(cfg.folderId); notes.push('pasta do Drive enviada para a lixeira do Drive'); }catch(e){ notes.push('não consegui apagar a pasta; apague pelo Google Drive'); } }
+  } else if(cal||drive) notes.push('sem conexão com o Google: apague a agenda e a pasta direto no Google Agenda e no Drive');
+  if(token) revokeToken(token);
+  await wipeAll();
+  secShow(`${logoTag()}<h1>Inscrição cancelada</h1><p class="lk-sub">Os dados deste celular foram apagados e o app não enviará mais notificações nem mensagens.${notes.length?'<br><br>'+esc(notes.join('. '))+'.':''}</p><button class="btn pri" id="cxEnd">Fechar</button>`,
+    s=>{ s.querySelector('#cxEnd').onclick=()=>location.reload(); });
+}
+async function wipeAll(){
+  appReady=false; token=null; tokenExp=0; Vault.dek=null; Vault.meta=null;
+  try{ if(IDB.d){ IDB.d.close(); IDB.d=null; } }catch(e){}
+  await new Promise(r=>{ try{ const q=indexedDB.deleteDatabase('nao-esquece'); q.onsuccess=q.onerror=q.onblocked=()=>r(); setTimeout(r,3000); }catch(e){ r(); } });
+  try{ Object.keys(localStorage).filter(k=>k.startsWith('ne.')).forEach(k=>localStorage.removeItem(k)); sessionStorage.clear(); }catch(e){}
+}
+
+/* ---------- termos e leitura ---------- */
+function termsOk(){ return !!(cfg.terms&&cfg.terms.v===TERMS_VERSION); }
+function termsGate(){
+  return new Promise(res=>{
+    const t=$('#terms'), ok=$('#tOk'), btn=$('#tAccept'); $('#tLogo').src=LOGO; ok.checked=false; btn.disabled=true; t.hidden=false;
+    ok.onchange=()=>{ btn.disabled=!ok.checked; };
+    btn.onclick=()=>{ if(!ok.checked) return; cfg.terms={v:TERMS_VERSION,at:now()}; saveCfg(); t.hidden=true; res(); };
+  });
+}
+function openReader(title,tplId){ $('#rdTitle').textContent=title; const tpl=document.getElementById(tplId); $('#rdBody').innerHTML=tpl?tpl.innerHTML:''; $('#rdBody').scrollTop=0; $('#reader').hidden=false; guardPush(); }
+$('#rdClose').onclick=()=>{ $('#reader').hidden=true; guardCheck(); };
+$('#tReadTerms').onclick=()=>openReader('Termos de Uso','tplTerms');
+$('#tReadPriv').onclick=()=>openReader('Política de Privacidade','tplPrivacy');
+
+/* ---------- lembretes (Google Agenda) ---------- */
+const CAL='https://www.googleapis.com/calendar/v3';
+const BEFORE=[[0,'Na hora'],[5,'5 min'],[10,'10 min'],[15,'15 min'],[30,'30 min'],[60,'1 hora'],[1440,'1 dia']];
+function remInfo(n){ if(!n||!n.remindAt) return null; const d=new Date(n.remindAt); if(isNaN(d)) return null; return {d,txt:fmtRem(d),late:d.getTime()<now()}; }
+function fmtRem(d){ const t=new Date(), tm=d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}), tom=new Date(t); tom.setDate(t.getDate()+1);
+  if(d.toDateString()===t.toDateString()) return 'Hoje às '+tm; if(d.toDateString()===tom.toDateString()) return 'Amanhã às '+tm;
+  return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})+' às '+tm; }
+const toLocalInput = d => { const p=x=>String(x).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`; };
+function renderRemChip(n){ const r=remInfo(n); $('#remBtn').setAttribute('aria-pressed',!!r); $('#remTxt').textContent=r?r.txt:'Lembrete'; }
+$('#remBtn').onclick=()=>{ const n=noteById(cur.noteId); if(n){ flushEdit(); reminderSheet(n); } };
+function reminderSheet(n){
+  let at=n.remindAt; if(!at){ const d=new Date(now()+3600e3); d.setMinutes(0,0,0); at=toLocalInput(d); }
+  let before=n.remindBefore!=null?+n.remindBefore:10;
+  const hint=!cfg.linked?'Entre com sua conta Google (Ajustes) para o aviso tocar com o app fechado. Por enquanto, o aviso aparece só com o app aberto.'
+    :cfg.calOk===false?'Falta permitir o Google Agenda: em Ajustes, saia e entre de novo com o Google e marque a permissão da agenda. Por enquanto, o aviso aparece só com o app aberto.'
+    :'O aviso chega pelo Google Agenda, na agenda “Não Esquece”, mesmo com o app fechado.';
+  openSheet(`<h3>Lembrete</h3><p class="sub">${hint}</p>
+    <div class="blk"><div class="lbl">Dia e hora da atividade</div><input type="datetime-local" class="field" id="rmAt" value="${at.slice(0,16)}"></div>
+    <div class="blk"><div class="lbl">Avisar antes</div><div class="seg wrap" id="rmB">${BEFORE.map(([m,l])=>`<button data-m="${m}" aria-pressed="${m===before}">${l}</button>`).join('')}</div></div>
+    <div class="btns">${n.remindAt?'<button class="btn" id="rmDel">Remover</button>':''}<button class="btn pri" id="rmOk">Salvar lembrete</button></div>`,
+  s=>{
+    s.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{ before=+b.dataset.m; s.querySelectorAll('[data-m]').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+    s.querySelector('#rmOk').onclick=()=>{ const v=s.querySelector('#rmAt').value; if(!v||isNaN(new Date(v))){ toast('Escolha o dia e a hora.'); return; }
+      n.remindAt=v.slice(0,16); n.remindBefore=before; n.updatedAt=now(); delete n._fresh; changed(); closeSheet(); renderRemChip(n); renderList();
+      toast('Lembrete: '+fmtRem(new Date(n.remindAt))+(before?' · aviso '+BEFORE.find(x=>x[0]===before)[1]+' antes':'')); };
+    const d=s.querySelector('#rmDel'); if(d) d.onclick=()=>{ delete n.remindAt; delete n.remindBefore; n.updatedAt=now(); changed(); closeSheet(); renderRemChip(n); renderList(); toast('Lembrete removido'); };
+  });
+}
+function checkReminders(){
+  if(!appReady||locked) return;
+  const t=now(), seen=new Set(cfg.alerted||[]);
+  for(const n of liveNotes()){
+    if(!n.remindAt||n.done) continue;
+    const due=new Date(n.remindAt).getTime()-(+n.remindBefore||0)*60000;
+    if(isNaN(due)||t<due||t-due>3*3600e3) continue;
+    const k=n.id+'@'+n.remindAt; if(seen.has(k)) continue;
+    seen.add(k); cfg.alerted=[...seen].slice(-60); saveCfg();
+    try{ navigator.vibrate&&navigator.vibrate([200,100,200]); }catch(e){}
+    toast('Lembrete: '+noteTitle(n)+' · '+fmtRem(new Date(n.remindAt)),'Abrir',()=>openNote(n.id)); break;
+  }
+}
+setInterval(checkReminders,20000);
+function evBody(n){
+  const st=new Date(n.remindAt), en=new Date(st.getTime()+30*60000), p=x=>String(x).padStart(2,'0');
+  const f=d=>`${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}:00`;
+  return {summary:noteTitle(n),description:(txt(n.html).slice(0,900)||'')+'\n\nLembrete criado pelo app Não Esquece.',
+    start:{dateTime:f(st),timeZone:TZ},end:{dateTime:f(en),timeZone:TZ},
+    reminders:{useDefault:false,overrides:[{method:'popup',minutes:Math.max(0,Math.min(40320,+n.remindBefore||0))}]}};
+}
+async function ensureCalendar(){
+  if(okCal(cfg.calendarId)){
+    try{ const j=await (await api(`${CAL}/calendars/${encodeURIComponent(cfg.calendarId)}?fields=id`)).json(); if(j&&j.id) return j.id; }
+    catch(e){ if(e.message==='auth'||/http 403/.test(e.message)) throw e; }
+  }
+  const j=await (await api(`${CAL}/calendars?fields=id`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({summary:'Não Esquece',description:'Lembretes criados pelo app Não Esquece',timeZone:TZ})})).json();
+  cfg.calendarId=j.id; saveCfg();
+  try{ await api(`${CAL}/users/me/calendarList/${encodeURIComponent(j.id)}`,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({selected:true})}); }catch(e){ if(e.message==='auth') throw e; }
+  return j.id;
+}
+async function mirrorCalendar(st){
+  if(cfg.calOk===false) return;
+  const want=n=>!n.deleted&&!n.trashed&&!n.done&&!n._fresh&&!!n.remindAt;
+  const todo=st.notes.filter(n=>want(n)?(!okId(n.calEvId)||(n.calSyncedAt||0)<n.updatedAt):okId(n.calEvId));
+  if(!todo.length) return;
+  let cal; try{ cal=await ensureCalendar(); }catch(e){ if(/http 403/.test(e.message)){ cfg.calOk=false; saveCfg(); return; } throw e; }
+  const ec=encodeURIComponent(cal), J=b=>({headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});
+  for(const n of todo){
+    if(want(n)){
+      const body=evBody(n);
+      if(okId(n.calEvId)){ try{ await api(`${CAL}/calendars/${ec}/events/${n.calEvId}?fields=id`,{method:'PUT',...J(body)}); }catch(e){ if(e.message==='auth'||!/http 40[04]|http 410/.test(e.message)) throw e; n.calEvId=''; } }
+      if(!okId(n.calEvId)){ const j=await (await api(`${CAL}/calendars/${ec}/events?fields=id`,{method:'POST',...J(body)})).json(); n.calEvId=j.id; }
+    } else {
+      try{ await api(`${CAL}/calendars/${ec}/events/${n.calEvId}`,{method:'DELETE'}); }catch(e){ if(e.message==='auth'||!/http 40[04]|http 410/.test(e.message)) throw e; }
+      n.calEvId='';
+    }
+    n.calSyncedAt=n.updatedAt;
+  }
+}
+
+/* ---------- bloquear ao sair do app ---------- */
+let hiddenAt=0, extLaunch=0, hiddenExt=false;
+document.addEventListener('click',e=>{ if(e.target.closest&&e.target.closest('label[for^="in"],[data-ext]')) extLaunch=now(); },true);
+document.addEventListener('visibilitychange',()=>{
+  if(!appReady||!Vault.exists()||!Vault.unlocked()||locked||secOpen) return;
+  const la=(cfg.lockAfter??30);
+  // abriu a câmera, a galeria, o Gmail ou o Drive pelo app: na volta, tolera até 5 minutos fora
+  if(document.visibilityState==='hidden'){ hiddenAt=now(); hiddenExt=now()-extLaunch<60e3; if(la===0&&!hiddenExt){ hiddenAt=0; lockScreen(false); } return; }
+  if(hiddenAt){ const lim=(hiddenExt?Math.max(300,la):la)*1000; if(now()-hiddenAt>=lim) lockScreen(false); hiddenAt=0; extLaunch=0; }
+});
+
 /* ---------- início ---------- */
-paintIcons(); applyTheme();
-{ const old=trashNotes().filter(n=>now()-(n.trashedAt||n.updatedAt)>30*86400e3); if(old.length) purgeNotes(old); } // lixeira: 30 dias
-render();
-(async()=>{
-  const ret=await handleRedirectReturn();
-  if(!cfg.linked && !cfg.guest){ showGate(); return; }
+async function afterLogin(ret){
   $('#gate').hidden=true;
+  if(!Vault.exists()) await setupFlow();
   if(ret&&ret.o){ // voltou do login do Google: reabre a nota que estava aberta, no mesmo ponto
-    const id=ret.o.note; if(id&&noteById(id)){ const ss=LS.get(SKEY,null); openNote(id,{resume:ss&&ss.noteId===id?ss:null}); }
-    if(ret.ok&&!ret.o.silent) toast('Conectado ao Google Drive');
+    const id=ret.o.note; if(id&&noteById(id)){ const ss=sessGet(); openNote(id,{resume:ss&&ss.noteId===id?ss:null}); }
+    if(ret.ok&&!ret.o.silent) toast('Conectado ao Google');
     return;
   }
   checkRecovery();
@@ -2090,10 +2896,32 @@ render();
   // App instalado: reconecta sozinho ao abrir (sem pedir nada, se a conta já autorizou)
   if(useRedirect() && cfg.linked && clientId() && navigator.onLine && !hasToken() && $('#sheet').hidden
      && !(cfg.silentFailAt && now()-cfg.silentFailAt<30*60e3)) startRedirectLogin('none');
-})();
-window.addEventListener('pagehide',()=>{ flushEdit(); saveSessionPos(); });
-document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='hidden'){ flushEdit(); saveSessionPos(); } });
+}
+async function boot(){
+  paintIcons(); applyTheme(); render();
+  if(automated()){ secShow(`${logoTag()}<h1>Acesso bloqueado</h1><p class="lk-sub">O app detectou um navegador controlado por automação (robô). Por segurança, ele não abre assim.</p>`); return; }
+  bioAvail=await Bio.available();
+  if(!termsOk()) await termsGate();
+  if(Vault.exists()){
+    const ho=await handoffTake().catch(()=>false);
+    if(!ho) await lockScreen(true);
+    await loadVaultDb();
+  } else {
+    const d=LS.get('ne.db',null); db=(d&&Array.isArray(d.notes))?d:null; if(!db) seed();
+  }
+  try{ localStorage.removeItem('ne.session'); }catch(e){}
+  appReady=true; persist();
+  { const old=trashNotes().filter(n=>now()-(n.trashedAt||n.updatedAt)>30*86400e3); if(old.length) purgeNotes(old); } // lixeira: 30 dias
+  render();
+  const ret=await handleRedirectReturn();
+  if(!cfg.linked && !cfg.guest){ showGate(); return; }
+  await afterLogin(ret);
+}
+boot();
+window.addEventListener('pagehide',()=>{ if(appReady){ flushEdit(); saveSessionPos(); } });
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='hidden'&&appReady){ flushEdit(); saveSessionPos(); } });
 if('serviceWorker' in navigator && location.protocol==='https:'){ try{ navigator.serviceWorker.register('sw.js').catch(()=>{}); }catch(e){} }
+
 </script>
 
 </body></html>
