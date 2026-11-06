@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
 import android.provider.MediaStore;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyPermanentlyInvalidatedException;
@@ -51,6 +52,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.core.view.WindowCompat;
@@ -87,7 +89,7 @@ import javax.crypto.spec.GCMParameterSpec;
  * Tela principal do Não Esquece. As telas rodam dentro do próprio app (WebView do Android),
  * sem abrir o Chrome. O que o celular faz melhor fica aqui no código nativo:
  * login do Google pela tela de contas do Android, digital/rosto, câmera, galeria,
- * microfone, ditado, salvar em Downloads e compartilhar.
+ * microfone, ditado, salvar em Downloads e compartilhar, alarmes dos lembretes e calendário do celular.
  */
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "NaoEsquece";
@@ -106,10 +108,12 @@ public class MainActivity extends AppCompatActivity {
     private PermissionRequest micRequest;
     private String authId, authScopes, authAccount;
     private String dictId;
+    private String notifId, calId;
 
     private ActivityResultLauncher<Intent> fileLauncher, accountLauncher, dictLauncher;
     private ActivityResultLauncher<IntentSenderRequest> authLauncher;
-    private ActivityResultLauncher<String> micLauncher;
+    private ActivityResultLauncher<String> micLauncher, notifLauncher;
+    private ActivityResultLauncher<String[]> calLauncher;
 
     private int dp(int v) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, v, getResources().getDisplayMetrics());
@@ -124,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
         io.execute(() -> {
             cleanOld(new File(getCacheDir(), "share"));
             cleanOld(new File(getCacheDir(), "captures"));
+            // "Forçar parada" e alguns otimizadores de bateria apagam os alarmes: ao abrir, marca tudo de novo
+            Reminders.rescheduleAll(getApplicationContext(), false);
         });
 
         FrameLayout root = new FrameLayout(this);
@@ -172,7 +178,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if (state != null && web.restoreState(state) != null) return;
+        boolean fromAlarm = getIntent() != null && getIntent().getData() != null && getIntent().getData().getQueryParameter("nota") != null;
+        if (!fromAlarm && state != null && web.restoreState(state) != null) return;
         web.loadUrl(startUrl(getIntent()));
     }
 
@@ -189,6 +196,10 @@ public class MainActivity extends AppCompatActivity {
         Uri d = intent == null ? null : intent.getData();
         if (d != null && Links.isApp(d) && "1".equals(d.getQueryParameter("nova")) && web != null) {
             web.evaluateJavascript("try{ if(appReady&&!locked&&document.querySelector('#sheet').hidden) newNote(); }catch(e){}", null);
+        }
+        String nota = d != null && Links.isApp(d) ? d.getQueryParameter("nota") : null;
+        if (nota != null && web != null) {
+            web.evaluateJavascript("try{ window.__openFromNative&&window.__openFromNative(" + JSONObject.quote(nota) + "); }catch(e){}", null);
         }
     }
 
@@ -327,6 +338,18 @@ public class MainActivity extends AppCompatActivity {
             } catch (ApiException e) {
                 done(id, false, authError(e));
             }
+        });
+
+        notifLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
+            String id = notifId;
+            notifId = null;
+            if (id != null) done(id, true, granted ? "ok" : "no");
+        });
+
+        calLauncher = registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), res -> {
+            String id = calId;
+            calId = null;
+            if (id != null) done(id, true, DeviceCalendar.perm(this) ? "ok" : "no");
         });
 
         dictLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), res -> {
@@ -646,6 +669,86 @@ public class MainActivity extends AppCompatActivity {
         w.setAppearanceLightNavigationBars(!dark);
     }
 
+    /* ---------- permissões dos alarmes e do calendário ---------- */
+    private Intent notifSettings() {
+        if (Build.VERSION.SDK_INT >= 26) return new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE, getPackageName());
+        return new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName()));
+    }
+
+    private boolean openSettings(Intent i) {
+        try {
+            startActivity(i);
+            return true;
+        } catch (Exception e) {
+            try {
+                startActivity(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName())));
+            } catch (Exception ignored) {
+            }
+            return false;
+        }
+    }
+
+    private void ask(String id, String which) {
+        Uri pkg = Uri.parse("package:" + getPackageName());
+        try {
+            switch (which == null ? "" : which) {
+                case "notif":
+                    if (Build.VERSION.SDK_INT >= 33 && ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                        notifId = id;
+                        notifLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+                        return;
+                    }
+                    if (NotificationManagerCompat.from(this).areNotificationsEnabled()) { done(id, true, "ok"); return; }
+                    openSettings(notifSettings());
+                    done(id, true, "settings");
+                    return;
+                case "notifSettings":
+                    openSettings(notifSettings());
+                    done(id, true, "settings");
+                    return;
+                case "cal":
+                    if (DeviceCalendar.perm(this)) { done(id, true, "ok"); return; }
+                    calId = id;
+                    calLauncher.launch(new String[]{Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR});
+                    return;
+                case "exact":
+                    if (Build.VERSION.SDK_INT >= 31 && !Reminders.exactOk(this)) {
+                        openSettings(new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM, pkg));
+                        done(id, true, "settings");
+                    } else done(id, true, "ok");
+                    return;
+                case "full":
+                    if (Build.VERSION.SDK_INT >= 34) {
+                        openSettings(new Intent(Settings.ACTION_MANAGE_APP_USE_FULL_SCREEN_INTENT, pkg));
+                        done(id, true, "settings");
+                    } else done(id, true, "ok");
+                    return;
+                case "battery":
+                    @SuppressLint("BatteryLife") Intent b = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, pkg);
+                    try {
+                        startActivity(b);
+                    } catch (Exception e) {
+                        openSettings(new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS));
+                    }
+                    done(id, true, "settings");
+                    return;
+                case "sync":
+                    openSettings(new Intent(Settings.ACTION_SYNC_SETTINGS));
+                    done(id, true, "settings");
+                    return;
+                case "app":
+                    openSettings(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, pkg));
+                    done(id, true, "settings");
+                    return;
+                default:
+                    done(id, false, "desconhecido");
+            }
+        } catch (Exception e) {
+            Log.w(TAG, "permissão", e);
+            done(id, false, "erro");
+        }
+    }
+
     /* ---------- navegação ---------- */
     private class Client extends WebViewClient {
         @Override
@@ -897,6 +1000,61 @@ public class MainActivity extends AppCompatActivity {
                     done(id, false, "indisponivel");
                 }
             });
+        }
+
+        /* alarmes dos lembretes */
+        @JavascriptInterface
+        public String alarmSet(String json) {
+            if (!trusted()) return "-1";
+            return String.valueOf(Reminders.sync(getApplicationContext(), json));
+        }
+
+        @JavascriptInterface
+        public String alarmState() {
+            return Reminders.state(getApplicationContext()).toString();
+        }
+
+        @JavascriptInterface
+        public void alarmAsk(String id, String which) {
+            if (!trusted()) { done(id, false, "origem"); return; }
+            runOnUiThread(() -> ask(id, which));
+        }
+
+        @JavascriptInterface
+        public void alarmTest(String mode) {
+            if (!trusted()) return;
+            Reminders.test(getApplicationContext(), mode);
+        }
+
+        @JavascriptInterface
+        public String alarmEvents() {
+            if (!trusted()) return "[]";
+            return Reminders.takeEvents(getApplicationContext());
+        }
+
+        @JavascriptInterface
+        public void alarmClear() {
+            if (!trusted()) return;
+            Reminders.clearAll(getApplicationContext());
+        }
+
+        /* calendário do celular */
+        @JavascriptInterface
+        public String calInfo(String email) {
+            if (!trusted()) return "{}";
+            return DeviceCalendar.info(getApplicationContext(), email).toString();
+        }
+
+        @JavascriptInterface
+        public void calSync(String id, String email, String json) {
+            if (!trusted()) { done(id, false, "origem"); return; }
+            io.execute(() -> done(id, true, DeviceCalendar.sync(getApplicationContext(), email, json).toString()));
+        }
+
+        @JavascriptInterface
+        public void calWipe(String id) {
+            if (!trusted()) { done(id, false, "origem"); return; }
+            io.execute(() -> done(id, true, String.valueOf(DeviceCalendar.wipe(getApplicationContext()))));
         }
 
         @JavascriptInterface
