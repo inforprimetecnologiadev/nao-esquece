@@ -2,6 +2,11 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.4.1 — 6 de novembro de 2026
+
+- Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).
+- Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.
+
 ## 1.4.0 — 6 de novembro de 2026
 
 - Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.

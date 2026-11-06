@@ -380,6 +380,10 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .emeta .tagchip[data-has="1"]{background:var(--accent-soft);color:var(--accent)}
 .emeta .tagchip[data-urg="1"]{background:color-mix(in srgb,var(--danger) 16%,transparent);color:var(--danger)}
 .row .ck{visibility:hidden;color:var(--accent);margin-left:auto}
+.dt2{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:8px}
+.dt2 .field{margin:0;font-size:17px;font-weight:700}
+.qk{margin-top:8px}
+.qk button{font-size:13px}
 #tgUrg>span:first-child svg,#tgUrg>span:first-child{color:var(--danger)}
 .row[aria-pressed="true"] .ck{visibility:visible}
 .colors{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 4px}
@@ -629,7 +633,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -861,7 +865,7 @@ const isTagView=f=>typeof f==='string'&&f.startsWith('tag:');
 const viewIsFolder=f=>!SPECIAL.includes(f)&&!isTagView(f);
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.4.0', TERMS_VERSION='2026-11-06.2';
+const APP_VERSION='1.4.1', TERMS_VERSION='2026-11-06.2';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
@@ -1397,7 +1401,7 @@ function openSheet(html, mount, onClose){
   if(mount) mount($('#sheet'));
   const f=$('#sheet').querySelector('[autofocus]'); if(f) setTimeout(()=>{ f.focus(); f.select&&f.select(); },50);
 }
-function closeSheet(){ $('#sheet').hidden=true; $('#scrim').hidden=true; $('#sheet').innerHTML=''; if(sheetClose) sheetClose(); sheetClose=null; guardCheck(); }
+function closeSheet(){ const f=sheetClose; sheetClose=null; try{ if(f) f(); }catch(e){} $('#sheet').hidden=true; $('#scrim').hidden=true; $('#sheet').innerHTML=''; guardCheck(); }
 $('#scrim').onclick=closeSheet;
 document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!$('#sheet').hidden) closeSheet(); });
 
@@ -3074,8 +3078,12 @@ function alarmWarnHtml(st){
 function refreshAlarmWarn(){ const w=document.querySelector('#sheet:not([hidden]) #alWarn'); if(!w) return; const h=alarmWarnHtml(alarmState()); if(h) w.outerHTML=h; else w.remove(); }
 
 function reminderSheet(n){
-  let at=n.remindAt; if(!at){ const d=new Date(now()+3600e3); d.setMinutes(0,0,0); at=toLocalInput(d); }
+  let at=n.remindAt; if(!at){ const d=new Date(now()+3600e3); d.setSeconds(0,0); d.setMinutes(Math.ceil(d.getMinutes()/5)*5); at=toLocalInput(d); }
   at=at.slice(0,16);
+  let sEl=null, poll=0;
+  // lê o dia e a hora direto dos campos (alguns Android não avisam quando a hora muda no relógio)
+  const read=()=>{ if(!sEl) return false; const dv=(sEl.querySelector('#rmDay')||{}).value||'', tv=(sEl.querySelector('#rmHour')||{}).value||'';
+    if(!/^\d{4}-\d\d-\d\d$/.test(dv)||!/^\d\d:\d\d/.test(tv)) return false; const v=dv+'T'+tv.slice(0,5); if(v===at) return false; at=v; return true; };
   let before=n.remindBefore!=null?+n.remindBefore:(HAS_ALARM?0:10);
   let mode=RMODES.some(x=>x[0]===n.remindMode)?n.remindMode:(cfg.remMode||'ambos');
   let rep=n.remindRepeat||'', touched=false, handled=false;
@@ -3089,6 +3097,7 @@ function reminderSheet(n){
   // salva o lembrete (também quando a janela é fechada sem tocar em Salvar)
   const save=auto=>{
     if(handled) return true;
+    if(read()) touched=true;
     if(!at||isNaN(new Date(at))){ if(!auto) toast('Escolha o dia e a hora.'); return false; }
     handled=true;
     n.remindAt=at; n.remindBefore=before; if(rep) n.remindRepeat=rep; else delete n.remindRepeat;
@@ -3102,7 +3111,9 @@ function reminderSheet(n){
     return true; };
   openSheet(`<h3>Lembrete</h3><p class="sub">${hint}</p>${st?alarmWarnHtml(st):''}
     ${IS_APK&&!HAS_ALARM?'<div class="btns" style="margin:0 0 12px"><button class="btn pri" id="rmUpd">Baixar a versão nova</button></div>':''}
-    <div class="blk"><div class="lbl">Dia e hora da atividade</div><input type="datetime-local" class="field" id="rmAt" value="${at}"></div>
+    <div class="blk"><div class="lbl">Dia e hora da atividade</div>
+      <div class="dt2"><input type="date" class="field" id="rmDay" value="${at.slice(0,10)}" aria-label="Dia"><input type="time" class="field" id="rmHour" value="${at.slice(11,16)}" aria-label="Hora"></div>
+      <div class="seg wrap qk" id="rmQ"><button data-q="30">Daqui a 30 min</button><button data-q="60">Daqui a 1 hora</button><button data-q="t18">Hoje 18:00</button><button data-q="a8">Amanhã 08:00</button></div></div>
     <div class="blk"><div class="lbl">Repetir</div><div class="seg wrap" id="rmR">${REPEATS.map(([k,l])=>`<button data-r="${k}" aria-pressed="${k===rep}">${l}</button>`).join('')}</div></div>
     <div class="blk"><div class="lbl">${HAS_ALARM?'Tocar o alarme':'Avisar antes'}</div><div class="seg wrap" id="rmB">${BEFORE.map(([m,l])=>`<button data-m="${m}" aria-pressed="${m===before}">${HAS_ALARM&&m?l+' antes':l}</button>`).join('')}</div></div>
     ${HAS_ALARM?`<div class="blk"><div class="lbl">Aviso de 1 minuto antes e alarme</div><div class="seg wrap" id="rmM">${RMODES.map(([k,l])=>`<button data-k="${k}" aria-pressed="${k===mode}">${l}</button>`).join('')}</div></div>`:''}
@@ -3119,12 +3130,21 @@ function reminderSheet(n){
     s.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{ mode=b.dataset.k; touched=true; s.querySelectorAll('[data-k]').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
     s.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ rep=b.dataset.r; touched=true; s.querySelectorAll('[data-r]').forEach(x=>x.setAttribute('aria-pressed',x===b)); sum(); });
     s.addEventListener('click',async e=>{ const b=e.target.closest&&e.target.closest('[data-perm]'); if(!b) return; await askPerm(b.dataset.perm); refreshAlarmWarn(); });
-    const inp=s.querySelector('#rmAt'); inp.oninput=inp.onchange=()=>{ at=inp.value.slice(0,16); touched=true; sum(); }; sum();
+    sEl=s;
+    const upd=()=>{ if(read()){ touched=true; sum(); } };
+    ['#rmDay','#rmHour'].forEach(q=>{ const i=s.querySelector(q); i.addEventListener('input',upd); i.addEventListener('change',upd); i.addEventListener('blur',upd); });
+    poll=setInterval(()=>{ if(!sEl||!sEl.isConnected){ clearInterval(poll); return; } upd(); },400);
+    s.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{ const q=b.dataset.q, d=new Date();
+      if(q==='t18'){ d.setHours(18,0,0,0); if(d.getTime()<=now()) d.setDate(d.getDate()+1); }
+      else if(q==='a8'){ d.setDate(d.getDate()+1); d.setHours(8,0,0,0); }
+      else { d.setTime(now()+(+q)*60000); d.setSeconds(0,0); }
+      s.querySelector('#rmDay').value=toLocalInput(d).slice(0,10); s.querySelector('#rmHour').value=toLocalInput(d).slice(11,16); upd(); });
+    sum();
     const u=s.querySelector('#rmUpd'); if(u) u.onclick=()=>openLink(APK_URL);
     s.querySelector('#rmOk').onclick=()=>{ if(save(false)) closeSheet(); };
     const d=s.querySelector('#rmDel'); if(d) d.onclick=()=>{ handled=true; delete n.remindAt; delete n.remindBefore; delete n.remindMode; delete n.remindRepeat; n.updatedAt=now(); changed(); closeSheet(); renderRemChip(n); renderList(); toast('Lembrete removido'); };
   },
-  ()=>{ if(touched&&!handled) save(true); });
+  ()=>{ clearInterval(poll); if(read()) touched=true; if(touched&&!handled) save(true); sEl=null; });
 }
 // depois de salvar: confere o que o Android precisa liberar, uma coisa de cada vez
 async function afterReminderSaved(){
