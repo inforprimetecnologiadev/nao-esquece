@@ -2,6 +2,12 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.6.1 — 6 de novembro de 2026
+
+- Etiquetas: o lápis ao lado de cada etiqueta muda a cor e o nome dela, e o botão da etiqueta na nota agora aparece na cor escolhida.
+- Áudio mais rápido, como no WhatsApp: toque em 1× para ouvir em 1,5× ou 2×. O app lembra a velocidade escolhida.
+- Vídeo também: no vídeo aberto, toque em 1× para assistir em 1,5×, 2× ou 0,5×.
+
 ## 1.6.0 — 6 de novembro de 2026
 
 - Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.

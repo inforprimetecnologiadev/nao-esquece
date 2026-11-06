@@ -377,7 +377,10 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .tag.tg{display:inline-flex;align-items:center;gap:5px;background:color-mix(in srgb,var(--tc) 16%,transparent);color:var(--ink)}
 .tag.tg::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--tc)}
 .note.urg{box-shadow:inset 4px 0 0 var(--danger)}
-.emeta .tagchip[data-has="1"]{background:var(--accent-soft);color:var(--accent)}
+.emeta .tagchip[data-has="1"]{background:color-mix(in srgb,var(--tc,var(--accent)) 18%,transparent);color:var(--ink)}
+.emeta .tagchip[data-has="1"]>span:first-child{color:var(--tc,var(--accent))}
+.tagchip .tdot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--tc);margin:0 5px 0 1px;vertical-align:1px}
+.tagchip .tsep{opacity:.55;white-space:pre;margin:0 2px}
 .emeta .tagchip[data-urg="1"]{background:color-mix(in srgb,var(--danger) 16%,transparent);color:var(--danger)}
 .row .ck{visibility:hidden;color:var(--accent);margin-left:auto}
 .dt2{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:8px}
@@ -386,6 +389,23 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .qk button{font-size:13px}
 #tgUrg>span:first-child svg,#tgUrg>span:first-child{color:var(--danger)}
 .row[aria-pressed="true"] .ck{visibility:visible}
+.tgrow{display:flex;align-items:center;gap:2px}
+.tgrow>.row{flex:1;min-width:0}
+.tgrow .ib[aria-expanded="true"]{background:var(--accent-soft);color:var(--accent)}
+.tged{margin:0 0 8px 6px;padding:10px 12px 12px;border-radius:14px;background:var(--sunk)}
+.tged .field{margin:0;box-sizing:border-box;width:100%;background:var(--surface)}
+.tged .colors{margin:10px 0 8px;gap:8px;flex-wrap:nowrap}
+.tged .colors button{width:30px;height:30px;flex:none}
+.tged .colors button[aria-pressed="true"]{border-color:var(--sunk)}
+.tged .tgdel{display:inline-flex;align-items:center;gap:7px;color:var(--danger);font-weight:700;font-size:14px;padding:6px 2px}
+.tged .tgdel svg{width:17px;height:17px}
+.tghint{font-size:12.5px;color:var(--muted);margin:-2px 2px 6px}
+/* velocidade do áudio e do vídeo */
+.spd{flex:none;min-width:44px;height:30px;padding:0 9px;border-radius:15px;background:var(--sunk);color:var(--ink);font-weight:800;font-size:13px;font-variant-numeric:tabular-nums;transition:background .2s,color .2s,transform .12s}
+.spd:active{transform:scale(.92)}
+.spd[data-fast="1"]{background:var(--accent);color:var(--accent-ink)}
+.vbar .spd{height:34px;min-width:50px;margin:0 2px;background:rgba(255,255,255,.16);color:#fff}
+.vbar .spd[data-fast="1"]{background:#fff;color:#111}
 .colors{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 4px}
 .colors button{width:34px;height:34px;border-radius:50%;background:var(--tc);border:3px solid transparent;box-shadow:0 0 0 1px var(--line)}
 .colors button[aria-pressed="true"]{border-color:var(--surface);box-shadow:0 0 0 2px var(--ink)}
@@ -823,7 +843,7 @@ textarea.tkdesc{font:inherit;font-size:15px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.6.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.</li><li>Marque a tarefa como feita e ela vai para Concluídas, com o dia em que foi feita. Dá para desfazer e voltar para pendentes.</li><li>Estrela nas tarefas importantes e a lista Com estrela, que junta as de todas as listas.</li><li>Ordenar por Minha ordem (segure e arraste), Data, Prazo, Estrela ou Título.</li><li>Cada tarefa pode ter detalhes, subtarefas, data, hora com alarme, repetição e prazo. Elas aparecem também em Hoje, no Calendário e no Relatório.</li><li>Menu da lista: renomear, enviar a lista pelo WhatsApp, excluir as concluídas e excluir a lista.</li></ul><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.6.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Etiquetas: o lápis ao lado de cada etiqueta muda a cor e o nome dela, e o botão da etiqueta na nota agora aparece na cor escolhida.</li><li>Áudio mais rápido, como no WhatsApp: toque em 1× para ouvir em 1,5× ou 2×. O app lembra a velocidade escolhida.</li><li>Vídeo também: no vídeo aberto, toque em 1× para assistir em 1,5×, 2× ou 0,5×.</li></ul><h2>Versão 1.6.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.</li><li>Marque a tarefa como feita e ela vai para Concluídas, com o dia em que foi feita. Dá para desfazer e voltar para pendentes.</li><li>Estrela nas tarefas importantes e a lista Com estrela, que junta as de todas as listas.</li><li>Ordenar por Minha ordem (segure e arraste), Data, Prazo, Estrela ou Título.</li><li>Cada tarefa pode ter detalhes, subtarefas, data, hora com alarme, repetição e prazo. Elas aparecem também em Hoje, no Calendário e no Relatório.</li><li>Menu da lista: renomear, enviar a lista pelo WhatsApp, excluir as concluídas e excluir a lista.</li></ul><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -898,7 +918,7 @@ textarea.tkdesc{font:inherit;font-size:15px}
 <input type="file" id="inAudRec" accept="audio/*" capture hidden>
 <div class="viewer" id="viewer" hidden>
   <div class="vbar"><button class="ib" id="vClose" aria-label="Fechar" data-i="back"></button><span class="vname" id="vName"></span>
-    <button class="ib" id="vText" aria-label="Ler o texto da imagem" data-i="text"></button><button class="ib" id="vShare" aria-label="Compartilhar anexo" data-i="share"></button><button class="ib" id="vDel" aria-label="Remover anexo" data-i="trash"></button></div>
+    <button class="spd" id="vSpd" hidden data-k="vid" aria-label="Velocidade do vídeo">1×</button><button class="ib" id="vText" aria-label="Ler o texto da imagem" data-i="text"></button><button class="ib" id="vShare" aria-label="Compartilhar anexo" data-i="share"></button><button class="ib" id="vDel" aria-label="Remover anexo" data-i="trash"></button></div>
   <div class="vbody" id="vbody"></div>
 </div>
 <div class="draw" id="draw" hidden>
@@ -1072,7 +1092,7 @@ const isTagView=f=>typeof f==='string'&&f.startsWith('tag:');
 const viewIsFolder=f=>!SPECIAL.includes(f)&&!isTagView(f);
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.6.0', TERMS_VERSION='2026-11-06.4';
+const APP_VERSION='1.6.1', TERMS_VERSION='2026-11-06.4';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
@@ -2318,7 +2338,7 @@ async function renderAtts(){
   box.hidden=false;
   const auds=list.filter(a=>/^audio\//.test(a.type)), media=list.filter(a=>!/^audio\//.test(a.type));
   box.innerHTML=`<div class="lbl">Anexos · ${list.length}</div>`
-    + auds.map(a=>`<div class="aud" data-aud="${a.id}"><div class="aud-h">${svg('wave')}<span class="grow">${esc(a.name.replace(/\.[^.]+$/,''))}${a.duration?` <small>· ${fmtDur(a.duration)}</small>`:''}</span>${a.driveId?'':`<span title="Aguardando envio ao Drive" style="color:var(--muted);display:inline-flex">${svg('cloudOff')}</span>`}<button class="ib sm" data-aopt="${a.id}" aria-label="Opções do áudio">${svg('more')}</button></div><div class="aud-p"></div></div>`).join('')
+    + auds.map(a=>`<div class="aud" data-aud="${a.id}"><div class="aud-h">${svg('wave')}<span class="grow">${esc(a.name.replace(/\.[^.]+$/,''))}${a.duration?` <small>· ${fmtDur(a.duration)}</small>`:''}</span>${a.driveId?'':`<span title="Aguardando envio ao Drive" style="color:var(--muted);display:inline-flex">${svg('cloudOff')}</span>`}${spdBtn('aud',a.id)}<button class="ib sm" data-aopt="${a.id}" aria-label="Opções do áudio">${svg('more')}</button></div><div class="aud-p"></div></div>`).join('')
     + media.map(a=>`<button class="att" data-att="${a.id}" aria-label="Abrir ${esc(a.name)}"></button>`).join('');
   for(const a of list){
     const u=await attURL(a);
@@ -2326,7 +2346,7 @@ async function renderAtts(){
       const p=box.querySelector(`[data-aud="${a.id}"] .aud-p`); if(!p) continue;
       if(!u){ p.innerHTML=`<div class="miss2">${a.driveId?'Está no Drive. Baixando…':'Este áudio não está neste aparelho.'}</div>`;
         if(a.driveId) fetchAtt(a).then(ok=>{ if(ok&&cur.noteId===n.id) renderAtts(); }); continue; }
-      p.innerHTML=`<audio controls preload="metadata" src="${u}"></audio>`; fixDur(p.querySelector('audio')); continue;
+      p.innerHTML=`<audio controls preload="metadata" src="${u}"></audio>`; const au=p.querySelector('audio'); setRate(au,rateOf('aud')); fixDur(au); continue;
     }
     const el=box.querySelector(`[data-att="${a.id}"]`); if(!el) continue;
     if(a.type==='application/pdf'){ el.innerHTML=`<div class="pdft">${svg('pdf')}<b>${esc(a.name.replace(/\.pdf$/i,''))}</b><small>${a.pages?a.pages+(a.pages>1?' páginas':' página'):'PDF'}${u?'':' · no Drive'}</small></div>`+(a.driveId?'':`<span class="bd" title="Aguardando envio ao Drive">${svg('cloudOff')}</span>`); continue; }
@@ -2461,7 +2481,9 @@ async function openViewer(id){
   if(!u && a.driveId && hasToken()){ toast('Baixando do Drive…'); if(await fetchAtt(a)) u=await attURL(a); }
   if(!u){ toast(a.driveId?'Conecte-se à internet para baixar este anexo do Drive.':'Este anexo não está neste aparelho.'); return; }
   viewing={n,a}; $('#vName').textContent=a.name; $('#vText').hidden=!/^image\//.test(a.type)||!!a.kind;
-  $('#vbody').innerHTML=a.type.startsWith('video')?`<video src="${u}" controls autoplay playsinline></video>`:`<img src="${u}" alt="${esc(a.name)}">`;
+  const isV=a.type.startsWith('video');
+  $('#vbody').innerHTML=isV?`<video src="${u}" controls autoplay playsinline></video>`:`<img src="${u}" alt="${esc(a.name)}">`;
+  $('#vSpd').hidden=!isV; if(isV){ paintSpd($('#vSpd'),'vid'); setRate($('#vbody video'),rateOf('vid')); }
   $('#viewer').hidden=false; guardPush();
 }
 function closeViewer(){ $('#viewer').hidden=true; $('#vbody').innerHTML=''; viewing=null; guardCheck(); }
@@ -3550,17 +3572,24 @@ document.addEventListener('visibilitychange',()=>{ if(document.visibilityState!=
 /* ---------- prioridade e etiquetas ---------- */
 function renderTagChip(n){ const b=$('#tagBtn'); if(!b||!n) return; const ts=noteTags(n);
   b.dataset.urg=n.urgent?'1':''; b.dataset.has=ts.length?'1':'';
-  $('#tagTxt').textContent=[n.urgent?'Urgente':'',...ts.slice(0,2).map(t=>t.name)].filter(Boolean).join(' · ')+(ts.length>2?' +'+(ts.length-2):'')||'Etiqueta'; }
+  if(ts.length) b.style.setProperty('--tc',tagColor(ts[0].color)); else b.style.removeProperty('--tc');
+  const parts=[...(n.urgent?['Urgente']:[]),...ts.slice(0,2).map(t=>`<i class="tdot" style="--tc:${tagColor(t.color)}"></i>${esc(t.name)}`)];
+  $('#tagTxt').innerHTML=parts.length?parts.join('<span class="tsep"> · </span>')+(ts.length>2?' +'+(ts.length-2):''):'Etiqueta';
+  b.setAttribute('aria-label','Prioridade e etiquetas: '+([n.urgent?'Urgente':'',...ts.map(t=>t.name)].filter(Boolean).join(', ')||'nenhuma')); }
 $('#tagBtn').onclick=()=>{ const n=noteById(cur.noteId); if(n){ flushEdit(); tagSheet(n); } };
-function tagRows(n){ const tg=liveTags();
-  return tg.length?tg.map(t=>`<button class="row" data-tg="${t.id}" aria-pressed="${(n.tags||[]).includes(t.id)}"><i class="dot" style="--tc:${tagColor(t.color)}"></i><span class="grow">${esc(t.name)}</span><span class="ck" data-i="check"></span></button>`).join('')
+function tagRows(n,open){ const tg=liveTags();
+  return tg.length?'<p class="tghint">Toque no lápis para mudar a cor ou o nome.</p>'+tg.map(t=>`<div class="tgrow"><button class="row" data-tg="${t.id}" aria-pressed="${(n.tags||[]).includes(t.id)}"><i class="dot" style="--tc:${tagColor(t.color)}"></i><span class="grow">${esc(t.name)}</span><span class="ck" data-i="check"></span></button><button class="ib" data-tge="${t.id}" aria-expanded="${open===t.id}" aria-label="Mudar a cor ou o nome de ${esc(t.name)}">${svg('pencil')}</button></div>`
+      +(open===t.id?`<div class="tged" data-ted="${t.id}"><input class="field" data-tgn maxlength="40" value="${esc(t.name)}" aria-label="Nome da etiqueta" autocomplete="off"><div class="colors">${TAGC.map(([k,h])=>`<button data-ec="${k}" style="--tc:${h}" aria-label="Cor ${k}" aria-pressed="${k===t.color}"></button>`).join('')}</div><button class="tgdel" data-tgd>${svg('trash')}Apagar etiqueta</button></div>`:'')).join('')
     :'<p class="sub" style="margin:4px 0 8px">Nenhuma etiqueta ainda. Crie a primeira aqui embaixo.</p>'; }
+function tagDrop(t){ t.deleted=true; t.updatedAt=now();
+  for(const x of db.notes) if((x.tags||[]).includes(t.id)){ x.tags=x.tags.filter(y=>y!==t.id); if(!x.tags.length) delete x.tags; x.updatedAt=now(); }
+  if(cur.folder==='tag:'+t.id) cur.folder='all'; }
 function tagSheet(n){
   let col='azul';
   openSheet(`<h3>Prioridade e etiquetas</h3>
     <button class="row" id="tgUrg" aria-pressed="${!!n.urgent}"><span data-i="flag" style="color:var(--danger)"></span><span class="grow">Urgente<small>Fica em vermelho e no topo das listas</small></span><span class="ck" data-i="check"></span></button>
     <div class="blk"><div class="lbl">Etiquetas</div><div id="tgList">${tagRows(n)}</div></div>
-    <div class="blk"><div class="lbl">Nova etiqueta</div>
+    <div class="blk"><div class="lbl">Nova etiqueta (escolha a cor dela)</div>
       <input class="field" id="tgName" maxlength="30" placeholder="Ex.: Cliente, Financeiro, Equipe" autocomplete="off">
       <div class="colors" id="tgCol">${TAGC.map(([k,h])=>`<button data-c="${k}" style="--tc:${h}" aria-label="Cor ${k}" aria-pressed="${k===col}"></button>`).join('')}</div>
       <div class="btns"><button class="btn" id="tgAdd">Criar e marcar nesta nota</button></div></div>
@@ -3568,7 +3597,18 @@ function tagSheet(n){
   s=>{
     const save=()=>{ n.updatedAt=now(); delete n._fresh; changed(); renderTagChip(n); renderFolders(); renderList(); };
     s.querySelector('#tgUrg').onclick=e=>{ if(n.urgent) delete n.urgent; else n.urgent=true; e.currentTarget.setAttribute('aria-pressed',!!n.urgent); save(); };
-    s.querySelector('#tgList').addEventListener('click',e=>{ const b=e.target.closest('[data-tg]'); if(!b) return;
+    let open=null, delArm=0;
+    const paint=()=>{ const L=s.querySelector('#tgList'); L.innerHTML=tagRows(n,open); paintIcons(L); };
+    s.querySelector('#tgList').addEventListener('input',e=>{ if(!e.target.matches('[data-tgn]')) return; const t=tagById(open); if(!t) return;
+      const v=e.target.value.replace(/\s+/g,' ').trim(); if(!v||v===t.name) return; t.name=v.slice(0,40); t.updatedAt=now();
+      const r=s.querySelector(`[data-tg="${t.id}"] .grow`); if(r) r.textContent=t.name; save(); });
+    s.querySelector('#tgList').addEventListener('click',e=>{
+      const ed=e.target.closest('[data-tge]'); if(ed){ open=open===ed.dataset.tge?null:ed.dataset.tge; delArm=0; paint(); const f=open&&s.querySelector('.tged'); if(f) f.scrollIntoView({block:'nearest',behavior:'smooth'}); return; }
+      const ec=e.target.closest('[data-ec]'); if(ec){ const t=tagById(open); if(!t) return; t.color=ec.dataset.ec; t.updatedAt=now(); save(); paint(); try{ navigator.vibrate&&navigator.vibrate(8); }catch(x){} return; }
+      const dl=e.target.closest('[data-tgd]'); if(dl){ const t=tagById(open); if(!t) return;
+        if(now()-delArm>4000){ delArm=now(); dl.lastChild.textContent='Toque de novo para apagar de todas as notas'; return; }
+        const nm=t.name; tagDrop(t); open=null; save(); paint(); toast('Etiqueta “'+nm+'” apagada'); return; }
+      const b=e.target.closest('[data-tg]'); if(!b) return;
       const id=b.dataset.tg, has=(n.tags||[]).includes(id);
       n.tags=has?(n.tags||[]).filter(x=>x!==id):[...(n.tags||[]),id]; if(!n.tags.length) delete n.tags;
       b.setAttribute('aria-pressed',!has); save(); });
@@ -3577,7 +3617,7 @@ function tagSheet(n){
       let t=liveTags().find(x=>norm(x.name)===norm(nm)), made=false;
       if(!t){ t={id:uid(),name:nm.slice(0,40),color:col,updatedAt:now()}; db.tags=db.tags||[]; db.tags.push(t); made=true; }
       if(!(n.tags||[]).includes(t.id)) n.tags=[...(n.tags||[]),t.id];
-      s.querySelector('#tgName').value=''; const L=s.querySelector('#tgList'); L.innerHTML=tagRows(n); paintIcons(L); save();
+      s.querySelector('#tgName').value=''; open=null; paint(); save();
       toast(made?'Etiqueta “'+t.name+'” criada':'Etiqueta “'+t.name+'” marcada'); };
     s.querySelector('#tgOk').onclick=closeSheet;
   });
@@ -3590,11 +3630,9 @@ function tagMenu(id){
     <button class="row danger" id="tmDel"><span data-i="trash"></span><span class="grow">Apagar etiqueta<small>As notas continuam; só a etiqueta sai delas</small></span></button>`,
   s=>{
     s.querySelector('#tmRen').onclick=()=>{ closeSheet(); askName({title:'Renomear etiqueta',value:t.name,onOk:v=>{ t.name=v.slice(0,40); t.updatedAt=now(); changed(); render(); toast('Etiqueta renomeada'); }}); };
-    s.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{ t.color=b.dataset.c; t.updatedAt=now(); s.querySelectorAll('[data-c]').forEach(x=>x.setAttribute('aria-pressed',x===b)); changed(); render(); });
+    s.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{ t.color=b.dataset.c; t.updatedAt=now(); s.querySelectorAll('[data-c]').forEach(x=>x.setAttribute('aria-pressed',x===b)); changed(); render(); const o=noteById(cur.noteId); if(o) renderTagChip(o); });
     s.querySelector('#tmDel').onclick=()=>{ closeSheet(); confirmSheet({title:'Apagar a etiqueta “'+esc(t.name)+'”?',sub:'As notas não são apagadas: só deixam de ter esta etiqueta.',ok:'Apagar',onOk:()=>{
-      t.deleted=true; t.updatedAt=now();
-      for(const n of db.notes) if((n.tags||[]).includes(t.id)){ n.tags=n.tags.filter(x=>x!==t.id); if(!n.tags.length) delete n.tags; n.updatedAt=now(); }
-      if(cur.folder==='tag:'+t.id) cur.folder='all'; changed(); render(); toast('Etiqueta apagada'); }}); };
+      tagDrop(t); changed(); render(); toast('Etiqueta apagada'); }}); };
   });
 }
 
@@ -4352,6 +4390,21 @@ function tdEnd(){ if(!TD.on) return; cancelAnimationFrame(TD.raf); const g=TD.ro
     clearTimeout(TD.t); TD.t=setTimeout(()=>{ TD.t=0; if(g.isConnected){ TD.src='mouse'; tdBegin(g,TD.sy); } },420); });
   document.addEventListener('mousemove',e=>{ if(now()-(TD.touchAt||0)<1500) return; if(TD.on&&TD.src==='mouse'){ e.preventDefault(); tdMove(e.clientY); return; } if(TD.t&&Math.hypot(e.clientX-TD.sx,e.clientY-TD.sy)>6){ clearTimeout(TD.t); TD.t=0; } });
   document.addEventListener('mouseup',()=>{ if(now()-(TD.touchAt||0)<1500) return; clearTimeout(TD.t); TD.t=0; if(TD.on&&TD.src==='mouse') tdEnd(); }); }
+
+
+/* ---------- velocidade do áudio e do vídeo, como no WhatsApp ---------- */
+const RATES={aud:[1,1.5,2],vid:[1,1.5,2,0.5]};
+function rateOf(k){ const r=+(cfg[k==='vid'?'vidRate':'audRate']||1); return RATES[k].includes(r)?r:1; }
+const rateTxt=r=>String(r).replace('.',',')+'×';
+function setRate(el,r){ if(!el) return; try{ el.defaultPlaybackRate=r; el.playbackRate=r; if('preservesPitch' in el) el.preservesPitch=true; }catch(e){}
+  if(!el.dataset.rk){ el.dataset.rk='1'; el.addEventListener('loadedmetadata',()=>{ const k=el.tagName==='VIDEO'?'vid':'aud'; try{ el.playbackRate=rateOf(k); }catch(e){} }); } }
+function spdBtn(k,id){ const r=rateOf(k); return `<button class="spd" data-k="${k}"${id?` data-spd="${id}"`:''} data-fast="${r!==1?1:''}" aria-label="Velocidade ${rateTxt(r)}. Toque para mudar">${rateTxt(r)}</button>`; }
+function paintSpd(b,k){ const r=rateOf(k); b.textContent=rateTxt(r); b.dataset.fast=r!==1?'1':''; b.setAttribute('aria-label','Velocidade '+rateTxt(r)+'. Toque para mudar'); }
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('.spd[data-k]'); if(!b) return; e.preventDefault(); e.stopPropagation();
+  const k=b.dataset.k, L=RATES[k], r=L[(L.indexOf(rateOf(k))+1)%L.length]; cfg[k==='vid'?'vidRate':'audRate']=r; saveCfg();
+  if(k==='aud'){ document.querySelectorAll('#atts audio').forEach(a=>setRate(a,r)); document.querySelectorAll('.spd[data-k="aud"]').forEach(x=>paintSpd(x,'aud')); }
+  else { setRate($('#vbody video'),r); paintSpd(b,'vid'); }
+  try{ navigator.vibrate&&navigator.vibrate(8); }catch(x){} },true);
 
 function checkReminders(){
   if(HAS_ALARM||!appReady||locked) return; // no app do celular quem avisa é o alarme do Android
