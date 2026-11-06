@@ -2,6 +2,12 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.2.0 — 6 de novembro de 2026
+
+- APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.
+- Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.
+- Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.
+
 ## 1.1.2 — 6 de novembro de 2026
 
 - Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.

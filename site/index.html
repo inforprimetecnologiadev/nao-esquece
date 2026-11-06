@@ -589,7 +589,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -671,6 +671,33 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <script>
 // layout de computador só com tela larga de verdade (no celular com "Site para computador" ligado, continua o de celular)
 const WIDE=()=>{ try{ return matchMedia('(min-width:900px) and (min-device-width:900px)').matches; }catch(e){ return innerWidth>=900; } };
+// ---------- dentro do APK: ponte com o Android (window.NativeApp) ----------
+const NA=(()=>{ try{ return window.NativeApp&&typeof window.NativeApp.info==='function'?window.NativeApp:null; }catch(e){ return null; } })();
+const IS_APK=!!NA;
+const nativeWait=new Map(); let nativeSeq=0;
+window.__nativeDone=(id,ok,data)=>{ const p=nativeWait.get(id); if(!p) return; nativeWait.delete(id); if(ok) p.res(data); else p.rej(new Error(data||'erro')); };
+function nativeCall(method,...args){ return new Promise((res,rej)=>{ const id='n'+(++nativeSeq); nativeWait.set(id,{res,rej}); try{ NA[method](id,...args); }catch(e){ nativeWait.delete(id); rej(e); } }); }
+const blobB64=b=>new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(String(r.result).replace(/^data:[^,]*,/,'')); r.onerror=()=>rej(r.error); r.readAsDataURL(b instanceof Blob?b:new Blob([b])); });
+function nativeVersion(){ try{ return JSON.parse(NA.info()).version||''; }catch(e){ return ''; } }
+if(IS_APK){
+  document.documentElement.classList.add('apk');
+  // compartilhar arquivos e textos pelo menu "Compartilhar" do Android
+  try{
+    Object.defineProperty(navigator,'canShare',{configurable:true,value:()=>true});
+    Object.defineProperty(navigator,'share',{configurable:true,value:async d=>{
+      d=d||{}; const files=[];
+      for(const f of (d.files||[])) files.push({name:f.name||'arquivo',type:f.type||'application/octet-stream',b64:await blobB64(f)});
+      await nativeCall('share',JSON.stringify({title:d.title||'',text:[d.text,d.url].filter(Boolean).join('\n'),files}));
+    }});
+  }catch(e){}
+  // links que abririam outra janela: páginas do app abrem dentro dele; o resto, no app certo do celular
+  document.addEventListener('click',e=>{
+    const a=e.target.closest&&e.target.closest('a[href]'); if(!a) return;
+    const h=a.getAttribute('href')||'';
+    if(a.hasAttribute('download')||/^(#|blob:|javascript:)/i.test(h)) return;
+    if(a.target==='_blank'||/^(mailto|tel|intent|whatsapp|geo):/i.test(h)){ e.preventDefault(); extLaunch=now(); NA.openExternal(a.href); }
+  },true);
+}
 const LOGO='data:image/webp;base64,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';
 /* ============ CONFIGURAÇÃO ============
    Cole aqui o "ID do cliente OAuth" do Google Cloud (veja o guia).
@@ -779,7 +806,7 @@ const now = () => Date.now();
 const SPECIAL=['all','none','recent','pending','done','trash'];
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.1.2', TERMS_VERSION='2026-11-05.2';
+const APP_VERSION='1.2.0', TERMS_VERSION='2026-11-05.2';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
@@ -1055,6 +1082,7 @@ function applyTheme(){
   $('#themeBtn').setAttribute('aria-label','Tema '+({light:'claro',dark:'escuro'}[cfg.theme]||'automático')+'. Toque para trocar');
   let m=document.querySelector('meta[name=theme-color]'); if(!m){ m=document.createElement('meta'); m.name='theme-color'; document.head.appendChild(m); }
   m.content = getComputedStyle(document.body).backgroundColor;
+  if(IS_APK){ try{ const c=(m.content.match(/\d+/g)||[]).slice(0,3); NA.setTheme(dark?'1':'0',c.length===3?'#'+c.map(x=>(+x).toString(16).padStart(2,'0')).join(''):''); }catch(e){} }
 }
 $('#themeBtn').onclick=()=>{ const order=['system','light','dark']; cfg.theme=order[(order.indexOf(cfg.theme)+1)%3]; saveCfg(); applyTheme();
   toast({system:'Tema automático: segue o celular',light:'Tema claro',dark:'Tema escuro'}[cfg.theme]); };
@@ -1230,7 +1258,17 @@ const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 let rec=null, listening=false, wantMic=false;
 function setMicUI(){ $('#micBtn').setAttribute('aria-pressed',listening); $('#interim').hidden=!listening; if(listening&&!$('#interim').textContent) $('#interim').textContent='Ouvindo… fale agora'; }
 function stopMic(){ wantMic=false; if(rec){ try{rec.stop();}catch(e){} } listening=false; $('#interim').textContent=''; setMicUI(); }
+async function nativeDictate(){
+  const s=document.getSelection(); if(s.rangeCount&&ed.contains(s.anchorNode)) savedRange=s.getRangeAt(0).cloneRange();
+  extLaunch=now();
+  try{
+    let t=String(await nativeCall('dictate')).trim(); if(!t) return;
+    const prev=charBefore(); if(!prev||/[.!?\n]/.test(prev)) t=t.charAt(0).toUpperCase()+t.slice(1); if(prev&&!/\s/.test(prev)) t=' '+t;
+    insertAtSaved(t);
+  }catch(e){ if(e.message==='indisponivel') toast('Este celular não tem o ditado do Google. Instale ou atualize o app Google para usar.'); }
+}
 function startMic(){
+  if(IS_APK){ nativeDictate(); return; }
   if(!SR){ toast('Este navegador não faz ditado. Use o Chrome no Android ou o Edge no computador.'); return; }
   const s=document.getSelection(); if(s.rangeCount&&ed.contains(s.anchorNode)) savedRange=s.getRangeAt(0).cloneRange();
   rec=new SR(); rec.lang='pt-BR'; rec.continuous=true; rec.interimResults=true;
@@ -1348,6 +1386,7 @@ async function shareText(title,text){
 }
 function noteText(n){ return (n.title?n.title+'\n\n':'')+txt(n.html); }
 function download(name,content,type){
+  if(IS_APK){ (async()=>{ try{ const where=await nativeCall('saveFile',name,type||'',await blobB64(content instanceof Blob?content:new Blob([content],{type}))); toast(where==='share'?'Escolha onde guardar: '+name:'Salvo em Downloads › Não Esquece: '+name); }catch(e){ toast('Não foi possível salvar o arquivo.'); } })(); return; }
   try{ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([content],{type})); a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },500); toast('Arquivo baixado: '+name); }
   catch(e){ toast('Não foi possível baixar o arquivo aqui.'); }
 }
@@ -1389,16 +1428,41 @@ function loadGIS(){
 }
 let loginResolve=null;
 function logErr(msg){ cfg.lastErr={at:now(),msg:String(msg).slice(0,160)}; saveCfg(); }
+function dropToken(tk){ revokeToken(tk); if(IS_APK){ try{ NA.signOut(tk); }catch(e){} } }
+function authLost(){ if(IS_APK&&token){ try{ NA.clearToken(token); }catch(e){} } token=null; tokenExp=0; }
+let nativeBusy=null;
+function nativeLogin(interactive){
+  if(nativeBusy) return nativeBusy;
+  nativeBusy=(async()=>{
+    if(!navigator.onLine){ if(interactive) toast('Conecte-se à internet para entrar com o Google.'); return false; }
+    if(interactive) extLaunch=now();
+    try{
+      const r=JSON.parse(await nativeCall('signIn',SCOPE,cfg.email||'',interactive?'1':'0'));
+      return await acceptToken(r.token,3300,r.scopes||SCOPE);
+    }catch(e){
+      const m=String(e&&e.message||e);
+      if(!interactive){ cfg.silentFailAt=now(); saveCfg(); return false; }
+      logErr('Login no app: '+m);
+      toast(m==='cancel'?'Login cancelado.'
+        :m==='config'?'O Google ainda não liberou o login neste app: falta cadastrar o app Android no Google Cloud.'
+        :m==='network'?'Sem internet para entrar com o Google.'
+        :m==='sem_contas'?'Adicione uma conta Google no celular (Configurações › Contas) e tente de novo.'
+        :'Não deu para entrar com o Google ('+m+').');
+      return false;
+    }
+  })().finally(()=>{ nativeBusy=null; });
+  return nativeBusy;
+}
 function revokeToken(tk){ try{ fetch('https://oauth2.googleapis.com/revoke?token='+encodeURIComponent(tk),{method:'POST',mode:'no-cors'}).catch(()=>{}); }catch(e){} }
 /* Recebe o acesso do Google (vale para os dois jeitos de entrar). */
 async function acceptToken(tk, expiresIn, scopeStr){
   if(!tk) return false;
-  if(scopeStr && !String(scopeStr).includes('https://www.googleapis.com/auth/drive.file')){ revokeToken(tk); toast('Para salvar no Drive, marque a permissão do Google Drive ao entrar.'); logErr('Permissão do Drive não marcada'); return false; }
+  if(scopeStr && !String(scopeStr).includes('https://www.googleapis.com/auth/drive.file')){ dropToken(tk); toast('Para salvar no Drive, marque a permissão do Google Drive ao entrar.'); logErr('Permissão do Drive não marcada'); return false; }
   if(scopeStr) cfg.calOk=String(scopeStr).includes('calendar.app.created');
   const exp=now()+((+expiresIn||3600)-90)*1000;
   let u=null; try{ const ur=await fetch('https://www.googleapis.com/oauth2/v3/userinfo',{headers:{Authorization:'Bearer '+tk}}); if(ur.ok) u=await ur.json(); }catch(e){}
   if(cfg.email && u?.email && u.email!==cfg.email){
-    revokeToken(tk);
+    dropToken(tk);
     toast('Este aparelho está ligado a '+cfg.email+'. Entre com essa conta, ou use “Sair da conta” nos Ajustes antes de trocar.');
     logErr('Tentou entrar com '+u.email); return false;
   }
@@ -1411,6 +1475,7 @@ async function acceptToken(tk, expiresIn, scopeStr){
 /* App instalado: o login abre como página e volta para o app (a janela solta do Google não consegue devolver o acesso). */
 const REDIRECT_URI=location.origin+location.pathname.replace(/[^/]*$/,''); // endereço do próprio app (ex.: …/nao-esquece/)
 function useRedirect(){
+  if(IS_APK) return false;
   try{ if(localStorage.getItem('ne.forceRedirect')) return true; }catch(e){}
   try{ return matchMedia('(display-mode: standalone)').matches||matchMedia('(display-mode: fullscreen)').matches||matchMedia('(display-mode: minimal-ui)').matches||navigator.standalone===true; }catch(e){ return false; }
 }
@@ -1448,6 +1513,7 @@ async function handleRedirectReturn(){
   return {o,ok};
 }
 async function googleLogin(firstTime){
+  if(IS_APK) return nativeLogin(true);
   if(!clientId()){ toast('Falta configurar o ID do cliente do Google. Veja o guia.'); return false; }
   if(!navigator.onLine){ toast('Conecte-se à internet para entrar com o Google.'); return false; }
   if(useRedirect()){ startRedirectLogin(firstTime?'consent':''); return new Promise(()=>{}); }
@@ -1502,7 +1568,7 @@ async function apiRun(url,opt,ms,method){
     try{ r=await fetch(url,{...opt,headers:Object.assign({},opt.headers,{Authorization:'Bearer '+token}),signal:ac.signal}); }
     catch(e){ err=e.name==='AbortError'?'timeout':'net'; }
     finally{ clearTimeout(t); rqDone(); }
-    if(r&&r.status===401){ token=null; tokenExp=0; throw new Error('auth'); }
+    if(r&&r.status===401){ authLost(); throw new Error('auth'); }
     let limited=!!r&&[429,500,502,503,504].includes(r.status);
     if(r&&r.status===403){ try{ limited=/rateLimitExceeded|userRateLimitExceeded/.test(await r.clone().text()); }catch(e){} }
     if(attempt<4 && navigator.onLine && (limited || (!r && method!=='POST'))){
@@ -1660,7 +1726,11 @@ async function syncNow(manual){
   if(uploading&&!manual){ scheduleSync(); return; }
   if(!cfg.linked){ if(manual) openSettings(); return; }
   if(!navigator.onLine){ if(manual) toast('Sem internet. As notas estão salvas no aparelho e vão para o Drive quando a conexão voltar.'); renderStatus(); return; }
-  if(!hasToken()){ if(manual) await googleLogin(false); renderStatus(); return; }
+  if(!hasToken()){
+    if(IS_APK&&!manual){ if(!(cfg.silentFailAt&&now()-cfg.silentFailAt<5*60e3)) nativeLogin(false); }
+    else if(manual) await googleLogin(false);
+    renderStatus(); return;
+  }
   syncing=true; renderStatus();
   try{
     await deletePendingMedia();
@@ -1687,7 +1757,10 @@ async function syncNow(manual){
     if(manual) toast(pendingMedia()?'Notas salvas no Drive. Enviando os anexos…':'Tudo salvo no Google Drive');
   }catch(e){
     logErr('Sincronizar: '+e.message);
-    if(e.message==='auth') toast('A conexão com o Google expirou. Toque em Conectar para continuar.');
+    if(e.message==='auth'){
+      if(IS_APK){ cfg.silentFailAt=0; setTimeout(()=>nativeLogin(false).then(ok=>{ if(!ok) toast('A conexão com o Google expirou. Toque em Conectar para continuar.'); }),300); }
+      else toast('A conexão com o Google expirou. Toque em Conectar para continuar.');
+    }
     else if(manual) toast('Não consegui falar com o Drive agora. Vou tentar de novo sozinho.');
   }
   syncing=false; renderStatus();
@@ -1742,7 +1815,7 @@ function openSettings(){
     </div>
     <div class="blk"><div class="lbl">Sobre</div>
       <button class="row" id="sHelp"><span data-i="mail"></span><span class="grow">Ajuda e contato<small>Perguntas frequentes, suporte e pedidos de LGPD</small></span></button>
-      <button class="row" id="sNews"><span data-i="info"></span><span class="grow">Não Esquece · versão ${APP_VERSION}<small>Ver as novidades de cada versão</small></span></button>
+      <button class="row" id="sNews"><span data-i="info"></span><span class="grow">Não Esquece · versão ${APP_VERSION}${IS_APK&&nativeVersion()?' · app '+nativeVersion():''}<small>Ver as novidades de cada versão</small></span></button>
     </div>`,
   s=>{
     s.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ cfg.theme=b.dataset.t; saveCfg(); applyTheme(); s.querySelectorAll('[data-t]').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
@@ -1779,6 +1852,7 @@ async function signOutFlow(){
               : 'Suas notas continuam guardadas no seu Google Drive. Por segurança, elas serão apagadas deste aparelho; ao entrar de novo, voltam do Drive.',
     ok: pend ? 'Sair e perder alterações' : 'Sair', onOk: async ()=>{
       if(token) revokeToken(token);
+      if(IS_APK){ try{ NA.signOut(token||''); }catch(e){} }
       token=null; tokenExp=0; stopMic(); if(cur.noteId){ cur.noteId=null; $('#app').classList.remove('show-editor'); $('#edWrap').hidden=true; $('#noed').hidden=false; }
       endSession();
       try{ await IDB.op('readwrite',st=>{ const r=st.getAllKeys(); r.onsuccess=()=>r.result.forEach(k=>{ if(k!=='__bio__') st.delete(k); }); return r; }); }catch(e){}
@@ -2077,7 +2151,7 @@ function xhr0(method,url,headers,body,onProg,stallMs=60000){
 async function multipartUpload(b,meta,onPct){
   const fd=new FormData(); fd.append('metadata',new Blob([JSON.stringify(meta)],{type:'application/json'})); fd.append('file',b);
   const x=await xhr('POST',`${UP}?uploadType=multipart&fields=id`,{Authorization:'Bearer '+token},fd,l=>onPct(Math.min(99,Math.round(l/b.size*100))));
-  if(x.status===401){ token=null; tokenExp=0; throw new Error('auth'); }
+  if(x.status===401){ authLost(); throw new Error('auth'); }
   if(x.status<200||x.status>=300) throw new Error('http '+x.status);
   return JSON.parse(x.responseText).id;
 }
@@ -2185,7 +2259,7 @@ function waText(n){
   return (n.title?'*'+n.title.trim()+'*\n\n':'')+body;
 }
 function nshare(d){ extLaunch=now(); return navigator.share(d); }
-function openLink(url){ extLaunch=now(); const a=document.createElement('a'); a.href=url; a.target='_blank'; a.rel='noopener'; document.body.appendChild(a); a.click(); a.remove(); }
+function openLink(url){ extLaunch=now(); if(IS_APK){ NA.openExternal(url); return; } const a=document.createElement('a'); a.href=url; a.target='_blank'; a.rel='noopener'; document.body.appendChild(a); a.click(); a.remove(); }
 const openWaText = text => openLink('https://api.whatsapp.com/send?text='+encodeURIComponent(text));
 function sendWhatsApp(n){
   const text=waText(n), atts=n.attachments||[];
@@ -2527,7 +2601,7 @@ async function verifyAssertion(a,challenge,b){
 async function prfKek(bytes){ const base=await crypto.subtle.importKey('raw',bytes,'HKDF',false,['deriveKey']); return crypto.subtle.deriveKey({name:'HKDF',hash:'SHA-256',salt:enc.encode('nao-esquece/bio'),info:enc.encode('kek')},base,{name:'AES-GCM',length:256},false,['wrapKey','unwrapKey']); }
 let bioAvail=false;
 const Bio={
-  async available(){ try{ return !!(window.PublicKeyCredential&&PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable&&await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()); }catch(e){ return false; } },
+  async available(){ if(IS_APK){ try{ return NA.bioState()==='ok'; }catch(e){ return false; } } try{ return !!(window.PublicKeyCredential&&PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable&&await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()); }catch(e){ return false; } },
   async assert(b){
     const challenge=rnd(32);
     const a=await navigator.credentials.get({publicKey:{challenge,rpId:location.hostname,allowCredentials:[{type:'public-key',id:ub64(b.id),transports:['internal','hybrid']}],userVerification:'required',timeout:60000,extensions:{prf:{eval:{first:ub64(b.salt)}}}}});
@@ -2536,6 +2610,11 @@ const Bio={
     return p?new Uint8Array(p):null;
   },
   async enable(){
+    if(IS_APK){
+      const secret=rnd(32); extLaunch=now();
+      await nativeCall('bioEnable',b64(secret));
+      const b={mode:'native',at:now()}; b.w=await wrapK(Vault.dek,await prfKek(secret)); Vault.meta.bio=b; Vault.save(); return;
+    }
     const cred=await navigator.credentials.create({publicKey:{rp:{name:'Não Esquece',id:location.hostname},user:{id:rnd(16),name:cfg.email||'nao-esquece',displayName:cfg.name||'Não Esquece'},challenge:rnd(32),
       pubKeyCredParams:[{type:'public-key',alg:-7},{type:'public-key',alg:-257}],authenticatorSelection:{authenticatorAttachment:'platform',userVerification:'required',residentKey:'preferred'},attestation:'none',timeout:60000,extensions:{prf:{}}}});
     const pub=cred.response.getPublicKey&&cred.response.getPublicKey(), alg=cred.response.getPublicKeyAlgorithm&&cred.response.getPublicKeyAlgorithm();
@@ -2548,12 +2627,18 @@ const Bio={
   },
   async unlock(){
     const b=Vault.meta&&Vault.meta.bio; if(!b) throw new Error('off');
+    if(b.mode==='native'){
+      if(!IS_APK) throw new Error('off');
+      let sec; try{ sec=await nativeCall('bioUnlock'); }
+      catch(e){ if(e.message==='invalidated'){ this.disable(); toast('As digitais do celular mudaram. Entre com o PIN e ative a digital de novo em Ajustes.'); } throw e; }
+      Vault.dek=await unwrapK(b.w,await prfKek(ub64(sec))); return true;
+    }
     const prf=await this.assert(b);
     const kek = b.mode==='prf' ? (prf?await prfKek(prf):null) : await IDB.rawGet('__bio__');
     if(!kek) throw new Error('semchave');
     Vault.dek=await unwrapK(b.w,kek); return true;
   },
-  disable(){ if(Vault.meta){ Vault.meta.bio=null; Vault.save(); } IDB.del('__bio__').catch(()=>{}); }
+  disable(){ if(Vault.meta){ Vault.meta.bio=null; Vault.save(); } IDB.del('__bio__').catch(()=>{}); if(IS_APK){ try{ NA.bioDisable(); }catch(e){} } }
 };
 
 /* Volta do login do Google: a página recarrega; a chave passa adiante por poucos minutos, só nesta aba. */
@@ -2678,7 +2763,9 @@ function noKeyScreen(back){
 function sendRecMail(email,rec){
   const body=`Esta é a chave de recuperação do app Não Esquece.\n\nChave: ${rec}\n\nSe você esquecer o PIN, abra o app, toque em "Esqueci o PIN" e digite esta chave para criar um PIN novo.\nGuarde este e-mail e não compartilhe a chave com ninguém.\n\nGerada em ${fmtFull(now())}${cfg.email?' no app conectado à conta '+cfg.email:''}.`;
   extLaunch=now();
-  const a=document.createElement('a'); a.href='mailto:'+encodeURIComponent(email)+'?subject='+encodeURIComponent('Chave de recuperação — Não Esquece')+'&body='+encodeURIComponent(body);
+  const href='mailto:'+encodeURIComponent(email)+'?subject='+encodeURIComponent('Chave de recuperação — Não Esquece')+'&body='+encodeURIComponent(body);
+  if(IS_APK){ NA.openExternal(href); return; }
+  const a=document.createElement('a'); a.href=href;
   document.body.appendChild(a); a.click(); a.remove();
 }
 function showRecKey(rec){
@@ -2803,6 +2890,7 @@ async function doCancel({cal,drive}){
     s=>{ s.querySelector('#cxEnd').onclick=()=>location.reload(); });
 }
 async function wipeAll(){
+  if(IS_APK){ try{ NA.signOut(token||''); NA.bioDisable(); }catch(e){} }
   appReady=false; token=null; tokenExp=0; Vault.dek=null; Vault.meta=null;
   try{ if(IDB.d){ IDB.d.close(); IDB.d=null; } }catch(e){}
   await new Promise(r=>{ try{ const q=indexedDB.deleteDatabase('nao-esquece'); q.onsuccess=q.onerror=q.onblocked=()=>r(); setTimeout(r,3000); }catch(e){ r(); } });
@@ -2926,7 +3014,8 @@ async function afterLogin(ret){
   // atalho "Nova nota" do ícone do app
   if(new URLSearchParams(location.search).has('nova')){ try{ history.replaceState(null,'',location.pathname); }catch(e){} if($('#sheet').hidden){ newNote(); return; } }
   // App instalado: reconecta sozinho ao abrir (sem pedir nada, se a conta já autorizou)
-  if(useRedirect() && cfg.linked && clientId() && navigator.onLine && !hasToken() && $('#sheet').hidden
+  if(IS_APK){ if(cfg.linked && navigator.onLine && !hasToken() && !(cfg.silentFailAt && now()-cfg.silentFailAt<5*60e3)) nativeLogin(false); }
+  else if(useRedirect() && cfg.linked && clientId() && navigator.onLine && !hasToken() && $('#sheet').hidden
      && !(cfg.silentFailAt && now()-cfg.silentFailAt<30*60e3)) startRedirectLogin('none');
 }
 async function boot(){
