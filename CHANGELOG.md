@@ -2,6 +2,15 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.4.0 — 6 de novembro de 2026
+
+- Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.
+- Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.
+- Widget na tela inicial com os lembretes de hoje e o botão Nova nota.
+- Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.
+- Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.
+- O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.
+
 ## 1.3.0 — 6 de novembro de 2026
 
 - Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.

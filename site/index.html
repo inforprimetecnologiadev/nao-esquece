@@ -370,6 +370,40 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .seg.wrap button{flex:1 0 28%}
 .row.static{box-sizing:border-box;cursor:default}
 .row.static:hover{background:none}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;flex:none;background:var(--tc,var(--muted))}
+.chip .dot{width:9px;height:9px}
+.chip.urgc{color:var(--danger);border-color:color-mix(in srgb,var(--danger) 45%,var(--line))}
+.tag.urg{background:color-mix(in srgb,var(--danger) 16%,transparent);color:var(--danger);font-weight:800}
+.tag.tg{display:inline-flex;align-items:center;gap:5px;background:color-mix(in srgb,var(--tc) 16%,transparent);color:var(--ink)}
+.tag.tg::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--tc)}
+.note.urg{box-shadow:inset 4px 0 0 var(--danger)}
+.emeta .tagchip[data-has="1"]{background:var(--accent-soft);color:var(--accent)}
+.emeta .tagchip[data-urg="1"]{background:color-mix(in srgb,var(--danger) 16%,transparent);color:var(--danger)}
+.row .ck{visibility:hidden;color:var(--accent);margin-left:auto}
+#tgUrg>span:first-child svg,#tgUrg>span:first-child{color:var(--danger)}
+.row[aria-pressed="true"] .ck{visibility:visible}
+.colors{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 4px}
+.colors button{width:34px;height:34px;border-radius:50%;background:var(--tc);border:3px solid transparent;box-shadow:0 0 0 1px var(--line)}
+.colors button[aria-pressed="true"]{border-color:var(--surface);box-shadow:0 0 0 2px var(--ink)}
+.hsec{margin:14px 2px 6px;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.hsec.late{color:var(--danger)}
+.hrow{display:grid;grid-template-columns:52px minmax(0,1fr);gap:8px;align-items:start;margin-bottom:8px}
+.hrow .htime{padding-top:13px;text-align:right;font-weight:800;font-size:14.5px;font-variant-numeric:tabular-nums;color:var(--accent)}
+.hrow .htime small{display:block;font-weight:600;font-size:11px;color:var(--muted)}
+.hrow.late .htime{color:var(--danger)}
+.hrow.past .htime{color:var(--muted)}
+.hrow .note{margin:0}
+.att .pdft{display:grid;place-items:center;align-content:center;gap:4px;width:100%;height:100%;padding:8px;box-sizing:border-box;text-align:center;font-size:11.5px;line-height:1.25;color:var(--ink)}
+.att .pdft svg{width:30px;height:30px;color:var(--danger)}
+.att .pdft b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-word}
+.att .pdft small{color:var(--muted)}
+.scang{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px;margin:6px 0 12px}
+.scang:empty{display:none}
+.scang div{position:relative;aspect-ratio:.72;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.scang img{width:100%;height:100%;object-fit:contain}
+.scang span{position:absolute;left:6px;bottom:6px;background:rgba(0,0,0,.6);color:#fff;font-size:11px;font-weight:700;padding:1px 6px;border-radius:99px}
+.scang button{position:absolute;right:4px;top:4px;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center}
+.scang button svg{width:14px;height:14px}
 .sheet .field{box-sizing:border-box}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:13.5px;line-height:1.4;margin:6px 0 0}
 .kv dt{color:var(--muted)}
@@ -418,7 +452,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
   <article class="rd-body" id="rdBody"></article>
 </div>
 <template id="tplTerms">
-<p class="lg-meta">Versão de 6 de novembro de 2026.</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 2).</p>
 
 <h2>1. Aceitação</h2>
 <p>Ao tocar em "Aceitar e continuar", você concorda com estes Termos de Uso e com a Política de Privacidade. Se não concordar, não use o aplicativo.</p>
@@ -466,7 +500,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <p>Central de ajuda e formulário de contato: <span class="lg-url">inforprimetecnologiadev.github.io/nao-esquece/suporte</span>. E-mail: <span class="lg-url">inforprimetecnologia@gmail.com</span>. Respondemos em até 5 dias úteis; pedidos de titular (LGPD), em até 15 dias.</p>
 </template>
 <template id="tplPrivacy">
-<p class="lg-meta">Versão de 6 de novembro de 2026. Responsável: <b>Não Esquece</b>.</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 2). Responsável: <b>Não Esquece</b>.</p>
 
 <h2>1. Resumo</h2>
 <ul>
@@ -503,6 +537,8 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <p>Microfone e câmera são usados somente quando você toca para gravar um áudio, ditar um texto, tirar uma foto ou gravar um vídeo. A galeria é aberta somente quando você escolhe anexar um arquivo.</p>
 <p><b>Notificações e alarmes</b> (app para Android): usados para o aviso de 1 minuto antes e para o alarme de cada lembrete, que tocam no próprio celular. Para o alarme tocar com o app fechado e bloqueado, o título, um trecho do texto e o horário de cada lembrete ficam guardados também na área privada do app no Android, fora do cofre criptografado. Esses dados não saem do celular e são apagados quando o lembrete é removido ou quando você cancela a inscrição.</p>
 <p><b>Calendário</b> (opcional, app para Android): se você permitir, o app coloca os lembretes no calendário do celular, na agenda da conta Google conectada. Para isso, ele lê a lista de agendas do aparelho para achar a da sua conta e só cria, muda ou apaga os eventos que ele mesmo criou. Você pode desligar em <b>Ajustes › Alarmes e calendário</b>.</p>
+<p><b>Widget da tela inicial</b> (opcional, app para Android): se você colocar o widget "Hoje" na tela inicial, o título e a hora dos lembretes do dia aparecem nela, inclusive com o app bloqueado pelo PIN. Para esconder, basta tirar o widget da tela inicial.</p>
+<p><b>Escanear documento</b> (app para Android): usa o scanner de documentos do Google Play Services, que recorta e endireita as fotos no próprio celular e entrega o PDF ao app. O PDF fica na nota, como os outros anexos. Sem o Google Play Services, o app usa a câmera e monta o PDF no próprio celular.</p>
 <h3>3.5 Mensagens de suporte</h3>
 <p>Se você nos escrever pelo formulário de contato ou por e-mail, recebemos o seu nome, e-mail, assunto, mensagem e, se você informar, a versão do app e o modelo do aparelho. Esses dados são usados só para responder e registrar o atendimento.</p>
 <h3>3.6 O que o app não coleta</h3>
@@ -521,6 +557,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <h2>5. Com quem os dados são compartilhados</h2>
 <ul>
 <li><b>Google</b> (Google Drive, Google Agenda e login com Google): somente se você conectar sua conta. O app pede acesso apenas aos <b>arquivos que ele mesmo cria</b> no Drive e, na versão pelo navegador, à <b>agenda que ele mesmo cria</b>, sem ver o restante da sua conta. No app para Android, se você permitir o calendário, os lembretes entram na agenda da sua conta pelo calendário do próprio celular, e o Google sincroniza essa agenda com os seus outros aparelhos. O uso desses serviços segue os termos e a política de privacidade do Google.</li>
+<li><b>Google Play Services</b> (app para Android): login com a conta do celular e scanner de documentos, que funcionam no próprio aparelho e seguem os termos do Google.</li>
 <li><b>GitHub</b> (GitHub Pages): hospeda os arquivos do aplicativo. Para entregá-los, o GitHub pode registrar dados técnicos de acesso, como endereço IP.</li>
 <li><b>Google Fonts:</b> fornece as fontes de texto do app e também pode registrar dados técnicos de acesso.</li>
 <li><b>FormSubmit:</b> entrega ao nosso e-mail as mensagens enviadas pelo formulário da central de ajuda.</li>
@@ -592,7 +629,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -624,6 +661,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
         <button id="folderBtn"><span data-i="folder"></span><span id="folderName">Sem pasta</span></button>
         <button id="doneBtn" class="donechip" aria-pressed="false"></button>
         <button id="remBtn" class="remchip" aria-pressed="false"><span data-i="bell"></span><span id="remTxt">Lembrete</span></button>
+        <button id="tagBtn" class="tagchip"><span data-i="tag"></span><span id="tagTxt">Etiqueta</span></button>
         <span id="edTime"></span>
       </div>
       <div class="paper" id="paper">
@@ -659,6 +697,8 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <input type="file" id="inCam" accept="image/*" capture="environment" hidden>
 <input type="file" id="inVid" accept="video/*" capture="environment" hidden>
 <input type="file" id="inGal" accept="image/*,video/*" multiple hidden>
+<input type="file" id="inScan" accept="image/*" capture="environment" hidden>
+<input type="file" id="inPdf" accept="application/pdf,.pdf" multiple hidden>
 <input type="file" id="inAud" accept="audio/*" hidden>
 <input type="file" id="inAudRec" accept="audio/*" capture hidden>
 <div class="viewer" id="viewer" hidden>
@@ -768,6 +808,12 @@ const ICONS = {
   finger:'<path d="M12 11.5v4M8.6 10a3.4 3.4 0 0 1 6.8 0v5.2a6 6 0 0 1-1.1 3.4M5.6 15.5V10a6.4 6.4 0 0 1 11.8-3.4M18.4 10.5v3.8M9.2 20.6A8.6 8.6 0 0 1 8.6 17.4V12.5"/>',
   backspace:'<path d="M9 5h11a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H9l-6-7z"/><path d="M12.5 9.5l5 5M17.5 9.5l-5 5"/>',
   bell:'<path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/>',
+  today:'<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/><circle cx="12" cy="15" r="1.6" fill="currentColor"/>',
+  flag:'<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/>',
+  tag:'<path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.4"/>',
+  scan:'<path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><path d="M8 9h8M8 12h8M8 15h5"/>',
+  repeat:'<path d="M17 2l3 3-3 3"/><path d="M4 11V9a4 4 0 0 1 4-4h12"/><path d="M7 22l-3-3 3-3"/><path d="M20 13v2a4 4 0 0 1-4 4H4"/>',
+  home:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M16.5 13v7M13 16.5h7"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/>',
   user:'<circle cx="12" cy="8" r="4"/><path d="M4 20.5a8 8 0 0 1 16 0"/>',
   info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',
@@ -810,17 +856,19 @@ function toast(msg,act,fn){ const t=document.getElementById('toast'); if(!t) ret
   t.hidden=false; clearTimeout(toastT); toastT=setTimeout(()=>{ t.hidden=true; }, act?6500:Math.min(6000, 1800+msg.length*45)); }
 const uid = () => Date.now().toString(36)+Math.random().toString(36).slice(2,8);
 const now = () => Date.now();
-const SPECIAL=['all','none','recent','pending','done','trash'];
+const SPECIAL=['all','none','recent','pending','done','trash','today','urgent'];
+const isTagView=f=>typeof f==='string'&&f.startsWith('tag:');
+const viewIsFolder=f=>!SPECIAL.includes(f)&&!isTagView(f);
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.3.0', TERMS_VERSION='2026-11-06';
+const APP_VERSION='1.4.0', TERMS_VERSION='2026-11-06.2';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
 const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 let cfg = Object.assign({theme:'system',clientId:'',linked:false,email:'',name:'',fileId:'',folderId:'',lastSync:0,guest:false,recents:[]}, LS.get('ne.cfg',{}));
-let db = {rev:1,dirty:false,folders:[],notes:[]}; // as notas de verdade são carregadas no início, depois do PIN
+let db = {rev:1,dirty:false,folders:[],notes:[],tags:[]}; // as notas de verdade são carregadas no início, depois do PIN
 let appReady=false;
 const saveCfg = () => LS.set('ne.cfg', cfg);
 const clientId = () => GOOGLE_CLIENT_ID || cfg.clientId;
@@ -857,7 +905,7 @@ function dropUntouchedExamples(){
   // Notas de exemplo nunca editadas não vão para o Drive do usuário; pastas de exemplo vazias também saem.
   db.notes=db.notes.filter(n=>!(n.example && n.updatedAt===n.createdAt));
   db.folders=db.folders.filter(f=>!(f.example && !db.notes.some(n=>!n.deleted&&n.folderId===f.id)));
-  if(!SPECIAL.includes(cur.folder)&&!folderById(cur.folder)) cur.folder='all';
+  if(viewIsFolder(cur.folder)&&!folderById(cur.folder)) cur.folder='all'; if(isTagView(cur.folder)&&!tagById(cur.folder.slice(4))) cur.folder='all';
   persist();
 }
 function changed(){ db.rev=(db.rev||0)+1; db.dirty=true; persist(); renderStatus(); scheduleSync(); scheduleAlarms(); }
@@ -899,21 +947,32 @@ const keptNotes = () => db.notes.filter(n=>!n.deleted);
 const liveFolders = () => db.folders.filter(f=>!f.deleted).sort((a,b)=>a.name.localeCompare(b.name,'pt-BR'));
 const folderById = id => db.folders.find(f=>f.id===id && !f.deleted);
 const noteById = id => db.notes.find(n=>n.id===id && !n.deleted);
+const TAGC=[['vermelho','#e5484d'],['laranja','#f76b15'],['amarelo','#d9a21b'],['verde','#30a46c'],['azul','#3e63dd'],['roxo','#8e4ec6'],['rosa','#d6409f'],['cinza','#8b8d98']];
+const tagColor=c=>(TAGC.find(x=>x[0]===c)||TAGC[4])[1];
+const liveTags=()=>(db.tags||[]).filter(t=>!t.deleted).sort((a,b)=>a.name.localeCompare(b.name,'pt-BR'));
+const tagById=id=>(db.tags||[]).find(t=>t.id===id&&!t.deleted);
+const noteTags=n=>(n.tags||[]).map(tagById).filter(Boolean);
 
 /* ---------- estado da tela ---------- */
 let cur = { folder:'all', noteId:null, q:'' };
 
-function counts(){ const c={all:0,none:0,recent:0,pending:0,done:0,trash:trashNotes().length}; for(const n of liveNotes()){ c.all++; if(n.done) c.done++; else c.pending++; const k=n.folderId&&folderById(n.folderId)?n.folderId:'none'; c[k]=(c[k]||0)+1; } c.recent=Math.min(20,c.all); return c; }
+function counts(){ const c={all:0,none:0,recent:0,pending:0,done:0,urgent:0,today:0,trash:trashNotes().length};
+  for(const n of liveNotes()){ c.all++; if(n.done) c.done++; else c.pending++; if(n.urgent&&!n.done) c.urgent++; const k=n.folderId&&folderById(n.folderId)?n.folderId:'none'; c[k]=(c[k]||0)+1; for(const t of (n.tags||[])) c['tag:'+t]=(c['tag:'+t]||0)+1; }
+  c.recent=Math.min(20,c.all); const td=todayItems(); c.today=td.late.length+td.today.filter(x=>!x.n.done).length; return c; }
 
 function renderFolders(){
   const c=counts(), fs=liveFolders();
-  const items=[{id:'recent',name:'Recentes',icon:'clock'},{id:'all',name:'Todas',icon:'stack'},{id:'pending',name:'Pendentes',icon:'circle'},{id:'done',name:'Concluídas',icon:'checkC'},...fs.map(f=>({id:f.id,name:f.name,icon:'folder'})),{id:'none',name:'Sem pasta',icon:'note'},{id:'trash',name:'Lixeira',icon:'trash'}];
-  $('#chips').innerHTML = items.map(it=>`<button class="chip" data-f="${it.id}" aria-current="${cur.folder===it.id&&!cur.q}">${esc(it.name)} <span class="n">${c[it.id]||0}</span></button>`).join('')
+  const items=[{id:'today',name:'Hoje',icon:'today'},{id:'recent',name:'Recentes',icon:'clock'},{id:'all',name:'Todas',icon:'stack'},{id:'pending',name:'Pendentes',icon:'circle'},{id:'done',name:'Concluídas',icon:'checkC'},
+    ...(c.urgent||cur.folder==='urgent'?[{id:'urgent',name:'Urgentes',icon:'flag',cls:'urgc'}]:[]),
+    ...fs.map(f=>({id:f.id,name:f.name,icon:'folder'})),
+    ...liveTags().map(t=>({id:'tag:'+t.id,name:t.name,icon:'tag',color:tagColor(t.color)})),
+    {id:'none',name:'Sem pasta',icon:'note'},{id:'trash',name:'Lixeira',icon:'trash'}];
+  $('#chips').innerHTML = items.map(it=>`<button class="chip${it.cls?' '+it.cls:''}" data-f="${it.id}" aria-current="${cur.folder===it.id&&!cur.q}">${it.color?`<i class="dot" style="--tc:${it.color}"></i>`:''}${esc(it.name)} <span class="n">${c[it.id]||0}</span></button>`).join('')
     + `<button class="chip add" id="addF2">${svg('plus')}Pasta</button>`;
   $('#side').innerHTML = `<div class="brand" style="padding:0 6px 10px"><img src="${LOGO}" alt="">Não Esquece</div>
     <button class="fab" id="fab2">${svg('plus')}Nova nota</button>
     <div class="sec">Pastas</div>`
-    + items.map(it=>`<button class="fl" data-f="${it.id}" aria-current="${cur.folder===it.id&&!cur.q}">${svg(it.icon)}<span>${esc(it.name)}</span><span class="n">${c[it.id]||0}</span></button>`).join('')
+    + items.map(it=>`<button class="fl" data-f="${it.id}" aria-current="${cur.folder===it.id&&!cur.q}">${it.color?`<i class="dot" style="--tc:${it.color};margin:0 6px"></i>`:svg(it.icon)}<span>${esc(it.name)}</span><span class="n">${c[it.id]||0}</span></button>`).join('')
     + `<button class="fl" id="addF" style="color:var(--muted)">${svg('folderPlus')}<span>Nova pasta</span></button>`;
 }
 
@@ -922,11 +981,14 @@ function visible(){
   let n=liveNotes();
   if(cur.q){ const q=norm(cur.q.trim()); n=n.filter(x=>norm((x.title||'')+'\n'+txt(x.html)).includes(q)); }
   else if(cur.folder==='recent') return n.sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)).slice(0,20);
+  else if(cur.folder==='today'){ const td=todayItems(); return [...td.late.map(x=>x.n),...td.today.map(x=>x.n)]; }
+  else if(cur.folder==='urgent') n=n.filter(x=>x.urgent&&!x.done);
+  else if(isTagView(cur.folder)){ const id=cur.folder.slice(4); n=n.filter(x=>(x.tags||[]).includes(id)); }
   else if(cur.folder==='none') n=n.filter(x=>!x.folderId||!folderById(x.folderId));
   else if(cur.folder==='pending') n=n.filter(x=>!x.done);
   else if(cur.folder==='done') return n.filter(x=>x.done).sort((a,b)=>(b.doneAt||b.updatedAt)-(a.doneAt||a.updatedAt));
   else if(cur.folder!=='all') n=n.filter(x=>x.folderId===cur.folder);
-  return n.sort((a,b)=>(b.pinned?1:0)-(a.pinned?1:0) || (a.done?1:0)-(b.done?1:0) || b.updatedAt-a.updatedAt);
+  return n.sort((a,b)=>(b.pinned?1:0)-(a.pinned?1:0) || (a.done?1:0)-(b.done?1:0) || (b.urgent?1:0)-(a.urgent?1:0) || b.updatedAt-a.updatedAt);
 }
 function hl(text, q, around){
   if(!q) return esc(text);
@@ -952,29 +1014,39 @@ function noteCard(n,q){
   const showFolder=q||['all','recent','pending','done','trash'].includes(cur.folder);
   const chk = sel.on ? `<button class="nchk" data-chk="${n.id}" aria-pressed="${picked}" aria-label="Selecionar">${svg('check')}</button>`
     : inTrash ? '' : `<button class="nchk" data-chk="${n.id}" aria-pressed="${!!n.done}" aria-label="${n.done?'Concluída. Toque para voltar a pendente':'Marcar como concluída'}">${svg('check')}</button>`;
-  return `<div class="note${n.done?' done':''}${picked?' sel':''}${inTrash?' trash':''}" data-id="${n.id}" role="button" tabindex="0" aria-current="${n.id===cur.noteId}">${chk}
+  return `<div class="note${n.done?' done':''}${picked?' sel':''}${inTrash?' trash':''}${n.urgent&&!n.done&&!inTrash?' urg':''}" data-id="${n.id}" role="button" tabindex="0" aria-current="${n.id===cur.noteId}">${chk}
     <div class="nbody"><h3>${n.pinned&&!inTrash?svg('pin'):''}<span>${hl(title,q)}</span></h3>
     <p>${hl(body.replace(/\n+/g,' · '),q,true)||'<i>Nota vazia</i>'}</p>
-    <div class="meta">${k?`<span class="clip">${svg('clip')}${k}</span>`:''}${pr?`<span class="prog${pr.done===pr.all?' full':''}">${svg('checklist')}${pr.done}/${pr.all}</span>`:''}${rm&&!n.done&&!inTrash?`<span class="rem${rm.late?' late':''}">${svg('bell')}${rm.txt}</span>`:''}<span>${when}</span>${n.done&&!inTrash&&(cur.folder!=='done'||q)?'<span class="tag ok">Concluída</span>':''}${showFolder&&fname?`<span class="tag">${esc(fname)}</span>`:''}</div></div></div>`;
+    <div class="meta">${k?`<span class="clip">${svg('clip')}${k}</span>`:''}${pr?`<span class="prog${pr.done===pr.all?' full':''}">${svg('checklist')}${pr.done}/${pr.all}</span>`:''}${rm&&!n.done&&!inTrash?`<span class="rem${rm.late?' late':''}">${svg(rm.rep?'repeat':'bell')}${rm.txt}</span>`:''}<span>${when}</span>${n.done&&!inTrash&&(cur.folder!=='done'||q)?'<span class="tag ok">Concluída</span>':''}${n.urgent&&!n.done&&!inTrash?'<span class="tag urg">Urgente</span>':''}${showFolder&&fname?`<span class="tag">${esc(fname)}</span>`:''}${noteTags(n).map(t=>`<span class="tag tg" style="--tc:${tagColor(t.color)}">${esc(t.name)}</span>`).join('')}</div></div></div>`;
 }
 function renderList(){
   const list=visible(), q=cur.q.trim();
-  const names={recent:'Recentes',all:'Todas as notas',none:'Sem pasta',pending:'Pendentes',done:'Concluídas',trash:'Lixeira'};
+  const names={today:'Hoje',urgent:'Urgentes',recent:'Recentes',all:'Todas as notas',none:'Sem pasta',pending:'Pendentes',done:'Concluídas',trash:'Lixeira'};
+  const tg=isTagView(cur.folder)?tagById(cur.folder.slice(4)):null;
   const selBtn = list.length&&!sel.on ? `<button class="lbtn" id="selStart">Selecionar</button>` : '';
   let head;
   if(q) head=`<div class="lhead"><h2>Resultados para “${esc(q)}”</h2><div class="lact"><small>${list.length}</small>${selBtn}</div></div>`;
   else {
-    const name=names[cur.folder]||(folderById(cur.folder)?.name||'Pasta'), canEdit=!SPECIAL.includes(cur.folder);
+    const name=names[cur.folder]||(tg?tg.name:(folderById(cur.folder)?.name||'Pasta')), canEdit=viewIsFolder(cur.folder);
     const small=cur.folder==='recent'?'últimas '+list.length:list.length+' '+(list.length===1?'nota':'notas');
-    head=`<div class="lhead"><h2>${esc(name)}</h2><div class="lact">${canEdit||sel.on?'':`<small>${small}</small>`}${selBtn}${cur.folder==='trash'&&list.length&&!sel.on?`<button class="lbtn dan" id="emptyTrash">Esvaziar</button>`:''}${canEdit&&!sel.on?`<button class="ib" id="fMore" aria-label="Opções da pasta">${svg('more')}</button>`:''}</div></div>`;
+    head=`<div class="lhead"><h2>${esc(name)}</h2><div class="lact">${canEdit||sel.on?'':`<small>${small}</small>`}${selBtn}${cur.folder==='trash'&&list.length&&!sel.on?`<button class="lbtn dan" id="emptyTrash">Esvaziar</button>`:''}${canEdit&&!sel.on?`<button class="ib" id="fMore" aria-label="Opções da pasta">${svg('more')}</button>`:''}${tg&&!sel.on?`<button class="ib" id="tMore" aria-label="Opções da etiqueta">${svg('more')}</button>`:''}</div></div>`;
     if(cur.folder==='trash') head+=`<div class="tnote">Toque numa nota para restaurar. O que está na lixeira é apagado para sempre depois de 30 dias.</div>`;
   }
   if(!list.length){
-    const E={trash:['Lixeira vazia','As notas que você apagar ficam aqui por 30 dias.'],done:['Nenhuma concluída ainda','Toque no círculo de uma nota para marcar como concluída.'],pending:['Nada pendente','Tudo feito por aqui.']}[cur.folder]||['Pasta vazia','Toque em “Nova nota” para escrever a primeira.'];
+    const E={today:['Nada para hoje','Toque em Lembrete numa nota para ela aparecer aqui, na hora marcada. As atrasadas também aparecem aqui.'],urgent:['Nada urgente','Para marcar, abra uma nota e toque em Etiqueta › Urgente.'],trash:['Lixeira vazia','As notas que você apagar ficam aqui por 30 dias.'],done:['Nenhuma concluída ainda','Toque no círculo de uma nota para marcar como concluída.'],pending:['Nada pendente','Tudo feito por aqui.']}[cur.folder]||(tg?['Nenhuma nota com esta etiqueta','Abra uma nota e toque em Etiqueta para marcar.']:['Pasta vazia','Toque em “Nova nota” para escrever a primeira.']);
     $('#notes').innerHTML = head + (q?`<div class="empty"><strong>Nada encontrado</strong>Nenhuma nota tem “${esc(q)}”. Tente outra palavra.</div>`:`<div class="empty"><strong>${E[0]}</strong>${E[1]}</div>`);
     return;
   }
+  if(cur.folder==='today'&&!q){ $('#notes').innerHTML=head+todayHTML(); return; }
   $('#notes').innerHTML = head + list.map(n=>noteCard(n,q)).join('');
+}
+function todayHTML(){
+  const td=todayItems(), t=now(), s0=dayStart(t);
+  const row=(x,cls)=>`<div class="hrow ${cls}"><div class="htime">${hm(new Date(x.t))}${x.t<s0?`<small>${new Date(x.t).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}</small>`:''}</div>${noteCard(x.n,'')}</div>`;
+  let h=`<div class="tnote" style="margin-top:0">${esc(new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'}))}</div>`;
+  if(td.late.length) h+=`<div class="hsec late">Atrasadas · ${td.late.length}</div>`+td.late.map(x=>row(x,'late')).join('');
+  if(td.today.length) h+=`<div class="hsec">Hoje · em ordem de horário</div>`+td.today.map(x=>row(x,x.n.done?'past':x.t<t?(x.n.remindRepeat?'past':'late'):'')).join('');
+  return h;
 }
 
 /* ---------- seleção de várias notas ---------- */
@@ -1112,7 +1184,7 @@ function openNote(id, opts={}){
   ed.style.fontFamily=(FONTS[n.font]||FONTS.sans).css;
   ed.style.fontSize=(n.size||17)+'px';
   $('#folderName').textContent=folderById(n.folderId)?.name||'Sem pasta';
-  renderDoneChip(n); renderRemChip(n);
+  renderDoneChip(n); renderRemChip(n); renderTagChip(n);
   $('#app').classList.add('show-editor');
   if(!WIDE()) guardPush();
   $('#paper').scrollTop=0;
@@ -1132,8 +1204,10 @@ function closeEditor(fromPop){
   render();
 }
 function newNote(){
-  const t=now(), folderId = (!SPECIAL.includes(cur.folder)&&!cur.q)?cur.folder:null;
+  const t=now(), folderId = (viewIsFolder(cur.folder)&&!cur.q)?cur.folder:null;
   const n={id:uid(),folderId,title:'',html:'',font:cfg.lastFont||'sans',size:cfg.lastSize||17,pinned:false,createdAt:t,updatedAt:t,_fresh:true};
+  if(!cur.q&&isTagView(cur.folder)&&tagById(cur.folder.slice(4))) n.tags=[cur.folder.slice(4)];
+  if(!cur.q&&cur.folder==='urgent') n.urgent=true;
   db.notes.push(n); persist();
   openNote(n.id); setTimeout(()=>ed.focus(),60);
 }
@@ -1713,20 +1787,23 @@ function merge(local, remote){
   const clean=arr=>arr.filter(x=>!(x.deleted&&x.updatedAt<old)).map(x=>{ const c={...x}; delete c._fresh; return c; });
   const fromOutside=x=>{ if(!x||typeof x!=='object'||typeof x.id!=='string') return null; const c={...x};
     c.title=String(c.title||'').slice(0,300); c.html=cleanHTML(c.html||''); c.name=c.name!=null?String(c.name).slice(0,120):c.name;
-    c.attachments=Array.isArray(c.attachments)?c.attachments.filter(a=>a&&typeof a.id==='string').map(a=>({id:a.id,name:String(a.name||'anexo').slice(0,200),type:/^(image|video|audio)\/[\w.+-]+$/.test(a.type)?a.type:'application/octet-stream',size:+a.size||0,addedAt:+a.addedAt||0,duration:+a.duration||undefined,driveId:okId(a.driveId)?a.driveId:undefined,shared:a.shared===true?true:undefined})):undefined;
+    c.attachments=Array.isArray(c.attachments)?c.attachments.filter(a=>a&&typeof a.id==='string').map(a=>({id:a.id,name:String(a.name||'anexo').slice(0,200),type:/^((image|video|audio)\/[\w.+-]+|application\/pdf)$/.test(a.type)?a.type:'application/octet-stream',size:+a.size||0,addedAt:+a.addedAt||0,duration:+a.duration||undefined,pages:+a.pages||undefined,driveId:okId(a.driveId)?a.driveId:undefined,shared:a.shared===true?true:undefined})):undefined;
     if(c.attachments===undefined) delete c.attachments; if(!('name' in x)) delete c.name;
     for(const k of ['dirId','txtId','dirParent','driveId']) if(k in c && !okId(c[k])) delete c[k];
     for(const k of ['dirName','driveName']) if(k in c) c[k]=String(c[k]).slice(0,200);
     for(const k of ['mirroredAt','doneAt','trashedAt','createdAt']) if(k in c) c[k]=+c[k]||0;
-    for(const k of ['done','trashed','pinned']) if(k in c) c[k]=c[k]===true;
+    for(const k of ['done','trashed','pinned','urgent']) if(k in c) c[k]=c[k]===true;
+    if('tags' in c){ c.tags=Array.isArray(c.tags)?[...new Set(c.tags.filter(t=>typeof t==='string'&&/^[\w-]{1,40}$/.test(t)))].slice(0,20):[]; if(!c.tags.length) delete c.tags; }
+    if('remindRepeat' in c && !['dia','uteis','semana','mes'].includes(c.remindRepeat)) delete c.remindRepeat;
     if('calEvId' in c && c.calEvId!=='' && !okId(c.calEvId)) delete c.calEvId;
     if('remindAt' in c && !/^\d{4}-\d\d-\d\dT\d\d:\d\d(:\d\d)?$/.test(String(c.remindAt))) delete c.remindAt;
     if('remindBefore' in c) c.remindBefore=Math.max(0,Math.min(40320,+c.remindBefore||0));
     if('remindMode' in c && !['ambos','som','vibra'].includes(c.remindMode)) delete c.remindMode;
     if('calSyncedAt' in c) c.calSyncedAt=+c.calSyncedAt||0;
     return c; };
-  if(remote){ remote={folders:(Array.isArray(remote.folders)?remote.folders:[]).map(fromOutside).filter(Boolean),notes:(Array.isArray(remote.notes)?remote.notes:[]).map(fromOutside).filter(Boolean)}; }
-  return { folders:clean(pick(local.folders,remote?.folders)), notes:clean(pick(local.notes.filter(n=>!n._fresh||n.title||n.html),remote?.notes)) };
+  const tagOut=x=>{ if(!x||typeof x!=='object'||typeof x.id!=='string') return null; const t={id:x.id,name:String(x.name||'Etiqueta').slice(0,40),color:TAGC.some(k=>k[0]===x.color)?x.color:'azul',updatedAt:+x.updatedAt||0}; if(x.deleted===true) t.deleted=true; return t; };
+  if(remote){ remote={folders:(Array.isArray(remote.folders)?remote.folders:[]).map(fromOutside).filter(Boolean),notes:(Array.isArray(remote.notes)?remote.notes:[]).map(fromOutside).filter(Boolean),tags:(Array.isArray(remote.tags)?remote.tags:[]).map(tagOut).filter(Boolean)}; }
+  return { folders:clean(pick(local.folders,remote?.folders)), notes:clean(pick(local.notes.filter(n=>!n._fresh||n.title||n.html),remote?.notes)), tags:clean(pick(local.tags||[],remote?.tags)) };
 }
 function scheduleSync(){ clearTimeout(syncTimer); syncTimer=setTimeout(()=>syncNow(false),4000); }
 async function syncNow(manual){
@@ -1750,17 +1827,17 @@ async function syncNow(manual){
     const rev=db.rev, m=merge(db,remote);
     try{ await mirrorDrive(m); }catch(e){ if(e.message==='auth') throw e; logErr('Pastas no Drive: '+e.message); }
     try{ await mirrorCalendar(m); }catch(e){ if(e.message==='auth') throw e; logErr('Agenda: '+e.message); }
-    const body=JSON.stringify({app:'nao-esquece',versao:2,salvoEm:new Date().toISOString(),conta:cfg.email,meta:{calendarId:okCal(cfg.calendarId)?cfg.calendarId:undefined,alarmsBy:cfg.alarmsBy==='android'?'android':undefined},folders:m.folders,notes:m.notes},(k,v)=>k==='up'?undefined:v);
+    const body=JSON.stringify({app:'nao-esquece',versao:2,salvoEm:new Date().toISOString(),conta:cfg.email,meta:{calendarId:okCal(cfg.calendarId)?cfg.calendarId:undefined,alarmsBy:cfg.alarmsBy==='android'?'android':undefined},folders:m.folders,notes:m.notes,tags:m.tags},(k,v)=>k==='up'?undefined:v);
     if(id) await api(`${UP}/${id}?uploadType=media`,{method:'PATCH',headers:{'Content-Type':'application/json'},body});
     else { const dir=await ensureDir(); const fd=new FormData();
       fd.append('metadata',new Blob([JSON.stringify({name:FILE_NAME,mimeType:'application/json',parents:[dir]})],{type:'application/json'}));
       fd.append('file',new Blob([body],{type:'application/json'}));
       const j=await (await api(`${UP}?uploadType=multipart&fields=id`,{method:'POST',body:fd})).json(); cfg.fileId=j.id; }
-    if(db.rev===rev){ db.folders=m.folders; db.notes=m.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); db.dirty=false; }
-    else { const m2=merge(db,{folders:m.folders,notes:m.notes}); db.folders=m2.folders; db.notes=m2.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); }
+    if(db.rev===rev){ db.folders=m.folders; db.tags=m.tags; db.notes=m.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); db.dirty=false; }
+    else { const m2=merge(db,{folders:m.folders,notes:m.notes,tags:m.tags}); db.folders=m2.folders; db.tags=m2.tags; db.notes=m2.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); }
     cfg.lastSync=now(); saveCfg(); persist(); scheduleAlarms();
     if(cur.noteId){ const n=noteById(cur.noteId); if(!n) closeEditor(); else if(document.activeElement!==ed && document.activeElement!==titleIn && ed.innerHTML!==n.html){ ed.innerHTML=cleanHTML(n.html); titleIn.value=n.title; } }
-    if(!SPECIAL.includes(cur.folder)&&!folderById(cur.folder)) cur.folder='all';
+    if(viewIsFolder(cur.folder)&&!folderById(cur.folder)) cur.folder='all'; if(isTagView(cur.folder)&&!tagById(cur.folder.slice(4))) cur.folder='all';
     renderFolders(); renderList(); if(cur.noteId) renderAtts();
     prefetchImages();
     if(manual) toast(pendingMedia()?'Notas salvas no Drive. Enviando os anexos…':'Tudo salvo no Google Drive');
@@ -1847,9 +1924,9 @@ function openSettings(){
     q('#sCancel').onclick=cancelFlow;
     q('#sNews').onclick=()=>openReader('Novidades','tplNews');
     q('#sHelp').onclick=()=>{ closeSheet(); openLink(SUPPORT_URL+'?v='+encodeURIComponent(APP_VERSION)+'&origem=app'); };
-    s.querySelector('#bDown').onclick=()=>download('nao-esquece-backup.json',JSON.stringify({app:'nao-esquece',folders:db.folders,notes:db.notes},null,1),'application/json');
+    s.querySelector('#bDown').onclick=()=>download('nao-esquece-backup.json',JSON.stringify({app:'nao-esquece',folders:db.folders,notes:db.notes,tags:db.tags||[]},null,1),'application/json');
     s.querySelector('#bFile').onchange=e=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader();
-      r.onload=()=>{ try{ const j=JSON.parse(r.result); if(!Array.isArray(j.notes)) throw 0; const m=merge(db,j); db.folders=m.folders; db.notes=m.notes; changed(); render(); closeSheet(); toast('Backup importado'); }catch(err){ toast('Esse arquivo não é um backup do Não Esquece.'); } };
+      r.onload=()=>{ try{ const j=JSON.parse(r.result); if(!Array.isArray(j.notes)) throw 0; const m=merge(db,j); db.folders=m.folders; db.notes=m.notes; db.tags=m.tags; changed(); render(); closeSheet(); toast('Backup importado'); }catch(err){ toast('Esse arquivo não é um backup do Não Esquece.'); } };
       r.readAsText(f); };
   });
 }
@@ -1868,7 +1945,7 @@ async function signOutFlow(){
       endSession();
       try{ await IDB.op('readwrite',st=>{ const r=st.getAllKeys(); r.onsuccess=()=>r.result.forEach(k=>{ if(k!=='__bio__') st.delete(k); }); return r; }); }catch(e){}
       for(const u of urlCache.values()) URL.revokeObjectURL(u); urlCache.clear();
-      db={rev:1,dirty:false,folders:[],notes:[]}; persist();
+      db={rev:1,dirty:false,folders:[],notes:[],tags:[]}; persist();
       Object.assign(cfg,{linked:false,email:'',name:'',fileId:'',folderId:'',noneDirId:'',trashDirId:'',lastSync:0,pendingDel:[],recents:[],lastErr:null,silentFailAt:0}); saveCfg();
       cur={folder:'all',noteId:null,q:''}; $('#q').value=''; render(); showGate(); toast('Você saiu da conta');
     }});
@@ -1894,13 +1971,14 @@ $('#gSkip').onclick=()=>{ cfg.guest=true; saveCfg(); $('#gate').hidden=true; aft
 document.addEventListener('click',e=>{
   if(longFired){ longFired=false; if(e.target.closest('.note')){ e.preventDefault(); return; } }
   const ck=e.target.closest('[data-chk]'); if(ck){ if(sel.on) toggleSel(ck.dataset.chk); else toggleDoneCard(ck.dataset.chk); return; }
-  const f=e.target.closest('[data-f]'); if(f){ if(sel.on) endSelect(); cur.folder=f.dataset.f; cur.q=''; $('#q').value=''; if(window.CSS&&CSS.highlights) CSS.highlights.delete('busca'); render(); return; }
+  const f=e.target.closest('[data-f]'); if(f){ if(sel.on) endSelect(); cur.folder=f.dataset.f; cfg.view=cur.folder; saveCfg(); cur.q=''; $('#q').value=''; if(window.CSS&&CSS.highlights) CSS.highlights.delete('busca'); render(); return; }
   const n=e.target.closest('.note[data-id]'); if(n){ if(sel.on) toggleSel(n.dataset.id); else openNote(n.dataset.id); return; }
   if(e.target.closest('#selStart')){ startSelect(null); return; }
   if(e.target.closest('#emptyTrash')){ purgeAsk(trashNotes(),true); return; }
   if(e.target.closest('#addF,#addF2')){ newFolder(); return; }
   if(e.target.closest('#fab,#fab2')){ newNote(); return; }
   if(e.target.closest('#fMore')){ folderMenu(cur.folder); return; }
+  if(e.target.closest('#tMore')){ tagMenu(cur.folder.slice(4)); return; }
 });
 $('#q').addEventListener('input',e=>{ cur.q=e.target.value; renderFolders(); renderList(); if(cur.noteId) markSearch(); });
 $('#backBtn').onclick=()=>closeEditor();
@@ -2009,6 +2087,7 @@ async function renderAtts(){
       p.innerHTML=`<audio controls preload="metadata" src="${u}"></audio>`; fixDur(p.querySelector('audio')); continue;
     }
     const el=box.querySelector(`[data-att="${a.id}"]`); if(!el) continue;
+    if(a.type==='application/pdf'){ el.innerHTML=`<div class="pdft">${svg('pdf')}<b>${esc(a.name.replace(/\.pdf$/i,''))}</b><small>${a.pages?a.pages+(a.pages>1?' páginas':' página'):'PDF'}${u?'':' · no Drive'}</small></div>`+(a.driveId?'':`<span class="bd" title="Aguardando envio ao Drive">${svg('cloudOff')}</span>`); continue; }
     if(!u){ el.innerHTML=`<div class="miss">${svg('cloud')}<span>${a.driveId?'No Drive':'Indisponível'}</span></div>`;
       if(a.driveId) fetchAtt(a).then(ok=>{ if(ok&&cur.noteId===n.id) renderAtts(); }); continue; }
     el.innerHTML=(a.type.startsWith('video')?`<video src="${u}#t=0.1" muted preload="metadata" playsinline></video><span class="play">${svg('playC')}</span>`:`<img src="${u}" alt="">`)
@@ -2030,15 +2109,15 @@ async function addFiles(files, src){
   const n=noteById(cur.noteId); if(!n||!files.length) return;
   n.attachments=n.attachments||[]; let added=0, auds=0;
   for(const f of files){
-    const isImg=/^image\//.test(f.type), isVid=/^video\//.test(f.type), isAud=/^audio\//.test(f.type);
-    if(!isImg&&!isVid&&!isAud){ toast('Só é possível anexar fotos, vídeos e áudios.'); continue; }
+    const isImg=/^image\//.test(f.type), isVid=/^video\//.test(f.type), isAud=/^audio\//.test(f.type), isPdf=f.type==='application/pdf'||/\.pdf$/i.test(f.name||'');
+    if(!isImg&&!isVid&&!isAud&&!isPdf){ toast('Só é possível anexar fotos, vídeos, áudios e PDFs.'); continue; }
     if(!isImg&&f.size>300*1024*1024){ toast('Arquivo grande demais. O limite é 300 MB.'); continue; }
-    let blob=f, name=f.name||(isImg?'foto.jpg':isAud?'audio.'+extOf(f.type):'video.mp4');
+    let blob=f, name=f.name||(isPdf?'Documento.pdf':isImg?'foto.jpg':isAud?'audio.'+extOf(f.type):'video.mp4');
     if(src==='inCam') name='Foto '+stamp(now())+'.jpg';
     else if(src==='inVid') name='Vídeo '+stamp(now())+'.'+extOf(f.type||'video/mp4');
     else if(src==='inAudRec') name='Áudio '+stamp(now())+'.'+extOf(f.type||'audio/mp4');
     if(isImg && f.size>600*1024 && !/gif/.test(f.type)){ try{ blob=await shrink(f); name=name.replace(/\.[^.]+$/,'')+'.jpg'; }catch(e){} }
-    const a={id:uid(),name:uniqueName(n,name),type:(blob.type||f.type).split(';')[0],size:blob.size,addedAt:now()};
+    const a={id:uid(),name:uniqueName(n,name),type:isPdf?'application/pdf':(blob.type||f.type).split(';')[0],size:blob.size,addedAt:now()};
     try{ await IDB.put(a.id,blob); }catch(e){ toast('Sem espaço no aparelho para este anexo.'); continue; }
     n.attachments.push(a); added++; if(isAud) auds++;
   }
@@ -2099,15 +2178,17 @@ function dropAtts(list){
 }
 $('#attBtn').onclick=()=>{
   const s=document.getSelection(); if(s.rangeCount&&ed.contains(s.anchorNode)) savedRange=s.getRangeAt(0).cloneRange();
-  openSheet(`<h3>Anexar</h3><p class="sub">Fotos, áudios e vídeos ficam salvos no celular e vão para a pasta desta nota no Drive quando houver internet.</p>
+  openSheet(`<h3>Anexar</h3><p class="sub">Fotos, áudios, vídeos e PDFs ficam salvos no celular e vão para a pasta desta nota no Drive quando houver internet.</p>
+    <button class="row" id="aScan"><span data-i="scan"></span><span class="grow">Escanear documento<small>Foto de papel que vira PDF dentro da nota</small></span></button>
     <label class="row" for="inCam" style="cursor:pointer"><span data-i="camera"></span><span class="grow">Tirar foto</span></label>
     <button class="row" id="aRec"><span data-i="wave"></span><span class="grow">Gravar áudio</span></button>
     <label class="row" for="inGal" style="cursor:pointer"><span data-i="image"></span><span class="grow">Escolher da galeria<small>Fotos e vídeos, vários de uma vez</small></span></label>
     <label class="row" for="inVid" style="cursor:pointer"><span data-i="video"></span><span class="grow">Gravar vídeo</span></label>
-    <label class="row" for="inAud" style="cursor:pointer"><span data-i="mic"></span><span class="grow">Anexar áudio do celular<small>Um áudio que já está gravado</small></span></label>`,
-  sh=>{ sh.querySelector('#aRec').onclick=()=>{ closeSheet(); startRec(); }; });
+    <label class="row" for="inAud" style="cursor:pointer"><span data-i="mic"></span><span class="grow">Anexar áudio do celular<small>Um áudio que já está gravado</small></span></label>
+    <label class="row" for="inPdf" style="cursor:pointer"><span data-i="pdf"></span><span class="grow">Anexar PDF do celular</span></label>`,
+  sh=>{ sh.querySelector('#aRec').onclick=()=>{ closeSheet(); startRec(); }; sh.querySelector('#aScan').onclick=()=>{ closeSheet(); scanDoc(); }; });
 };
-['inCam','inVid','inGal','inAud','inAudRec'].forEach(id=>$('#'+id).addEventListener('change',e=>{ const fs=[...e.target.files]; e.target.value=''; if(!$('#sheet').hidden) closeSheet(); addFiles(fs,id); }));
+['inCam','inVid','inGal','inAud','inAudRec','inPdf'].forEach(id=>$('#'+id).addEventListener('change',e=>{ const fs=[...e.target.files]; e.target.value=''; if(!$('#sheet').hidden) closeSheet(); addFiles(fs,id); }));
 $('#atts').addEventListener('click',e=>{ const o=e.target.closest('[data-aopt]'); if(o){ audioMenu(o.dataset.aopt); return; } const b=e.target.closest('[data-att]'); if(b) openViewer(b.dataset.att); });
 function audioMenu(id){
   const n=noteById(cur.noteId), a=n?.attachments?.find(x=>x.id===id); if(!a) return;
@@ -2129,6 +2210,7 @@ function removeAtt(n,a){
 let viewing=null;
 async function openViewer(id){
   const n=noteById(cur.noteId), a=n?.attachments?.find(x=>x.id===id); if(!a) return;
+  if(a.type==='application/pdf'){ pdfMenu(n,a); return; }
   let u=await attURL(a);
   if(!u && a.driveId && hasToken()){ toast('Baixando do Drive…'); if(await fetchAtt(a)) u=await attURL(a); }
   if(!u){ toast(a.driveId?'Conecte-se à internet para baixar este anexo do Drive.':'Este anexo não está neste aparelho.'); return; }
@@ -2929,7 +3011,43 @@ const CAL='https://www.googleapis.com/calendar/v3';
 const BEFORE=[[0,'Na hora'],[5,'5 min'],[10,'10 min'],[15,'15 min'],[30,'30 min'],[60,'1 hora'],[1440,'1 dia']];
 const RMODES=[['ambos','Som e vibração'],['som','Só som'],['vibra','Só vibração']];
 const hm=d=>d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-function remInfo(n){ if(!n||!n.remindAt) return null; const d=new Date(n.remindAt); if(isNaN(d)) return null; return {d,txt:fmtRem(d),late:d.getTime()<now()}; }
+const REPEATS=[['','Não repete'],['dia','Todo dia'],['uteis','Dias úteis'],['semana','Toda semana'],['mes','Todo mês']];
+const repLabel=r=>(REPEATS.find(x=>x[0]===r)||REPEATS[0])[1];
+const RRULE={dia:'RRULE:FREQ=DAILY',uteis:'RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',semana:'RRULE:FREQ=WEEKLY',mes:'RRULE:FREQ=MONTHLY'};
+const beforeMs=n=>(+n.remindBefore||0)*60000;
+// k-ésima vez de um lembrete que repete (null = dia que não conta, como sábado em "dias úteis")
+function occK(base,rep,k){ const o=new Date(base);
+  if(rep==='dia'||rep==='uteis'){ o.setDate(base.getDate()+k); return rep==='uteis'&&(o.getDay()===0||o.getDay()===6)?null:o; }
+  if(rep==='semana'){ o.setDate(base.getDate()+7*k); return o; }
+  if(rep==='mes'){ const day=base.getDate(); o.setDate(1); o.setMonth(base.getMonth()+k); o.setDate(Math.min(day,new Date(o.getFullYear(),o.getMonth()+1,0).getDate())); return o; }
+  return k?null:o; }
+// primeira vez (dia e hora da atividade) depois de t
+function occAfter(n,t){ const base=new Date(n.remindAt); if(isNaN(base)) return null; const rep=n.remindRepeat||'';
+  if(!rep) return base.getTime()>t?base:null;
+  let k0=0; if(t>base.getTime()){ const days=(t-base.getTime())/864e5; k0=Math.max(0,Math.floor(rep==='semana'?days/7:rep==='mes'?days/31:days)-2); }
+  for(let k=k0;k<k0+800;k++){ const o=occK(base,rep,k); if(o&&o.getTime()>t) return o; } return null; }
+// hora do próximo alarme (num lembrete que não repete é uma hora só, mesmo que já tenha passado)
+function nextRingDate(n,t=now()){ if(!n||!n.remindAt) return null; const b=beforeMs(n);
+  if(!n.remindRepeat){ const d=new Date(new Date(n.remindAt).getTime()-b); return isNaN(d)?null:d; }
+  const o=occAfter(n,t+b); return o?new Date(o.getTime()-b):null; }
+function repTxt(n,o){ const tm=hm(o), b=new Date(n.remindAt), r=n.remindRepeat;
+  if(r==='dia') return 'Todo dia às '+tm; if(r==='uteis') return 'Dias úteis às '+tm;
+  if(r==='semana'){ const w=b.toLocaleDateString('pt-BR',{weekday:'long'}).replace('-feira',''); return (w==='sábado'||w==='domingo'?'Todo ':'Toda ')+w+' às '+tm; }
+  if(r==='mes') return 'Todo dia '+b.getDate()+' às '+tm; return fmtRem(o); }
+function remInfo(n){ if(!n||!n.remindAt) return null; const d=new Date(n.remindAt); if(isNaN(d)) return null;
+  if(n.remindRepeat){ const o=occAfter(n,now()-1)||d; return {d:o,txt:repTxt(n,o),late:false,rep:true}; }
+  return {d,txt:fmtRem(d),late:d.getTime()<now()}; }
+function dayStart(t){ const d=new Date(t); d.setHours(0,0,0,0); return d.getTime(); }
+// tela Hoje: as de hoje em ordem de horário e as atrasadas (de dias anteriores, ainda pendentes)
+function todayItems(){
+  const late=[], today=[]; if(!db||!Array.isArray(db.notes)) return {late,today};
+  const t=now(), s0=dayStart(t), e=new Date(s0); e.setDate(e.getDate()+1); const e0=e.getTime();
+  for(const n of liveNotes()){ if(!n.remindAt) continue;
+    if(n.remindRepeat){ if(n.done) continue; const o=occAfter(n,s0-1); if(o&&o.getTime()<e0) today.push({n,t:o.getTime()}); continue; }
+    const d=new Date(n.remindAt).getTime(); if(isNaN(d)) continue;
+    if(d>=s0&&d<e0) today.push({n,t:d}); else if(d<s0&&!n.done) late.push({n,t:d}); }
+  late.sort((a,b)=>a.t-b.t); today.sort((a,b)=>a.t-b.t); return {late,today}; }
+function nextAlarmNote(){ let best=null; const t=now(); for(const n of liveNotes()){ if(n.done||!n.remindAt) continue; const r=nextRingDate(n,t); if(r&&r.getTime()>t&&(!best||r<best.ring)) best={n,ring:r}; } return best; }
 function fmtRem(d){ const t=new Date(), tm=d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}), tom=new Date(t); tom.setDate(t.getDate()+1);
   if(d.toDateString()===t.toDateString()) return 'Hoje às '+tm; if(d.toDateString()===tom.toDateString()) return 'Amanhã às '+tm;
   return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})+' às '+tm; }
@@ -2957,8 +3075,10 @@ function refreshAlarmWarn(){ const w=document.querySelector('#sheet:not([hidden]
 
 function reminderSheet(n){
   let at=n.remindAt; if(!at){ const d=new Date(now()+3600e3); d.setMinutes(0,0,0); at=toLocalInput(d); }
+  at=at.slice(0,16);
   let before=n.remindBefore!=null?+n.remindBefore:(HAS_ALARM?0:10);
   let mode=RMODES.some(x=>x[0]===n.remindMode)?n.remindMode:(cfg.remMode||'ambos');
+  let rep=n.remindRepeat||'', touched=false, handled=false;
   const st=HAS_ALARM?alarmState():null;
   const hint=HAS_ALARM?'O alarme toca neste celular na hora marcada, mesmo com o app fechado, a tela bloqueada e sem internet. 1 minuto antes chega um aviso.'
     :IS_APK?'Esta versão do app ainda não tem o alarme do celular. Baixe a versão nova para o alarme tocar.'
@@ -2966,33 +3086,45 @@ function reminderSheet(n){
     :!cfg.linked?'Entre com sua conta Google (Ajustes) para o aviso tocar com o app fechado. Por enquanto, o aviso aparece só com o app aberto.'
     :cfg.calOk===false?'Falta permitir o Google Agenda: em Ajustes, saia e entre de novo com o Google e marque a permissão da agenda. Por enquanto, o aviso aparece só com o app aberto.'
     :'O aviso chega pelo Google Agenda, na agenda “Não Esquece”, mesmo com o app fechado.';
+  // salva o lembrete (também quando a janela é fechada sem tocar em Salvar)
+  const save=auto=>{
+    if(handled) return true;
+    if(!at||isNaN(new Date(at))){ if(!auto) toast('Escolha o dia e a hora.'); return false; }
+    handled=true;
+    n.remindAt=at; n.remindBefore=before; if(rep) n.remindRepeat=rep; else delete n.remindRepeat;
+    if(HAS_ALARM){ n.remindMode=mode; cfg.remMode=mode; saveCfg(); }
+    n.updatedAt=now(); delete n._fresh; changed(); renderRemChip(n); renderList();
+    const ring=nextRingDate(n), pre=auto?'Lembrete salvo. ':'', rl=rep?' · '+repLabel(rep).toLowerCase():'';
+    if(HAS_ALARM){
+      toast(pre+(!ring||ring.getTime()<=now()?'Esse horário já passou: o alarme não vai tocar.':'Alarme: '+fmtRem(ring)+(rep?rl:' · aviso 1 minuto antes')));
+      setTimeout(afterReminderSaved,auto?300:0);
+    } else toast(pre+'Lembrete: '+fmtRem(new Date(n.remindAt))+rl+(before?' · aviso '+BEFORE.find(x=>x[0]===before)[1]+' antes':''));
+    return true; };
   openSheet(`<h3>Lembrete</h3><p class="sub">${hint}</p>${st?alarmWarnHtml(st):''}
     ${IS_APK&&!HAS_ALARM?'<div class="btns" style="margin:0 0 12px"><button class="btn pri" id="rmUpd">Baixar a versão nova</button></div>':''}
-    <div class="blk"><div class="lbl">Dia e hora da atividade</div><input type="datetime-local" class="field" id="rmAt" value="${at.slice(0,16)}"></div>
+    <div class="blk"><div class="lbl">Dia e hora da atividade</div><input type="datetime-local" class="field" id="rmAt" value="${at}"></div>
+    <div class="blk"><div class="lbl">Repetir</div><div class="seg wrap" id="rmR">${REPEATS.map(([k,l])=>`<button data-r="${k}" aria-pressed="${k===rep}">${l}</button>`).join('')}</div></div>
     <div class="blk"><div class="lbl">${HAS_ALARM?'Tocar o alarme':'Avisar antes'}</div><div class="seg wrap" id="rmB">${BEFORE.map(([m,l])=>`<button data-m="${m}" aria-pressed="${m===before}">${HAS_ALARM&&m?l+' antes':l}</button>`).join('')}</div></div>
-    ${HAS_ALARM?`<div class="blk"><div class="lbl">Aviso de 1 minuto antes e alarme</div><div class="seg wrap" id="rmM">${RMODES.map(([k,l])=>`<button data-k="${k}" aria-pressed="${k===mode}">${l}</button>`).join('')}</div></div>
-    <p class="sub" id="rmSum" style="margin:0 0 4px"></p>`:''}
+    ${HAS_ALARM?`<div class="blk"><div class="lbl">Aviso de 1 minuto antes e alarme</div><div class="seg wrap" id="rmM">${RMODES.map(([k,l])=>`<button data-k="${k}" aria-pressed="${k===mode}">${l}</button>`).join('')}</div></div>`:''}
+    <p class="sub" id="rmSum" style="margin:0 0 4px"></p>
     <div class="btns">${n.remindAt?'<button class="btn" id="rmDel">Remover</button>':''}<button class="btn pri" id="rmOk">Salvar lembrete</button></div>`,
   s=>{
-    const sum=()=>{ const el=s.querySelector('#rmSum'); if(!el) return; const v=s.querySelector('#rmAt').value, d=new Date(v);
-      if(!v||isNaN(d)){ el.textContent=''; return; }
-      const ring=new Date(d.getTime()-before*60000), pre=new Date(ring.getTime()-60000);
-      el.innerHTML=ring.getTime()<=now()?'<b style="color:var(--danger)">Esse horário já passou: o alarme não vai tocar.</b>'
-        :`Aviso às <b>${hm(pre)}</b> e alarme às <b>${hm(ring)}</b>${ring.toDateString()===new Date().toDateString()?' de hoje':' do dia '+ring.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}.`; };
-    s.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{ before=+b.dataset.m; s.querySelectorAll('[data-m]').forEach(x=>x.setAttribute('aria-pressed',x===b)); sum(); });
-    s.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{ mode=b.dataset.k; s.querySelectorAll('[data-k]').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+    const sum=()=>{ const el=s.querySelector('#rmSum'); if(!el) return; const tmp={remindAt:at,remindBefore:before,remindRepeat:rep};
+      const ring=at&&!isNaN(new Date(at))?nextRingDate(tmp):null; if(!ring){ el.textContent=''; return; }
+      if(ring.getTime()<=now()){ el.innerHTML='<b style="color:var(--danger)">Esse horário já passou: o alarme não vai tocar.</b>'; return; }
+      const pre=new Date(ring.getTime()-60000), day=ring.toDateString()===new Date().toDateString()?' de hoje':' do dia '+ring.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
+      const txt=HAS_ALARM?`${rep?'Próximo: aviso':'Aviso'} às <b>${hm(pre)}</b> e alarme às <b>${hm(ring)}</b>${day}`:`${rep?'Próximo aviso':'Aviso'} às <b>${hm(ring)}</b>${day}`;
+      el.innerHTML=txt+(rep?' · '+repTxt(tmp,new Date(ring.getTime()+beforeMs(tmp))).replace(/^./,c=>c.toLowerCase()):'')+'.'; };
+    s.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{ before=+b.dataset.m; touched=true; s.querySelectorAll('[data-m]').forEach(x=>x.setAttribute('aria-pressed',x===b)); sum(); });
+    s.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{ mode=b.dataset.k; touched=true; s.querySelectorAll('[data-k]').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+    s.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ rep=b.dataset.r; touched=true; s.querySelectorAll('[data-r]').forEach(x=>x.setAttribute('aria-pressed',x===b)); sum(); });
     s.addEventListener('click',async e=>{ const b=e.target.closest&&e.target.closest('[data-perm]'); if(!b) return; await askPerm(b.dataset.perm); refreshAlarmWarn(); });
-    s.querySelector('#rmAt').oninput=sum; sum();
+    const inp=s.querySelector('#rmAt'); inp.oninput=inp.onchange=()=>{ at=inp.value.slice(0,16); touched=true; sum(); }; sum();
     const u=s.querySelector('#rmUpd'); if(u) u.onclick=()=>openLink(APK_URL);
-    s.querySelector('#rmOk').onclick=()=>{ const v=s.querySelector('#rmAt').value; if(!v||isNaN(new Date(v))){ toast('Escolha o dia e a hora.'); return; }
-      n.remindAt=v.slice(0,16); n.remindBefore=before; if(HAS_ALARM){ n.remindMode=mode; cfg.remMode=mode; saveCfg(); }
-      n.updatedAt=now(); delete n._fresh; changed(); closeSheet(); renderRemChip(n); renderList();
-      if(HAS_ALARM){ const ring=new Date(new Date(n.remindAt).getTime()-before*60000);
-        toast(ring.getTime()<=now()?'Lembrete salvo, mas esse horário já passou: o alarme não vai tocar.':'Alarme: '+fmtRem(ring)+' · aviso 1 minuto antes');
-        afterReminderSaved(); }
-      else toast('Lembrete: '+fmtRem(new Date(n.remindAt))+(before?' · aviso '+BEFORE.find(x=>x[0]===before)[1]+' antes':'')); };
-    const d=s.querySelector('#rmDel'); if(d) d.onclick=()=>{ delete n.remindAt; delete n.remindBefore; delete n.remindMode; n.updatedAt=now(); changed(); closeSheet(); renderRemChip(n); renderList(); toast('Lembrete removido'); };
-  });
+    s.querySelector('#rmOk').onclick=()=>{ if(save(false)) closeSheet(); };
+    const d=s.querySelector('#rmDel'); if(d) d.onclick=()=>{ handled=true; delete n.remindAt; delete n.remindBefore; delete n.remindMode; delete n.remindRepeat; n.updatedAt=now(); changed(); closeSheet(); renderRemChip(n); renderList(); toast('Lembrete removido'); };
+  },
+  ()=>{ if(touched&&!handled) save(true); });
 }
 // depois de salvar: confere o que o Android precisa liberar, uma coisa de cada vez
 async function afterReminderSaved(){
@@ -3018,7 +3150,7 @@ let alarmSig='', alarmTimer=0;
 function syncAlarmsNow(){
   if(!HAS_ALARM||!appReady||!db||!Array.isArray(db.notes)) return;
   if(Vault.exists()&&!Vault.unlocked()) return;
-  const list=db.notes.filter(n=>!n.deleted&&!n.trashed&&!n.done&&n.remindAt).map(n=>({id:n.id,at:n.remindAt,before:+n.remindBefore||0,mode:n.remindMode||'ambos',
+  const list=db.notes.filter(n=>!n.deleted&&!n.trashed&&!n.done&&n.remindAt).map(n=>({id:n.id,at:n.remindAt,before:+n.remindBefore||0,mode:n.remindMode||'ambos',repeat:n.remindRepeat||undefined,
     title:noteTitle(n).slice(0,200),text:txt(n.html).replace(/\s+/g,' ').trim().slice(0,300)}));
   const sig=JSON.stringify(list); if(sig===alarmSig) return;
   try{ if(+NA.alarmSet(sig)>=0) alarmSig=sig; }catch(e){ alarmSig=''; }
@@ -3033,8 +3165,8 @@ async function syncDevCal(force){
   if(Vault.exists()&&!Vault.unlocked()) return;
   const map=cfg.devCalMap||{}, want=new Map();
   for(const n of db.notes) if(!n.deleted&&!n.trashed&&!n.done&&n.remindAt){
-    const it={id:n.id,at:n.remindAt,title:noteTitle(n).slice(0,200),text:txt(n.html).trim().slice(0,900)};
-    want.set(n.id,{it,sig:fnv(it.at+'|'+it.title+'|'+it.text)}); }
+    const it={id:n.id,at:n.remindAt,repeat:n.remindRepeat||'',title:noteTitle(n).slice(0,200),text:txt(n.html).trim().slice(0,900)};
+    want.set(n.id,{it,sig:fnv(it.at+'|'+it.repeat+'|'+it.title+'|'+it.text)}); }
   const up=[], del=[];
   for(const [id,w] of want) if(force||map[id]!==w.sig) up.push(w.it);
   for(const id of Object.keys(map)) if(!want.has(id)) del.push(id);
@@ -3087,7 +3219,9 @@ function alarmBlock(){
     ${st.sdk>=34?row('aFull','lock','Alarme na tela bloqueada',st.full!==false,'Permitido','Não permitido: toque para liberar'):''}
     ${row('aBat','shield','Bateria',!!st.battery,'Sem restrição: o alarme não atrasa','Com economia: toque para liberar (recomendado)')}
     ${st.vol===0?`<div class="row static"><span data-i="info"></span><span class="grow">Volume de alarme<small>${bad('Está no zero: aumente o volume de alarme do celular')}</small></span></div>`:''}
+    ${(()=>{ const nx=nextAlarmNote(); return `<div class="row static"><span data-i="today"></span><span class="grow">Próximo alarme<small>${nx?esc(fmtRem(nx.ring))+' · '+esc(noteTitle(nx.n)):'Nenhum lembrete marcado. Abra uma nota e toque em Lembrete.'}${nx&&st.pending===0?'<br>'+bad('Ainda não está marcado no Android'):''}</small></span></div>${nx&&st.pending===0?'<button class="row" id="aResync"><span data-i="sync"></span><span class="grow">Marcar os alarmes de novo</span></button>':''}`; })()}
     <button class="row" id="aCal"><span data-i="note"></span><span class="grow">Calendário do celular<small>${cal}</small></span></button>
+    ${typeof NA.widgetPin==='function'?`<button class="row" id="aWid"><span data-i="home"></span><span class="grow">Widget na tela inicial<small>${st.widgets?'Já está na tela inicial':'Os lembretes de hoje e o botão Nova nota, sem abrir o app'}</small></span>${st.widgets?'<span data-i="check" style="color:var(--ok)"></span>':''}</button>`:''}
     ${cfg.devCal===true&&ci.found&&ci.google&&ci.syncOn===false?'<button class="row" id="aSync"><span data-i="sync"></span><span class="grow">Ligar a sincronização da agenda<small>Abre as contas do celular</small></span></button>':''}
     <button class="row" id="aTest"><span data-i="bell"></span><span class="grow">Testar o alarme<small>O aviso chega agora e o alarme toca em 20 segundos</small></span></button>
   </div>`;
@@ -3101,6 +3235,8 @@ function bindAlarmBlock(s){
   on('#aBat',()=>askPerm('battery'));
   on('#aSync',()=>askPerm('sync'));
   on('#aTest',testAlarm);
+  on('#aResync',()=>{ alarmSig=''; syncAlarmsNow(); setTimeout(refreshAlarmBlock,300); toast('Alarmes marcados de novo'); });
+  on('#aWid',()=>{ let r='no'; try{ r=NA.widgetPin(); }catch(e){} toast(r==='ok'?'Confirme no aviso do Android para colocar o widget na tela inicial.':'Segure o dedo num espaço vazio da tela inicial › Widgets › Não Esquece.'); });
   on('#aCal',async()=>{
     if(cfg.devCal===true&&alarmState().cal){
       askSheet({title:'Desligar o calendário do celular?',sub:'Os lembretes do Não Esquece saem do calendário do celular e da agenda da sua conta Google. O alarme continua tocando pelo app.',ok:'Desligar',no:'Cancelar',
@@ -3111,10 +3247,14 @@ function bindAlarmBlock(s){
 function refreshAlarmBlock(){ const b=document.querySelector('#sheet:not([hidden]) #alBlk'); if(!b) return; b.outerHTML=alarmBlock(); const nb=document.querySelector('#alBlk'); if(nb){ paintIcons(nb); bindAlarmBlock(nb); } }
 
 /* recados do alarme (Concluída) e abrir a nota pelo aviso */
-let pendingOpen=null, evCheck=true;
-{ const q=new URLSearchParams(location.search); if(q.has('nota')){ pendingOpen=q.get('nota')||''; q.delete('nota');
-  try{ history.replaceState(history.state,'',location.pathname+(q.toString()?'?'+q:'')+location.hash); }catch(e){} } }
+let pendingOpen=null, evCheck=true, pendingNew=false;
+{ const q=new URLSearchParams(location.search); let ch=false;
+  if(q.has('nota')){ pendingOpen=q.get('nota')||''; q.delete('nota'); ch=true; }
+  if(q.has('hoje')){ cur.folder='today'; cfg.view='today'; q.delete('hoje'); ch=true; }
+  if(ch) try{ history.replaceState(history.state,'',location.pathname+(q.toString()?'?'+q:'')+location.hash); }catch(e){} }
 window.__openFromNative=id=>{ pendingOpen=String(id||''); evCheck=true; };
+window.__newFromNative=()=>{ pendingNew=true; };
+window.__todayFromNative=()=>{ cur.folder='today'; cfg.view='today'; saveCfg(); cur.q=''; try{ $('#q').value=''; }catch(e){} if(appReady){ if(cur.noteId&&!WIDE()) closeEditor(); render(); } };
 function processAlarmEvents(){
   if(!HAS_ALARM||!appReady||locked||!db) return;
   if(Vault.exists()&&!Vault.unlocked()) return;
@@ -3128,17 +3268,162 @@ function flushPendingOpen(){
   const n=id?noteById(id):null;
   if(n&&!n.deleted&&!n.trashed){ if(!$('#sheet').hidden) closeSheet(); openNote(id); }
 }
-setInterval(()=>{ if(!appReady||locked||secOpen) return; if(evCheck){ evCheck=false; processAlarmEvents(); } flushPendingOpen(); },700);
+setInterval(()=>{ if(!appReady||locked||secOpen) return; if(evCheck){ evCheck=false; processAlarmEvents(); } flushPendingOpen();
+  if(pendingNew){ pendingNew=false; if($('#sheet').hidden) newNote(); } },700);
 document.addEventListener('visibilitychange',()=>{ if(document.visibilityState!=='visible') return; evCheck=true; if(HAS_ALARM){ refreshAlarmBlock(); refreshAlarmWarn(); scheduleAlarms(); } });
+
+/* ---------- prioridade e etiquetas ---------- */
+function renderTagChip(n){ const b=$('#tagBtn'); if(!b||!n) return; const ts=noteTags(n);
+  b.dataset.urg=n.urgent?'1':''; b.dataset.has=ts.length?'1':'';
+  $('#tagTxt').textContent=[n.urgent?'Urgente':'',...ts.slice(0,2).map(t=>t.name)].filter(Boolean).join(' · ')+(ts.length>2?' +'+(ts.length-2):'')||'Etiqueta'; }
+$('#tagBtn').onclick=()=>{ const n=noteById(cur.noteId); if(n){ flushEdit(); tagSheet(n); } };
+function tagRows(n){ const tg=liveTags();
+  return tg.length?tg.map(t=>`<button class="row" data-tg="${t.id}" aria-pressed="${(n.tags||[]).includes(t.id)}"><i class="dot" style="--tc:${tagColor(t.color)}"></i><span class="grow">${esc(t.name)}</span><span class="ck" data-i="check"></span></button>`).join('')
+    :'<p class="sub" style="margin:4px 0 8px">Nenhuma etiqueta ainda. Crie a primeira aqui embaixo.</p>'; }
+function tagSheet(n){
+  let col='azul';
+  openSheet(`<h3>Prioridade e etiquetas</h3>
+    <button class="row" id="tgUrg" aria-pressed="${!!n.urgent}"><span data-i="flag" style="color:var(--danger)"></span><span class="grow">Urgente<small>Fica em vermelho e no topo das listas</small></span><span class="ck" data-i="check"></span></button>
+    <div class="blk"><div class="lbl">Etiquetas</div><div id="tgList">${tagRows(n)}</div></div>
+    <div class="blk"><div class="lbl">Nova etiqueta</div>
+      <input class="field" id="tgName" maxlength="30" placeholder="Ex.: Cliente, Financeiro, Equipe" autocomplete="off">
+      <div class="colors" id="tgCol">${TAGC.map(([k,h])=>`<button data-c="${k}" style="--tc:${h}" aria-label="Cor ${k}" aria-pressed="${k===col}"></button>`).join('')}</div>
+      <div class="btns"><button class="btn" id="tgAdd">Criar e marcar nesta nota</button></div></div>
+    <div class="btns"><button class="btn pri" id="tgOk">Pronto</button></div>`,
+  s=>{
+    const save=()=>{ n.updatedAt=now(); delete n._fresh; changed(); renderTagChip(n); renderFolders(); renderList(); };
+    s.querySelector('#tgUrg').onclick=e=>{ if(n.urgent) delete n.urgent; else n.urgent=true; e.currentTarget.setAttribute('aria-pressed',!!n.urgent); save(); };
+    s.querySelector('#tgList').addEventListener('click',e=>{ const b=e.target.closest('[data-tg]'); if(!b) return;
+      const id=b.dataset.tg, has=(n.tags||[]).includes(id);
+      n.tags=has?(n.tags||[]).filter(x=>x!==id):[...(n.tags||[]),id]; if(!n.tags.length) delete n.tags;
+      b.setAttribute('aria-pressed',!has); save(); });
+    s.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{ col=b.dataset.c; s.querySelectorAll('[data-c]').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+    s.querySelector('#tgAdd').onclick=()=>{ const nm=s.querySelector('#tgName').value.trim(); if(!nm){ toast('Digite o nome da etiqueta.'); return; }
+      let t=liveTags().find(x=>norm(x.name)===norm(nm)), made=false;
+      if(!t){ t={id:uid(),name:nm.slice(0,40),color:col,updatedAt:now()}; db.tags=db.tags||[]; db.tags.push(t); made=true; }
+      if(!(n.tags||[]).includes(t.id)) n.tags=[...(n.tags||[]),t.id];
+      s.querySelector('#tgName').value=''; const L=s.querySelector('#tgList'); L.innerHTML=tagRows(n); paintIcons(L); save();
+      toast(made?'Etiqueta “'+t.name+'” criada':'Etiqueta “'+t.name+'” marcada'); };
+    s.querySelector('#tgOk').onclick=closeSheet;
+  });
+}
+function tagMenu(id){
+  const t=tagById(id); if(!t) return;
+  openSheet(`<h3><i class="dot" style="--tc:${tagColor(t.color)};width:14px;height:14px;margin-right:8px;vertical-align:-1px"></i>${esc(t.name)}</h3>
+    <button class="row" id="tmRen"><span data-i="pencil"></span><span class="grow">Renomear</span></button>
+    <div class="blk"><div class="lbl">Cor</div><div class="colors" id="tmCol">${TAGC.map(([k,h])=>`<button data-c="${k}" style="--tc:${h}" aria-label="Cor ${k}" aria-pressed="${k===t.color}"></button>`).join('')}</div></div>
+    <button class="row danger" id="tmDel"><span data-i="trash"></span><span class="grow">Apagar etiqueta<small>As notas continuam; só a etiqueta sai delas</small></span></button>`,
+  s=>{
+    s.querySelector('#tmRen').onclick=()=>{ closeSheet(); askName({title:'Renomear etiqueta',value:t.name,onOk:v=>{ t.name=v.slice(0,40); t.updatedAt=now(); changed(); render(); toast('Etiqueta renomeada'); }}); };
+    s.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{ t.color=b.dataset.c; t.updatedAt=now(); s.querySelectorAll('[data-c]').forEach(x=>x.setAttribute('aria-pressed',x===b)); changed(); render(); });
+    s.querySelector('#tmDel').onclick=()=>{ closeSheet(); confirmSheet({title:'Apagar a etiqueta “'+esc(t.name)+'”?',sub:'As notas não são apagadas: só deixam de ter esta etiqueta.',ok:'Apagar',onOk:()=>{
+      t.deleted=true; t.updatedAt=now();
+      for(const n of db.notes) if((n.tags||[]).includes(t.id)){ n.tags=n.tags.filter(x=>x!==t.id); if(!n.tags.length) delete n.tags; n.updatedAt=now(); }
+      if(cur.folder==='tag:'+t.id) cur.folder='all'; changed(); render(); toast('Etiqueta apagada'); }}); };
+  });
+}
+
+/* ---------- escanear documento: foto de papel que vira PDF na nota ---------- */
+function b64Blob(b64,type){ const bin=atob(b64), u=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) u[i]=bin.charCodeAt(i); return new Blob([u],{type}); }
+async function addPdf(n,blob,name,pages){
+  const a={id:uid(),name:uniqueName(n,name),type:'application/pdf',size:blob.size,addedAt:now()}; if(pages) a.pages=pages;
+  try{ await IDB.put(a.id,blob); }catch(e){ toast('Sem espaço no aparelho para o PDF.'); return; }
+  n.attachments=n.attachments||[]; n.attachments.push(a); n.updatedAt=now(); delete n._fresh; changed();
+  if(cur.noteId===n.id) renderAtts(); renderList();
+  toast('PDF salvo na nota'+(pages?' · '+pages+(pages>1?' páginas':' página'):''));
+}
+let scanPages=[];
+async function scanDoc(){
+  const n=noteById(cur.noteId); if(!n) return;
+  if(IS_APK&&typeof NA.scanDoc==='function'){
+    // scanner do Google: acha as bordas do papel, endireita e limpa a imagem
+    try{ extLaunch=now(); const r=JSON.parse(await nativeCall('scanDoc'));
+      await addPdf(n,b64Blob(r.b64,'application/pdf'),'Documento '+stamp(now())+'.pdf',+r.pages||0); return; }
+    catch(e){ if(e.message==='cancel') return; }
+  }
+  scanPages=[]; scanSheet(n);
+}
+function renderScan(s){
+  const g=s.querySelector('#scG'), k=scanPages.length;
+  g.innerHTML=scanPages.map((p,i)=>`<div><img src="${p.url}" alt="Página ${i+1}"><span>${i+1}</span><button data-sdel="${i}" aria-label="Tirar a página ${i+1}">${svg('x')}</button></div>`).join('');
+  s.querySelector('#scAdd').textContent=k?'Tirar foto da página '+(k+1):'Tirar foto da 1ª página';
+  const ok=s.querySelector('#scOk'); ok.disabled=!k; ok.textContent=k?'Criar PDF ('+k+(k>1?' páginas)':' página)'):'Criar PDF';
+}
+function scanSheet(n){
+  openSheet(`<h3>Escanear documento</h3><p class="sub">Tire uma foto de cada página, com o papel inteiro aparecendo e boa luz. No fim, o app junta tudo num PDF dentro da nota.</p>
+    <div class="scang" id="scG"></div>
+    <label class="tcheck"><input type="checkbox" id="scBw" ${cfg.scanBw!==false?'checked':''}><span>Deixar em preto e branco, como cópia de xerox</span></label>
+    <div class="btns"><label class="btn" for="inScan" id="scAdd" style="display:grid;place-items:center;cursor:pointer"></label><button class="btn pri" id="scOk" disabled></button></div>`,
+  s=>{ renderScan(s);
+    s.querySelector('#scBw').onchange=e=>{ cfg.scanBw=e.target.checked; saveCfg(); };
+    s.querySelector('#scOk').onclick=()=>finishScan(n);
+    s.querySelector('#scG').addEventListener('click',e=>{ const b=e.target.closest('[data-sdel]'); if(!b) return; const i=+b.dataset.sdel; try{ URL.revokeObjectURL(scanPages[i].url); }catch(err){} scanPages.splice(i,1); renderScan(s); }); },
+  ()=>{ for(const p of scanPages){ try{ URL.revokeObjectURL(p.url); }catch(e){} } scanPages=[]; });
+}
+async function scanImage(f,bw){
+  const bmp=await createImageBitmap(f); const k=Math.min(1,2000/Math.max(bmp.width,bmp.height));
+  const c=document.createElement('canvas'); c.width=Math.round(bmp.width*k); c.height=Math.round(bmp.height*k);
+  const g=c.getContext('2d'); g.drawImage(bmp,0,0,c.width,c.height);
+  if(bw){ // papel fica branco e a tinta escura, como uma cópia
+    const im=g.getImageData(0,0,c.width,c.height), d=im.data, hist=new Uint32Array(256), tot=d.length/4;
+    for(let i=0;i<d.length;i+=4){ const y=(d[i]*299+d[i+1]*587+d[i+2]*114)/1000|0; d[i]=y; hist[y]++; }
+    let lo=0, hi=255, acc=0; for(let v=0;v<256;v++){ acc+=hist[v]; if(acc>tot*0.02){ lo=v; break; } }
+    acc=0; for(let v=255;v>=0;v--){ acc+=hist[v]; if(acc>tot*0.25){ hi=v; break; } }
+    const span=Math.max(30,hi-lo);
+    for(let i=0;i<d.length;i+=4){ let y=(d[i]-lo)*255/span; y=y<0?0:y>255?255:y; if(y>205) y=255; d[i]=d[i+1]=d[i+2]=y; }
+    g.putImageData(im,0,0); }
+  return await new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej(new Error('jpg')),'image/jpeg',.85));
+}
+$('#inScan').addEventListener('change',async e=>{ const f=e.target.files[0]; e.target.value=''; if(!f) return;
+  try{ const b=await scanImage(f,cfg.scanBw!==false); scanPages.push({blob:b,url:URL.createObjectURL(b)}); }catch(err){ toast('Não consegui usar essa foto.'); }
+  const s=$('#sheet'); if(!s.hidden&&s.querySelector('#scG')) renderScan(s); });
+async function finishScan(n){
+  if(!scanPages.length) return; const ok=$('#sheet').querySelector('#scOk'); if(ok){ ok.disabled=true; ok.textContent='Criando o PDF…'; }
+  try{
+    const pgs=[];
+    for(const p of scanPages){
+      const bmp=await createImageBitmap(p.blob), c=document.createElement('canvas'); c.width=PW; c.height=PH;
+      const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,PW,PH);
+      const m=40, k=Math.min((PW-2*m)/bmp.width,(PH-2*m)/bmp.height), w=bmp.width*k, h=bmp.height*k;
+      g.drawImage(bmp,(PW-w)/2,(PH-h)/2,w,h);
+      pgs.push({w:PW,h:PH,data:await canvasJPEG(c),media:[]});
+    }
+    const blob=buildPDF(pgs), k=pgs.length; closeSheet();
+    await addPdf(n,blob,'Documento '+stamp(now())+'.pdf',k);
+  }catch(e){ logErr('Escanear: '+(e&&e.message)); toast('Não consegui criar o PDF.'); if(ok){ ok.disabled=false; ok.textContent='Criar PDF'; } }
+}
+function pdfMenu(n,a){
+  openSheet(`<h3>${esc(a.name)}</h3><p class="sub">PDF${a.pages?' · '+a.pages+(a.pages>1?' páginas':' página'):''} · ${fmtFull(a.addedAt||n.updatedAt)}</p>
+    <button class="row" id="pdOpen"><span data-i="pdf"></span><span class="grow">Abrir o PDF</span></button>
+    <button class="row" id="pdShare"><span data-i="share"></span><span class="grow">Compartilhar<small>WhatsApp, e-mail e outros apps</small></span></button>
+    <button class="row danger" id="pdDel"><span data-i="trash"></span><span class="grow">Remover da nota</span></button>`,
+  s=>{ s.querySelector('#pdOpen').onclick=()=>{ closeSheet(); openPdf(a); };
+    s.querySelector('#pdShare').onclick=()=>{ closeSheet(); shareAtt(a); };
+    s.querySelector('#pdDel').onclick=()=>{ closeSheet(); removeAtt(n,a); }; });
+}
+async function openPdf(a){
+  let b=await IDB.get(a.id).catch(()=>null);
+  if(!b&&a.driveId&&hasToken()){ toast('Baixando do Drive…'); if(await fetchAtt(a)) b=await IDB.get(a.id).catch(()=>null); }
+  if(!b){ toast(a.driveId?'Conecte-se à internet para baixar este PDF do Drive.':'Este PDF não está neste aparelho.'); return; }
+  if(IS_APK&&typeof NA.viewFile==='function'){
+    try{ extLaunch=now(); await nativeCall('viewFile',a.name,'application/pdf',await blobB64(b)); }
+    catch(e){ toast(e.message==='sem_app'?'Nenhum app do celular abre PDF. Use Compartilhar.':'Não consegui abrir o PDF.'); }
+    return; }
+  if(IS_APK){ shareAtt(a); return; }
+  const u=URL.createObjectURL(new Blob([b],{type:'application/pdf'})); extLaunch=now();
+  const w=window.open(u,'_blank'); if(!w) download(a.name,b,'application/pdf'); setTimeout(()=>URL.revokeObjectURL(u),120000);
+}
 
 function checkReminders(){
   if(HAS_ALARM||!appReady||locked) return; // no app do celular quem avisa é o alarme do Android
   const t=now(), seen=new Set(cfg.alerted||[]);
   for(const n of liveNotes()){
     if(!n.remindAt||n.done) continue;
-    const due=new Date(n.remindAt).getTime()-(+n.remindBefore||0)*60000;
+    let due, k;
+    if(n.remindRepeat){ const o=occAfter(n,t-3*3600e3+beforeMs(n)); if(!o) continue; due=o.getTime()-beforeMs(n); k=n.id+'@'+o.toISOString(); }
+    else { due=new Date(n.remindAt).getTime()-beforeMs(n); k=n.id+'@'+n.remindAt; }
     if(isNaN(due)||t<due||t-due>3*3600e3) continue;
-    const k=n.id+'@'+n.remindAt; if(seen.has(k)) continue;
+    if(seen.has(k)) continue;
     seen.add(k); cfg.alerted=[...seen].slice(-60); saveCfg();
     try{ navigator.vibrate&&navigator.vibrate([200,100,200]); }catch(e){}
     toast('Lembrete: '+noteTitle(n)+' · '+fmtRem(new Date(n.remindAt)),'Abrir',()=>openNote(n.id)); break;
@@ -3150,7 +3435,8 @@ function evBody(n){
   const f=d=>`${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}:00`;
   return {summary:noteTitle(n),description:(txt(n.html).slice(0,900)||'')+'\n\nLembrete criado pelo app Não Esquece.',
     start:{dateTime:f(st),timeZone:TZ},end:{dateTime:f(en),timeZone:TZ},
-    reminders:{useDefault:false,overrides:[{method:'popup',minutes:Math.max(0,Math.min(40320,+n.remindBefore||0))}]}};
+    reminders:{useDefault:false,overrides:[{method:'popup',minutes:Math.max(0,Math.min(40320,+n.remindBefore||0))}]},
+    ...(n.remindRepeat&&RRULE[n.remindRepeat]?{recurrence:[RRULE[n.remindRepeat]]}:{})};
 }
 async function ensureCalendar(){
   if(okCal(cfg.calendarId)){
@@ -3234,6 +3520,7 @@ async function boot(){
   }
   try{ localStorage.removeItem('ne.session'); }catch(e){}
   appReady=true; persist(); scheduleAlarms();
+  if(cfg.view&&cur.folder==='all'&&typeof cfg.view==='string'){ cur.folder=cfg.view; if(viewIsFolder(cur.folder)&&!folderById(cur.folder)) cur.folder='all'; if(isTagView(cur.folder)&&!tagById(cur.folder.slice(4))) cur.folder='all'; }
   { const old=trashNotes().filter(n=>now()-(n.trashedAt||n.updatedAt)>30*86400e3); if(old.length) purgeNotes(old); } // lixeira: 30 dias
   render();
   const ret=await handleRedirectReturn();
