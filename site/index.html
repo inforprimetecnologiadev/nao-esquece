@@ -1,5 +1,20 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Bloco de notas com áudio, fotos, checklist e pastas salvas no Google Drive."><link rel="manifest" href="manifest.json"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#0a1122"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <title>Não Esquece</title>
+<script>
+/* Celular com "Site para computador" ligado no Chrome: o Chrome ignora a largura do aparelho e desenha a versão de computador em miniatura. Aqui a página percebe isso e volta ao tamanho de celular. */
+(function(){
+  var d=document.documentElement;
+  function fit(){
+    d.style.zoom='';
+    var sw=screen.width||0, cw=d.clientWidth||innerWidth, ch=d.clientHeight||innerHeight;
+    var z=(sw>0&&sw<900&&cw>sw*1.15)?cw/sw:1;
+    window.__Z=z;
+    if(z>1){ d.style.zoom=z; d.classList.add('fm'); d.style.setProperty('--vw',(cw/z/100)+'px'); d.style.setProperty('--vh',(ch/z/100)+'px'); }
+    else if(d.classList.contains('fm')){ d.classList.remove('fm'); d.style.removeProperty('--vw'); d.style.removeProperty('--vh'); }
+  }
+  fit(); addEventListener('resize',fit); addEventListener('orientationchange',function(){ setTimeout(fit,250); });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Manrope:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@500;700&family=Nunito:wght@400;700&display=swap">
@@ -36,7 +51,7 @@ svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stro
 .editor{display:none;background:var(--surface)}
 .app.show-editor .list{display:none}
 .app.show-editor .editor{display:flex}
-@media (min-width:900px){
+@media (min-width:900px) and (min-device-width:900px){
   .app{grid-template-columns:232px 340px 1fr}
   .side{display:flex;flex-direction:column;border-right:1px solid var(--line);padding:18px 12px;gap:4px;overflow:auto}
   .list{border-right:1px solid var(--line)}
@@ -100,7 +115,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 
 .fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;gap:8px;height:54px;padding:0 20px 0 16px;border-radius:18px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:15px;box-shadow:var(--shadow);z-index:5}
 .app.show-editor .fab{display:none}
-@media (min-width:900px){.fab{position:static;margin:4px 0 8px;justify-content:center;width:100%}.app.show-editor .fab{display:inline-flex}}
+@media (min-width:900px) and (min-device-width:900px){.fab{position:static;margin:4px 0 8px;justify-content:center;width:100%}.app.show-editor .fab{display:inline-flex}}
 
 /* editor */
 .etop{display:flex;align-items:center;gap:2px;padding-block:8px 4px;padding-left:max(6px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line)}
@@ -129,7 +144,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .noed{flex:1;display:grid;place-items:center;color:var(--muted);text-align:center;padding:24px}
 
 /* painel de emoji estilo WhatsApp */
-.emoji{border-top:1px solid var(--line);background:var(--surface);height:min(300px,42vh);display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom,0px)}
+.emoji{border-top:1px solid var(--line);background:var(--surface);height:min(300px,calc(var(--vh,1vh)*42));display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom,0px)}
 .etabs{display:flex;gap:2px;overflow-x:auto;padding:6px max(8px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line);scrollbar-width:none}
 .etabs::-webkit-scrollbar{display:none}
 .etabs button{flex:none;width:40px;height:36px;border-radius:10px;font-size:20px;filter:grayscale(1);opacity:.65}
@@ -142,9 +157,9 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 /* folhas (bottom sheets) */
 .scrim{position:fixed;inset:0;background:rgba(5,10,28,.5);z-index:20}
 .sheet{position:fixed;left:0;right:0;bottom:0;z-index:21;background:var(--surface);border-radius:20px 20px 0 0;max-height:88%;overflow:auto;box-shadow:var(--shadow);padding-block:10px calc(18px + env(safe-area-inset-bottom,0px));padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
-@media (min-width:640px){.sheet{left:50%;right:auto;bottom:auto;top:50%;transform:translate(-50%,-50%);width:min(480px,92vw);border-radius:20px;padding:20px 22px}}
+@media (min-width:640px) and (min-device-width:640px){.sheet{left:50%;right:auto;bottom:auto;top:50%;transform:translate(-50%,-50%);width:min(480px,calc(var(--vw,1vw)*92));border-radius:20px;padding:20px 22px}}
 .grab{width:40px;height:4px;border-radius:4px;background:var(--line);margin:0 auto 12px}
-@media (min-width:640px){.grab{display:none}}
+@media (min-width:640px) and (min-device-width:640px){.grab{display:none}}
 .sheet h3{margin:0 0 4px;font-family:var(--f-display);font-size:20px;font-weight:700;letter-spacing:-.01em}
 .sheet .sub{margin:0 0 14px;color:var(--muted);font-size:13.5px;line-height:1.45}
 .row{display:flex;align-items:center;gap:12px;width:100%;min-height:50px;padding:6px 8px;border-radius:12px;text-align:left;font-weight:600}
@@ -215,17 +230,17 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .prev small{color:var(--muted);font-size:12px}
 .meta .clip{display:inline-flex;align-items:center;gap:3px}
 .meta .clip svg{width:13px;height:13px}
-@media (max-width:440px){
+@media (max-width:440px), (max-device-width:440px){
   .toolbar .sep{display:none}
   .toolbar .ib{flex:1 0 29px}
   .top .ib{width:38px}
   .brand{font-size:17px;gap:6px}
   .brand img{width:34px;height:34px;border-radius:9px}
   .brand-m span{display:none}
-  .pill{max-width:46vw;padding:0 9px;font-size:12px}
+  .pill{max-width:calc(var(--vw,1vw)*46);padding:0 9px;font-size:12px}
   .pill span{overflow:hidden;text-overflow:ellipsis}
 }
-.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:12px;font-size:14px;font-weight:600;max-width:min(92vw,440px);text-align:center;box-shadow:var(--shadow)}
+.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:12px;font-size:14px;font-weight:600;max-width:min(calc(var(--vw,1vw)*92),440px);text-align:center;box-shadow:var(--shadow)}
 [hidden]{display:none!important}
 /* cartões: check de concluída e seleção múltipla */
 .note{box-sizing:border-box;display:flex;gap:12px;align-items:flex-start;cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
@@ -253,7 +268,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .list.selecting .top,.list.selecting .fab,.list.selecting .reconn{display:none!important}
 .list.selecting .notes{padding-bottom:110px}
 .notes{overflow-x:hidden}
-@media (max-width:440px){.toolbar .ib{flex:1 0 26px}.toolbar{gap:0}}
+@media (max-width:440px), (max-device-width:440px){.toolbar .ib{flex:1 0 26px}.toolbar{gap:0}}
 .selact{position:fixed;left:0;right:0;bottom:0;z-index:6;display:flex;gap:2px;justify-content:space-around;background:var(--surface);border-top:1px solid var(--line);box-shadow:var(--shadow);padding-block:6px calc(6px + env(safe-area-inset-bottom,0px));padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))}
 .selact button{flex:1;max-width:124px;display:grid;justify-items:center;gap:3px;padding:6px 2px;border-radius:12px;font-size:12px;font-weight:700;color:var(--ink)}
 .selact button:disabled{opacity:.38}
@@ -574,7 +589,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -654,6 +669,8 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <div class="toast" id="toast" hidden role="status"></div>
 
 <script>
+// layout de computador só com tela larga de verdade (no celular com "Site para computador" ligado, continua o de celular)
+const WIDE=()=>{ try{ return matchMedia('(min-width:900px) and (min-device-width:900px)').matches; }catch(e){ return innerWidth>=900; } };
 const LOGO='data:image/webp;base64,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';
 /* ============ CONFIGURAÇÃO ============
    Cole aqui o "ID do cliente OAuth" do Google Cloud (veja o guia).
@@ -762,7 +779,7 @@ const now = () => Date.now();
 const SPECIAL=['all','none','recent','pending','done','trash'];
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.1.1', TERMS_VERSION='2026-11-05.2';
+const APP_VERSION='1.1.2', TERMS_VERSION='2026-11-05.2';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
@@ -1062,7 +1079,7 @@ function openNote(id, opts={}){
   $('#folderName').textContent=folderById(n.folderId)?.name||'Sem pasta';
   renderDoneChip(n); renderRemChip(n);
   $('#app').classList.add('show-editor');
-  if(innerWidth<900) guardPush();
+  if(!WIDE()) guardPush();
   $('#paper').scrollTop=0;
   markSearch(); renderAtts();
   renderList(); renderStatus();
@@ -1130,7 +1147,7 @@ function toggleChecklist(){
 $('#ckBtn').onclick=toggleChecklist;
 ed.addEventListener('click',e=>{
   const li=e.target.closest&&e.target.closest('li'); if(!li||!ed.contains(li)||!li.parentElement.classList.contains('ck')) return;
-  const r=li.getBoundingClientRect(); if(e.clientX-r.left>32) return;
+  const r=li.getBoundingClientRect(); if((e.clientX-r.left)/(window.__Z||1)>32) return;
   li.setAttribute('data-done',li.getAttribute('data-done')==='1'?'0':'1'); onEdit();
 });
 function renderDoneChip(n){ const b=$('#doneBtn'); b.setAttribute('aria-pressed',!!n.done);
@@ -1249,7 +1266,7 @@ $('#micBtn').onclick=()=>{
    Enquanto houver algo aberto (nota, folha, foto, seleção), fica uma entrada extra no histórico:
    o Voltar fecha o que está por cima em vez de sair do app. */
 let ignorePop=false;
-function anyOverlay(){ return !$('#reader').hidden || !$('#viewer').hidden || !$('#sheet').hidden || sel.on || (!!cur.noteId && innerWidth<900); }
+function anyOverlay(){ return !$('#reader').hidden || !$('#viewer').hidden || !$('#sheet').hidden || sel.on || (!!cur.noteId && !WIDE()); }
 function guardPush(){ if(!(history.state&&history.state.ne==='guard')){ try{ history.pushState({ne:'guard'},''); }catch(e){} } }
 function guardCheck(){ setTimeout(()=>{ if(!anyOverlay() && history.state&&history.state.ne==='guard'){ ignorePop=true; try{ history.back(); }catch(e){ ignorePop=false; } } },0); }
 
@@ -1810,7 +1827,7 @@ window.addEventListener('popstate',()=>{
   else if(!$('#viewer').hidden) closeViewer();
   else if(!$('#sheet').hidden) closeSheet();
   else if(sel.on) endSelect(true);
-  else if(cur.noteId&&innerWidth<900) closeEditor(true);
+  else if(cur.noteId&&!WIDE()) closeEditor(true);
   if(anyOverlay()) guardPush();
 });
 

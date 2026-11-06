@@ -7,6 +7,8 @@ Bloco de notas para o celular: texto, checklist, áudios, fotos, pastas, conclu�
 - `android/` — o APK, que abre o app em tela cheia pelo Chrome do celular
 - `.github/workflows/` — publica o site e compila o APK a cada atualização
 
-- Versão atual: **1.1.1** (veja o [CHANGELOG](CHANGELOG.md))
+- Versão atual: **1.1.2** (veja o [CHANGELOG](CHANGELOG.md))
 - [Central de ajuda e contato](https://inforprimetecnologiadev.github.io/nao-esquece/suporte/) · suporte em até 5 dias úteis
 - [Política de Privacidade](https://inforprimetecnologiadev.github.io/nao-esquece/privacidade.html) · [Termos de Uso](https://inforprimetecnologiadev.github.io/nao-esquece/termos.html)
+
+- A verificação que faz o APK abrir em tela cheia (sem barra de endereço) fica no repositório [inforprimetecnologiadev.github.io](https://github.com/inforprimetecnologiadev/inforprimetecnologiadev.github.io), em `.well-known/assetlinks.json`.

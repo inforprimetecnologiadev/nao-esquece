@@ -1,5 +1,20 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Termos de Uso · Não Esquece</title><link rel="icon" href="favicon.png">
+<script>
+/* Celular com "Site para computador" ligado no Chrome: o Chrome ignora a largura do aparelho e desenha a versão de computador em miniatura. Aqui a página percebe isso e volta ao tamanho de celular. */
+(function(){
+  var d=document.documentElement;
+  function fit(){
+    d.style.zoom='';
+    var sw=screen.width||0, cw=d.clientWidth||innerWidth, ch=d.clientHeight||innerHeight;
+    var z=(sw>0&&sw<900&&cw>sw*1.15)?cw/sw:1;
+    window.__Z=z;
+    if(z>1){ d.style.zoom=z; d.classList.add('fm'); d.style.setProperty('--vw',(cw/z/100)+'px'); d.style.setProperty('--vh',(ch/z/100)+'px'); }
+    else if(d.classList.contains('fm')){ d.classList.remove('fm'); d.style.removeProperty('--vw'); d.style.removeProperty('--vh'); }
+  }
+  fit(); addEventListener('resize',fit); addEventListener('orientationchange',function(){ setTimeout(fit,250); });
+})();
+</script>
 <style>:root{--bg:#eef2f8;--ink:#121a2b;--muted:#5a6579;--line:#d4dcea;--accent:#0a54c8}
 @media (prefers-color-scheme:dark){:root{--bg:#0a1122;--ink:#e4eaf5;--muted:#93a0b8;--line:#25314b;--accent:#4ab6ff;color-scheme:dark}}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}

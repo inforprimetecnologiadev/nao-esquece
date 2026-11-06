@@ -2,6 +2,11 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.1.2 — 6 de novembro de 2026
+
+- Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.
+- O app abre em tela cheia, sem a barra de endereço do navegador.
+
 ## 1.1.1 — 5 de novembro de 2026
 
 - Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.
