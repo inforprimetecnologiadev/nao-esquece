@@ -2,6 +2,15 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.6.0 — 6 de novembro de 2026
+
+- Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.
+- Marque a tarefa como feita e ela vai para Concluídas, com o dia em que foi feita. Dá para desfazer e voltar para pendentes.
+- Estrela nas tarefas importantes e a lista Com estrela, que junta as de todas as listas.
+- Ordenar por Minha ordem (segure e arraste), Data, Prazo, Estrela ou Título.
+- Cada tarefa pode ter detalhes, subtarefas, data, hora com alarme, repetição e prazo. Elas aparecem também em Hoje, no Calendário e no Relatório.
+- Menu da lista: renomear, enviar a lista pelo WhatsApp, excluir as concluídas e excluir a lista.
+
 ## 1.5.0 — 6 de novembro de 2026
 
 - Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.

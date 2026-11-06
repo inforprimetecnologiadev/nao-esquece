@@ -305,7 +305,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .aud audio{width:100%;height:40px}
 .aud .miss2{font-size:13px;color:var(--muted);padding:4px 0}
 .ib.sm{width:34px;height:34px;border-radius:10px}
-.toast{display:flex;align-items:center;gap:14px;justify-content:center}
+.toast{display:flex;align-items:center;gap:14px;justify-content:center;width:max-content;box-sizing:border-box}
 .toast button{flex:none;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-soft);padding:4px 2px}
 .drivebtn{display:flex;align-items:center;gap:10px;width:100%;margin-top:10px;height:46px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-weight:700}
 .drivebtn svg{width:20px;height:20px}
@@ -490,6 +490,111 @@ html[data-tab]:not([data-tab="notas"]) .search,html[data-tab]:not([data-tab="not
 .kv dt{color:var(--muted)}
 .kv dd{margin:0;font-weight:600;min-width:0}
 .row .seg{margin-top:8px}
+/* tarefas */
+:root{--star:#d08f00}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--star:#f5c542}}
+:root[data-theme="dark"]{--star:#f5c542}
+.tktabs{display:flex;overflow-x:auto;scrollbar-width:none;margin:0 -2px 10px;padding:0 2px;border-bottom:1px solid var(--line);flex:none}
+.tktabs::-webkit-scrollbar{display:none}
+.tktab{position:relative;flex:none;display:inline-flex;align-items:center;gap:7px;height:46px;padding:0 13px;font-weight:700;font-size:14.5px;color:var(--muted);white-space:nowrap;transition:color .2s}
+.tktab span{max-width:190px;overflow:hidden;text-overflow:ellipsis}
+.tktab b{min-width:20px;height:20px;padding:0 6px;box-sizing:border-box;border-radius:10px;background:var(--sunk);color:var(--ink);font-size:11.5px;font-weight:800;line-height:20px;text-align:center}
+.tktab::after{content:"";position:absolute;left:10px;right:10px;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:var(--accent);transform:scaleX(0);transition:transform .3s cubic-bezier(.2,.9,.3,1.2)}
+.tktab[aria-selected="true"]{color:var(--accent)}
+.tktab[aria-selected="true"]::after{transform:scaleX(1)}
+.tktab[aria-selected="true"] b{background:var(--accent);color:var(--accent-ink)}
+.tktab.st{padding:0 12px}
+.tktab.st svg{width:22px;height:22px}
+.tktab.st[aria-selected="true"]{color:var(--star)}
+.tktab.st[aria-selected="true"]::after{background:var(--star)}
+.tktab.add{color:var(--ink);font-weight:600}
+.tktab.add svg{width:19px;height:19px}
+.tkcard{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:4px 4px 6px;flex:none}
+.tkch{display:flex;align-items:center;gap:2px;padding:6px 4px 2px 14px}
+.tkch h3{flex:1;margin:0;font-family:var(--f-display);font-size:17px;font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tkrows{display:flex;flex-direction:column}
+.tkgrp{border-radius:14px;background:var(--surface)}
+.tkgrp.lift{position:relative;z-index:3;box-shadow:0 10px 30px rgba(10,20,50,.22),0 0 0 1.5px var(--accent);transform-origin:center}
+html.tdrag,html.tdrag *{-webkit-user-select:none!important;user-select:none!important;cursor:grabbing}
+.tk{display:flex;align-items:flex-start;gap:12px;padding:10px 2px 10px 10px;border-radius:14px;cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;transition:background .15s}
+.tk:active{background:var(--sunk)}
+.tkc{flex:none;width:26px;height:26px;margin-top:1px;border-radius:50%;border:2px solid var(--muted);display:grid;place-items:center;color:transparent;padding:0;box-sizing:border-box;transition:background .2s,border-color .2s,color .2s,transform .12s}
+.tkc svg{width:16px;height:16px;stroke-width:3}
+.tkc:active{transform:scale(.86)}
+.tkc.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+@media (hover:hover){.tk:not(.done) .tkc:not(.on):hover{color:var(--muted)}}
+.tk.going .tkt,.tkn.going h3 span{text-decoration:line-through;color:var(--muted)}
+.tk.going,.tkn.going{animation:tkOut .43s ease-in forwards}
+@keyframes tkOut{55%{opacity:1;transform:none}to{opacity:.15;transform:translateX(22px)}}
+.tkb{flex:1;min-width:0;padding-top:2px}
+.tkt{font-size:16px;font-weight:600;line-height:1.35;word-break:break-word}
+.tkd{font-size:13.5px;color:var(--muted);line-height:1.4;margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-word}
+.tkms{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.tkm{display:inline-flex;align-items:center;gap:4px;height:26px;padding:0 9px;border-radius:13px;border:1px solid var(--line);font-size:12.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.tkm svg{width:14px;height:14px;color:var(--muted)}
+.tkm.late{color:var(--danger);border-color:color-mix(in srgb,var(--danger) 45%,var(--line))}
+.tkm.late svg{color:var(--danger)}
+.tkm.full{color:var(--ok)}
+.tkm.full svg{color:var(--ok)}
+.tkm.ln{background:var(--sunk);border-color:transparent;font-weight:600;color:var(--muted)}
+.tks{flex:none;width:42px;height:42px;margin:-8px 0 -8px;border-radius:12px;display:grid;place-items:center;color:var(--muted)}
+.tks svg{width:22px;height:22px}
+.tks[aria-pressed="true"],#tdStar[aria-pressed="true"]{color:var(--star)}
+.tks.pop svg,#tdStar.pop svg{animation:bnPop .42s cubic-bezier(.2,.9,.3,1.3)}
+.tk.sub{padding:6px 2px 6px 48px}
+.tk.sub .tkc{width:22px;height:22px}
+.tk.sub .tkc svg{width:13px;height:13px}
+.tk.sub .tkt{font-size:15px;font-weight:500}
+.tk.sub.sdone .tkt{text-decoration:line-through;color:var(--muted)}
+.tkgh{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:12px 12px 2px}
+.tkgh.late{color:var(--danger)}
+.tkdh{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:50px;padding:6px 12px 6px 14px;font-weight:700;font-size:16px;border-radius:16px}
+.tkdh svg{transition:transform .25s;color:var(--muted)}
+.tkdone[data-open="true"] .tkdh svg{transform:rotate(180deg)}
+.tk.done .tkc{border:0;color:var(--accent);width:26px;height:26px}
+.tk.done .tkc svg{width:22px;height:22px;stroke-width:2.6}
+.tk.done .tkt{text-decoration:line-through;color:var(--muted);font-weight:500}
+.tkempty{display:grid;justify-items:center;text-align:center;padding:14px 18px 26px;color:var(--muted);line-height:1.45;font-size:14px}
+.tkempty strong{color:var(--ink);font-family:var(--f-display);font-size:19px;font-weight:700;margin:6px 0 2px}
+.tkart{width:150px;height:130px;animation:tkArt .5s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes tkArt{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
+.tkhint{font-size:12.5px;color:var(--muted);padding:4px 14px 6px}
+.note.tkn h3 svg.stf{color:var(--star)}
+.tag.tkl{display:inline-flex;align-items:center;gap:4px;background:var(--accent-soft);color:var(--accent);font-weight:700}
+.tag.tkl svg{width:12px;height:12px}
+.meta span svg{width:13px;height:13px}
+/* janela da tarefa */
+.tkhd{display:flex;align-items:center;gap:4px;margin:-2px 0 4px}
+.tkhd .grow{flex:1}
+.tklw{position:relative;display:inline-flex;align-items:center;max-width:64%;min-width:0}
+.tklw select{appearance:none;-webkit-appearance:none;height:38px;padding:0 34px 0 14px;border-radius:19px;border:1px solid var(--line);background:var(--sunk);font-weight:700;font-size:14px;color:var(--ink);max-width:100%;min-width:0;text-overflow:ellipsis;outline:none}
+.tklw select:focus{border-color:var(--accent)}
+.tklw svg{position:absolute;right:11px;width:16px;height:16px;pointer-events:none;color:var(--muted)}
+.tktitle{display:block;width:100%;box-sizing:border-box;border:0;outline:0;background:none;font-family:var(--f-display);font-size:22px;font-weight:700;padding:8px 2px 6px;color:var(--ink)}
+.tktitle::placeholder{color:var(--muted);font-weight:600}
+textarea.tkdesc{height:auto;min-height:48px;padding:10px 12px;line-height:1.45;resize:vertical;font-size:15px;margin:2px 0 6px}
+.tkqa{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 8px}
+.tkqa .chip svg{width:17px;height:17px;color:var(--muted)}
+.tdsub{display:flex;align-items:center;gap:10px;padding:1px 0}
+.tdsub input{flex:1;min-width:0;height:42px;border:0;border-bottom:1px solid var(--line);background:none;outline:0;font-size:15px;color:var(--ink);border-radius:0}
+.tdsub input:focus{border-bottom-color:var(--accent)}
+.tdsub .tkc{width:22px;height:22px}
+.tdsub .tkc svg{width:13px;height:13px}
+.tdsub.on input{text-decoration:line-through;color:var(--muted)}
+#tdS .row{margin-top:4px}
+#tdDone,#tdOk{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+#tdDone svg{width:19px;height:19px}
+.dt2 .btn{min-width:0;height:46px}
+/* barra de baixo com 5 abas */
+.bt .bi{width:56px}
+@media (max-width:400px){.bt .bl{font-size:11.5px;letter-spacing:0}.bt .bi{width:50px}}
+html[data-tab="tarefas"] .notes{gap:10px}
+.calbtns{margin-top:6px}
+.calbtns .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:0}
+.calbtns .btn svg{width:19px;height:19px}
+textarea.tkdesc{font:inherit;font-size:15px}
+/* aviso por cima do botão Nova nota/Nova tarefa, sem cobrir */
+@media not all and (min-width:900px) and (min-device-width:900px){.app:not(.show-editor) ~ .toast{bottom:calc(150px + env(safe-area-inset-bottom,0px))}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
@@ -533,7 +638,7 @@ html[data-tab]:not([data-tab="notas"]) .search,html[data-tab]:not([data-tab="not
   <article class="rd-body" id="rdBody"></article>
 </div>
 <template id="tplTerms">
-<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 3).</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 4).</p>
 
 <h2>1. Aceitação</h2>
 <p>Ao tocar em "Aceitar e continuar", você concorda com estes Termos de Uso e com a Política de Privacidade. Se não concordar, não use o aplicativo.</p>
@@ -584,11 +689,11 @@ html[data-tab]:not([data-tab="notas"]) .search,html[data-tab]:not([data-tab="not
 <p>Central de ajuda e formulário de contato: <span class="lg-url">inforprimetecnologiadev.github.io/nao-esquece/suporte</span>. E-mail: <span class="lg-url">inforprimetecnologia@gmail.com</span>. Respondemos em até 5 dias úteis; pedidos de titular (LGPD), em até 15 dias.</p>
 </template>
 <template id="tplPrivacy">
-<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 3). Responsável: <b>Não Esquece</b>.</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 4). Responsável: <b>Não Esquece</b>.</p>
 
 <h2>1. Resumo</h2>
 <ul>
-<li>O Não Esquece <b>não tem servidor próprio</b>. Suas notas, fotos e áudios ficam no seu celular e, se você conectar, no <b>seu</b> Google Drive e na agenda da <b>sua</b> conta Google.</li>
+<li>O Não Esquece <b>não tem servidor próprio</b>. Suas notas, tarefas, fotos e áudios ficam no seu celular e, se você conectar, no <b>seu</b> Google Drive e na agenda da <b>sua</b> conta Google.</li>
 <li>Não vendemos, não alugamos e não compartilhamos seus dados com anunciantes. O app não tem propaganda nem rastreadores.</li>
 <li>Os dados guardados no celular ficam <b>criptografados</b> e o app pede <b>PIN ou digital/rosto</b> para abrir.</li>
 <li>Você pode ver, exportar, corrigir e apagar tudo pelo próprio app, e cancelar a inscrição a qualquer momento.</li>
@@ -606,7 +711,7 @@ html[data-tab]:not([data-tab="notas"]) .search,html[data-tab]:not([data-tab="not
 
 <h2>3. Quais dados são tratados</h2>
 <h3>3.1 Dados que você cria no app</h3>
-<p>Títulos e textos das notas, listas de tarefas (checklists), pastas, situação (pendente ou concluída), datas e horários de lembretes, fotos, vídeos e áudios que você grava ou anexa. Você decide o que escreve: se colocar informações sensíveis (por exemplo, sobre saúde), elas são tratadas apenas para guardar e mostrar a sua própria nota.</p>
+<p>Títulos e textos das notas, checklists, pastas, situação (pendente ou concluída), datas e horários de lembretes; na aba <b>Tarefas</b>, as listas, as tarefas, as subtarefas, os detalhes, a estrela, a data, a hora, o prazo e quando cada uma foi concluída; fotos, vídeos e áudios que você grava ou anexa. Você decide o que escreve: se colocar informações sensíveis (por exemplo, sobre saúde), elas são tratadas apenas para guardar e mostrar a sua própria nota.</p>
 <h3>3.2 Dados da sua conta Google (se você conectar)</h3>
 <p>Nome e e-mail da conta, usados só para mostrar qual conta está conectada e evitar misturar dados de contas diferentes. O acesso temporário (token) concedido pelo Google fica apenas na memória do app enquanto ele está aberto.</p>
 <h3>3.3 Dados de segurança</h3>
@@ -619,9 +724,9 @@ html[data-tab]:not([data-tab="notas"]) .search,html[data-tab]:not([data-tab="not
 </ul>
 <h3>3.4 Permissões do celular</h3>
 <p>Microfone e câmera são usados somente quando você toca para gravar um áudio, ditar um texto, tirar uma foto ou gravar um vídeo. A galeria é aberta somente quando você escolhe anexar um arquivo.</p>
-<p><b>Notificações e alarmes</b> (app para Android): usados para o aviso de 1 minuto antes e para o alarme de cada lembrete, que tocam no próprio celular. Para o alarme tocar com o app fechado e bloqueado, o título, um trecho do texto e o horário de cada lembrete ficam guardados também na área privada do app no Android, fora do cofre criptografado. Esses dados não saem do celular e são apagados quando o lembrete é removido ou quando você cancela a inscrição.</p>
-<p><b>Calendário</b> (opcional, app para Android): se você permitir, o app coloca os lembretes no calendário do celular, na agenda da conta Google conectada. Para isso, ele lê a lista de agendas do aparelho para achar a da sua conta e só cria, muda ou apaga os eventos que ele mesmo criou. Você pode desligar em <b>Ajustes › Alarmes e calendário</b>.</p>
-<p><b>Widget da tela inicial</b> (opcional, app para Android): se você colocar o widget "Hoje" na tela inicial, o título e a hora dos lembretes do dia aparecem nela, inclusive com o app bloqueado pelo PIN. Para esconder, basta tirar o widget da tela inicial.</p>
+<p><b>Notificações e alarmes</b> (app para Android): usados para o aviso de 1 minuto antes e para o alarme de cada lembrete e de cada tarefa com hora, que tocam no próprio celular. Para o alarme tocar com o app fechado e bloqueado, o título, um trecho do texto e o horário de cada lembrete ficam guardados também na área privada do app no Android, fora do cofre criptografado. Esses dados não saem do celular e são apagados quando o lembrete é removido ou quando você cancela a inscrição.</p>
+<p><b>Calendário</b> (opcional, app para Android): se você permitir, o app coloca os lembretes e as tarefas com hora no calendário do celular, na agenda da conta Google conectada. Para isso, ele lê a lista de agendas do aparelho para achar a da sua conta e só cria, muda ou apaga os eventos que ele mesmo criou. Você pode desligar em <b>Ajustes › Alarmes e calendário</b>.</p>
+<p><b>Widget da tela inicial</b> (opcional, app para Android): se você colocar o widget "Hoje" na tela inicial, o título e a hora dos lembretes e das tarefas com hora do dia aparecem nela, inclusive com o app bloqueado pelo PIN. Para esconder, basta tirar o widget da tela inicial.</p>
 <p><b>Escanear documento</b> (app para Android): usa o scanner de documentos do Google Play Services, que recorta e endireita as fotos no próprio celular e entrega o PDF ao app. O PDF fica na nota, como os outros anexos. Sem o Google Play Services, o app usa a câmera e monta o PDF no próprio celular.</p>
 <p><b>Ler o texto das fotos e dos PDFs</b> (app para Android): o reconhecimento de texto do Google (ML Kit) roda dentro do app, no próprio celular, sem enviar as imagens para fora. O texto lido fica guardado junto da nota, para você copiar e procurar.</p>
 <p><b>Nota rápida e gravar áudio</b> (botões das configurações rápidas e do widget): o texto e o áudio ficam na área privada do app no Android, fora do cofre criptografado, só até você abrir o Não Esquece. Aí eles viram notas e são apagados de lá.</p>
@@ -635,7 +740,7 @@ html[data-tab]:not([data-tab="notas"]) .search,html[data-tab]:not([data-tab="not
 
 <h2>4. Para que os dados são usados e com qual base legal</h2>
 <ul>
-<li><b>Guardar e mostrar suas notas, pastas, anexos e lembretes:</b> execução do serviço que você pediu (LGPD, art. 7º, V).</li>
+<li><b>Guardar e mostrar suas notas, tarefas, pastas, anexos e lembretes:</b> execução do serviço que você pediu (LGPD, art. 7º, V).</li>
 <li><b>Copiar para o seu Google Drive e colocar lembretes na agenda da sua conta Google:</b> seu consentimento, dado ao conectar a conta e ao permitir o calendário (art. 7º, I). Você pode retirar a qualquer momento.</li>
 <li><b>Tocar o alarme e o aviso dos lembretes no celular:</b> execução do serviço que você pediu ao marcar o lembrete (art. 7º, V).</li>
 <li><b>Biometria, e-mail de recuperação, microfone e câmera:</b> seu consentimento, pedido no momento do uso (art. 7º, I; e art. 11, I, quando o conteúdo for dado sensível).</li>
@@ -718,7 +823,7 @@ html[data-tab]:not([data-tab="notas"]) .search,html[data-tab]:not([data-tab="not
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.6.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.</li><li>Marque a tarefa como feita e ela vai para Concluídas, com o dia em que foi feita. Dá para desfazer e voltar para pendentes.</li><li>Estrela nas tarefas importantes e a lista Com estrela, que junta as de todas as listas.</li><li>Ordenar por Minha ordem (segure e arraste), Data, Prazo, Estrela ou Título.</li><li>Cada tarefa pode ter detalhes, subtarefas, data, hora com alarme, repetição e prazo. Elas aparecem também em Hoje, no Calendário e no Relatório.</li><li>Menu da lista: renomear, enviar a lista pelo WhatsApp, excluir as concluídas e excluir a lista.</li></ul><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -913,6 +1018,12 @@ const ICONS = {
   undo:'<path d="M9 14L4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/>',
   text:'<path d="M4 7V5h16v2M9 19h6M12 5v14"/>',
   sign:'<path d="M3 17c3-3 4.5-9 7-9 2 0 1 6 3 6 1.6 0 2.4-3 4-3 1 0 1.5 1.4 2.5 1.4"/><path d="M3 21h18"/>',
+  star:'<path d="M12 3.6l2.55 5.2 5.7.83-4.13 4.02.98 5.68L12 16.65l-5.1 2.68.98-5.68L3.75 9.63l5.7-.83z"/>',
+  starF:'<path d="M12 3.6l2.55 5.2 5.7.83-4.13 4.02.98 5.68L12 16.65l-5.1 2.68.98-5.68L3.75 9.63l5.7-.83z" fill="currentColor"/>',
+  tasks:'<path d="M3.5 6.8l2.1 2.1 3.6-4"/><path d="M12.5 7h8"/><path d="M3.5 16.3l2.1 2.1 3.6-4"/><path d="M12.5 16.5h8"/>',
+  sort:'<path d="M7.5 4v15.5M4 16l3.5 3.5L11 16"/><path d="M16.5 20V4.5M13 8l3.5-3.5L20 8"/>',
+  down:'<path d="M6 9.5l6 6 6-6"/>',
+  sub:'<path d="M6 4v8.5a3 3 0 0 0 3 3h10"/><path d="M15.5 12l3.5 3.5-3.5 3.5"/>',
   home:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M16.5 13v7M13 16.5h7"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/>',
   user:'<circle cx="12" cy="8" r="4"/><path d="M4 20.5a8 8 0 0 1 16 0"/>',
@@ -961,14 +1072,14 @@ const isTagView=f=>typeof f==='string'&&f.startsWith('tag:');
 const viewIsFolder=f=>!SPECIAL.includes(f)&&!isTagView(f);
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.5.0', TERMS_VERSION='2026-11-06.3';
+const APP_VERSION='1.6.0', TERMS_VERSION='2026-11-06.4';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
 const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 let cfg = Object.assign({theme:'system',clientId:'',linked:false,email:'',name:'',fileId:'',folderId:'',lastSync:0,guest:false,recents:[]}, LS.get('ne.cfg',{}));
-let db = {rev:1,dirty:false,folders:[],notes:[],tags:[]}; // as notas de verdade são carregadas no início, depois do PIN
+let db = {rev:1,dirty:false,folders:[],notes:[],tags:[],tasks:[],tlists:[]}; // as notas de verdade são carregadas no início, depois do PIN
 let appReady=false;
 const saveCfg = () => LS.set('ne.cfg', cfg);
 const clientId = () => GOOGLE_CLIENT_ID || cfg.clientId;
@@ -1124,7 +1235,7 @@ function noteCard(n,q){
 }
 function renderList(){
   renderNav();
-  if(cur.tab&&cur.tab!=='notas'){ const N=$('#notes'); N.innerHTML=tabHTML(); paintIcons(N); return; }
+  if(cur.tab&&cur.tab!=='notas'){ if(cur.tab==='tarefas'&&TD.on) return; const N=$('#notes'); N.innerHTML=tabHTML(); paintIcons(N); if(cur.tab==='tarefas') tkAfter(); return; }
   const list=visible(), q=cur.q.trim();
   const names={today:'Hoje',urgent:'Urgentes',recent:'Recentes',all:'Todas as notas',none:'Sem pasta',pending:'Pendentes',done:'Concluídas',trash:'Lixeira'};
   const tg=isTagView(cur.folder)?tagById(cur.folder.slice(4)):null;
@@ -1912,8 +2023,22 @@ function merge(local, remote){
     if('calSyncedAt' in c) c.calSyncedAt=+c.calSyncedAt||0;
     return c; };
   const tagOut=x=>{ if(!x||typeof x!=='object'||typeof x.id!=='string') return null; const t={id:x.id,name:String(x.name||'Etiqueta').slice(0,40),color:TAGC.some(k=>k[0]===x.color)?x.color:'azul',updatedAt:+x.updatedAt||0}; if(x.deleted===true) t.deleted=true; return t; };
-  if(remote){ remote={folders:(Array.isArray(remote.folders)?remote.folders:[]).map(fromOutside).filter(Boolean),notes:(Array.isArray(remote.notes)?remote.notes:[]).map(fromOutside).filter(Boolean),tags:(Array.isArray(remote.tags)?remote.tags:[]).map(tagOut).filter(Boolean)}; }
-  return { folders:clean(pick(local.folders,remote?.folders)), notes:clean(pick(local.notes.filter(n=>!n._fresh||n.title||n.html),remote?.notes)), tags:clean(pick(local.tags||[],remote?.tags)) };
+  const T_RE={test:v=>typeof v==='string'&&/^\d{4}-\d\d-\d\d$/.test(v)&&dkey(new Date(v+'T12:00'))===v}, ID_RE=/^[\w-]{1,64}$/; // dia que existe de verdade
+  const taskOut=x=>{ if(!x||typeof x!=='object'||typeof x.id!=='string'||!ID_RE.test(x.id)) return null;
+    const t={id:x.id,list:typeof x.list==='string'&&ID_RE.test(x.list)?x.list:TL_MAIN,title:String(x.title||'').slice(0,500),order:Number.isFinite(+x.order)?+x.order:0,createdAt:+x.createdAt||0,updatedAt:+x.updatedAt||0};
+    if(x.notes) t.notes=String(x.notes).slice(0,5000);
+    if(T_RE.test(x.date)){ t.date=x.date; if(/^\d\d:\d\d$/.test(x.time)) t.time=x.time; if(['dia','uteis','semana','mes'].includes(x.rep)) t.rep=x.rep; }
+    if(T_RE.test(x.deadline)) t.deadline=x.deadline;
+    if(x.star===true){ t.star=true; t.starAt=+x.starAt||0; }
+    if(x.done===true){ t.done=true; t.doneAt=+x.doneAt||0; }
+    if(typeof x.nextId==='string'&&ID_RE.test(x.nextId)) t.nextId=x.nextId;
+    if(Array.isArray(x.subs)){ const ss=x.subs.filter(z=>z&&typeof z.id==='string').slice(0,50).map(z=>{ const o={id:z.id.slice(0,64),title:String(z.title||'').slice(0,300),done:z.done===true}; if(o.done) o.doneAt=+z.doneAt||0; return o; }); if(ss.length) t.subs=ss; }
+    if(x.deleted===true) t.deleted=true; return t; };
+  const tlistOut=x=>{ if(!x||typeof x!=='object'||typeof x.id!=='string'||!ID_RE.test(x.id)) return null;
+    const l={id:x.id,name:String(x.name||'Lista').slice(0,60),sort:TSORT.some(k=>k[0]===x.sort)?x.sort:'ordem',order:+x.order||0,createdAt:+x.createdAt||0,updatedAt:+x.updatedAt||0};
+    if(x.deleted===true&&x.id!==TL_MAIN) l.deleted=true; return l; };
+  if(remote){ remote={folders:(Array.isArray(remote.folders)?remote.folders:[]).map(fromOutside).filter(Boolean),notes:(Array.isArray(remote.notes)?remote.notes:[]).map(fromOutside).filter(Boolean),tags:(Array.isArray(remote.tags)?remote.tags:[]).map(tagOut).filter(Boolean),tasks:(Array.isArray(remote.tasks)?remote.tasks:[]).map(taskOut).filter(Boolean),tlists:(Array.isArray(remote.tlists)?remote.tlists:[]).map(tlistOut).filter(Boolean)}; }
+  return { folders:clean(pick(local.folders,remote?.folders)), notes:clean(pick(local.notes.filter(n=>!n._fresh||n.title||n.html),remote?.notes)), tags:clean(pick(local.tags||[],remote?.tags)), tasks:clean(pick(local.tasks||[],remote?.tasks)), tlists:clean(pick(local.tlists||[],remote?.tlists)) };
 }
 function scheduleSync(){ clearTimeout(syncTimer); syncTimer=setTimeout(()=>syncNow(false),4000); }
 async function syncNow(manual){
@@ -1937,15 +2062,15 @@ async function syncNow(manual){
     const rev=db.rev, m=merge(db,remote);
     try{ await mirrorDrive(m); }catch(e){ if(e.message==='auth') throw e; logErr('Pastas no Drive: '+e.message); }
     try{ await mirrorCalendar(m); }catch(e){ if(e.message==='auth') throw e; logErr('Agenda: '+e.message); }
-    const body=JSON.stringify({app:'nao-esquece',versao:2,salvoEm:new Date().toISOString(),conta:cfg.email,meta:{calendarId:okCal(cfg.calendarId)?cfg.calendarId:undefined,alarmsBy:cfg.alarmsBy==='android'?'android':undefined},folders:m.folders,notes:m.notes,tags:m.tags},(k,v)=>k==='up'?undefined:v);
+    const body=JSON.stringify({app:'nao-esquece',versao:2,salvoEm:new Date().toISOString(),conta:cfg.email,meta:{calendarId:okCal(cfg.calendarId)?cfg.calendarId:undefined,alarmsBy:cfg.alarmsBy==='android'?'android':undefined},folders:m.folders,notes:m.notes,tags:m.tags,tasks:m.tasks,tlists:m.tlists},(k,v)=>k==='up'?undefined:v);
     if(id) await api(`${UP}/${id}?uploadType=media`,{method:'PATCH',headers:{'Content-Type':'application/json'},body});
     else { const dir=await ensureDir(); const fd=new FormData();
       fd.append('metadata',new Blob([JSON.stringify({name:FILE_NAME,mimeType:'application/json',parents:[dir]})],{type:'application/json'}));
       fd.append('file',new Blob([body],{type:'application/json'}));
       const j=await (await api(`${UP}?uploadType=multipart&fields=id`,{method:'POST',body:fd})).json(); cfg.fileId=j.id; }
     const histBefore=new Map(db.notes.map(n=>[n.id,{title:n.title,html:n.html,at:n.updatedAt}]));
-    if(db.rev===rev){ db.folders=m.folders; db.tags=m.tags; db.notes=m.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); db.dirty=false; }
-    else { const m2=merge(db,{folders:m.folders,notes:m.notes,tags:m.tags}); db.folders=m2.folders; db.tags=m2.tags; db.notes=m2.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); }
+    if(db.rev===rev){ db.folders=m.folders; db.tags=m.tags; db.tasks=m.tasks; db.tlists=m.tlists; db.notes=m.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); db.dirty=false; }
+    else { const m2=merge(db,{folders:m.folders,notes:m.notes,tags:m.tags,tasks:m.tasks,tlists:m.tlists}); db.folders=m2.folders; db.tags=m2.tags; db.tasks=m2.tasks; db.tlists=m2.tlists; db.notes=m2.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); }
     cfg.lastSync=now(); saveCfg(); persist(); scheduleAlarms();
     for(const n of db.notes){ const o=histBefore.get(n.id); if(o&&!n.deleted&&(o.html!==n.html||o.title!==n.title)) histPush(n,o); } // outro aparelho mudou: guarda a versão daqui
     if(cur.noteId){ const n=noteById(cur.noteId); if(!n) closeEditor(); else if(document.activeElement!==ed && document.activeElement!==titleIn && ed.innerHTML!==n.html){ ed.innerHTML=cleanHTML(n.html); titleIn.value=n.title; } }
@@ -2036,9 +2161,9 @@ function openSettings(){
     q('#sCancel').onclick=cancelFlow;
     q('#sNews').onclick=()=>openReader('Novidades','tplNews');
     q('#sHelp').onclick=()=>{ closeSheet(); openLink(SUPPORT_URL+'?v='+encodeURIComponent(APP_VERSION)+'&origem=app'); };
-    s.querySelector('#bDown').onclick=()=>download('nao-esquece-backup.json',JSON.stringify({app:'nao-esquece',folders:db.folders,notes:db.notes,tags:db.tags||[]},null,1),'application/json');
+    s.querySelector('#bDown').onclick=()=>download('nao-esquece-backup.json',JSON.stringify({app:'nao-esquece',folders:db.folders,notes:db.notes,tags:db.tags||[],tasks:db.tasks||[],tlists:db.tlists||[]},null,1),'application/json');
     s.querySelector('#bFile').onchange=e=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader();
-      r.onload=()=>{ try{ const j=JSON.parse(r.result); if(!Array.isArray(j.notes)) throw 0; const m=merge(db,j); db.folders=m.folders; db.notes=m.notes; db.tags=m.tags; changed(); render(); closeSheet(); toast('Backup importado'); }catch(err){ toast('Esse arquivo não é um backup do Não Esquece.'); } };
+      r.onload=()=>{ try{ const j=JSON.parse(r.result); if(!Array.isArray(j.notes)) throw 0; const m=merge(db,j); db.folders=m.folders; db.notes=m.notes; db.tags=m.tags; db.tasks=m.tasks; db.tlists=m.tlists; changed(); render(); closeSheet(); toast('Backup importado'); }catch(err){ toast('Esse arquivo não é um backup do Não Esquece.'); } };
       r.readAsText(f); };
   });
 }
@@ -2057,7 +2182,7 @@ async function signOutFlow(){
       endSession();
       try{ await IDB.op('readwrite',st=>{ const r=st.getAllKeys(); r.onsuccess=()=>r.result.forEach(k=>{ if(k!=='__bio__') st.delete(k); }); return r; }); }catch(e){}
       for(const u of urlCache.values()) URL.revokeObjectURL(u); urlCache.clear();
-      db={rev:1,dirty:false,folders:[],notes:[],tags:[]}; persist();
+      db={rev:1,dirty:false,folders:[],notes:[],tags:[],tasks:[],tlists:[]}; persist();
       Object.assign(cfg,{linked:false,email:'',name:'',fileId:'',folderId:'',noneDirId:'',trashDirId:'',lastSync:0,pendingDel:[],recents:[],lastErr:null,silentFailAt:0}); saveCfg();
       cur={folder:'all',noteId:null,q:''}; $('#q').value=''; render(); showGate(); toast('Você saiu da conta');
     }});
@@ -2088,7 +2213,7 @@ document.addEventListener('click',e=>{
   if(e.target.closest('#selStart')){ startSelect(null); return; }
   if(e.target.closest('#emptyTrash')){ purgeAsk(trashNotes(),true); return; }
   if(e.target.closest('#addF,#addF2')){ newFolder(); return; }
-  if(e.target.closest('#fab,#fab2')){ newNote(); return; }
+  if(e.target.closest('#fab,#fab2')){ if(cur.tab==='tarefas'&&e.target.closest('#fab')) newTask(); else newNote(); return; }
   if(e.target.closest('#fMore')){ folderMenu(cur.folder); return; }
   if(e.target.closest('#tMore')){ tagMenu(cur.folder.slice(4)); return; }
 });
@@ -3169,7 +3294,7 @@ function todayItems(){
     const d=new Date(n.remindAt).getTime(); if(isNaN(d)) continue;
     if(d>=s0&&d<e0) today.push({n,t:d}); else if(d<s0&&!n.done) late.push({n,t:d}); }
   late.sort((a,b)=>a.t-b.t); today.sort((a,b)=>a.t-b.t); return {late,today}; }
-function nextAlarmNote(){ let best=null; const t=now(); for(const n of liveNotes()){ if(n.done||!n.remindAt) continue; const r=nextRingDate(n,t); if(r&&r.getTime()>t&&(!best||r<best.ring)) best={n,ring:r}; } return best; }
+function nextAlarmNote(){ let best=null; const t=now(); for(const n of [...liveNotes(),...liveTasks().filter(x=>!x.done&&x.date&&x.time).map(tkRem)]){ if(n.done||!n.remindAt) continue; const r=nextRingDate(n,t); if(r&&r.getTime()>t&&(!best||r<best.ring)) best={n,ring:r}; } return best; }
 function fmtRem(d){ const t=new Date(), tm=d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}), tom=new Date(t); tom.setDate(t.getDate()+1);
   if(d.toDateString()===t.toDateString()) return 'Hoje às '+tm; if(d.toDateString()===tom.toDateString()) return 'Amanhã às '+tm;
   return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})+' às '+tm; }
@@ -3290,6 +3415,7 @@ function syncAlarmsNow(){
   if(Vault.exists()&&!Vault.unlocked()) return;
   const list=db.notes.filter(n=>!n.deleted&&!n.trashed&&!n.done&&n.remindAt).map(n=>({id:n.id,at:n.remindAt,before:+n.remindBefore||0,mode:n.remindMode||'ambos',repeat:n.remindRepeat||undefined,
     title:noteTitle(n).slice(0,200),text:n.secret?'':txt(n.html).replace(/\s+/g,' ').trim().slice(0,300)}));
+  for(const it of tkAlarmItems()) list.push({id:it.id,at:it.at,before:0,mode:cfg.remMode||'ambos',repeat:it.repeat,title:it.title,text:it.text});
   const sig=JSON.stringify(list); if(sig===alarmSig) return;
   try{ if(+NA.alarmSet(sig)>=0) alarmSig=sig; }catch(e){ alarmSig=''; }
 }
@@ -3305,6 +3431,7 @@ async function syncDevCal(force){
   for(const n of db.notes) if(!n.deleted&&!n.trashed&&!n.done&&n.remindAt){
     const it={id:n.id,at:n.remindAt,repeat:n.remindRepeat||'',title:noteTitle(n).slice(0,200),text:n.secret?'':txt(n.html).trim().slice(0,900)};
     want.set(n.id,{it,sig:fnv(it.at+'|'+it.repeat+'|'+it.title+'|'+it.text)}); }
+  for(const x of tkAlarmItems()){ const it={id:x.id,at:x.at,repeat:x.repeat||'',title:x.title,text:x.text}; want.set(x.id,{it,sig:fnv(it.at+'|'+it.repeat+'|'+it.title+'|'+it.text)}); }
   const up=[], del=[];
   for(const [id,w] of want) if(force||map[id]!==w.sig) up.push(w.it);
   for(const id of Object.keys(map)) if(!want.has(id)) del.push(id);
@@ -3405,12 +3532,13 @@ function processAlarmEvents(){
   if(!HAS_ALARM||!appReady||locked||!db) return;
   if(Vault.exists()&&!Vault.unlocked()) return;
   let ev=[]; try{ ev=JSON.parse(NA.alarmEvents()||'[]'); }catch(e){}
-  let k=0; for(const e of ev){ if(e&&e.act==='done'){ const x=noteById(e.id); if(x&&!x.done&&!x.deleted){ setDone(x,true); k++; } } }
-  if(k){ changed(); render(); toast(k>1?k+' lembretes marcados como concluídos pelo alarme':'Lembrete marcado como concluído pelo alarme'); }
+  let k=0, kt=0; for(const e of ev){ if(e&&e.act==='done'){ const tk=taskById(e.id); if(tk){ if(!tk.done){ tkSetDone(tk,true); kt++; } continue; } const x=noteById(e.id); if(x&&!x.done&&!x.deleted){ setDone(x,true); k++; } } }
+  if(k||kt){ changed(); render(); toast(!kt?(k>1?k+' lembretes marcados como concluídos pelo alarme':'Lembrete marcado como concluído pelo alarme'):!k?(kt>1?kt+' tarefas concluídas pelo alarme':'Tarefa concluída pelo alarme'):(k+kt)+' itens marcados como concluídos pelo alarme'); }
 }
 function flushPendingOpen(){
   if(pendingOpen===null) return;
   const id=pendingOpen; pendingOpen=null;
+  if(id&&taskById(id)){ openTaskFromNative(id); return; }
   const n=id?noteById(id):null;
   if(n&&!n.deleted&&!n.trashed){ if(!$('#sheet').hidden) closeSheet(); openNote(id); }
 }
@@ -3566,7 +3694,7 @@ async function openPdf(a){
 /* ======== 1.5: abas embaixo, calendário, relatório, assinatura, histórico, nota secreta, ler texto, botões rápidos ======== */
 
 /* ---------- barra de navegação embaixo (estilo WhatsApp) ---------- */
-const TABS=[['notas','Notas','note'],['hoje','Hoje','today'],['cal','Calendário','cal'],['rel','Relatório','report']];
+const TABS=[['notas','Notas','note'],['tarefas','Tarefas','tasks'],['hoje','Hoje','today'],['cal','Calendário','cal'],['rel','Relatório','report']];
 function renderNav(){
   const b=$('#bnav'); if(!b) return;
   if(!b.dataset.ready){ b.innerHTML=TABS.map(([k,l,i])=>`<button class="bt" data-tab="${k}" role="tab" aria-selected="false" aria-label="${l}"><span class="bi">${svg(i)}<b class="bdg" hidden></b></span><span class="bl">${l}</span></button>`).join(''); b.dataset.ready='1'; }
@@ -3574,6 +3702,8 @@ function renderNav(){
   b.querySelectorAll('.bt:not([data-tab="hoje"]) .bdg').forEach(x=>{ x.hidden=true; x.textContent=''; });
   let k=0, late=0;
   try{ const td=todayItems(); late=td.late.length; k=late+td.today.filter(x=>!x.n.done&&(x.t>=now()||!x.n.remindRepeat)).length; }catch(e){}
+  try{ const tt=todayTasks(); late+=tt.late.length; k+=tt.late.length+tt.today.filter(x=>!x.done).length; }catch(e){}
+  const fb=$('#fab'), want=cur.tab==='tarefas'?'Nova tarefa':'Nova nota'; if(fb&&fb.dataset.lbl!==want){ fb.innerHTML=svg('plus')+want; fb.dataset.lbl=want; }
   const bd=b.querySelector('.bt[data-tab="hoje"] .bdg'); if(bd){ bd.hidden=!k; bd.textContent=k>99?'99+':String(k); bd.classList.toggle('late',late>0); }
 }
 function setTab(t,fromPop){
@@ -3589,10 +3719,19 @@ function setTab(t,fromPop){
 document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('#bnav [data-tab]'); if(!b) return;
   try{ navigator.vibrate&&navigator.vibrate(8); }catch(_){}
   if(b.dataset.tab===cur.tab){ $('#notes').scrollTo({top:0,behavior:'smooth'}); return; } setTab(b.dataset.tab); });
-function tabHTML(){ return cur.tab==='hoje'?hojeHTML():cur.tab==='cal'?calHTML():relHTML(); }
-function hojeHTML(){ const td=todayItems(), k=td.late.length+td.today.length;
-  return `<div class="lhead"><h2>Hoje</h2><div class="lact"><small>${k} ${k===1?'item':'itens'}</small></div></div>`
-    +(k?todayHTML():`<div class="empty"><strong>Nada para hoje</strong>Toque em Lembrete numa nota para ela aparecer aqui, na hora marcada. As atrasadas também aparecem aqui.</div>`); }
+function tabHTML(){ return cur.tab==='tarefas'?tasksHTML():cur.tab==='hoje'?hojeHTML():cur.tab==='cal'?calHTML():relHTML(); }
+function hojeHTML(){ const td=todayItems(), tt=todayTasks(), t=now(), s0=dayStart(t);
+  const L=[...td.late.map(x=>({n:x.n,t:x.t})),...tt.late.map(x=>({tk:x,t:tkMs(x)}))].sort((a,b)=>a.t-b.t);
+  const T=[...td.today.map(x=>({n:x.n,t:x.t})),...tt.today.map(x=>({tk:x,t:tkMs(x)}))].sort((a,b)=>a.t-b.t);
+  const k=L.length+T.length;
+  const cls=x=>x.tk?(x.tk.done?'past':tkLate(x.tk)?'late':''):(x.n.done?'past':x.t<t?(x.n.remindRepeat?'past':'late'):'');
+  const row=(x,c)=>{ const nt=x.tk&&!x.tk.time; return `<div class="hrow ${c}"><div class="htime">${nt?'<small>sem hora</small>':hm(new Date(x.t))}${x.t<s0?`<small>${new Date(x.t).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}</small>`:''}</div>${x.tk?tkCard(x.tk):noteCard(x.n,'')}</div>`; };
+  let h=`<div class="lhead"><h2>Hoje</h2><div class="lact"><small>${k} ${k===1?'item':'itens'}</small></div></div>`;
+  if(!k) return h+`<div class="empty"><strong>Nada para hoje</strong>Aqui aparecem as notas com lembrete e as tarefas com a data de hoje, na ordem do horário. As atrasadas também aparecem aqui.</div>`;
+  h+=`<div class="tnote" style="margin-top:0">${esc(new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'}))}</div>`;
+  if(L.length) h+=`<div class="hsec late">Atrasadas · ${L.length}</div>`+L.map(x=>row(x,'late')).join('');
+  if(T.length) h+=`<div class="hsec">Hoje · em ordem de horário</div>`+T.map(x=>row(x,cls(x))).join('');
+  return h; }
 
 /* ---------- calendário do mês ---------- */
 const cal={y:null,m:null,sel:null};
@@ -3608,6 +3747,10 @@ function monthData(y,m){
     }
     if(n.done&&n.doneAt&&n.doneAt>=s&&n.doneAt<e) add(dkey(new Date(n.doneAt)),'done',{n,t:n.doneAt});
   }
+  for(const x of liveTasks()){
+    if(x.date&&!x.done){ const d=tkMs(x); if(d>=s&&d<e){ add(x.date,'rem',{tk:x,t:d}); if(tkLate(x)) map[x.date].late++; } }
+    if(x.done&&x.doneAt&&x.doneAt>=s&&x.doneAt<e) add(dkey(new Date(x.doneAt)),'done',{tk:x,t:x.doneAt});
+  }
   return map;
 }
 function calHTML(){
@@ -3616,18 +3759,19 @@ function calHTML(){
   let cells='';
   for(let i=0;i<42;i++){ const d=new Date(start); d.setDate(start.getDate()+i); const k=dkey(d), o=d.getMonth()!==m, x=map[k];
     if(i===35&&o) break;
-    const dots=x?(x.late?'<b class="l"></b>':'')+(x.rem.some(r=>!r.n.done&&!(r.t<now()&&!r.n.remindRepeat))?'<b class="r"></b>':'')+(x.done.length?'<b class="d"></b>':''):'';
+    const dots=x?(x.late?'<b class="l"></b>':'')+(x.rem.some(r=>r.tk?!tkLate(r.tk):!r.n.done&&!(r.t<now()&&!r.n.remindRepeat))?'<b class="r"></b>':'')+(x.done.length?'<b class="d"></b>':''):'';
     cells+=`<button class="cd${o?' o':''}${k===tk?' t':''}${k===cal.sel?' s':''}" data-cd="${k}" aria-label="${d.getDate()} de ${MESES[d.getMonth()]}${x?', '+(x.rem.length+x.done.length)+(x.rem.length+x.done.length>1?' itens':' item'):''}"><span>${d.getDate()}</span><i>${dots}</i></button>`; }
   const sx=map[cal.sel]||{rem:[],done:[]}, sd=new Date(cal.sel+'T12:00');
-  const items=[...sx.rem.map(r=>({...r,k:'rem'})),...sx.done.filter(d=>!sx.rem.some(r=>r.n===d.n)).map(d=>({...d,k:'done'}))].sort((a,b)=>a.t-b.t);
-  const list=items.map(x=>`<div class="hrow ${x.k==='done'||x.n.done?'past':(!x.n.remindRepeat&&x.t<now()?'late':'')}"><div class="htime">${hm(new Date(x.t))}${x.k==='done'?'<small>feita</small>':''}</div>${noteCard(x.n,'')}</div>`).join('');
+  const items=[...sx.rem.map(r=>({...r,k:'rem'})),...sx.done.filter(d=>!sx.rem.some(r=>(r.n&&r.n===d.n)||(r.tk&&r.tk===d.tk))).map(d=>({...d,k:'done'}))].sort((a,b)=>a.t-b.t);
+  const list=items.map(x=>{ const dn=x.tk?x.tk.done:x.n.done, lt=x.tk?tkLate(x.tk):(!x.n.remindRepeat&&x.t<now());
+    return `<div class="hrow ${x.k==='done'||dn?'past':(lt?'late':'')}"><div class="htime">${x.tk&&x.k!=='done'&&!x.tk.time?'<small>sem hora</small>':hm(new Date(x.t))}${x.k==='done'?'<small>feita</small>':''}</div>${x.tk?tkCard(x.tk):noteCard(x.n,'')}</div>`; }).join('');
   return `<div class="lhead"><h2>Calendário</h2><div class="lact">${cal.sel!==tk||y!==td.getFullYear()||m!==td.getMonth()?'<button class="lbtn" id="calToday">Hoje</button>':''}</div></div>
   <div class="calbox"><div class="calnav"><button class="ib" id="calPrev" aria-label="Mês anterior">${svg('back')}</button><b>${MESES[m].replace(/^./,c=>c.toUpperCase())} de ${y}</b><button class="ib nx" id="calNext" aria-label="Próximo mês">${svg('back')}</button></div>
   <div class="calwk">${['D','S','T','Q','Q','S','S'].map(w=>`<span>${w}</span>`).join('')}</div><div class="calgrid" id="calGrid">${cells}</div>
-  <div class="calleg"><span><b class="r"></b>Lembrete</span><span><b class="d"></b>Concluída</span><span><b class="l"></b>Atrasada</span></div></div>
+  <div class="calleg"><span><b class="r"></b>Lembrete e tarefa</span><span><b class="d"></b>Concluída</span><span><b class="l"></b>Atrasada</span></div></div>
   <div class="hsec">${esc(sd.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'}))}</div>
   ${list||'<div class="empty" style="padding:18px 12px">Nada neste dia.</div>'}
-  <button class="btn" id="calNew" style="width:100%;margin-top:6px;display:inline-flex;align-items:center;justify-content:center;gap:8px">${svg('bell')}Novo lembrete neste dia</button>`;
+  <div class="btns calbtns"><button class="btn" id="calNew">${svg('bell')}Novo lembrete</button><button class="btn" id="calNewT">${svg('tasks')}Nova tarefa</button></div>`;
 }
 function calMove(k){ const d=new Date(cal.y,cal.m+k,1); cal.y=d.getFullYear(); cal.m=d.getMonth(); const td=new Date(); cal.sel=(cal.y===td.getFullYear()&&cal.m===td.getMonth())?dkey(td):dkey(d); renderList(); const g=$('#calGrid'); if(g) g.classList.add(k<0?'sl':'sr'); }
 function newNoteOn(day){ newNote(); const n=noteById(cur.noteId); if(n) setTimeout(()=>reminderSheet(n,{day}),250); }
@@ -3652,8 +3796,9 @@ function repData(p){ const {s,e}=repRange(p), t=now(), done=[], pend=[];
     if(n.done&&n.doneAt>=s&&n.doneAt<e) done.push(n);
     else if(!n.done&&n.remindAt&&!n.remindRepeat){ const d=new Date(n.remindAt).getTime(); if(d>=s&&d<e) pend.push(n); }
   }
+  for(const x of liveTasks()){ if(x.done&&x.doneAt>=s&&x.doneAt<e) done.push(tkAsNote(x)); else if(!x.done&&x.date){ const d=tkMs(x); if(d>=s&&d<e) pend.push(tkAsNote(x)); } }
   done.sort((a,b)=>a.doneAt-b.doneAt); pend.sort((a,b)=>new Date(a.remindAt)-new Date(b.remindAt));
-  const late=pend.filter(n=>new Date(n.remindAt).getTime()<t).length;
+  const late=pend.filter(n=>n._tk?tkLate(n._tk):new Date(n.remindAt).getTime()<t).length;
   const fotos=done.reduce((k,n)=>k+(n.secret?0:(n.attachments||[]).filter(a=>/^image\//.test(a.type)).length),0);
   return {s,e,done,pend,late,fotos}; }
 function relHTML(){ const r=repData(rep.p), multi=rep.p!=='hoje'&&rep.p!=='ontem';
@@ -3665,7 +3810,7 @@ function relHTML(){ const r=repData(rep.p), multi=rep.p!=='hoje'&&rep.p!=='ontem
   <label class="tcheck"><input type="checkbox" id="rpF" ${rep.fotos?'checked':''}><span>Incluir fotos e assinaturas</span></label>
   <label class="tcheck"><input type="checkbox" id="rpPd" ${rep.pend?'checked':''}><span>Incluir o que ficou pendente</span></label>
   <button class="btn pri rpgo" id="rpGo" ${r.done.length||(rep.pend&&r.pend.length)?'':'disabled'}>${svg('whats')}Gerar PDF e enviar</button>
-  ${r.done.length?`<div class="hsec">Concluídas · ${r.done.length}</div>`+r.done.map(n=>`<div class="hrow past"><div class="htime">${hm(new Date(n.doneAt))}${multi?`<small>${new Date(n.doneAt).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}</small>`:''}</div>${noteCard(n,'')}</div>`).join(''):'<div class="empty" style="padding:18px 12px">Nada concluído neste período ainda.</div>'}`; }
+  ${r.done.length?`<div class="hsec">Concluídas · ${r.done.length}</div>`+r.done.map(n=>`<div class="hrow past"><div class="htime">${hm(new Date(n.doneAt))}${multi?`<small>${new Date(n.doneAt).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}</small>`:''}</div>${n._tk?tkCard(n._tk):noteCard(n,'')}</div>`).join(''):'<div class="empty" style="padding:18px 12px">Nada concluído neste período ainda.</div>'}`; }
 document.addEventListener('change',e=>{ if(e.target.id==='rpF') rep.fotos=e.target.checked; else if(e.target.id==='rpPd'){ rep.pend=e.target.checked; renderList(); } });
 document.addEventListener('click',e=>{
   const t=e.target; if(!t.closest) return;
@@ -3699,14 +3844,14 @@ async function renderReport(r){
   y+=146;
   const section=(t,col)=>{ need(80); g.fillStyle=col; g.font=F(800,22); g.fillText(t.toUpperCase(),MX,y+22); y+=36; g.fillStyle=LINE; g.fillRect(MX,y,W,2); y+=24; };
   async function item(n,t,isDone){
-    const late=!isDone&&t<now(), x0=MX+150, w0=W-150;
+    const late=!isDone&&(n._tk?tkLate(n._tk):t<now()), x0=MX+150, w0=W-150;
     const title=noteTitle(n), body=n.secret?'Nota secreta (conteúdo protegido)':txt(n.html).replace(/\s+/g,' ').trim();
     const tl=wrap(title,F(800,26),w0,2), bl=body?wrap(body,F(500,20),w0,4):[];
     const fold=folderById(n.folderId);
-    const tags=[...(n.urgent?[['Urgente',BAD]]:[]),...noteTags(n).map(x=>[x.name,tagColor(x.color)]),...(fold?[[fold.name,MUT]]:[])];
+    const tags=[...(n._tk?[['Tarefa · '+n._tl,ACC]]:[]),...(n._tk&&n._tk.star?[['Com estrela','#b7791f']]:[]),...(n.urgent?[['Urgente',BAD]]:[]),...noteTags(n).map(x=>[x.name,tagColor(x.color)]),...(fold?[[fold.name,MUT]]:[])];
     const imgs=rep.fotos&&!n.secret?(n.attachments||[]).filter(a=>/^image\//.test(a.type)).slice(0,6):[];
     need(Math.min(tl.length*34+bl.length*28+(tags.length?48:0)+(imgs.length?236:0)+40,bottom-MT));
-    g.fillStyle=late?BAD:isDone?OK:ACC; g.font=F(800,27); g.fillText(hm(new Date(t)),MX,y+27);
+    g.fillStyle=late?BAD:isDone?OK:ACC; g.font=F(800,27); if(n._tk&&!isDone&&!n._tk.time){ g.font=F(800,20); g.fillText('Sem hora',MX,y+24); } else g.fillText(hm(new Date(t)),MX,y+27);
     let ly=y+52; if(multi){ g.fillStyle=MUT; g.font=F(600,18); g.fillText(new Date(t).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'}),MX,ly); ly+=24; }
     if(late){ g.fillStyle=BAD; g.font=F(800,16); g.fillText('ATRASADA',MX,ly); }
     let yy=y; g.fillStyle=INK; g.font=F(800,26); tl.forEach(l=>{ g.fillText(l,x0,yy+26); yy+=34; });
@@ -3899,6 +4044,314 @@ async function importQuick(){
   quickBusy=false;
   if(k){ changed(); render(); toast(k>1?k+' notas rápidas chegaram':'Sua nota rápida chegou'); }
 }
+
+/* ======== 1.6: tarefas (listas, estrela, concluídas, subtarefas, data e prazo) ======== */
+var TL_MAIN='tl-main';
+var TSORT=[['ordem','Minha ordem'],['data','Data'],['prazo','Prazo'],['estrela','Marcadas com estrela'],['titulo','Título']];
+var TD={t:0,row:null,box:null,on:false,y0:0,sx:0,sy:0,lastY:0,raf:0,block:0};
+var tkBusy=new Set(), tkSL=0;
+function TK(){ if(!db) return []; if(!Array.isArray(db.tasks)) db.tasks=[]; return db.tasks; }
+function TL(){ if(!db) return []; if(!Array.isArray(db.tlists)) db.tlists=[];
+  let m=db.tlists.find(l=>l.id===TL_MAIN); if(!m){ m={id:TL_MAIN,name:'Minhas tarefas',sort:'ordem',order:0,createdAt:0,updatedAt:0}; db.tlists.unshift(m); }
+  if(m.deleted) delete m.deleted; return db.tlists; }
+function liveLists(){ return TL().filter(l=>!l.deleted).sort((a,b)=>a.id===TL_MAIN?-1:b.id===TL_MAIN?1:((a.order||0)-(b.order||0)||(a.createdAt||0)-(b.createdAt||0))); }
+function listById(id){ return TL().find(l=>l.id===id&&!l.deleted); }
+function liveTasks(){ return TK().filter(t=>!t.deleted); }
+function taskById(id){ return TK().find(t=>t.id===id&&!t.deleted); }
+function tkRaw(id){ return TK().find(t=>t.id===id); }
+function tlOf(t){ return listById(t.list)?t.list:TL_MAIN; }
+function setOpt(o,k,v){ if(v) o[k]=v; else delete o[k]; }
+const tkAt=t=>t.date&&t.time?t.date+'T'+t.time:null;
+const tkRem=t=>({id:t.id,title:t.title,remindAt:tkAt(t),remindRepeat:t.rep||undefined,remindBefore:0});
+// hora para ordenar (sem hora = começo do dia, como "dia todo")
+const tkMs=t=>new Date(t.date+'T'+(t.time||'00:00')).getTime();
+function dayLbl(k){ const d=new Date(k+'T12:00'), t=new Date(); t.setHours(12,0,0,0); const diff=Math.round((d-t)/864e5);
+  if(diff===0) return 'Hoje'; if(diff===1) return 'Amanhã'; if(diff===-1) return 'Ontem';
+  const o={weekday:'short',day:'numeric',month:'short'}; if(d.getFullYear()!==t.getFullYear()) o.year='numeric';
+  return d.toLocaleDateString('pt-BR',o); }
+const lc1=s=>/^(Hoje|Amanhã|Ontem)$/.test(s)?s.toLowerCase():s;
+function tkWhen(t){ return t.date?dayLbl(t.date)+(t.time?', '+t.time:''):''; }
+function tkLate(t){ if(t.done||!t.date) return false; const k=dkey(new Date()); if(t.date<k) return true; return t.date===k&&!!t.time&&tkAt(t)<toLocalInput(new Date()); }
+function dlLate(t){ return !t.done&&!!t.deadline&&t.deadline<dkey(new Date()); }
+function tkMinOrder(lid){ let m=0; for(const t of liveTasks()) if(!t.done&&tlOf(t)===lid&&(t.order||0)<m) m=t.order||0; return m; }
+function tkDoneOpen(){ return cfg.tkDoneOpen!==false; }
+
+/* ordem da lista */
+function tkSorted(arr,sort){ const a=[...arr];
+  const byOrder=(x,y)=>(x.order||0)-(y.order||0)||(y.createdAt||0)-(x.createdAt||0);
+  if(sort==='titulo') return a.sort((x,y)=>(x.title||'').localeCompare(y.title||'','pt-BR',{sensitivity:'base'})||byOrder(x,y));
+  if(sort==='data') return a.sort((x,y)=>(x.date?0:1)-(y.date?0:1)||((x.date||'')+(x.time||'')).localeCompare((y.date||'')+(y.time||''))||byOrder(x,y));
+  if(sort==='prazo') return a.sort((x,y)=>(x.deadline?0:1)-(y.deadline?0:1)||(x.deadline||'').localeCompare(y.deadline||'')||byOrder(x,y));
+  if(sort==='estrela') return a.sort((x,y)=>(y.star?1:0)-(x.star?1:0)||(x.star&&y.star?(y.starAt||0)-(x.starAt||0):byOrder(x,y)));
+  return a.sort(byOrder); }
+function tkGroup(t,sort){ const k=dkey(new Date());
+  if(sort==='data'){ if(!t.date) return 'Sem data'; if(t.date<k) return 'Atrasadas'; return dayLbl(t.date); }
+  if(sort==='prazo'){ if(!t.deadline) return 'Sem prazo'; if(t.deadline<k) return 'Prazo vencido'; return 'Prazo: '+lc1(dayLbl(t.deadline)); }
+  if(sort==='estrela') return t.star?'Marcadas com estrela':'Sem estrela';
+  return ''; }
+
+/* linhas */
+function tkMeta(t,opt={}){ const m=[], subs=t.subs||[], sd=subs.filter(s=>s.done).length;
+  if(t.date) m.push(`<span class="tkm${tkLate(t)?' late':''}">${svg(t.rep?'repeat':t.time?'bell':'cal')}${esc(tkWhen(t))}${t.rep?' · '+esc(repLabel(t.rep).toLowerCase()):''}</span>`);
+  if(t.deadline) m.push(`<span class="tkm${dlLate(t)?' late':''}">${svg('flag')}Prazo: ${esc(lc1(dayLbl(t.deadline)))}</span>`);
+  if(subs.length) m.push(`<span class="tkm${sd===subs.length?' full':''}">${svg('sub')}${sd}/${subs.length}</span>`);
+  if(opt.list){ const l=listById(tlOf(t)); if(l) m.push(`<span class="tkm ln">${esc(l.name)}</span>`); }
+  return m.length?`<div class="tkms">${m.join('')}</div>`:''; }
+function tkPend(t,opt={}){ const subs=t.subs||[];
+  return `<div class="tkgrp" data-g="${t.id}"><div class="tk" data-tk="${t.id}" role="button" tabindex="0">
+    <button class="tkc" data-tkc="${t.id}" aria-label="Marcar “${esc(t.title)}” como concluída">${svg('check')}</button>
+    <div class="tkb"><div class="tkt">${esc(t.title)}</div>${t.notes?`<div class="tkd">${esc(t.notes.replace(/\s+/g,' '))}</div>`:''}${tkMeta(t,opt)}</div>
+    <button class="tks" data-tks="${t.id}" aria-pressed="${!!t.star}" aria-label="${t.star?'Tirar a estrela':'Marcar com estrela'}">${svg(t.star?'starF':'star')}</button></div>
+    ${subs.map(s=>`<div class="tk sub${s.done?' sdone':''}" data-tk="${t.id}"><button class="tkc${s.done?' on':''}" data-tksub="${t.id}|${s.id}" aria-label="${s.done?'Subtarefa feita. Toque para desfazer':'Marcar a subtarefa como feita'}">${svg('check')}</button><div class="tkb"><div class="tkt">${esc(s.title)}</div></div></div>`).join('')}</div>`; }
+function tkDoneRow(t){ return `<div class="tk done" data-tk="${t.id}" role="button" tabindex="0"><button class="tkc" data-tkc="${t.id}" aria-label="Concluída. Toque para voltar para pendentes">${svg('check')}</button>
+  <div class="tkb"><div class="tkt">${esc(t.title)}</div><div class="tkd">Concluída em: ${esc(new Date(t.doneAt||t.updatedAt).toLocaleDateString('pt-BR',{weekday:'short',day:'numeric',month:'short'}))}</div></div></div>`; }
+// cartão no Hoje, no Calendário e no Relatório
+function tkCard(t){ const l=listById(tlOf(t)), subs=t.subs||[], sd=subs.filter(s=>s.done).length;
+  return `<div class="note tkn${t.done?' done':''}" data-tko="${t.id}" role="button" tabindex="0"><button class="nchk" data-tkc="${t.id}" aria-pressed="${!!t.done}" aria-label="${t.done?'Concluída. Toque para voltar a pendente':'Marcar como concluída'}">${svg('check')}</button>
+    <div class="nbody"><h3><span>${esc(t.title)}</span>${t.star?svg('starF').replace('class="i"','class="i stf"'):''}</h3>${t.notes?`<p>${esc(t.notes.replace(/\s+/g,' '))}</p>`:''}
+    <div class="meta"><span class="tag tkl">${svg('tasks')}${esc(l?l.name:'Tarefa')}</span>${subs.length?`<span class="prog${sd===subs.length?' full':''}">${svg('sub')}${sd}/${subs.length}</span>`:''}${t.deadline?`<span class="rem${dlLate(t)?' late':''}">${svg('flag')}Prazo: ${esc(lc1(dayLbl(t.deadline)))}</span>`:''}${t.rep&&!t.done?`<span>${svg('repeat')}</span>`:''}${t.done?'<span class="tag ok">Concluída</span>':''}</div></div></div>`; }
+
+/* desenhos das telas vazias (feitos para o app) */
+const TKART={
+  feito:`<svg class="tkart" viewBox="0 0 150 130" aria-hidden="true"><circle cx="75" cy="66" r="52" style="fill:var(--accent-soft)"/><circle cx="75" cy="66" r="31" style="fill:var(--ok)"/><path d="M61 66.5l9.5 9.5 19-20" style="fill:none;stroke:var(--ok-ink);stroke-width:7;stroke-linecap:round;stroke-linejoin:round"/><rect x="17" y="24" width="13" height="13" rx="3.5" transform="rotate(-16 23.5 30.5)" style="fill:var(--star)"/><circle cx="129" cy="33" r="6" style="fill:var(--accent)"/><path d="M118 108l7-12 7 12z" style="fill:var(--danger);opacity:.6"/><circle cx="27" cy="101" r="4.5" style="fill:var(--ok);opacity:.7"/><circle cx="135" cy="80" r="3" style="fill:var(--star)"/></svg>`,
+  novo:`<svg class="tkart" viewBox="0 0 150 130" aria-hidden="true"><circle cx="75" cy="66" r="52" style="fill:var(--accent-soft)"/><rect x="38" y="28" width="74" height="76" rx="13" style="fill:var(--surface);stroke:var(--line);stroke-width:2"/><circle cx="55" cy="49" r="6.5" style="fill:none;stroke:var(--accent);stroke-width:2.6"/><rect x="68" y="46" width="32" height="6" rx="3" style="fill:var(--line)"/><circle cx="55" cy="67" r="6.5" style="fill:none;stroke:var(--accent);stroke-width:2.6"/><rect x="68" y="64" width="24" height="6" rx="3" style="fill:var(--line)"/><circle cx="55" cy="85" r="6.5" style="fill:var(--accent)"/><path d="M52 85.2l2.2 2.2 4-4.4" style="fill:none;stroke:var(--accent-ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/><rect x="68" y="82" width="28" height="6" rx="3" style="fill:var(--line)"/><circle cx="118" cy="100" r="15" style="fill:var(--accent)"/><path d="M118 93v14M111 100h14" style="stroke:var(--accent-ink);stroke-width:3;stroke-linecap:round"/></svg>`,
+  estrela:`<svg class="tkart" viewBox="0 0 150 130" aria-hidden="true"><circle cx="75" cy="66" r="52" style="fill:var(--accent-soft)"/><path d="M75 25l12 24.4 26.9 3.9-19.5 19 4.6 26.8L75 86.4 50.9 99.1l4.6-26.8-19.5-19 26.9-3.9z" style="fill:var(--star);stroke:color-mix(in srgb,var(--star) 70%,#000);stroke-width:2;stroke-linejoin:round"/><circle cx="121" cy="29" r="5.5" style="fill:var(--star)"/><circle cx="29" cy="97" r="4.5" style="fill:var(--accent)"/><circle cx="131" cy="88" r="3" style="fill:var(--accent);opacity:.6"/></svg>`};
+function tkEmpty(art,title,sub){ return `<div class="tkempty">${TKART[art]}<strong>${title}</strong><span>${sub}</span></div>`; }
+
+/* aba Tarefas */
+function tasksHTML(){
+  const lists=liveLists(); let sel=cfg.tlist||TL_MAIN; if(sel!=='star'&&!listById(sel)) sel=TL_MAIN; if(cfg.tlist!==sel){ cfg.tlist=sel; saveCfg(); }
+  const live=liveTasks(), pend=id=>live.filter(t=>!t.done&&tlOf(t)===id).length, total=live.filter(t=>!t.done).length;
+  const tabs=`<div class="tktabs" id="tkTabs" role="tablist" aria-label="Listas de tarefas"><button class="tktab st" data-tl="star" role="tab" aria-selected="${sel==='star'}" aria-label="Com estrela">${svg(sel==='star'?'starF':'star')}</button>`
+    +lists.map(l=>{ const c=pend(l.id); return `<button class="tktab" data-tl="${l.id}" role="tab" aria-selected="${l.id===sel}"><span>${esc(l.name)}</span>${c?`<b>${c>99?'99+':c}</b>`:''}</button>`; }).join('')
+    +`<button class="tktab add" id="tlNew">${svg('plus')}<span>Nova lista</span></button></div>`;
+  const head=`<div class="lhead"><h2>Tarefas</h2><div class="lact"><small>${total} ${total===1?'pendente':'pendentes'}</small></div></div>`;
+  return head+tabs+(sel==='star'?tkStarHTML(live):tkListHTML(listById(sel),live)); }
+function tkListHTML(l,live){
+  const all=live.filter(t=>tlOf(t)===l.id), pend=all.filter(t=>!t.done), done=all.filter(t=>t.done).sort((a,b)=>(b.doneAt||0)-(a.doneAt||0));
+  const sort=TSORT.some(x=>x[0]===l.sort)?l.sort:'ordem'; let rows='', g0=null;
+  for(const t of tkSorted(pend,sort)){ const g=tkGroup(t,sort); if(g&&g!==g0){ rows+=`<div class="tkgh${/^(Atrasadas|Prazo vencido)$/.test(g)?' late':''}">${esc(g)}</div>`; g0=g; } rows+=tkPend(t); }
+  const empty=pend.length?'':done.length?tkEmpty('feito','Todas as tarefas concluídas','Bom trabalho!'):tkEmpty('novo','Nenhuma tarefa ainda','Toque em “Nova tarefa” para colocar a primeira nesta lista.');
+  const tip=sort==='ordem'&&pend.length>1&&!cfg.tkDragged?'<div class="tkhint">Segure uma tarefa e arraste para mudar a ordem.</div>':'';
+  const open=tkDoneOpen();
+  return `<section class="tkcard"><div class="tkch"><h3>${esc(l.name)}</h3><button class="ib" id="tkSort" aria-label="Ordenar: ${esc((TSORT.find(x=>x[0]===sort)||TSORT[0])[1])}">${svg('sort')}</button><button class="ib" id="tkMore" aria-label="Opções da lista">${svg('more')}</button></div>
+    <div class="tkrows" id="tkRows" data-sort="${sort}">${rows}</div>${empty}${tip}</section>`
+   +(done.length?`<section class="tkcard tkdone" data-open="${open}"><button class="tkdh" id="tkDoneT" aria-expanded="${open}"><span>Concluídas (${done.length})</span>${svg('down')}</button>${open?`<div class="tkrows">${done.map(tkDoneRow).join('')}</div>`:''}</section>`:''); }
+function tkStarHTML(live){
+  const sort=['estrela','data','prazo','titulo'].includes(cfg.tStarSort)?cfg.tStarSort:'estrela';
+  const st=tkSorted(live.filter(t=>t.star&&!t.done),sort); let rows='', g0=null;
+  for(const t of st){ const g=sort==='estrela'?'Marcadas com estrela recentemente':tkGroup(t,sort); if(g&&g!==g0){ rows+=`<div class="tkgh${/^(Atrasadas|Prazo vencido)$/.test(g)?' late':''}">${esc(g)}</div>`; g0=g; } rows+=tkPend(t,{list:true}); }
+  return `<section class="tkcard"><div class="tkch"><h3>Com estrela</h3><button class="ib" id="tkSort" aria-label="Ordenar">${svg('sort')}</button></div>
+    <div class="tkrows" id="tkRows" data-sort="star">${rows}</div>${st.length?'':tkEmpty('estrela','Nenhuma tarefa com estrela','Toque na estrela de uma tarefa importante para ela aparecer aqui, de todas as listas.')}</section>`; }
+function tkAfter(){ const b=$('#tkTabs'); if(!b) return; b.scrollLeft=tkSL; const a=b.querySelector('[aria-selected="true"]'); if(a){ const r=a.getBoundingClientRect(), br=b.getBoundingClientRect(); if(r.left<br.left) b.scrollLeft-=br.left-r.left+16; else if(r.right>br.right) b.scrollLeft+=r.right-br.right+16; tkSL=b.scrollLeft; } }
+
+/* concluir, estrela, subtarefa, excluir */
+function tkNextDate(t){ const base=new Date(t.date+'T12:00'), ref=[t.date,dkey(new Date())].sort()[1];
+  for(let k=1;k<800;k++){ const o=occK(base,t.rep,k); if(o&&dkey(o)>ref) return dkey(o); } return null; }
+function tkSetDone(t,v){
+  if(v){ t.done=true; t.doneAt=now(); for(const s of t.subs||[]) if(!s.done){ s.done=true; s.doneAt=now(); }
+    if(t.rep&&t.date&&!t.nextId){ const nd=tkNextDate(t); if(nd){ const c=JSON.parse(JSON.stringify(t)); c.id='tk'+uid(); c.done=false; delete c.doneAt; delete c.nextId; c.date=nd; c.createdAt=now(); c.updatedAt=c.createdAt;
+      if(c.subs) c.subs=c.subs.map(s=>({id:uid(),title:s.title,done:false})); TK().push(c); t.nextId=c.id; } } }
+  else { t.done=false; delete t.doneAt; if(t.nextId){ const c=taskById(t.nextId); if(c&&!c.done&&c.updatedAt===c.createdAt){ c.deleted=true; c.updatedAt=now(); } delete t.nextId; } }
+  t.updatedAt=now(); }
+function tkToggle(id,el){ const t=taskById(id); if(!t||tkBusy.has(id)) return; const v=!t.done;
+  const go=()=>{ tkBusy.delete(id); const x=taskById(id)||t; tkSetDone(x,v); changed(); renderList();
+    const nx=v&&x.nextId?taskById(x.nextId):null;
+    toast(v?(nx?'Concluída. A próxima ficou para '+lc1(dayLbl(nx.date)):'Tarefa concluída'):'Voltou para pendentes','Desfazer',()=>{ const y=tkRaw(id); if(y&&!y.deleted){ tkSetDone(y,!v); changed(); renderList(); } }); };
+  if(v&&el){ tkBusy.add(id); el.classList.add('on'); el.setAttribute('aria-pressed','true'); const r=el.closest('.tk,.tkn'); if(r) r.classList.add('going'); try{ navigator.vibrate&&navigator.vibrate(12); }catch(e){} setTimeout(go,430); }
+  else go(); }
+function tkStar(id,el){ const t=taskById(id); if(!t) return; if(t.star){ delete t.star; delete t.starAt; } else { t.star=true; t.starAt=now(); } t.updatedAt=now(); changed(); renderList();
+  const b=document.querySelector(`[data-tks="${id}"]`); if(b&&t.star) b.classList.add('pop'); }
+function tkSubToggle(id,sid){ const t=taskById(id); if(!t) return; const s=(t.subs||[]).find(x=>x.id===sid); if(!s) return; s.done=!s.done; if(s.done) s.doneAt=now(); else delete s.doneAt; t.updatedAt=now(); changed(); renderList(); }
+function tkDelete(t){ const id=t.id; t=tkRaw(id)||t; t.deleted=true; t.updatedAt=now(); changed(); renderList(); toast('Tarefa excluída','Desfazer',()=>{ const y=tkRaw(id); if(y){ delete y.deleted; y.updatedAt=now(); changed(); renderList(); } }); }
+
+/* nova tarefa, detalhes da tarefa */
+function newTask(o={}){ TL(); const sel=cfg.tlist&&cfg.tlist!=='star'&&listById(cfg.tlist)?cfg.tlist:TL_MAIN;
+  const t={id:'tk'+uid(),list:o.list||sel,title:''}; if(o.date) t.date=o.date; if(cfg.tlist==='star'&&cur.tab==='tarefas'&&!o.date){ t.star=true; t.starAt=now(); }
+  taskSheet(t,{isNew:true}); }
+function taskSheet(t,o={}){
+  const isNew=!!o.isNew, lists=liveLists();
+  let title=t.title||'', notes=t.notes||'', date=t.date||'', time=t.time||'', rep=t.rep||'', dl=t.deadline||'', star=!!t.star, list=tlOf(t);
+  let subs=(t.subs||[]).map(s=>({...s})), handled=false, sEl=null, poll=0;
+  const val=q=>{ const el=sEl&&sEl.querySelector(q); return el?el.value:''; };
+  // lê direto dos campos (alguns Android não avisam quando o dia ou a hora mudam)
+  const read=()=>{ if(!sEl) return; title=val('#tdT').replace(/\s+/g,' ').trim(); notes=val('#tdD').replace(/\s+$/,''); list=val('#tdL')||list;
+    const dv=val('#tdDay'), tv=val('#tdHour'), pv=val('#tdDl');
+    date=/^\d{4}-\d\d-\d\d$/.test(dv)?dv:''; time=date&&/^\d\d:\d\d/.test(tv)?tv.slice(0,5):''; dl=/^\d{4}-\d\d-\d\d$/.test(pv)?pv:'';
+    sEl.querySelectorAll('.tdsub').forEach(r=>{ const s=subs.find(x=>x.id===r.dataset.sid); if(s) s.title=r.querySelector('input').value.replace(/\s+/g,' ').trim(); }); };
+  const sig=x=>JSON.stringify([x.title||'',x.notes||'',x.date||'',x.date?x.time||'':'',x.date?x.rep||'':'',x.deadline||'',!!x.star,x.list,(x.subs||[]).filter(s=>s.title).map(s=>[s.id,s.title,!!s.done])]);
+  const save=()=>{
+    if(handled) return; read(); handled=true;
+    if(isNew&&!title&&!notes&&!subs.some(s=>s.title)) return; // nada escrito: não cria
+    if(!isNew){ const lv=taskById(t.id); if(!lv) return; t=lv; }
+    if(!title) title=t.title||'Tarefa sem título';
+    const nt={title:title.slice(0,500),notes:notes.slice(0,5000),date,time:date?time:'',rep:date?rep:'',deadline:dl,star,list,
+      subs:subs.filter(s=>s.title).slice(0,50).map(s=>{ const x={id:s.id,title:s.title.slice(0,300),done:!!s.done}; if(s.done) x.doneAt=s.doneAt||now(); return x; })};
+    if(!isNew&&sig(nt)===sig({...t,list:tlOf(t)})) return;
+    const whenCh=isNew||(nt.date+'|'+nt.time+'|'+nt.rep)!==((t.date||'')+'|'+(t.time||'')+'|'+(t.rep||''));
+    const moved=!isNew&&nt.list!==tlOf(t);
+    t.title=nt.title; setOpt(t,'notes',nt.notes); setOpt(t,'date',nt.date); setOpt(t,'time',nt.time); setOpt(t,'rep',nt.rep); setOpt(t,'deadline',nt.deadline);
+    if(nt.star){ if(!t.star) t.starAt=now(); t.star=true; } else { delete t.star; delete t.starAt; }
+    if(isNew||moved){ t.list=nt.list; t.order=tkMinOrder(nt.list)-1; }
+    if(nt.subs.length) t.subs=nt.subs; else delete t.subs;
+    t.updatedAt=now(); if(isNew){ t.createdAt=t.updatedAt; TK().push(t); }
+    changed(); renderList();
+    const ln=(listById(t.list)||{}).name||'';
+    if(HAS_ALARM&&t.time&&whenCh&&!t.done){ const ring=nextRingDate(tkRem(t)); toast((isNew?'Tarefa criada. ':'')+(ring&&ring.getTime()>now()?'Alarme: '+fmtRem(ring)+(t.rep?' · '+repLabel(t.rep).toLowerCase():' · aviso 1 minuto antes'):'Esse horário já passou: o alarme não vai tocar.')); setTimeout(afterReminderSaved,300); }
+    else if(isNew) toast('Tarefa criada'+(cur.tab==='tarefas'&&cfg.tlist!==t.list&&cfg.tlist!=='star'?' em “'+ln+'”':''));
+    else if(moved) toast('Tarefa movida para “'+ln+'”'); };
+  const subsHTML=()=>subs.map(s=>`<div class="tdsub${s.done?' on':''}" data-sid="${s.id}"><button class="tkc${s.done?' on':''}" data-sbdone aria-label="${s.done?'Feita. Toque para desfazer':'Marcar como feita'}">${svg('check')}</button><input value="${esc(s.title)}" placeholder="Subtarefa" maxlength="300" enterkeyhint="next" autocomplete="off" aria-label="Subtarefa"><button class="ib sm" data-sbdel aria-label="Tirar a subtarefa">${svg('x')}</button></div>`).join('');
+  const hid=(cond)=>cond?' hidden':'';
+  openSheet(`<div class="tkhd"><label class="tklw"><select id="tdL" aria-label="Lista">${lists.map(l=>`<option value="${l.id}"${l.id===list?' selected':''}>${esc(l.name)}</option>`).join('')}</select>${svg('down')}</label><span class="grow"></span>
+      <button class="ib" id="tdStar" aria-pressed="${star}" aria-label="${star?'Tirar a estrela':'Marcar com estrela'}">${svg(star?'starF':'star')}</button>${isNew?'':`<button class="ib" id="tdDel" aria-label="Excluir tarefa">${svg('trash')}</button>`}</div>
+    <input class="tktitle" id="tdT" value="${esc(title)}" placeholder="${isNew?'Nova tarefa':'Título da tarefa'}" maxlength="500" autocomplete="off" enterkeyhint="done"${isNew?' autofocus':''}>
+    <textarea class="field tkdesc" id="tdD" rows="2" maxlength="5000" placeholder="Adicionar detalhes"${hid(isNew&&!notes)}>${esc(notes)}</textarea>
+    ${isNew?`<div class="tkqa" id="tdQa"><button class="chip" data-qa="tdD"${hid(notes)}>${svg('alignL')}Detalhes</button><button class="chip" data-qa="tdW"${hid(date)}>${svg('cal')}Data e hora</button><button class="chip" data-qa="tdPz">${svg('flag')}Prazo</button><button class="chip" data-qa="tdS">${svg('sub')}Subtarefas</button></div>`:''}
+    <div class="blk" id="tdW"${hid(isNew&&!date)}><div class="lbl">Data e hora</div>
+      <div class="dt2"><input type="date" class="field" id="tdDay" value="${date}" aria-label="Dia"><input type="time" class="field" id="tdHour" value="${time}" aria-label="Hora (opcional)"></div>
+      <div class="seg wrap qk" id="tdQ"><button data-q="hoje">Hoje</button><button data-q="amanha">Amanhã</button><button data-q="semana">Daqui a 1 semana</button><button data-q="semhora">Sem hora</button><button data-q="sem">Sem data</button></div>
+      <p class="sub" id="tdSum" style="margin:10px 0 0"></p>
+      <div id="tdRw"><div class="lbl" style="margin-top:12px">Repetir</div><div class="seg wrap" id="tdR">${REPEATS.map(([k,l])=>`<button data-r="${k}" aria-pressed="${k===rep}">${l}</button>`).join('')}</div></div></div>
+    <div class="blk" id="tdPz"${hid(isNew&&!dl)}><div class="lbl">Prazo (data limite)</div><div class="dt2"><input type="date" class="field" id="tdDl" value="${dl}" aria-label="Prazo"><button class="btn" id="tdDlX" type="button">Sem prazo</button></div></div>
+    <div class="blk" id="tdS"${hid(isNew&&!subs.length)}><div class="lbl">Subtarefas</div><div id="tdSubs">${subsHTML()}</div><button class="row" id="tdSubAdd" type="button"><span data-i="plus"></span><span class="grow">Adicionar subtarefa</span></button></div>
+    <div class="btns">${isNew?'<button class="btn pri" id="tdOk">Salvar</button>':`<button class="btn${t.done?'':' pri'}" id="tdDone">${svg(t.done?'undo':'check')}${t.done?'Voltar para pendentes':'Marcar como concluída'}</button>`}</div>`,
+  s=>{ sEl=s;
+    const sum=()=>{ const el=s.querySelector('#tdSum'); s.querySelector('#tdRw').hidden=!date; if(!el) return;
+      if(!date){ el.textContent='Sem data. Escolha um dia para a tarefa aparecer em Hoje e no Calendário.'; return; }
+      if(!time){ el.innerHTML='Aparece em <b>Hoje</b> no dia '+esc(lc1(dayLbl(date)))+'. Coloque uma hora para o alarme tocar.'; return; }
+      const ring=nextRingDate(tkRem({id:'x',date,time,rep}));
+      if(!ring||ring.getTime()<=now()){ el.innerHTML='<b style="color:var(--danger)">Esse horário já passou: o alarme não vai tocar.</b>'; return; }
+      el.innerHTML=HAS_ALARM?`O alarme toca às <b>${hm(ring)}</b> de ${esc(lc1(dayLbl(dkey(ring))))}, com aviso 1 minuto antes${rep?' · '+esc(repLabel(rep).toLowerCase()):''}.`:`Aviso às <b>${hm(ring)}</b> de ${esc(lc1(dayLbl(dkey(ring))))}${rep?' · '+esc(repLabel(rep).toLowerCase()):''}.`; };
+    const upd=()=>{ const a=date+time; read(); if(a!==date+time) sum(); };
+    ['#tdDay','#tdHour','#tdDl'].forEach(q=>{ const i=s.querySelector(q); ['input','change','blur'].forEach(ev=>i.addEventListener(ev,upd)); });
+    poll=setInterval(()=>{ if(!sEl||!sEl.isConnected){ clearInterval(poll); return; } upd(); },400);
+    s.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{ const q=b.dataset.q, d=new Date(), D=s.querySelector('#tdDay'), H=s.querySelector('#tdHour');
+      if(q==='sem'){ D.value=''; H.value=''; } else if(q==='semhora'){ H.value=''; }
+      else { if(q==='amanha') d.setDate(d.getDate()+1); else if(q==='semana') d.setDate(d.getDate()+7); D.value=dkey(d); }
+      upd(); sum(); });
+    s.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{ rep=b.dataset.r; s.querySelectorAll('[data-r]').forEach(x=>x.setAttribute('aria-pressed',x===b)); sum(); });
+    s.querySelector('#tdDlX').onclick=()=>{ s.querySelector('#tdDl').value=''; upd(); };
+    s.querySelector('#tdStar').onclick=e=>{ star=!star; const b=e.currentTarget; b.setAttribute('aria-pressed',star); b.innerHTML=svg(star?'starF':'star'); b.setAttribute('aria-label',star?'Tirar a estrela':'Marcar com estrela'); if(star) b.classList.add('pop'); };
+    s.querySelectorAll('[data-qa]').forEach(b=>b.onclick=()=>{ const sec=s.querySelector('#'+b.dataset.qa); sec.hidden=false; b.hidden=true;
+      if(b.dataset.qa==='tdD') sec.focus(); else if(b.dataset.qa==='tdS'){ if(!subs.length) addSub(); } else if(b.dataset.qa==='tdW'){ sum(); } sec.scrollIntoView({block:'nearest',behavior:'smooth'}); });
+    const paintSubs=()=>{ read(); s.querySelector('#tdSubs').innerHTML=subsHTML(); paintIcons(s.querySelector('#tdSubs')); };
+    const addSub=()=>{ read(); subs.push({id:uid(),title:'',done:false}); paintSubs(); const ins=s.querySelectorAll('.tdsub input'); const last=ins[ins.length-1]; if(last) last.focus(); };
+    s.querySelector('#tdSubAdd').onclick=addSub;
+    s.querySelector('#tdSubs').addEventListener('click',e=>{ const r=e.target.closest('.tdsub'); if(!r) return; const sb=subs.find(x=>x.id===r.dataset.sid); if(!sb) return;
+      if(e.target.closest('[data-sbdone]')){ read(); sb.done=!sb.done; if(sb.done) sb.doneAt=now(); else delete sb.doneAt; paintSubs(); }
+      else if(e.target.closest('[data-sbdel]')){ read(); subs=subs.filter(x=>x!==sb); paintSubs(); } });
+    s.querySelector('#tdSubs').addEventListener('keydown',e=>{ if(e.key==='Enter'&&e.target.matches('.tdsub input')){ e.preventDefault(); if(e.target.value.trim()) addSub(); } });
+    s.querySelector('#tdT').addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); if(isNew) closeSheet(); else e.target.blur(); } });
+    const ok=s.querySelector('#tdOk'); if(ok) ok.onclick=()=>{ read(); if(!title){ toast('Escreva o nome da tarefa.'); s.querySelector('#tdT').focus(); return; } closeSheet(); };
+    const dn=s.querySelector('#tdDone'); if(dn) dn.onclick=()=>{ const id=t.id; closeSheet(); tkToggle(id); };
+    const del=s.querySelector('#tdDel'); if(del) del.onclick=()=>{ handled=true; closeSheet(); tkDelete(t); };
+    sum(); },
+  ()=>{ clearInterval(poll); save(); sEl=null; });
+}
+
+/* listas */
+function newList(){ askName({title:'Nova lista',sub:'Por exemplo: Comprar coisas de casa, Serviço, Clientes.',ok:'Criar',onOk:v=>{
+  const l={id:'tl'+uid(),name:v.slice(0,60),sort:'ordem',order:Math.max(0,...TL().map(x=>x.order||0))+1,createdAt:now(),updatedAt:now()};
+  TL().push(l); cfg.tlist=l.id; saveCfg(); tkSL=1e6; changed(); renderList(); toast('Lista “'+l.name+'” criada'); }}); }
+function tkSortSheet(){ const isStar=cfg.tlist==='star', l=isStar?null:listById(cfg.tlist||TL_MAIN)||listById(TL_MAIN);
+  const curS=isStar?(cfg.tStarSort||'estrela'):(l.sort||'ordem'), opts=isStar?TSORT.filter(x=>x[0]!=='ordem'):TSORT;
+  openSheet(`<h3>Ordenar por</h3>${opts.map(([k,lb])=>`<button class="row" data-ts="${k}" aria-pressed="${k===curS}"><span class="grow">${k==='estrela'&&isStar?'Marcadas com estrela recentemente':lb}</span><span class="ck" data-i="check"></span></button>`).join('')}`,
+  s=>s.querySelectorAll('[data-ts]').forEach(b=>b.onclick=()=>{ const k=b.dataset.ts; if(isStar){ cfg.tStarSort=k; saveCfg(); } else if(l.sort!==k){ l.sort=k; l.updatedAt=now(); changed(); } closeSheet(); renderList(); })); }
+function tkListText(l){ const all=liveTasks().filter(t=>tlOf(t)===l.id), pend=tkSorted(all.filter(t=>!t.done),l.sort||'ordem'), dn=all.filter(t=>t.done);
+  let s='*'+l.name+'*\n';
+  for(const t of pend){ s+='☐ '+t.title+(t.date?' ('+lc1(tkWhen(t))+')':'')+'\n'; for(const x of t.subs||[]) s+='      '+(x.done?'☑ ':'☐ ')+x.title+'\n'; }
+  if(dn.length){ s+='\nConcluídas:\n'; for(const t of dn) s+='☑ '+t.title+'\n'; }
+  if(!all.length) s+='(lista vazia)\n';
+  return s.trim(); }
+function tkListMenu(){ const l=listById(cfg.tlist); if(!l) return; const all=liveTasks().filter(t=>tlOf(t)===l.id), dn=all.filter(t=>t.done), pn=all.length-dn.length;
+  openSheet(`<h3>${esc(l.name)}</h3><p class="sub">${pn} ${pn===1?'pendente':'pendentes'} · ${dn.length} ${dn.length===1?'concluída':'concluídas'}</p>
+    <button class="row" id="lmRen"><span data-i="pencil"></span><span class="grow">Renomear lista</span></button>
+    <button class="row" id="lmShare"><span data-i="share"></span><span class="grow">Enviar a lista<small>Como texto, pelo WhatsApp ou outro app</small></span></button>
+    ${dn.length?`<button class="row" id="lmClr"><span data-i="trash"></span><span class="grow">Excluir as concluídas<small>${dn.length} ${dn.length===1?'tarefa':'tarefas'}</small></span></button>`:''}
+    ${l.id!==TL_MAIN?'<button class="row danger" id="lmDel"><span data-i="trash"></span><span class="grow">Excluir a lista</span></button>':''}`,
+  s=>{ s.querySelector('#lmRen').onclick=()=>{ closeSheet(); askName({title:'Renomear lista',value:l.name,onOk:v=>{ l.name=v.slice(0,60); l.updatedAt=now(); changed(); renderList(); toast('Lista renomeada'); }}); };
+    s.querySelector('#lmShare').onclick=()=>{ closeSheet(); shareText(l.name,tkListText(l)); };
+    const c=s.querySelector('#lmClr'); if(c) c.onclick=()=>{ closeSheet(); confirmSheet({title:'Excluir as concluídas?',sub:`${dn.length} ${dn.length===1?'tarefa concluída':'tarefas concluídas'} de “${esc(l.name)}” ${dn.length===1?'vai':'vão'} ser ${dn.length===1?'excluída':'excluídas'}.`,ok:'Excluir',onOk:()=>{
+      const at=now(); dn.forEach(t=>{ t.deleted=true; t.updatedAt=at; }); changed(); renderList();
+      const ids=dn.map(t=>t.id); toast(dn.length===1?'1 tarefa excluída':dn.length+' tarefas excluídas','Desfazer',()=>{ ids.forEach(id=>{ const y=tkRaw(id); if(y){ delete y.deleted; y.updatedAt=now(); } }); changed(); renderList(); }); }}); };
+    const d=s.querySelector('#lmDel'); if(d) d.onclick=()=>{ closeSheet(); confirmSheet({title:'Excluir a lista?',sub:`A lista “${esc(l.name)}”${all.length?` e ${all.length===1?'a tarefa dela':'as '+all.length+' tarefas dela'}`:''} ${all.length?'vão':'vai'} ser excluída${all.length?'s':''}.`,ok:'Excluir',onOk:()=>{
+      const at=now(), gone=all.filter(t=>!t.deleted); l.deleted=true; l.updatedAt=at; gone.forEach(t=>{ t.deleted=true; t.updatedAt=at; }); cfg.tlist=TL_MAIN; saveCfg(); changed(); renderList();
+      const lid=l.id, ids=gone.map(t=>t.id); toast('Lista excluída','Desfazer',()=>{ const ll=TL().find(x=>x.id===lid); if(ll){ delete ll.deleted; ll.updatedAt=now(); } ids.forEach(id=>{ const y=tkRaw(id); if(y){ delete y.deleted; y.updatedAt=now(); } }); cfg.tlist=lid; saveCfg(); changed(); renderList(); }); }}); }; }); }
+
+/* tarefas no Hoje, no alarme e no calendário do celular */
+function todayTasks(){ const k=dkey(new Date()), late=[], today=[];
+  for(const t of liveTasks()){ if(!t.date) continue; if(t.done){ if(t.date===k) today.push(t); continue; } if(t.date<k) late.push(t); else if(t.date===k) today.push(t); }
+  late.sort((a,b)=>tkMs(a)-tkMs(b)); today.sort((a,b)=>tkMs(a)-tkMs(b)); return {late,today}; }
+function tkAlarmItems(){ const out=[]; for(const t of liveTasks()){ if(t.done||!t.date||!t.time) continue; const l=listById(tlOf(t)), subs=t.subs||[];
+  const text=[t.notes?t.notes.replace(/\s+/g,' ').trim():'',subs.length?subs.filter(s=>s.done).length+' de '+subs.length+' subtarefas feitas':'','Tarefa'+(l?' · '+l.name:'')].filter(Boolean).join(' · ');
+  out.push({id:t.id,at:t.date+'T'+t.time,repeat:t.rep||undefined,title:(t.title||'Tarefa').slice(0,200),text:text.slice(0,300)}); } return out; }
+function tkAsNote(t){ const l=listById(tlOf(t)), subs=t.subs||[];
+  return {id:t.id,_tk:t,_tl:l?l.name:'Tarefa',title:t.title||'Tarefa',html:(t.notes?'<p>'+esc(t.notes)+'</p>':'')+(subs.length?'<p>'+subs.map(s=>(s.done?'☑ ':'☐ ')+esc(s.title)).join(' · ')+'</p>':''),
+    done:!!t.done,doneAt:t.doneAt,remindAt:t.date?t.date+'T'+(t.time||'00:00'):undefined,attachments:[],folderId:null}; }
+function checkTaskReminders(){
+  if(HAS_ALARM||!appReady||locked||!db) return; const t=now(), seen=new Set(cfg.alerted||[]);
+  for(const x of liveTasks()){ if(x.done||!x.date||!x.time) continue; const r=tkRem(x); let due,k;
+    if(x.rep){ const o=occAfter(r,t-3*3600e3); if(!o) continue; due=o.getTime(); k=x.id+'@'+o.toISOString(); } else { due=new Date(r.remindAt).getTime(); k=x.id+'@'+r.remindAt; }
+    if(isNaN(due)||t<due||t-due>3*3600e3||seen.has(k)) continue;
+    seen.add(k); cfg.alerted=[...seen].slice(-60); saveCfg(); try{ navigator.vibrate&&navigator.vibrate([200,100,200]); }catch(e){}
+    toast('Tarefa: '+x.title+' · '+fmtRem(new Date(due)),'Abrir',()=>taskSheet(x)); break; } }
+setInterval(checkTaskReminders,20000);
+function openTaskFromNative(id){ const t=taskById(id); if(!t) return false; if(!$('#sheet').hidden) closeSheet(); if(cur.noteId&&!WIDE()) closeEditor();
+  cfg.tlist=tlOf(t); saveCfg(); setTab('tarefas'); taskSheet(t); return true; }
+
+/* eventos */
+document.addEventListener('click',e=>{ const t=e.target; if(!t.closest) return;
+  if(now()-TD.block<450&&t.closest('#notes')){ e.preventDefault(); e.stopPropagation(); return; }
+  const tl=t.closest('[data-tl]'); if(tl){ if(cfg.tlist!==tl.dataset.tl){ cfg.tlist=tl.dataset.tl; saveCfg(); renderList(); const N=$('#notes'); N.classList.remove('tabin'); void N.offsetWidth; N.classList.add('tabin'); } return; }
+  if(t.closest('#tlNew')){ newList(); return; }
+  if(t.closest('#tkSort')){ tkSortSheet(); return; }
+  if(t.closest('#tkMore')){ tkListMenu(); return; }
+  if(t.closest('#tkDoneT')){ cfg.tkDoneOpen=!tkDoneOpen(); saveCfg(); renderList(); return; }
+  if(t.closest('#calNewT')){ newTask({date:cal.sel}); return; }
+  if(t.closest('#sheet')) return;
+  const c=t.closest('[data-tkc]'); if(c){ tkToggle(c.dataset.tkc,c); return; }
+  const sb=t.closest('[data-tksub]'); if(sb){ const p=sb.dataset.tksub.split('|'); tkSubToggle(p[0],p[1]); return; }
+  const st=t.closest('[data-tks]'); if(st){ tkStar(st.dataset.tks,st); return; }
+  const r=t.closest('.tk[data-tk],.tkn[data-tko]'); if(r){ const x=taskById(r.dataset.tk||r.dataset.tko); if(x) taskSheet(x); }
+},true);
+$('#notes').addEventListener('keydown',e=>{ if((e.key==='Enter'||e.key===' ')&&e.target.matches('.tk[data-tk],.tkn[data-tko]')){ e.preventDefault(); e.target.click(); } });
+$('#notes').addEventListener('scroll',e=>{ if(e.target&&e.target.id==='tkTabs') tkSL=e.target.scrollLeft; },true);
+$('#notes').addEventListener('contextmenu',e=>{ if(e.target.closest('.tk,.tkn')) e.preventDefault(); });
+
+/* segurar e arrastar para mudar a ordem (Minha ordem) */
+function tdCan(e){ if(cur.tab!=='tarefas'||cfg.tlist==='star'||TD.on) return null; const box=$('#tkRows'); if(!box||box.dataset.sort!=='ordem') return null;
+  const g=e.target.closest&&e.target.closest('#tkRows > .tkgrp'); if(!g||e.target.closest('button,input,select,textarea')) return null; return g; }
+function tdBegin(g,y){ TD.on=true; TD.row=g; TD.box=g.parentElement; TD.y0=y; TD.lastY=y; g.classList.add('lift'); document.documentElement.classList.add('tdrag');
+  try{ navigator.vibrate&&navigator.vibrate(18); }catch(e){} cancelAnimationFrame(TD.raf); TD.raf=requestAnimationFrame(tdTick); }
+function tdMove(y){ const g=TD.row; if(!g) return; TD.lastY=y; let dy=y-TD.y0;
+  for(let i=0;i<50;i++){ const nx=g.nextElementSibling, pv=g.previousElementSibling;
+    if(nx&&nx.classList.contains('tkgrp')&&dy>nx.offsetHeight/2){ TD.box.insertBefore(nx,g); TD.y0+=nx.offsetHeight; dy=y-TD.y0; continue; }
+    if(pv&&pv.classList.contains('tkgrp')&&dy<-pv.offsetHeight/2){ TD.box.insertBefore(g,pv); TD.y0-=pv.offsetHeight; dy=y-TD.y0; continue; }
+    break; }
+  g.style.transform=`translateY(${dy}px)`; }
+function tdTick(){ if(!TD.on) return; const N=$('#notes'), r=N.getBoundingClientRect(), y=TD.lastY;
+  const v=y<r.top+70?-(r.top+70-y)/4:y>r.bottom-150?(y-(r.bottom-150))/4:0;
+  if(v){ const b=N.scrollTop; N.scrollTop+=Math.max(-16,Math.min(16,v)); const ds=N.scrollTop-b; if(ds){ TD.y0-=ds; tdMove(y); } }
+  TD.raf=requestAnimationFrame(tdTick); }
+function tdEnd(){ if(!TD.on) return; cancelAnimationFrame(TD.raf); const g=TD.row, box=TD.box; TD.on=false; TD.row=null; TD.box=null; TD.block=now();
+  g.style.transform=''; g.classList.remove('lift'); document.documentElement.classList.remove('tdrag');
+  const ids=[...box.querySelectorAll(':scope > .tkgrp')].map(x=>x.dataset.g); let ch=false;
+  ids.forEach((id,i)=>{ const t=taskById(id); if(t&&(t.order||0)!==i){ t.order=i; t.updatedAt=now(); ch=true; } });
+  if(ch){ if(!cfg.tkDragged){ cfg.tkDragged=true; saveCfg(); } changed(); }
+  renderList(); }
+{ const NN=$('#notes');
+  document.addEventListener('touchstart',()=>{ TD.touchAt=now(); },{passive:true,capture:true});
+  NN.addEventListener('touchstart',e=>{ if(e.touches.length!==1){ clearTimeout(TD.t); TD.t=0; return; } const g=tdCan(e); if(!g) return; const p=e.touches[0]; TD.sx=p.clientX; TD.sy=p.clientY;
+    clearTimeout(TD.t); TD.t=setTimeout(()=>{ TD.t=0; if(g.isConnected){ TD.src='touch'; tdBegin(g,TD.sy); } },420); },{passive:true});
+  NN.addEventListener('touchmove',e=>{ const p=e.touches[0]; if(TD.on&&TD.src==='touch'){ e.preventDefault(); tdMove(p.clientY); return; }
+    if(TD.t&&Math.hypot(p.clientX-TD.sx,p.clientY-TD.sy)>10){ clearTimeout(TD.t); TD.t=0; } },{passive:false});
+  NN.addEventListener('touchend',e=>{ TD.touchAt=now(); clearTimeout(TD.t); TD.t=0; if(TD.on&&TD.src==='touch'){ e.preventDefault(); tdEnd(); } },{passive:false});
+  NN.addEventListener('touchcancel',()=>{ clearTimeout(TD.t); TD.t=0; if(TD.on&&TD.src==='touch') tdEnd(); });
+  // mouse (computador); os toques do celular também geram eventos de mouse, que são ignorados aqui
+  NN.addEventListener('mousedown',e=>{ if(e.button!==0||now()-(TD.touchAt||0)<1500) return; const g=tdCan(e); if(!g) return; TD.sx=e.clientX; TD.sy=e.clientY;
+    clearTimeout(TD.t); TD.t=setTimeout(()=>{ TD.t=0; if(g.isConnected){ TD.src='mouse'; tdBegin(g,TD.sy); } },420); });
+  document.addEventListener('mousemove',e=>{ if(now()-(TD.touchAt||0)<1500) return; if(TD.on&&TD.src==='mouse'){ e.preventDefault(); tdMove(e.clientY); return; } if(TD.t&&Math.hypot(e.clientX-TD.sx,e.clientY-TD.sy)>6){ clearTimeout(TD.t); TD.t=0; } });
+  document.addEventListener('mouseup',()=>{ if(now()-(TD.touchAt||0)<1500) return; clearTimeout(TD.t); TD.t=0; if(TD.on&&TD.src==='mouse') tdEnd(); }); }
 
 function checkReminders(){
   if(HAS_ALARM||!appReady||locked) return; // no app do celular quem avisa é o alarme do Android
