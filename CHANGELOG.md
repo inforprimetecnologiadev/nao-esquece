@@ -2,6 +2,15 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.7.0 — 6 de novembro de 2026
+
+- Áudio em MP3 no app Android: as gravações novas e as antigas viram MP3 sozinhas, no próprio celular.
+- PDF com o áudio dentro: o MP3 toca no PDF pelo Adobe Acrobat do computador, fica nos anexos do PDF e tem o link para ouvir no Google Drive.
+- WhatsApp completo e na ordem da nota: primeiro o texto e depois os áudios, as fotos e os vídeos, um depois do outro. O WhatsApp abre direto.
+- Exportar a nota para o Word (.docx) e para o Word 97-2003 (.doc), com o texto, as fotos, o áudio MP3 e o vídeo MP4 dentro do arquivo.
+- Relatório em planilha do Excel (.xlsx): data e hora com os segundos, situação, tipo, lista ou pasta, etiquetas, anexos e texto, com filtro em cada coluna, e as abas Por dia e Resumo.
+- No texto enviado, a checklist agora começa numa linha própria.
+
 ## 1.6.1 — 6 de novembro de 2026
 
 - Etiquetas: o lápis ao lado de cada etiqueta muda a cor e o nome dela, e o botão da etiqueta na nota agora aparece na cor escolhida.

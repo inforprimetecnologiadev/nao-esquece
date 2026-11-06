@@ -245,13 +245,25 @@ public class AlarmTest {
 
     @Test
     public void h_widget() throws Exception {
-        long t = System.currentTimeMillis() + 3_600_000L;
+        // as duas horas ficam sempre dentro de hoje, a qualquer hora que o teste rodar
+        java.util.Calendar d0 = java.util.Calendar.getInstance();
+        d0.set(java.util.Calendar.HOUR_OF_DAY, 0);
+        d0.set(java.util.Calendar.MINUTE, 0);
+        d0.set(java.util.Calendar.SECOND, 0);
+        d0.set(java.util.Calendar.MILLISECOND, 0);
+        long day = d0.getTimeInMillis(), end = day + 86_400_000L;
+        if (System.currentTimeMillis() > end - 10 * 60_000L) { // perto da meia-noite: espera o dia virar
+            Thread.sleep(end + 60_000L - System.currentTimeMillis());
+            day = end;
+            end += 86_400_000L;
+        }
+        long t = Math.min(System.currentTimeMillis() + 3_600_000L, end - 3 * 60_000L);
         JSONObject a = new JSONObject();
         a.put("id", "w1");
         a.put("at", local(t));
         a.put("before", 0);
         a.put("title", "Reunião com o gerente");
-        JSONObject b = rep("w2", local(t - 7_200_000L - 86_400_000L), "dia");
+        JSONObject b = rep("w2", local(day + 60_000L - 86_400_000L), "dia");
         b.put("title", "Bater o ponto");
         Reminders.sync(c, new JSONArray().put(a).put(b).toString());
         File f = new File(c.getExternalFilesDir(null), "6-widget.png");
