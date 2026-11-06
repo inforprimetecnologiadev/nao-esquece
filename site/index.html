@@ -408,6 +408,83 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 .scang span{position:absolute;left:6px;bottom:6px;background:rgba(0,0,0,.6);color:#fff;font-size:11px;font-weight:700;padding:1px 6px;border-radius:99px}
 .scang button{position:absolute;right:4px;top:4px;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center}
 .scang button svg{width:14px;height:14px}
+/* barra de navegação embaixo */
+.bnav{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;justify-content:space-around;background:color-mix(in srgb,var(--surface) 92%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:6px max(6px,env(safe-area-inset-right,0px)) calc(7px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px))}
+.bt{flex:1;min-width:0;display:grid;justify-items:center;gap:3px;padding:3px 0 1px;color:var(--muted);-webkit-tap-highlight-color:transparent}
+.bt .bi{position:relative;display:grid;place-items:center;width:62px;height:32px;border-radius:16px;transition:transform .12s}
+.bt .bi::before{content:"";position:absolute;inset:0;border-radius:16px;background:var(--accent-soft);transform:scaleX(.35);opacity:0;transition:transform .34s cubic-bezier(.2,.9,.3,1.25),opacity .2s}
+.bt .bi svg{position:relative;width:23px;height:23px}
+.bt .bl{font-size:12.5px;font-weight:600;letter-spacing:.01em;transition:color .2s;white-space:nowrap}
+.bt[aria-selected="true"]{color:var(--accent)}
+.bt[aria-selected="true"] .bi::before{transform:scaleX(1);opacity:1}
+.bt[aria-selected="true"] .bl{color:var(--ink);font-weight:800}
+.bt[aria-selected="true"] .bi svg{animation:bnPop .42s cubic-bezier(.2,.9,.3,1.3)}
+.bt:active .bi{transform:scale(.92)}
+@keyframes bnPop{0%{transform:scale(.72) translateY(2px)}55%{transform:scale(1.14)}100%{transform:none}}
+.bdg{position:absolute;top:-4px;right:8px;min-width:19px;height:19px;padding:0 5px;box-sizing:border-box;border-radius:10px;background:var(--ok);color:var(--ok-ink);font-size:11px;font-weight:800;line-height:19px;text-align:center;font-style:normal;box-shadow:0 0 0 2px var(--surface);animation:bdIn .3s ease-out}
+.bdg.late{background:var(--danger);color:#fff}
+@keyframes bdIn{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.notes.tabin{animation:tabIn .26s ease-out}
+@keyframes tabIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.fab{bottom:calc(86px + env(safe-area-inset-bottom,0px))}
+.notes{padding-bottom:190px}
+.app.show-editor .bnav,.list.selecting .bnav{display:none}
+html[data-tab="rel"] .fab{display:none}
+html[data-tab]:not([data-tab="notas"]) .search,html[data-tab]:not([data-tab="notas"]) .chips{display:none}
+@media (min-width:900px) and (min-device-width:900px){.bnav{position:static;padding-bottom:8px}.notes{padding-bottom:20px}}
+@media (prefers-reduced-motion:reduce){.bt .bi::before,.bt .bi svg,.notes.tabin,.bdg{transition:none!important;animation:none!important}}
+/* calendário */
+.calbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px 8px 12px;margin-top:4px}
+.calnav{display:flex;align-items:center;justify-content:space-between;padding:0 2px 4px}
+.calnav b{font-family:var(--f-display);font-size:17px}
+.calnav .nx svg{transform:rotate(180deg)}
+.calwk,.calgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px}
+.calwk span{text-align:center;font-size:12px;font-weight:800;color:var(--muted);padding:4px 0}
+.cd{display:grid;justify-items:center;align-content:start;gap:4px;height:50px;padding-top:7px;border-radius:13px;font-weight:700;font-size:15px;color:var(--ink);font-variant-numeric:tabular-nums;transition:background .15s,transform .1s}
+.cd.o{opacity:.38}
+.cd.t{box-shadow:inset 0 0 0 1.5px var(--accent)} .cd.t span{color:var(--accent);font-weight:900}
+.cd.s{background:var(--accent)} .cd.s span{color:var(--accent-ink)}
+.cd:active{transform:scale(.93)}
+.cd i{display:flex;gap:3px;height:6px}
+.cd i b,.calleg b{width:6px;height:6px;border-radius:50%;display:inline-block}
+.cd i b.r,.calleg b.r{background:var(--accent)} .cd i b.d,.calleg b.d{background:var(--ok)} .cd i b.l,.calleg b.l{background:var(--danger)}
+.cd.s i b{box-shadow:0 0 0 1.5px var(--accent-ink)}
+.calleg{display:flex;gap:14px;justify-content:center;margin-top:8px;font-size:12px;color:var(--muted)} .calleg span{display:inline-flex;align-items:center;gap:5px}
+.calgrid.sl{animation:calL .25s ease-out} .calgrid.sr{animation:calR .25s ease-out}
+@keyframes calL{from{opacity:.25;transform:translateX(-22px)}to{opacity:1;transform:none}} @keyframes calR{from{opacity:.25;transform:translateX(22px)}to{opacity:1;transform:none}}
+/* relatório */
+.rpper{margin:10px 2px 8px;font-weight:700;font-size:14px}
+.rpsum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:8px}
+.rpsum div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 6px;text-align:center}
+.rpsum b{display:block;font-family:var(--f-display);font-size:24px;line-height:1.15}
+.rpsum span{font-size:11.5px;color:var(--muted);font-weight:600}
+.rpsum .ok b{color:var(--ok)} .rpsum .bad b{color:var(--danger)}
+.rpgo{width:100%;flex:none;height:52px;box-sizing:border-box;margin:8px 0 4px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.rpgo svg{width:20px;height:20px}
+/* ler texto, nota secreta, histórico */
+.ocrbox{max-height:46vh;overflow:auto;white-space:pre-wrap;word-break:break-word;background:var(--sunk);border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.5;-webkit-user-select:text;user-select:text;margin:4px 0 12px}
+.ocrhit{font-size:12.5px;color:var(--accent);margin:3px 0 0;display:flex;gap:5px;align-items:flex-start} .ocrhit svg{width:14px;height:14px;flex:none;margin-top:2px}
+.sectxt{display:inline-flex;align-items:center;gap:5px;color:var(--muted)} .sectxt svg{width:14px;height:14px}
+.nbody h3 .lk{width:15px;height:15px;color:var(--muted);margin-right:2px}
+.hvprev{max-height:48vh;overflow:auto;background:var(--sunk);border-radius:12px;padding:10px 14px;margin:6px 0 12px;font-size:15px;line-height:1.5}
+.hvprev p{margin:4px 0}
+/* assinatura e desenho */
+.draw{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column}
+.dbar{display:flex;align-items:center;gap:4px;padding:calc(8px + env(safe-area-inset-top,0px)) max(10px,env(safe-area-inset-right,0px)) 8px max(10px,env(safe-area-inset-left,0px));background:var(--surface);border-bottom:1px solid var(--line)}
+.dbar b{flex:1;font-family:var(--f-display);font-size:17px;margin-left:4px}
+.dwrap{position:relative;flex:1;min-height:180px;margin:12px max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));background:#fff;border-radius:16px;border:1px solid var(--line);overflow:hidden;touch-action:none}
+.dwrap canvas{position:absolute;inset:0;touch-action:none}
+.dhint{position:absolute;left:0;right:0;top:40%;text-align:center;color:#9aa4b5;font-size:16px;font-weight:600;pointer-events:none;transition:opacity .2s}
+.dline{display:none;position:absolute;left:8%;right:8%;bottom:28%;border-top:2px dashed #c3cad6;pointer-events:none}
+.draw[data-mode="sig"] .dline{display:block}
+.dtools{padding:2px max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));display:grid;gap:10px}
+.dtools .field{margin:0;box-sizing:border-box;width:100%}
+.dcol{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.dcol button[data-dc]{width:34px;height:34px;border-radius:50%;background:var(--tc);border:3px solid var(--bg);box-shadow:0 0 0 1px var(--line)}
+.dcol button[data-dc][aria-pressed="true"]{box-shadow:0 0 0 2px var(--ink)}
+.dcol .sep{width:1px;height:26px;background:var(--line);margin:0 2px}
+.dsz{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--sunk)} .dsz i{border-radius:50%;background:var(--ink);display:block}
+.dsz[aria-pressed="true"]{background:var(--accent-soft)} .dsz[aria-pressed="true"] i{background:var(--accent)}
 .sheet .field{box-sizing:border-box}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:13.5px;line-height:1.4;margin:6px 0 0}
 .kv dt{color:var(--muted)}
@@ -456,7 +533,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
   <article class="rd-body" id="rdBody"></article>
 </div>
 <template id="tplTerms">
-<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 2).</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 3).</p>
 
 <h2>1. Aceitação</h2>
 <p>Ao tocar em "Aceitar e continuar", você concorda com estes Termos de Uso e com a Política de Privacidade. Se não concordar, não use o aplicativo.</p>
@@ -485,26 +562,29 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <h2>7. Lembretes</h2>
 <p>No app para Android, o alarme e o aviso de 1 minuto antes são do próprio celular: tocam com o app fechado, a tela bloqueada e sem internet. Eles dependem de o Android permitir notificações e alarmes do app, do volume de alarme e de configurações como economia de bateria e modo "não perturbe". Em <b>Ajustes › Alarmes e calendário</b> o app mostra o que falta liberar e permite testar o alarme. Na versão aberta pelo navegador, os avisos com o app fechado são entregues pelo Google Agenda. O app não garante a entrega de todos os avisos.</p>
 
-<h2>8. Proteções e uso proibido</h2>
+<h2>8. Assinaturas feitas no app</h2>
+<p>A assinatura com o dedo é um registro simples: uma imagem com o nome digitado, a data e a hora em que foi feita. Ela ajuda a comprovar uma entrega ou um serviço no dia a dia, mas não substitui a assinatura eletrônica com certificado digital quando a lei ou um contrato exigir.</p>
+
+<h2>9. Proteções e uso proibido</h2>
 <p>É proibido tentar burlar o PIN, a criptografia ou os limites de tentativas, usar robôs ou automação para acessar o app, ou explorar falhas. O app bloqueia tentativas repetidas e navegadores automatizados.</p>
 
-<h2>9. Disponibilidade e atualizações</h2>
+<h2>10. Disponibilidade e atualizações</h2>
 <p>O app é oferecido como está e pode receber atualizações para corrigir problemas, melhorar a segurança ou mudar funções. As novidades de cada versão aparecem em Ajustes › Sobre. Não há garantia de funcionamento ininterrupto.</p>
 
-<h2>10. Responsabilidade</h2>
+<h2>11. Responsabilidade</h2>
 <p>Nos limites da lei, o app não responde por perdas causadas por esquecimento do PIN sem chave de recuperação, por cancelamento da inscrição, por falhas de serviços de terceiros (como Google e GitHub) ou por acesso indevido a partir da sua conta Google. Nada nestes termos afasta direitos garantidos pelo Código de Defesa do Consumidor.</p>
 
-<h2>11. Seu conteúdo</h2>
+<h2>12. Seu conteúdo</h2>
 <p>Tudo o que você escreve, grava ou anexa é seu. O app usa esse conteúdo somente para guardar, mostrar e sincronizar as suas notas.</p>
 
-<h2>12. Lei aplicável</h2>
+<h2>13. Lei aplicável</h2>
 <p>Estes termos seguem as leis do Brasil, incluindo a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Fica eleito o foro do domicílio do usuário.</p>
 
-<h2>13. Contato</h2>
+<h2>14. Contato</h2>
 <p>Central de ajuda e formulário de contato: <span class="lg-url">inforprimetecnologiadev.github.io/nao-esquece/suporte</span>. E-mail: <span class="lg-url">inforprimetecnologia@gmail.com</span>. Respondemos em até 5 dias úteis; pedidos de titular (LGPD), em até 15 dias.</p>
 </template>
 <template id="tplPrivacy">
-<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 2). Responsável: <b>Não Esquece</b>.</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 3). Responsável: <b>Não Esquece</b>.</p>
 
 <h2>1. Resumo</h2>
 <ul>
@@ -543,6 +623,11 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <p><b>Calendário</b> (opcional, app para Android): se você permitir, o app coloca os lembretes no calendário do celular, na agenda da conta Google conectada. Para isso, ele lê a lista de agendas do aparelho para achar a da sua conta e só cria, muda ou apaga os eventos que ele mesmo criou. Você pode desligar em <b>Ajustes › Alarmes e calendário</b>.</p>
 <p><b>Widget da tela inicial</b> (opcional, app para Android): se você colocar o widget "Hoje" na tela inicial, o título e a hora dos lembretes do dia aparecem nela, inclusive com o app bloqueado pelo PIN. Para esconder, basta tirar o widget da tela inicial.</p>
 <p><b>Escanear documento</b> (app para Android): usa o scanner de documentos do Google Play Services, que recorta e endireita as fotos no próprio celular e entrega o PDF ao app. O PDF fica na nota, como os outros anexos. Sem o Google Play Services, o app usa a câmera e monta o PDF no próprio celular.</p>
+<p><b>Ler o texto das fotos e dos PDFs</b> (app para Android): o reconhecimento de texto do Google (ML Kit) roda dentro do app, no próprio celular, sem enviar as imagens para fora. O texto lido fica guardado junto da nota, para você copiar e procurar.</p>
+<p><b>Nota rápida e gravar áudio</b> (botões das configurações rápidas e do widget): o texto e o áudio ficam na área privada do app no Android, fora do cofre criptografado, só até você abrir o Não Esquece. Aí eles viram notas e são apagados de lá.</p>
+<p><b>Histórico das notas:</b> até 25 versões antigas de cada nota ficam guardadas só neste celular, criptografadas. Elas não vão para o Drive e são apagadas quando a nota é apagada de vez ou quando você cancela a inscrição.</p>
+<p><b>Assinatura e desenho:</b> viram uma imagem anexada à nota, com o nome digitado, a data e a hora, e vão para o Drive junto com a nota.</p>
+<p><b>Nota secreta:</b> o app pede o PIN ou a digital para abrir a nota e esconde o texto na lista e nos avisos. O conteúdo continua indo para o seu Google Drive, como as outras notas.</p>
 <h3>3.5 Mensagens de suporte</h3>
 <p>Se você nos escrever pelo formulário de contato ou por e-mail, recebemos o seu nome, e-mail, assunto, mensagem e, se você informar, a versão do app e o modelo do aparelho. Esses dados são usados só para responder e registrar o atendimento.</p>
 <h3>3.6 O que o app não coleta</h3>
@@ -633,7 +718,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -650,6 +735,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
     <nav class="chips" id="chips" aria-label="Pastas"></nav>
     <div class="notes" id="notes"></div>
     <button class="fab" id="fab"><span data-i="plus"></span>Nova nota</button>
+    <nav class="bnav" id="bnav" role="tablist" aria-label="Abas"></nav>
   </section>
 
   <section class="editor" id="editorView">
@@ -707,8 +793,13 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <input type="file" id="inAudRec" accept="audio/*" capture hidden>
 <div class="viewer" id="viewer" hidden>
   <div class="vbar"><button class="ib" id="vClose" aria-label="Fechar" data-i="back"></button><span class="vname" id="vName"></span>
-    <button class="ib" id="vShare" aria-label="Compartilhar anexo" data-i="share"></button><button class="ib" id="vDel" aria-label="Remover anexo" data-i="trash"></button></div>
+    <button class="ib" id="vText" aria-label="Ler o texto da imagem" data-i="text"></button><button class="ib" id="vShare" aria-label="Compartilhar anexo" data-i="share"></button><button class="ib" id="vDel" aria-label="Remover anexo" data-i="trash"></button></div>
   <div class="vbody" id="vbody"></div>
+</div>
+<div class="draw" id="draw" hidden>
+  <div class="dbar"><button class="ib" id="dClose" aria-label="Fechar" data-i="x"></button><b id="dTitle">Assinatura</b><button class="ib" id="dUndo" aria-label="Desfazer" data-i="undo"></button><button class="ib" id="dClear" aria-label="Apagar tudo" data-i="trash"></button><button class="savebtn" id="dSave"><span data-i="check"></span>Salvar</button></div>
+  <div class="dwrap" id="dWrap"><canvas id="dCv"></canvas><div class="dline"></div><div class="dhint" id="dHint">Assine aqui com o dedo</div></div>
+  <div class="dtools" id="dTools"></div>
 </div>
 <div class="scrim" id="scrim" hidden></div>
 <div class="sheet" id="sheet" hidden role="dialog" aria-modal="true"></div>
@@ -817,6 +908,11 @@ const ICONS = {
   tag:'<path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.4"/>',
   scan:'<path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><path d="M8 9h8M8 12h8M8 15h5"/>',
   repeat:'<path d="M17 2l3 3-3 3"/><path d="M4 11V9a4 4 0 0 1 4-4h12"/><path d="M7 22l-3-3 3-3"/><path d="M20 13v2a4 4 0 0 1-4 4H4"/>',
+  cal:'<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M7.5 13.5h1M11.5 13.5h1M15.5 13.5h1M7.5 17h1M11.5 17h1"/>',
+  report:'<path d="M6 3h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M9 17v-3M12 17v-6M15 17v-4"/>',
+  undo:'<path d="M9 14L4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/>',
+  text:'<path d="M4 7V5h16v2M9 19h6M12 5v14"/>',
+  sign:'<path d="M3 17c3-3 4.5-9 7-9 2 0 1 6 3 6 1.6 0 2.4-3 4-3 1 0 1.5 1.4 2.5 1.4"/><path d="M3 21h18"/>',
   home:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M16.5 13v7M13 16.5h7"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/>',
   user:'<circle cx="12" cy="8" r="4"/><path d="M4 20.5a8 8 0 0 1 16 0"/>',
@@ -865,7 +961,7 @@ const isTagView=f=>typeof f==='string'&&f.startsWith('tag:');
 const viewIsFolder=f=>!SPECIAL.includes(f)&&!isTagView(f);
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.4.1', TERMS_VERSION='2026-11-06.2';
+const APP_VERSION='1.5.0', TERMS_VERSION='2026-11-06.3';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
@@ -958,7 +1054,7 @@ const tagById=id=>(db.tags||[]).find(t=>t.id===id&&!t.deleted);
 const noteTags=n=>(n.tags||[]).map(tagById).filter(Boolean);
 
 /* ---------- estado da tela ---------- */
-let cur = { folder:'all', noteId:null, q:'' };
+let cur = { folder:'all', noteId:null, q:'', tab:'notas' };
 
 function counts(){ const c={all:0,none:0,recent:0,pending:0,done:0,urgent:0,today:0,trash:trashNotes().length};
   for(const n of liveNotes()){ c.all++; if(n.done) c.done++; else c.pending++; if(n.urgent&&!n.done) c.urgent++; const k=n.folderId&&folderById(n.folderId)?n.folderId:'none'; c[k]=(c[k]||0)+1; for(const t of (n.tags||[])) c['tag:'+t]=(c['tag:'+t]||0)+1; }
@@ -966,7 +1062,7 @@ function counts(){ const c={all:0,none:0,recent:0,pending:0,done:0,urgent:0,toda
 
 function renderFolders(){
   const c=counts(), fs=liveFolders();
-  const items=[{id:'today',name:'Hoje',icon:'today'},{id:'recent',name:'Recentes',icon:'clock'},{id:'all',name:'Todas',icon:'stack'},{id:'pending',name:'Pendentes',icon:'circle'},{id:'done',name:'Concluídas',icon:'checkC'},
+  const items=[{id:'recent',name:'Recentes',icon:'clock'},{id:'all',name:'Todas',icon:'stack'},{id:'pending',name:'Pendentes',icon:'circle'},{id:'done',name:'Concluídas',icon:'checkC'},
     ...(c.urgent||cur.folder==='urgent'?[{id:'urgent',name:'Urgentes',icon:'flag',cls:'urgc'}]:[]),
     ...fs.map(f=>({id:f.id,name:f.name,icon:'folder'})),
     ...liveTags().map(t=>({id:'tag:'+t.id,name:t.name,icon:'tag',color:tagColor(t.color)})),
@@ -983,7 +1079,7 @@ function renderFolders(){
 function visible(){
   if(cur.folder==='trash'&&!cur.q) return trashNotes().sort((a,b)=>(b.trashedAt||0)-(a.trashedAt||0));
   let n=liveNotes();
-  if(cur.q){ const q=norm(cur.q.trim()); n=n.filter(x=>norm((x.title||'')+'\n'+txt(x.html)).includes(q)); }
+  if(cur.q){ const q=norm(cur.q.trim()); n=n.filter(x=>norm(searchText(x)).includes(q)); }
   else if(cur.folder==='recent') return n.sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)).slice(0,20);
   else if(cur.folder==='today'){ const td=todayItems(); return [...td.late.map(x=>x.n),...td.today.map(x=>x.n)]; }
   else if(cur.folder==='urgent') n=n.filter(x=>x.urgent&&!x.done);
@@ -1007,6 +1103,9 @@ function hl(text, q, around){
   return out;
 }
 function ckProgress(html){ const h=String(html||''); const all=(h.match(/<li[^>]*data-done=/g)||[]).length; return all?{done:(h.match(/data-done="1"/g)||[]).length,all}:null; }
+function ocrHit(n,q,body){ if(!q||n.secret) return ''; const oc=(n.attachments||[]).map(a=>a.ocr||'').join(' '), nq=norm(q.trim());
+  if(!oc||!norm(oc).includes(nq)||norm((n.title||'')+' '+body).includes(nq)) return '';
+  return `<p class="ocrhit">${svg('text')}<span>No texto da foto: ${hl(oc.replace(/\s+/g,' '),q,true)}</span></p>`; }
 function noteCard(n,q){
   const body=txt(n.html), fname=n.folderId&&folderById(n.folderId)?.name, inTrash=!!n.trashed;
   const title=n.title||body.split('\n')[0]||'Sem título', pr=ckProgress(n.html), picked=sel.ids.has(n.id), k=(n.attachments||[]).length, rm=remInfo(n);
@@ -1019,11 +1118,13 @@ function noteCard(n,q){
   const chk = sel.on ? `<button class="nchk" data-chk="${n.id}" aria-pressed="${picked}" aria-label="Selecionar">${svg('check')}</button>`
     : inTrash ? '' : `<button class="nchk" data-chk="${n.id}" aria-pressed="${!!n.done}" aria-label="${n.done?'Concluída. Toque para voltar a pendente':'Marcar como concluída'}">${svg('check')}</button>`;
   return `<div class="note${n.done?' done':''}${picked?' sel':''}${inTrash?' trash':''}${n.urgent&&!n.done&&!inTrash?' urg':''}" data-id="${n.id}" role="button" tabindex="0" aria-current="${n.id===cur.noteId}">${chk}
-    <div class="nbody"><h3>${n.pinned&&!inTrash?svg('pin'):''}<span>${hl(title,q)}</span></h3>
-    <p>${hl(body.replace(/\n+/g,' · '),q,true)||'<i>Nota vazia</i>'}</p>
+    <div class="nbody"><h3>${n.pinned&&!inTrash?svg('pin'):''}${n.secret?svg('lock').replace('class="i"','class="i lk"'):''}<span>${hl(n.secret?(n.title||'Nota secreta'):title,q)}</span></h3>
+    <p>${n.secret?`<span class="sectxt">${svg('lock')}Nota secreta</span>`:hl(body.replace(/\n+/g,' · '),q,true)||'<i>Nota vazia</i>'}</p>${ocrHit(n,q,body)}
     <div class="meta">${k?`<span class="clip">${svg('clip')}${k}</span>`:''}${pr?`<span class="prog${pr.done===pr.all?' full':''}">${svg('checklist')}${pr.done}/${pr.all}</span>`:''}${rm&&!n.done&&!inTrash?`<span class="rem${rm.late?' late':''}">${svg(rm.rep?'repeat':'bell')}${rm.txt}</span>`:''}<span>${when}</span>${n.done&&!inTrash&&(cur.folder!=='done'||q)?'<span class="tag ok">Concluída</span>':''}${n.urgent&&!n.done&&!inTrash?'<span class="tag urg">Urgente</span>':''}${showFolder&&fname?`<span class="tag">${esc(fname)}</span>`:''}${noteTags(n).map(t=>`<span class="tag tg" style="--tc:${tagColor(t.color)}">${esc(t.name)}</span>`).join('')}</div></div></div>`;
 }
 function renderList(){
+  renderNav();
+  if(cur.tab&&cur.tab!=='notas'){ const N=$('#notes'); N.innerHTML=tabHTML(); paintIcons(N); return; }
   const list=visible(), q=cur.q.trim();
   const names={today:'Hoje',urgent:'Urgentes',recent:'Recentes',all:'Todas as notas',none:'Sem pasta',pending:'Pendentes',done:'Concluídas',trash:'Lixeira'};
   const tg=isTagView(cur.folder)?tagById(cur.folder.slice(4)):null;
@@ -1094,7 +1195,7 @@ function restoreNotes(ns,undo){
   changed(); endSelect(); render(); toast(undo?'Desfeito':(ns.length>1?ns.length+' notas restauradas':'Nota restaurada'));
 }
 function purgeNotes(ns){
-  const t=now(); ns.forEach(n=>{ dropAtts(n.attachments||[]); n.attachments=[]; n.deleted=true; n.trashed=false; n.html=''; n.title=''; n.updatedAt=t; });
+  const t=now(); ns.forEach(n=>{ IDB.del('hist:'+n.id).catch(()=>{}); dropAtts(n.attachments||[]); n.attachments=[]; n.deleted=true; n.trashed=false; n.html=''; n.title=''; n.updatedAt=t; });
   changed(); endSelect(); render();
 }
 function purgeAsk(ns,all){
@@ -1123,7 +1224,7 @@ $('#selAct').addEventListener('click',e=>{
 /* segurar o dedo numa nota = selecionar */
 let lpT=null, lpXY=null, longFired=false;
 $('#notes').addEventListener('pointerdown',e=>{
-  longFired=false; const c=e.target.closest('.note[data-id]'); if(!c||e.target.closest('[data-chk]')||e.button>0) return;
+  longFired=false; const c=e.target.closest('.note[data-id]'); if(!c||e.target.closest('[data-chk]')||e.button>0||cur.tab!=='notas') return;
   lpXY=[e.clientX,e.clientY]; clearTimeout(lpT);
   lpT=setTimeout(()=>{ lpT=null; longFired=true; try{ navigator.vibrate&&navigator.vibrate(15); }catch(_){} startSelect(c.dataset.id); },480);
 });
@@ -1176,6 +1277,7 @@ const ed=$('#ed'), titleIn=$('#title');
 function openNote(id, opts={}){
   const n=noteById(id); if(!n) return;
   if(n.trashed){ trashSheet(n); return; }
+  if(n.secret&&!secretOk(n.id)&&!opts.secretOk){ unlockSecret(n).then(ok=>{ if(ok) openNote(id,{...opts,secretOk:true}); }); return; }
   if(AR.mr){ stopRec(false).then(()=>openNote(id,opts)); return; }
   if(sel.on) endSelect();
   const wasOpen=!!cur.noteId;
@@ -1198,7 +1300,7 @@ function openNote(id, opts={}){
 }
 function closeEditor(fromPop){
   if(AR.mr){ stopRec(false).then(()=>closeEditor(fromPop)); return; }
-  stopMic(); closeEmoji(false); flushEdit(); endSession();
+  stopMic(); closeEmoji(false); flushEdit(); endSession(); secretPass=null;
   const n=noteById(cur.noteId);
   if(n && !n.title.trim() && !txt(n.html) && !(n.attachments||[]).length && n._fresh){ db.notes=db.notes.filter(x=>x.id!==n.id); persist(); }
   cur.noteId=null; $('#app').classList.remove('show-editor');
@@ -1389,7 +1491,7 @@ $('#micBtn').onclick=()=>{
    Enquanto houver algo aberto (nota, folha, foto, seleção), fica uma entrada extra no histórico:
    o Voltar fecha o que está por cima em vez de sair do app. */
 let ignorePop=false;
-function anyOverlay(){ return !$('#reader').hidden || !$('#viewer').hidden || !$('#sheet').hidden || sel.on || (!!cur.noteId && !WIDE()); }
+function anyOverlay(){ return !$('#reader').hidden || !$('#viewer').hidden || !$('#sheet').hidden || sel.on || (!!cur.noteId && !WIDE()) || drawOpen || cur.tab!=='notas'; }
 function guardPush(){ if(!(history.state&&history.state.ne==='guard')){ try{ history.pushState({ne:'guard'},''); }catch(e){} } }
 function guardCheck(){ setTimeout(()=>{ if(!anyOverlay() && history.state&&history.state.ne==='guard'){ ignorePop=true; try{ history.back(); }catch(e){ ignorePop=false; } } },0); }
 
@@ -1483,12 +1585,16 @@ $('#moreBtn').onclick=()=>{
     <button class="row" id="oPin"><span data-i="pin"></span><span class="grow">${n.pinned?'Desafixar do topo':'Fixar no topo'}</span></button>
     <button class="row" id="oMove"><span data-i="move"></span><span class="grow">Mover para pasta</span></button>
     <button class="row" id="oDrive"><span data-i="drive"></span><span class="grow">Abrir a pasta desta nota no Drive</span></button>
+    <button class="row" id="oHist"><span data-i="restore"></span><span class="grow">Histórico de versões<small>Volte a nota para como ela estava antes</small></span></button>
+    <button class="row" id="oSecret"><span data-i="lock"></span><span class="grow">${n.secret?'Deixar de ser secreta':'Tornar nota secreta'}<small>${n.secret?'Abre sem pedir o PIN':'Pede o PIN ou a digital para abrir'}</small></span></button>
     <button class="row" id="oCopy"><span data-i="copy"></span><span class="grow">Copiar texto</span></button>
     <button class="row" id="oTxt"><span data-i="download"></span><span class="grow">Baixar como .txt</span></button>
     <button class="row danger" id="oDel"><span data-i="trash"></span><span class="grow">Mover para a lixeira<small>Fica lá por 30 dias</small></span></button>`,
   s=>{
     s.querySelector('#oPin').onclick=()=>{ n.pinned=!n.pinned; n.updatedAt=now(); closeSheet(); changed(); renderList(); toast(n.pinned?'Nota fixada':'Nota desafixada'); };
     s.querySelector('#oMove').onclick=()=>{ closeSheet(); moveNote(); };
+    s.querySelector('#oHist').onclick=()=>historySheet(n);
+    s.querySelector('#oSecret').onclick=()=>{ closeSheet(); toggleSecret(n); };
     s.querySelector('#oSend').onclick=()=>{ closeSheet(); shareMenu(); };
     s.querySelector('#oDrive').onclick=()=>{ closeSheet(); openDrive(n.dirId); };
     s.querySelector('#oCopy').onclick=async()=>{ closeSheet(); try{ await navigator.clipboard.writeText(noteText(n)); toast('Texto copiado'); }catch(e){ toast('Não consegui copiar. Selecione o texto manualmente.'); } };
@@ -1791,12 +1897,12 @@ function merge(local, remote){
   const clean=arr=>arr.filter(x=>!(x.deleted&&x.updatedAt<old)).map(x=>{ const c={...x}; delete c._fresh; return c; });
   const fromOutside=x=>{ if(!x||typeof x!=='object'||typeof x.id!=='string') return null; const c={...x};
     c.title=String(c.title||'').slice(0,300); c.html=cleanHTML(c.html||''); c.name=c.name!=null?String(c.name).slice(0,120):c.name;
-    c.attachments=Array.isArray(c.attachments)?c.attachments.filter(a=>a&&typeof a.id==='string').map(a=>({id:a.id,name:String(a.name||'anexo').slice(0,200),type:/^((image|video|audio)\/[\w.+-]+|application\/pdf)$/.test(a.type)?a.type:'application/octet-stream',size:+a.size||0,addedAt:+a.addedAt||0,duration:+a.duration||undefined,pages:+a.pages||undefined,driveId:okId(a.driveId)?a.driveId:undefined,shared:a.shared===true?true:undefined})):undefined;
+    c.attachments=Array.isArray(c.attachments)?c.attachments.filter(a=>a&&typeof a.id==='string').map(a=>({id:a.id,name:String(a.name||'anexo').slice(0,200),type:/^((image|video|audio)\/[\w.+-]+|application\/pdf)$/.test(a.type)?a.type:'application/octet-stream',size:+a.size||0,addedAt:+a.addedAt||0,duration:+a.duration||undefined,pages:+a.pages||undefined,ocr:typeof a.ocr==='string'?a.ocr.slice(0,20000):undefined,ocrAt:+a.ocrAt||undefined,kind:['assinatura','desenho'].includes(a.kind)?a.kind:undefined,signer:a.signer?String(a.signer).slice(0,60):undefined,driveId:okId(a.driveId)?a.driveId:undefined,shared:a.shared===true?true:undefined})):undefined;
     if(c.attachments===undefined) delete c.attachments; if(!('name' in x)) delete c.name;
     for(const k of ['dirId','txtId','dirParent','driveId']) if(k in c && !okId(c[k])) delete c[k];
     for(const k of ['dirName','driveName']) if(k in c) c[k]=String(c[k]).slice(0,200);
     for(const k of ['mirroredAt','doneAt','trashedAt','createdAt']) if(k in c) c[k]=+c[k]||0;
-    for(const k of ['done','trashed','pinned','urgent']) if(k in c) c[k]=c[k]===true;
+    for(const k of ['done','trashed','pinned','urgent','secret']) if(k in c) c[k]=c[k]===true;
     if('tags' in c){ c.tags=Array.isArray(c.tags)?[...new Set(c.tags.filter(t=>typeof t==='string'&&/^[\w-]{1,40}$/.test(t)))].slice(0,20):[]; if(!c.tags.length) delete c.tags; }
     if('remindRepeat' in c && !['dia','uteis','semana','mes'].includes(c.remindRepeat)) delete c.remindRepeat;
     if('calEvId' in c && c.calEvId!=='' && !okId(c.calEvId)) delete c.calEvId;
@@ -1837,9 +1943,11 @@ async function syncNow(manual){
       fd.append('metadata',new Blob([JSON.stringify({name:FILE_NAME,mimeType:'application/json',parents:[dir]})],{type:'application/json'}));
       fd.append('file',new Blob([body],{type:'application/json'}));
       const j=await (await api(`${UP}?uploadType=multipart&fields=id`,{method:'POST',body:fd})).json(); cfg.fileId=j.id; }
+    const histBefore=new Map(db.notes.map(n=>[n.id,{title:n.title,html:n.html,at:n.updatedAt}]));
     if(db.rev===rev){ db.folders=m.folders; db.tags=m.tags; db.notes=m.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); db.dirty=false; }
     else { const m2=merge(db,{folders:m.folders,notes:m.notes,tags:m.tags}); db.folders=m2.folders; db.tags=m2.tags; db.notes=m2.notes.concat(db.notes.filter(n=>n._fresh&&!n.title&&!n.html)); }
     cfg.lastSync=now(); saveCfg(); persist(); scheduleAlarms();
+    for(const n of db.notes){ const o=histBefore.get(n.id); if(o&&!n.deleted&&(o.html!==n.html||o.title!==n.title)) histPush(n,o); } // outro aparelho mudou: guarda a versão daqui
     if(cur.noteId){ const n=noteById(cur.noteId); if(!n) closeEditor(); else if(document.activeElement!==ed && document.activeElement!==titleIn && ed.innerHTML!==n.html){ ed.innerHTML=cleanHTML(n.html); titleIn.value=n.title; } }
     if(viewIsFolder(cur.folder)&&!folderById(cur.folder)) cur.folder='all'; if(isTagView(cur.folder)&&!tagById(cur.folder.slice(4))) cur.folder='all';
     renderFolders(); renderList(); if(cur.noteId) renderAtts();
@@ -1993,8 +2101,10 @@ window.addEventListener('popstate',()=>{
   else if(locked||secOpen){ guardPush(); return; }
   else if(!$('#viewer').hidden) closeViewer();
   else if(!$('#sheet').hidden) closeSheet();
+  else if(drawOpen) closeDraw(true);
   else if(sel.on) endSelect(true);
   else if(cur.noteId&&!WIDE()) closeEditor(true);
+  else if(cur.tab!=='notas') setTab('notas',true);
   if(anyOverlay()) guardPush();
 });
 
@@ -2004,11 +2114,14 @@ const SKEY='ne.session';
 function startSession(n, resume){
   const s=sessGet(); if(resume && s && s.noteId===n.id) return;
   sessSet({noteId:n.id,wasFresh:!!n._fresh,caret:0,scroll:0,inTitle:false,
-    original:{title:n.title,html:n.html,font:n.font,size:n.size,folderId:n.folderId,attachments:JSON.parse(JSON.stringify(n.attachments||[]))}});
+    original:{title:n.title,html:n.html,font:n.font,size:n.size,folderId:n.folderId,updatedAt:n.updatedAt,attachments:JSON.parse(JSON.stringify(n.attachments||[]))}});
 }
 function sessGet(){ return db._session||null; }
 function sessSet(v){ if(v) db._session=v; else delete db._session; persist(); }
-function endSession(){ if(db._session) sessSet(null); }
+function endSession(){ const s=db._session; if(!s) return;
+  const n=noteById(s.noteId), o=s.original;
+  if(n&&o&&(n.html!==o.html||n.title!==o.title)) histPush(n,{at:o.updatedAt||n.createdAt,title:o.title,html:o.html}); // guarda como era antes
+  sessSet(null); }
 function caretOffset(){
   const r=savedRange; if(!r||!ed.contains(r.startContainer)) return 0;
   const pre=document.createRange(); pre.selectNodeContents(ed); pre.setEnd(r.startContainer,r.startOffset); return pre.toString().length;
@@ -2035,7 +2148,7 @@ function checkRecovery(){
   const o=s.original||{};
   const mudou = n.html!==o.html || n.title!==o.title || (n.attachments||[]).length!==(o.attachments||[]).length;
   openSheet(`<h3>Você estava escrevendo uma nota</h3><p class="sub">O app foi fechado durante a edição. Nada se perdeu: está tudo do jeito que você deixou.</p>
-    <div class="prev"><b>${esc(n.title||'Sem título')}</b><span>${esc(txt(n.html).replace(/\n+/g,' · ').slice(0,180))||'Só anexos'}</span><small>Criada em ${fmtFull(n.createdAt||n.updatedAt)}</small><small>Última alteração em ${fmtFull(n.updatedAt)}</small></div>
+    <div class="prev"><b>${esc(n.title||'Sem título')}</b><span>${n.secret?'Nota secreta':esc(txt(n.html).replace(/\n+/g,' · ').slice(0,180))||'Só anexos'}</span><small>Criada em ${fmtFull(n.createdAt||n.updatedAt)}</small><small>Última alteração em ${fmtFull(n.updatedAt)}</small></div>
     <button class="row" id="rCont"><span data-i="pencil"></span><span class="grow">Continuar editando<small>Abre no ponto onde você parou</small></span></button>
     <button class="row" id="rNew"><span data-i="plus"></span><span class="grow">Salvar esta e criar nova nota</span></button>
     <button class="row" id="rList"><span data-i="check"></span><span class="grow">Salvar e ver minhas notas</span></button>
@@ -2124,6 +2237,7 @@ async function addFiles(files, src){
     const a={id:uid(),name:uniqueName(n,name),type:isPdf?'application/pdf':(blob.type||f.type).split(';')[0],size:blob.size,addedAt:now()};
     try{ await IDB.put(a.id,blob); }catch(e){ toast('Sem espaço no aparelho para este anexo.'); continue; }
     n.attachments.push(a); added++; if(isAud) auds++;
+    if(isImg||isPdf) setTimeout(()=>queueOcr(n.id,a.id),300);
   }
   if(added){ n.updatedAt=now(); delete n._fresh; changed(); renderAtts(); renderList(); toast(added===1?(auds?'Áudio anexado':'Anexo adicionado'):added+' anexos adicionados'); }
 }
@@ -2184,13 +2298,16 @@ $('#attBtn').onclick=()=>{
   const s=document.getSelection(); if(s.rangeCount&&ed.contains(s.anchorNode)) savedRange=s.getRangeAt(0).cloneRange();
   openSheet(`<h3>Anexar</h3><p class="sub">Fotos, áudios, vídeos e PDFs ficam salvos no celular e vão para a pasta desta nota no Drive quando houver internet.</p>
     <button class="row" id="aScan"><span data-i="scan"></span><span class="grow">Escanear documento<small>Foto de papel que vira PDF dentro da nota</small></span></button>
+    <button class="row" id="aSig"><span data-i="sign"></span><span class="grow">Assinatura<small>A pessoa assina com o dedo; sai com nome, data e hora</small></span></button>
+    <button class="row" id="aDraw"><span data-i="pencil"></span><span class="grow">Desenhar ou rabiscar<small>Croqui, seta, marcação</small></span></button>
     <label class="row" for="inCam" style="cursor:pointer"><span data-i="camera"></span><span class="grow">Tirar foto</span></label>
     <button class="row" id="aRec"><span data-i="wave"></span><span class="grow">Gravar áudio</span></button>
     <label class="row" for="inGal" style="cursor:pointer"><span data-i="image"></span><span class="grow">Escolher da galeria<small>Fotos e vídeos, vários de uma vez</small></span></label>
     <label class="row" for="inVid" style="cursor:pointer"><span data-i="video"></span><span class="grow">Gravar vídeo</span></label>
     <label class="row" for="inAud" style="cursor:pointer"><span data-i="mic"></span><span class="grow">Anexar áudio do celular<small>Um áudio que já está gravado</small></span></label>
     <label class="row" for="inPdf" style="cursor:pointer"><span data-i="pdf"></span><span class="grow">Anexar PDF do celular</span></label>`,
-  sh=>{ sh.querySelector('#aRec').onclick=()=>{ closeSheet(); startRec(); }; sh.querySelector('#aScan').onclick=()=>{ closeSheet(); scanDoc(); }; });
+  sh=>{ sh.querySelector('#aRec').onclick=()=>{ closeSheet(); startRec(); }; sh.querySelector('#aScan').onclick=()=>{ closeSheet(); scanDoc(); };
+    sh.querySelector('#aSig').onclick=()=>{ closeSheet(); openDraw('sig'); }; sh.querySelector('#aDraw').onclick=()=>{ closeSheet(); openDraw('draw'); }; });
 };
 ['inCam','inVid','inGal','inAud','inAudRec','inPdf'].forEach(id=>$('#'+id).addEventListener('change',e=>{ const fs=[...e.target.files]; e.target.value=''; if(!$('#sheet').hidden) closeSheet(); addFiles(fs,id); }));
 $('#atts').addEventListener('click',e=>{ const o=e.target.closest('[data-aopt]'); if(o){ audioMenu(o.dataset.aopt); return; } const b=e.target.closest('[data-att]'); if(b) openViewer(b.dataset.att); });
@@ -2218,13 +2335,14 @@ async function openViewer(id){
   let u=await attURL(a);
   if(!u && a.driveId && hasToken()){ toast('Baixando do Drive…'); if(await fetchAtt(a)) u=await attURL(a); }
   if(!u){ toast(a.driveId?'Conecte-se à internet para baixar este anexo do Drive.':'Este anexo não está neste aparelho.'); return; }
-  viewing={n,a}; $('#vName').textContent=a.name;
+  viewing={n,a}; $('#vName').textContent=a.name; $('#vText').hidden=!/^image\//.test(a.type)||!!a.kind;
   $('#vbody').innerHTML=a.type.startsWith('video')?`<video src="${u}" controls autoplay playsinline></video>`:`<img src="${u}" alt="${esc(a.name)}">`;
   $('#viewer').hidden=false; guardPush();
 }
 function closeViewer(){ $('#viewer').hidden=true; $('#vbody').innerHTML=''; viewing=null; guardCheck(); }
 $('#vClose').onclick=closeViewer;
 $('#vShare').onclick=()=>{ if(viewing) shareAtt(viewing.a); };
+$('#vText').onclick=()=>{ if(!viewing) return; const {n,a}=viewing; closeViewer(); ocrSheet(n,a); };
 $('#vDel').onclick=()=>{ if(!viewing) return; const {n,a}=viewing; closeViewer(); removeAtt(n,a); };
 
 const CHUNK=8*1024*1024; // múltiplo de 256 KB, exigência do Drive
@@ -3077,8 +3195,8 @@ function alarmWarnHtml(st){
 }
 function refreshAlarmWarn(){ const w=document.querySelector('#sheet:not([hidden]) #alWarn'); if(!w) return; const h=alarmWarnHtml(alarmState()); if(h) w.outerHTML=h; else w.remove(); }
 
-function reminderSheet(n){
-  let at=n.remindAt; if(!at){ const d=new Date(now()+3600e3); d.setSeconds(0,0); d.setMinutes(Math.ceil(d.getMinutes()/5)*5); at=toLocalInput(d); }
+function reminderSheet(n,opts={}){
+  let at=n.remindAt; if(!at&&opts.day) at=opts.day+'T09:00'; if(!at){ const d=new Date(now()+3600e3); d.setSeconds(0,0); d.setMinutes(Math.ceil(d.getMinutes()/5)*5); at=toLocalInput(d); }
   at=at.slice(0,16);
   let sEl=null, poll=0;
   // lê o dia e a hora direto dos campos (alguns Android não avisam quando a hora muda no relógio)
@@ -3171,7 +3289,7 @@ function syncAlarmsNow(){
   if(!HAS_ALARM||!appReady||!db||!Array.isArray(db.notes)) return;
   if(Vault.exists()&&!Vault.unlocked()) return;
   const list=db.notes.filter(n=>!n.deleted&&!n.trashed&&!n.done&&n.remindAt).map(n=>({id:n.id,at:n.remindAt,before:+n.remindBefore||0,mode:n.remindMode||'ambos',repeat:n.remindRepeat||undefined,
-    title:noteTitle(n).slice(0,200),text:txt(n.html).replace(/\s+/g,' ').trim().slice(0,300)}));
+    title:noteTitle(n).slice(0,200),text:n.secret?'':txt(n.html).replace(/\s+/g,' ').trim().slice(0,300)}));
   const sig=JSON.stringify(list); if(sig===alarmSig) return;
   try{ if(+NA.alarmSet(sig)>=0) alarmSig=sig; }catch(e){ alarmSig=''; }
 }
@@ -3185,7 +3303,7 @@ async function syncDevCal(force){
   if(Vault.exists()&&!Vault.unlocked()) return;
   const map=cfg.devCalMap||{}, want=new Map();
   for(const n of db.notes) if(!n.deleted&&!n.trashed&&!n.done&&n.remindAt){
-    const it={id:n.id,at:n.remindAt,repeat:n.remindRepeat||'',title:noteTitle(n).slice(0,200),text:txt(n.html).trim().slice(0,900)};
+    const it={id:n.id,at:n.remindAt,repeat:n.remindRepeat||'',title:noteTitle(n).slice(0,200),text:n.secret?'':txt(n.html).trim().slice(0,900)};
     want.set(n.id,{it,sig:fnv(it.at+'|'+it.repeat+'|'+it.title+'|'+it.text)}); }
   const up=[], del=[];
   for(const [id,w] of want) if(force||map[id]!==w.sig) up.push(w.it);
@@ -3244,7 +3362,11 @@ function alarmBlock(){
     ${typeof NA.widgetPin==='function'?`<button class="row" id="aWid"><span data-i="home"></span><span class="grow">Widget na tela inicial<small>${st.widgets?'Já está na tela inicial':'Os lembretes de hoje e o botão Nova nota, sem abrir o app'}</small></span>${st.widgets?'<span data-i="check" style="color:var(--ok)"></span>':''}</button>`:''}
     ${cfg.devCal===true&&ci.found&&ci.google&&ci.syncOn===false?'<button class="row" id="aSync"><span data-i="sync"></span><span class="grow">Ligar a sincronização da agenda<small>Abre as contas do celular</small></span></button>':''}
     <button class="row" id="aTest"><span data-i="bell"></span><span class="grow">Testar o alarme<small>O aviso chega agora e o alarme toca em 20 segundos</small></span></button>
-  </div>`;
+  </div>${typeof NA.tileAdd==='function'?`<div class="blk" id="qkBlk"><div class="lbl">Botões rápidos</div>
+    <p class="sub" style="margin:0 0 6px">Na barra que desce do topo do celular: crie uma nota ou grave um áudio sem abrir o app. O widget também tem esses botões.</p>
+    <button class="row" id="qkNote"><span data-i="pencil"></span><span class="grow">Colocar o botão “Nota rápida”</span></button>
+    <button class="row" id="qkAud"><span data-i="mic"></span><span class="grow">Colocar o botão “Gravar áudio”</span></button>
+    <button class="row" id="qkTry"><span data-i="wave"></span><span class="grow">Testar agora<small>Abre a janela de nota rápida</small></span></button></div>`:''}`;
 }
 function bindAlarmBlock(s){
   const on=(id,f)=>{ const e=s.querySelector(id); if(e) e.onclick=f; };
@@ -3255,6 +3377,9 @@ function bindAlarmBlock(s){
   on('#aBat',()=>askPerm('battery'));
   on('#aSync',()=>askPerm('sync'));
   on('#aTest',testAlarm);
+  const tileHelp='Puxe a barra de cima duas vezes, toque no lápis (editar) e arraste o botão do Não Esquece para cima.';
+  const tile=async w=>{ let r='manual'; try{ r=await nativeCall('tileAdd',w); }catch(e){} toast(r==='2'?'Botão colocado nas configurações rápidas':r==='1'?'Esse botão já está nas configurações rápidas':r==='0'?'Tudo bem, o botão não foi colocado.':tileHelp); };
+  on('#qkNote',()=>tile('nota')); on('#qkAud',()=>tile('audio')); on('#qkTry',()=>{ try{ NA.quickOpen('nota'); }catch(e){} });
   on('#aResync',()=>{ alarmSig=''; syncAlarmsNow(); setTimeout(refreshAlarmBlock,300); toast('Alarmes marcados de novo'); });
   on('#aWid',()=>{ let r='no'; try{ r=NA.widgetPin(); }catch(e){} toast(r==='ok'?'Confirme no aviso do Android para colocar o widget na tela inicial.':'Segure o dedo num espaço vazio da tela inicial › Widgets › Não Esquece.'); });
   on('#aCal',async()=>{
@@ -3270,11 +3395,12 @@ function refreshAlarmBlock(){ const b=document.querySelector('#sheet:not([hidden
 let pendingOpen=null, evCheck=true, pendingNew=false;
 { const q=new URLSearchParams(location.search); let ch=false;
   if(q.has('nota')){ pendingOpen=q.get('nota')||''; q.delete('nota'); ch=true; }
-  if(q.has('hoje')){ cur.folder='today'; cfg.view='today'; q.delete('hoje'); ch=true; }
+  if(q.has('hoje')){ pendingTab='hoje'; q.delete('hoje'); ch=true; }
   if(ch) try{ history.replaceState(history.state,'',location.pathname+(q.toString()?'?'+q:'')+location.hash); }catch(e){} }
 window.__openFromNative=id=>{ pendingOpen=String(id||''); evCheck=true; };
 window.__newFromNative=()=>{ pendingNew=true; };
-window.__todayFromNative=()=>{ cur.folder='today'; cfg.view='today'; saveCfg(); cur.q=''; try{ $('#q').value=''; }catch(e){} if(appReady){ if(cur.noteId&&!WIDE()) closeEditor(); render(); } };
+var pendingTab=null;
+window.__todayFromNative=()=>{ if(appReady&&!locked) setTab('hoje'); else pendingTab='hoje'; };
 function processAlarmEvents(){
   if(!HAS_ALARM||!appReady||locked||!db) return;
   if(Vault.exists()&&!Vault.unlocked()) return;
@@ -3288,7 +3414,8 @@ function flushPendingOpen(){
   const n=id?noteById(id):null;
   if(n&&!n.deleted&&!n.trashed){ if(!$('#sheet').hidden) closeSheet(); openNote(id); }
 }
-setInterval(()=>{ if(!appReady||locked||secOpen) return; if(evCheck){ evCheck=false; processAlarmEvents(); } flushPendingOpen();
+setInterval(()=>{ if(!appReady||locked||secOpen) return; if(evCheck){ evCheck=false; processAlarmEvents(); importQuick(); queueOldOcr(); } flushPendingOpen();
+  if(pendingTab){ const t=pendingTab; pendingTab=null; setTab(t); }
   if(pendingNew){ pendingNew=false; if($('#sheet').hidden) newNote(); } },700);
 document.addEventListener('visibilitychange',()=>{ if(document.visibilityState!=='visible') return; evCheck=true; if(HAS_ALARM){ refreshAlarmBlock(); refreshAlarmWarn(); scheduleAlarms(); } });
 
@@ -3349,7 +3476,7 @@ async function addPdf(n,blob,name,pages){
   const a={id:uid(),name:uniqueName(n,name),type:'application/pdf',size:blob.size,addedAt:now()}; if(pages) a.pages=pages;
   try{ await IDB.put(a.id,blob); }catch(e){ toast('Sem espaço no aparelho para o PDF.'); return; }
   n.attachments=n.attachments||[]; n.attachments.push(a); n.updatedAt=now(); delete n._fresh; changed();
-  if(cur.noteId===n.id) renderAtts(); renderList();
+  if(cur.noteId===n.id) renderAtts(); renderList(); setTimeout(()=>queueOcr(n.id,a.id),300);
   toast('PDF salvo na nota'+(pages?' · '+pages+(pages>1?' páginas':' página'):''));
 }
 let scanPages=[];
@@ -3415,9 +3542,11 @@ async function finishScan(n){
 function pdfMenu(n,a){
   openSheet(`<h3>${esc(a.name)}</h3><p class="sub">PDF${a.pages?' · '+a.pages+(a.pages>1?' páginas':' página'):''} · ${fmtFull(a.addedAt||n.updatedAt)}</p>
     <button class="row" id="pdOpen"><span data-i="pdf"></span><span class="grow">Abrir o PDF</span></button>
+    <button class="row" id="pdText"><span data-i="text"></span><span class="grow">Ler o texto do PDF<small>Copiar ou colocar na nota</small></span></button>
     <button class="row" id="pdShare"><span data-i="share"></span><span class="grow">Compartilhar<small>WhatsApp, e-mail e outros apps</small></span></button>
     <button class="row danger" id="pdDel"><span data-i="trash"></span><span class="grow">Remover da nota</span></button>`,
   s=>{ s.querySelector('#pdOpen').onclick=()=>{ closeSheet(); openPdf(a); };
+    s.querySelector('#pdText').onclick=()=>{ closeSheet(); ocrSheet(n,a); };
     s.querySelector('#pdShare').onclick=()=>{ closeSheet(); shareAtt(a); };
     s.querySelector('#pdDel').onclick=()=>{ closeSheet(); removeAtt(n,a); }; });
 }
@@ -3432,6 +3561,343 @@ async function openPdf(a){
   if(IS_APK){ shareAtt(a); return; }
   const u=URL.createObjectURL(new Blob([b],{type:'application/pdf'})); extLaunch=now();
   const w=window.open(u,'_blank'); if(!w) download(a.name,b,'application/pdf'); setTimeout(()=>URL.revokeObjectURL(u),120000);
+}
+
+/* ======== 1.5: abas embaixo, calendário, relatório, assinatura, histórico, nota secreta, ler texto, botões rápidos ======== */
+
+/* ---------- barra de navegação embaixo (estilo WhatsApp) ---------- */
+const TABS=[['notas','Notas','note'],['hoje','Hoje','today'],['cal','Calendário','cal'],['rel','Relatório','report']];
+function renderNav(){
+  const b=$('#bnav'); if(!b) return;
+  if(!b.dataset.ready){ b.innerHTML=TABS.map(([k,l,i])=>`<button class="bt" data-tab="${k}" role="tab" aria-selected="false" aria-label="${l}"><span class="bi">${svg(i)}<b class="bdg" hidden></b></span><span class="bl">${l}</span></button>`).join(''); b.dataset.ready='1'; }
+  b.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-selected',x.dataset.tab===cur.tab));
+  b.querySelectorAll('.bt:not([data-tab="hoje"]) .bdg').forEach(x=>{ x.hidden=true; x.textContent=''; });
+  let k=0, late=0;
+  try{ const td=todayItems(); late=td.late.length; k=late+td.today.filter(x=>!x.n.done&&(x.t>=now()||!x.n.remindRepeat)).length; }catch(e){}
+  const bd=b.querySelector('.bt[data-tab="hoje"] .bdg'); if(bd){ bd.hidden=!k; bd.textContent=k>99?'99+':String(k); bd.classList.toggle('late',late>0); }
+}
+function setTab(t,fromPop){
+  if(!TABS.some(x=>x[0]===t)) t='notas';
+  if(sel.on) endSelect();
+  if(cur.noteId&&!WIDE()&&!fromPop) closeEditor();
+  cur.tab=t; document.documentElement.dataset.tab=t;
+  if(t!=='notas'&&cur.q){ cur.q=''; const q=$('#q'); if(q) q.value=''; renderFolders(); }
+  renderList();
+  const N=$('#notes'); N.classList.remove('tabin'); void N.offsetWidth; N.classList.add('tabin'); N.scrollTop=0;
+  if(!fromPop){ if(t!=='notas') guardPush(); else guardCheck(); }
+}
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('#bnav [data-tab]'); if(!b) return;
+  try{ navigator.vibrate&&navigator.vibrate(8); }catch(_){}
+  if(b.dataset.tab===cur.tab){ $('#notes').scrollTo({top:0,behavior:'smooth'}); return; } setTab(b.dataset.tab); });
+function tabHTML(){ return cur.tab==='hoje'?hojeHTML():cur.tab==='cal'?calHTML():relHTML(); }
+function hojeHTML(){ const td=todayItems(), k=td.late.length+td.today.length;
+  return `<div class="lhead"><h2>Hoje</h2><div class="lact"><small>${k} ${k===1?'item':'itens'}</small></div></div>`
+    +(k?todayHTML():`<div class="empty"><strong>Nada para hoje</strong>Toque em Lembrete numa nota para ela aparecer aqui, na hora marcada. As atrasadas também aparecem aqui.</div>`); }
+
+/* ---------- calendário do mês ---------- */
+const cal={y:null,m:null,sel:null};
+const MESES=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+const dkey=d=>{ const p=x=>String(x).padStart(2,'0'); return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate()); };
+function monthData(y,m){
+  const s=new Date(y,m,1).getTime(), e=new Date(y,m+1,1).getTime(), map={}, t=now();
+  const add=(k,typ,o)=>{ if(!map[k]) map[k]={rem:[],done:[],late:0}; map[k][typ].push(o); };
+  for(const n of liveNotes()){
+    if(n.remindAt){
+      if(n.remindRepeat){ if(!n.done){ let o=occAfter(n,s-1), g=0; while(o&&o.getTime()<e&&g++<62){ add(dkey(o),'rem',{n,t:o.getTime()}); o=occAfter(n,o.getTime()); } } }
+      else { const d=new Date(n.remindAt); if(!isNaN(d)&&d.getTime()>=s&&d.getTime()<e){ add(dkey(d),'rem',{n,t:d.getTime()}); if(!n.done&&d.getTime()<t) map[dkey(d)].late++; } }
+    }
+    if(n.done&&n.doneAt&&n.doneAt>=s&&n.doneAt<e) add(dkey(new Date(n.doneAt)),'done',{n,t:n.doneAt});
+  }
+  return map;
+}
+function calHTML(){
+  const td=new Date(); if(cal.y==null){ cal.y=td.getFullYear(); cal.m=td.getMonth(); cal.sel=dkey(td); }
+  const y=cal.y, m=cal.m, first=new Date(y,m,1), start=new Date(y,m,1-first.getDay()), map=monthData(y,m), tk=dkey(td);
+  let cells='';
+  for(let i=0;i<42;i++){ const d=new Date(start); d.setDate(start.getDate()+i); const k=dkey(d), o=d.getMonth()!==m, x=map[k];
+    if(i===35&&o) break;
+    const dots=x?(x.late?'<b class="l"></b>':'')+(x.rem.some(r=>!r.n.done&&!(r.t<now()&&!r.n.remindRepeat))?'<b class="r"></b>':'')+(x.done.length?'<b class="d"></b>':''):'';
+    cells+=`<button class="cd${o?' o':''}${k===tk?' t':''}${k===cal.sel?' s':''}" data-cd="${k}" aria-label="${d.getDate()} de ${MESES[d.getMonth()]}${x?', '+(x.rem.length+x.done.length)+(x.rem.length+x.done.length>1?' itens':' item'):''}"><span>${d.getDate()}</span><i>${dots}</i></button>`; }
+  const sx=map[cal.sel]||{rem:[],done:[]}, sd=new Date(cal.sel+'T12:00');
+  const items=[...sx.rem.map(r=>({...r,k:'rem'})),...sx.done.filter(d=>!sx.rem.some(r=>r.n===d.n)).map(d=>({...d,k:'done'}))].sort((a,b)=>a.t-b.t);
+  const list=items.map(x=>`<div class="hrow ${x.k==='done'||x.n.done?'past':(!x.n.remindRepeat&&x.t<now()?'late':'')}"><div class="htime">${hm(new Date(x.t))}${x.k==='done'?'<small>feita</small>':''}</div>${noteCard(x.n,'')}</div>`).join('');
+  return `<div class="lhead"><h2>Calendário</h2><div class="lact">${cal.sel!==tk||y!==td.getFullYear()||m!==td.getMonth()?'<button class="lbtn" id="calToday">Hoje</button>':''}</div></div>
+  <div class="calbox"><div class="calnav"><button class="ib" id="calPrev" aria-label="Mês anterior">${svg('back')}</button><b>${MESES[m].replace(/^./,c=>c.toUpperCase())} de ${y}</b><button class="ib nx" id="calNext" aria-label="Próximo mês">${svg('back')}</button></div>
+  <div class="calwk">${['D','S','T','Q','Q','S','S'].map(w=>`<span>${w}</span>`).join('')}</div><div class="calgrid" id="calGrid">${cells}</div>
+  <div class="calleg"><span><b class="r"></b>Lembrete</span><span><b class="d"></b>Concluída</span><span><b class="l"></b>Atrasada</span></div></div>
+  <div class="hsec">${esc(sd.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'}))}</div>
+  ${list||'<div class="empty" style="padding:18px 12px">Nada neste dia.</div>'}
+  <button class="btn" id="calNew" style="width:100%;margin-top:6px;display:inline-flex;align-items:center;justify-content:center;gap:8px">${svg('bell')}Novo lembrete neste dia</button>`;
+}
+function calMove(k){ const d=new Date(cal.y,cal.m+k,1); cal.y=d.getFullYear(); cal.m=d.getMonth(); const td=new Date(); cal.sel=(cal.y===td.getFullYear()&&cal.m===td.getMonth())?dkey(td):dkey(d); renderList(); const g=$('#calGrid'); if(g) g.classList.add(k<0?'sl':'sr'); }
+function newNoteOn(day){ newNote(); const n=noteById(cur.noteId); if(n) setTimeout(()=>reminderSheet(n,{day}),250); }
+let calTouch=null;
+$('#notes').addEventListener('touchstart',e=>{ if(cur.tab!=='cal'||!e.target.closest('.calbox')) return; const t=e.touches[0]; calTouch=[t.clientX,t.clientY]; },{passive:true});
+$('#notes').addEventListener('touchend',e=>{ if(!calTouch) return; const t=e.changedTouches[0], dx=t.clientX-calTouch[0], dy=t.clientY-calTouch[1]; calTouch=null; if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5) calMove(dx<0?1:-1); },{passive:true});
+
+/* ---------- relatório do dia, da semana ou do mês ---------- */
+const rep={p:'hoje',fotos:true,pend:true};
+const REP_P=[['hoje','Hoje'],['ontem','Ontem'],['semana','Esta semana'],['passada','Semana passada'],['mes','Este mês']];
+function repRange(p){ const d=new Date(); d.setHours(0,0,0,0); const s=new Date(d); let e=new Date(d);
+  if(p==='hoje') e.setDate(e.getDate()+1);
+  else if(p==='ontem') s.setDate(s.getDate()-1);
+  else if(p==='semana'||p==='passada'){ s.setDate(d.getDate()-(d.getDay()+6)%7); if(p==='passada') s.setDate(s.getDate()-7); e=new Date(s); e.setDate(s.getDate()+7); }
+  else { s.setDate(1); e=new Date(s); e.setMonth(s.getMonth()+1); }
+  return {s:s.getTime(),e:e.getTime()}; }
+function periodLabel(p,s,e){ if(p==='hoje'||p==='ontem') return new Date(s).toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  if(p==='mes') return new Date(s).toLocaleDateString('pt-BR',{month:'long',year:'numeric'});
+  return 'De '+new Date(s).toLocaleDateString('pt-BR')+' a '+new Date(e-1).toLocaleDateString('pt-BR'); }
+function repData(p){ const {s,e}=repRange(p), t=now(), done=[], pend=[];
+  for(const n of liveNotes()){
+    if(n.done&&n.doneAt>=s&&n.doneAt<e) done.push(n);
+    else if(!n.done&&n.remindAt&&!n.remindRepeat){ const d=new Date(n.remindAt).getTime(); if(d>=s&&d<e) pend.push(n); }
+  }
+  done.sort((a,b)=>a.doneAt-b.doneAt); pend.sort((a,b)=>new Date(a.remindAt)-new Date(b.remindAt));
+  const late=pend.filter(n=>new Date(n.remindAt).getTime()<t).length;
+  const fotos=done.reduce((k,n)=>k+(n.secret?0:(n.attachments||[]).filter(a=>/^image\//.test(a.type)).length),0);
+  return {s,e,done,pend,late,fotos}; }
+function relHTML(){ const r=repData(rep.p), multi=rep.p!=='hoje'&&rep.p!=='ontem';
+  return `<div class="lhead"><h2>Relatório</h2></div>
+  <div class="tnote" style="margin:0 0 8px">Um PDF com o que foi concluído, com hora, fotos e etiquetas, pronto para mandar no WhatsApp.</div>
+  <div class="seg wrap" id="rpP">${REP_P.map(([k,l])=>`<button data-rp="${k}" aria-pressed="${k===rep.p}">${l}</button>`).join('')}</div>
+  <div class="rpper">${esc(periodLabel(rep.p,r.s,r.e).replace(/^./,c=>c.toUpperCase()))}</div>
+  <div class="rpsum"><div class="ok"><b>${r.done.length}</b><span>${r.done.length===1?'concluída':'concluídas'}</span></div><div><b>${r.pend.length}</b><span>${r.pend.length===1?'pendente':'pendentes'}</span></div><div class="${r.late?'bad':''}"><b>${r.late}</b><span>${r.late===1?'atrasada':'atrasadas'}</span></div><div><b>${r.fotos}</b><span>${r.fotos===1?'foto':'fotos'}</span></div></div>
+  <label class="tcheck"><input type="checkbox" id="rpF" ${rep.fotos?'checked':''}><span>Incluir fotos e assinaturas</span></label>
+  <label class="tcheck"><input type="checkbox" id="rpPd" ${rep.pend?'checked':''}><span>Incluir o que ficou pendente</span></label>
+  <button class="btn pri rpgo" id="rpGo" ${r.done.length||(rep.pend&&r.pend.length)?'':'disabled'}>${svg('whats')}Gerar PDF e enviar</button>
+  ${r.done.length?`<div class="hsec">Concluídas · ${r.done.length}</div>`+r.done.map(n=>`<div class="hrow past"><div class="htime">${hm(new Date(n.doneAt))}${multi?`<small>${new Date(n.doneAt).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}</small>`:''}</div>${noteCard(n,'')}</div>`).join(''):'<div class="empty" style="padding:18px 12px">Nada concluído neste período ainda.</div>'}`; }
+document.addEventListener('change',e=>{ if(e.target.id==='rpF') rep.fotos=e.target.checked; else if(e.target.id==='rpPd'){ rep.pend=e.target.checked; renderList(); } });
+document.addEventListener('click',e=>{
+  const t=e.target; if(!t.closest) return;
+  const cd=t.closest('[data-cd]'); if(cd){ cal.sel=cd.dataset.cd; const d=new Date(cal.sel+'T12:00'); if(d.getMonth()!==cal.m||d.getFullYear()!==cal.y){ cal.y=d.getFullYear(); cal.m=d.getMonth(); } renderList(); return; }
+  if(t.closest('#calPrev')){ calMove(-1); return; } if(t.closest('#calNext')){ calMove(1); return; }
+  if(t.closest('#calToday')){ cal.y=null; renderList(); return; }
+  if(t.closest('#calNew')){ newNoteOn(cal.sel); return; }
+  const rp=t.closest('[data-rp]'); if(rp){ rep.p=rp.dataset.rp; renderList(); return; }
+  if(t.closest('#rpGo')){ makeReport(); return; }
+});
+function rr(g,x,y,w,h,r){ g.beginPath(); g.moveTo(x+r,y); g.arcTo(x+w,y,x+w,y+h,r); g.arcTo(x+w,y+h,x,y+h,r); g.arcTo(x,y+h,x,y,r); g.arcTo(x,y,x+w,y,r); g.closePath(); }
+function hexA(h,a){ const m=/^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(h); return m?`rgba(${parseInt(m[1],16)},${parseInt(m[2],16)},${parseInt(m[3],16)},${a})`:`rgba(90,101,121,${a})`; }
+async function renderReport(r){
+  const pages=[]; let c,g,y; const W=PW-2*MX, bottom=PH-MB, multi=rep.p!=='hoje'&&rep.p!=='ontem';
+  const INK='#121a2b', MUT='#5a6579', ACC='#0a54c8', OK='#127a49', BAD='#b42318', LINE='#d4dcea';
+  const F=(w,s)=>`${w} ${s}px Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif`;
+  const newPage=()=>{ c=document.createElement('canvas'); c.width=PW; c.height=PH; g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,PW,PH); pages.push(c); y=MT; };
+  const need=h=>{ if(y+h>bottom) newPage(); };
+  const wrap=(t,font,maxW,maxL)=>{ g.font=font; const ws=String(t).split(/\s+/).filter(Boolean), out=[]; let line='', cut=false;
+    for(const w of ws){ const tt=line?line+' '+w:w; if(g.measureText(tt).width>maxW&&line){ out.push(line); line=w; if(out.length>=maxL){ cut=true; line=''; break; } } else line=tt; }
+    if(line&&out.length<maxL) out.push(line); if(cut&&out.length) out[out.length-1]=out[out.length-1].replace(/\s*\S*$/,'')+'…'; return out; };
+  newPage();
+  let logo=null; try{ const im=new Image(); im.src=LOGO; await im.decode(); logo=im; }catch(e){}
+  const lx=MX+(logo?84:0); if(logo) g.drawImage(logo,MX,y-8,66,66);
+  g.fillStyle=INK; g.font=F(800,40); g.fillText('Relatório de atividades',lx,y+24);
+  g.fillStyle=MUT; g.font=F(600,22); g.fillText(periodLabel(rep.p,r.s,r.e).replace(/^./,x=>x.toUpperCase()),lx,y+58);
+  y+=100; const who=[cfg.name,cfg.email].filter(Boolean).join(' · ');
+  g.font=F(500,18); g.fillText('Gerado em '+fmtFull(now())+(who?' por '+who:''),MX,y); y+=30;
+  const boxes=[[r.done.length,r.done.length===1?'concluída':'concluídas',OK],[r.pend.length,r.pend.length===1?'pendente':'pendentes',ACC],[r.late,r.late===1?'atrasada':'atrasadas',r.late?BAD:MUT]];
+  const bw=(W-40)/3; boxes.forEach(([v,l,col],i)=>{ const x=MX+i*(bw+20); g.fillStyle='#f1f4fa'; rr(g,x,y,bw,112,18); g.fill(); g.fillStyle=col; g.font=F(800,50); g.fillText(String(v),x+26,y+64); g.fillStyle=MUT; g.font=F(600,20); g.fillText(l,x+26,y+94); });
+  y+=146;
+  const section=(t,col)=>{ need(80); g.fillStyle=col; g.font=F(800,22); g.fillText(t.toUpperCase(),MX,y+22); y+=36; g.fillStyle=LINE; g.fillRect(MX,y,W,2); y+=24; };
+  async function item(n,t,isDone){
+    const late=!isDone&&t<now(), x0=MX+150, w0=W-150;
+    const title=noteTitle(n), body=n.secret?'Nota secreta (conteúdo protegido)':txt(n.html).replace(/\s+/g,' ').trim();
+    const tl=wrap(title,F(800,26),w0,2), bl=body?wrap(body,F(500,20),w0,4):[];
+    const fold=folderById(n.folderId);
+    const tags=[...(n.urgent?[['Urgente',BAD]]:[]),...noteTags(n).map(x=>[x.name,tagColor(x.color)]),...(fold?[[fold.name,MUT]]:[])];
+    const imgs=rep.fotos&&!n.secret?(n.attachments||[]).filter(a=>/^image\//.test(a.type)).slice(0,6):[];
+    need(Math.min(tl.length*34+bl.length*28+(tags.length?48:0)+(imgs.length?236:0)+40,bottom-MT));
+    g.fillStyle=late?BAD:isDone?OK:ACC; g.font=F(800,27); g.fillText(hm(new Date(t)),MX,y+27);
+    let ly=y+52; if(multi){ g.fillStyle=MUT; g.font=F(600,18); g.fillText(new Date(t).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'}),MX,ly); ly+=24; }
+    if(late){ g.fillStyle=BAD; g.font=F(800,16); g.fillText('ATRASADA',MX,ly); }
+    let yy=y; g.fillStyle=INK; g.font=F(800,26); tl.forEach(l=>{ g.fillText(l,x0,yy+26); yy+=34; });
+    g.fillStyle=MUT; g.font=F(500,20); bl.forEach(l=>{ g.fillText(l,x0,yy+22); yy+=28; });
+    if(tags.length){ yy+=10; let tx=x0; g.font=F(700,17); for(const [nm,col] of tags){ const tw=g.measureText(nm).width+30; if(tx+tw>MX+W) break; g.fillStyle=hexA(col,.15); rr(g,tx,yy,tw,32,16); g.fill(); g.fillStyle=col===MUT?MUT:INK; g.fillText(nm,tx+15,yy+22); tx+=tw+10; } yy+=40; }
+    if(imgs.length){ yy+=8; let ix=x0; const ih=200; let sig=false;
+      for(const a of imgs){ const b=await IDB.get(a.id).catch(()=>null); if(!b) continue; let bmp=null; try{ bmp=await createImageBitmap(b); }catch(e){} if(!bmp) continue;
+        const w=Math.min(300,Math.max(120,bmp.width*ih/bmp.height)); if(ix+w>MX+W) break;
+        g.fillStyle='#f1f4fa'; g.fillRect(ix,yy,w,ih); const k=Math.min(w/bmp.width,ih/bmp.height); g.drawImage(bmp,ix+(w-bmp.width*k)/2,yy+(ih-bmp.height*k)/2,bmp.width*k,bmp.height*k);
+        if(a.kind==='assinatura'){ sig=true; g.fillStyle=MUT; g.font=F(600,15); g.fillText('Assinatura'+(a.signer?' · '+a.signer:''),ix,yy+ih+20); }
+        ix+=w+14; }
+      yy+=ih+(sig?30:12); }
+    y=Math.max(yy,ly)+18; g.fillStyle=LINE; g.fillRect(x0,y-8,w0,1); y+=12;
+  }
+  if(r.done.length){ section('Concluídas · '+r.done.length,OK); for(const n of r.done) await item(n,n.doneAt,true); }
+  if(rep.pend&&r.pend.length){ section('Pendentes · '+r.pend.length,ACC); for(const n of r.pend) await item(n,new Date(n.remindAt).getTime(),false); }
+  pages.forEach((p,i)=>{ const q=p.getContext('2d'); q.font=F(500,18); q.fillStyle=MUT; q.textAlign='left'; q.fillText('Não Esquece · relatório de atividades',MX,PH-60); q.textAlign='right'; q.fillText(`${i+1} de ${pages.length}`,PW-MX,PH-60); q.textAlign='left'; });
+  return pages;
+}
+async function makeReport(){
+  const r=repData(rep.p); if(!r.done.length&&!(rep.pend&&r.pend.length)){ toast('Nada para colocar no relatório.'); return; }
+  const b=$('#rpGo'); if(b){ b.disabled=true; b.lastChild.textContent='Gerando o PDF…'; }
+  let blob, name;
+  try{
+    const pages=await renderReport(r), pgs=[];
+    for(const c of pages) pgs.push({w:c.width,h:c.height,data:await canvasJPEG(c),media:[]});
+    blob=buildPDF(pgs);
+    const d=new Date(r.s), p=x=>String(x).padStart(2,'0'), f=t=>{ const x=new Date(t); return p(x.getDate())+'-'+p(x.getMonth()+1)+'-'+x.getFullYear(); };
+    name='Relatório '+(rep.p==='hoje'||rep.p==='ontem'?f(r.s):rep.p==='mes'?MESES[d.getMonth()]+' '+d.getFullYear():f(r.s)+' a '+f(r.e-1))+'.pdf';
+  }catch(e){ logErr('Relatório: '+(e&&e.message)); toast('Não consegui gerar o relatório.'); renderList(); return; }
+  renderList();
+  const file=new File([blob],name,{type:'application/pdf'});
+  if(navigator.canShare&&navigator.canShare({files:[file]})){ try{ await nshare({files:[file],title:name,text:'Relatório de atividades · '+periodLabel(rep.p,r.s,r.e)}); return; }catch(e){ if(e.name==='AbortError') return; } }
+  download(name,blob,'application/pdf');
+}
+
+/* ---------- assinatura e desenho com o dedo ---------- */
+var drawOpen=false;
+const DR={mode:'sig',strokes:[],cur:null,color:'#0b2a6b',size:4,cv:null,ctx:null,base:null,dpr:1,noteId:null,closeAsk:0};
+function openDraw(mode){
+  const n=noteById(cur.noteId); if(!n) return; flushEdit();
+  Object.assign(DR,{mode,strokes:[],cur:null,noteId:n.id,color:mode==='sig'?'#0b2a6b':'#111827',size:mode==='sig'?4:5,closeAsk:0});
+  const D=$('#draw'); D.dataset.mode=mode; $('#dTitle').textContent=mode==='sig'?'Assinatura':'Desenho';
+  $('#dHint').textContent=mode==='sig'?'Assine aqui com o dedo':'Desenhe ou rabisque com o dedo';
+  const cols=mode==='sig'?['#0b2a6b','#111827']:['#111827','#0a54c8','#d4213d','#127a49','#f76b15'];
+  $('#dTools').innerHTML=(mode==='sig'?'<input class="field" id="dName" maxlength="60" placeholder="Nome de quem assina (opcional)" autocomplete="off">':'')
+    +`<div class="dcol">${cols.map(c=>`<button data-dc="${c}" style="--tc:${c}" aria-pressed="${c===DR.color}" aria-label="Cor"></button>`).join('')}<span class="sep"></span>${[[3,'Fino'],[5,'Médio'],[9,'Grosso']].map(([s,l])=>`<button class="dsz" data-ds="${s}" aria-pressed="${s===DR.size}" aria-label="Traço ${l}"><i style="width:${s+5}px;height:${s+5}px"></i></button>`).join('')}</div>`;
+  D.hidden=false; drawOpen=true; guardPush(); requestAnimationFrame(sizeDraw);
+}
+function closeDraw(fromPop){ $('#draw').hidden=true; drawOpen=false; DR.strokes=[]; DR.cur=null; if(!fromPop) guardCheck(); }
+function sizeDraw(){ if(!drawOpen) return; const w=$('#dWrap'), cv=$('#dCv'), r=w.getBoundingClientRect(), dpr=Math.min(3,window.devicePixelRatio||1);
+  cv.width=Math.max(1,Math.round(r.width*dpr)); cv.height=Math.max(1,Math.round(r.height*dpr)); cv.style.width=r.width+'px'; cv.style.height=r.height+'px';
+  DR.cv=cv; DR.ctx=cv.getContext('2d'); DR.dpr=dpr; DR.base=document.createElement('canvas'); DR.base.width=cv.width; DR.base.height=cv.height; rebuildBase(); }
+function strokePath(g,s,k,ox=0,oy=0){ const p=s.p; g.strokeStyle=s.c; g.fillStyle=s.c; g.lineWidth=s.w*k; g.lineCap='round'; g.lineJoin='round';
+  if(p.length<3){ g.beginPath(); g.arc((p[0][0]-ox)*k,(p[0][1]-oy)*k,s.w*k/2,0,Math.PI*2); g.fill(); if(p.length===1) return; }
+  g.beginPath(); g.moveTo((p[0][0]-ox)*k,(p[0][1]-oy)*k);
+  for(let i=1;i<p.length-1;i++){ const mx=(p[i][0]+p[i+1][0])/2, my=(p[i][1]+p[i+1][1])/2; g.quadraticCurveTo((p[i][0]-ox)*k,(p[i][1]-oy)*k,(mx-ox)*k,(my-oy)*k); }
+  const l=p[p.length-1]; g.lineTo((l[0]-ox)*k,(l[1]-oy)*k); g.stroke(); }
+function rebuildBase(){ const b=DR.base; if(!b) return; const g=b.getContext('2d'); g.clearRect(0,0,b.width,b.height); for(const s of DR.strokes) strokePath(g,s,DR.dpr); paintDraw(); }
+function paintDraw(){ const g=DR.ctx; if(!g) return; g.clearRect(0,0,DR.cv.width,DR.cv.height); g.drawImage(DR.base,0,0); if(DR.cur) strokePath(g,DR.cur,DR.dpr); $('#dHint').style.opacity=DR.strokes.length||DR.cur?0:1; }
+$('#dCv').addEventListener('pointerdown',e=>{ e.preventDefault(); const cv=e.currentTarget; try{ cv.setPointerCapture(e.pointerId); }catch(_){} const r=cv.getBoundingClientRect(); DR.cur={c:DR.color,w:DR.size,p:[[e.clientX-r.left,e.clientY-r.top]]}; DR.closeAsk=0; paintDraw(); });
+$('#dCv').addEventListener('pointermove',e=>{ if(!DR.cur) return; const r=e.currentTarget.getBoundingClientRect(); const evs=e.getCoalescedEvents?e.getCoalescedEvents():[e]; for(const v of (evs.length?evs:[e])) DR.cur.p.push([v.clientX-r.left,v.clientY-r.top]); paintDraw(); });
+const endStroke=()=>{ if(!DR.cur) return; const s=DR.cur; DR.cur=null; DR.strokes.push(s); if(DR.base) strokePath(DR.base.getContext('2d'),s,DR.dpr); paintDraw(); };
+['pointerup','pointercancel','pointerleave'].forEach(t=>$('#dCv').addEventListener(t,endStroke));
+$('#dTools').addEventListener('click',e=>{ const c=e.target.closest('[data-dc]'), s=e.target.closest('[data-ds]');
+  if(c){ DR.color=c.dataset.dc; $('#dTools').querySelectorAll('[data-dc]').forEach(x=>x.setAttribute('aria-pressed',x===c)); }
+  if(s){ DR.size=+s.dataset.ds; $('#dTools').querySelectorAll('[data-ds]').forEach(x=>x.setAttribute('aria-pressed',x===s)); } });
+$('#dUndo').onclick=()=>{ DR.strokes.pop(); rebuildBase(); };
+$('#dClear').onclick=()=>{ if(!DR.strokes.length) return; DR.strokes=[]; rebuildBase(); toast('Tudo apagado'); };
+$('#dClose').onclick=()=>{ if(DR.strokes.length&&now()-DR.closeAsk>3000){ DR.closeAsk=now(); toast('Toque de novo no X para sair sem salvar.'); return; } closeDraw(); };
+$('#dSave').onclick=saveDraw;
+window.addEventListener('resize',()=>{ if(drawOpen) setTimeout(sizeDraw,120); });
+async function saveDraw(){
+  const n=noteById(DR.noteId); if(!n){ closeDraw(); return; }
+  if(!DR.strokes.length){ toast(DR.mode==='sig'?'Assine primeiro.':'Desenhe primeiro.'); return; }
+  const sig=DR.mode==='sig', W0=$('#dWrap').clientWidth, H0=$('#dWrap').clientHeight, k=2;
+  let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9; for(const s of DR.strokes) for(const [x,y] of s.p){ x0=Math.min(x0,x-s.w); y0=Math.min(y0,y-s.w); x1=Math.max(x1,x+s.w); y1=Math.max(y1,y+s.w); }
+  let bx=0, by=0, bw=W0, bh=H0;
+  if(sig){ const pad=22; bx=Math.max(0,x0-pad); by=Math.max(0,y0-pad); bw=Math.min(W0,x1+pad)-bx; bh=Math.min(H0,y1+pad)-by; if(bw<380){ bx=Math.max(0,bx-(380-bw)/2); bw=Math.min(W0-bx,380); } }
+  const who=sig?(($('#dName')||{}).value||'').trim():'', foot=sig?84:0;
+  const c=document.createElement('canvas'); c.width=Math.round(bw*k); c.height=Math.round((bh+foot)*k);
+  const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height);
+  for(const s of DR.strokes) strokePath(g,s,k,bx,by);
+  if(sig){ g.fillStyle='#9aa4b5'; g.fillRect(16*k,(bh+6)*k,(bw-32)*k,1.5*k);
+    g.fillStyle='#121a2b'; g.font=`700 ${15*k}px system-ui,sans-serif`; g.fillText(who||'Assinatura',16*k,(bh+30)*k);
+    g.fillStyle='#5a6579'; g.font=`500 ${12.5*k}px system-ui,sans-serif`; g.fillText('Assinado em '+fmtFull(now())+' · Não Esquece',16*k,(bh+52)*k); }
+  const blob=await new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej(new Error('png')),'image/png'));
+  const a={id:uid(),name:uniqueName(n,(sig?'Assinatura ':'Desenho ')+stamp(now())+'.png'),type:'image/png',size:blob.size,addedAt:now(),kind:sig?'assinatura':'desenho'};
+  if(who) a.signer=who.slice(0,60);
+  try{ await IDB.put(a.id,blob); }catch(e){ toast('Sem espaço no aparelho para salvar.'); return; }
+  n.attachments=[...(n.attachments||[]),a]; n.updatedAt=now(); delete n._fresh; changed();
+  closeDraw(); if(cur.noteId===n.id) renderAtts(); renderList(); toast(sig?'Assinatura salva na nota':'Desenho salvo na nota');
+}
+
+/* ---------- histórico da nota (versões guardadas neste celular) ---------- */
+const HIST_MAX=25;
+async function histGet(id){ try{ const v=await IDB.get('hist:'+id); if(!v) return []; const t=v instanceof Blob?await v.text():JSON.stringify(v); const L=JSON.parse(t); return Array.isArray(L)?L:[]; }catch(e){ return []; } }
+async function histPush(n,v){
+  if(!n||!v||(!(v.title||'').trim()&&!txt(v.html||''))) return;
+  try{ const L=await histGet(n.id), last=L[0];
+    if(last&&last.html===v.html&&last.title===v.title) return;
+    L.unshift({at:+v.at||now(),title:String(v.title||''),html:String(v.html||'')});
+    await IDB.put('hist:'+n.id,new Blob([JSON.stringify(L.slice(0,HIST_MAX))],{type:'application/json'})); }catch(e){} }
+async function historySheet(n){
+  flushEdit(); const L=await histGet(n.id);
+  openSheet(`<h3>Histórico de versões</h3><p class="sub">Versões antigas desta nota, guardadas neste celular (até ${HIST_MAX}). Toque numa para ver e voltar para ela.</p>
+    ${L.length?L.map((v,i)=>`<button class="row" data-hv="${i}"><span data-i="restore"></span><span class="grow">${esc(fmtFull(v.at))}<small>${esc((v.title?v.title+' · ':'')+txt(v.html).replace(/\s+/g,' ').slice(0,90))||'Vazia'}</small></span></button>`).join('')
+      :'<p class="sub">Ainda não há versões antigas. Elas aparecem depois que você muda o texto e fecha a nota.</p>'}`,
+  s=>{ s.querySelectorAll('[data-hv]').forEach(b=>b.onclick=()=>histPreview(n,L[+b.dataset.hv])); });
+}
+function histPreview(n,v){
+  openSheet(`<h3>Versão de ${esc(fmtFull(v.at))}</h3>${v.title?`<p class="sub"><b>${esc(v.title)}</b></p>`:''}
+    <div class="hvprev">${cleanHTML(v.html)||'<p><i>Sem texto</i></p>'}</div>
+    <div class="btns"><button class="btn" id="hvBack">Voltar</button><button class="btn pri" id="hvOk">Voltar para esta versão</button></div>`,
+  s=>{ s.querySelector('#hvBack').onclick=()=>historySheet(n);
+    s.querySelector('#hvOk').onclick=async()=>{ flushEdit(); await histPush(n,{at:n.updatedAt,title:n.title,html:n.html});
+      n.title=v.title||''; n.html=cleanHTML(v.html||''); n.updatedAt=now(); changed(); closeSheet();
+      if(cur.noteId===n.id){ titleIn.value=n.title; ed.innerHTML=n.html; }
+      renderList(); toast('A nota voltou para a versão de '+fmtFull(v.at)); }; });
+}
+
+/* ---------- nota secreta: pede o PIN ou a digital para abrir ---------- */
+var secretPass=null;
+const secretOk=id=>!!(secretPass&&secretPass.id===id&&now()<secretPass.until);
+async function unlockSecret(n){
+  if(!Vault.exists()) return true;
+  if(Vault.meta&&Vault.meta.bio&&bioAvail){ try{ extLaunch=now(); await Bio.unlock(); secretPass={id:n.id,until:now()+120e3}; return true; }catch(e){} }
+  const ok=await confirmPin('Nota secreta'); if(ok) secretPass={id:n.id,until:now()+120e3}; return ok; }
+function toggleSecret(n){
+  if(!n.secret&&!Vault.exists()){ toast('Crie um PIN em Ajustes › Segurança para usar nota secreta.'); return; }
+  if(n.secret) delete n.secret; else n.secret=true; n.updatedAt=now(); changed(); renderList();
+  toast(n.secret?'Nota secreta: o app pede o PIN ou a digital para abrir. O texto continua indo para o seu Drive.':'A nota deixou de ser secreta'); }
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState!=='hidden') return; secretPass=null;
+  const n=cur.noteId&&noteById(cur.noteId); if(n&&n.secret&&now()-extLaunch>60e3&&!AR.mr){ flushEdit(); closeEditor(); } });
+
+/* ---------- ler o texto da foto e do PDF (no celular, sem internet) ---------- */
+const HAS_OCR=IS_APK&&typeof NA.ocr==='function';
+const ocrQ=[]; let ocrBusy=false, ocrOld=false;
+function queueOcr(nid,aid){ if(!HAS_OCR) return; ocrQ.push([nid,aid]); runOcr(); }
+async function runOcr(){
+  if(ocrBusy) return; ocrBusy=true;
+  while(ocrQ.length){ const [nid,aid]=ocrQ.shift(); const r=liveAtt(nid,aid); if(!r||r.a.ocr!=null||r.a.kind) continue;
+    const b=await IDB.get(aid).catch(()=>null); if(!b) continue;
+    try{ const t=await nativeCall('ocr',r.a.type,await blobB64(b)); const r2=liveAtt(nid,aid);
+      if(r2){ r2.a.ocr=String(t||'').slice(0,20000); r2.a.ocrAt=now(); r2.n.updatedAt=now(); changed(); if(cur.noteId===nid) renderAtts(); } }
+    catch(e){ logErr('Ler texto: '+e.message); } }
+  ocrBusy=false; }
+function queueOldOcr(){ if(!HAS_OCR||ocrOld) return; ocrOld=true; let k=0;
+  for(const n of liveNotes()) for(const a of (n.attachments||[])) if(a.ocr==null&&!a.kind&&(/^image\//.test(a.type)||a.type==='application/pdf')&&k++<200) ocrQ.push([n.id,a.id]);
+  runOcr(); }
+async function ocrSheet(n,a){
+  if(a.ocr==null){
+    if(!HAS_OCR){ toast(IS_APK?'Atualize o app para ler o texto das fotos.':'Ler o texto das fotos funciona no app para Android.'); return; }
+    const b=await IDB.get(a.id).catch(()=>null); if(!b){ toast('Este anexo ainda não foi baixado neste aparelho.'); return; }
+    toast('Lendo o texto…');
+    try{ a.ocr=String(await nativeCall('ocr',a.type,await blobB64(b))||'').slice(0,20000); a.ocrAt=now(); n.updatedAt=now(); changed(); }
+    catch(e){ toast('Não consegui ler o texto.'); return; }
+  }
+  const t=a.ocr;
+  openSheet(`<h3>Texto ${a.type==='application/pdf'?'do PDF':'da imagem'}</h3><p class="sub">${esc(a.name)}</p>
+    ${t?`<div class="ocrbox" id="ocTxt">${esc(t)}</div>`:'<p class="sub">Não achei texto aqui. Tente uma foto mais de perto, reta e com boa luz.</p>'}
+    <div class="btns">${t?'<button class="btn" id="ocCopy">Copiar</button><button class="btn pri" id="ocIns">Colocar na nota</button>':'<button class="btn pri" id="ocOk">Fechar</button>'}</div>`,
+  s=>{ const c=s.querySelector('#ocCopy'); if(c) c.onclick=async()=>{ try{ await navigator.clipboard.writeText(t); toast('Texto copiado'); }
+        catch(e){ const r=document.createRange(); r.selectNodeContents(s.querySelector('#ocTxt')); const se=getSelection(); se.removeAllRanges(); se.addRange(r); try{ document.execCommand('copy'); toast('Texto copiado'); }catch(_){ toast('Selecione o texto e copie.'); } } };
+    const i=s.querySelector('#ocIns'); if(i) i.onclick=()=>{ closeSheet(); if(cur.noteId!==n.id) return;
+      ed.insertAdjacentHTML('beforeend',t.split(/\n{2,}/).map(p=>'<p>'+esc(p).replace(/\n/g,'<br>')+'</p>').join('')); onEdit(); toast('Texto colocado na nota'); };
+    const o=s.querySelector('#ocOk'); if(o) o.onclick=closeSheet; });
+}
+const searchText=x=>(x.title||'')+'\n'+(x.secret?'':txt(x.html)+'\n'+(x.attachments||[]).map(a=>a.ocr||'').join('\n'));
+
+/* ---------- nota rápida e áudio do bloco das configurações rápidas e do widget ---------- */
+let quickBusy=false;
+async function importQuick(){
+  if(quickBusy||!IS_APK||typeof NA.quickList!=='function'||!appReady||locked||!db) return; if(Vault.exists()&&!Vault.unlocked()) return;
+  let L=[]; try{ L=JSON.parse(NA.quickList()||'[]'); }catch(e){} if(!L.length) return;
+  quickBusy=true; let k=0;
+  for(const q of L){ if(!q||!q.id) continue;
+    try{
+      const t=+q.at||now(), n={id:uid(),folderId:null,title:'',html:'',font:cfg.lastFont||'sans',size:cfg.lastSize||17,pinned:false,createdAt:t,updatedAt:now()};
+      if(q.type==='nota'){ const all=String(q.text||'').trim(); if(!all){ NA.quickDone(q.id); continue; }
+        const lines=all.split('\n'); if(lines[0].length<=80){ n.title=lines[0]; } const rest=lines[0].length<=80?lines.slice(1).join('\n').trim():all;
+        n.html=rest?rest.split(/\n{2,}/).map(p=>'<p>'+esc(p).replace(/\n/g,'<br>')+'</p>').join(''):''; }
+      else if(q.type==='audio'){ const blob=b64Blob(await nativeCall('quickData',q.id),q.mime||'audio/mp4');
+        const a={id:uid(),name:'Áudio '+stamp(t)+'.m4a',type:'audio/mp4',size:blob.size,addedAt:t,duration:+q.dur||undefined};
+        await IDB.put(a.id,blob); n.title='Áudio rápido · '+fmtFull(t); n.attachments=[a]; }
+      else { NA.quickDone(q.id); continue; }
+      db.notes.push(n); NA.quickDone(q.id); k++;
+    }catch(e){ logErr('Nota rápida: '+e.message); }
+  }
+  quickBusy=false;
+  if(k){ changed(); render(); toast(k>1?k+' notas rápidas chegaram':'Sua nota rápida chegou'); }
 }
 
 function checkReminders(){
@@ -3540,6 +4006,8 @@ async function boot(){
   }
   try{ localStorage.removeItem('ne.session'); }catch(e){}
   appReady=true; persist(); scheduleAlarms();
+  if(cfg.view==='today') cfg.view='all';
+  document.documentElement.dataset.tab=cur.tab;
   if(cfg.view&&cur.folder==='all'&&typeof cfg.view==='string'){ cur.folder=cfg.view; if(viewIsFolder(cur.folder)&&!folderById(cur.folder)) cur.folder='all'; if(isTagView(cur.folder)&&!tagById(cur.folder.slice(4))) cur.folder='all'; }
   { const old=trashNotes().filter(n=>now()-(n.trashedAt||n.updatedAt)>30*86400e3); if(old.length) purgeNotes(old); } // lixeira: 30 dias
   render();
