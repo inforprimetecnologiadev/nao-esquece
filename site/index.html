@@ -392,7 +392,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
       <li><span data-i="key"></span><span><b>Guarde a chave de recuperação.</b> Sem o PIN e sem a chave, o que está só neste celular não pode ser recuperado.</span></li>
       <li><span data-i="user"></span><span><b>Seus direitos (LGPD).</b> Ver, exportar, corrigir e apagar seus dados pelo app, e cancelar a inscrição quando quiser.</span></li>
     </ul>
-    <div class="tlinks"><button class="lbtn" id="tReadTerms">Ler os Termos de Uso</button><button class="lbtn" id="tReadPriv">Ler a Política de Privacidade</button></div>
+    <div class="tlinks"><button class="lbtn" id="tReadTerms">Ler os Termos de Uso</button><button class="lbtn" id="tReadPriv">Ler a Política de Privacidade</button><a class="lbtn" href="suporte/" target="_blank" rel="noopener" data-ext style="display:inline-flex;align-items:center;text-decoration:none">Ajuda e contato</a></div>
     <label class="tcheck"><input type="checkbox" id="tOk"><span>Li e aceito os <b>Termos de Uso</b> e a <b>Política de Privacidade</b>, e confirmo que tenho 18 anos ou mais (ou uso o app com autorização do meu responsável legal).</span></label>
     <button class="gbtn pri" id="tAccept" disabled>Aceitar e continuar</button>
   </div>
@@ -403,7 +403,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
   <article class="rd-body" id="rdBody"></article>
 </div>
 <template id="tplTerms">
-<p class="lg-meta">Versão de 5 de novembro de 2026.</p>
+<p class="lg-meta">Versão de 5 de novembro de 2026 (revisão 2).</p>
 
 <h2>1. Aceitação</h2>
 <p>Ao tocar em "Aceitar e continuar", você concorda com estes Termos de Uso e com a Política de Privacidade. Se não concordar, não use o aplicativo.</p>
@@ -448,10 +448,10 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <p>Estes termos seguem as leis do Brasil, incluindo a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Fica eleito o foro do domicílio do usuário.</p>
 
 <h2>13. Contato</h2>
-<p>Pelo app, em Ajustes › Privacidade e termos, ou pela página do projeto em <span class="lg-url">github.com/inforprimetecnologiadev/nao-esquece</span>.</p>
+<p>Central de ajuda e formulário de contato: <span class="lg-url">inforprimetecnologiadev.github.io/nao-esquece/suporte</span>. E-mail: <span class="lg-url">inforprimetecnologia@gmail.com</span>. Respondemos em até 5 dias úteis; pedidos de titular (LGPD), em até 15 dias.</p>
 </template>
 <template id="tplPrivacy">
-<p class="lg-meta">Versão de 5 de novembro de 2026. Responsável: <b>Não Esquece</b>.</p>
+<p class="lg-meta">Versão de 5 de novembro de 2026 (revisão 2). Responsável: <b>Não Esquece</b>.</p>
 
 <h2>1. Resumo</h2>
 <ul>
@@ -463,7 +463,13 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 
 <h2>2. Quem é o responsável</h2>
 <p>O aplicativo Não Esquece é o responsável por esta política. Como o app não recebe seus dados em servidores próprios, o tratamento acontece no seu aparelho e nos serviços Google que você escolhe conectar à sua conta.</p>
-<p><b>Canal de atendimento ao titular:</b> pelo próprio app, em <b>Ajustes › Privacidade e termos</b>, e pela página do projeto em <span class="lg-url">github.com/inforprimetecnologiadev/nao-esquece</span>.</p>
+<p><b>Canal de atendimento ao titular e suporte:</b></p>
+<ul>
+<li>Central de ajuda e formulário de contato: <span class="lg-url">inforprimetecnologiadev.github.io/nao-esquece/suporte</span></li>
+<li>E-mail: <span class="lg-url">inforprimetecnologia@gmail.com</span></li>
+<li>No app: <b>Ajustes › Sobre › Ajuda e contato</b>.</li>
+</ul>
+<p>Respondemos dúvidas e problemas em até <b>5 dias úteis</b>. Pedidos de titular (acesso, correção, eliminação, portabilidade e outros) são respondidos em até <b>15 dias</b> (LGPD, art. 19).</p>
 
 <h2>3. Quais dados são tratados</h2>
 <h3>3.1 Dados que você cria no app</h3>
@@ -480,7 +486,9 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 </ul>
 <h3>3.4 Permissões do celular</h3>
 <p>Microfone e câmera são usados somente quando você toca para gravar um áudio, ditar um texto, tirar uma foto ou gravar um vídeo. A galeria é aberta somente quando você escolhe anexar um arquivo.</p>
-<h3>3.5 O que o app não coleta</h3>
+<h3>3.5 Mensagens de suporte</h3>
+<p>Se você nos escrever pelo formulário de contato ou por e-mail, recebemos o seu nome, e-mail, assunto, mensagem e, se você informar, a versão do app e o modelo do aparelho. Esses dados são usados só para responder e registrar o atendimento.</p>
+<h3>3.6 O que o app não coleta</h3>
 <p>Localização, contatos, histórico de navegação, identificadores de publicidade e estatísticas de uso.</p>
 
 <h2>4. Para que os dados são usados e com qual base legal</h2>
@@ -488,6 +496,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <li><b>Guardar e mostrar suas notas, pastas, anexos e lembretes:</b> execução do serviço que você pediu (LGPD, art. 7º, V).</li>
 <li><b>Copiar para o seu Google Drive e criar lembretes na sua Google Agenda:</b> seu consentimento, dado ao conectar a conta (art. 7º, I). Você pode retirar a qualquer momento.</li>
 <li><b>Biometria, e-mail de recuperação, microfone e câmera:</b> seu consentimento, pedido no momento do uso (art. 7º, I; e art. 11, I, quando o conteúdo for dado sensível).</li>
+<li><b>Responder mensagens de suporte e pedidos de titular:</b> atendimento ao seu pedido (art. 7º, V) e cumprimento da LGPD (art. 7º, II).</li>
 <li><b>Proteger o acesso (PIN, criptografia, limite de tentativas):</b> segurança do próprio titular e legítimo interesse em evitar acessos indevidos (art. 7º, IX), sempre a seu favor.</li>
 </ul>
 
@@ -496,6 +505,8 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <li><b>Google</b> (Google Drive, Google Agenda e login com Google): somente se você conectar sua conta. O app pede acesso apenas aos <b>arquivos que ele mesmo cria</b> no Drive e à <b>agenda que ele mesmo cria</b>, sem ver o restante da sua conta. O uso desses serviços segue os termos e a política de privacidade do Google.</li>
 <li><b>GitHub</b> (GitHub Pages): hospeda os arquivos do aplicativo. Para entregá-los, o GitHub pode registrar dados técnicos de acesso, como endereço IP.</li>
 <li><b>Google Fonts:</b> fornece as fontes de texto do app e também pode registrar dados técnicos de acesso.</li>
+<li><b>FormSubmit:</b> entrega ao nosso e-mail as mensagens enviadas pelo formulário da central de ajuda.</li>
+<li><b>Google (Gmail):</b> serviço do e-mail de atendimento, onde as mensagens de suporte ficam guardadas.</li>
 </ul>
 <p>Esses serviços podem guardar dados fora do Brasil (por exemplo, nos Estados Unidos). Essa transferência acontece para cumprir o serviço que você pediu e conforme as garantias desses fornecedores (LGPD, art. 33).</p>
 
@@ -505,6 +516,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <li><b>Lixeira do app:</b> notas apagadas ficam 30 dias e depois são eliminadas.</li>
 <li><b>No seu Google Drive e na sua Google Agenda:</b> até você apagar por lá ou escolher apagar ao cancelar a inscrição.</li>
 <li><b>Backups (.json) que você exportar:</b> ficam sob seu controle, onde você salvar.</li>
+<li><b>Mensagens de suporte:</b> no e-mail de atendimento, pelo tempo necessário para responder e, depois, por até 5 anos para comprovar o atendimento (LGPD, art. 7º, VI, e art. 16). Você pode pedir a eliminação antes, quando a lei permitir.</li>
 </ul>
 
 <h2>7. Segurança</h2>
@@ -562,7 +574,7 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -750,7 +762,8 @@ const now = () => Date.now();
 const SPECIAL=['all','none','recent','pending','done','trash'];
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.1.0', TERMS_VERSION='2026-11-05';
+const APP_VERSION='1.1.1', TERMS_VERSION='2026-11-05.2';
+const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
 const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1711,6 +1724,7 @@ function openSettings(){
       <button class="row danger" id="sCancel"><span data-i="trash"></span><span class="grow">Cancelar inscrição<small>Apaga PIN, chave, e-mail de recuperação e os dados deste celular</small></span></button>
     </div>
     <div class="blk"><div class="lbl">Sobre</div>
+      <button class="row" id="sHelp"><span data-i="mail"></span><span class="grow">Ajuda e contato<small>Perguntas frequentes, suporte e pedidos de LGPD</small></span></button>
       <button class="row" id="sNews"><span data-i="info"></span><span class="grow">Não Esquece · versão ${APP_VERSION}<small>Ver as novidades de cada versão</small></span></button>
     </div>`,
   s=>{
@@ -1731,6 +1745,7 @@ function openSettings(){
     q('#sPriv').onclick=()=>openReader('Política de Privacidade','tplPrivacy');
     q('#sCancel').onclick=cancelFlow;
     q('#sNews').onclick=()=>openReader('Novidades','tplNews');
+    q('#sHelp').onclick=()=>{ closeSheet(); openLink(SUPPORT_URL+'?v='+encodeURIComponent(APP_VERSION)+'&origem=app'); };
     s.querySelector('#bDown').onclick=()=>download('nao-esquece-backup.json',JSON.stringify({app:'nao-esquece',folders:db.folders,notes:db.notes},null,1),'application/json');
     s.querySelector('#bFile').onchange=e=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader();
       r.onload=()=>{ try{ const j=JSON.parse(r.result); if(!Array.isArray(j.notes)) throw 0; const m=merge(db,j); db.folders=m.folders; db.notes=m.notes; changed(); render(); closeSheet(); toast('Backup importado'); }catch(err){ toast('Esse arquivo não é um backup do Não Esquece.'); } };

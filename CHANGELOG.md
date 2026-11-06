@@ -2,6 +2,12 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.1.1 — 5 de novembro de 2026
+
+- Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.
+- Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.
+- Atalho Ajuda e contato em Ajustes › Sobre.
+
 ## 1.1.0 — 5 de novembro de 2026
 
 - Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.

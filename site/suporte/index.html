@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Central de ajuda · Não Esquece</title>
+<meta name="description" content="Ajuda, contato e pedidos de LGPD do app Não Esquece. Resposta em até 5 dias úteis.">
+<meta name="theme-color" content="#0a1430">
+<link rel="icon" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: faixa escura de busca no topo → atalhos → perguntas em sanfona → direitos LGPD → contato (informações | formulário) → rodapé legal. */
+:root{
+  --bg:#eef2f8; --surface:#ffffff; --sunk:#e4eaf4; --ink:#111a2c; --muted:#56627a; --line:#d3dbe9;
+  --accent:#0a54c8; --accent-ink:#ffffff; --accent-soft:#dbe7fb; --ok:#127a49; --ok-soft:#d6f1e2; --danger:#b42318; --danger-soft:#fde7e4; --warn:#8a5d00; --warn-soft:#fff2cc;
+  --hero:#081127; --hero-2:#11306f; --hero-ink:#eaf0fb; --hero-muted:#a8b7d5; --hero-line:rgba(170,195,240,.18); --hero-field:#ffffff; --hero-field-ink:#111a2c;
+  --f-display:'Bricolage Grotesque',system-ui,sans-serif; --f-body:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --r:16px; --shadow:0 1px 2px rgba(10,20,50,.06),0 10px 30px rgba(10,20,50,.08);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0a1122; --surface:#111a2e; --sunk:#19243d; --ink:#e4eaf5; --muted:#97a4bb; --line:#25314b;
+  --accent:#4ab6ff; --accent-ink:#041330; --accent-soft:#14305c; --ok:#45d08e; --ok-soft:#123a28; --danger:#ff8a7a; --danger-soft:#3a1714; --warn:#e8b44a; --warn-soft:#3a2c08;
+  --hero-field:#111a2e; --hero-field-ink:#e4eaf5;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35); color-scheme:dark }}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hero);z-index:20}
+img,svg{max-width:100%}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+[hidden]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* topo */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--hero) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--hero-line);color:var(--hero-ink)}
+.bar .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;margin-right:auto;min-width:0}
+.brand img{width:34px;height:34px;border-radius:9px;flex:none}
+.brand b{font-family:var(--f-display);font-size:18px;letter-spacing:-.01em;white-space:nowrap}
+.brand span{font-size:13px;color:var(--hero-muted);white-space:nowrap;padding-left:10px;border-left:1px solid var(--hero-line)}
+.nav{display:flex;gap:4px;align-items:center}
+.nav a{color:var(--hero-ink);text-decoration:none;font-weight:600;font-size:14.5px;padding:8px 12px;border-radius:10px}
+.nav a:hover{background:rgba(255,255,255,.08)}
+.nav a.cta{background:#4ab6ff;color:#041330}
+@media (max-width:720px){.nav a:not(.cta){display:none}.brand span{display:none}}
+
+/* faixa de busca */
+.hero{background:radial-gradient(1200px 420px at 85% -10%,#1d4fb8 0,transparent 60%),radial-gradient(800px 380px at -10% 110%,#0f2c66 0,transparent 60%),linear-gradient(180deg,var(--hero),var(--hero-2));color:var(--hero-ink);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(170,200,255,.16) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,rgba(0,0,0,.65),transparent 85%);-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.65),transparent 85%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:56px 40px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#9fd6ff}
+.hero h1{margin:12px 0 10px;font-family:var(--f-display);font-weight:800;font-size:clamp(34px,6.2vw,58px);line-height:1.02;letter-spacing:-.035em;text-wrap:balance;max-width:16ch}
+.hero p.lead{margin:0 0 26px;color:var(--hero-muted);font-size:clamp(16px,2.2vw,18.5px);max-width:56ch}
+.search{display:flex;align-items:center;gap:12px;background:var(--hero-field);color:var(--hero-field-ink);border-radius:18px;padding:0 18px;height:64px;max-width:720px;box-shadow:0 20px 50px rgba(0,0,0,.35);border:1px solid transparent}
+.search:focus-within{border-color:#4ab6ff}
+@media (prefers-color-scheme:dark){.search{border-color:var(--line)}}
+.search svg{color:var(--muted)}
+.search input{flex:1;min-width:0;border:0;outline:0;background:none;color:inherit;font:600 17px var(--f-body)}
+.search input::placeholder{color:var(--muted);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;max-width:760px}
+.chip{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:99px;border:1px solid var(--hero-line);background:rgba(255,255,255,.06);color:var(--hero-ink);font:600 14px var(--f-body);cursor:pointer;text-decoration:none}
+.chip:hover{background:rgba(255,255,255,.12)}
+.chip svg{width:17px;height:17px;color:#9fd6ff}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:40px;border:1px solid var(--hero-line);border-radius:16px;overflow:hidden;background:var(--hero-line)}
+.fact{background:rgba(8,17,39,.72);padding:16px 18px;min-width:0}
+.fact b{display:block;font-family:var(--f-display);font-size:22px;letter-spacing:-.02em;line-height:1.15}
+.fact span{color:var(--hero-muted);font-size:13.5px}
+@media (max-width:640px){.facts{grid-template-columns:1fr}.hero .wrap{padding-block:40px 32px}.search{height:58px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:calc(-1 * max(18px,env(safe-area-inset-right,0px)));padding-right:18px}.chips::-webkit-scrollbar{display:none}.chip{flex:none}}
+
+/* seções */
+section{padding-block:56px 8px}
+.shead{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.shead h2{margin:0;font-family:var(--f-display);font-size:clamp(26px,4vw,36px);line-height:1.1;letter-spacing:-.025em;text-wrap:balance}
+.shead p{margin:6px 0 0;color:var(--muted);max-width:60ch}
+.count{color:var(--muted);font-size:14px;font-weight:600}
+
+/* perguntas */
+.faq{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:start}
+.cats{position:sticky;top:84px;display:flex;flex-direction:column;gap:2px}
+.cats button{display:flex;align-items:center;gap:10px;text-align:left;border:0;background:none;color:var(--muted);font:700 14.5px var(--f-body);padding:10px 12px;border-radius:12px;cursor:pointer}
+.cats button svg{width:19px;height:19px}
+.cats button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.cats button .n{margin-left:auto;font-weight:600;font-size:12.5px;color:var(--muted)}
+.groups{display:flex;flex-direction:column;gap:26px;min-width:0}
+.group h3{margin:0 0 10px;display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-size:20px;letter-spacing:-.01em}
+.group h3 svg{color:var(--accent)}
+.qa{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+details{border-top:1px solid var(--line)}
+details:first-child{border-top:0}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:16px 18px;font-weight:700;font-size:16px;line-height:1.4}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";flex:none;margin-left:auto;width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg) translate(-2px,-2px);transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg) translate(-2px,-2px)}
+summary:hover{background:color-mix(in srgb,var(--accent) 5%,transparent)}
+.ans{padding:0 18px 18px;color:var(--ink);font-size:15.5px}
+.ans p{margin:0 0 10px}
+.ans p:last-child,.ans ol:last-child,.ans ul:last-child{margin-bottom:0}
+.ans ol,.ans ul{margin:0 0 10px;padding-left:1.3em}
+.ans li{margin:4px 0}
+.path{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px;font-weight:700;background:var(--sunk);border-radius:8px;padding:1px 8px;font-size:14.5px}
+.note{display:flex;gap:10px;padding:12px 14px;border-radius:12px;background:var(--warn-soft);color:var(--ink);font-size:14.5px;margin-top:10px}
+.note svg{color:var(--warn);margin-top:1px}
+mark{background:color-mix(in srgb,var(--accent) 25%,transparent);color:inherit;border-radius:3px;padding:0 1px}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);padding:28px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}
+@media (max-width:820px){.faq{grid-template-columns:1fr}.cats{position:static;flex-direction:row;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}.cats::-webkit-scrollbar{display:none}.cats button{flex:none}}
+
+/* direitos */
+.rights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.right{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.right .k{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.right b{font-size:16.5px}
+.right p{margin:0;color:var(--muted);font-size:14.5px}
+@media (max-width:820px){.rights{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.rights{grid-template-columns:1fr}}
+
+/* contato */
+.contact{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:start}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+.info{display:flex;flex-direction:column;gap:14px}
+.sla{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sla div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.sla b{display:block;font-family:var(--f-display);font-size:24px;letter-spacing:-.02em;line-height:1.1}
+.sla span{color:var(--muted);font-size:13.5px}
+.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.steps li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.steps .num{flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:14px}
+.mailbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 12px 12px 16px;min-width:0}
+.mailbox svg{color:var(--accent)}
+.mailbox span{flex:1;min-width:0;font-weight:700;overflow-wrap:anywhere}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:700 15px var(--f-body);cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn.sm{height:36px;padding:0 12px;font-size:13.5px}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);height:54px;font-size:16px;width:100%}
+.btn:disabled{opacity:.55;cursor:default}
+.btn svg{width:18px;height:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+@media (max-width:520px){.card{padding:18px}}
+.card h3{margin:0 0 4px;font-family:var(--f-display);font-size:22px;letter-spacing:-.015em}
+.card .sub{margin:0 0 18px;color:var(--muted);font-size:14.5px}
+form{display:flex;flex-direction:column;gap:14px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.row2{grid-template-columns:1fr}}
+label.f{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:14px;min-width:0}
+label.f small{font-weight:500;color:var(--muted)}
+input.in,select.in,textarea.in{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:12px 14px;font:500 16px var(--f-body);outline:0;min-height:48px}
+textarea.in{min-height:150px;resize:vertical;line-height:1.5}
+input.in:focus,select.in:focus,textarea.in:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+.in[aria-invalid="true"]{border-color:var(--danger)}
+.meta{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;color:var(--muted);font-weight:600}
+.warnline{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink);background:var(--danger-soft);border-radius:12px;padding:10px 12px}
+.warnline svg{color:var(--danger);width:19px;height:19px;margin-top:1px}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.5;cursor:pointer}
+.check input{width:22px;height:22px;margin:1px 0 0;flex:none;accent-color:var(--accent)}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.msg{font-size:14px;font-weight:700;border-radius:12px;padding:10px 12px}
+.msg.err{background:var(--danger-soft);color:var(--danger)}
+#done:focus{outline:none}
+.done{text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:10px 0}
+.done .ok{width:64px;height:64px;border-radius:50%;background:var(--ok-soft);color:var(--ok);display:grid;place-items:center}
+.done .ok svg{width:34px;height:34px;stroke-width:2.6}
+.proto{font:800 22px/1.2 ui-monospace,'SFMono-Regular',Consolas,monospace;letter-spacing:.04em;background:var(--sunk);border-radius:12px;padding:12px 16px}
+.spin{width:18px;height:18px;border-radius:50%;border:2.5px solid currentColor;border-right-color:transparent;animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* rodapé */
+footer{margin-top:64px;background:var(--hero);color:var(--hero-muted);padding-block:36px calc(36px + env(safe-area-inset-bottom,0px));font-size:14.5px}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
+footer b{color:var(--hero-ink);display:block;margin-bottom:8px;font-size:15px}
+footer a{color:var(--hero-ink);text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+footer .fine{grid-column:1/-1;border-top:1px solid var(--hero-line);padding-top:16px;font-size:13px}
+@media (max-width:720px){footer .wrap{grid-template-columns:1fr}}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:12px;font-weight:700;font-size:14px;z-index:30;box-shadow:var(--shadow);max-width:calc(100% - 32px)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4"/><path d="M10.4 12.6L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 1 1 .9-8.9A6 6 0 0 1 19.5 11 3.5 3.5 0 0 1 18 18z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v5.5c0 4.6-3.3 8.4-8 9.5-4.7-1.1-8-4.9-8-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M6 3h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M9 11h6M9 15h4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+</svg>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="../icon-192.png" alt=""><b>Não Esquece</b><span>Central de ajuda</span></a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#perguntas">Perguntas</a>
+      <a href="#lgpd">Seus direitos</a>
+      <a href="../">Abrir o app</a>
+      <a class="cta" href="#contato">Fale com a gente</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Central de ajuda e contato</span>
+      <h1>Como podemos ajudar?</h1>
+      <p class="lead">Respostas rápidas sobre PIN, lembretes, Google Drive e privacidade. Se não encontrar o que precisa, fale com a gente: cada mensagem recebe um número de protocolo.</p>
+      <label class="search"><svg class="i"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Busque: esqueci o PIN, lembrete, Drive, apagar dados…" autocomplete="off" aria-label="Buscar nas perguntas frequentes"></label>
+      <div class="chips" aria-label="Atalhos">
+        <a class="chip" href="#q-pin"><svg class="i"><use href="#i-key"/></svg>Esqueci o PIN</a>
+        <a class="chip" href="#q-lembrete"><svg class="i"><use href="#i-bell"/></svg>Lembrete não tocou</a>
+        <a class="chip" href="#q-drive"><svg class="i"><use href="#i-cloud"/></svg>Notas no Google Drive</a>
+        <a class="chip" href="#lgpd"><svg class="i"><use href="#i-shield"/></svg>Meus dados (LGPD)</a>
+        <a class="chip" href="#q-cancelar"><svg class="i"><use href="#i-x"/></svg>Cancelar inscrição</a>
+        <a class="chip" href="#q-instalar"><svg class="i"><use href="#i-phone"/></svg>Instalar o app</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>Até 5 dias úteis</b><span>para responder dúvidas e problemas</span></div>
+        <div class="fact"><b>Até 15 dias</b><span>para pedidos de titular (LGPD, art. 19)</span></div>
+        <div class="fact"><b>Versão <span id="ver">1.1.1</span></b><span>atualiza sozinha, sem reinstalar</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="perguntas">
+    <div class="wrap">
+      <div class="shead"><div><h2>Perguntas frequentes</h2><p>Toque numa pergunta para ver a resposta.</p></div><span class="count" id="count" aria-live="polite"></span></div>
+      <div class="faq">
+        <div class="cats" id="cats" role="toolbar" aria-label="Assuntos"></div>
+        <div class="groups" id="groups">
+
+          <div class="group" data-cat="seguranca" data-name="Acesso e segurança" data-icon="i-lock">
+            <h3><svg class="i"><use href="#i-lock"/></svg>Acesso e segurança</h3>
+            <div class="qa">
+              <details id="q-pin"><summary>Esqueci o PIN. Como entro no app?</summary><div class="ans">
+                <ol><li>Na tela do PIN, toque em <b>Esqueci o PIN</b>.</li><li>Digite a <b>chave de recuperação</b>: as 20 letras e números que você guardou ou recebeu no seu e-mail de recuperação.</li><li>Crie um PIN novo. Suas notas continuam lá.</li></ol>
+                <div class="note"><svg class="i"><use href="#i-alert"/></svg><span><b>Sem o PIN e sem a chave, o que está guardado só no celular não pode ser recuperado</b>, por ninguém, nem pelo suporte. O que já estava no seu Google Drive volta quando você apaga os dados do celular e entra de novo com a mesma conta Google.</span></div>
+              </div></details>
+              <details id="q-espera"><summary>Errei o PIN e o app pediu para esperar</summary><div class="ans">
+                <p>Depois de 5 PINs errados, o app espera 30 segundos antes de aceitar outra tentativa. A cada novo erro a espera dobra, até 1 hora. Isso impede que alguém fique tentando adivinhar o seu PIN.</p>
+                <p>Se não lembra o PIN, use <b>Esqueci o PIN</b> com a sua chave de recuperação.</p>
+              </div></details>
+              <details id="q-chave"><summary>Perdi a chave de recuperação. Consigo uma nova?</summary><div class="ans">
+                <p>Sim, se você ainda lembra o PIN. Vá em <span class="path">Ajustes › Segurança › Chave e e-mail de recuperação</span> e toque em <b>Gerar nova chave</b>. A chave anterior para de funcionar.</p>
+                <p>Aproveite para enviar a nova chave ao seu e-mail de recuperação: o Gmail abre com a mensagem pronta e você só toca em <b>Enviar</b>.</p>
+              </div></details>
+              <details id="q-digital"><summary>Como uso a digital ou o rosto para abrir?</summary><div class="ans">
+                <p>Vá em <span class="path">Ajustes › Segurança › Usar digital ou rosto para desbloquear</span> e confirme com o PIN. O PIN continua valendo. Sua digital ou seu rosto nunca saem do celular.</p>
+              </div></details>
+              <details id="q-bloqueio"><summary>O app pede o PIN toda hora. Dá para mudar?</summary><div class="ans">
+                <p>Sim. Em <span class="path">Ajustes › Segurança › Pedir o PIN quando voltar ao app</span>, escolha <b>Na hora</b>, <b>30 s</b>, <b>1 min</b> ou <b>5 min</b> fora do app. Quando você abre a câmera, a galeria ou o Gmail pelo próprio app, ele tolera até 5 minutos.</p>
+              </div></details>
+              <details id="q-golpe"><summary>O suporte vai pedir meu PIN ou minha chave?</summary><div class="ans">
+                <p><b>Nunca.</b> Ninguém do Não Esquece pede PIN, chave de recuperação ou senha do Google, por mensagem, e-mail ou telefone. Se alguém pedir, é golpe: não envie.</p>
+              </div></details>
+            </div>
+          </div>
+
+          <div class="group" data-cat="google" data-name="Google Drive e Agenda" data-icon="i-cloud">
+            <h3><svg class="i"><use href="#i-cloud"/></svg>Google Drive e Agenda</h3>
+            <div class="qa">
+              <details id="q-drive"><summary>Onde ficam minhas notas no Google Drive?</summary><div class="ans">
+                <p>Em <span class="path">Meu Drive › Não Esquece</span>. Lá dentro, cada pasta do app tem a sua, e cada nota vira uma pasta com o título, a data e a hora. Dentro dela ficam o texto da nota, as fotos e os áudios.</p>
+                <p>No app, toque no aviso da nuvem no topo e em <b>Abrir a pasta no Google Drive</b>.</p>
+              </div></details>
+              <details id="q-conectar"><summary>Aparece "Toque para conectar". O que é?</summary><div class="ans">
+                <p>Por segurança, o Google libera o acesso ao Drive por algum tempo. Quando ele expira, o app mostra esse aviso. Toque nele e confirme a sua conta. Nada se perde: enquanto isso, tudo fica salvo no celular e é enviado depois.</p>
+              </div></details>
+              <details id="q-login"><summary>Ao entrar com o Google aparece "Acesso bloqueado"</summary><div class="ans">
+                <p>Toque em <b>Entrar depois</b> para continuar usando o app, com as notas salvas no celular. Depois, fale com a gente pelo formulário abaixo e envie um print da tela de erro. Você conecta a conta mais tarde em <span class="path">Ajustes › Conta do Google Drive</span>.</p>
+              </div></details>
+              <details id="q-lembrete"><summary>O lembrete não tocou. O que verificar?</summary><div class="ans">
+                <ol>
+                  <li>O app está conectado à sua conta Google e você permitiu a <b>Google Agenda</b> ao entrar.</li>
+                  <li>O app <b>Google Agenda</b> está instalado e com notificações ativadas.</li>
+                  <li>No Google Agenda, a agenda <b>Não Esquece</b> está marcada (visível).</li>
+                  <li>O celular não está em modo "não perturbe" e a economia de bateria não está bloqueando o Google Agenda.</li>
+                  <li>O lembrete foi salvo com internet. Sem internet, ele vai para a agenda assim que a conexão voltar.</li>
+                </ol>
+                <p>Com o app aberto, o aviso também aparece dentro dele.</p>
+              </div></details>
+              <details id="q-trocar"><summary>Troquei de celular. Como trago minhas notas?</summary><div class="ans">
+                <p>Instale o app no celular novo, aceite os termos, entre com a <b>mesma conta Google</b> e crie um PIN. Tudo o que estava no Drive volta sozinho.</p>
+              </div></details>
+            </div>
+          </div>
+
+          <div class="group" data-cat="notas" data-name="Notas, fotos e áudios" data-icon="i-note">
+            <h3><svg class="i"><use href="#i-note"/></svg>Notas, fotos e áudios</h3>
+            <div class="qa">
+              <details id="q-audio"><summary>Como gravo um áudio ou tiro uma foto?</summary><div class="ans">
+                <p>Dentro da nota, toque no <b>microfone</b> e escolha <b>Gravar áudio</b> (ou <b>Ditar texto</b> para a fala virar texto). Para fotos, toque no <b>clipe</b> e escolha <b>Tirar foto</b> ou <b>Escolher da galeria</b>.</p>
+              </div></details>
+              <details id="q-permissao"><summary>O microfone ou a câmera não funcionam</summary><div class="ans">
+                <p>Libere a permissão em <span class="path">Configurações do celular › Apps › Não Esquece › Permissões</span> (em alguns aparelhos a permissão fica no app Chrome). Se não der, use <b>Usar o gravador do celular</b>, que aparece no próprio app.</p>
+              </div></details>
+              <details id="q-lixeira"><summary>Apaguei uma nota sem querer</summary><div class="ans">
+                <p>Ela fica 30 dias na <b>Lixeira</b>. Abra a Lixeira na barra de pastas, toque na nota e em <b>Restaurar</b>. Logo depois de apagar, você também pode tocar em <b>Desfazer</b> no aviso.</p>
+              </div></details>
+              <details id="q-varias"><summary>Como seleciono várias notas de uma vez?</summary><div class="ans">
+                <p>Segure o dedo sobre uma nota (ou toque em <b>Selecionar</b>). Depois toque nas outras e escolha <b>Concluir</b>, <b>Pendente</b>, <b>Mover</b> ou <b>Apagar</b>.</p>
+              </div></details>
+            </div>
+          </div>
+
+          <div class="group" data-cat="privacidade" data-name="Privacidade (LGPD)" data-icon="i-shield">
+            <h3><svg class="i"><use href="#i-shield"/></svg>Privacidade (LGPD)</h3>
+            <div class="qa">
+              <details id="q-dados"><summary>Quais dados de mim vocês guardam?</summary><div class="ans">
+                <p>O app <b>não tem servidor próprio</b>. Suas notas, fotos e áudios ficam no seu celular (criptografados) e, se você conectar, na <b>sua</b> conta Google. Nós só recebemos o que você nos envia pelo formulário de contato ou por e-mail.</p>
+                <p>Detalhes na <a href="../privacidade.html">Política de Privacidade</a>.</p>
+              </div></details>
+              <details id="q-exportar"><summary>Como exporto ou apago meus dados?</summary><div class="ans">
+                <p><b>Exportar:</b> <span class="path">Ajustes › Privacidade e termos › Exportar meus dados</span> gera um arquivo .json com tudo. Os arquivos do seu Drive também são seus.</p>
+                <p><b>Apagar:</b> apague notas pela lixeira ("Apagar de vez") ou use <b>Cancelar inscrição</b> para apagar tudo do celular.</p>
+              </div></details>
+              <details id="q-cancelar"><summary>Como cancelo a inscrição?</summary><div class="ans">
+                <p>Em <span class="path">Ajustes › Privacidade e termos › Cancelar inscrição</span>. O app explica tudo antes, pede para digitar CANCELAR e confirmar o PIN. Você escolhe se apaga também a agenda de lembretes e a pasta no Drive.</p>
+                <div class="note"><svg class="i"><use href="#i-alert"/></svg><span><b>O cancelamento não pode ser desfeito.</b> O PIN, a chave e o e-mail de recuperação são apagados, e não há como recuperar a senha depois. O app deixa de enviar notificações e mensagens.</span></div>
+              </div></details>
+              <details id="q-pedido"><summary>Como faço um pedido de titular (LGPD)?</summary><div class="ans">
+                <p>No formulário abaixo, escolha <b>Pedido de titular (LGPD)</b> e o tipo de pedido. Respondemos em até 15 dias. Para proteger você, podemos pedir uma confirmação de que o e-mail é seu.</p>
+              </div></details>
+            </div>
+          </div>
+
+          <div class="group" data-cat="app" data-name="Instalar e atualizar" data-icon="i-phone">
+            <h3><svg class="i"><use href="#i-phone"/></svg>Instalar e atualizar</h3>
+            <div class="qa">
+              <details id="q-instalar"><summary>Como instalo o app no Android?</summary><div class="ans">
+                <ol><li>Baixe o arquivo: <a href="../NaoEsquece.apk">NaoEsquece.apk</a>.</li><li>Abra o arquivo baixado. Se o Android pedir, permita "instalar apps desta fonte".</li><li>Abra o Não Esquece, aceite os termos e crie o seu PIN.</li></ol>
+              </div></details>
+              <details id="q-atualizar"><summary>Preciso reinstalar para atualizar?</summary><div class="ans">
+                <p>Não. As novidades chegam sozinhas quando você abre o app com internet. Veja o que mudou em <span class="path">Ajustes › Sobre</span> ou na <a href="https://github.com/inforprimetecnologiadev/nao-esquece/releases" rel="noopener">lista de versões</a>.</p>
+              </div></details>
+            </div>
+          </div>
+
+          <div class="empty" id="empty" hidden><b>Nada encontrado para essa busca</b>Tente outra palavra ou <a href="#contato">fale com a gente</a>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lgpd">
+    <div class="wrap">
+      <div class="shead"><div><h2>Seus direitos sobre os seus dados</h2><p>A Lei Geral de Proteção de Dados (Lei nº 13.709/2018, art. 18) garante estes direitos. A maior parte você resolve direto no app.</p></div></div>
+      <div class="rights">
+        <div class="right"><span class="k">Acesso</span><b>Ver o que é guardado</b><p>Tudo aparece nas suas notas e pastas. Pedidos sobre mensagens de suporte: pelo formulário.</p></div>
+        <div class="right"><span class="k">Correção</span><b>Corrigir dados</b><p>Edite qualquer nota a qualquer momento.</p></div>
+        <div class="right"><span class="k">Eliminação</span><b>Apagar dados</b><p>Lixeira, "Apagar de vez" ou Cancelar inscrição, em Ajustes.</p></div>
+        <div class="right"><span class="k">Portabilidade</span><b>Levar seus dados</b><p>Exporte o backup (.json) ou use os arquivos do seu Google Drive.</p></div>
+        <div class="right"><span class="k">Revogação</span><b>Retirar o consentimento</b><p>Saia da conta Google, desative a biometria ou cancele a inscrição.</p></div>
+        <div class="right"><span class="k">Reclamação</span><b>Falar com a ANPD</b><p>Você pode peticionar à <a href="https://www.gov.br/anpd" rel="noopener">Autoridade Nacional de Proteção de Dados</a>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="shead"><div><h2>Fale com a gente</h2><p>Dúvidas, problemas, pedidos de LGPD, falhas de segurança e sugestões.</p></div></div>
+      <div class="contact">
+        <div class="info">
+          <div class="sla"><div><b>5 dias úteis</b><span>suporte e dúvidas</span></div><div><b>15 dias</b><span>pedidos de titular (LGPD)</span></div></div>
+          <ol class="steps">
+            <li><span class="num">1</span><span>Você envia a mensagem e recebe um <b>número de protocolo</b> na hora.</span></li>
+            <li><span class="num">2</span><span>A resposta chega no e-mail que você informar.</span></li>
+            <li><span class="num">3</span><span>Falhas de segurança são tratadas com prioridade e sigilo.</span></li>
+          </ol>
+          <div><div style="font-weight:700;font-size:14px;margin-bottom:6px">Prefere e-mail?</div>
+            <div class="mailbox"><svg class="i"><use href="#i-mail"/></svg><span id="addr">inforprimetecnologia@gmail.com</span><button class="btn sm" id="copyAddr" type="button"><svg class="i"><use href="#i-copy"/></svg>Copiar</button></div>
+          </div>
+        </div>
+
+        <div class="card" id="formCard">
+          <h3>Enviar mensagem</h3>
+          <p class="sub">Campos com * são obrigatórios.</p>
+          <form id="f" novalidate>
+            <div class="row2">
+              <label class="f">Nome *<input class="in" id="fNome" name="nome" autocomplete="name" maxlength="80" required></label>
+              <label class="f">E-mail para resposta *<input class="in" id="fEmail" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required></label>
+            </div>
+            <label class="f">Assunto *
+              <select class="in" id="fAssunto" name="assunto" required>
+                <option value="">Escolha um assunto</option>
+                <option>Dúvida ou problema no app</option>
+                <option>Pedido de titular (LGPD)</option>
+                <option>Segurança: relatar uma falha</option>
+                <option>Sugestão ou elogio</option>
+                <option>Outro assunto</option>
+              </select></label>
+            <label class="f" id="lgpdBox" hidden>Tipo de pedido *
+              <select class="in" id="fPedido" name="pedido">
+                <option value="">Escolha o tipo de pedido</option>
+                <option>Confirmação e acesso aos dados</option>
+                <option>Correção de dados</option>
+                <option>Eliminação de dados</option>
+                <option>Portabilidade</option>
+                <option>Informação sobre compartilhamento</option>
+                <option>Revogação do consentimento</option>
+                <option>Outro pedido</option>
+              </select></label>
+            <div class="row2">
+              <label class="f">Versão do app <small>Ajustes › Sobre</small><input class="in" id="fVersao" name="versao" maxlength="20" placeholder="Ex.: 1.1.1"></label>
+              <label class="f">Celular <small>opcional</small><input class="in" id="fAparelho" name="aparelho" maxlength="60" placeholder="Ex.: Galaxy A15, Android 14"></label>
+            </div>
+            <label class="f">Mensagem *<textarea class="in" id="fMsg" name="mensagem" maxlength="5000" required placeholder="Conte o que aconteceu, o que você esperava e, se puder, o passo a passo."></textarea>
+              <span class="meta"><span>Mínimo de 20 caracteres</span><span id="fCount">0/5000</span></span></label>
+            <div class="warnline"><svg class="i"><use href="#i-alert"/></svg><span><b>Nunca escreva seu PIN, sua chave de recuperação ou senhas.</b> O suporte nunca pede esses dados.</span></div>
+            <div class="hp" aria-hidden="true"><label>Deixe em branco<input id="fHoney" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+            <label class="check"><input type="checkbox" id="fOk"><span>Concordo que estes dados sejam usados para responder a minha mensagem, conforme a <a href="../privacidade.html">Política de Privacidade</a>.</span></label>
+            <p class="msg err" id="fErr" role="alert" hidden></p>
+            <button class="btn pri" id="fSend" type="submit"><svg class="i"><use href="#i-send"/></svg><span>Enviar mensagem</span></button>
+            <p id="fFallback" hidden style="margin:0;font-size:14px;color:var(--muted)">Se o envio falhar de novo, <a href="#" id="fMailto">envie pelo seu e-mail</a> com o texto já preenchido.</p>
+          </form>
+          <div class="done" id="done" hidden tabindex="-1">
+            <div class="ok"><svg class="i"><use href="#i-check"/></svg></div>
+            <h3>Mensagem enviada</h3>
+            <p class="sub" style="margin:0">Guarde o seu número de protocolo:</p>
+            <div class="proto" id="proto"></div>
+            <button class="btn sm" id="copyProto" type="button"><svg class="i"><use href="#i-copy"/></svg>Copiar protocolo</button>
+            <p class="sub" id="doneTxt" style="margin:6px 0 0"></p>
+            <button class="btn" id="again" type="button">Enviar outra mensagem</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Não Esquece</b>Bloco de notas com áudio, fotos, checklist e lembretes, salvo no seu celular e na sua conta Google.<br><br>Responsável: Não Esquece<br>Contato: inforprimetecnologia@gmail.com</div>
+    <div><b>Documentos</b><ul><li><a href="../privacidade.html">Política de Privacidade</a></li><li><a href="../termos.html">Termos de Uso</a></li><li><a href="https://github.com/inforprimetecnologiadev/nao-esquece/releases" rel="noopener">Versões e novidades</a></li></ul></div>
+    <div><b>App</b><ul><li><a href="../">Abrir o app</a></li><li><a href="../NaoEsquece.apk">Baixar o APK</a></li><li><a href="#contato">Fale com a gente</a></li></ul></div>
+    <p class="fine">Esta central não pede PIN, chave de recuperação nem senhas. Prazos: suporte em até 5 dias úteis; pedidos de titular em até 15 dias (LGPD, art. 19).</p>
+  </div>
+</footer>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+(()=>{
+'use strict';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const SUPPORT_EMAIL='inforprimetecnologia@gmail.com';
+const ENDPOINT='https://formsubmit.co/ajax/'+SUPPORT_EMAIL; // depois de ativar no FormSubmit, pode trocar o e-mail pelo código que eles enviam
+const DRAFT='ne.sup.draft', SENT='ne.sup.sent', LOADED=Date.now();
+const LS={get(k,d){ try{ const v=localStorage.getItem(k); return v==null?d:JSON.parse(v); }catch(e){ return d; } },set(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }};
+let toastT=0; function toast(t){ const el=$('#toast'); el.textContent=t; el.hidden=false; clearTimeout(toastT); toastT=setTimeout(()=>el.hidden=true,2600); }
+async function copy(t){ try{ await navigator.clipboard.writeText(t); toast('Copiado'); }catch(e){ toast('Selecione e copie: '+t); } }
+
+/* ---------- perguntas: assuntos, busca, atalhos ---------- */
+const groups=$$('.group');
+const norm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+let cat='all';
+function drawCats(){
+  const items=[['all','Todos os assuntos','i-grid',$$('#groups details').length],...groups.map(g=>[g.dataset.cat,g.dataset.name,g.dataset.icon,g.querySelectorAll('details').length])];
+  $('#cats').innerHTML=items.map(([k,n,ic,c])=>`<button type="button" data-cat="${k}" aria-pressed="${k===cat}"><svg class="i"><use href="#${ic}"/></svg>${n}<span class="n">${c}</span></button>`).join('');
+}
+const orig=new Map(); $$('#groups summary,#groups .ans').forEach(el=>orig.set(el,el.innerHTML));
+function filter(){
+  const q=norm($('#q').value.trim()); let shown=0;
+  orig.forEach((h,el)=>{ el.innerHTML=h; });
+  groups.forEach(g=>{
+    let any=0; const okCat=cat==='all'||g.dataset.cat===cat;
+    g.querySelectorAll('details').forEach(d=>{
+      const hit=okCat&&(!q||norm(d.textContent).includes(q)); d.hidden=!hit; if(hit){ any++; shown++; }
+      if(q&&hit){ d.open=true; mark(d.querySelector('summary'),q); } else if(q) d.open=false;
+    });
+    g.hidden=!any;
+  });
+  $('#empty').hidden=shown>0;
+  $('#count').textContent=q?(shown===1?'1 resposta encontrada':shown+' respostas encontradas'):'';
+}
+function mark(el,q){ // destaca a palavra buscada no título
+  const t=el.textContent, i=norm(t).indexOf(q); if(i<0) return;
+  el.innerHTML=''; el.append(t.slice(0,i)); const m=document.createElement('mark'); m.textContent=t.slice(i,i+q.length); el.append(m,t.slice(i+q.length));
+}
+$('#cats').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; cat=b.dataset.cat; drawCats(); filter(); });
+let qT=0; $('#q').addEventListener('input',()=>{ clearTimeout(qT); qT=setTimeout(()=>{ filter(); if($('#q').value.trim()) document.getElementById('perguntas').scrollIntoView({block:'start'}); },220); });
+function openHash(){ const id=location.hash.slice(1); const d=id&&document.getElementById(id); if(d&&d.tagName==='DETAILS'){ cat='all'; $('#q').value=''; drawCats(); filter(); d.open=true; setTimeout(()=>d.scrollIntoView({block:'start'}),30); } }
+window.addEventListener('hashchange',openHash);
+drawCats(); filter(); openHash();
+
+/* ---------- formulário ---------- */
+const P=new URLSearchParams(location.search);
+if(P.get('v')){ $('#fVersao').value=P.get('v').slice(0,20); $('#ver').textContent=P.get('v').slice(0,20); }
+const fields=['fNome','fEmail','fAssunto','fPedido','fVersao','fAparelho','fMsg'];
+const draft=LS.get(DRAFT,null); if(draft) fields.forEach(id=>{ if(draft[id]!=null&&!$('#'+id).value) $('#'+id).value=draft[id]; });
+const saveDraft=()=>{ const d={}; fields.forEach(id=>d[id]=$('#'+id).value); LS.set(DRAFT,d); };
+fields.forEach(id=>$('#'+id).addEventListener('input',saveDraft));
+const lgpd=()=>{ $('#lgpdBox').hidden=$('#fAssunto').value!=='Pedido de titular (LGPD)'; };
+$('#fAssunto').addEventListener('change',()=>{ lgpd(); saveDraft(); }); lgpd();
+const cnt=()=>{ $('#fCount').textContent=$('#fMsg').value.length+'/5000'; }; $('#fMsg').addEventListener('input',cnt); cnt();
+$('#copyAddr').onclick=()=>copy(SUPPORT_EMAIL);
+
+function protocol(){ const d=new Date(), p=x=>String(x).padStart(2,'0'), A='ABCDEFGHJKLMNPQRSTUVWXYZ23456789', r=crypto.getRandomValues(new Uint8Array(4)); return `NE-${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}-${[...r].map(x=>A[x%32]).join('')}`; }
+function err(t,focus){ const e=$('#fErr'); e.textContent=t; e.hidden=!t; if(focus){ const el=$('#'+focus); el.setAttribute('aria-invalid','true'); el.focus(); } }
+$$('#f .in').forEach(el=>el.addEventListener('input',()=>el.removeAttribute('aria-invalid')));
+function secretsIn(t){ return /\b[A-Z2-9]{4}-?[A-Z2-9]{4}-?[A-Z2-9]{4}-?[A-Z2-9]{4}-?[A-Z2-9]{4}\b/i.test(t) || /\b(pin|senha)\b[^\n]{0,20}\b\d{4,8}\b/i.test(t); }
+function mailtoFor(data){
+  const body=Object.entries(data).filter(([k])=>!k.startsWith('_')).map(([k,v])=>`${k}: ${v}`).join('\n');
+  return 'mailto:'+SUPPORT_EMAIL+'?subject='+encodeURIComponent(data._subject)+'&body='+encodeURIComponent(body);
+}
+let sending=false;
+$('#f').addEventListener('submit',async e=>{
+  e.preventDefault(); if(sending) return; err('');
+  const v=id=>$('#'+id).value.trim();
+  if(v('fHoney')){ return showDone(protocol(),v('fEmail')); } // robô preencheu o campo escondido: finge que enviou
+  try{ if(navigator.webdriver===true){ err('Envio bloqueado: o navegador está sendo controlado por automação (robô).'); return; } }catch(_){}
+  if(Date.now()-LOADED<4000){ err('Espere alguns segundos e envie de novo.'); return; }
+  if(v('fNome').length<2) return err('Digite o seu nome.','fNome');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v('fEmail'))) return err('Digite um e-mail válido para receber a resposta.','fEmail');
+  if(!v('fAssunto')) return err('Escolha um assunto.','fAssunto');
+  if(v('fAssunto')==='Pedido de titular (LGPD)'&&!v('fPedido')) return err('Escolha o tipo de pedido.','fPedido');
+  if(v('fMsg').length<20) return err('Conte um pouco mais: a mensagem precisa ter pelo menos 20 caracteres.','fMsg');
+  if(secretsIn(v('fMsg'))) return err('Parece que a mensagem tem um PIN ou uma chave de recuperação. Apague esses dados antes de enviar: o suporte nunca precisa deles.','fMsg');
+  if(!$('#fOk').checked) return err('Marque a concordância com o uso dos dados para responder.','fOk');
+  const recent=(LS.get(SENT,[])||[]).filter(t=>Date.now()-t<3600e3);
+  if(recent.length>=3) return err('Você já enviou 3 mensagens na última hora. Aguarde um pouco: todas foram recebidas.');
+  const proto=protocol(), assunto=v('fAssunto');
+  const data={
+    _subject:`[${proto}] ${assunto} — Não Esquece`, _replyto:v('fEmail'), _template:'table', _captcha:'false', _honey:'',
+    'Protocolo':proto, 'Nome':v('fNome'), 'E-mail':v('fEmail'), 'Assunto':assunto,
+    ...(assunto==='Pedido de titular (LGPD)'?{'Tipo de pedido (LGPD)':v('fPedido'),'Prazo legal':'até 15 dias (LGPD, art. 19)'}:{}),
+    'Versão do app':v('fVersao')||'não informada', 'Celular':v('fAparelho')||'não informado', 'Mensagem':v('fMsg'),
+    'Consentimento':'Sim, em '+new Date().toLocaleString('pt-BR'), 'Origem':P.get('origem')==='app'?'App (Ajustes)':'Central de ajuda'
+  };
+  sending=true; const btn=$('#fSend'); btn.disabled=true; btn.innerHTML='<span class="spin"></span><span>Enviando…</span>';
+  let ok=false, reason='';
+  try{
+    const ac=new AbortController(), t=setTimeout(()=>ac.abort(),20000);
+    const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data),signal:ac.signal});
+    clearTimeout(t); const j=await r.json().catch(()=>({}));
+    ok=r.ok&&(j.success===true||j.success==='true'); reason=String(j.message||'');
+  }catch(ex){ reason=navigator.onLine?'falha':'offline'; }
+  sending=false; btn.disabled=false; btn.innerHTML='<svg class="i"><use href="#i-send"/></svg><span>Enviar mensagem</span>';
+  if(ok){ LS.set(SENT,[...recent,Date.now()]); try{ localStorage.removeItem(DRAFT); }catch(_){} showDone(proto,v('fEmail')); return; }
+  $('#fMailto').href=mailtoFor(data); $('#fFallback').hidden=false;
+  err(reason==='offline'?'Sem internet. Sua mensagem ficou salva neste aparelho: envie de novo quando a conexão voltar.'
+     :/activat/i.test(reason)?'O canal de contato está sendo ativado. Envie pelo seu e-mail usando o link abaixo, por favor.'
+     :'Não deu para enviar agora. Tente de novo em instantes ou envie pelo seu e-mail.');
+});
+function showDone(proto,email){
+  $('#f').hidden=true; $('#done').hidden=false; $('#proto').textContent=proto;
+  $('#doneTxt').textContent='A resposta chega em '+email+' em até 5 dias úteis (pedidos de LGPD, em até 15 dias). Confira também a caixa de spam.';
+  $('#copyProto').onclick=()=>copy(proto);
+  const top=document.getElementById('formCard').getBoundingClientRect().top+scrollY-80;
+  window.scrollTo({top,behavior:'instant'}); $('#done').focus({preventScroll:true});
+}
+$('#again').onclick=()=>{ $('#f').reset(); fields.forEach(id=>$('#'+id).value=''); if(P.get('v')) $('#fVersao').value=P.get('v'); lgpd(); cnt(); $('#done').hidden=true; $('#f').hidden=false; $('#fFallback').hidden=true; };
+})();
+</script>
+</body>
+</html>
