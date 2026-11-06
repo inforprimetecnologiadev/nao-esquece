@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="nova"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/sc_new"
+        android:shortcutLongLabel="@string/sc_new">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.inforprime.naoesquece"
+            android:targetClass="com.inforprime.naoesquece.MainActivity"
+            android:data="https://inforprimetecnologiadev.github.io/nao-esquece/?nova=1" />
+    </shortcut>
+</shortcuts>

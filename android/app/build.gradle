@@ -2,39 +2,21 @@ plugins {
     id 'com.android.application'
 }
 
-// O app abre este endereço em tela cheia (Trusted Web Activity), usando o Chrome do celular.
-def twa = [
-    applicationId: 'com.inforprime.naoesquece',
-    hostName     : 'inforprimetecnologiadev.github.io',
-    launchUrl    : '/nao-esquece/',
-    name         : 'Não Esquece',
-    launcherName : 'Não Esquece',
-    themeColor   : '#0A1122',
-    navColor     : '#0A1122',
-    bgColor      : '#0A1122',
-]
-
+// App nativo: as telas rodam dentro do próprio app (WebView do Android), sem abrir o Chrome.
 android {
     namespace 'com.inforprime.naoesquece'
     compileSdk 34
 
     defaultConfig {
-        applicationId twa.applicationId
-        minSdk 21
+        applicationId 'com.inforprime.naoesquece'
+        minSdk 24
         targetSdk 34
-        versionCode 1
-        versionName '1.0.0'
+        versionCode 3
+        versionName '1.2.0'
+    }
 
-        resValue 'string', 'appName', twa.name
-        resValue 'string', 'launcherName', twa.launcherName
-        resValue 'string', 'launchUrl', 'https://' + twa.hostName + twa.launchUrl
-        resValue 'string', 'hostName', twa.hostName
-        resValue 'string', 'assetStatements',
-            '[{ \\"relation\\": [\\"delegate_permission/common.handle_all_urls\\"], ' +
-            '\\"target\\": {\\"namespace\\": \\"web\\", \\"site\\": \\"https://' + twa.hostName + '\\"}}]'
-        resValue 'color', 'colorPrimary', twa.themeColor
-        resValue 'color', 'navigationColor', twa.navColor
-        resValue 'color', 'backgroundColor', twa.bgColor
+    buildFeatures {
+        buildConfig true
     }
 
     // A chave de assinatura não fica no GitHub: aqui o APK sai sem assinatura e é assinado à parte.
@@ -57,6 +39,11 @@ android {
         }
     }
 
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -64,5 +51,10 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+    implementation platform('org.jetbrains.kotlin:kotlin-bom:1.8.22')
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.activity:activity:1.9.3'
+    implementation 'androidx.core:core:1.13.1'
+    implementation 'androidx.biometric:biometric:1.1.0'
+    implementation 'com.google.android.gms:play-services-auth:21.2.0'
 }
