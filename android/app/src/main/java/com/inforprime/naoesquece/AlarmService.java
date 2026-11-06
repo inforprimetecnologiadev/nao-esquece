@@ -105,9 +105,11 @@ public class AlarmService extends Service {
         String m = Reminders.mode(a.optString("mode"));
         if (!m.equals("vibra")) playSound();
         if (!m.equals("som")) vibrate();
+        boolean notif = NotificationManagerCompat.from(this).areNotificationsEnabled();
         h.removeCallbacks(timeout);
-        h.postDelayed(timeout, MAX_MS);
-        if (!NotificationManagerCompat.from(this).areNotificationsEnabled()) {
+        // sem notificações não há botão Parar na tela: o som para sozinho em 30 segundos
+        h.postDelayed(timeout, notif ? MAX_MS : 30_000L);
+        if (!notif) {
             // sem permissão de notificação a tela do alarme não aparece sozinha: tenta abrir direto
             try {
                 startActivity(new Intent(this, AlarmActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
