@@ -12,3 +12,6 @@ Bloco de notas para o celular: texto, checklist, áudios, fotos, documentos esca
 - [Política de Privacidade](https://inforprimetecnologiadev.github.io/nao-esquece/privacidade.html) · [Termos de Uso](https://inforprimetecnologiadev.github.io/nao-esquece/termos.html)
 
 - A verificação de domínio do app (Digital Asset Links) fica no repositório [inforprimetecnologiadev.github.io](https://github.com/inforprimetecnologiadev/inforprimetecnologiadev.github.io), em `.well-known/assetlinks.json`.
+
+## Código-fonte
+O código do site (o app em si, os textos legais e os testes) fica em [`fonte/`](fonte/LEIA-ME.md), com o passo a passo para publicar uma versão nova.

@@ -5,3 +5,5 @@ android/local.properties
 *.keystore
 *.jks
 android/app/src/main/cpp/lame/
+fonte/dist/
+__pycache__/
