@@ -527,6 +527,38 @@ public class AlarmTest {
         ui(() -> d[0].cancel());
     }
 
+    @Test
+    public void n_vozOffline() throws Exception {
+        final org.json.JSONObject[] r = {null};
+        ui(() -> OfflineVoice.check(c, "pt-BR", x -> r[0] = x));
+        assertTrue("conferir o português responde", waitFor(() -> r[0] != null, 12000));
+        Log.i(TAG, "português offline: " + r[0]);
+        String st = r[0].optString("st");
+        assertTrue("situação conhecida: " + st, java.util.Arrays.asList("instalado", "baixando", "disponivel", "sem-idioma", "sem-servico", "antigo", "erro").contains(st));
+        assertTrue(OfflineVoice.has(java.util.Arrays.asList("en-US", "pt-BR"), "pt-BR"));
+        assertTrue(OfflineVoice.has(java.util.Arrays.asList("pt_br"), "pt-BR"));
+        assertFalse(OfflineVoice.has(java.util.Arrays.asList("pt-PT", "es-ES"), "pt-BR"));
+    }
+
+    @Test
+    public void o_alarmeComSegundos() throws Exception {
+        long t = System.currentTimeMillis() + 75_000L;
+        String at = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", java.util.Locale.US).format(new java.util.Date(t));
+        assertEquals("hora com segundos", t / 1000, Reminders.parseLocal(at) / 1000);
+        JSONObject a = new JSONObject();
+        a.put("id", "tm1");
+        a.put("at", at);
+        a.put("before", 0);
+        a.put("title", "Temporizador de 1 min");
+        assertEquals("toca no segundo certo", t / 1000, Reminders.nextRing(a, System.currentTimeMillis()) / 1000);
+        Reminders.sync(c, new JSONArray().put(a).toString());
+        Thread.sleep(500);
+        String dump = sh("dumpsys alarm");
+        Log.i(TAG, "temporizador agendado para " + at);
+        assertTrue("alarme do temporizador agendado", dump.contains(c.getPackageName()));
+        Reminders.sync(c, "[]");
+    }
+
     private int events(ContentResolver cr, String id, String[] title) {
         int n = 0;
         try (Cursor q = cr.query(CalendarContract.Events.CONTENT_URI, new String[]{CalendarContract.Events.TITLE, CalendarContract.Events.DESCRIPTION},

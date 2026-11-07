@@ -1096,6 +1096,27 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
+        /* português do ditado no próprio celular: conferir, baixar e abrir as configurações */
+        @JavascriptInterface
+        public void voiceCheck(String id, String lang) {
+            if (!trusted()) { done(id, false, "origem"); return; }
+            runOnUiThread(() -> OfflineVoice.check(getApplicationContext(), lang == null || lang.isEmpty() ? "pt-BR" : lang, r -> done(id, true, r.toString())));
+        }
+
+        @JavascriptInterface
+        public void voiceDownload(String lang) {
+            if (!trusted()) return;
+            runOnUiThread(() -> OfflineVoice.download(getApplicationContext(), lang == null || lang.isEmpty() ? "pt-BR" : lang, (t, d) -> {
+                final String js = "window.__voice&&window.__voice(" + JSONObject.quote(t) + "," + JSONObject.quote(d == null ? "" : d) + ")";
+                runOnUiThread(() -> { if (web != null) web.evaluateJavascript(js, null); });
+            }));
+        }
+
+        @JavascriptInterface
+        public boolean voiceOpen(String what) {
+            return trusted() && OfflineVoice.open(MainActivity.this, what);
+        }
+
         /* ditado contínuo, sem a janela do Google: Pausar, Continuar e Concluir */
         @JavascriptInterface
         public String dictBegin(String lang) {
