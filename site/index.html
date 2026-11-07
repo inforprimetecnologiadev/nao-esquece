@@ -647,6 +647,69 @@ textarea.tkdesc{font:inherit;font-size:15px}
 .dcbtns{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px}
 .dcbtns .btn{min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:0 8px}
 .dcbtns .btn svg{width:19px;height:19px;flex:none}
+.qtm{display:inline-flex;align-items:center;gap:5px}
+.qtm svg{width:16px;height:16px}
+.wheels{display:flex;align-items:flex-end;justify-content:center;gap:2px;margin:6px 0 10px}
+.wcol{flex:1;max-width:110px;text-align:center}
+.wlb{font-size:13px;color:var(--muted);margin-bottom:4px}
+.wsc{height:156px;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;-webkit-mask-image:linear-gradient(transparent,#000 30%,#000 70%,transparent);mask-image:linear-gradient(transparent,#000 30%,#000 70%,transparent);outline:none;border-radius:14px}
+.wsc::-webkit-scrollbar{display:none}
+.wsc:focus-visible{box-shadow:0 0 0 2px var(--accent) inset}
+.wpad{height:52px}
+.wi{height:52px;line-height:52px;scroll-snap-align:center;font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--muted);opacity:.5;transition:color .15s,opacity .15s,font-size .15s;cursor:pointer}
+.wi.on{color:var(--ink);opacity:1;font-size:40px}
+.wsep{font-size:34px;line-height:52px;padding-bottom:52px;color:var(--ink)}
+.tmpre{justify-content:center}
+.tmpre button{font-variant-numeric:tabular-nums}
+.tmend{display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;margin:8px 0 6px;font-size:15px;color:var(--muted)}
+.tmend svg{width:17px;height:17px;flex:none}
+.tmend b{color:var(--ink)}
+.tmgo{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.tmgo svg{width:18px;height:18px}
+.tmnew{display:inline-flex;align-items:center;gap:6px;margin-left:8px}
+.tmnew svg{width:17px;height:17px}
+.tmcard{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:12px 14px 14px;margin:0 0 10px;animation:tkArt .3s}
+.tmtop{display:flex;align-items:center;gap:8px}
+.tmname{flex:1;min-width:0;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tmkind{font-size:12px;color:var(--muted);background:var(--sunk);border-radius:8px;padding:2px 8px}
+.tmdial{position:relative;width:146px;height:146px;margin:6px auto 8px}
+.tmcard.big .tmdial{width:236px;height:236px}
+.tmring{width:100%;height:100%;display:block}
+.tmring circle{fill:none;stroke-width:9;stroke-linecap:butt;stroke-dasharray:3 6}
+.tmring .trk{stroke:var(--line)}
+.tmring .prg{stroke:var(--accent);stroke-dasharray:none;stroke-linecap:round;transition:stroke-dasharray .9s linear;filter:drop-shadow(0 0 6px color-mix(in srgb,var(--accent) 45%,transparent))}
+.tmcard.paused .tmring .prg{stroke:var(--muted);filter:none}
+.tmin{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.tmin small{font-size:13px;color:var(--muted)}
+.tmin b{font-size:30px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tmcard.big .tmin b{font-size:50px}
+.tmat{display:inline-flex;align-items:center;gap:4px;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tmat svg{width:15px;height:15px}
+.tmbtns{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px}
+.tmbtns .btn{min-width:0;padding:0 6px}
+.tmbtns .tmp{background:color-mix(in srgb,var(--danger) 82%,#fff 0%);color:#fff;border-color:transparent}
+.tmcard.done{border-color:var(--accent)}
+.tmdone{display:flex;align-items:center;gap:10px;margin-top:8px}
+.tmdone svg{width:22px;height:22px;color:var(--accent);flex:none}
+.tmdone span{flex:1}
+.tmdone .btn{flex:none;padding:0 22px}
+.rem.tmr,.tkm.tmr{color:var(--accent);font-variant-numeric:tabular-nums}
+.vgate{position:fixed;inset:0;z-index:85;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px 18px calc(24px + env(safe-area-inset-bottom,0px));animation:vgIn .25s ease}
+.vgate.out{opacity:0;transition:opacity .2s}
+@keyframes vgIn{from{opacity:0;transform:translateY(8px)}}
+.vgbox{width:100%;max-width:440px;text-align:center}
+.vgic{width:76px;height:76px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.vgic svg{width:36px;height:36px}
+.vgbox h2{font-family:var(--f-display);margin:0 0 8px;font-size:24px}
+.vgbox p{color:var(--muted);line-height:1.5;margin:0 0 14px}
+.vgbar{height:10px;border-radius:5px;background:var(--sunk);overflow:hidden;margin:8px 0 6px}
+.vgbar i{display:block;height:100%;width:3%;background:var(--accent);border-radius:5px;transition:width .4s}
+.vgpct{font-variant-numeric:tabular-nums;font-weight:700}
+.vgok{width:64px;height:64px;margin:6px auto;border-radius:50%;display:grid;place-items:center;background:var(--ok);color:var(--ok-ink)}
+.vgok svg{width:34px;height:34px}
+.vgbtns{display:grid;gap:10px;margin-top:6px}
+.vgbtns .btn{width:100%;height:52px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.vgbtns .btn svg{width:19px;height:19px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
@@ -879,7 +942,7 @@ textarea.tkdesc{font:inherit;font-size:15px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.8.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Ditado novo, como no ChatGPT: o app continua ouvindo mesmo se você parar para pensar e só termina quando você toca em Concluir.</li><li>Botões Pausar e Continuar (segue de onde parou), Cancelar e Concluir, com o texto aparecendo enquanto você fala e o tempo de gravação.</li><li>Na pausa dá para corrigir o texto antes de colocar na nota. Diga "vírgula", "ponto final" ou "nova linha" para pontuar.</li><li>Sem internet, o ditado usa o reconhecimento de voz do próprio celular (quando o celular tem).</li></ul><h2>Versão 1.7.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Áudio em MP3 no app Android: as gravações novas e as antigas viram MP3 sozinhas, no próprio celular.</li><li>PDF com o áudio dentro: o MP3 toca no PDF pelo Adobe Acrobat do computador, fica nos anexos do PDF e tem o link para ouvir no Google Drive.</li><li>WhatsApp completo e na ordem da nota: primeiro o texto e depois os áudios, as fotos e os vídeos, um depois do outro. O WhatsApp abre direto.</li><li>Exportar a nota para o Word (.docx) e para o Word 97-2003 (.doc), com o texto, as fotos, o áudio MP3 e o vídeo MP4 dentro do arquivo.</li><li>Relatório em planilha do Excel (.xlsx): data e hora com os segundos, situação, tipo, lista ou pasta, etiquetas, anexos e texto, com filtro em cada coluna, e as abas Por dia e Resumo.</li><li>No texto enviado, a checklist agora começa numa linha própria.</li></ul><h2>Versão 1.6.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Etiquetas: o lápis ao lado de cada etiqueta muda a cor e o nome dela, e o botão da etiqueta na nota agora aparece na cor escolhida.</li><li>Áudio mais rápido, como no WhatsApp: toque em 1× para ouvir em 1,5× ou 2×. O app lembra a velocidade escolhida.</li><li>Vídeo também: no vídeo aberto, toque em 1× para assistir em 1,5×, 2× ou 0,5×.</li></ul><h2>Versão 1.6.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.</li><li>Marque a tarefa como feita e ela vai para Concluídas, com o dia em que foi feita. Dá para desfazer e voltar para pendentes.</li><li>Estrela nas tarefas importantes e a lista Com estrela, que junta as de todas as listas.</li><li>Ordenar por Minha ordem (segure e arraste), Data, Prazo, Estrela ou Título.</li><li>Cada tarefa pode ter detalhes, subtarefas, data, hora com alarme, repetição e prazo. Elas aparecem também em Hoje, no Calendário e no Relatório.</li><li>Menu da lista: renomear, enviar a lista pelo WhatsApp, excluir as concluídas e excluir a lista.</li></ul><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.9.0</h2><p class='lg-meta'>7 de novembro de 2026</p><ul><li>Temporizador "Daqui a…": escolha horas, minutos e segundos (ou 5, 10, 15, 30 min, 1 h) e o app calcula a hora pelo relógio do celular. Não precisa fazer conta.</li><li>Contagem regressiva com o círculo, a hora em que vai tocar e os botões Pausar/Continuar, +1 min e Cancelar. No fim, toca o alarme do app.</li><li>Daqui a… em Hoje (temporizador avulso, vira tarefa), no lembrete da nota e na tarefa. A contagem aparece também na nota e na lista de tarefas.</li><li>Português do ditado: o app confere se o pacote de voz está instalado e pronto. Se faltar, pede para baixar antes de ditar, com a porcentagem.</li></ul><h2>Versão 1.8.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Ditado novo, como no ChatGPT: o app continua ouvindo mesmo se você parar para pensar e só termina quando você toca em Concluir.</li><li>Botões Pausar e Continuar (segue de onde parou), Cancelar e Concluir, com o texto aparecendo enquanto você fala e o tempo de gravação.</li><li>Na pausa dá para corrigir o texto antes de colocar na nota. Diga "vírgula", "ponto final" ou "nova linha" para pontuar.</li><li>Sem internet, o ditado usa o reconhecimento de voz do próprio celular (quando o celular tem).</li></ul><h2>Versão 1.7.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Áudio em MP3 no app Android: as gravações novas e as antigas viram MP3 sozinhas, no próprio celular.</li><li>PDF com o áudio dentro: o MP3 toca no PDF pelo Adobe Acrobat do computador, fica nos anexos do PDF e tem o link para ouvir no Google Drive.</li><li>WhatsApp completo e na ordem da nota: primeiro o texto e depois os áudios, as fotos e os vídeos, um depois do outro. O WhatsApp abre direto.</li><li>Exportar a nota para o Word (.docx) e para o Word 97-2003 (.doc), com o texto, as fotos, o áudio MP3 e o vídeo MP4 dentro do arquivo.</li><li>Relatório em planilha do Excel (.xlsx): data e hora com os segundos, situação, tipo, lista ou pasta, etiquetas, anexos e texto, com filtro em cada coluna, e as abas Por dia e Resumo.</li><li>No texto enviado, a checklist agora começa numa linha própria.</li></ul><h2>Versão 1.6.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Etiquetas: o lápis ao lado de cada etiqueta muda a cor e o nome dela, e o botão da etiqueta na nota agora aparece na cor escolhida.</li><li>Áudio mais rápido, como no WhatsApp: toque em 1× para ouvir em 1,5× ou 2×. O app lembra a velocidade escolhida.</li><li>Vídeo também: no vídeo aberto, toque em 1× para assistir em 1,5×, 2× ou 0,5×.</li></ul><h2>Versão 1.6.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.</li><li>Marque a tarefa como feita e ela vai para Concluídas, com o dia em que foi feita. Dá para desfazer e voltar para pendentes.</li><li>Estrela nas tarefas importantes e a lista Com estrela, que junta as de todas as listas.</li><li>Ordenar por Minha ordem (segure e arraste), Data, Prazo, Estrela ou Título.</li><li>Cada tarefa pode ter detalhes, subtarefas, data, hora com alarme, repetição e prazo. Elas aparecem também em Hoje, no Calendário e no Relatório.</li><li>Menu da lista: renomear, enviar a lista pelo WhatsApp, excluir as concluídas e excluir a lista.</li></ul><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -1084,6 +1147,7 @@ const ICONS = {
   sheet:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16M10 3v18"/>',
   pause:'<path d="M9 5.5v13M15 5.5v13"/>',
   play:'<path d="M8 5.5v13l10.5-6.5z"/>',
+  timer:'<circle cx="12" cy="13.5" r="7.5"/><path d="M12 9.5v4l2.6 1.6M9.5 3h5M12 3v3"/>',
   home:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M16.5 13v7M13 16.5h7"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/>',
   user:'<circle cx="12" cy="8" r="4"/><path d="M4 20.5a8 8 0 0 1 16 0"/>',
@@ -1132,7 +1196,7 @@ const isTagView=f=>typeof f==='string'&&f.startsWith('tag:');
 const viewIsFolder=f=>!SPECIAL.includes(f)&&!isTagView(f);
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.8.0', TERMS_VERSION='2026-11-06.6';
+const APP_VERSION='1.9.0', TERMS_VERSION='2026-11-06.6';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
@@ -1292,7 +1356,7 @@ function noteCard(n,q){
   return `<div class="note${n.done?' done':''}${picked?' sel':''}${inTrash?' trash':''}${n.urgent&&!n.done&&!inTrash?' urg':''}" data-id="${n.id}" role="button" tabindex="0" aria-current="${n.id===cur.noteId}">${chk}
     <div class="nbody"><h3>${n.pinned&&!inTrash?svg('pin'):''}${n.secret?svg('lock').replace('class="i"','class="i lk"'):''}<span>${hl(n.secret?(n.title||'Nota secreta'):title,q)}</span></h3>
     <p>${n.secret?`<span class="sectxt">${svg('lock')}Nota secreta</span>`:hl(body.replace(/\n+/g,' · '),q,true)||'<i>Nota vazia</i>'}</p>${ocrHit(n,q,body)}
-    <div class="meta">${k?`<span class="clip">${svg('clip')}${k}</span>`:''}${pr?`<span class="prog${pr.done===pr.all?' full':''}">${svg('checklist')}${pr.done}/${pr.all}</span>`:''}${rm&&!n.done&&!inTrash?`<span class="rem${rm.late?' late':''}">${svg(rm.rep?'repeat':'bell')}${rm.txt}</span>`:''}<span>${when}</span>${n.done&&!inTrash&&(cur.folder!=='done'||q)?'<span class="tag ok">Concluída</span>':''}${n.urgent&&!n.done&&!inTrash?'<span class="tag urg">Urgente</span>':''}${showFolder&&fname?`<span class="tag">${esc(fname)}</span>`:''}${noteTags(n).map(t=>`<span class="tag tg" style="--tc:${tagColor(t.color)}">${esc(t.name)}</span>`).join('')}</div></div></div>`;
+    <div class="meta">${k?`<span class="clip">${svg('clip')}${k}</span>`:''}${pr?`<span class="prog${pr.done===pr.all?' full':''}">${svg('checklist')}${pr.done}/${pr.all}</span>`:''}${(()=>{ const tm=!inTrash&&timerOf(n,false); if(tm) return `<span class="rem tmr">${svg('timer')}${tm.run?`<span data-cd="${tm.end}">${fmtLeft(tm.end-now())}</span>`:'pausado'}</span>`; return rm&&!n.done&&!inTrash?`<span class="rem${rm.late?' late':''}">${svg(rm.rep?'repeat':'bell')}${rm.txt}</span>`:''; })()}<span>${when}</span>${n.done&&!inTrash&&(cur.folder!=='done'||q)?'<span class="tag ok">Concluída</span>':''}${n.urgent&&!n.done&&!inTrash?'<span class="tag urg">Urgente</span>':''}${showFolder&&fname?`<span class="tag">${esc(fname)}</span>`:''}${noteTags(n).map(t=>`<span class="tag tg" style="--tc:${tagColor(t.color)}">${esc(t.name)}</span>`).join('')}</div></div></div>`;
 }
 function renderList(){
   renderNav();
@@ -2081,6 +2145,7 @@ function merge(local, remote){
     if('calEvId' in c && c.calEvId!=='' && !okId(c.calEvId)) delete c.calEvId;
     if('remindAt' in c && !/^\d{4}-\d\d-\d\dT\d\d:\d\d(:\d\d)?$/.test(String(c.remindAt))) delete c.remindAt;
     if('remindBefore' in c) c.remindBefore=Math.max(0,Math.min(40320,+c.remindBefore||0));
+    if('timer' in c){ const tm=(tm=>tm&&typeof tm==='object'&&+tm.dur>=1000&&+tm.dur<=360000000?{dur:Math.round(+tm.dur),...(+tm.end>0?{end:Math.round(+tm.end)}:{}),...(+tm.left>0?{left:Math.round(+tm.left)}:{}),...(typeof tm.label==='string'&&tm.label?{label:tm.label.slice(0,80)}:{}),...(tm.auto===true?{auto:true}:{})}:null)(c.timer); if(tm) c.timer=tm; else delete c.timer; }
     if('remindMode' in c && !['ambos','som','vibra'].includes(c.remindMode)) delete c.remindMode;
     if('calSyncedAt' in c) c.calSyncedAt=+c.calSyncedAt||0;
     return c; };
@@ -2089,7 +2154,8 @@ function merge(local, remote){
   const taskOut=x=>{ if(!x||typeof x!=='object'||typeof x.id!=='string'||!ID_RE.test(x.id)) return null;
     const t={id:x.id,list:typeof x.list==='string'&&ID_RE.test(x.list)?x.list:TL_MAIN,title:String(x.title||'').slice(0,500),order:Number.isFinite(+x.order)?+x.order:0,createdAt:+x.createdAt||0,updatedAt:+x.updatedAt||0};
     if(x.notes) t.notes=String(x.notes).slice(0,5000);
-    if(T_RE.test(x.date)){ t.date=x.date; if(/^\d\d:\d\d$/.test(x.time)) t.time=x.time; if(['dia','uteis','semana','mes'].includes(x.rep)) t.rep=x.rep; }
+    if(T_RE.test(x.date)){ t.date=x.date; if(/^\d\d:\d\d(:\d\d)?$/.test(x.time)) t.time=x.time; if(['dia','uteis','semana','mes'].includes(x.rep)) t.rep=x.rep; }
+    { const tm=(tm=>tm&&typeof tm==='object'&&+tm.dur>=1000&&+tm.dur<=360000000?{dur:Math.round(+tm.dur),...(+tm.end>0?{end:Math.round(+tm.end)}:{}),...(+tm.left>0?{left:Math.round(+tm.left)}:{}),...(typeof tm.label==='string'&&tm.label?{label:tm.label.slice(0,80)}:{}),...(tm.auto===true?{auto:true}:{})}:null)(x.timer); if(tm) t.timer=tm; }
     if(T_RE.test(x.deadline)) t.deadline=x.deadline;
     if(x.star===true){ t.star=true; t.starAt=+x.starAt||0; }
     if(x.done===true){ t.done=true; t.doneAt=+x.doneAt||0; }
@@ -3371,7 +3437,9 @@ function fmtRem(d){ const t=new Date(), tm=d.toLocaleTimeString('pt-BR',{hour:'2
   if(d.toDateString()===t.toDateString()) return 'Hoje às '+tm; if(d.toDateString()===tom.toDateString()) return 'Amanhã às '+tm;
   return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})+' às '+tm; }
 const toLocalInput = d => { const p=x=>String(x).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`; };
-function renderRemChip(n){ const r=remInfo(n); $('#remBtn').setAttribute('aria-pressed',!!r); $('#remTxt').textContent=r?r.txt:'Lembrete'; }
+function renderRemChip(n){ const tm=timerOf(n,false), r=remInfo(n); $('#remBtn').setAttribute('aria-pressed',!!(r||tm));
+  if(tm){ $('#remTxt').innerHTML=tm.run?`⏳ <span data-cd="${tm.end}">${fmtLeft(tm.end-now())}</span> · ${hms(tm.end)}`:'⏸ Pausado · faltam '+fmtLeft(tm.left); return; }
+  $('#remTxt').textContent=r?r.txt:'Lembrete'; }
 $('#remBtn').onclick=()=>{ const n=noteById(cur.noteId); if(n){ flushEdit(); reminderSheet(n); } };
 
 // pedir uma permissão ao Android (ou abrir o ajuste certo)
@@ -3394,7 +3462,7 @@ function refreshAlarmWarn(){ const w=document.querySelector('#sheet:not([hidden]
 
 function reminderSheet(n,opts={}){
   let at=n.remindAt; if(!at&&opts.day) at=opts.day+'T09:00'; if(!at){ const d=new Date(now()+3600e3); d.setSeconds(0,0); d.setMinutes(Math.ceil(d.getMinutes()/5)*5); at=toLocalInput(d); }
-  at=at.slice(0,16);
+  const atFull=at; at=at.slice(0,16);
   let sEl=null, poll=0;
   // lê o dia e a hora direto dos campos (alguns Android não avisam quando a hora muda no relógio)
   const read=()=>{ if(!sEl) return false; const dv=(sEl.querySelector('#rmDay')||{}).value||'', tv=(sEl.querySelector('#rmHour')||{}).value||'';
@@ -3415,7 +3483,7 @@ function reminderSheet(n,opts={}){
     if(read()) touched=true;
     if(!at||isNaN(new Date(at))){ if(!auto) toast('Escolha o dia e a hora.'); return false; }
     handled=true;
-    n.remindAt=at; n.remindBefore=before; if(rep) n.remindRepeat=rep; else delete n.remindRepeat;
+    n.remindAt=at===atFull.slice(0,16)&&atFull.length>16?atFull:at; n.remindBefore=before; if(rep) n.remindRepeat=rep; else delete n.remindRepeat;
     if(HAS_ALARM){ n.remindMode=mode; cfg.remMode=mode; saveCfg(); }
     n.updatedAt=now(); delete n._fresh; changed(); renderRemChip(n); renderList();
     const ring=nextRingDate(n), pre=auto?'Lembrete salvo. ':'', rl=rep?' · '+repLabel(rep).toLowerCase():'';
@@ -3428,7 +3496,7 @@ function reminderSheet(n,opts={}){
     ${IS_APK&&!HAS_ALARM?'<div class="btns" style="margin:0 0 12px"><button class="btn pri" id="rmUpd">Baixar a versão nova</button></div>':''}
     <div class="blk"><div class="lbl">Dia e hora da atividade</div>
       <div class="dt2"><input type="date" class="field" id="rmDay" value="${at.slice(0,10)}" aria-label="Dia"><input type="time" class="field" id="rmHour" value="${at.slice(11,16)}" aria-label="Hora"></div>
-      <div class="seg wrap qk" id="rmQ"><button data-q="30">Daqui a 30 min</button><button data-q="60">Daqui a 1 hora</button><button data-q="t18">Hoje 18:00</button><button data-q="a8">Amanhã 08:00</button></div></div>
+      <div class="seg wrap qk" id="rmQ"><button data-q="tm" class="qtm">${svg('timer')}Daqui a…</button><button data-q="30">Daqui a 30 min</button><button data-q="60">Daqui a 1 hora</button><button data-q="t18">Hoje 18:00</button><button data-q="a8">Amanhã 08:00</button></div></div>
     <div class="blk"><div class="lbl">Repetir</div><div class="seg wrap" id="rmR">${REPEATS.map(([k,l])=>`<button data-r="${k}" aria-pressed="${k===rep}">${l}</button>`).join('')}</div></div>
     <div class="blk"><div class="lbl">${HAS_ALARM?'Tocar o alarme':'Avisar antes'}</div><div class="seg wrap" id="rmB">${BEFORE.map(([m,l])=>`<button data-m="${m}" aria-pressed="${m===before}">${HAS_ALARM&&m?l+' antes':l}</button>`).join('')}</div></div>
     ${HAS_ALARM?`<div class="blk"><div class="lbl">Aviso de 1 minuto antes e alarme</div><div class="seg wrap" id="rmM">${RMODES.map(([k,l])=>`<button data-k="${k}" aria-pressed="${k===mode}">${l}</button>`).join('')}</div></div>`:''}
@@ -3450,6 +3518,7 @@ function reminderSheet(n,opts={}){
     ['#rmDay','#rmHour'].forEach(q=>{ const i=s.querySelector(q); i.addEventListener('input',upd); i.addEventListener('change',upd); i.addEventListener('blur',upd); });
     poll=setInterval(()=>{ if(!sEl||!sEl.isConnected){ clearInterval(poll); return; } upd(); },400);
     s.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{ const q=b.dataset.q, d=new Date();
+      if(q==='tm'){ handled=true; closeSheet(); setTimeout(()=>timerSheet({sub:'A nota “'+esc(noteTitle(n))+'” vai tocar quando o tempo acabar.',onStart:d2=>startTimer('note',n,d2,'',false)}),260); return; }
       if(q==='t18'){ d.setHours(18,0,0,0); if(d.getTime()<=now()) d.setDate(d.getDate()+1); }
       else if(q==='a8'){ d.setDate(d.getDate()+1); d.setHours(8,0,0,0); }
       else { d.setTime(now()+(+q)*60000); d.setSeconds(0,0); }
@@ -3486,7 +3555,7 @@ function syncAlarmsNow(){
   if(!HAS_ALARM||!appReady||!db||!Array.isArray(db.notes)) return;
   if(Vault.exists()&&!Vault.unlocked()) return;
   const list=db.notes.filter(n=>!n.deleted&&!n.trashed&&!n.done&&n.remindAt).map(n=>({id:n.id,at:n.remindAt,before:+n.remindBefore||0,mode:n.remindMode||'ambos',repeat:n.remindRepeat||undefined,
-    title:noteTitle(n).slice(0,200),text:n.secret?'':txt(n.html).replace(/\s+/g,' ').trim().slice(0,300)}));
+    title:noteTitle(n).slice(0,200),text:timerOf(n,false)?'Temporizador de '+durTxt(n.timer.dur):n.secret?'':txt(n.html).replace(/\s+/g,' ').trim().slice(0,300)}));
   for(const it of tkAlarmItems()) list.push({id:it.id,at:it.at,before:0,mode:cfg.remMode||'ambos',repeat:it.repeat,title:it.title,text:it.text});
   const sig=JSON.stringify(list); if(sig===alarmSig) return;
   try{ if(+NA.alarmSet(sig)>=0) alarmSig=sig; }catch(e){ alarmSig=''; }
@@ -3561,7 +3630,7 @@ function alarmBlock(){
     ${typeof NA.widgetPin==='function'?`<button class="row" id="aWid"><span data-i="home"></span><span class="grow">Widget na tela inicial<small>${st.widgets?'Já está na tela inicial':'Os lembretes de hoje e o botão Nova nota, sem abrir o app'}</small></span>${st.widgets?'<span data-i="check" style="color:var(--ok)"></span>':''}</button>`:''}
     ${cfg.devCal===true&&ci.found&&ci.google&&ci.syncOn===false?'<button class="row" id="aSync"><span data-i="sync"></span><span class="grow">Ligar a sincronização da agenda<small>Abre as contas do celular</small></span></button>':''}
     <button class="row" id="aTest"><span data-i="bell"></span><span class="grow">Testar o alarme<small>O aviso chega agora e o alarme toca em 20 segundos</small></span></button>
-  </div>${typeof NA.tileAdd==='function'?`<div class="blk" id="qkBlk"><div class="lbl">Botões rápidos</div>
+  </div>${HAS_VOICE?`<div class="blk" id="vcBlk"><div class="lbl">Ditado</div><button class="row" id="vcChk"><span data-i="mic"></span><span class="grow">Português do ditado<small id="vcSt">${{instalado:'Instalado e pronto (funciona sem internet)',baixando:'Sendo baixado pelo celular',disponivel:'Falta baixar',antigo:'Confira nas configurações de voz do celular','sem-servico':'Falta o serviço de voz do Google'}[cfg.voiceSt]||'Toque para conferir'}</small></span></button></div>`:''}${typeof NA.tileAdd==='function'?`<div class="blk" id="qkBlk"><div class="lbl">Botões rápidos</div>
     <p class="sub" style="margin:0 0 6px">Na barra que desce do topo do celular: crie uma nota ou grave um áudio sem abrir o app. O widget também tem esses botões.</p>
     <button class="row" id="qkNote"><span data-i="pencil"></span><span class="grow">Colocar o botão “Nota rápida”</span></button>
     <button class="row" id="qkAud"><span data-i="mic"></span><span class="grow">Colocar o botão “Gravar áudio”</span></button>
@@ -3578,6 +3647,7 @@ function bindAlarmBlock(s){
   on('#aTest',testAlarm);
   const tileHelp='Puxe a barra de cima duas vezes, toque no lápis (editar) e arraste o botão do Não Esquece para cima.';
   const tile=async w=>{ let r='manual'; try{ r=await nativeCall('tileAdd',w); }catch(e){} toast(r==='2'?'Botão colocado nas configurações rápidas':r==='1'?'Esse botão já está nas configurações rápidas':r==='0'?'Tudo bem, o botão não foi colocado.':tileHelp); };
+  on('#vcChk',async()=>{ const ok=await voiceGate('ajustes'); const el=document.getElementById('vcSt'); if(el) el.textContent={instalado:'Instalado e pronto (funciona sem internet)',baixando:'Sendo baixado pelo celular',disponivel:'Falta baixar'}[cfg.voiceSt]||'Conferido'; if(cfg.voiceSt==='instalado') toast('O português do ditado está instalado e pronto.'); });
   on('#qkNote',()=>tile('nota')); on('#qkAud',()=>tile('audio')); on('#qkTry',()=>{ try{ NA.quickOpen('nota'); }catch(e){} });
   on('#aResync',()=>{ alarmSig=''; syncAlarmsNow(); setTimeout(refreshAlarmBlock,300); toast('Alarmes marcados de novo'); });
   on('#aWid',()=>{ let r='no'; try{ r=NA.widgetPin(); }catch(e){} toast(r==='ok'?'Confirme no aviso do Android para colocar o widget na tela inicial.':'Segure o dedo num espaço vazio da tela inicial › Widgets › Não Esquece.'); });
@@ -3616,6 +3686,7 @@ function flushPendingOpen(){
 }
 setInterval(()=>{ if(!appReady||locked||secOpen) return; if(evCheck){ evCheck=false; processAlarmEvents(); importQuick(); queueOldOcr(); setTimeout(queueOldMp3,8000); } flushPendingOpen();
   if(pendingTab){ const t=pendingTab; pendingTab=null; setTab(t); }
+  if(HAS_VOICE&&!voiceChecked&&$('#sheet').hidden){ voiceChecked=true; setTimeout(()=>{ if(!locked) voiceGate('inicio'); },1500); }
   if(pendingNew){ pendingNew=false; if($('#sheet').hidden) newNote(); } },700);
 document.addEventListener('visibilitychange',()=>{ if(document.visibilityState!=='visible') return; evCheck=true; if(HAS_ALARM){ refreshAlarmBlock(); refreshAlarmWarn(); scheduleAlarms(); } });
 
@@ -3814,7 +3885,7 @@ function hojeHTML(){ const td=todayItems(), tt=todayTasks(), t=now(), s0=dayStar
   const k=L.length+T.length;
   const cls=x=>x.tk?(x.tk.done?'past':tkLate(x.tk)?'late':''):(x.n.done?'past':x.t<t?(x.n.remindRepeat?'past':'late'):'');
   const row=(x,c)=>{ const nt=x.tk&&!x.tk.time; return `<div class="hrow ${c}"><div class="htime">${nt?'<small>sem hora</small>':hm(new Date(x.t))}${x.t<s0?`<small>${new Date(x.t).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}</small>`:''}</div>${x.tk?tkCard(x.tk):noteCard(x.n,'')}</div>`; };
-  let h=`<div class="lhead"><h2>Hoje</h2><div class="lact"><small>${k} ${k===1?'item':'itens'}</small></div></div>`;
+  let h=`<div class="lhead"><h2>Hoje</h2><div class="lact"><small>${k} ${k===1?'item':'itens'}</small><button class="chip tmnew" id="tmNew">${svg('timer')}Daqui a…</button></div></div>`+timersHTML();
   if(!k) return h+`<div class="empty"><strong>Nada para hoje</strong>Aqui aparecem as notas com lembrete e as tarefas com a data de hoje, na ordem do horário. As atrasadas também aparecem aqui.</div>`;
   h+=`<div class="tnote" style="margin-top:0">${esc(new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'}))}</div>`;
   if(L.length) h+=`<div class="hsec late">Atrasadas · ${L.length}</div>`+L.map(x=>row(x,'late')).join('');
@@ -3910,6 +3981,7 @@ document.addEventListener('click',e=>{
   const rp=t.closest('[data-rp]'); if(rp){ rep.p=rp.dataset.rp; renderList(); return; }
   if(t.closest('#rpGo')){ makeReport(); return; }
   if(t.closest('#rpXls')){ makeXlsx(); return; }
+  if(t.closest('#tmNew')){ newTimer(); return; }
 });
 function rr(g,x,y,w,h,r){ g.beginPath(); g.moveTo(x+r,y); g.arcTo(x+w,y,x+w,y+h,r); g.arcTo(x+w,y+h,x,y+h,r); g.arcTo(x,y+h,x,y,r); g.arcTo(x,y,x+w,y,r); g.closePath(); }
 function hexA(h,a){ const m=/^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(h); return m?`rgba(${parseInt(m[1],16)},${parseInt(m[2],16)},${parseInt(m[3],16)},${a})`:`rgba(90,101,121,${a})`; }
@@ -4160,8 +4232,8 @@ function dayLbl(k){ const d=new Date(k+'T12:00'), t=new Date(); t.setHours(12,0,
   const o={weekday:'short',day:'numeric',month:'short'}; if(d.getFullYear()!==t.getFullYear()) o.year='numeric';
   return d.toLocaleDateString('pt-BR',o); }
 const lc1=s=>/^(Hoje|Amanhã|Ontem)$/.test(s)?s.toLowerCase():s;
-function tkWhen(t){ return t.date?dayLbl(t.date)+(t.time?', '+t.time:''):''; }
-function tkLate(t){ if(t.done||!t.date) return false; const k=dkey(new Date()); if(t.date<k) return true; return t.date===k&&!!t.time&&tkAt(t)<toLocalInput(new Date()); }
+function tkWhen(t){ return t.date?dayLbl(t.date)+(t.time?', '+t.time.slice(0,5):''):''; }
+function tkLate(t){ if(t.done||!t.date) return false; const k=dkey(new Date()); if(t.date<k) return true; return t.date===k&&!!t.time&&new Date(tkAt(t)).getTime()<now(); }
 function dlLate(t){ return !t.done&&!!t.deadline&&t.deadline<dkey(new Date()); }
 function tkMinOrder(lid){ let m=0; for(const t of liveTasks()) if(!t.done&&tlOf(t)===lid&&(t.order||0)<m) m=t.order||0; return m; }
 function tkDoneOpen(){ return cfg.tkDoneOpen!==false; }
@@ -4182,7 +4254,9 @@ function tkGroup(t,sort){ const k=dkey(new Date());
 
 /* linhas */
 function tkMeta(t,opt={}){ const m=[], subs=t.subs||[], sd=subs.filter(s=>s.done).length;
-  if(t.date) m.push(`<span class="tkm${tkLate(t)?' late':''}">${svg(t.rep?'repeat':t.time?'bell':'cal')}${esc(tkWhen(t))}${t.rep?' · '+esc(repLabel(t.rep).toLowerCase()):''}</span>`);
+  const tmx=timerOf(t,true);
+  if(tmx) m.push(`<span class="tkm tmr">${svg('timer')}${tmx.run?`<span data-cd="${tmx.end}">${fmtLeft(tmx.end-now())}</span> · ${hms(tmx.end)}`:'pausado · faltam '+fmtLeft(tmx.left)}</span>`);
+  else if(t.date) m.push(`<span class="tkm${tkLate(t)?' late':''}">${svg(t.rep?'repeat':t.time?'bell':'cal')}${esc(tkWhen(t))}${t.rep?' · '+esc(repLabel(t.rep).toLowerCase()):''}</span>`);
   if(t.deadline) m.push(`<span class="tkm${dlLate(t)?' late':''}">${svg('flag')}Prazo: ${esc(lc1(dayLbl(t.deadline)))}</span>`);
   if(subs.length) m.push(`<span class="tkm${sd===subs.length?' full':''}">${svg('sub')}${sd}/${subs.length}</span>`);
   if(opt.list){ const l=listById(tlOf(t)); if(l) m.push(`<span class="tkm ln">${esc(l.name)}</span>`); }
@@ -4267,7 +4341,7 @@ function taskSheet(t,o={}){
   // lê direto dos campos (alguns Android não avisam quando o dia ou a hora mudam)
   const read=()=>{ if(!sEl) return; title=val('#tdT').replace(/\s+/g,' ').trim(); notes=val('#tdD').replace(/\s+$/,''); list=val('#tdL')||list;
     const dv=val('#tdDay'), tv=val('#tdHour'), pv=val('#tdDl');
-    date=/^\d{4}-\d\d-\d\d$/.test(dv)?dv:''; time=date&&/^\d\d:\d\d/.test(tv)?tv.slice(0,5):''; dl=/^\d{4}-\d\d-\d\d$/.test(pv)?pv:'';
+    date=/^\d{4}-\d\d-\d\d$/.test(dv)?dv:''; time=date&&/^\d\d:\d\d/.test(tv)?(tv.slice(0,5)===(t.time||'').slice(0,5)&&date===t.date?t.time:tv.slice(0,5)):''; dl=/^\d{4}-\d\d-\d\d$/.test(pv)?pv:'';
     sEl.querySelectorAll('.tdsub').forEach(r=>{ const s=subs.find(x=>x.id===r.dataset.sid); if(s) s.title=r.querySelector('input').value.replace(/\s+/g,' ').trim(); }); };
   const sig=x=>JSON.stringify([x.title||'',x.notes||'',x.date||'',x.date?x.time||'':'',x.date?x.rep||'':'',x.deadline||'',!!x.star,x.list,(x.subs||[]).filter(s=>s.title).map(s=>[s.id,s.title,!!s.done])]);
   const save=()=>{
@@ -4298,8 +4372,8 @@ function taskSheet(t,o={}){
     <textarea class="field tkdesc" id="tdD" rows="2" maxlength="5000" placeholder="Adicionar detalhes"${hid(isNew&&!notes)}>${esc(notes)}</textarea>
     ${isNew?`<div class="tkqa" id="tdQa"><button class="chip" data-qa="tdD"${hid(notes)}>${svg('alignL')}Detalhes</button><button class="chip" data-qa="tdW"${hid(date)}>${svg('cal')}Data e hora</button><button class="chip" data-qa="tdPz">${svg('flag')}Prazo</button><button class="chip" data-qa="tdS">${svg('sub')}Subtarefas</button></div>`:''}
     <div class="blk" id="tdW"${hid(isNew&&!date)}><div class="lbl">Data e hora</div>
-      <div class="dt2"><input type="date" class="field" id="tdDay" value="${date}" aria-label="Dia"><input type="time" class="field" id="tdHour" value="${time}" aria-label="Hora (opcional)"></div>
-      <div class="seg wrap qk" id="tdQ"><button data-q="hoje">Hoje</button><button data-q="amanha">Amanhã</button><button data-q="semana">Daqui a 1 semana</button><button data-q="semhora">Sem hora</button><button data-q="sem">Sem data</button></div>
+      <div class="dt2"><input type="date" class="field" id="tdDay" value="${date}" aria-label="Dia"><input type="time" class="field" id="tdHour" value="${time.slice(0,5)}" aria-label="Hora (opcional)"></div>
+      <div class="seg wrap qk" id="tdQ"><button data-q="timer" class="qtm">${svg('timer')}Daqui a…</button><button data-q="hoje">Hoje</button><button data-q="amanha">Amanhã</button><button data-q="semana">Daqui a 1 semana</button><button data-q="semhora">Sem hora</button><button data-q="sem">Sem data</button></div>
       <p class="sub" id="tdSum" style="margin:10px 0 0"></p>
       <div id="tdRw"><div class="lbl" style="margin-top:12px">Repetir</div><div class="seg wrap" id="tdR">${REPEATS.map(([k,l])=>`<button data-r="${k}" aria-pressed="${k===rep}">${l}</button>`).join('')}</div></div></div>
     <div class="blk" id="tdPz"${hid(isNew&&!dl)}><div class="lbl">Prazo (data limite)</div><div class="dt2"><input type="date" class="field" id="tdDl" value="${dl}" aria-label="Prazo"><button class="btn" id="tdDlX" type="button">Sem prazo</button></div></div>
@@ -4316,6 +4390,8 @@ function taskSheet(t,o={}){
     ['#tdDay','#tdHour','#tdDl'].forEach(q=>{ const i=s.querySelector(q); ['input','change','blur'].forEach(ev=>i.addEventListener(ev,upd)); });
     poll=setInterval(()=>{ if(!sEl||!sEl.isConnected){ clearInterval(poll); return; } upd(); },400);
     s.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{ const q=b.dataset.q, d=new Date(), D=s.querySelector('#tdDay'), H=s.querySelector('#tdHour');
+      if(q==='timer'){ read(); if(!title){ toast('Escreva o nome da tarefa primeiro.'); const i=s.querySelector('#tdT'); if(i) i.focus(); return; }
+        closeSheet(); const tt=taskById(t.id)||t; setTimeout(()=>timerSheet({sub:'A tarefa “'+esc(tt.title||title)+'” vai tocar quando o tempo acabar.',onStart:d2=>{ const x=taskById(t.id); if(x) startTimer('task',x,d2,'',false); }}),260); return; }
       if(q==='sem'){ D.value=''; H.value=''; } else if(q==='semhora'){ H.value=''; }
       else { if(q==='amanha') d.setDate(d.getDate()+1); else if(q==='semana') d.setDate(d.getDate()+7); D.value=dkey(d); }
       upd(); sum(); });
@@ -4374,7 +4450,7 @@ function todayTasks(){ const k=dkey(new Date()), late=[], today=[];
   late.sort((a,b)=>tkMs(a)-tkMs(b)); today.sort((a,b)=>tkMs(a)-tkMs(b)); return {late,today}; }
 function tkAlarmItems(){ const out=[]; for(const t of liveTasks()){ if(t.done||!t.date||!t.time) continue; const l=listById(tlOf(t)), subs=t.subs||[];
   const text=[t.notes?t.notes.replace(/\s+/g,' ').trim():'',subs.length?subs.filter(s=>s.done).length+' de '+subs.length+' subtarefas feitas':'','Tarefa'+(l?' · '+l.name:'')].filter(Boolean).join(' · ');
-  out.push({id:t.id,at:t.date+'T'+t.time,repeat:t.rep||undefined,title:(t.title||'Tarefa').slice(0,200),text:text.slice(0,300)}); } return out; }
+  out.push({id:t.id,at:t.date+'T'+t.time,repeat:t.rep||undefined,title:(t.title||'Tarefa').slice(0,200),text:(timerOf(t,true)?'Temporizador de '+durTxt(t.timer.dur):text).slice(0,300)}); } return out; }
 function tkAsNote(t){ const l=listById(tlOf(t)), subs=t.subs||[];
   return {id:t.id,_tk:t,_tl:l?l.name:'Tarefa',title:t.title||'Tarefa',html:(t.notes?'<p>'+esc(t.notes)+'</p>':'')+(subs.length?'<p>'+subs.map(s=>(s.done?'☑ ':'☐ ')+esc(s.title)).join(' · ')+'</p>':''),
     done:!!t.done,doneAt:t.doneAt,remindAt:t.date?t.date+'T'+(t.time||'00:00'):undefined,attachments:[],folderId:null}; }
@@ -4847,8 +4923,9 @@ function webDictEngine(){
 const nativeDictEngine={ begin:()=>NA.dictBegin('pt-BR'), pause:()=>NA.dictPause(), resume:()=>NA.dictResume(), finish:()=>NA.dictFinish(), cancel:()=>NA.dictCancel() };
 window.__dict=(t,d)=>{ try{ dictEv(t,d); }catch(e){} };
 
-function startDict(){
+function startDict(skipVoice){
   if(DC.on) return;
+  if(HAS_VOICE&&!skipVoice){ voiceGate('ditar').then(()=>startDict(true)); return; }
   const eng=HAS_DICT?nativeDictEngine:webDictEngine();
   if(!eng){ if(IS_APK){ nativeDictate(); return; } toast('Este navegador não faz ditado. Use o Chrome no Android ou o Edge no computador.'); return; }
   Object.assign(DC,{on:true,state:'',text:'',partial:'',t0:0,acc:0,lv:[],eng,ending:false,armCancel:0,offline:false});
@@ -4934,6 +5011,158 @@ function insertDictated(text){
   if(!last) return; r.insertNode(frag);
   r=document.createRange(); r.setStartAfter(last); r.collapse(true); savedRange=r;
   if(document.activeElement===ed) restoreRange(); onEdit(); }
+
+/* ======== 1.9: temporizador "daqui a…" e português do ditado ======== */
+const p2=v=>String(v).padStart(2,'0');
+const localSec=ms=>{ const d=new Date(ms); return dkey(d)+'T'+p2(d.getHours())+':'+p2(d.getMinutes())+':'+p2(d.getSeconds()); };
+const hms=ms=>{ const d=new Date(ms); return p2(d.getHours())+':'+p2(d.getMinutes())+(d.getSeconds()?':'+p2(d.getSeconds()):''); };
+function fmtLeft(ms){ const s=Math.max(0,Math.ceil(ms/1000)), h=Math.floor(s/3600), m=Math.floor(s%3600/60), x=s%60; return h?h+':'+p2(m)+':'+p2(x):p2(m)+':'+p2(x); }
+function durTxt(ms){ const s=Math.round(ms/1000), h=Math.floor(s/3600), m=Math.floor(s%3600/60), x=s%60;
+  return [h?h+' h':'',m?m+' min':'',x?x+' s':''].filter(Boolean).join(' ')||'0 s'; }
+// o temporizador vale enquanto a hora do lembrete for a do fim dele (se a pessoa mudar a hora na mão, vira lembrete comum)
+function timerOf(x,isTask){ const tm=x&&x.timer; if(!tm||typeof tm!=='object'||x.done||x.deleted||x.trashed) return null;
+  const rem=isTask?(x.date&&x.time?new Date(x.date+'T'+x.time).getTime():NaN):(x.remindAt?new Date(x.remindAt).getTime():NaN);
+  if(tm.end&&!isNaN(rem)&&Math.abs(rem-tm.end)<1500&&tm.end>now()-400) return {...tm,run:true};
+  if(tm.left>0&&isNaN(rem)) return {...tm,run:false};
+  return null; }
+function allTimers(){ const out=[];
+  for(const n of keptNotes()){ const tm=timerOf(n,false); if(tm) out.push({kind:'note',x:n,tm}); }
+  for(const t of liveTasks()){ const tm=timerOf(t,true); if(tm) out.push({kind:'task',x:t,tm}); }
+  return out.sort((a,b)=>(a.tm.run?a.tm.end:now()+a.tm.left)-(b.tm.run?b.tm.end:now()+b.tm.left)); }
+function setTimerEnd(kind,x,end,tm){
+  if(kind==='note'){ x.remindAt=localSec(end); x.remindBefore=0; delete x.remindRepeat; }
+  else { const s=localSec(end); x.date=s.slice(0,10); x.time=s.slice(11); delete x.rep; }
+  x.timer={dur:tm.dur,end,...(tm.label?{label:tm.label}:{}),...(tm.auto?{auto:true}:{})}; x.updatedAt=now(); }
+function startTimer(kind,x,dur,label,auto){ setTimerEnd(kind,x,now()+dur,{dur,label,auto}); cfg.tmLast=dur; saveCfg(); changed(); tmChanged(x,kind);
+  toast('⏳ Toca às '+hms(x.timer.end)+' · daqui a '+durTxt(dur)); setTimeout(()=>{ if(typeof afterReminderSaved==='function'&&HAS_ALARM) afterReminderSaved(); },300); }
+function tmChanged(x,kind){ if(kind==='note'&&cur.noteId===x.id) renderRemChip(x); renderList(); }
+function tmPause(kind,x){ const tm=timerOf(x,kind==='task'); if(!tm||!tm.run) return; const left=Math.max(1000,tm.end-now());
+  x.timer={dur:tm.dur,left,...(tm.label?{label:tm.label}:{}),...(tm.auto?{auto:true}:{})}; if(kind==='note') delete x.remindAt; else delete x.time;
+  x.updatedAt=now(); changed(); tmChanged(x,kind); toast('Temporizador pausado · faltam '+fmtLeft(left)); }
+function tmResume(kind,x){ const tm=timerOf(x,kind==='task'); if(!tm||tm.run) return; setTimerEnd(kind,x,now()+tm.left,tm); changed(); tmChanged(x,kind); toast('⏳ Continua · toca às '+hms(x.timer.end)); }
+function tmPlus(kind,x,ms){ const tm=timerOf(x,kind==='task'); if(!tm) return;
+  if(tm.run) setTimerEnd(kind,x,Math.max(now(),tm.end)+ms,{...tm,dur:tm.dur+ms}); else { x.timer={...x.timer,dur:tm.dur+ms,left:tm.left+ms}; x.updatedAt=now(); }
+  changed(); tmChanged(x,kind); toast(tm.run?'+1 min · toca às '+hms(x.timer.end):'+1 min'); }
+function tmClear(kind,x,keepDate){ delete x.timer; if(kind==='note') delete x.remindAt; else { delete x.time; if(!keepDate) delete x.date; } x.updatedAt=now(); }
+function tmCancel(kind,x){
+  if(kind==='task'&&x.timer&&x.timer.auto){ const snap=JSON.parse(JSON.stringify(x)); x.deleted=true; x.updatedAt=now(); changed(); renderList();
+    toast('Temporizador cancelado','Desfazer',()=>{ Object.assign(x,snap); delete x.deleted; x.updatedAt=now(); changed(); renderList(); }); return; }
+  const snap={timer:x.timer,remindAt:x.remindAt,date:x.date,time:x.time}; tmClear(kind,x,false); changed(); tmChanged(x,kind);
+  toast('Temporizador cancelado','Desfazer',()=>{ for(const k in snap) if(snap[k]!==undefined) x[k]=snap[k]; x.updatedAt=now(); changed(); tmChanged(x,kind); }); }
+function tmOk(kind,x){ // acabou: "OK"
+  if(kind==='task'&&x.timer&&x.timer.auto){ tkSetDone(x,true); delete x.timer; x.updatedAt=now(); changed(); renderList(); return; }
+  tmClear(kind,x,kind==='task'); changed(); tmChanged(x,kind); }
+const tmTitle=(kind,x)=>kind==='note'?noteTitle(x):(x.title||'Tarefa');
+// temporizadores que acabaram há pouco (mostra "Acabou" com OK)
+function endedTimers(){ const out=[], t=now();
+  for(const n of keptNotes()){ const tm=n.timer; if(tm&&tm.end&&!n.done&&n.remindAt&&Math.abs(new Date(n.remindAt).getTime()-tm.end)<1500&&tm.end<=t&&t-tm.end<6*3600e3) out.push({kind:'note',x:n,tm}); }
+  for(const k of liveTasks()){ const tm=k.timer; if(tm&&tm.end&&!k.done&&k.date&&k.time&&Math.abs(new Date(k.date+'T'+k.time).getTime()-tm.end)<1500&&tm.end<=t&&t-tm.end<6*3600e3) out.push({kind:'task',x:k,tm}); }
+  return out; }
+
+/* ---------- escolher o tempo (rodas de horas, minutos e segundos) ---------- */
+const WH=52;
+function wheelHTML(id,label,max,val){ let it=''; for(let i=0;i<=max;i++) it+=`<div class="wi" data-v="${i}">${p2(i)}</div>`;
+  return `<div class="wcol"><div class="wlb">${label}</div><div class="wsc" id="${id}" tabindex="0" role="spinbutton" aria-label="${label}" aria-valuemin="0" aria-valuemax="${max}" aria-valuenow="${val}"><div class="wpad"></div>${it}<div class="wpad"></div></div></div>`; }
+function timerSheet({title='Daqui a quanto tempo?',sub='',label=false,onStart}){
+  const last=+cfg.tmLast||15*60000; let H=Math.floor(last/3600000), M=Math.floor(last%3600000/60000), S=Math.floor(last%60000/1000), tick=0;
+  const dur=()=>((H*60+M)*60+S)*1000;
+  openSheet(`<h3>${title}</h3><p class="sub">${sub||'Escolha quanto tempo falta. O app calcula a hora sozinho, pelo relógio do celular, e começa a contagem regressiva.'}</p>
+    ${label?'<input class="field" id="tmName" maxlength="80" placeholder="Para quê? Ex.: reunião com o cliente" autocomplete="off" style="margin:0 0 10px">':''}
+    <div class="wheels">${wheelHTML('wH','Horas',99,H)}<b class="wsep">:</b>${wheelHTML('wM','Minutos',59,M)}<b class="wsep">:</b>${wheelHTML('wS','Segundos',59,S)}</div>
+    <div class="seg wrap qk tmpre" id="tmP">${[[5,'00:05:00'],[10,'00:10:00'],[15,'00:15:00'],[30,'00:30:00'],[60,'01:00:00']].map(([m,l])=>`<button data-p="${m}">${l}</button>`).join('')}</div>
+    <p class="tmend" id="tmEnd"></p>
+    <div class="btns"><button class="btn pri tmgo" id="tmGo">${svg('play')}Iniciar</button></div>`,
+  s=>{ const cols={wH:[99,v=>H=v],wM:[59,v=>M=v],wS:[59,v=>S=v]}; let lock=0;
+    const paint=()=>{ if(!s.isConnected) return; const d=dur(), e=s.querySelector('#tmEnd'), go=s.querySelector('#tmGo'); if(!e||!go) return; go.disabled=!d;
+      if(!d){ e.innerHTML='Escolha pelo menos 1 segundo.'; return; } const end=now()+d, dd=new Date(end);
+      const day=dd.toDateString()===new Date().toDateString()?'hoje':dd.toDateString()===new Date(now()+864e5).toDateString()?'amanhã':dd.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'2-digit'});
+      e.innerHTML=`${svg('bell')}<span>Vai tocar às <b>${hms(end)}</b> de ${day} · daqui a ${durTxt(d)}</span>`; paintIcons(e); };
+    const setW=(id,v,smooth)=>{ const w=s.querySelector('#'+id); if(!w) return; if(smooth){ w._tgt=v*WH; w._until=now()+900; } w.scrollTo({top:v*WH,behavior:smooth?'smooth':'auto'}); w.setAttribute('aria-valuenow',v); w.querySelectorAll('.wi').forEach(x=>x.classList.toggle('on',+x.dataset.v===v)); };
+    for(const id in cols){ const w=s.querySelector('#'+id), [max,set]=cols[id]; let to=0;
+      requestAnimationFrame(()=>setW(id,id==='wH'?H:id==='wM'?M:S,false));
+      w.addEventListener('scroll',()=>{ if(!s.isConnected) return;
+        if(w._tgt!=null){ if(Math.abs(w.scrollTop-w._tgt)<2||now()>w._until) w._tgt=null; else return; } // atalho rolando até o valor escolhido
+        const v=Math.max(0,Math.min(max,Math.round(w.scrollTop/WH))); set(v); w.setAttribute('aria-valuenow',v); w.querySelectorAll('.wi.on').forEach(x=>x.classList.remove('on')); const it=w.querySelector(`.wi[data-v="${v}"]`); if(it) it.classList.add('on'); paint();
+        clearTimeout(to); to=setTimeout(()=>{ if(Math.abs(w.scrollTop-v*WH)>1) w.scrollTo({top:v*WH,behavior:'smooth'}); },140); },{passive:true});
+      w.addEventListener('click',e=>{ const it=e.target.closest('.wi'); if(it){ const v=+it.dataset.v; set(v); setW(id,v,true); paint(); } });
+      w.addEventListener('keydown',e=>{ const cur0=id==='wH'?H:id==='wM'?M:S; let v=cur0; if(e.key==='ArrowUp') v=Math.max(0,cur0-1); else if(e.key==='ArrowDown') v=Math.min(max,cur0+1); else return; e.preventDefault(); set(v); setW(id,v,true); paint(); }); }
+    s.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{ const m=+b.dataset.p; H=Math.floor(m/60); M=m%60; S=0; setW('wH',H,true); setW('wM',M,true); setW('wS',S,true); paint(); });
+    s.querySelector('#tmGo').onclick=()=>{ const d=dur(); if(!d) return; const nm=label?(s.querySelector('#tmName').value||'').replace(/\s+/g,' ').trim().slice(0,80):''; closeSheet(); onStart(d,nm); };
+    paint(); tick=setInterval(()=>{ if(!s.isConnected){ clearInterval(tick); return; } paint(); },1000); }); }
+// temporizador avulso: vira uma tarefa com alarme em "Minhas tarefas"
+function newTimer(){ timerSheet({label:true,onStart:(d,nm)=>{ TL(); const t={id:'tk'+uid(),list:cfg.tlist&&listById(cfg.tlist)?cfg.tlist:'tl-main',title:nm||'Temporizador de '+durTxt(d),createdAt:now(),updatedAt:now(),order:-now()};
+  TK().push(t); startTimer('task',t,d,nm,true); if(cur.tab!=='hoje') setTab('hoje'); }}); }
+
+/* ---------- contagem regressiva na tela ---------- */
+function ringSVG(frac,R=96){ const C=2*Math.PI*R, f=Math.max(0,Math.min(1,frac));
+  return `<svg class="tmring" viewBox="0 0 ${2*R+24} ${2*R+24}" aria-hidden="true"><circle class="trk" cx="${R+12}" cy="${R+12}" r="${R}"/><circle class="prg" data-rg="${C.toFixed(2)}" cx="${R+12}" cy="${R+12}" r="${R}" stroke-dasharray="${(C*f).toFixed(2)} ${C.toFixed(2)}" transform="rotate(-90 ${R+12} ${R+12})"/></svg>`; }
+function timerCardHTML(o,big){ const {kind,x,tm}=o, left=tm.run?tm.end-now():tm.left, frac=left/tm.dur, id=(kind==='note'?'n:':'t:')+x.id;
+  return `<div class="tmcard${big?' big':''}${tm.run?'':' paused'}" data-tmid="${id}">
+    <div class="tmtop"><span class="tmname">${esc(tmTitle(kind,x))}</span><span class="tmkind">${kind==='note'?'Nota':'Tarefa'}</span></div>
+    <div class="tmdial">${ringSVG(frac,big?96:56)}<div class="tmin"><small>${esc(durTxt(tm.dur))}</small><b data-cd="${tm.run?tm.end:''}" data-left="${tm.run?'':tm.left}">${fmtLeft(left)}</b><span class="tmat">${tm.run?svg('bell')+hms(tm.end):'Pausado'}</span></div></div>
+    <div class="tmbtns"><button class="btn" data-tma="cancel">Cancelar</button><button class="btn" data-tma="plus">+1 min</button><button class="btn ${tm.run?'tmp':'pri'}" data-tma="${tm.run?'pause':'resume'}">${tm.run?'Pausar':'Continuar'}</button></div></div>`; }
+function timersHTML(){ const T=allTimers(), E=endedTimers(); if(!T.length&&!E.length) return '';
+  return `<div class="hsec">Contagem regressiva</div>`+E.map(o=>`<div class="tmcard done" data-tmid="${(o.kind==='note'?'n:':'t:')+o.x.id}"><div class="tmtop"><span class="tmname">${esc(tmTitle(o.kind,o.x))}</span></div><div class="tmdone">${svg('bell')}<span>Acabou às <b>${hms(o.tm.end)}</b></span><button class="btn pri" data-tma="ok">OK</button></div></div>`).join('')
+    +T.map((o,i)=>timerCardHTML(o,i===0)).join(''); }
+function tmFind(id){ const [k,i]=[id.slice(0,1),id.slice(2)]; return k==='n'?{kind:'note',x:noteById(i)}:{kind:'task',x:taskById(i)}; }
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-tma]'); if(!b) return; const c=b.closest('[data-tmid]'); if(!c) return; e.stopPropagation();
+  const {kind,x}=tmFind(c.dataset.tmid); if(!x) return; const a=b.dataset.tma;
+  if(a==='pause') tmPause(kind,x); else if(a==='resume') tmResume(kind,x); else if(a==='plus') tmPlus(kind,x,60000); else if(a==='cancel') tmCancel(kind,x); else if(a==='ok') tmOk(kind,x);
+  try{ navigator.vibrate&&navigator.vibrate(8); }catch(x2){} },true);
+let tmEndedSeen='';
+setInterval(()=>{ const t=now(); let ended=false;
+  document.querySelectorAll('[data-cd]').forEach(el=>{ const end=+el.dataset.cd; if(!end) return; const left=end-t; el.textContent=fmtLeft(left); if(left<=0) ended=true;
+    const card=el.closest('.tmcard'); if(card){ const tm=tmFind(card.dataset.tmid); const x=tm.x&&tm.x.timer; const pr=card.querySelector('.prg'); if(pr&&x&&x.dur){ const C=+pr.dataset.rg; pr.setAttribute('stroke-dasharray',(C*Math.max(0,left/x.dur)).toFixed(2)+' '+C); } } });
+  const sig=endedTimers().map(o=>o.x.id).join(',');
+  if((ended||sig!==tmEndedSeen)&&appReady&&!locked){ tmEndedSeen=sig; if($('#sheet').hidden) renderList(); const o=noteById(cur.noteId); if(o) renderRemChip(o); } else tmEndedSeen=sig;
+},1000);
+
+/* ---------- português do ditado (obrigatório no app Android) ---------- */
+var HAS_VOICE=IS_APK&&typeof NA.voiceCheck==='function';
+let voiceChecked=false, voiceBusy=false, voiceSt=null;
+async function voiceCheck(){ try{ voiceSt=JSON.parse(await nativeCall('voiceCheck','pt-BR')); }catch(e){ voiceSt={st:'erro'}; } cfg.voiceSt=voiceSt.st; saveCfg(); return voiceSt; }
+const voiceReady=st=>st==='instalado'||st==='baixando';
+// mostra a tela só se faltar o português; resolve true quando está pronto (ou quando não dá para instalar e a pessoa segue)
+function voiceGate(why){ return new Promise(async res=>{
+  if(!HAS_VOICE||voiceBusy){ res(true); return; } voiceBusy=true;
+  const r=await voiceCheck();
+  if(r.st==='instalado'){ voiceBusy=false; res(true); return; }
+  if(r.st==='baixando'){ voiceBusy=false; if(why!=='inicio') toast('O português do ditado está sendo baixado pelo celular. Pode ditar com internet enquanto isso.'); res(true); return; }
+  // quando dá para baixar, é obrigatório; quando o celular não consegue (Android antigo, sem serviço, sem português), avisa uma vez
+  if(why!=='ajustes'&&r.st!=='disponivel'){ const k='vg:'+r.st; if(r.st==='erro'||cfg.voiceSeen===k){ voiceBusy=false; res(true); return; } cfg.voiceSeen=k; saveCfg(); }
+  const el=document.createElement('div'); el.className='vgate'; el.id='vgate'; el.setAttribute('role','dialog'); el.setAttribute('aria-modal','true'); document.body.appendChild(el);
+  const close=ok=>{ el.classList.add('out'); setTimeout(()=>el.remove(),220); voiceBusy=false; res(ok); };
+  const view=(st,extra='')=>{
+    const T={disponivel:['Instale o português do ditado','Para o ditado funcionar como deve, mesmo sem internet, o celular precisa do pacote de voz em português. Ele pode ter algumas dezenas de MB: de preferência, use o Wi-Fi.','<button class="btn pri" id="vgGo">'+svg('download')+'Baixar o português agora</button>'],
+      baixando:['Baixando o português…','Pode deixar o app aberto. Quando terminar, o ditado já funciona sem internet.',''],
+      agendado:['O celular vai baixar o português','O Android colocou o download na fila e termina sozinho (normalmente quando o celular está no Wi-Fi). Pode continuar usando o app.','<button class="btn pri" id="vgOk">Continuar</button>'],
+      pronto:['Pronto!','O português do ditado está instalado.',''],
+      antigo:['Instale o português do ditado','Neste Android, o pacote de voz é instalado nas configurações do celular: em Voz do Google › Reconhecimento de voz off-line, baixe “Português (Brasil)”.','<button class="btn pri" id="vgSet">Abrir as configurações de voz</button><button class="btn" id="vgOk">Já instalei · continuar</button>'],
+      'sem-servico':['Falta o serviço de voz do Google','Para o ditado funcionar, instale (ou atualize) os “Serviços de fala do Google” na Play Store. Depois volte ao app.','<button class="btn pri" id="vgStore">Abrir a Play Store</button><button class="btn" id="vgOk">Continuar</button>'],
+      'sem-idioma':['Português sem internet não disponível','O reconhecimento de voz deste celular não tem o pacote em português para baixar. O ditado vai usar a internet.','<button class="btn pri" id="vgOk">Continuar</button>'],
+      erro:['Não deu para baixar o português',extra||'Confira a internet e tente de novo.','<button class="btn pri" id="vgRetry">Tentar de novo</button><button class="btn" id="vgOk">Continuar sem (o ditado vai usar a internet)</button>']}[st]||['Português do ditado','','<button class="btn pri" id="vgOk">Continuar</button>'];
+    el.innerHTML=`<div class="vgbox"><div class="vgic">${svg('mic')}</div><h2>${T[0]}</h2><p>${T[1]}</p>${st==='baixando'?'<div class="vgbar"><i id="vgBar"></i></div><p class="vgpct" id="vgPct">Começando…</p>':''}${st==='pronto'?'<div class="vgok">'+svg('check')+'</div>':''}<div class="vgbtns">${T[2]}</div></div>`;
+    paintIcons(el);
+    const on=(id,fn)=>{ const b=el.querySelector(id); if(b) b.onclick=fn; };
+    on('#vgOk',()=>close(true));
+    on('#vgSet',()=>{ try{ NA.voiceOpen('config'); }catch(e){} });
+    on('#vgStore',()=>{ try{ NA.voiceOpen('loja'); }catch(e){} });
+    on('#vgRetry',()=>start());
+    on('#vgGo',()=>start()); };
+  let poll=0;
+  const start=()=>{ view('baixando'); clearInterval(poll);
+    window.__voice=(t,d)=>{ if(!el.isConnected) return;
+      if(t==='progresso'){ const p=Math.max(0,Math.min(100,+d||0)); const b=el.querySelector('#vgBar'), pc=el.querySelector('#vgPct'); if(b) b.style.width=p+'%'; if(pc) pc.textContent=p+'%'; }
+      else if(t==='ok') done();
+      else if(t==='agendado'){ clearInterval(poll); view('agendado'); }
+      else if(t==='erro'){ clearInterval(poll); view('erro',{'antigo':'Este Android não deixa o app baixar o pacote de voz.'}[d]||'O celular não conseguiu baixar agora (código '+esc(d)+'). Confira a internet e tente de novo.'); }
+      else if(t==='iniciado'){ const pc=el.querySelector('#vgPct'); if(pc) pc.textContent='Baixando pelo celular…'; } };
+    // o Android 13 não informa o andamento: o app confere de tempo em tempo
+    let k=0; poll=setInterval(async()=>{ if(!el.isConnected){ clearInterval(poll); return; } k++; const q=await voiceCheck(); if(q.st==='instalado') done(); else if(k>100){ clearInterval(poll); view('erro','Está demorando mais que o normal. Confira a internet e tente de novo.'); } },3000);
+    try{ NA.voiceDownload('pt-BR'); }catch(e){ view('erro'); } };
+  const done=()=>{ clearInterval(poll); cfg.voiceSt='instalado'; saveCfg(); view('pronto'); setTimeout(()=>close(true),1300); };
+  view(r.st==='erro'?'erro':r.st,r.st==='erro'?'Não consegui conferir o pacote de voz agora.':'');
+}); }
 
 function checkReminders(){
   if(HAS_ALARM||!appReady||locked) return; // no app do celular quem avisa é o alarme do Android

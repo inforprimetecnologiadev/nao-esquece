@@ -2,6 +2,13 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.9.0 — 7 de novembro de 2026
+
+- Temporizador "Daqui a…": escolha horas, minutos e segundos (ou 5, 10, 15, 30 min, 1 h) e o app calcula a hora pelo relógio do celular. Não precisa fazer conta.
+- Contagem regressiva com o círculo, a hora em que vai tocar e os botões Pausar/Continuar, +1 min e Cancelar. No fim, toca o alarme do app.
+- Daqui a… em Hoje (temporizador avulso, vira tarefa), no lembrete da nota e na tarefa. A contagem aparece também na nota e na lista de tarefas.
+- Português do ditado: o app confere se o pacote de voz está instalado e pronto. Se faltar, pede para baixar antes de ditar, com a porcentagem.
+
 ## 1.8.0 — 6 de novembro de 2026
 
 - Ditado novo, como no ChatGPT: o app continua ouvindo mesmo se você parar para pensar e só termina quando você toca em Concluir.
