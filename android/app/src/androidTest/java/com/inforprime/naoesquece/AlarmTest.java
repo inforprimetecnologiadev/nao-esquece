@@ -413,6 +413,103 @@ public class AlarmTest {
         }
     }
 
+    private static android.os.Bundle res(String t) {
+        android.os.Bundle b = new android.os.Bundle();
+        java.util.ArrayList<String> l = new java.util.ArrayList<>();
+        l.add(t);
+        b.putStringArrayList(android.speech.SpeechRecognizer.RESULTS_RECOGNITION, l);
+        return b;
+    }
+
+    private static void ui(Runnable r) {
+        InstrumentationRegistry.getInstrumentation().runOnMainSync(r);
+    }
+
+    @Test
+    public void l_ditado() throws Exception {
+        Log.i(TAG, "reconhecedor de voz no emulador: " + Dictation.available(c));
+        final List<String> ev = java.util.Collections.synchronizedList(new java.util.ArrayList<>());
+        final int[] n = {0, 0, 0}; // começou, parou, cancelou
+        final android.speech.RecognitionListener[] L = {null};
+        final Intent[] last = {null};
+        Dictation.Engine fake = new Dictation.Engine() {
+            @Override public void start(Intent i, android.speech.RecognitionListener l) { n[0]++; L[0] = l; last[0] = i; }
+            @Override public void stop() { n[1]++; }
+            @Override public void cancel() { n[2]++; }
+            @Override public void destroy() { }
+        };
+        final Dictation[] d = {null};
+        ui(() -> { d[0] = new Dictation(fake, (t, x) -> ev.add(t + ":" + x), "pt-BR", c.getPackageName()); d[0].start(); });
+        assertEquals(1, n[0]);
+        assertTrue(ev.contains("estado:ouvindo"));
+        assertTrue("pede pontuação automática", android.os.Build.VERSION.SDK_INT < 33 || last[0].hasExtra(android.speech.RecognizerIntent.EXTRA_ENABLE_FORMATTING));
+        // fala um trecho
+        ui(() -> L[0].onPartialResults(res("comprar pão")));
+        ui(() -> L[0].onResults(res("comprar pão e leite")));
+        Thread.sleep(300);
+        assertTrue(ev.contains("parcial:comprar pão"));
+        assertTrue(ev.contains("final:comprar pão e leite"));
+        assertEquals("continua ouvindo sozinho depois do trecho", 2, n[0]);
+        // fica em silêncio pensando: o reconhecedor encerra, o app recomeça sem avisar erro
+        ui(() -> L[0].onError(android.speech.SpeechRecognizer.ERROR_SPEECH_TIMEOUT));
+        Thread.sleep(300);
+        ui(() -> L[0].onError(android.speech.SpeechRecognizer.ERROR_NO_MATCH));
+        Thread.sleep(300);
+        assertEquals(4, n[0]);
+        assertFalse(ev.toString().contains("erro:"));
+        assertEquals(Dictation.LISTENING, d[0].state());
+        // pausa no meio de uma frase: guarda o que estava sendo dito e não volta a ouvir
+        ui(() -> L[0].onPartialResults(res("ligar para")));
+        ui(() -> d[0].pause());
+        ui(() -> L[0].onResults(res("ligar para o cliente")));
+        Thread.sleep(300);
+        assertEquals(Dictation.PAUSED, d[0].state());
+        assertEquals(4, n[0]);
+        assertTrue(ev.contains("final:ligar para o cliente"));
+        assertTrue(ev.contains("estado:pausado"));
+        // continua de onde parou
+        ui(() -> d[0].resume());
+        assertEquals(5, n[0]);
+        // sem internet: tenta o reconhecimento do próprio celular
+        ui(() -> L[0].onError(android.speech.SpeechRecognizer.ERROR_NETWORK));
+        Thread.sleep(500);
+        assertEquals(6, n[0]);
+        assertTrue(last[0].getBooleanExtra(android.speech.RecognizerIntent.EXTRA_PREFER_OFFLINE, false));
+        assertTrue(ev.contains("aviso:offline"));
+        // reconhecedor ocupado: recria e continua
+        ui(() -> L[0].onError(android.speech.SpeechRecognizer.ERROR_RECOGNIZER_BUSY));
+        Thread.sleep(900);
+        assertEquals(7, n[0]);
+        // resposta atrasada de um trecho antigo é ignorada
+        ui(() -> d[0].listener(1).onResults(res("trecho velho")));
+        assertFalse(ev.contains("final:trecho velho"));
+        // concluir: espera o último trecho e termina
+        ui(() -> L[0].onPartialResults(res("até amanhã")));
+        ui(() -> d[0].finish());
+        ui(() -> L[0].onResults(res("até amanhã cedo")));
+        Thread.sleep(300);
+        assertTrue(ev.contains("final:até amanhã cedo"));
+        assertEquals("estado:fim", ev.get(ev.size() - 1));
+        assertEquals(Dictation.DONE, d[0].state());
+        assertEquals(7, n[0]);
+        // concluir sem resposta do reconhecedor: guarda o parcial e termina mesmo assim
+        ev.clear();
+        ui(() -> { d[0] = new Dictation(fake, (t, x) -> ev.add(t + ":" + x), "pt-BR", c.getPackageName()); d[0].start(); });
+        ui(() -> L[0].onPartialResults(res("texto solto")));
+        ui(() -> d[0].finish());
+        Thread.sleep(3000);
+        assertTrue(ev.toString(), ev.contains("final:texto solto"));
+        assertEquals("estado:fim", ev.get(ev.size() - 1));
+        // cancelar não manda nada
+        ev.clear();
+        ui(() -> { d[0] = new Dictation(fake, (t, x) -> ev.add(t + ":" + x), "pt-BR", c.getPackageName()); d[0].start(); });
+        ui(() -> d[0].cancel());
+        ui(() -> L[0].onResults(res("não pode aparecer")));
+        Thread.sleep(200);
+        assertFalse(ev.toString().contains("não pode aparecer"));
+        Log.i(TAG, "ditado: ok");
+    }
+
     private int events(ContentResolver cr, String id, String[] title) {
         int n = 0;
         try (Cursor q = cr.query(CalendarContract.Events.CONTENT_URI, new String[]{CalendarContract.Events.TITLE, CalendarContract.Events.DESCRIPTION},

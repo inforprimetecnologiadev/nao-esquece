@@ -1,6 +1,7 @@
 package com.inforprime.naoesquece;
 
 import android.Manifest;
+import android.view.WindowManager;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.StatusBarManager;
@@ -122,7 +123,9 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityResultLauncher<Intent> fileLauncher, accountLauncher, dictLauncher;
     private ActivityResultLauncher<IntentSenderRequest> authLauncher, scanLauncher;
-    private ActivityResultLauncher<String> micLauncher, notifLauncher;
+    private ActivityResultLauncher<String> micLauncher, notifLauncher, dictPermLauncher;
+    private Dictation dict;
+    private String dictLang;
     private ActivityResultLauncher<String[]> calLauncher;
 
     private int dp(int v) {
@@ -230,12 +233,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
+        // saiu do app no meio do ditado: pausa (o microfone não fica ligado escondido)
+        if (dict != null && dict.state() == Dictation.LISTENING) dict.pause();
         if (web != null) web.onPause();
         super.onStop();
     }
 
     @Override
     protected void onDestroy() {
+        if (dict != null) dict.cancel();
         if (web != null) {
             web.stopLoading();
             web.destroy();
@@ -281,6 +287,25 @@ public class MainActivity extends AppCompatActivity {
         return box;
     }
 
+    /* ---------- ditado contínuo ---------- */
+    private void dictEvent(String type, String data) {
+        final String js = "window.__dict&&window.__dict(" + JSONObject.quote(type) + "," + JSONObject.quote(data == null ? "" : data) + ")";
+        runOnUiThread(() -> {
+            if (web != null) web.evaluateJavascript(js, null);
+            if ("estado".equals(type)) {
+                boolean on = "ouvindo".equals(data);
+                if (on) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                else if ("fim".equals(data)) getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+            }
+        });
+    }
+
+    private void startDictation(String lang) {
+        if (dict != null && dict.active()) dict.cancel();
+        dict = new Dictation(Dictation.android(getApplicationContext()), this::dictEvent, lang, getPackageName());
+        dict.start();
+    }
+
     /* ---------- resposta para a página ---------- */
     private void done(String id, boolean ok, String data) {
         final String js = "window.__nativeDone&&window.__nativeDone(" + JSONObject.quote(id == null ? "" : id) + ","
@@ -320,6 +345,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             cb.onReceiveValue(out);
+        });
+
+        dictPermLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
+            if (granted) startDictation(dictLang);
+            else dictEvent("erro", "permissao");
         });
 
         micLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
@@ -1063,6 +1093,46 @@ public class MainActivity extends AppCompatActivity {
                     dictId = null;
                     done(id, false, "indisponivel");
                 }
+            });
+        }
+
+        /* ditado contínuo, sem a janela do Google: Pausar, Continuar e Concluir */
+        @JavascriptInterface
+        public String dictBegin(String lang) {
+            if (!trusted()) return "origem";
+            if (!Dictation.available(getApplicationContext())) return "sem";
+            runOnUiThread(() -> {
+                dictLang = lang;
+                if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) startDictation(lang);
+                else dictPermLauncher.launch(Manifest.permission.RECORD_AUDIO);
+            });
+            return "ok";
+        }
+
+        @JavascriptInterface
+        public void dictPause() {
+            runOnUiThread(() -> { if (dict != null) dict.pause(); });
+        }
+
+        @JavascriptInterface
+        public void dictResume() {
+            runOnUiThread(() -> { if (dict != null) dict.resume(); });
+        }
+
+        @JavascriptInterface
+        public void dictFinish() {
+            runOnUiThread(() -> {
+                if (dict != null) dict.finish();
+                else dictEvent("estado", "fim");
+            });
+        }
+
+        @JavascriptInterface
+        public void dictCancel() {
+            runOnUiThread(() -> {
+                if (dict != null) dict.cancel();
+                dict = null;
+                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
             });
         }
 
