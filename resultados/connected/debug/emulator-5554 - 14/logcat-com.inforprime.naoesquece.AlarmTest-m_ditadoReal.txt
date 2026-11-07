@@ -1,0 +1,202 @@
+11-07 12:27:29.003  4596  4637 I TestRunner: started: m_ditadoReal(com.inforprime.naoesquece.AlarmTest)
+11-07 12:27:29.005  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:29.015  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:29.025  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:29.035  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:29.081  3006  3129 I VoiceLanguageHelper: #initializeLanguages
+11-07 12:27:29.085   520  1511 D TelephonyManager: requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=338807 mSleepTimeMs=0 mIdleTimeMs=338804 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[0, 0, 0, 0, 0],mRxTimeMs=0}]}
+11-07 12:27:29.091  3006  3006 I RecognitionServiceImpl: RecognitionService#onStartListening
+11-07 12:27:29.092  3006  3006 I RecognitionServiceInten: Trigger application overridden to com.inforprime.naoesquece
+11-07 12:27:29.092  3006  3006 I IntentParsingUtil: Using language specified in RecognizerIntent: pt-BR
+11-07 12:27:29.093  3006  3006 E IntentParsingUtil: EXTRA_ENABLE_FORMATTING can't be used when EXTRA_PREFER_OFFLINE is false
+11-07 12:27:29.093  3006  3006 W Bundle  : Key android.speech.extras.SPEECH_INPUT_MINIMUM_LENGTH_MILLIS expected Integer but value was a java.lang.Long.  The default value 0 was returned.
+11-07 12:27:29.094  3006  3006 W Bundle  : Attempt to cast generated internal exception:
+11-07 12:27:29.094  3006  3006 W Bundle  : java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Integer
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at android.os.BaseBundle.getInt(BaseBundle.java:1296)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at android.content.Intent.getIntExtra(Intent.java:9043)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at bsp.d(PG:1)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at bsp.a(PG:64)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at com.google.android.apps.speech.tts.googletts.service.GoogleTTSRecognitionService.onStartListening(PG:6)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at android.speech.RecognitionService.dispatchStartListening(RecognitionService.java:151)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at android.speech.RecognitionService.-$$Nest$mdispatchStartListening(Unknown Source:0)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at android.speech.RecognitionService$1.handleMessage(RecognitionService.java:100)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at android.os.Handler.dispatchMessage(Handler.java:106)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at android.os.Looper.loopOnce(Looper.java:205)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at android.os.Looper.loop(Looper.java:294)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at java.lang.reflect.Method.invoke(Native Method)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+11-07 12:27:29.094  3006  3006 W Bundle  : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+11-07 12:27:29.096  3006  3006 W Bundle  : Key android.speech.extras.SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS expected Integer but value was a java.lang.Long.  The default value 0 was returned.
+11-07 12:27:29.096  3006  3006 W Bundle  : Attempt to cast generated internal exception:
+11-07 12:27:29.096  3006  3006 W Bundle  : java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Integer
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at android.os.BaseBundle.getInt(BaseBundle.java:1296)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at android.content.Intent.getIntExtra(Intent.java:9043)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at bsp.c(PG:1)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at bsp.a(PG:68)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at com.google.android.apps.speech.tts.googletts.service.GoogleTTSRecognitionService.onStartListening(PG:6)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at android.speech.RecognitionService.dispatchStartListening(RecognitionService.java:151)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at android.speech.RecognitionService.-$$Nest$mdispatchStartListening(Unknown Source:0)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at android.speech.RecognitionService$1.handleMessage(RecognitionService.java:100)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at android.os.Handler.dispatchMessage(Handler.java:106)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at android.os.Looper.loopOnce(Looper.java:205)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at android.os.Looper.loop(Looper.java:294)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at java.lang.reflect.Method.invoke(Native Method)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+11-07 12:27:29.096  3006  3006 W Bundle  : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+11-07 12:27:29.096  3006  3006 I RecognitionServiceImpl: Create an attribution context to skip platform permission check
+11-07 12:27:29.100  3006  3006 I ALT.AFClient: #audio# acquire audio focus for client(TNG_TRANSCRIPTION)
+11-07 12:27:29.101  3006  3006 I ALT.AFCSessionMgr: #audio# acquire audio focus for client(TNG_TRANSCRIPTION) session(token(1))
+11-07 12:27:29.107   335   383 I netd    : tetherGetStats() -> {[]} <0.34ms>
+11-07 12:27:29.110   520  1511 I MediaFocusControl: requestAudioFocus() from uid/pid 10148/3006 AA=USAGE_MEDIA/CONTENT_TYPE_MUSIC clientId=android.media.AudioManager@2ca1a00efn@ff94239 callingPack=com.google.android.tts req=4 flags=0x0 sdk=33
+11-07 12:27:29.111   520  1511 I AudioService.FadeOutManager: unfadeOutUid() uid:10148
+11-07 12:27:29.112  3006  3006 I ALT.ARCProvider: #audio# activate audio request client(TNG_TRANSCRIPTION) and start listening
+11-07 12:27:29.113  3006  3006 I ALT.ARCProvider: #audio# activate audio request client(TNG_TRANSCRIPTION)
+11-07 12:27:29.113  3006  3158 I ALT.AudioEventsHolder: #audio# audio focus session(token(1)) acquire status(ACQUIRED)
+11-07 12:27:29.114  3006  3403 I AudioLibraryAudioContro: Audio focus acquiring status: ACQUIRED
+11-07 12:27:29.114  3006  3006 I ALT.ClientsMgr: #audio# activate audio request client(name(TNG_TRANSCRIPTION), token(1905167993))
+11-07 12:27:29.115  3006  3006 I ALT.ARClient: #audio# start listening for audio request client(token(1905167993))
+11-07 12:27:29.115  3006  3006 I ALT.ARCSessionMgr: #audio# audio request client(token(1905167993)) session(token(577896978)) is being started on route(BUILTIN_AUDIO_ROUTE)
+11-07 12:27:29.116  3006  3006 I ALT.SourceMgr: #audio# audio request client(token(1905167993)) session(token(577896978)) is being started
+11-07 12:27:29.116  3006  3006 I ALT.SourceSequencer: #audio# open audio source(egq@f23ff71)
+11-07 12:27:29.117  3006  6955 I ALT.AudioRecordSource: #audio# open audio source(egq@f23ff71)
+11-07 12:27:29.117  3006  6955 I egf     : #audio# createAudioRecordWithAttribution
+11-07 12:27:29.120   396  3556 W ServiceManagerCppClient: Permission failure: android.permission.CALL_AUDIO_INTERCEPTION from uid=10148 pid=3006
+11-07 12:27:29.121   396  3556 D PermissionCache: checking android.permission.CALL_AUDIO_INTERCEPTION for uid=10148 => denied (331 us)
+11-07 12:27:29.122   396  6958 I AudioFlinger: AudioFlinger's thread 0x7092a4164bb0 tid=6958 ready to run
+11-07 12:27:29.124  3006  6955 I ALT.AudioRecordSource: #audio# create audio stream for audio record source(identity(egq@f23ff71), recordId(177))
+11-07 12:27:29.129   396  6958 D audioserver: FGS Logger Transaction failed
+11-07 12:27:29.129   396  6958 D audioserver: -129
+11-07 12:27:29.129   396  6958 D audioserver: FGS Logger Transaction failed
+11-07 12:27:29.129   396  6958 D audioserver: -129
+11-07 12:27:29.129   341   354 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-07 12:27:29.130   396  3556 D audioserver: FGS Logger Transaction failed
+11-07 12:27:29.130   396  3556 D audioserver: -129
+11-07 12:27:29.132  3006  3006 I NetworkSpeechRecognizer: Online recognizer - start listening
+11-07 12:27:29.133  3006  3158 I ely     : #audio# AudioRequestListeningSession start listening status: OPENED
+11-07 12:27:29.133  3006  3403 I ALT.AudioEventsHolder: #audio# audio request client(token(1905167993)) session(token(577896978)) start listening status(OPENED)
+11-07 12:27:29.134  3006  3158 I MicUpdateReporter: #audio# reportMicUpdate
+11-07 12:27:29.135  3006  3006 I SodaSpeechRecognizer: Offline recognizer - start listening
+11-07 12:27:29.135  3006  3006 I SodaSpeechRecognizer: Initialize Soda [locale: pt-BR]
+11-07 12:27:29.136  3006  3006 I DefaultLPManager: #getAvailablePackages
+11-07 12:27:29.136  3006  3006 I evk     : #getDownloadableLanguagePacks
+11-07 12:27:29.137  3006  6963 W OggOpusInputStream: Beginning load of ogg_opus_encoder...
+11-07 12:27:29.139  3006  3006 W SystemLPSourceImpl: #getAvailablePackages: Note there is not reason to call this method, as getInstalledPackages() returns the same LanguagePacks for this impl.
+11-07 12:27:29.139  3006  3006 I DefaultLPManager: #getInstalledPackages
+11-07 12:27:29.140   396   594 D AudioFlinger: Client defaulted notificationFrames to 2156 for frameCount 4313
+11-07 12:27:29.141   396   594 D AF::TrackHandle: OpPlayAudio: track:62 usage:10 not muted
+11-07 12:27:29.143  3006  3006 I evk     : #getInstalledPackages
+11-07 12:27:29.145  3006  6962 I AudioPlayer: Playing beep com.google.android.tts:raw/open (size 8626 bytes)
+11-07 12:27:29.146   396   594 D audioserver: FGS Logger Transaction failed
+11-07 12:27:29.146   396   594 D audioserver: -129
+11-07 12:27:29.150  3006  6963 W OggOpusInputStream: ogg_opus_encoder (null) was loaded normally!
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: S3Request:
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: # hgp@9f61a8c7
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: [293000] {
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: }
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: [293100] {
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: }
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: [294000] {
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: }
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: [294500] {
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: }
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: [29735924] {
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: }
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: [77499489] {
+11-07 12:27:29.152  3006  6962 I BaseS3HeaderProducer: }
+11-07 12:27:29.153   520   602 D ConnectivityService: requestNetwork for uid/pid:10148/3006 activeRequest: null callbackRequest: 150 [NetworkRequest [ REQUEST id=151, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10148 RequestorUid: 10148 RequestorPkg: com.google.android.tts UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+11-07 12:27:29.155   520   763 D ConnectivityService: NetReassign [151 : null → 100] [c 1] [a 0] [i 0]
+11-07 12:27:29.155   520   756 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=151, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10148 RequestorUid: 10148 RequestorPkg: com.google.android.tts UnderlyingNetworks: Null] ]
+11-07 12:27:29.155   520   756 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=151, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10148 RequestorUid: 10148 RequestorPkg: com.google.android.tts UnderlyingNetworks: Null] ]
+11-07 12:27:29.155   520   756 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=151, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10148 RequestorUid: 10148 RequestorPkg: com.google.android.tts UnderlyingNetworks: Null] ]
+11-07 12:27:29.155   520   756 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=151, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10148 RequestorUid: 10148 RequestorPkg: com.google.android.tts UnderlyingNetworks: Null] ]
+11-07 12:27:29.156   520   763 D ConnectivityService: NetReassign [no changes] [c 1] [a 0] [i 1]
+11-07 12:27:29.159  3006  3145 I cr_CronetLibraryLoader: Cronet version: 109.0.5414.8, arch: x86_64
+11-07 12:27:29.164  3006  6955 I ALT.FirstByteReporter: #audio# mark first byte read result as non-empty, 20ms spent reading
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: Failed to load method ExperimentalBidirectionalStream.Builder.addRequestAnnotation
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: java.lang.NoSuchMethodException: jjn.addRequestAnnotation [class java.lang.Object]
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at java.lang.Class.getMethod(Class.java:2937)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at java.lang.Class.getMethod(Class.java:2449)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at ibb.r(PG:1)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at iaz.c(PG:20)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at ibu.m(PG:2)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at ife.m(PG:2)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at iib.a(PG:1)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at iig.t(PG:10)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at iig.m(PG:16)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at icy.a(PG:64)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at frl.run(PG:19)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at cwx.b(PG:44)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at fwr.b(PG:3)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at gsz.run(PG:7)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at gtu.run(PG:1)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at gtv.run(PG:4)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at gsk.execute(PG:1)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at gtw.execute(PG:6)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at grk.q(PG:1)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at grk.j(PG:13)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at grk.p(PG:2)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at grn.e(PG:1)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at gro.run(PG:13)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at cqv.run(PG:5)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at bqj.run(PG:3)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at java.lang.Thread.run(Thread.java:1012)
+11-07 12:27:29.166  3006  3145 W grpc-java-cronet: 	at crf.run(PG:5)
+11-07 12:27:29.171  3006  3146 W MDD     : MDDManager Clearing MDD since FilesMetadata failed or needs migration.
+11-07 12:27:29.172  3006  3158 I SodaLPDirGenerator: Found matching installed packs:
+11-07 12:27:29.172  3006  3158 I DefaultLPManager: #getAvailablePackages
+11-07 12:27:29.173  3006  3158 I evk     : #getDownloadableLanguagePacks
+11-07 12:27:29.174  3006  3158 W SystemLPSourceImpl: #getAvailablePackages: Note there is not reason to call this method, as getInstalledPackages() returns the same LanguagePacks for this impl.
+11-07 12:27:29.175  3006  3403 W SodaLPDirGenerator: Returning no LP, as MDD does not support this locale.
+11-07 12:27:29.176  3006  3145 E SodaSpeechRecognizer: Failed to get language pack of required locale: error 12
+11-07 12:27:29.192   396   500 D AudioFlinger: mixer(0x7092a90bd930) throttle end: throttle time(33)
+11-07 12:27:29.228  3006  3047 D AudioTrack: stop(26): called with 4313 frames delivered
+11-07 12:27:29.243   831   905 D EGL_emulation: app_time_stats: avg=1032.58ms min=1032.58ms max=1032.58ms count=1
+11-07 12:27:29.311   341  6959 D android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_readi was late delivering frames, inserting 16000 us of silence
+11-07 12:27:29.351   396   500 D audioserver: FGS Logger Transaction failed
+11-07 12:27:29.351   396   500 D audioserver: -129
+11-07 12:27:29.363   396   500 D audioserver: FGS Logger Transaction failed
+11-07 12:27:29.363   396   500 D audioserver: -129
+11-07 12:27:29.727  5546  5546 D BoundBrokerSvc: onUnbind: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
+11-07 12:27:30.033   520   539 I GnssLocationProvider: WakeLock acquired by handleDownloadPsdsData()
+11-07 12:27:30.033   520  6979 E GnssPsdsDownloader: No Long-Term PSDS servers were specified in the GnssConfiguration
+11-07 12:27:32.068   520   520 W InputManager-JNI: Input channel object '8f8623a Toast (client)' was disposed without first being removed with the input manager!
+11-07 12:27:32.218   341  5323 D android.hardware.audio@7.1-impl.ranchu: threadLoop: entering standby, frames: 1477504
+11-07 12:27:32.279  5546  6980 I GmscoreIpa: Starting mediastore instant index [CONTEXT service_id=255 ]
+11-07 12:27:32.759   831   905 D EGL_emulation: app_time_stats: avg=125.54ms min=15.21ms max=3046.57ms count=28
+11-07 12:27:37.497  1513  1583 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.shutdownVoiceInternal():95 shutdownVoiceInternal()
+11-07 12:27:38.192   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:27:44.069  4596  4637 I NaoEsqueceTeste: ditado real, 15 s de silêncio: [estado:ouvindo, nivel:-2.0, nivel:-1.8, nivel:-2.0, nivel:-2.0, nivel:-2.0, nivel:-2.0, nivel:-2.0, nivel:-2.0, nivel:-2.0, nivel:-1.9, nivel:-1.9, nivel:-1.8, nivel:-1.6, nivel:-1.5, nivel:-1.4, nivel:-1.3, nivel:-1.2, nivel:-1.0, nivel:-1.0, nivel:-0.9, nivel:-0.9, nivel:-0.8, nivel:-0.7, nivel:-0.7, nivel:-0.6, nivel:-0.6, nivel:-0.6, nivel:2.0, nivel:2.0, nivel:2.0, nivel:2.0, nivel:2.4, nivel:0.2, nivel:2.1, nivel:2.4, nivel:0.3, nivel:-0.3, nivel:0.0, nivel:-0.3, nivel:-0.3, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:2.2, nivel:2.2, nivel:2.2, nivel:2.2, nivel:2.2, nivel:2.2, nivel:2.2, nivel:2.2, nivel:2.2, nivel:2.3, nivel:2.2, nivel:2.3, nivel:2.3, nivel:2.2, nivel:2.2, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.2, nivel:2.3, nivel:0.0, nivel:0.0, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.0, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.2, nivel:2.3, nivel:2.3, nivel:2.2, nivel:2.3, nivel:2.2, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:0.2, nivel:0.0, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.0, nivel:0.0, nivel:0.2, nivel:0.0, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.2, nivel:-0.1, nivel:-0.2, nivel:-0.1, nivel:-0.1, nivel:-0.1, nivel:-0.2, nivel:-0.1, nivel:-0.1, nivel:-0.1, nivel:-0.1, nivel:-0.1, nivel:-0.1, nivel:-0.1, nivel:-0.1, nivel:-0.1, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:2.3, nivel:0.2, nivel:0.0, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.2, nivel:0.0, nivel:0.2, nivel:0.0, nivel:0.0, nivel:0.0, nivel:0.0]
+11-07 12:27:44.070  3006  3006 I RecognitionServiceImpl: RecognitionService#onStopListening
+11-07 12:27:44.070  3006  3006 I ALT.ARCSession: #audio# stop(reason(CLIENT_REQUESTED)) listening audio request client(token(1905167993)) session(token(577896978))
+11-07 12:27:44.071  3006  3006 I ALT.ARCSessionMgr: #audio# stop(reason(CLIENT_REQUESTED)) listening audio request session(token(577896978))
+11-07 12:27:44.071  3006  3006 I ALT.SourceMgr: #audio# stopListening
+11-07 12:27:44.071  3006  3006 I ALT.SourceSequencer: #audio# close audio source(egq@f23ff71)
+11-07 12:27:44.071  3006  3006 I ALT.AFCSession: #audio# release audio focus session(token(1))
+11-07 12:27:44.072  3006  6963 I ALT.AudioRecordSource: #audio# close audio source(identity(egq@f23ff71), recordId(177))
+11-07 12:27:44.072   520   602 I MediaFocusControl: abandonAudioFocus() from uid/pid 10148/3006 clientId=android.media.AudioManager@2ca1a00efn@ff94239
+11-07 12:27:44.072  3006  3403 I ALT.AudioEventsHolder: #audio# audio focus session(token(1)) release status(RELEASED)
+11-07 12:27:44.073  3006  3158 I AudioLibraryAudioContro: Audio focus releasing status: RELEASED
+11-07 12:27:44.075   396  6958 D audioserver: FGS Logger Transaction failed
+11-07 12:27:44.075   396  6958 D audioserver: -129
+11-07 12:27:44.076   341   341 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-07 12:27:44.079  3006  3403 I ALT.AudioEventsHolder: #audio# audio request client(token(1905167993)) session(token(577896978)) stop listening status(CLOSED)
+11-07 12:27:44.079  3006  3403 I ely     : #audio# AudioRequestListeningSession stop listening status: CLOSED
+11-07 12:27:44.079  3006  3403 I MicUpdateReporter: #audio# reportMicUpdate
+11-07 12:27:44.079  3006  3403 I AudioLibraryAudioContro: Mic closing result: # ecx@7bca4
+11-07 12:27:44.083  3006  6955 I ALT.BytesAccessorBuffer: #audio# mark buffer(eew@7c9f34c) closed, available bytes(478208)
+11-07 12:27:44.083  3006  6961 W AudioInputStreamProduce: #audio# read failed: read EOF from AudioAccessor.
+11-07 12:27:44.089  3006  6962 W AudioInputStreamProduce: #audio# read failed: read EOF from AudioAccessor.
+11-07 12:27:44.092   396  3556 D audioserver: FGS Logger Transaction failed
+11-07 12:27:44.092   396  3556 D audioserver: -129
+11-07 12:27:44.128  3006  3158 I FinalS3ResponseProcesso: Received a final result for a segment
+11-07 12:27:44.128  3006  3158 I FinalS3ResponseProcesso: Received the final result for the recognition
+11-07 12:27:44.128  3006  3158 W RecognitionClient: #onRecognitionFinished no speech - erroring
+11-07 12:27:44.128  3006  3158 W RecognitionClient: #onError space agsa_transcription_NO_SPEECH_DETECTED code -1!
+11-07 12:27:44.129  4596  4596 I NaoEsqueceDitado: erro 7 estado 4
+11-07 12:27:44.130  3006  6973 I cr_CronetUrlRequestContext: destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@a663c5b
+11-07 12:27:44.131  4596  4596 E SpeechRecognizer: not connected to the recognition service
+11-07 12:27:44.320  4596  4637 I TestRunner: finished: m_ditadoReal(com.inforprime.naoesquece.AlarmTest)

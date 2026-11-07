@@ -1,0 +1,39 @@
+INFO: Constructing runner from config.
+INFO: Configuring Android Instrumentation driver: android_instrumentation_runtime {
+  instrumentation_info {
+    app_package: "com.inforprime.naoesquece"
+    test_package: "com.inforprime.naoesquece.test"
+    test_runner_class: "androidx.test.runner.AndroidJUnitRunner"
+  }
+  instrumentation_args {
+    args_map {
+      key: "additionalTestOutputDir"
+      value: "/sdcard/Android/media/com.inforprime.naoesquece/additional_test_output"
+    }
+  }
+}
+am_instrument_timeout: 31536000
+
+INFO: No installables found in test fixture. Nothing to install.
+INFO: Installing [/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/apk/debug/app-debug.apk] on device emulator-5554.
+INFO: Installing [/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk] on device emulator-5554.
+INFO: Start logcat streaming.
+INFO: Running Android Instrumentation driver.
+INFO: Stop logcat streaming.
+INFO: Uninstalling com.inforprime.naoesquece for device emulator-5554.
+INFO: Uninstalling com.inforprime.naoesquece.test for device emulator-5554.
+INFO: Execute com.inforprime.naoesquece.AlarmTest.a_permissoes: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.b_botaoTestar: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.c_lembreteDoApp: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.d_reiniciar: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.e_calendario: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.f_repeticao: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.g_repeteTocaEMarcaOProximo: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.h_widget: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.i_lerTexto: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.j_rapidos: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.k_mp3: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.l_ditado: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.m_ditadoReal: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.n_vozOffline: PASSED
+INFO: Execute com.inforprime.naoesquece.AlarmTest.o_alarmeComSegundos: PASSED

@@ -1,0 +1,31 @@
+11-07 12:27:44.321  4596  4637 I TestRunner: started: n_vozOffline(com.inforprime.naoesquece.AlarmTest)
+11-07 12:27:44.322  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:44.332  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:44.344  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:44.352  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:44.390  1635  1635 I AiAi    : AiAiSpeechRecognitionService#onCheckRecognitionSupport#AndroidU
+11-07 12:27:44.390  1635  1635 I AiAiSpeechRecognition: #onCheckRecognitionSupport
+11-07 12:27:44.390  1635  1635 I IntentParsingUtil: Using language specified in RecognizerIntent: pt-BR
+11-07 12:27:44.391  1635  1635 I AiAiSpeechRecognition: onStartCheckRecognitionSupport(): callingPackageName: UNKNOWN
+11-07 12:27:44.391  1635  1635 I ModelManagerImpl: #onCheckRecognitionSupport
+11-07 12:27:44.392  1635  1635 I DefaultLPManager: #getAvailablePackages
+11-07 12:27:44.392  1635  1635 I lpi     : #getDownloadableLanguagePacks
+11-07 12:27:44.394  1635  1635 W SystemLPSourceImpl: #getAvailablePackages: Note there is not reason to call this method, as getInstalledPackages() returns the same LanguagePacks for this impl.
+11-07 12:27:44.395  1635  1635 I DefaultLPManager: #getRequestedPackages
+11-07 12:27:44.396  1635  1635 I ZipLPPopulator: #addNewFileGroups
+11-07 12:27:44.396  1635  1635 I lpi     : #getDownloadableLanguagePacks
+11-07 12:27:44.397  1635  1948 I LPRequestState: [ZipfileRequests] #resolveDesiredLanguagePacks
+11-07 12:27:44.398  1635  1948 I lpi     : #getPendingPackages
+11-07 12:27:44.398  1635  1635 W SystemLPSourceImpl: #getRequestedPackages: There is not reason to call this method, as the result is always empty.
+11-07 12:27:44.398  1635  1635 I DefaultLPManager: #getAvailablePackages
+11-07 12:27:44.399  1635  1635 I lpi     : #getDownloadableLanguagePacks
+11-07 12:27:44.400  1635  1635 W SystemLPSourceImpl: #getAvailablePackages: Note there is not reason to call this method, as getInstalledPackages() returns the same LanguagePacks for this impl.
+11-07 12:27:44.401  1635  1635 I DefaultLPManager: #getInstalledPackages
+11-07 12:27:44.401  1635  1635 I lpi     : #getInstalledPackages
+11-07 12:27:44.402  1635  1948 I ModelManagerImpl: ModelManager pending download for: []
+11-07 12:27:44.402  1635  1948 I ModelManagerImpl: ModelManager has installed: []
+11-07 12:27:44.402  1635  1948 I AiAiSpeechRecognition: onEndCheckRecognitionSupport success: # ijd@52397377
+11-07 12:27:44.471  1017  1294 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-07 12:27:44.471  1017  1294 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-07 12:27:44.636  4596  4637 I NaoEsqueceTeste: português offline: {"api":34,"rec":true,"onDevice":true,"st":"sem-idioma","online":false,"instalados":"","baixando":""}
+11-07 12:27:44.636  4596  4637 I TestRunner: finished: n_vozOffline(com.inforprime.naoesquece.AlarmTest)

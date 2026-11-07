@@ -1,0 +1,44 @@
+11-07 12:27:02.487  4596  4637 I TestRunner: started: h_widget(com.inforprime.naoesquece.AlarmTest)
+11-07 12:27:02.490  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:02.499   396   500 D audioserver: FGS Logger Transaction failed
+11-07 12:27:02.499   396   500 D audioserver: -129
+11-07 12:27:02.501  1098  1841 D EGL_emulation: app_time_stats: avg=1228.33ms min=214.73ms max=2241.94ms count=2
+11-07 12:27:02.515   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:27:02.515   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:27:02.515   831   831 D Tonal   : Gradients:
+11-07 12:27:02.515   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:27:02.515   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:27:02.515   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:27:02.517   831   905 D EGL_emulation: app_time_stats: avg=414.38ms min=23.70ms max=2192.38ms count=6
+11-07 12:27:02.522  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:02.539   831   831 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+11-07 12:27:02.547  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:02.549   831   905 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-07 12:27:02.566   831   902 D ControlsListingControllerImpl: Unsubscribing callback
+11-07 12:27:02.567   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@431358c
+11-07 12:27:02.568   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@d8ca4d5
+11-07 12:27:02.568   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@d944ea
+11-07 12:27:02.569   831   902 D ControlsListingControllerImpl: Unsubscribing callback
+11-07 12:27:02.569   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@67dd3db
+11-07 12:27:02.570   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@821e78
+11-07 12:27:02.570   831   902 D ControlsListingControllerImpl: Unsubscribing callback
+11-07 12:27:02.571   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@57fb951
+11-07 12:27:02.576  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:02.628   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:27:02.654  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:27:02.654  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:27:02.654  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:27:02.654  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:27:02.656  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:27:02.658   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:27:02.658   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:27:02.658   831   831 D Tonal   : Gradients:
+11-07 12:27:02.658   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:27:02.658   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:27:02.658   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:27:02.658   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:27:02.658   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-07 12:27:02.691  1613  4528 W MediaProvider: isAppCloneUserPair for user 0: false
+11-07 12:27:02.705  5414  6496 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 312 [CONTEXT service_id=218 ]
+11-07 12:27:02.709   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:27:02.711  4596  4637 I TestRunner: finished: h_widget(com.inforprime.naoesquece.AlarmTest)

@@ -1,0 +1,162 @@
+11-07 12:27:02.718  4596  4637 I TestRunner: started: i_lerTexto(com.inforprime.naoesquece.AlarmTest)
+11-07 12:27:02.719   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:27:02.719   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:27:02.720   831   831 D Tonal   : Gradients:
+11-07 12:27:02.720   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:27:02.720   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:27:02.720   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:27:02.722  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:02.730   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-07 12:27:02.732  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:27:02.732  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:27:02.732  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:27:02.732  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:27:02.733  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:27:02.733  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:27:02.733  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:27:02.733  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:27:02.734  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:27:02.735  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:27:02.738   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:27:02.742   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:27:02.742   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:27:02.750   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:27:02.750   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:27:02.750   831   831 D Tonal   : Gradients:
+11-07 12:27:02.750   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:27:02.750   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:27:02.750   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:27:02.755   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-07 12:27:02.764  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:02.774  5414  6245 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 312 [CONTEXT service_id=218 ]
+11-07 12:27:02.775  5414  6245 V NFC     : this device does not have NFC support
+11-07 12:27:02.775  5414  6245 W TapAndPay: NfcAdapter is null while obtaining CardEmulation instance. [CONTEXT service_id=79 ]
+11-07 12:27:02.775  5414  6245 W TapAndPay: java.lang.NullPointerException: NfcAdapter is null
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at android.nfc.cardemulation.CardEmulation.getInstance(CardEmulation.java:152)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at cdoy.<init>(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at com.google.android.gms.tapandpay.hce.task.TapAndPayAidRegistrationTaskOperation.a(:com.google.android.gms@231818047@23.18.18 (190800-535401451):5)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskChimeraService.a(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at avzs.call(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at aced.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at aced.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):7)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at acjn.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-07 12:27:02.775  5414  6245 W TapAndPay: 	at java.lang.Thread.run(Thread.java:1012)
+11-07 12:27:02.778  5414  6549 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskService finished executing. cause:5 result: 3 elapsed_millis: 11 uptime_millis: 11 exec_start_elapsed_seconds: 312 [CONTEXT service_id=218 ]
+11-07 12:27:02.780  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:02.790  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:02.844  4596  6593 D DecoupledTextDelegate: Start loading thick OCR module.
+11-07 12:27:02.845  4596  6593 I DynamiteModule: Considering local module com.google.mlkit.dynamite.text.latin:10000 and remote module com.google.mlkit.dynamite.text.latin:0
+11-07 12:27:02.845  4596  6593 I DynamiteModule: Selected local version of com.google.mlkit.dynamite.text.latin
+11-07 12:27:02.861  1017  1294 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-07 12:27:02.861  1017  1294 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-07 12:27:02.862  5414  5414 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.common.telemetry.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+11-07 12:27:02.862  5414  5414 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.common.telemetry.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+11-07 12:27:02.880  4596  6594 I native  : I0000 00:00:1794054422.880160    6594 asset_manager_util.cc:61] Created global reference to asset manager.
+11-07 12:27:02.901  4596  6589 D TransportRuntime.SQLiteEventStore: Storing event with priority=DEFAULT, name=FIREBASE_ML_SDK for destination cct
+11-07 12:27:02.908  4596  6589 D TransportRuntime.JobInfoScheduler: Scheduling upload for context TransportContext(cct, DEFAULT, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) with jobId=877733733 in 30000ms(Backend next call timestamp 0). Attempt 1
+11-07 12:27:02.908  4596  6589 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10192; state: ENABLED
+11-07 12:27:02.909  4596  6589 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10192; state: ENABLED
+11-07 12:27:02.910   520   602 D ConnectivityService: requestNetwork for uid/pid:1000/520 asUid: 10192 activeRequest: null callbackRequest: 147 [NetworkRequest [ REQUEST id=148, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+11-07 12:27:02.912   520   763 D ConnectivityService: NetReassign [148 : null → 100] [c 0] [a 1] [i 0]
+11-07 12:27:02.912   520   756 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=148, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-07 12:27:02.912   520   756 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=148, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-07 12:27:02.912   520   756 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=148, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-07 12:27:02.912   520   756 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=148, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-07 12:27:02.915  4596  6589 D TransportRuntime.SQLiteEventStore: Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+11-07 12:27:02.920  4596  6589 D TransportRuntime.JobInfoScheduler: Scheduling upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) with jobId=882714470 in 86400000ms(Backend next call timestamp 0). Attempt 1
+11-07 12:27:02.925  4596  6594 I Manager : DeviceManager::DeviceManager
+11-07 12:27:02.925  4596  6594 W ServerFlag: Failed to parse result of GetServerConfigurableFlag, errno=34
+11-07 12:27:02.925  4596  6594 I Manager : findAvailableDevices
+11-07 12:27:02.933  4596  6594 I Manager : Found interface nnapi-sample_all (version = JUST_AN_EXAMPLE)
+11-07 12:27:02.933  4596  6594 I Manager : Found interface nnapi-sample_quant (version = JUST_AN_EXAMPLE)
+11-07 12:27:02.933  4596  6594 I Manager : Found interface nnapi-sample_sl_shim (version = JUST_AN_EXAMPLE)
+11-07 12:27:02.943  4596  6589 D TransportRuntime.SQLiteEventStore: Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+11-07 12:27:02.944  4596  6597 I native  : I0000 00:00:1794054422.944434    6597 text_detector_thread_pool_context.cc:38] Compute manager max in flight region detector overwrite: 1
+11-07 12:27:02.945  4596  6597 I native  : I0000 00:00:1794054422.945007    6597 common_util.h:41] Resizing Thread Pool: ocr_det_0 to 3
+11-07 12:27:02.945  4596  6596 I native  : I0000 00:00:1794054422.945726    6596 text_classifier.cc:32] Creating classifier TfliteTextClassifier
+11-07 12:27:02.946  4596  6596 I native  : I0000 00:00:1794054422.946644    6596 common_util.h:41] Resizing Thread Pool: ocr_segm to 3
+11-07 12:27:02.948  4596  6597 I tflite  : Initialized TensorFlow Lite runtime.
+11-07 12:27:02.951  4596  6589 D TransportRuntime.JobInfoScheduler: Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+11-07 12:27:02.952  4596  6597 I tflite  : Created TensorFlow Lite XNNPACK delegate for CPU.
+11-07 12:27:02.952  4596  6596 I native  : I0000 00:00:1794054422.952944    6596 tflite_lstm_client_base.cc:371] Resizing interpreter pool to 4
+11-07 12:27:02.953  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:02.954  4596  6596 I native  : I0000 00:00:1794054422.954462    6596 multi_pass_line_recognition_mutator.cc:342] Preloading recognizers.
+11-07 12:27:02.955  4596  6597 I native  : I0000 00:00:1794054422.955903    6597 tflite_detector_client_with_shape_cache.cc:105] Caching size: 10
+11-07 12:27:02.962  4596  6607 I native  : I0000 00:00:1794054422.962624    6607 tflite_model_pooled_runner.cc:625] Loading mlkit-google-ocr-models/gocr/gocr_models/line_recognition_legacy_mobile/Latn_ctc/optical/conv_model.fb
+11-07 12:27:02.963  4596  6597 I native  : I0000 00:00:1794054422.962693    6597 tflite_model_pooled_runner.cc:625] Loading mlkit-google-ocr-models/gocr/layout/line_splitting_custom_ops/model.tflite
+11-07 12:27:02.963  4596  6607 I native  : I0000 00:00:1794054422.963459    6607 tflite_model_pooled_runner.cc:636] Loading mlkit-google-ocr-models/gocr/gocr_models/line_recognition_legacy_mobile/Latn_ctc/optical/lstm_model.fb
+11-07 12:27:02.964  4596  6597 I native  : I0000 00:00:1794054422.964138    6597 tflite_model_pooled_runner.cc:836] Resizing interpreter pool to 1
+11-07 12:27:02.964  4596  6597 I native  : I0000 00:00:1794054422.964690    6597 tflite_model_pooled_runner.cc:625] Loading mlkit-google-ocr-models/gocr/layout/line_clustering_custom_ops/model.tflite
+11-07 12:27:02.965  4596  6597 I native  : I0000 00:00:1794054422.965417    6597 tflite_model_pooled_runner.cc:836] Resizing interpreter pool to 1
+11-07 12:27:02.966  4596  6607 I native  : I0000 00:00:1794054422.966094    6607 tflite_model_pooled_runner.cc:836] Resizing interpreter pool to 4
+11-07 12:27:02.967  4596  6607 I native  : I0000 00:00:1794054422.967661    6607 mobile_langid_v2.cc:58] MobileLangID V2 initialized.
+11-07 12:27:02.967  4596  6607 I native  : I0000 00:00:1794054422.967712    6607 multi_pass_line_recognition_mutator.cc:364] Finished preloading a recognizer for "Latn"
+11-07 12:27:02.967  4596  6596 I native  : I0000 00:00:1794054422.967743    6596 multi_pass_line_recognition_mutator.cc:398] Finished preloading recognizers.
+11-07 12:27:02.969  4596  6594 D PipelineManager: Start process bitmap
+11-07 12:27:02.969  4596  6594 I native  : I0000 00:00:1794054422.969331    6594 scheduler.cc:693] ImageMetadata: 1400x600
+11-07 12:27:02.999  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:03.669  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:04.349  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:04.971  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:05.114   481   829 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+11-07 12:27:05.229  5414  6549 I GMS_MM_Logger: Memory Metric Logging not allowed. Stopping.
+11-07 12:27:05.392   341  5323 D android.hardware.audio@7.1-impl.ranchu: threadLoop: entering standby, frames: 1327360
+11-07 12:27:05.694  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:06.114   473  5313 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+11-07 12:27:06.335   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-07 12:27:06.522  4596  6594 D PipelineManager: OCR process succeeded via visionkit pipeline.
+11-07 12:27:06.527  4596  4637 I NaoEsqueceTeste: texto da foto: NOTA FISCAL 4521
+11-07 12:27:06.527  4596  4637 I NaoEsqueceTeste: Entregar na sala 2
+11-07 12:27:06.533  4596  6589 D TransportRuntime.SQLiteEventStore: Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+11-07 12:27:06.542  4596  6589 D TransportRuntime.JobInfoScheduler: Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+11-07 12:27:06.548  4596  6589 D TransportRuntime.SQLiteEventStore: Storing event with priority=DEFAULT, name=FIREBASE_ML_SDK for destination cct
+11-07 12:27:06.553  4596  6589 D TransportRuntime.JobInfoScheduler: Upload for context TransportContext(cct, DEFAULT, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+11-07 12:27:06.556  4596  6589 D TransportRuntime.SQLiteEventStore: Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+11-07 12:27:06.561  4596  6589 D TransportRuntime.JobInfoScheduler: Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+11-07 12:27:06.667  4596  6593 D PipelineManager: Start process bitmap
+11-07 12:27:06.694  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:07.371  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:07.394  1613  1884 D PickerSyncController: syncAllMedia
+11-07 12:27:07.394  1613  1884 D PickerSyncController: syncAllMediaFromProvider() LOCAL, auth=com.android.providers.media.photopicker, retry=true
+11-07 12:27:07.394  1613  1884 D PickerSyncController: getSyncRequestParams() LOCAL, auth=com.android.providers.media.photopicker
+11-07 12:27:07.395  1613  1884 D PickerSyncController:    Latest ID/Gen=1407:9714b081-c1fb-4fcf-a042-e99d33e5b22b:external_primary/34
+11-07 12:27:07.395  1613  1884 D PickerSyncController:    Cached ID/Gen=1407:9714b081-c1fb-4fcf-a042-e99d33e5b22b:external_primary/27
+11-07 12:27:07.395  1613  1884 D PickerSyncController:    RESULT=SyncRequestParams{type=MEDIA_INCREMENTAL, gen=27, latest=Bundle[{last_media_sync_generation=34, media_collection_id=1407:9714b081-c1fb-4fcf-a042-e99d33e5b22b:external_primary}]}
+11-07 12:27:07.395  1613  1884 I PickerSyncController: Executing SyncAdd. isLocal: true. authority: com.android.providers.media.photopicker
+11-07 12:27:07.410  1613  1884 I PickerSyncController: Paged sync successful. QueryArgs: Bundle[{android.provider.extra.SYNC_GENERATION=27}]. Result count: 1. Cursor count: 1
+11-07 12:27:07.437  1613  1884 I PickerSyncController: Executing SyncRemove. isLocal: true. authority: com.android.providers.media.photopicker
+11-07 12:27:07.438  1613  1884 I PickerSyncController: Paged sync successful. QueryArgs: Bundle[{android.provider.extra.SYNC_GENERATION=27}]. Result count: 0. Cursor count: 0
+11-07 12:27:07.438  1613  1884 D PickerSyncController: syncAllMediaFromProvider() CLOUD, auth=null, retry=true
+11-07 12:27:07.438  1613  1884 D PickerSyncController: getSyncRequestParams() CLOUD, auth=null
+11-07 12:27:07.438  1613  1884 D PickerSyncController:    RESULT=SyncRequestParams{type=MEDIA_RESET, gen=0, latest=null}
+11-07 12:27:07.438  1613  1884 I PickerSyncController: Executing SyncReset. isLocal: false. authority: null
+11-07 12:27:07.438  1613  1884 I PickerSyncController: SyncReset. isLocal:false. authority: null. result count: 0
+11-07 12:27:07.438  1613  1884 D PickerSyncController: Ignoring cache media info for null authority with bundle: null
+11-07 12:27:07.438  1613  1884 I PickerSyncController: Executing SyncAlbumReset. isLocal: true. authority: com.android.providers.media.photopicker. albumId: null
+11-07 12:27:07.438  1613  1884 I PickerSyncController: Successfully executed SyncResetAlbum. authority: com.android.providers.media.photopicker. albumId: null. Result count: 0
+11-07 12:27:07.438  1613  1884 I PickerSyncController: Executing SyncAlbumReset. isLocal: false. authority: null. albumId: null
+11-07 12:27:07.446  1613  1884 I PickerSyncController: Successfully executed SyncResetAlbum. authority: null. albumId: null. Result count: 0
+11-07 12:27:07.877  5414  5414 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.common.telemetry.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+11-07 12:27:07.878  1017  1294 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-07 12:27:07.878  1017  1294 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-07 12:27:08.014  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:08.114   473  5313 D BufferPoolAccessor2.0: bufferpool2 0x77f7796d6818 : 0(0 size) total buffers - 0(0 size) used buffers - 153/162 (recycle/alloc) - 9/316 (fetch/transfer)
+11-07 12:27:08.114   473  5313 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+11-07 12:27:08.114   481   829 D BufferPoolAccessor2.0: bufferpool2 0x7da6d2fd12e8 : 0(0 size) total buffers - 0(0 size) used buffers - 152/156 (recycle/alloc) - 5/152 (fetch/transfer)
+11-07 12:27:08.114   481   829 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+11-07 12:27:08.197   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:27:08.694  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:09.337   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-07 12:27:09.366  4596  6597 I tflite  : Replacing 44 out of 46 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 3 partitions for the whole graph.
+11-07 12:27:10.063  4596  6593 D PipelineManager: OCR process succeeded via visionkit pipeline.
+11-07 12:27:10.069  4596  6594 D PipelineManager: Start process bitmap
+11-07 12:27:13.417  4596  6594 D PipelineManager: OCR process succeeded via visionkit pipeline.
+11-07 12:27:13.420  4596  4637 I NaoEsqueceTeste: texto do PDF: — Página 1 —
+11-07 12:27:13.420  4596  4637 I NaoEsqueceTeste: CONTRATO PAGINA 1
+11-07 12:27:13.420  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:13.420  4596  4637 I NaoEsqueceTeste: — Página 2 —
+11-07 12:27:13.420  4596  4637 I NaoEsqueceTeste: CONTRATO PAGINA 2
+11-07 12:27:13.420  4596  4637 I TestRunner: finished: i_lerTexto(com.inforprime.naoesquece.AlarmTest)

@@ -1,0 +1,186 @@
+11-07 12:22:53.341  4596  4637 I TestRunner: started: a_permissoes(com.inforprime.naoesquece.AlarmTest)
+11-07 12:22:53.348  4596  4637 I UiAutomation: Initialized for user 0 on display 0
+11-07 12:22:53.351   335   383 I netd    : tetherGetStats() -> {[]} <0.38ms>
+11-07 12:22:53.355   335   383 I netd    : bandwidthSetGlobalAlert(2097152) <0.12ms>
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: The extras of the task (com.google.android.gms.ocr.service.ModelCleanUpTaskService:type_[2]) are not valid to be persisted so that the task is not persisted [CONTEXT service_id=218 ]
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: java.lang.IllegalArgumentException: Only the following extra parameter types are supported: Integer, Long, Double, String, Boolean, and nested Bundles with the same restrictions.
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at awaz.e(:com.google.android.gms@231818047@23.18.18 (190800-535401451):10)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at byui.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):44)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at bytb.n(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at bytb.u(:com.google.android.gms@231818047@23.18.18 (190800-535401451):20)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at bytb.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at byot.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):9)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at aced.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at aced.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):8)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at acjn.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-07 12:22:53.374  1404  3663 W NetworkScheduler: 	at java.lang.Thread.run(Thread.java:1012)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: Failed to set whitelist for augmented autofill service.
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: java.lang.SecurityException: caller is not user's Augmented Autofill Service
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at android.view.autofill.AutofillManager.setAugmentedAutofillWhitelist(AutofillManager.java:2676)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at cjj.c(PG:7)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at cju.g(PG:8)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at cju.i(Unknown Source:3)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at cju.h(PG:2)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at cjv.a(PG:3)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at dgq.run(PG:41)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at dgq.run(PG:69)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:307)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at dgq.run(PG:67)
+11-07 12:22:53.379  1635  2263 W AiAiAutofill: 	at java.lang.Thread.run(Thread.java:1012)
+11-07 12:22:53.384  4596  4639 V UiAutomation: Init UiAutomation@e037a77[id=1, displayId=0, flags=0]
+11-07 12:22:53.385  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:22:53.387  1746  2233 I A       : NGA disabled due to not being eligible.
+11-07 12:22:53.427  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:22:53.441  1635  3554 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-07 12:22:53.443  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:22:53.443  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:22:53.443  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:22:53.444  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:22:53.444  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:22:53.444  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:22:53.444  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:22:53.444  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:22:53.444  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:22:53.445   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:22:53.445  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: Phenotype bulk registration failed [CONTEXT service_id=231 ]
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: java.util.concurrent.TimeoutException: Timed out waiting for Task
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at cfsz.o(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at com.google.android.gms.common.config.PhenotypeRegistrationOperation.a(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at com.google.android.gms.common.config.PhenotypeRegistrationOperation.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):19)
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at com.google.android.chimera.IntentOperation.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at zhv.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at hjm.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at hjl.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):11)
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at dfhf.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-07 12:22:53.482  1455  3195 W PhenotypeRegOp: 	at java.lang.Thread.run(Thread.java:1012)
+11-07 12:22:53.507  1455  3526 I SystemUpdate: [Installation,ReceiverIntentOperation] Received intent: Intent { act=com.google.android.gms.update.BASE_MODULE_INIT cat=[targeted_intent_op_prefix:.update.control.ReceiverIntentOperation] cmp=com.google.android.gms/.chimera.GmsIntentOperationService }.
+11-07 12:22:53.513  1455  4553 W SystemServiceRegistry: No service published for: persistent_data_block
+11-07 12:22:53.521  1455  4553 I Auth    : [FRP,FrpUpdateIntentOperation] FRP is not supported for this device / user
+11-07 12:22:53.523  1455  3195 I Auth    : [WorkAccount] update authenticator enabled for boot or update
+11-07 12:22:53.527  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:22:53.535  1455  4553 I SystemUpdate: [Execution,InstallationEventIntentOperation] Handling event of type 1.
+11-07 12:22:53.537  1455  4549 I SystemUpdate: [Execution,InstallationIntentOperation] Received intent: Intent { act=com.google.android.gms.update.INSTALL_UPDATE cat=[targeted_intent_op_prefix:.update.execution.InstallationIntentOperation] cmp=com.google.android.gms/.chimera.GmsIntentOperationService }.
+11-07 12:22:53.540  1455  4549 I SystemUpdate: [Execution,ExecutionManager] Action finished-execution executed for 0.00 seconds.
+11-07 12:22:53.541  1404  3690 I Auth    : [WorkAccountServiceImpl] init work authenticator
+11-07 12:22:53.542  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:22:53.562  1404  3663 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.checkin.CheckinService started execution. cause:9 exec_start_elapsed_seconds: 62 [CONTEXT service_id=218 ]
+11-07 12:22:53.578  1455  4549 I Auth    : [SupervisedAccountIntentOperation] onHandleIntent(): android.intent.action.BOOT_COMPLETED
+11-07 12:22:53.578  1455  4549 I Auth    : [SupervisedAccountIntentOperation] This operation is disabled
+11-07 12:22:53.578  1455  4549 W Auth    : [PubsubPeriodicSyncherRuntimeInit] Initializing periodic tasks, IntentAction=android.intent.action.BOOT_COMPLETED, InitRuntimeState=2
+11-07 12:22:53.580  1455  3526 I Ads     : Initialized AdMob in container 23.18.18 (190800-535401451)
+11-07 12:22:53.599  1404  4572 W EasyUnlock: [EasyUnlockSupportReporterIntentOperation] Invalid account list. [CONTEXT service_id=234 ]
+11-07 12:22:53.604  1455  4550 I RecoverableKeyStoreGms: [RecoverableKeyStoreGmsInitOperation] Initializing auth_folsom
+11-07 12:22:53.604  1455  4550 I RecoverableKeyStoreGms: [RecoverableKeyStoreGmsInitOperation] com.google.android.gms.auth.folsom.service.FolsomPublicKeyUpdateService is already enabled. Ignore.
+11-07 12:22:53.604  1455  4550 I RecoverableKeyStoreGms: [RecoverableKeyStoreGmsInitOperation] com.google.android.gms.auth.folsom.service.GcmReceiverService is already enabled. Ignore.
+11-07 12:22:53.606   520  1947 V RecoverableKeyStoreMgr: Not updating secret types - same as old value.
+11-07 12:22:53.607  1455  4550 I RecoverableKeyStoreGms: [RecoverableKeyStoreGmsInitOperation] Setting vault handle
+11-07 12:22:53.619   520  1947 V RecoverableKeyStoreMgr: Not updating server params - same as old value.
+11-07 12:22:53.619   520  1947 I RecoverySnapshotLstnrs: Registered listener for agent with uid 10131
+11-07 12:22:53.627  1455  4550 I RecoverableKeyStoreGms: [EnrollmentManager] Returning certificates list from cache [CONTEXT service_id=172 ]
+11-07 12:22:53.633   520  1078 I RecoverableKeyStoreMgr: The cert file serial number is the same, so skip updating.
+11-07 12:22:53.634  1404  3663 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.checkin.CheckinService finished executing. cause:9 result: 3 elapsed_millis: 225 uptime_millis: 225 exec_start_elapsed_seconds: 62 [CONTEXT service_id=218 ]
+11-07 12:22:53.661  1404  2513 W EasyUnlock: [HostValidator] Invalid account list. [CONTEXT service_id=234 ]
+11-07 12:22:53.668  1455  3195 I Auth    : [AuthManaged, PasswordComplexityHelperImpl] Updating password complexity components state.
+11-07 12:22:53.668  1455  3195 I Auth    : [AuthManaged, PasswordComplexityHelperImpl] Disabling com.google.android.gms.auth.managed.admin.DeviceAdminReceiver
+11-07 12:22:53.668  1455  3195 I Auth    : [AuthManaged, PasswordComplexityHelperImpl] Disabling com.google.android.gms.auth.managed.ui.SetNewPasswordActivity
+11-07 12:22:53.669  1455  3195 I Auth    : [AuthManaged, AuthManagedModuleInitIntentOperation] enabling com.google.android.gms.auth.managed.ui.EmmActivity
+11-07 12:22:53.669  1455  3195 I Auth    : [AuthManaged, AuthManagedModuleInitIntentOperation] enabling com.google.android.gms.auth.managed.ui.PhoneskyDpcInstallActivity
+11-07 12:22:53.670  1455  3195 W Auth    : [AuthManaged, SettingsSecurityDeviceOwnerChimeraActivity] device owner: n/a
+11-07 12:22:53.670  1455  3195 I Auth    : [AuthManaged, AuthManagedModuleInitIntentOperation] disabling com.google.android.gms.auth.managed.ui.SettingsSecurityDeviceOwnerActivity
+11-07 12:22:53.670  1455  3195 I Auth    : [AuthManaged, PasswordComplexityHelperImpl] Updating password complexity components state.
+11-07 12:22:53.670  1455  3195 I Auth    : [AuthManaged, PasswordComplexityHelperImpl] Disabling com.google.android.gms.auth.managed.admin.DeviceAdminReceiver
+11-07 12:22:53.671  1455  3195 I Auth    : [AuthManaged, PasswordComplexityHelperImpl] Disabling com.google.android.gms.auth.managed.ui.SetNewPasswordActivity
+11-07 12:22:53.671  1455  3526 I AutofillModuleInitInten: AutofillModuleInitIntentOperation onInitRuntimeState(2) [CONTEXT service_id=177 ]
+11-07 12:22:53.674  1455  4550 I RecoverableKeyStoreGms: [EnrollmentManager] Recovery service is initialized. [CONTEXT service_id=172 ]
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: Error reading snapshot for 10131 from disk
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: java.io.FileNotFoundException: /data/system/recoverablekeystore/snapshots/10131.xml: open failed: ENOENT (No such file or directory)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at java.io.FileInputStream.<init>(FileInputStream.java:160)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at com.android.server.locksettings.recoverablekeystore.storage.RecoverySnapshotStorage.readFromDisk(RecoverySnapshotStorage.java:152)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at com.android.server.locksettings.recoverablekeystore.storage.RecoverySnapshotStorage.get(RecoverySnapshotStorage.java:104)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at com.android.server.locksettings.recoverablekeystore.RecoverableKeyStoreManager.getKeyChainSnapshot(RecoverableKeyStoreManager.java:369)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at com.android.server.locksettings.LockSettingsService.getKeyChainSnapshot(LockSettingsService.java:2494)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at com.android.internal.widget.ILockSettings$Stub.onTransact(ILockSettings.java:838)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at android.os.Binder.execTransactInternal(Binder.java:1339)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at android.os.Binder.execTransact(Binder.java:1275)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at libcore.io.Linux.open(Native Method)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+11-07 12:22:53.675   520  1947 E RecoverySnapshotStorage: 	... 8 more
+11-07 12:22:53.678   520  1947 W PlatformKeyManager: Platform generation ID was 0 but no entry was present in AndroidKeyStore. Generating fresh key.
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: [WrappingKeyManager] InternalRecoveryServiceException during wrapping key generation [CONTEXT service_id=172 ]
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: android.security.keystore.recovery.InternalRecoveryServiceException: Failed to import secret key.
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at android.security.keystore.recovery.RecoveryController.wrapUnexpectedServiceSpecificException(RecoveryController.java:783)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at android.security.keystore.recovery.RecoveryController.generateKey(RecoveryController.java:569)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at qiw.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at qiw.e(:com.google.android.gms@231818047@23.18.18 (190800-535401451):15)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at qfw.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):68)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at com.google.android.gms.auth.folsom.operation.FolsomModuleInitIntentOperation.b(:com.google.android.gms@231818047@23.18.18 (190800-535401451):5)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at zdm.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at com.google.android.chimera.IntentOperation.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at zhv.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at hjm.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at hjl.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):11)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at dfhf.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at java.lang.Thread.run(Thread.java:1012)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: Caused by: android.os.ServiceSpecificException: Failed to import secret key. (code 22)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3071)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at android.os.Parcel.createException(Parcel.java:3041)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at android.os.Parcel.readException(Parcel.java:3024)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at android.os.Parcel.readException(Parcel.java:2966)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at com.android.internal.widget.ILockSettings$Stub$Proxy.generateKey(ILockSettings.java:1679)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	at android.security.keystore.recovery.RecoveryController.generateKey(RecoveryController.java:556)
+11-07 12:22:53.679  1455  4550 W RecoverableKeyStoreGms: 	... 13 more
+11-07 12:22:53.680  1455  1455 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-07 12:22:53.680  1455  1455 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-07 12:22:53.686  1455  4550 V Backup  : [G1ModuleInitIntentOperation] BbG1 notifications disabled by flag
+11-07 12:22:53.686  1455  4550 V Backup  : [SettingsModuleInit] onInitRuntimeState
+11-07 12:22:53.686  1455  4550 V Backup  : [NoBackupNotification] Disabled, not scheduling
+11-07 12:22:53.687  1455  4550 V Backup  : [AccountChangedIO] Received intent, action = android.intent.action.BOOT_COMPLETED
+11-07 12:22:53.695  1455  4550 I Backup  : [GmsBackupAccountManager] Backup account not found in gmscore.
+11-07 12:22:53.702  1404  4566 W ChimeraUtils: Module com.google.android.gms.backup_base missing resource null(0)
+11-07 12:22:53.704  1455  1455 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-07 12:22:53.705  1455  4549 V Backup  : [MigrateUtil] Clearing migrate temp dir: /data/user/0/com.google.android.gms/files/migrate_dir
+11-07 12:22:53.707  1455  4549 D Backup  : [MigrateCleaner] D2D transport was not selected, not selecting cloud transport.
+11-07 12:22:53.707  1455  4549 I Backup  : [TargetEnabler] Setting target components to enabled = false
+11-07 12:22:53.709  1455  4549 I Backup  : [TargetEnabler] Enabling D2dMigrateHelperService on non-Pixel on P+
+11-07 12:22:53.711  1404  4566 V Backup  : [BackupAccountNotifier] Handling new intent. Show notification: true
+11-07 12:22:53.714  1455  4549 I Backup  : [SourceEnabler] Setting source components to enabled = true
+11-07 12:22:53.714  1455  4549 V Backup  : [MigrateUtil] Using O+ select transport api
+11-07 12:22:53.715  1455  4550 I Backup  : [GmsBackupAccountManager] Backup account not found in gmscore.
+11-07 12:22:53.715  1455  4549 W Backup  : [ComponentEnablerUtil] Unable to set component 'com.google.android.gms.backup.component.CloudRestoreFlowActivity' to enabled=true
+11-07 12:22:53.716  1455  4549 W Backup  : [ComponentEnablerUtil] Unable to set component 'com.google.android.gms.backup.component.RestoreSessionV0Service' to enabled=true
+11-07 12:22:53.717  1404  4566 W ChimeraUtils: Module com.google.android.gms.backup_base missing resource null(0)
+11-07 12:22:53.717  1404  4566 V Backup  : [BackupAccountNotifier] Handling new intent. Show notification: true
+11-07 12:22:53.717  1455  4549 W Backup  : [ComponentEnablerUtil] Unable to set component 'com.google.android.gms.backup.component.D2dMigrateFlowActivity' to enabled=false
+11-07 12:22:53.718  1455  4674 I Authzen : [AuthZenEventHandler] Handling event: android.intent.action.BOOT_COMPLETED
+11-07 12:22:53.718  1455  4549 V Backup  : [GmsBackupScheduler] Disabled, not scheduling.
+11-07 12:22:53.718  1455  4549 V Backup  : [ClearcutLoggerWithVerifier] Logging to Clearcut eventCode: 30, event: # dirw@b5357b6b
+11-07 12:22:53.719  1455  4674 I Authzen : [TransactionCache] Clearing transaction cache
+11-07 12:22:53.730  1455  1455 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-07 12:22:53.730  1455  1455 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-07 12:22:53.733  1455  4550 V Backup  : [AccountChangedIO] currentDestinationString: null
+11-07 12:22:53.736  1455  1455 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-07 12:22:53.742  2626  2703 W libc    : Access denied finding property "persist.adb.tls_server.enable"
+11-07 12:22:53.742  2626  2703 W libc    : Access denied finding property "service.adb.tls.port"
+11-07 12:22:53.742  2626  2626 W binder:2626_3: type=1400 audit(0.0:109): avc:  denied  { read } for  name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=292 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+11-07 12:22:53.742  2626  2626 W binder:2626_3: type=1400 audit(0.0:110): avc:  denied  { read } for  name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+11-07 12:22:53.757  3879  4036 W AllowlistedPackageIdentifiers: Is debuggable: false
+11-07 12:22:53.765  1455  1455 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-07 12:22:53.765  1455  1455 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-07 12:22:53.768  1455  4553 I WakefulBroadcastRcvr: Processing wakeful broadcast: com.google.android.gms.checkin.CHECKIN_START_ACTION
+11-07 12:22:53.786  4596  4637 I NaoEsqueceTeste: estado {"notif":true,"channels":true,"exact":true,"full":true,"battery":false,"vol":6,"volMax":7,"cal":true,"pending":0,"widgets":0,"scanner":true,"ocr":true,"tilesAuto":true,"quick":0,"sdk":34,"maker":"google"}
+11-07 12:22:53.786  4596  4637 I TestRunner: finished: a_permissoes(com.inforprime.naoesquece.AlarmTest)

@@ -1,0 +1,34 @@
+11-07 12:25:03.235  4596  4637 I TestRunner: started: e_calendario(com.inforprime.naoesquece.AlarmTest)
+11-07 12:25:03.236  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.237   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-07 12:25:03.237   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:25:03.237   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:25:03.237   831   831 D Tonal   : Gradients:
+11-07 12:25:03.237   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:25:03.237   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:25:03.237   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:25:03.253  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.254  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:25:03.255  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:25:03.255  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:25:03.255  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:25:03.256   831   905 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-07 12:25:03.257  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:25:03.260   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:25:03.261   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-07 12:25:03.275   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:25:03.275  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.286   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:25:03.286   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:25:03.290   831   831 D Tonal   : Gradients:
+11-07 12:25:03.290   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:25:03.290   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:25:03.290   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:25:03.292   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-07 12:25:03.305  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.390  1994  2023 W ContentResolver: Failed to get type for: content://com.android.calendar (Unknown URL content://com.android.calendar)
+11-07 12:25:03.398  1994  2023 W ContentResolver: Failed to get type for: content://com.android.calendar (Unknown URL content://com.android.calendar)
+11-07 12:25:03.401  4596  4637 I NaoEsqueceTeste: calendário: {"perm":true,"found":true,"cal":"Não Esquece","account":"Não Esquece","google":false,"syncOn":true,"ok":true,"done":["t3"]}
+11-07 12:25:03.408  1994  2023 W ContentResolver: Failed to get type for: content://com.android.calendar (Unknown URL content://com.android.calendar)
+11-07 12:25:03.416  1994  2023 W ContentResolver: Failed to get type for: content://com.android.calendar (Unknown URL content://com.android.calendar)
+11-07 12:25:03.419  4596  4637 I TestRunner: finished: e_calendario(com.inforprime.naoesquece.AlarmTest)

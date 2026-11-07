@@ -1,0 +1,6 @@
+11-07 12:25:03.420  4596  4637 I TestRunner: started: f_repeticao(com.inforprime.naoesquece.AlarmTest)
+11-07 12:25:03.422  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.432  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.443  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.452  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.500  4596  4637 I TestRunner: finished: f_repeticao(com.inforprime.naoesquece.AlarmTest)

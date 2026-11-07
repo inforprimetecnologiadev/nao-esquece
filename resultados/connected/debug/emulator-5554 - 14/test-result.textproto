@@ -1,0 +1,796 @@
+# 2026-11-07T12:27:46.094497117Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 15
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "a_permissoes"
+    start_time {
+      seconds: 1794054173
+      nanos: 573000000
+    }
+    end_time {
+      seconds: 1794054173
+      nanos: 986000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-a_permissoes.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "b_botaoTestar"
+    start_time {
+      seconds: 1794054174
+      nanos: 3000000
+    }
+    end_time {
+      seconds: 1794054198
+      nanos: 918000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-b_botaoTestar.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "c_lembreteDoApp"
+    start_time {
+      seconds: 1794054198
+      nanos: 923000000
+    }
+    end_time {
+      seconds: 1794054303
+      nanos: 294000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-c_lembreteDoApp.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "d_reiniciar"
+    start_time {
+      seconds: 1794054303
+      nanos: 296000000
+    }
+    end_time {
+      seconds: 1794054303
+      nanos: 447000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-d_reiniciar.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "e_calendario"
+    start_time {
+      seconds: 1794054303
+      nanos: 451000000
+    }
+    end_time {
+      seconds: 1794054303
+      nanos: 629000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-e_calendario.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "f_repeticao"
+    start_time {
+      seconds: 1794054303
+      nanos: 632000000
+    }
+    end_time {
+      seconds: 1794054303
+      nanos: 708000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-f_repeticao.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "g_repeteTocaEMarcaOProximo"
+    start_time {
+      seconds: 1794054303
+      nanos: 711000000
+    }
+    end_time {
+      seconds: 1794054422
+      nanos: 688000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-g_repeteTocaEMarcaOProximo.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "h_widget"
+    start_time {
+      seconds: 1794054422
+      nanos: 697000000
+    }
+    end_time {
+      seconds: 1794054422
+      nanos: 926000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-h_widget.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "i_lerTexto"
+    start_time {
+      seconds: 1794054422
+      nanos: 930000000
+    }
+    end_time {
+      seconds: 1794054433
+      nanos: 640000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-i_lerTexto.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "j_rapidos"
+    start_time {
+      seconds: 1794054433
+      nanos: 642000000
+    }
+    end_time {
+      seconds: 1794054442
+      nanos: 665000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-j_rapidos.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "k_mp3"
+    start_time {
+      seconds: 1794054442
+      nanos: 667000000
+    }
+    end_time {
+      seconds: 1794054443
+      nanos: 44000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-k_mp3.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "l_ditado"
+    start_time {
+      seconds: 1794054443
+      nanos: 46000000
+    }
+    end_time {
+      seconds: 1794054449
+      nanos: 214000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-l_ditado.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "m_ditadoReal"
+    start_time {
+      seconds: 1794054449
+      nanos: 216000000
+    }
+    end_time {
+      seconds: 1794054464
+      nanos: 537000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-m_ditadoReal.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "n_vozOffline"
+    start_time {
+      seconds: 1794054464
+      nanos: 539000000
+    }
+    end_time {
+      seconds: 1794054464
+      nanos: 840000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-n_vozOffline.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AlarmTest"
+    test_package: "com.inforprime.naoesquece"
+    test_method: "o_alarmeComSegundos"
+    start_time {
+      seconds: 1794054464
+      nanos: 842000000
+    }
+    end_time {
+      seconds: 1794054465
+      nanos: 445000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.inforprime.naoesquece.AlarmTest-o_alarmeComSegundos.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/home/runner/work/nao-esquece/nao-esquece/android/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

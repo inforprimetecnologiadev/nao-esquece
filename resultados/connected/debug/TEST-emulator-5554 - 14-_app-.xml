@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.inforprime.naoesquece.AlarmTest" tests="15" failures="0" errors="0" skipped="0" time="292.428" timestamp="2026-11-07T12:27:46" hostname="localhost">
+  <properties>
+    <property name="device" value="emulator-5554 - 14" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="a_permissoes" classname="com.inforprime.naoesquece.AlarmTest" time="0.356" />
+  <testcase name="b_botaoTestar" classname="com.inforprime.naoesquece.AlarmTest" time="24.912" />
+  <testcase name="c_lembreteDoApp" classname="com.inforprime.naoesquece.AlarmTest" time="104.366" />
+  <testcase name="d_reiniciar" classname="com.inforprime.naoesquece.AlarmTest" time="0.155" />
+  <testcase name="e_calendario" classname="com.inforprime.naoesquece.AlarmTest" time="0.178" />
+  <testcase name="f_repeticao" classname="com.inforprime.naoesquece.AlarmTest" time="0.079" />
+  <testcase name="g_repeteTocaEMarcaOProximo" classname="com.inforprime.naoesquece.AlarmTest" time="118.988" />
+  <testcase name="h_widget" classname="com.inforprime.naoesquece.AlarmTest" time="0.231" />
+  <testcase name="i_lerTexto" classname="com.inforprime.naoesquece.AlarmTest" time="10.708" />
+  <testcase name="j_rapidos" classname="com.inforprime.naoesquece.AlarmTest" time="9.023" />
+  <testcase name="k_mp3" classname="com.inforprime.naoesquece.AlarmTest" time="0.378" />
+  <testcase name="l_ditado" classname="com.inforprime.naoesquece.AlarmTest" time="6.171" />
+  <testcase name="m_ditadoReal" classname="com.inforprime.naoesquece.AlarmTest" time="15.322" />
+  <testcase name="n_vozOffline" classname="com.inforprime.naoesquece.AlarmTest" time="0.305" />
+  <testcase name="o_alarmeComSegundos" classname="com.inforprime.naoesquece.AlarmTest" time="0.604" />
+</testsuite>

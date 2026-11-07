@@ -1,0 +1,40 @@
+11-07 12:25:03.095  4596  4637 I TestRunner: started: d_reiniciar(com.inforprime.naoesquece.AlarmTest)
+11-07 12:25:03.097  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.110  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.120  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.130  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.187   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:25:03.200  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:25:03.200  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:25:03.200  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:25:03.200  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:25:03.201  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:25:03.202   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:25:03.202   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:25:03.202   831   831 D Tonal   : Gradients:
+11-07 12:25:03.202   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:25:03.202   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:25:03.202   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:25:03.205   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:25:03.209   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:25:03.218   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:25:03.218   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:25:03.218   831   831 D Tonal   : Gradients:
+11-07 12:25:03.218   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:25:03.218   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:25:03.218   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:25:03.219  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:25:03.219  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:25:03.219  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:25:03.219  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:25:03.220  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:25:03.220   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-07 12:25:03.220  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:25:03.220  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:25:03.220  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:25:03.220  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:25:03.221  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:25:03.225   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:25:03.225   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:25:03.233   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:25:03.234  4596  4637 I TestRunner: finished: d_reiniciar(com.inforprime.naoesquece.AlarmTest)

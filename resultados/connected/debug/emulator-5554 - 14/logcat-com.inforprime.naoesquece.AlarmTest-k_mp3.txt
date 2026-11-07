@@ -1,0 +1,272 @@
+11-07 12:27:22.445  4596  4637 I TestRunner: started: k_mp3(com.inforprime.naoesquece.AlarmTest)
+11-07 12:27:22.446  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:22.457  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:22.467  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:22.477  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:27:22.509  4596  4637 I NaoEsqueceTeste: LAME 3.100
+11-07 12:27:22.520   465  4872 W MatroskaExtractor: no Cue data,Segment Load status:0
+11-07 12:27:22.522  4596  4637 D MediaCodecList: codecHandlesFormat: no format, so no extra checks
+11-07 12:27:22.523  4596  6848 D CCodec  : allocate(c2.android.opus.decoder)
+11-07 12:27:22.523  4596  6848 I Codec2Client: Available Codec2 services: "default" "software"
+11-07 12:27:22.524  4596  6848 I CCodec  : setting up 'default' as default (vendor) store
+11-07 12:27:22.527  4596  6848 I CCodec  : Created component [c2.android.opus.decoder]
+11-07 12:27:22.527  4596  6848 D CCodecConfig: read media type: audio/opus
+11-07 12:27:22.527  4596  6848 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+11-07 12:27:22.528  4596  6848 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+11-07 12:27:22.528  4596  6848 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+11-07 12:27:22.528  4596  6848 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+11-07 12:27:22.528  4596  6848 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+11-07 12:27:22.528  4596  6848 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+11-07 12:27:22.528  4596  6848 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+11-07 12:27:22.529  4596  6848 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+11-07 12:27:22.529  4596  6848 D CCodecConfig: c2 config diff is Dict {
+11-07 12:27:22.529  4596  6848 D CCodecConfig:   c2::u32 coded.bitrate.value = 6000
+11-07 12:27:22.529  4596  6848 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 5760
+11-07 12:27:22.529  4596  6848 D CCodecConfig:   c2::u32 input.delay.value = 0
+11-07 12:27:22.529  4596  6848 D CCodecConfig:   string input.media-type.value = "audio/opus"
+11-07 12:27:22.529  4596  6848 D CCodecConfig:   string output.media-type.value = "audio/raw"
+11-07 12:27:22.529  4596  6848 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+11-07 12:27:22.529  4596  6848 D CCodecConfig:   c2::u32 raw.sample-rate.value = 48000
+11-07 12:27:22.529  4596  6848 D CCodecConfig: }
+11-07 12:27:22.530  4596  6848 D MediaCodec: flushMediametrics
+11-07 12:27:22.530  4596  6848 D CCodec  : [c2.android.opus.decoder] buffers are bound to CCodec for this session
+11-07 12:27:22.530  4596  6848 D CCodecConfig: no c2 equivalents for csd-1
+11-07 12:27:22.530  4596  6848 D CCodecConfig: no c2 equivalents for csd-2
+11-07 12:27:22.530  4596  6848 D CCodecConfig: no c2 equivalents for track-id
+11-07 12:27:22.530  4596  6848 D CCodecConfig: no c2 equivalents for durationUs
+11-07 12:27:22.530  4596  6848 D CCodecConfig: no c2 equivalents for bits-per-sample
+11-07 12:27:22.530  4596  6848 D CCodecConfig: no c2 equivalents for flags
+11-07 12:27:22.531  4596  6848 W Codec2Client: query -- param skipped: index = 1107298332.
+11-07 12:27:22.531  4596  6848 D CCodec  : encoding statistics level = 0
+11-07 12:27:22.531  4596  6848 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+11-07 12:27:22.531  4596  6848 D CCodec  :   int32_t bitrate = 6000
+11-07 12:27:22.531  4596  6848 D CCodec  :   int32_t channel-count = 1
+11-07 12:27:22.531  4596  6848 D CCodec  :   int32_t max-input-size = 5760
+11-07 12:27:22.531  4596  6848 D CCodec  :   string mime = "audio/opus"
+11-07 12:27:22.531  4596  6848 D CCodec  :   int32_t sample-rate = 48000
+11-07 12:27:22.531  4596  6848 D CCodec  : }
+11-07 12:27:22.531  4596  6848 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+11-07 12:27:22.531  4596  6848 D CCodec  :   int32_t channel-count = 1
+11-07 12:27:22.531  4596  6848 D CCodec  :   string mime = "audio/raw"
+11-07 12:27:22.531  4596  6848 D CCodec  :   int32_t sample-rate = 48000
+11-07 12:27:22.531  4596  6848 D CCodec  :   int32_t android._config-pcm-encoding = 2
+11-07 12:27:22.531  4596  6848 D CCodec  : }
+11-07 12:27:22.531  4596  6848 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+11-07 12:27:22.532  4596  6848 W Codec2Client: query -- param skipped: index = 1342179345.
+11-07 12:27:22.532  4596  6848 W Codec2Client: query -- param skipped: index = 2415921170.
+11-07 12:27:22.532  4596  6848 D C2Store : Using DMABUF Heaps
+11-07 12:27:22.533  4596  6848 D CCodecBufferChannel: [c2.android.opus.decoder#995] Created input block pool with allocatorID 16 => poolID 17 - OK (0)
+11-07 12:27:22.533  4596  6848 I CCodecBufferChannel: [c2.android.opus.decoder#995] Created output block pool with allocatorID 16 => poolID 32 - OK
+11-07 12:27:22.533  4596  6848 D CCodecBufferChannel: [c2.android.opus.decoder#995] Configured output block pool ids 32 => OK
+11-07 12:27:22.534  4596  6848 I DMABUFHEAPS: Using DMA-BUF heap named: system
+11-07 12:27:22.536   481  6853 D SimpleC2Component: Using output block pool with poolID 32 => got 32 - 0
+11-07 12:27:22.540   481  6853 I C2SoftOpusDec: Configuring decoder: 48000 Hz, 1 channels
+11-07 12:27:22.570  4596  6848 D CCodecBufferChannel: [c2.android.opus.decoder#995] MediaCodec discarded an unknown buffer
+11-07 12:27:22.570  4596  6848 D CCodecBufferChannel: [c2.android.opus.decoder#995] MediaCodec discarded an unknown buffer
+11-07 12:27:22.570  4596  6848 D CCodecBufferChannel: [c2.android.opus.decoder#995] MediaCodec discarded an unknown buffer
+11-07 12:27:22.571  4596  4637 I NaoEsqueceTeste: mp3 teste.webm: 25728 bytes, 3.18 s, 62 ms
+11-07 12:27:22.572   481   481 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:22.572   481   481 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:22.572  4596  6848 D MediaCodec: flushMediametrics
+11-07 12:27:22.573  4596  6854 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:22.573  4596  6848 D MediaCodec: flushMediametrics
+11-07 12:27:22.573  4596  6848 W MediaCodec: no metrics handle found
+11-07 12:27:22.574  4596  4637 I NaoEsqueceTeste: mp3 teste.webm lido pelo Android: 3.216 s, 48000 Hz
+11-07 12:27:22.582  1613  2042 W MediaProvider: isAppCloneUserPair for user 0: false
+11-07 12:27:22.592  4596  4637 D MediaCodecList: codecHandlesFormat: no format, so no extra checks
+11-07 12:27:22.593  4596  6858 D CCodec  : allocate(c2.android.aac.decoder)
+11-07 12:27:22.593  4596  6858 I CCodec  : setting up 'default' as default (vendor) store
+11-07 12:27:22.598  4596  6858 I CCodec  : Created component [c2.android.aac.decoder]
+11-07 12:27:22.598  4596  6858 D CCodecConfig: read media type: audio/mp4a-latm
+11-07 12:27:22.599  4596  6858 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+11-07 12:27:22.599  4596  6858 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+11-07 12:27:22.599  4596  6858 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+11-07 12:27:22.600  4596  6858 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+11-07 12:27:22.600  4596  6858 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+11-07 12:27:22.600  4596  6858 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+11-07 12:27:22.601  5414  6549 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 332 [CONTEXT service_id=218 ]
+11-07 12:27:22.601  4596  6858 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+11-07 12:27:22.602  4596  6858 I CCodecConfig: query failed after returning 20 values (BAD_INDEX)
+11-07 12:27:22.602  4596  6858 D CCodecConfig: c2 config diff is Dict {
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 coded.aac-packaging.value = 0
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 coded.pl.level = 0
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 coded.pl.profile = 8192
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::i32 coding.drc.album-mode.value = 0
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::float coding.drc.attenuation-factor.value = 1
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::float coding.drc.boost-factor.value = 1
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::i32 coding.drc.compression-mode.value = 3
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::i32 coding.drc.effect-type.value = 3
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::float coding.drc.encoded-level.value = 0.25
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::float coding.drc.reference-level.value = -16
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 8192
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 input.delay.value = 0
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   string input.media-type.value = "audio/mp4a-latm"
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 output.delay.value = 2
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::float output.drc.output-loudness.value = 0.25
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   string output.media-type.value = "audio/raw"
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 raw.channel-mask.value = 0
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 raw.max-channel-count.value = 8
+11-07 12:27:22.602  4596  6858 D CCodecConfig:   c2::u32 raw.sample-rate.value = 44100
+11-07 12:27:22.602  4596  6858 D CCodecConfig: }
+11-07 12:27:22.604  4596  6858 D MediaCodec: flushMediametrics
+11-07 12:27:22.604  4596  6858 D CCodec  : [c2.android.aac.decoder] buffers are bound to CCodec for this session
+11-07 12:27:22.604  4596  6858 D CCodecConfig: no c2 equivalents for track-id
+11-07 12:27:22.604  4596  6858 D CCodecConfig: no c2 equivalents for language
+11-07 12:27:22.604  4596  6858 D CCodecConfig: no c2 equivalents for encoder-delay
+11-07 12:27:22.604  4596  6858 D CCodecConfig: no c2 equivalents for durationUs
+11-07 12:27:22.604  4596  6858 D CCodecConfig: no c2 equivalents for encoder-padding
+11-07 12:27:22.604  4596  6858 D CCodecConfig: no c2 equivalents for flags
+11-07 12:27:22.605  4596  6858 D CCodecConfig: config failed => CORRUPTED
+11-07 12:27:22.605  4596  6858 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 64781
+11-07 12:27:22.605  4596  6858 W Codec2Client: query -- param skipped: index = 1107298332.
+11-07 12:27:22.605  4596  6858 D CCodec  : client requested max input size 300, which is smaller than what component recommended (8192); overriding with component recommendation.
+11-07 12:27:22.605  4596  6858 W CCodec  : This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range.
+11-07 12:27:22.605  4596  6858 D CCodec  : encoding statistics level = 0
+11-07 12:27:22.605  4596  6858 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-drc-album-mode = 0
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-drc-boost-level = 127
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-drc-cut-level = 127
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-drc-effect-type = 3
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-encoded-target-level = -1
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-max-output-channel_count = 8
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-target-ref-level = 64
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t bitrate = 64781
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t channel-count = 1
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t channel-mask = 0
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t level = 0
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t max-input-size = 8192
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t max-output-channel-count = 8
+11-07 12:27:22.605  4596  6858 D CCodec  :   string mime = "audio/mp4a-latm"
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t profile = 2
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t sample-rate = 44100
+11-07 12:27:22.605  4596  6858 D CCodec  : }
+11-07 12:27:22.605  4596  6858 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-drc-album-mode = 0
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-drc-boost-level = 127
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-drc-cut-level = 127
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-drc-effect-type = 3
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-drc-output-loudness = -1
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-encoded-target-level = -1
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-max-output-channel_count = 8
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t aac-target-ref-level = 64
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t channel-count = 1
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t channel-mask = 0
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t max-output-channel-count = 8
+11-07 12:27:22.605  4596  6858 D CCodec  :   string mime = "audio/raw"
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t sample-rate = 44100
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t encoder-delay = 1024
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t encoder-padding = 0
+11-07 12:27:22.605  4596  6858 D CCodec  :   int32_t android._config-pcm-encoding = 2
+11-07 12:27:22.605  4596  6858 D CCodec  : }
+11-07 12:27:22.605  4596  6858 I CCodecConfig: query failed after returning 20 values (BAD_INDEX)
+11-07 12:27:22.606  5414  5462 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 9 uptime_millis: 9 exec_start_elapsed_seconds: 332 [CONTEXT service_id=218 ]
+11-07 12:27:22.611  4596  6858 W Codec2Client: query -- param skipped: index = 1342179345.
+11-07 12:27:22.611  4596  6858 W Codec2Client: query -- param skipped: index = 2415921170.
+11-07 12:27:22.611  4596  6858 W Codec2Client: query -- param skipped: index = 1610614798.
+11-07 12:27:22.612  4596  6858 D CCodecBufferChannel: [c2.android.aac.decoder#230] Created input block pool with allocatorID 16 => poolID 18 - OK (0)
+11-07 12:27:22.613  4596  6858 I CCodecBufferChannel: [c2.android.aac.decoder#230] Created output block pool with allocatorID 16 => poolID 33 - OK
+11-07 12:27:22.613  4596  6858 D CCodecBufferChannel: [c2.android.aac.decoder#230] Configured output block pool ids 33 => OK
+11-07 12:27:22.613   481  6859 D SimpleC2Component: Using output block pool with poolID 33 => got 33 - 0
+11-07 12:27:22.615   481  6859 I C2SoftAacDec: Reconfiguring decoder: 0->44100 Hz, 0->1 channels
+11-07 12:27:22.637  4596  6858 D CCodecConfig: c2 config diff is   c2::u32 raw.channel-mask.value = 4
+11-07 12:27:22.637  4596  6858 D CCodecBuffers: [c2.android.aac.decoder#230:Output[N]] popFromStashAndRegister: at 0us, output format changed to AMessage(what = 0x00000000) = {
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t aac-drc-album-mode = 0
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t aac-drc-boost-level = 127
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t aac-drc-cut-level = 127
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t aac-drc-effect-type = 3
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t aac-drc-output-loudness = -1
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t aac-encoded-target-level = -1
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t aac-max-output-channel_count = 8
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t aac-target-ref-level = 64
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t channel-count = 1
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t channel-mask = 4
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t max-output-channel-count = 8
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   string mime = "audio/raw"
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t sample-rate = 44100
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t encoder-delay = 1024
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t encoder-padding = 0
+11-07 12:27:22.637  4596  6858 D CCodecBuffers:   int32_t android._config-pcm-encoding = 2
+11-07 12:27:22.637  4596  6858 D CCodecBuffers: }
+11-07 12:27:22.642   831   905 D EGL_emulation: app_time_stats: avg=665.23ms min=50.41ms max=1280.05ms count=2
+11-07 12:27:22.711  4596  6858 D CCodecBufferChannel: [c2.android.aac.decoder#230] MediaCodec discarded an unknown buffer
+11-07 12:27:22.711  4596  6858 D CCodecBufferChannel: [c2.android.aac.decoder#230] MediaCodec discarded an unknown buffer
+11-07 12:27:22.712  4596  4637 I NaoEsqueceTeste: mp3 teste.m4a: 24450 bytes, 3.01859410430839 s, 126 ms
+11-07 12:27:22.713  4596  6858 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:22.713   481   481 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:22.714   481   481 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:22.715  4596  6858 D MediaCodec: flushMediametrics
+11-07 12:27:22.715  4596  6858 D MediaCodec: flushMediametrics
+11-07 12:27:22.715  4596  6858 W MediaCodec: no metrics handle found
+11-07 12:27:22.717  4596  4637 I NaoEsqueceTeste: mp3 teste.m4a lido pelo Android: 3.05625 s, 44100 Hz
+11-07 12:27:22.724   465   901 D MediaBufferGroup: creating MemoryDealer
+11-07 12:27:22.724  4596  4637 D MediaCodecList: codecHandlesFormat: no format, so no extra checks
+11-07 12:27:22.725  4596  6861 D CCodec  : allocate(c2.android.raw.decoder)
+11-07 12:27:22.725  4596  6861 I CCodec  : setting up 'default' as default (vendor) store
+11-07 12:27:22.727  4596  6861 I CCodec  : Created component [c2.android.raw.decoder]
+11-07 12:27:22.727  4596  6861 D CCodecConfig: read media type: audio/raw
+11-07 12:27:22.728  4596  6861 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+11-07 12:27:22.728  4596  6861 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+11-07 12:27:22.728  4596  6861 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+11-07 12:27:22.728  4596  6861 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+11-07 12:27:22.728  4596  6861 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+11-07 12:27:22.729  4596  6861 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+11-07 12:27:22.729  4596  6861 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+11-07 12:27:22.729  4596  6861 I CCodecConfig: query failed after returning 8 values (BAD_INDEX)
+11-07 12:27:22.729  4596  6861 D CCodecConfig: c2 config diff is Dict {
+11-07 12:27:22.729  4596  6861 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+11-07 12:27:22.729  4596  6861 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 65536
+11-07 12:27:22.729  4596  6861 D CCodecConfig:   c2::u32 input.delay.value = 0
+11-07 12:27:22.729  4596  6861 D CCodecConfig:   string input.media-type.value = "audio/raw"
+11-07 12:27:22.729  4596  6861 D CCodecConfig:   string output.media-type.value = "audio/raw"
+11-07 12:27:22.729  4596  6861 D CCodecConfig:   c2::u32 raw.channel-count.value = 2
+11-07 12:27:22.729  4596  6861 D CCodecConfig:   c2::u32 raw.pcm-encoding.value = 0
+11-07 12:27:22.729  4596  6861 D CCodecConfig:   c2::u32 raw.sample-rate.value = 44100
+11-07 12:27:22.729  4596  6861 D CCodecConfig: }
+11-07 12:27:22.730  4596  6861 D MediaCodec: flushMediametrics
+11-07 12:27:22.730  4596  6861 D CCodec  : [c2.android.raw.decoder] buffers are bound to CCodec for this session
+11-07 12:27:22.730  4596  6861 D CCodecConfig: no c2 equivalents for track-id
+11-07 12:27:22.730  4596  6861 D CCodecConfig: no c2 equivalents for durationUs
+11-07 12:27:22.730  4596  6861 D CCodecConfig: no c2 equivalents for bits-per-sample
+11-07 12:27:22.730  4596  6861 D CCodecConfig: no c2 equivalents for flags
+11-07 12:27:22.730  4596  6861 D CCodecConfig: c2 config diff is   c2::u32 raw.sample-rate.value = 22050
+11-07 12:27:22.731  4596  6861 W Codec2Client: query -- param skipped: index = 1107298332.
+11-07 12:27:22.731  4596  6861 D CCodec  : encoding statistics level = 0
+11-07 12:27:22.731  4596  6861 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t android._codec-pcm-encoding = 2
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t bitrate = 64000
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t channel-count = 2
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t max-input-size = 65536
+11-07 12:27:22.731  4596  6861 D CCodec  :   string mime = "audio/raw"
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t pcm-encoding = 2
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t sample-rate = 22050
+11-07 12:27:22.731  4596  6861 D CCodec  : }
+11-07 12:27:22.731  4596  6861 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t android._codec-pcm-encoding = 2
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t channel-count = 2
+11-07 12:27:22.731  4596  6861 D CCodec  :   string mime = "audio/raw"
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t pcm-encoding = 2
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t sample-rate = 22050
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t channel-mask = 0
+11-07 12:27:22.731  4596  6861 D CCodec  :   int32_t android._config-pcm-encoding = 2
+11-07 12:27:22.731  4596  6861 D CCodec  : }
+11-07 12:27:22.731  4596  6861 I CCodecConfig: query failed after returning 8 values (BAD_INDEX)
+11-07 12:27:22.731  4596  6861 W Codec2Client: query -- param skipped: index = 1342179345.
+11-07 12:27:22.731  4596  6861 W Codec2Client: query -- param skipped: index = 2415921170.
+11-07 12:27:22.731  4596  6861 D CCodecBufferChannel: [c2.android.raw.decoder#172] Created input block pool with allocatorID 16 => poolID 19 - OK (0)
+11-07 12:27:22.732  4596  6861 I CCodecBufferChannel: [c2.android.raw.decoder#172] Created output block pool with allocatorID 16 => poolID 34 - OK
+11-07 12:27:22.732  4596  6861 D CCodecBufferChannel: [c2.android.raw.decoder#172] Configured output block pool ids 34 => OK
+11-07 12:27:22.733   481  6862 D SimpleC2Component: Using output block pool with poolID 34 => got 34 - 0
+11-07 12:27:22.821  4596  6861 D CCodecBufferChannel: [c2.android.raw.decoder#172] MediaCodec discarded an unknown buffer
+11-07 12:27:22.821  4596  6861 D CCodecBufferChannel: [c2.android.raw.decoder#172] MediaCodec discarded an unknown buffer
+11-07 12:27:22.821  4596  6861 D CCodecBufferChannel: [c2.android.raw.decoder#172] MediaCodec discarded an unknown buffer
+11-07 12:27:22.822   481   481 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7da6d2fd0068 cached: 0/0M, 0/0% in use; allocs: 0, 0% recycled; transfers: 0, 0% unfetched
+11-07 12:27:22.823  4596  4637 I NaoEsqueceTeste: mp3 teste.wav: 24450 bytes, 3.0 s, 104 ms
+11-07 12:27:22.823  4596  6861 D MediaCodec: flushMediametrics
+11-07 12:27:22.823   481   481 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:22.824  4596  6863 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:22.824  4596  6861 D MediaCodec: flushMediametrics
+11-07 12:27:22.825  4596  6861 W MediaCodec: no metrics handle found
+11-07 12:27:22.825  4596  4637 I NaoEsqueceTeste: mp3 teste.wav lido pelo Android: 3.05625 s, 22050 Hz
+11-07 12:27:22.826  4596  4637 I TestRunner: finished: k_mp3(com.inforprime.naoesquece.AlarmTest)

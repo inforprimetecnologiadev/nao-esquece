@@ -1,0 +1,1300 @@
+11-07 12:25:03.501  4596  4637 I TestRunner: started: g_repeteTocaEMarcaOProximo(com.inforprime.naoesquece.AlarmTest)
+11-07 12:25:03.502  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.513  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.523  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.531  4596  4637 W UiAutomation: UiAutomation.grantRuntimePermission() is more robust and should be used instead of 'pm grant'
+11-07 12:25:03.577   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:25:03.589   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:25:03.589   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:25:03.589  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:25:03.589  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:25:03.589  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:25:03.589  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:25:03.589  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:25:03.589   831   831 D Tonal   : Gradients:
+11-07 12:25:03.589   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:25:03.589   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:25:03.589   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:25:03.594   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:25:03.594   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-07 12:25:05.106   481   829 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+11-07 12:25:05.858   341  5323 D android.hardware.audio@7.1-impl.ranchu: threadLoop: entering standby, frames: 844288
+11-07 12:25:06.005  5546  6426 I ChimeraConfigurator: Starting update, reason: 4 urgentFeatures: vision.ocr:-1
+11-07 12:25:06.011  5546  6426 I ChimeraConfigurator: Detected pending changes for urgent request: [vision.ocr]. Pending module sets: container:2318189190800+mlkit.ocr.common,tflite_dynamite:2640104055100800+tflite_dynamite,vision_ocr:2316024025100000+vision.ocr
+11-07 12:25:06.016  5546  6426 I GmsDebugLogger: [73] 1801
+11-07 12:25:06.018  5546  6426 W ZappDownloader: No successful module downloads for requested features [vision.ocr].
+11-07 12:25:06.018  5546  6426 I GmsDebugLogger: [30] [VisionOcrDynamite.integ:231602402100000],[TfliteDynamiteDynamite.integ:264010405100800],[MlkitOcrCommon.optional:231818100800]
+11-07 12:25:06.019  5546  6426 W ChimeraConfigService: Retry attempt was throttled. [CONTEXT service_id=264 ]
+11-07 12:25:06.019  5546  6426 I GmsDebugLogger: [83] 1 [vision.ocr]
+11-07 12:25:06.019  5546  6261 W Vision  : Request for optional module download of ocr failed. Request again.
+11-07 12:25:06.019  5546  6261 W Vision  : Would have logged:
+11-07 12:25:06.019  5546  6261 W Vision  : # dsae@37884fe7
+11-07 12:25:06.019  5546  6261 I Vision  : Schedule retrying download ocr at 195743 with backoff 40 seconds
+11-07 12:25:06.105   473  5313 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+11-07 12:25:06.189   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-07 12:25:07.873  1613  1884 D PickerSyncController: syncAllMedia
+11-07 12:25:07.873  1613  1884 D PickerSyncController: syncAllMediaFromProvider() LOCAL, auth=com.android.providers.media.photopicker, retry=true
+11-07 12:25:07.873  1613  1884 D PickerSyncController: getSyncRequestParams() LOCAL, auth=com.android.providers.media.photopicker
+11-07 12:25:07.874  1613  1884 D PickerSyncController:    Latest ID/Gen=1407:9714b081-c1fb-4fcf-a042-e99d33e5b22b:external_primary/27
+11-07 12:25:07.874  1613  1884 D PickerSyncController:    Cached ID/Gen=1407:9714b081-c1fb-4fcf-a042-e99d33e5b22b:external_primary/20
+11-07 12:25:07.874  1613  1884 D PickerSyncController:    RESULT=SyncRequestParams{type=MEDIA_INCREMENTAL, gen=20, latest=Bundle[{last_media_sync_generation=27, media_collection_id=1407:9714b081-c1fb-4fcf-a042-e99d33e5b22b:external_primary}]}
+11-07 12:25:07.874  1613  1884 I PickerSyncController: Executing SyncAdd. isLocal: true. authority: com.android.providers.media.photopicker
+11-07 12:25:07.875  1613  1884 I PickerSyncController: Paged sync successful. QueryArgs: Bundle[{android.provider.extra.SYNC_GENERATION=20}]. Result count: 1. Cursor count: 1
+11-07 12:25:07.875  1613  1884 I PickerSyncController: Executing SyncRemove. isLocal: true. authority: com.android.providers.media.photopicker
+11-07 12:25:07.875  1613  1884 I PickerSyncController: Paged sync successful. QueryArgs: Bundle[{android.provider.extra.SYNC_GENERATION=20}]. Result count: 0. Cursor count: 0
+11-07 12:25:07.875  1613  1884 D PickerSyncController: syncAllMediaFromProvider() CLOUD, auth=null, retry=true
+11-07 12:25:07.875  1613  1884 D PickerSyncController: getSyncRequestParams() CLOUD, auth=null
+11-07 12:25:07.875  1613  1884 D PickerSyncController:    RESULT=SyncRequestParams{type=MEDIA_RESET, gen=0, latest=null}
+11-07 12:25:07.875  1613  1884 I PickerSyncController: Executing SyncReset. isLocal: false. authority: null
+11-07 12:25:07.875  1613  1884 I PickerSyncController: SyncReset. isLocal:false. authority: null. result count: 0
+11-07 12:25:07.875  1613  1884 D PickerSyncController: Ignoring cache media info for null authority with bundle: null
+11-07 12:25:07.875  1613  1884 I PickerSyncController: Executing SyncAlbumReset. isLocal: true. authority: com.android.providers.media.photopicker. albumId: null
+11-07 12:25:07.876  1613  1884 I PickerSyncController: Successfully executed SyncResetAlbum. authority: com.android.providers.media.photopicker. albumId: null. Result count: 0
+11-07 12:25:07.876  1613  1884 I PickerSyncController: Executing SyncAlbumReset. isLocal: false. authority: null. albumId: null
+11-07 12:25:07.876  1613  1884 I PickerSyncController: Successfully executed SyncResetAlbum. authority: null. albumId: null. Result count: 0
+11-07 12:25:08.105   473  5313 D BufferPoolAccessor2.0: bufferpool2 0x77f7796d91b8 : 0(0 size) total buffers - 0(0 size) used buffers - 183/192 (recycle/alloc) - 10/374 (fetch/transfer)
+11-07 12:25:08.105   473  5313 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+11-07 12:25:08.106   481   829 D BufferPoolAccessor2.0: bufferpool2 0x7da6d2fd12e8 : 0(0 size) total buffers - 0(0 size) used buffers - 181/185 (recycle/alloc) - 5/181 (fetch/transfer)
+11-07 12:25:08.106   481   829 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+11-07 12:25:08.191   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:25:09.191   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-07 12:25:09.641   520   763 D ConnectivityService: releasing NetworkRequest [ REQUEST id=146, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_VCN_MANAGED Uid: 10132 RequestorUid: 10132 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ] (release request)
+11-07 12:25:09.641   520   763 I ConnectivityService: Update capabilities for net 101 : -FOREGROUND
+11-07 12:25:09.643   335   383 I netd    : networkSetPermissionForNetwork(101, 1) <1.55ms>
+11-07 12:25:12.195   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-07 12:25:18.208   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:25:18.210   831   905 D EGL_emulation: app_time_stats: avg=7653.00ms min=13.55ms max=15292.44ms count=2
+11-07 12:25:20.936  5414  6430 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.droidguard.DroidGuardGcmTaskService started execution. cause:7 exec_start_elapsed_seconds: 210 [CONTEXT service_id=218 ]
+11-07 12:25:20.972  5414  6245 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.droidguard.DroidGuardGcmTaskService finished executing. cause:7 result: 1 elapsed_millis: 39 uptime_millis: 39 exec_start_elapsed_seconds: 210 [CONTEXT service_id=218 ]
+11-07 12:25:20.981   335  6432 I resolv  : GetAddrInfoHandler::run: {100 786532 100 983140 10131 0}
+11-07 12:25:20.982   335  6434 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-07 12:25:20.982   335  6434 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x72ab5210edd0
+11-07 12:25:20.982   335  6434 I resolv  : doQuery: rcode=0, ancount=8, return value=164
+11-07 12:25:20.983   335  6433 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-07 12:25:20.983   335  6433 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x72abd21105d0
+11-07 12:25:20.983   335  6433 I resolv  : doQuery: rcode=0, ancount=8, return value=260
+11-07 12:25:20.984  2626  3359 D TrafficStats: tagSocket(104) with statsTag=0x1803, statsUid=10131
+11-07 12:25:20.987  5414  6430 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 210 [CONTEXT service_id=218 ]
+11-07 12:25:20.992  5414  6111 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.telephonyspam.sync.SpamListSyncTaskService started execution. cause:5 exec_start_elapsed_seconds: 210 [CONTEXT service_id=218 ]
+11-07 12:25:20.992  5546  5706 I TelephonySpamChimeraSer: Running Telephony Spam Chimera Service [CONTEXT service_id=150 ]
+11-07 12:25:20.992  5546  5706 I TelephonySpamChimeraSer: Cleaning SIP Header local table of old entries [CONTEXT service_id=150 ]
+11-07 12:25:20.995  5414  6430 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskService finished executing. cause:5 result: 1 elapsed_millis: 11 uptime_millis: 11 exec_start_elapsed_seconds: 210 [CONTEXT service_id=218 ]
+11-07 12:25:20.995  5546  5706 I SpamListSync: Call spam module disabled. Skipping cleaning cache sip header table. [CONTEXT service_id=150 ]
+11-07 12:25:20.995  5546  5706 I TelephonySpamChimeraSer: Syncing Call Spam List [CONTEXT service_id=150 ]
+11-07 12:25:20.996  5546  5706 I SpamListSync: SpamListSyncChimeraService.syncSpamList called with tag: telephonyspam.SpamListSyncOneOffTask, extras: Bundle[{SpamList Type=0, Action=1.0}] [CONTEXT service_id=150 ]
+11-07 12:25:20.996  5546  5706 I SpamListSync: Call spam module disabled. Skipping spam list syncing. [CONTEXT service_id=150 ]
+11-07 12:25:20.998  5414  6430 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.telephonyspam.sync.SpamListSyncTaskService finished executing. cause:5 result: 1 elapsed_millis: 8 uptime_millis: 8 exec_start_elapsed_seconds: 210 [CONTEXT service_id=218 ]
+11-07 12:25:21.041   520  1511 I RemoteProvisionSysSvc: getRegistration(android.hardware.security.keymint.IRemotelyProvisionedComponent/default)
+11-07 12:25:21.044   520   520 I RegistrationProxy: onServiceConnected: com.android.rkpdapp.service.RemoteProvisioningService
+11-07 12:25:21.046   520   593 I RegistrationProxy: IGetRegistrationCallback.onSuccess
+11-07 12:25:21.048   520   593 I RemoteProvisionSysSvc: Fetching key 10131 for client 151789533
+11-07 12:25:21.048   520   593 I RegistrationProxy: getKeyAsync operation started with callback 231544658
+11-07 12:25:21.048  3485  3569 I RkpdRegistrationBinder: Key requested for : android.hardware.security.keymint.IRemotelyProvisionedComponent/default, clientUid: 1017, keyId: 10131, callback: 16659787
+11-07 12:25:21.049  3485  3569 I RkpdRegistrationBinder: Key successfully assigned to client
+11-07 12:25:21.049   520   520 I RemoteProvisionSysSvc: Successfully fetched key for client 151789533
+11-07 12:25:21.063  2626  6431 W SystemServiceRegistry: No service published for: persistent_data_block
+11-07 12:25:21.204   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-07 12:25:21.234   335  6440 I resolv  : GetAddrInfoHandler::run: {100 786532 100 983140 10131 0}
+11-07 12:25:21.234  2626  6431 D TrafficStats: tagSocket(124) with statsTag=0x1809, statsUid=-1
+11-07 12:25:21.235  2626  6431 D TrafficStats: tagSocket(124) with statsTag=0x1809, statsUid=-1
+11-07 12:25:21.235  2626  6431 D TrafficStats: tagSocket(124) with statsTag=0x1809, statsUid=-1
+11-07 12:25:21.240  2626  6431 W libc    : Access denied finding property "persist.adb.tls_server.enable"
+11-07 12:25:21.238  2626  2626 W IntentService[D: type=1400 audit(0.0:131): avc:  denied  { read } for  name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=292 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+11-07 12:25:21.238  2626  2626 W IntentService[D: type=1400 audit(0.0:132): avc:  denied  { read } for  name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+11-07 12:25:21.938  5546  5748 E WakeLock: DG:service ** IS FORCE-RELEASED ON TIMEOUT **
+11-07 12:25:28.191   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:25:30.216   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-07 12:25:32.690  5546  6441 I GmscoreIpa: Starting mediastore instant index [CONTEXT service_id=255 ]
+11-07 12:25:34.990   520   593 D WifiNl80211Manager: Scan result ready event
+11-07 12:25:34.990   520   593 D WifiNative: Scan result ready event
+11-07 12:25:36.443  5645  6450 I GMS_MM_Logger: Memory Metric Logging not allowed. Stopping.
+11-07 12:25:38.191   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:25:46.515  1017  1294 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-07 12:25:46.515  1017  1294 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-07 12:25:48.192   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:25:48.208   831   905 D EGL_emulation: app_time_stats: avg=29997.78ms min=29997.78ms max=29997.78ms count=1
+11-07 12:25:58.191   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:26:00.027  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:26:00.027  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:26:00.027  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:26:00.028  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:26:00.028  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:26:00.029   831   905 D EGL_emulation: app_time_stats: avg=11820.47ms min=11820.47ms max=11820.47ms count=1
+11-07 12:26:00.041   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:26:00.207   520   520 D FlashNotifController: requestStartFlashNotification
+11-07 12:26:00.208   520   520 I FlashNotifController: startFlashNotification: type=1, tag=android
+11-07 12:26:00.208   520   520 D FlashNotifController: Flash notification is disabled
+11-07 12:26:00.210  1635  2163 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+11-07 12:26:00.210  1635  2163 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+11-07 12:26:00.215   473   501 D NuPlayerDriver: NuPlayerDriver(0x77f7496d7d10) created, clientPid(831)
+11-07 12:26:00.215   134   134 I hwservicemanager: getTransport: Cannot find entry android.hardware.media.omx@1.0::IOmx/default in either framework or device VINTF manifest.
+11-07 12:26:00.216   473   501 D MediaPlayerService: OMX service is not available
+11-07 12:26:00.218   473  6457 D GenericSource: FileSource remote
+11-07 12:26:00.220   520   602 I MediaFocusControl: requestAudioFocus() from uid/pid 10168/831 AA=USAGE_NOTIFICATION_EVENT/CONTENT_TYPE_SONIFICATION clientId=android.media.AudioManager@46fd2f4 callingPack=com.android.systemui req=3 flags=0x0 sdk=34
+11-07 12:26:00.221   520   602 I AudioService.FadeOutManager: unfadeOutUid() uid:10168
+11-07 12:26:00.226  1098  1841 D EGL_emulation: app_time_stats: avg=57326.96ms min=57326.96ms max=57326.96ms count=1
+11-07 12:26:00.248   831   902 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+11-07 12:26:00.251   831   902 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+11-07 12:26:00.254   831   902 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+11-07 12:26:00.256   831   831 W TouchableRegionManager: onHeadsUpPinnedModeChanged
+11-07 12:26:00.259   831   831 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-07 12:26:00.259   831   831 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-07 12:26:00.260   831   831 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+11-07 12:26:00.289   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@d99cef2
+11-07 12:26:00.289   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@8b70943
+11-07 12:26:00.290   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:26:00.290   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@7938bc0
+11-07 12:26:00.290   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@4e730f9
+11-07 12:26:00.292   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:26:00.293   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:26:00.293   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:26:00.293   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@f1e83e
+11-07 12:26:00.297   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:26:00.297   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:26:00.297   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:26:00.297   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:26:00.297   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@890631
+11-07 12:26:00.297   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:26:00.297   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:26:00.297   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:26:00.299   831   902 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+11-07 12:26:00.299   831   902 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+11-07 12:26:00.299   831   902 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+11-07 12:26:00.300   831   902 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+11-07 12:26:00.300   831   902 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+11-07 12:26:00.300   831   902 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+11-07 12:26:00.307   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:26:00.313   831   831 W FrameTracker: Missed SF frame:PREDICTION_ERROR, 7716, 11594954, CUJ=J<NOTIFICATION_HEADS_UP_APPEAR>
+11-07 12:26:00.721   473  6456 I GenericSource: start
+11-07 12:26:00.721   831   831 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+11-07 12:26:00.722   831   831 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+11-07 12:26:00.723   473  6463 D CCodec  : allocate(c2.android.vorbis.decoder)
+11-07 12:26:00.724   473  6463 I CCodec  : setting up 'default' as default (vendor) store
+11-07 12:26:00.725   473  6463 I CCodec  : Created component [c2.android.vorbis.decoder]
+11-07 12:26:00.725   473  6463 D CCodecConfig: read media type: audio/vorbis
+11-07 12:26:00.725   473  6463 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+11-07 12:26:00.726   473  6463 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+11-07 12:26:00.726   473  6463 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+11-07 12:26:00.726   473  6463 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+11-07 12:26:00.726   473  6463 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+11-07 12:26:00.726   473  6463 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+11-07 12:26:00.726   473  6463 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+11-07 12:26:00.726   473  6463 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+11-07 12:26:00.726   473  6463 D CCodecConfig: c2 config diff is Dict {
+11-07 12:26:00.726   473  6463 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+11-07 12:26:00.726   473  6463 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 32768
+11-07 12:26:00.726   473  6463 D CCodecConfig:   c2::u32 input.delay.value = 0
+11-07 12:26:00.726   473  6463 D CCodecConfig:   string input.media-type.value = "audio/vorbis"
+11-07 12:26:00.726   473  6463 D CCodecConfig:   string output.media-type.value = "audio/raw"
+11-07 12:26:00.726   473  6463 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+11-07 12:26:00.726   473  6463 D CCodecConfig:   c2::u32 raw.sample-rate.value = 48000
+11-07 12:26:00.726   473  6463 D CCodecConfig: }
+11-07 12:26:00.727   473  6463 D MediaCodec: flushMediametrics
+11-07 12:26:00.727   473  6463 D CCodec  : [c2.android.vorbis.decoder] buffers are bound to CCodec for this session
+11-07 12:26:00.727   473  6463 D CCodecConfig: no c2 equivalents for durationUs
+11-07 12:26:00.727   473  6463 D CCodecConfig: no c2 equivalents for csd-1
+11-07 12:26:00.727   473  6463 D CCodecConfig: no c2 equivalents for flags
+11-07 12:26:00.727   473  6463 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 70000
+11-07 12:26:00.727   473  6463 W Codec2Client: query -- param skipped: index = 1107298332.
+11-07 12:26:00.727   473  6463 D CCodec  : encoding statistics level = 0
+11-07 12:26:00.727   473  6463 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+11-07 12:26:00.727   473  6463 D CCodec  :   int32_t bitrate = 70000
+11-07 12:26:00.727   473  6463 D CCodec  :   int32_t channel-count = 1
+11-07 12:26:00.727   473  6463 D CCodec  :   int32_t max-input-size = 32768
+11-07 12:26:00.727   473  6463 D CCodec  :   string mime = "audio/vorbis"
+11-07 12:26:00.727   473  6463 D CCodec  :   int32_t sample-rate = 48000
+11-07 12:26:00.727   473  6463 D CCodec  : }
+11-07 12:26:00.727   473  6463 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+11-07 12:26:00.727   473  6463 D CCodec  :   int32_t channel-count = 1
+11-07 12:26:00.727   473  6463 D CCodec  :   string mime = "audio/raw"
+11-07 12:26:00.727   473  6463 D CCodec  :   int32_t sample-rate = 48000
+11-07 12:26:00.727   473  6463 D CCodec  :   int32_t channel-mask = 1
+11-07 12:26:00.727   473  6463 D CCodec  :   int32_t android._config-pcm-encoding = 2
+11-07 12:26:00.727   473  6463 D CCodec  : }
+11-07 12:26:00.727   473  6463 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+11-07 12:26:00.727   473  6463 I MediaCodec: MediaCodec will operate in async mode
+11-07 12:26:00.727   473  6462 D MediaCodec: keep callback message for reclaim
+11-07 12:26:00.728   473  6463 W Codec2Client: query -- param skipped: index = 1342179345.
+11-07 12:26:00.728   473  6463 W Codec2Client: query -- param skipped: index = 2415921170.
+11-07 12:26:00.728   481   866 D BufferPoolAccessor2.0: bufferpool2 0x7da6d2fd12e8 : 0(0 size) total buffers - 0(0 size) used buffers - 181/185 (recycle/alloc) - 5/181 (fetch/transfer)
+11-07 12:26:00.728   481   866 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7da6d2fd12e8 cached: 0/0M, 0/0% in use; allocs: 185, 98% recycled; transfers: 181, 97% unfetched
+11-07 12:26:00.728   473  6463 D CCodecBufferChannel: [c2.android.vorbis.decoder#100] Created input block pool with allocatorID 16 => poolID 20 - OK (0)
+11-07 12:26:00.729   473  5346 D BufferPoolAccessor2.0: bufferpool2 0x77f7796d91b8 : 0(0 size) total buffers - 0(0 size) used buffers - 183/192 (recycle/alloc) - 10/374 (fetch/transfer)
+11-07 12:26:00.729   473  5346 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x77f7796d91b8 cached: 0/0M, 0/0% in use; allocs: 192, 95% recycled; transfers: 374, 97% unfetched
+11-07 12:26:00.729   473  6463 I CCodecBufferChannel: [c2.android.vorbis.decoder#100] Created output block pool with allocatorID 16 => poolID 29 - OK
+11-07 12:26:00.729   473  6463 D CCodecBufferChannel: [c2.android.vorbis.decoder#100] Configured output block pool ids 29 => OK
+11-07 12:26:00.729   481  6464 D SimpleC2Component: Using output block pool with poolID 29 => got 29 - 0
+11-07 12:26:00.733   396  3556 D AudioFlinger: Client defaulted notificationFrames to 12512 for frameCount 25024
+11-07 12:26:00.734   396  3556 D AF::TrackHandle: OpPlayAudio: track:58 usage:10 not muted
+11-07 12:26:00.736   396  3556 D audioserver: FGS Logger Transaction failed
+11-07 12:26:00.736   396  3556 D audioserver: -129
+11-07 12:26:00.737   473  2774 D AudioTrack: getTimestamp_l(18): device stall time corrected using current time 250461152525
+11-07 12:26:00.805   396   500 D AudioFlinger: mixer(0x7092a90bd930) throttle end: throttle time(33)
+11-07 12:26:01.658  1017  1294 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-07 12:26:01.658  1017  1294 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-07 12:26:02.059   473  6463 D CCodecBufferChannel: [c2.android.vorbis.decoder#100] buffers after EOS ignored (0 us)
+11-07 12:26:02.059   473  6463 D CCodecBufferChannel: [c2.android.vorbis.decoder#100] buffers after EOS ignored (0 us)
+11-07 12:26:02.059   473  6461 D AudioTrack: stop(18): called with 82980 frames delivered
+11-07 12:26:02.294   831   905 D EGL_emulation: app_time_stats: avg=1005.29ms min=18.68ms max=1991.90ms count=2
+11-07 12:26:02.489   520   593 I MediaFocusControl: abandonAudioFocus() from uid/pid 10168/831 clientId=android.media.AudioManager@46fd2f4
+11-07 12:26:02.489   831  6454 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+11-07 12:26:02.489   831  6454 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+11-07 12:26:02.489   473   501 D NuPlayerDriver: reset(0x77f7496d7d10) at state 6
+11-07 12:26:02.491   473  6462 D MediaCodec: flushMediametrics
+11-07 12:26:02.492   473  6456 D NuPlayerDriver: notifyResetComplete(0x77f7496d7d10)
+11-07 12:26:02.492   473  6462 W AMessage: failed to post message as target looper for handler 0 is gone.
+11-07 12:26:02.492   481   866 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:26:02.492   481   866 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:26:02.492   473  6467 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:26:02.550   396   500 D audioserver: FGS Logger Transaction failed
+11-07 12:26:02.551   396   500 D audioserver: -129
+11-07 12:26:02.562   396   500 D audioserver: FGS Logger Transaction failed
+11-07 12:26:02.563   396   500 D audioserver: -129
+11-07 12:26:03.297   831   905 D EGL_emulation: app_time_stats: avg=15.97ms min=1.87ms max=19.21ms count=60
+11-07 12:26:04.297   831   905 D EGL_emulation: app_time_stats: avg=2.49ms min=1.65ms max=6.96ms count=60
+11-07 12:26:05.313   831   905 D EGL_emulation: app_time_stats: avg=2.32ms min=1.54ms max=5.25ms count=61
+11-07 12:26:05.418   341  5323 D android.hardware.audio@7.1-impl.ranchu: threadLoop: entering standby, frames: 1071680
+11-07 12:26:05.729   481   829 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+11-07 12:26:05.731   473  5313 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+11-07 12:26:05.956   831   831 W TouchableRegionManager: onHeadsUpPinnedModeChanged
+11-07 12:26:05.980   831   905 D EGL_emulation: app_time_stats: avg=1487.83ms min=13.55ms max=5694.27ms count=4
+11-07 12:26:05.998   831   831 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+11-07 12:26:06.015   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@8b70943
+11-07 12:26:06.015   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@d99cef2
+11-07 12:26:06.016   831   902 D ControlsListingControllerImpl: Unsubscribing callback
+11-07 12:26:06.016   831   902 D ControlsListingControllerImpl: Unsubscribing callback
+11-07 12:26:06.016   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@7938bc0
+11-07 12:26:06.016   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@4e730f9
+11-07 12:26:06.017   831   902 D ControlsListingControllerImpl: Unsubscribing callback
+11-07 12:26:06.017   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@f1e83e
+11-07 12:26:06.017   831   831 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@890631
+11-07 12:26:06.258   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-07 12:26:07.729   481   829 D BufferPoolAccessor2.0: bufferpool2 0x7da6d2fd12e8 : 0(0 size) total buffers - 0(0 size) used buffers - 94/97 (recycle/alloc) - 3/96 (fetch/transfer)
+11-07 12:26:07.729   481   829 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+11-07 12:26:07.731   473  5313 D BufferPoolAccessor2.0: bufferpool2 0x77f7796d4a08 : 0(0 size) total buffers - 0(0 size) used buffers - 95/103 (recycle/alloc) - 8/198 (fetch/transfer)
+11-07 12:26:07.731   473  5313 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+11-07 12:26:08.191   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:26:09.261   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-07 12:26:16.025  5546  5741 I GMS_MM_Logger: Memory Metric Logging not allowed. Stopping.
+11-07 12:26:16.032  5546  6469 I ChimeraConfigurator: Starting update, reason: 4 urgentFeatures: vision.ocr:-1
+11-07 12:26:16.038  5546  6469 I ChimeraConfigurator: Detected pending changes for urgent request: [vision.ocr]. Pending module sets: container:2318189190800+mlkit.ocr.common,tflite_dynamite:2640104055100800+tflite_dynamite,vision_ocr:2316024025100000+vision.ocr
+11-07 12:26:16.042  5546  6469 I GmsDebugLogger: [73] 1801
+11-07 12:26:16.044  5546  6469 W ZappDownloader: No successful module downloads for requested features [vision.ocr].
+11-07 12:26:16.044  5546  6469 I GmsDebugLogger: [30] [VisionOcrDynamite.integ:231602402100000],[TfliteDynamiteDynamite.integ:264010405100800],[MlkitOcrCommon.optional:231818100800]
+11-07 12:26:16.047  5546  6469 W ChimeraConfigService: Retry attempt was throttled. [CONTEXT service_id=264 ]
+11-07 12:26:16.047  5546  6469 I GmsDebugLogger: [83] 1 [vision.ocr]
+11-07 12:26:16.048  5546  6468 W Vision  : Request for optional module download of ocr failed. Request again.
+11-07 12:26:16.048  5546  6468 W Vision  : Would have logged:
+11-07 12:26:16.048  5546  6468 W Vision  : # dsae@37884fe7
+11-07 12:26:16.048  5546  6468 I Vision  : Schedule retrying download ocr at 265771 with backoff 80 seconds
+11-07 12:26:18.191   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:26:25.037  5546  5670 I FastPair: ServiceBindHelper: auto unpin triggered, uri = content://com.google.android.gms.nearby.fastpair/method_bind_service_for_discovery_item?is_bind=false
+11-07 12:26:25.037  5414  5554 I NearbyDiscovery: FastPair: isDestroyable: Scanner is alive. [CONTEXT service_id=265 ]
+11-07 12:26:25.037  5546  5670 I FastPair: ServiceBindHelper.onSliceUnpinned, unpin slice, uri = content://com.google.android.gms.nearby.fastpair/method_bind_service_for_discovery_item?is_bind=false
+11-07 12:26:25.037  5414  5554 I NearbyDiscovery: DiscoveryService: Skip stopSelf(), fast pair controller is not destroyable. [CONTEXT service_id=265 ]
+11-07 12:26:28.191   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:26:30.290   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-07 12:26:38.192   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:26:44.740  1746  2409 I BistoDBWrapper: Close DB
+11-07 12:26:48.191   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:26:58.192   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-07 12:27:00.002  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:27:00.002  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:27:00.002  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:27:00.002  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:27:00.003  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:27:00.025   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:27:00.031   831   905 D EGL_emulation: app_time_stats: avg=54049.89ms min=54049.89ms max=54049.89ms count=1
+11-07 12:27:00.031   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:27:00.039   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:27:00.039   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:27:00.039   831   831 D Tonal   : Gradients:
+11-07 12:27:00.039   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:27:00.039   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:27:00.039   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:27:00.044  1098  1841 D EGL_emulation: app_time_stats: avg=59818.27ms min=59818.27ms max=59818.27ms count=1
+11-07 12:27:00.046  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:27:00.047  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:27:00.047  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:27:00.047  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:27:00.047  1635  1979 I AiAiEcho: Predicting[0]:
+11-07 12:27:00.047  1635  1979 I AiAiEcho: EchoTargets:
+11-07 12:27:00.047  1635  1979 I AiAiEcho: Filtered by AiAi flag check:
+11-07 12:27:00.047  1635  1979 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-07 12:27:00.048  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:27:00.049  1635  1979 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-07 12:27:00.052   831  6474 W RingtonePlayer: STOP command without a player
+11-07 12:27:00.057   520  2913 I MediaFocusControl: requestAudioFocus() from uid/pid 10192/4596 AA=USAGE_ALARM/CONTENT_TYPE_SONIFICATION clientId=android.media.AudioManager@1efcb17 callingPack=com.inforprime.naoesquece req=2 flags=0x0 sdk=34
+11-07 12:27:00.062   520  2913 I AudioService.FadeOutManager: unfadeOutUid() uid:10192
+11-07 12:27:00.068   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:27:00.071   473   501 D NuPlayerDriver: NuPlayerDriver(0x77f7496d4510) created, clientPid(4596)
+11-07 12:27:00.071   134   134 I hwservicemanager: getTransport: Cannot find entry android.hardware.media.omx@1.0::IOmx/default in either framework or device VINTF manifest.
+11-07 12:27:00.071   473   501 D MediaPlayerService: OMX service is not available
+11-07 12:27:00.073   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:27:00.073   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-07 12:27:00.074   831   905 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-07 12:27:00.077   473  6478 D GenericSource: FileSource remote
+11-07 12:27:00.090   520   632 D FlashNotifController: alarm state changed: true
+11-07 12:27:00.091   473  6477 I GenericSource: start
+11-07 12:27:00.092   520   632 D FlashNotifController: requestStartFlashNotification
+11-07 12:27:00.092   520   632 I FlashNotifController: startFlashNotification: type=2, tag=alarm
+11-07 12:27:00.092   520   632 D FlashNotifController: Flash notification is disabled
+11-07 12:27:00.096   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-07 12:27:00.097   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-07 12:27:00.097   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-07 12:27:00.097   831   831 D Tonal   : Gradients:
+11-07 12:27:00.097   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-07 12:27:00.097   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-07 12:27:00.097   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-07 12:27:00.098   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-07 12:27:00.101   473  6483 D CCodec  : allocate(c2.android.vorbis.decoder)
+11-07 12:27:00.102   473  6483 I CCodec  : setting up 'default' as default (vendor) store
+11-07 12:27:00.104   473  6483 I CCodec  : Created component [c2.android.vorbis.decoder]
+11-07 12:27:00.104   473  6483 D CCodecConfig: read media type: audio/vorbis
+11-07 12:27:00.107   473  6483 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+11-07 12:27:00.108   473  6483 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+11-07 12:27:00.108   473  6483 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+11-07 12:27:00.108   473  6483 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+11-07 12:27:00.108   473  6483 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+11-07 12:27:00.108   473  6483 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+11-07 12:27:00.108   473  6483 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+11-07 12:27:00.109   473  6483 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+11-07 12:27:00.109   473  6483 D CCodecConfig: c2 config diff is Dict {
+11-07 12:27:00.109   473  6483 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+11-07 12:27:00.109   473  6483 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 32768
+11-07 12:27:00.109   473  6483 D CCodecConfig:   c2::u32 input.delay.value = 0
+11-07 12:27:00.109   473  6483 D CCodecConfig:   string input.media-type.value = "audio/vorbis"
+11-07 12:27:00.109   473  6483 D CCodecConfig:   string output.media-type.value = "audio/raw"
+11-07 12:27:00.109   473  6483 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+11-07 12:27:00.109   473  6483 D CCodecConfig:   c2::u32 raw.sample-rate.value = 48000
+11-07 12:27:00.109   473  6483 D CCodecConfig: }
+11-07 12:27:00.112   473  6483 D MediaCodec: flushMediametrics
+11-07 12:27:00.112   473  6483 D CCodec  : [c2.android.vorbis.decoder] buffers are bound to CCodec for this session
+11-07 12:27:00.112   473  6483 D CCodecConfig: no c2 equivalents for durationUs
+11-07 12:27:00.112   473  6483 D CCodecConfig: no c2 equivalents for csd-1
+11-07 12:27:00.112   473  6483 D CCodecConfig: no c2 equivalents for flags
+11-07 12:27:00.112   473  6483 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 256000
+11-07 12:27:00.112   473  6483 D CCodecConfig:   c2::u32 raw.channel-count.value = 2
+11-07 12:27:00.112   473  6483 D CCodecConfig:   c2::u32 raw.sample-rate.value = 44100
+11-07 12:27:00.112   473  6483 W Codec2Client: query -- param skipped: index = 1107298332.
+11-07 12:27:00.112   473  6483 D CCodec  : encoding statistics level = 0
+11-07 12:27:00.112   473  6483 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+11-07 12:27:00.112   473  6483 D CCodec  :   int32_t bitrate = 256000
+11-07 12:27:00.112   473  6483 D CCodec  :   int32_t channel-count = 2
+11-07 12:27:00.112   473  6483 D CCodec  :   int32_t max-input-size = 32768
+11-07 12:27:00.112   473  6483 D CCodec  :   string mime = "audio/vorbis"
+11-07 12:27:00.112   473  6483 D CCodec  :   int32_t sample-rate = 44100
+11-07 12:27:00.112   473  6483 D CCodec  : }
+11-07 12:27:00.112   473  6483 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+11-07 12:27:00.112   473  6483 D CCodec  :   int32_t channel-count = 2
+11-07 12:27:00.112   473  6483 D CCodec  :   string mime = "audio/raw"
+11-07 12:27:00.112   473  6483 D CCodec  :   int32_t sample-rate = 44100
+11-07 12:27:00.112   473  6483 D CCodec  :   int32_t channel-mask = 3
+11-07 12:27:00.112   473  6483 D CCodec  :   int32_t android._config-pcm-encoding = 2
+11-07 12:27:00.112   473  6483 D CCodec  : }
+11-07 12:27:00.112   473  6483 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+11-07 12:27:00.112   473  6483 I MediaCodec: MediaCodec will operate in async mode
+11-07 12:27:00.112   473  6482 D MediaCodec: keep callback message for reclaim
+11-07 12:27:00.113   473  6483 W Codec2Client: query -- param skipped: index = 1342179345.
+11-07 12:27:00.113   473  6483 W Codec2Client: query -- param skipped: index = 2415921170.
+11-07 12:27:00.114   481   866 D BufferPoolAccessor2.0: bufferpool2 0x7da6d2fd12e8 : 0(0 size) total buffers - 0(0 size) used buffers - 94/97 (recycle/alloc) - 3/96 (fetch/transfer)
+11-07 12:27:00.114   481   866 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7da6d2fd12e8 cached: 0/0M, 0/0% in use; allocs: 97, 97% recycled; transfers: 96, 97% unfetched
+11-07 12:27:00.114   473  6483 D CCodecBufferChannel: [c2.android.vorbis.decoder#802] Created input block pool with allocatorID 16 => poolID 21 - OK (0)
+11-07 12:27:00.114   473  4971 D BufferPoolAccessor2.0: bufferpool2 0x77f7796d4a08 : 0(0 size) total buffers - 0(0 size) used buffers - 95/103 (recycle/alloc) - 8/198 (fetch/transfer)
+11-07 12:27:00.115   473  4971 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x77f7796d4a08 cached: 0/0M, 0/0% in use; allocs: 103, 92% recycled; transfers: 198, 96% unfetched
+11-07 12:27:00.115   473  6483 I CCodecBufferChannel: [c2.android.vorbis.decoder#802] Created output block pool with allocatorID 16 => poolID 30 - OK
+11-07 12:27:00.115   473  6483 D CCodecBufferChannel: [c2.android.vorbis.decoder#802] Configured output block pool ids 30 => OK
+11-07 12:27:00.115   481  6484 D SimpleC2Component: Using output block pool with poolID 30 => got 30 - 0
+11-07 12:27:00.119   396   411 D AudioFlinger: Client defaulted notificationFrames to 11488 for frameCount 22977
+11-07 12:27:00.120   396   411 D AF::TrackHandle: OpPlayAudio: track:59 usage:4 not muted
+11-07 12:27:00.121   396   594 D audioserver: FGS Logger Transaction failed
+11-07 12:27:00.121   396   594 D audioserver: -129
+11-07 12:27:00.146   473  6480 D AudioTrack: getTimestamp_l(19): device stall time corrected using current time 309869960813
+11-07 12:27:00.190   396   500 D AudioFlinger: mixer(0x7092a90bd930) throttle end: throttle time(17)
+11-07 12:27:00.256  1635  2163 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+11-07 12:27:00.256  1635  2163 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+11-07 12:27:00.279   831   902 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+11-07 12:27:00.281   831   902 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+11-07 12:27:00.284   831   902 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+11-07 12:27:00.286   831   831 W TouchableRegionManager: onHeadsUpPinnedModeChanged
+11-07 12:27:00.288   831   831 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-07 12:27:00.288   831   831 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-07 12:27:00.288   831   831 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+11-07 12:27:00.331   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@431358c
+11-07 12:27:00.332   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@d8ca4d5
+11-07 12:27:00.332   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:27:00.332   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:27:00.333   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@d944ea
+11-07 12:27:00.333   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@67dd3db
+11-07 12:27:00.334   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@821e78
+11-07 12:27:00.334   831   831 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@57fb951
+11-07 12:27:00.335   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:27:00.335   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:27:00.336   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:27:00.336   831   831 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+11-07 12:27:00.337   831   902 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+11-07 12:27:00.338   831   902 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+11-07 12:27:00.338   831   902 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+11-07 12:27:00.339   831   902 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+11-07 12:27:00.339   831   902 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+11-07 12:27:00.340   831   902 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+11-07 12:27:00.341   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:27:00.341   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:27:00.341   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:27:00.341   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:27:00.341   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:27:00.341   831   831 D DLObserver: onDockEvent mDockState = 0
+11-07 12:27:01.161   520   520 I ResourceTimer: GetResourceValue count=9141 pvalues=1000,5000,7000,13000
+11-07 12:27:01.161   520   520 I ResourceTimer: RetrieveAttributes count=14514 pvalues=1000,1000,3000,10000
+11-07 12:27:01.738   473  6483 D CCodecBufferChannel: [c2.android.vorbis.decoder#802] buffers after EOS ignored (0 us)
+11-07 12:27:01.739   473  6480 D AudioTrack: stop(19): called with 91283 frames delivered
+11-07 12:27:02.219  6491  6491 W BpBinder: Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+11-07 12:27:02.221  1613  2042 W MediaProvider: isAppCloneUserPair for user 0: false
+11-07 12:27:02.224  6491  6491 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+11-07 12:27:02.229   134   134 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-07 12:27:02.229  6491  6495 I Gralloc4: mapper 4.x is not supported
+11-07 12:27:02.270  5414  6245 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 311 [CONTEXT service_id=218 ]
+11-07 12:27:02.279  5414  6497 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 41 uptime_millis: 41 exec_start_elapsed_seconds: 311 [CONTEXT service_id=218 ]
+11-07 12:27:02.305   473  6480 W AudioTrack: pauseAndWait: timeout expired state:7 still pausing:7 after 40 ms
+11-07 12:27:02.306   473  6482 D MediaCodec: keep callback message for reclaim
+11-07 12:27:02.307   473  6483 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+11-07 12:27:02.307   473  6483 W Codec2Client: query -- param skipped: index = 1342179345.
+11-07 12:27:02.307   473  6483 W Codec2Client: query -- param skipped: index = 2415921170.
+11-07 12:27:02.308   481  6484 D C2SoftVorbisDec: vorbis_dsp_synthesis returned -135; ignored
+11-07 12:27:02.309   481  6484 D C2SoftVorbisDec: vorbis_dsp_synthesis returned -135; ignored
+11-07 12:27:02.328   831   905 D EGL_emulation: app_time_stats: avg=1004.22ms min=14.51ms max=1993.92ms count=2
+11-07 12:27:02.347   520  1511 I ActivityManager: Broadcasting: Intent { act=android.intent.action.MEDIA_SCANNER_SCAN_FILE dat=file:///... flg=0x400000 }
+11-07 12:27:02.351   520   539 I ActivityManager: Broadcast completed: result=0
+11-07 12:27:02.352  1613  2419 I MediaProvider: Begin Intent { act=android.intent.action.MEDIA_SCANNER_SCAN_FILE dat=file:///... flg=0x1400010 cmp=com.google.android.providers.media.module/com.android.providers.media.MediaService }
+11-07 12:27:02.368  4596  4637 I NaoEsqueceTeste: print 5-alarme-que-repete
+11-07 12:27:02.371   473   501 D NuPlayerDriver: stop(0x77f7496d4510)
+11-07 12:27:02.371  1613  2419 I MediaProvider: End Intent { act=android.intent.action.MEDIA_SCANNER_SCAN_FILE dat=file:///... flg=0x1400010 cmp=com.google.android.providers.media.module/com.android.providers.media.MediaService }
+11-07 12:27:02.373   520   632 D FlashNotifController: alarm state changed: false
+11-07 12:27:02.373   520   632 I FlashNotifController: stopFlashNotification: tag=alarm
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste: depois de tocar: Current Alarm Manager state:
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:   Settings:
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     version=2
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     min_futurity=+5s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     min_interval=+1m0s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     max_interval=+365d0h0m0s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     min_window=+10m0s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     listener_timeout=+5s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     allow_while_idle_quota=72
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     allow_while_idle_window=+1h0m0s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     allow_while_idle_compat_quota=7
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     allow_while_idle_compat_window=+1h0m0s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     allow_while_idle_whitelist_duration=+10s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     max_alarms_per_uid=500
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     app_standby_window=+1h0m0s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     standby_quota_active=720
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     standby_quota_working=10
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     standby_quota_frequent=2
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     standby_quota_rare=1
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     standby_quota_never=0
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     standby_quota_restricted=1
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     app_standby_restricted_window=+1d0h0m0s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     time_tick_allowed_while_idle=true
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     priority_alarm_delay=+1m0s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     exact_alarm_deny_list=[]
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     min_device_idle_fuzz=+2m0s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     max_device_idle_fuzz=+15m0s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     kill_on_schedule_exact_alarm_revoked=true
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     enable_tare=ENABLED_MODE_OFF
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     temporary_quota_bump=0
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     delay_nonwakeup_alarms_while_screen_off=true
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     cached_listener_removal_delay=+10s0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:   App Standby Parole: true
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:   Current AppStateTracker State:
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     Force all apps standby: false
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     Small Battery Device: false
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     Force all apps standby for small battery device: false
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     Plugged In: true
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     Active uids: [u0a125 u0a130 u0a131 u0a132 u0a144 u0a168 u0a169 u0a180 u0a187 u0a192]
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     Except-idle + user exemption list appids: [2000, 10084, 10087, 10089, 10091, 10094, 10117, 10131, 10133, 10164, 10182]
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     User exemption list appids: []
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     Temp exemption list appids: [10192]
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     Exempted bucket packages:
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       User 0
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.google.android.networkstack.tethering
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.providers.telephony
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.dynsystem
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.google.android.cellbroadcastservice
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.providers.calendar
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.mms.service
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.providers.downloads
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.vending
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         android
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.nfc
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.ons
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.stk
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.google.android.bluetooth
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.providers.settings
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.se
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.inputdevices
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.google.android.devicelockcontroller
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.cellbroadcastreceiver
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.google.android.networkstack
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.server.telecom
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.keychain
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.google.android.gms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.localtransport
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.proxyhandler
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.emulator.multidisplay
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.imsserviceentitlement
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.settings
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.phone
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.shell
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.wallpaperbackup
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.emergency
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.location.fused
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.google.android.cellbroadcastreceiver
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.bluetooth
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:         com.android.providers.contacts
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     Restricted packages:
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:     Stats:
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       UID_FG_STATE_CHANGED: count=0, total=0.0ms, avg=0.000ms, max calls/s=0 max dur/s=0.0ms max time=0.0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       UID_ACTIVE_STATE_CHANGED: count=84, total=1.6ms, avg=0.020ms, max calls/s=18 max dur/s=0.3ms max time=0.2ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       RUN_ANY_CHANGED: count=0, total=0.0ms, avg=0.000ms, max calls/s=0 max dur/s=0.0ms max time=0.0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       ALL_UNEXEMPTED: count=0, total=0.0ms, avg=0.000ms, max calls/s=0 max dur/s=0.0ms max time=0.0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       ALL_EXEMPTION_LIST_CHANGED: count=0, total=0.0ms, avg=0.000ms, max calls/s=0 max dur/s=0.0ms max time=0.0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       TEMP_EXEMPTION_LIST_CHANGED: count=82, total=19.4ms, avg=0.237ms, max calls/s=7 max dur/s=8.9ms max time=8.7ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       EXEMPTED_BUCKET_CHANGED: count=3, total=0.2ms, avg=0.050ms, max calls/s=0 max dur/s=0.0ms max time=0.1ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       FORCE_ALL_CHANGED: count=0, total=0.0ms, avg=0.000ms, max calls/s=0 max dur/s=0.0ms max time=0.0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       IS_UID_ACTIVE_CACHED: count=0, total=0.0ms, avg=0.000ms, max calls/s=0 max dur/s=0.0ms max time=0.0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:       IS_UID_ACTIVE_RAW: count=5, total=0.0ms, avg=0.004ms, max calls/s=0 max dur/s=0.0ms max time=0.0ms
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.397  4596  4637 I NaoEsqueceTeste:   nowRTC=1794054422386=2026-11-07 12:27:02.386 nowELAPSED=312109
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   mLastTimeChangeClockTime=0=1970-01-01 00:00:00.000
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   mLastTimeChangeRealtime=0
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   mLastTickReceived=2026-11-07 12:27:00.000
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   mLastTickSet=2026-11-07 12:27:00.000
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Recent TIME_TICK history:
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     2026-11-07 12:27:00.001
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     2026-11-07 12:26:00.001
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     2026-11-07 12:25:00.001
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     2026-11-07 12:24:00.001
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     2026-11-07 12:24:00.000
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     2026-11-07 12:23:01.109
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     -
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     -
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     -
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     -
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   RuntimeStarted=2026-11-07 12:22:02.363
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Runtime uptime (elapsed): +5m0s23ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Runtime uptime (uptime): +5m0s23ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Max wakeup delay: +2m0s0ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Time since last dispatch: +2s385ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Next non-wakeup delivery time: -57s4ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Next non-wakeup alarm: +4s899ms = 317008 = 2026-11-07 12:27:07.285
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     set at -101ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Next wakeup alarm: +50s602ms = 362711 = 2026-11-07 12:27:52.988
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     set at -1ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Next kernel non-wakeup alarm: +4s897ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Next kernel wakeup alarm: +50s600ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Last wakeup: -2s385ms = 309724
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Last trigger: -2s385ms = 309724
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Num time change events: 0
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   App ids requesting SCHEDULE_EXACT_ALARM: {2000, 10118, 10119, 10127, 10130, 10132, 10153}
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Last OP_SCHEDULE_EXACT_ALARM: [2000:default, u0a118:default, u0a119:allow, u0a127:default, u0a130:default, u0a132:default, u0a153:default]
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   Next alarm clock information:
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     user:0 pendingSend:false time:1794140820000 = 2026-11-08 12:27:00.000 = +23h59m57s614ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:   63 pending alarms:
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #1: Alarm{5ce336 type 2 origWhen 277361 whenElapsed 277361 android}
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:*job.deadline*
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=-34s748ms window=+1m25s350ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=-34s748ms app_standby=-2m28s548ms device_idle=-- battery_saver=-- tare=-2m28s548ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       whenElapsed=-34s748ms maxWhenElapsed=+50s602ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       listener=android.app.AlarmManager$ListenerWrapper@2ed99c1
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     ELAPSED #2: Alarm{bb5dcd1 type 3 origWhen 277361 whenElapsed 277361 android}
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:*job.delay*
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=-34s748ms window=+1m30s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=-34s748ms app_standby=-2m34s748ms device_idle=-- battery_saver=-- tare=-2m34s748ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       whenElapsed=-34s748ms maxWhenElapsed=+55s252ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       listener=android.app.AlarmManager$ListenerWrapper@929d9f
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     ELAPSED #3: Alarm{68b6237 type 3 origWhen 300000 whenElapsed 300000 com.google.android.gms}
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.platformconfigurator.POST_BOOT
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=-12s109ms window=+2m31s719ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=-12s109ms app_standby=-46s363ms device_idle=-- battery_saver=-3m34s401ms tare=-3m34s401ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       whenElapsed=-12s109ms maxWhenElapsed=+2m19s610ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{ecfc3a4: PendingIntentRecord{6b351b4 com.google.android.gms/com.google.android.gms.platformconfigurator startService}}
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     ELAPSED #4: Alarm{cc17b8 type 3 origWhen 345771 whenElapsed 345771 com.google.android.gms}
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.vision.DEPENDENCY
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+33s662ms window=+59s999ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+33s662ms app_standby=-46s337ms device_idle=-- battery_saver=-46s337ms tare=-46s337ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       whenElapsed=+33s662ms maxWhenElapsed=+1m33s661ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{6705991: PendingIntentRecord{ce0665e com.google.android.gms/com.google.android.gms.vision broadcastIntent}}
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:     ELAPSED #5: Alarm{276d1dd type 3 origWhen 353058 whenElapsed 353058 com.google.android.gms}
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.icing.proxy.ACTION_MAYBE_UPDATE_CONTACTS
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+40s949ms window=+3m44s992ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+40s949ms app_standby=-46s363ms device_idle=-- battery_saver=-4m19s41ms tare=-4m19s41ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       whenElapsed=+40s949ms maxWhenElapsed=+4m25s941ms
+11-07 12:27:02.400  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{e76e152: PendingIntentRecord{8b11c23 com.google.android.gms/com.google.android.gms.icing startService}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #6: Alarm{4680f6 type 3 origWhen 369724 whenElapsed 369724 android}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:TIME_TICK
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+57s615ms window=0 exactAllowReason=allow-listed repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+57s615ms app_standby=-2s385ms device_idle=-- battery_saver=-- tare=-2s385ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+57s615ms maxWhenElapsed=+57s615ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       listener=com.android.server.alarm.AlarmManagerService$3@f804ba2
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #7: Alarm{ea750d type 2 origWhen 618951 whenElapsed 618951 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms.gcm.HEARTBEAT_ALARM
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+5m6s842ms window=0 exactAllowReason=allow-listed repeatInterval=0 count=0 flags=0x21
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+5m6s842ms app_standby=-46s363ms device_idle=-- battery_saver=-3m43s151ms tare=-3m43s151ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+5m6s842ms maxWhenElapsed=+5m6s842ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{88bfcc2: PendingIntentRecord{9fdc09e com.google.android.gms/com.google.android.gms.gcm broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=-1, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=1, android:broadcast.flags=8}]
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #8: Alarm{9ef577f type 2 origWhen 626086 whenElapsed 626086 android}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:DeviceIdleController.motion
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+5m13s977ms window=+1m0s0ms repeatInterval=0 count=0 flags=0x8
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+5m13s977ms app_standby=-4m45s239ms device_idle=-- battery_saver=-- tare=-4m46s23ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+5m13s977ms maxWhenElapsed=+6m13s977ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       listener=android.app.AlarmManager$ListenerWrapper@2cb234c
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #9: Alarm{e075f95 type 2 origWhen 663728 whenElapsed 663728 android}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:NotificationManagerService.TIMEOUT
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+5m51s619ms window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+5m51s619ms app_standby=-4m8s381ms device_idle=-- battery_saver=-- tare=-4m8s381ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+5m51s619ms maxWhenElapsed=+5m51s619ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{a8148aa: PendingIntentRecord{aabec9b android broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #10: Alarm{aa9ead3 type 2 origWhen 729759 whenElapsed 729759 android}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:NotificationManagerService.TIMEOUT
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+6m57s650ms window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+6m57s650ms app_standby=-3m2s350ms device_idle=-- battery_saver=-- tare=-3m2s350ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+6m57s650ms maxWhenElapsed=+6m57s650ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{2177610: PendingIntentRecord{a565509 android broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #11: Alarm{d940cf7 type 2 origWhen 849730 whenElapsed 849730 android}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:NotificationManagerService.TIMEOUT
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+8m57s621ms window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+8m57s621ms app_standby=-1m2s379ms device_idle=-- battery_saver=-- tare=-1m2s379ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+8m57s621ms maxWhenElapsed=+8m57s621ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{206f764: PendingIntentRecord{7affdcd android broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #12: Alarm{82d2838 type 3 origWhen 947643 whenElapsed 947643 com.google.android.configupdater}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.configupdater.DELAYED_FLAG_COMMIT
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+10m35s534ms window=+15m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+10m35s534ms app_standby=-4m24s445ms device_idle=-- battery_saver=-2m42s277ms tare=-4m24s445ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+10m35s534ms maxWhenElapsed=+25m35s534ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{cb6011: PendingIntentRecord{c034576 com.google.android.configupdater broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #13: Alarm{bd2b777 type 3 origWhen 1026544 whenElapsed 1026544 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.location.ALARM_WAKEUP_DAILY_UPLOADER
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+11m54s435ms window=+11m44s15ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+11m54s435ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s252ms tare=-3m44s252ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+11m54s435ms maxWhenElapsed=+23m38s450ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{9a88fe4: PendingIntentRecord{6f4ec4d com.google.android.gms/com.google.android.gms.location_base broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #14: Alarm{6d64302 type 3 origWhen 1825463 whenElapsed 1825463 android}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.android.server.action.NETWORK_STATS_POLL
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+25m13s354ms window=+22m30s0ms repeatInterval=1800000 count=0 flags=0x8
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+25m13s354ms app_standby=-4m39s706ms device_idle=-- battery_saver=-- tare=-4m39s706ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+25m13s354ms maxWhenElapsed=+47m43s354ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{7315413: PendingIntentRecord{150c650 android broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #15: Alarm{2a1230e type 3 origWhen 1894345 whenElapsed 1894345 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.common.operation.LOG_CORE_ANALYTICS
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+26m22s236ms window=+22m29s999ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+26m22s236ms app_standby=-46s363ms device_idle=-- battery_saver=-3m37s763ms tare=-3m37s763ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+26m22s236ms maxWhenElapsed=+48m52s235ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{21e612f: PendingIntentRecord{bd31e6f com.google.android.gms/com.google.android.gms.core startService}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     RTC_WAKEUP #16: Alarm{503f77c type 0 origWhen 1794056400000 whenElapsed 2289723 com.android.settings}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.android.settings.battery.action.PERIODIC_JOB_UPDATE
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=RTC_WAKEUP origWhen=2026-11-07 13:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+32m57s614ms app_standby=-4m20s404ms device_idle=-- battery_saver=-- tare=-4m20s404ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+32m57s614ms maxWhenElapsed=+32m57s614ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{e005805: PendingIntentRecord{9d5305a com.android.settings broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #17: Alarm{b7d5dd4 type 3 origWhen 5560705 whenElapsed 5560705 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.common.operation.LOG_CORE_ANALYTICS
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+1h27m28s596ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+1h27m28s596ms app_standby=-46s363ms device_idle=-- battery_saver=-2m31s404ms tare=-2m31s404ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+1h27m28s596ms maxWhenElapsed=+2h27m28s596ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{cefbb7d: PendingIntentRecord{ce11a72 com.google.android.gms/com.google.android.gms.core startService}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #18: Alarm{41d328b type 3 origWhen 7199999 whenElapsed 7199999 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.location.ALARM_WAKEUP_SENSOR_UPLOADER
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+1h54m47s890ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+1h54m47s890ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s253ms tare=-3m44s253ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+1h54m47s890ms maxWhenElapsed=+2h54m47s890ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{8570f68: PendingIntentRecord{6336f81 com.google.android.gms/com.google.android.gms.location_base broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #19: Alarm{ea5f826 type 3 origWhen 11289723 whenElapsed 11289723 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.location.ALARM_WAKEUP_BURST_COLLECTION_TRIGGER
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+3h2m57s614ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3h2m57s614ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s235ms tare=-3m44s235ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3h2m57s614ms maxWhenElapsed=+4h2m57s614ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{1aa6c67: PendingIntentRecord{141ba14 com.google.android.gms/com.google.android.gms.location_base broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #20: Alarm{f2682bd type 3 origWhen 13089724 whenElapsed 13089724 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.location.ALARM_WAKEUP_SENSOR_COLLECTOR
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+3h32m57s615ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3h32m57s615ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s254ms tare=-3m44s254ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3h32m57s615ms maxWhenElapsed=+4h32m57s615ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{a6970b2: PendingIntentRecord{ae76803 com.google.android.gms/com.google.android.gms.location_base broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #21: Alarm{66e815f type 3 origWhen 14487730 whenElapsed 14487730 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:CMAlarm
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+3h56m15s621ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3h56m15s621ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s378ms tare=-3m44s378ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3h56m15s621ms maxWhenElapsed=+4h56m15s621ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       listener=android.os.BinderProxy@6f237ac
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #22: Alarm{8132ec3 type 3 origWhen 14550755 whenElapsed 14550755 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.westworld.action.METADATA_ALARM
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+3h57m18s646ms window=+3h0m0s0ms repeatInterval=14400000 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3h57m18s646ms app_standby=-46s363ms device_idle=-- battery_saver=-2m41s354ms tare=-2m41s354ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3h57m18s646ms maxWhenElapsed=+6h57m18s646ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{63c8340: PendingIntentRecord{679e5fe com.google.android.gms/com.google.android.gms.westworld startService}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #23: Alarm{d204c75 type 2 origWhen 21600000 whenElapsed 21600000 com.android.providers.calendar}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.android.providers.calendar.intent.CalendarProvider2
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+5h54m47s891ms window=+4h30m0s0ms repeatInterval=21600000 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+5h54m47s891ms app_standby=-1m53s969ms device_idle=-- battery_saver=-50s946ms tare=-4m27s963ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+5h54m47s891ms maxWhenElapsed=+10h24m47s891ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{58a640a: PendingIntentRecord{23d47b com.android.providers.calendar broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #24: Alarm{c212298 type 2 origWhen 21626859 whenElapsed 21626859 com.google.android.bluetooth}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:BluetoothMetricsLogger
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+5h55m14s750ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x8
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+5h55m14s750ms app_standby=-4m45s239ms device_idle=-- battery_saver=-- tare=-4m45s250ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+5h55m14s750ms maxWhenElapsed=+6h55m14s750ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       listener=android.os.BinderProxy@c363af1
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #25: Alarm{b419279 type 2 origWhen 21687942 whenElapsed 21687942 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:NetworkLocationLocator
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+5h56m15s833ms window=+53m32s661ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+5h56m15s833ms app_standby=-46s363ms device_idle=-- battery_saver=-3m41s912ms tare=-3m41s912ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+5h56m15s833ms maxWhenElapsed=+6h49m48s494ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       listener=android.os.BinderProxy@8226bbe
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     RTC_WAKEUP #26: Alarm{ed1b682 type 0 origWhen 1794088800000 whenElapsed 34689723 android}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:ScheduleConditionProvider.EVALUATE
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=RTC_WAKEUP origWhen=2026-11-07 22:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+9h32m57s614ms app_standby=-2s359ms device_idle=-- battery_saver=-- tare=-2s359ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+9h32m57s614ms maxWhenElapsed=+9h32m57s614ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{f728193: PendingIntentRecord{451d044 android broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     ELAPSED #27: Alarm{ce2952d type 3 origWhen 38308729 whenElapsed 38308729 android}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:WifiHealthMonitor Schedule Daily Detection Timer
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+10h33m16s620ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x8
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+10h33m16s620ms app_standby=-4m43s373ms device_idle=-- battery_saver=-- tare=-4m43s373ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+10h33m16s620ms maxWhenElapsed=+11h33m16s620ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       listener=android.app.AlarmManager$ListenerWrapper@3bb6a62
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     RTC_WAKEUP #28: Alarm{a3fdd35 type 0 origWhen 1794096000000 whenElapsed 41889723 com.google.android.gms}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms.reminders.notification.ACTION_REFRESH_TIME_REMINDERS
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=RTC_WAKEUP origWhen=2026-11-08 00:00:00.000 window=0 exactAllowReason=allow-listed repeatInterval=0 count=0 flags=0x21
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+11h32m57s614ms app_standby=-46s363ms device_idle=-- battery_saver=-2m41s679ms tare=-2m41s679ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+11h32m57s614ms maxWhenElapsed=+11h32m57s614ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{e9585ca: PendingIntentRecord{e805729 com.google.android.gms/com.google.android.gms.reminders startService}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=-1, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=1, android:broadcast.flags=8}]
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     RTC #29: Alarm{9e9caae type 1 origWhen 1794096000000 whenElapsed 41889724 android}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:android.intent.action.DATE_CHANGED
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=RTC origWhen=2026-11-08 00:00:00.000 window=0 exactAllowReason=allow-listed repeatInterval=0 count=0 flags=0x1
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+11h32m57s615ms app_standby=-4m45s239ms device_idle=-- battery_saver=-- tare=-4m46s981ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       whenElapsed=+11h32m57s615ms maxWhenElapsed=+11h32m57s615ms
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{4e0804f: PendingIntentRecord{6c8e3dc android broadcastIntent}}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:     RTC #30: Alarm{11e3ce5 type 1 origWhen 1794096000000 whenElapsed 41889724 android}
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:GraphicsStatsService
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       type=RTC origWhen=2026-11-08 00:00:00.000 window=0 exactAllowReason=listener repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.401  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+11h32m57s615ms app_standby=-4m45s239ms device_idle=-- battery_saver=-- tare=-4m46s341ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+11h32m57s615ms maxWhenElapsed=+11h32m57s615ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       listener=android.app.AlarmManager$ListenerWrapper@e8be3ba
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #31: Alarm{cced26b type 2 origWhen 43237175 whenElapsed 43237175 com.google.android.networkstack}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:DhcpClient.wlan0.RENEW
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+11h55m25s66ms window=0 exactAllowReason=listener repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+11h55m25s66ms app_standby=-4m34s850ms device_idle=-- battery_saver=-- tare=-4m34s850ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+11h55m25s66ms maxWhenElapsed=+11h55m25s66ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       listener=android.os.BinderProxy@1ee61c8
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED #32: Alarm{cfac261 type 3 origWhen 43263638 whenElapsed 43263638 com.google.android.gms}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.common.download.START
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+11h55m51s529ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+11h55m51s529ms app_standby=-46s363ms device_idle=-- battery_saver=-4m8s471ms tare=-4m8s471ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+11h55m51s529ms maxWhenElapsed=+12h55m51s529ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{6048186: PendingIntentRecord{3062a47 com.google.android.gms/com.google.android.gms.core_download startService}}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     RTC #33: Alarm{1ee25d0 type 1 origWhen 1794097620000 whenElapsed 43509723 com.android.systemui}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:lock_screen_next_alarm
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=RTC origWhen=2026-11-08 00:27:00.000 window=0 exactAllowReason=listener repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+11h59m57s614ms app_standby=-2s347ms device_idle=-- battery_saver=-2s347ms tare=-2s347ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+11h59m57s614ms maxWhenElapsed=+11h59m57s614ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       listener=android.os.BinderProxy@b8242cb
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     RTC #34: Alarm{cba9c9 type 1 origWhen 1794097620000 whenElapsed 43509724 com.android.systemui}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:lock_screen_next_alarm
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=RTC origWhen=2026-11-08 00:27:00.000 window=0 exactAllowReason=listener repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+11h59m57s615ms app_standby=-2s348ms device_idle=-- battery_saver=-2s348ms tare=-2s348ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+11h59m57s615ms maxWhenElapsed=+11h59m57s615ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       listener=android.os.BinderProxy@205e45
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED #35: Alarm{46bd274 type 3 origWhen 64838674 whenElapsed 64838674 android}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.android.server.timedetector.NetworkTimeUpdateService.action.POLL
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+17h55m26s565ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x8
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+17h55m26s565ms app_standby=-4m33s433ms device_idle=-- battery_saver=-- tare=-4m33s433ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+17h55m26s565ms maxWhenElapsed=+18h55m26s565ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{5c0239d: PendingIntentRecord{6173012 android broadcastIntent}}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED #36: Alarm{87123e3 type 3 origWhen 65238083 whenElapsed 65238083 com.google.android.gms}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.location.ALARM_WAKEUP_IN_OUT_DOOR_COLLECTOR
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+18h2m5s974ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+18h2m5s974ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s254ms tare=-3m44s254ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+18h2m5s974ms maxWhenElapsed=+19h2m5s974ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{5ada1e0: PendingIntentRecord{5805c99 com.google.android.gms/com.google.android.gms.location_base broadcastIntent}}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #37: Alarm{b343b5e type 2 origWhen 75637115 whenElapsed 75637115 com.google.android.networkstack}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:DhcpClient.wlan0.REBIND
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+20h55m25s6ms window=0 exactAllowReason=listener repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+20h55m25s6ms app_standby=-4m34s849ms device_idle=-- battery_saver=-- tare=-4m34s849ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+20h55m25s6ms maxWhenElapsed=+20h55m25s6ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       listener=android.os.BinderProxy@8081b3f
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED #38: Alarm{8a9b33b type 3 origWhen 79013667 whenElapsed 79013667 com.google.android.gms}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.auth.authzen.CHECK_REGISTRATION
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+21h51m41s558ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+21h51m41s558ms app_standby=-46s363ms device_idle=-- battery_saver=-3m38s21ms tare=-3m38s21ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+21h51m41s558ms maxWhenElapsed=+22h51m41s558ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{f7f7a58: PendingIntentRecord{684af6a com.google.android.gms/com.google.android.gms.auth_authzen__phone startService}}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     RTC #39: Alarm{9ed2c5b type 1 origWhen 1794135600000 whenElapsed 81489723 com.google.android.apps.wellbeing}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.apps.wellbeing.focusmode.growth.SCHEDULED_GROWTH_NOTIFICATION
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=RTC origWhen=2026-11-08 11:00:00.000 window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+22h32m57s614ms app_standby=-4m30s706ms device_idle=-- battery_saver=-2m23s51ms tare=-4m30s706ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+22h32m57s614ms maxWhenElapsed=+23h32m57s614ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{6e1ccf8: PendingIntentRecord{a6805d1 com.google.android.apps.wellbeing broadcastIntent}}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED #40: Alarm{89e17b1 type 3 origWhen 86400000 whenElapsed 86400000 com.google.android.gms}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms/.analytics.internal.PlayLogReportingService
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+23h54m47s891ms window=+18h0m0s0ms repeatInterval=86400000 count=0 flags=0x0
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h54m47s891ms app_standby=-46s363ms device_idle=-- battery_saver=-3m38s63ms tare=-3m38s63ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h54m47s891ms maxWhenElapsed=+1d17h54m47s891ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{a6e3496: PendingIntentRecord{de2c0a4 com.google.android.gms/com.google.android.gms.analytics startService}}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #41: Alarm{3162e0d type 2 origWhen 86424873 whenElapsed 86424873 android}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:AutomaticOnOffKeepaliveTracker
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+23h55m12s764ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x8
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h55m12s764ms app_standby=-4m45s239ms device_idle=-- battery_saver=-- tare=-4m47s236ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h55m12s764ms maxWhenElapsed=+1d0h55m12s764ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       listener=android.app.AlarmManager$ListenerWrapper@d87c1c2
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED #42: Alarm{c14380e type 3 origWhen 86429063 whenElapsed 86429063 android}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:*usage.launchTime*
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+23h55m16s954ms window=0 exactAllowReason=listener repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h55m16s954ms app_standby=-4m38s207ms device_idle=-- battery_saver=-- tare=-4m38s207ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h55m16s954ms maxWhenElapsed=+23h55m16s954ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       listener=android.app.AlarmManager$ListenerWrapper@684522f
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #43: Alarm{95011c5 type 2 origWhen 86437096 whenElapsed 86437096 com.google.android.networkstack}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:DhcpClient.wlan0.EXPIRY
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+23h55m24s987ms window=0 exactAllowReason=listener repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h55m24s987ms app_standby=-4m34s848ms device_idle=-- battery_saver=-- tare=-4m34s848ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h55m24s987ms maxWhenElapsed=+23h55m24s987ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       listener=android.os.BinderProxy@fdfc71a
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED #44: Alarm{1fbb47d type 3 origWhen 86487731 whenElapsed 86487731 com.google.android.gms}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:CMAlarm
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+23h56m15s622ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h56m15s622ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s375ms tare=-3m44s375ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h56m15s622ms maxWhenElapsed=+1d0h56m15s622ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       listener=android.os.BinderProxy@ed81f72
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     RTC #45: Alarm{6f64817 type 1 origWhen 1794140614916 whenElapsed 86504640 com.google.android.apps.wallpaper}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.apps.wallpaper/com.android.wallpaper.module.DailyLoggingAlarmReceiver
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=RTC origWhen=2026-11-08 12:23:34.916 window=+18h0m0s0ms repeatInterval=86400000 count=0 flags=0x0
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h56m32s531ms app_standby=-3m17s692ms device_idle=-- battery_saver=-3m7s213ms tare=-3m17s696ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h56m32s531ms maxWhenElapsed=+1d17h56m32s531ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{61ff6c0: PendingIntentRecord{14abff9 com.google.android.apps.wallpaper broadcastIntent}}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED #46: Alarm{99de404 type 3 origWhen 86514429 whenElapsed 86514429 com.google.android.gms}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.common.operation.LOG_CORE_ANALYTICS
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+23h56m42s320ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h56m42s320ms app_standby=-46s363ms device_idle=-- battery_saver=-3m17s680ms tare=-3m17s680ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h56m42s320ms maxWhenElapsed=+1d0h56m42s320ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{2cb7ded: PendingIntentRecord{3510422 com.google.android.gms/com.google.android.gms.core startService}}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED #47: Alarm{d0d4eb3 type 3 origWhen 86550066 whenElapsed 86550066 com.google.android.gms}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.lockbox.CHECK_OPT_IN
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+23h57m17s957ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h57m17s957ms app_standby=-46s363ms device_idle=-- battery_saver=-2m42s43ms tare=-2m42s43ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h57m17s957ms maxWhenElapsed=+1d0h57m17s957ms
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{e173c70: PendingIntentRecord{7c99ad4 com.google.android.gms/com.google.android.gms.lockbox startService}}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:     ELAPSED #48: Alarm{2ef0be9 type 3 origWhen 86550659 whenElapsed 86550659 com.google.android.gms}
+11-07 12:27:02.402  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.gms.stats.eastworld.action.EASTWORLD_ALARM
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED origWhen=+23h57m18s550ms window=+1h30m0s0ms repeatInterval=7200000 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h57m18s550ms app_standby=-46s363ms device_idle=-- battery_saver=-2m41s449ms tare=-2m41s449ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h57m18s550ms maxWhenElapsed=+1d1h27m18s550ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{49f406e: PendingIntentRecord{e250541 com.google.android.gms/com.google.android.gms.stats startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     RTC_WAKEUP #49: Alarm{ee8b8ce type 0 origWhen 1794140705427 whenElapsed 86595151 android}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:EventConditionProvider.EVALUATE
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=RTC_WAKEUP origWhen=2026-11-08 12:25:05.427 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x9
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h58m3s42ms app_standby=-1m56s954ms device_idle=-- battery_saver=-- tare=-1m56s954ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h58m3s42ms maxWhenElapsed=+23h58m3s42ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{eb9a3ef: PendingIntentRecord{6049e09 android broadcastIntent}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     RTC_WAKEUP #50: Alarm{ed7cefc type 0 origWhen 1794140760000 whenElapsed 86649724 com.inforprime.naoesquece}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.inforprime.naoesquece.AVISO
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=RTC_WAKEUP origWhen=2026-11-08 12:26:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h58m57s615ms app_standby=-2s352ms device_idle=-- battery_saver=-2s352ms tare=-2s352ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h58m57s615ms maxWhenElapsed=+23h58m57s615ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{5dc1985: PendingIntentRecord{5b93da com.inforprime.naoesquece broadcastIntent}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     RTC_WAKEUP #51: Alarm{2a6900b type 0 origWhen 1794140820000 whenElapsed 86709723 com.inforprime.naoesquece}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.inforprime.naoesquece.ALARME
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=RTC_WAKEUP origWhen=2026-11-08 12:27:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+23h59m57s614ms app_standby=-2s364ms device_idle=-- battery_saver=-- tare=-2s364ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+23h59m57s614ms maxWhenElapsed=+23h59m57s614ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       Alarm clock:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:         triggerTime=2026-11-08 12:27:00.000
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:         showIntent=PendingIntent{450dee8: PendingIntentRecord{795de4f com.inforprime.naoesquece startActivity (allowlist: efe30c4:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{9c9c901: PendingIntentRecord{def13a6 com.inforprime.naoesquece broadcastIntent}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=301, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #52: Alarm{304c0be type 2 origWhen 315360053273 whenElapsed 315360053273 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms/.auth.proximity.firstparty.SystemMemoryCacheService
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+3649d23h55m41s164ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3649d23h55m41s164ms app_standby=-46s363ms device_idle=-- battery_saver=-4m18s836ms tare=-4m18s836ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3649d23h55m41s164ms maxWhenElapsed=+3650d0h55m41s164ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{cb4251f: PendingIntentRecord{fd706c com.google.android.gms/com.google.android.gms.auth_proximity startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #53: Alarm{3b1f635 type 2 origWhen 315360087677 whenElapsed 315360087677 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms/.nearby.messages.service.NearbyMessagesService
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+3649d23h56m15s568ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3649d23h56m15s568ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s431ms tare=-3m44s431ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3649d23h56m15s568ms maxWhenElapsed=+3650d0h56m15s568ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{dc82aca: PendingIntentRecord{d7ff43b com.google.android.gms/nearby_messages startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #54: Alarm{c872758 type 2 origWhen 315360087679 whenElapsed 315360087679 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+3649d23h56m15s570ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3649d23h56m15s570ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s430ms tare=-3m44s430ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3649d23h56m15s570ms maxWhenElapsed=+3650d0h56m15s570ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{998c0b1: PendingIntentRecord{aa62996 com.google.android.gms/com.google.android.gms.location_base startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #55: Alarm{96f9917 type 2 origWhen 315360087680 whenElapsed 315360087680 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+3649d23h56m15s571ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3649d23h56m15s571ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s429ms tare=-3m44s429ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3649d23h56m15s571ms maxWhenElapsed=+3650d0h56m15s571ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{3f36104: PendingIntentRecord{347b6ed com.google.android.gms/com.google.android.gms.location_base startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #56: Alarm{7934922 type 2 origWhen 315360087680 whenElapsed 315360087680 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+3649d23h56m15s571ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3649d23h56m15s571ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s429ms tare=-3m44s429ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3649d23h56m15s571ms maxWhenElapsed=+3650d0h56m15s571ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{c4aafb3: PendingIntentRecord{4c78970 com.google.android.gms/com.google.android.gms.location_base startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #57: Alarm{175d4e9 type 2 origWhen 315360087724 whenElapsed 315360087724 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms/com.google.android.contextmanager.service.ContextManagerService
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+3649d23h56m15s615ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3649d23h56m15s615ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s384ms tare=-3m44s384ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3649d23h56m15s615ms maxWhenElapsed=+3650d0h56m15s615ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{b40d56e: PendingIntentRecord{cb6940f com.google.android.gms/com.google.android.gms.contextmanager startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #58: Alarm{d73cc9c type 2 origWhen 315360087738 whenElapsed 315360087738 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+3649d23h56m15s629ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3649d23h56m15s629ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s371ms tare=-3m44s371ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3649d23h56m15s629ms maxWhenElapsed=+3650d0h56m15s629ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{f4dd6a5: PendingIntentRecord{428da7a com.google.android.gms/fused_location_provider startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #59: Alarm{c52622b type 2 origWhen 315360087754 whenElapsed 315360087754 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+3649d23h56m15s645ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3649d23h56m15s645ms app_standby=-46s363ms device_idle=-- battery_saver=-3m44s354ms tare=-3m44s354ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3649d23h56m15s645ms maxWhenElapsed=+3650d0h56m15s645ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{13f1688: PendingIntentRecord{5ea3821 com.google.android.gms/geofencer_provider startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #60: Alarm{b91355d type 2 origWhen 315360088703 whenElapsed 315360088703 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms/.semanticlocation.service.SemanticLocationService
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+3649d23h56m16s594ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3649d23h56m16s594ms app_standby=-46s363ms device_idle=-- battery_saver=-3m43s405ms tare=-3m43s405ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3649d23h56m16s594ms maxWhenElapsed=+3650d0h56m16s594ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{e043ed2: PendingIntentRecord{b5eeba3 com.google.android.gms/com.google.android.gms.semanticlocation startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     ELAPSED_WAKEUP #61: Alarm{4a37da5 type 2 origWhen 315360100197 whenElapsed 315360100197 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*walarm*:com.google.android.gms/.tapandpay.security.StorageKeyCacheService
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=ELAPSED_WAKEUP origWhen=+3649d23h56m28s88ms window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+3649d23h56m28s88ms app_standby=-46s363ms device_idle=-- battery_saver=-3m31s911ms tare=-3m31s911ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+3649d23h56m28s88ms maxWhenElapsed=+3650d0h56m28s88ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{c82f57a: PendingIntentRecord{e9e12b com.google.android.gms/com.google.android.gms.tapandpay startService}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     RTC #62: Alarm{da36507 type 1 origWhen 9223372036854775807 whenElapsed 9223370242800665530 com.google.android.gms}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.chimera.IntentOperation.TARGETED_INTENT
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=RTC origWhen=292278994-08-17 07:12:55.807 window=+20764d12h21m50s277ms repeatInterval=0 count=0 flags=0x0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+24855d3h14m7s421ms app_standby=-46s363ms device_idle=-- battery_saver=-2m41s436ms tare=-2m41s436ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+24855d3h14m7s421ms maxWhenElapsed=+24855d3h14m7s698ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{1c45634: PendingIntentRecord{c9ab315 com.google.android.gms/com.google.android.gms.ota_base broadcastIntent}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     RTC #63: Alarm{6482ea0 type 1 origWhen 9223372036854775807 whenElapsed 9223370242800665531 com.google.android.googlequicksearchbox}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       tag=*alarm*:com.google.android.googlequicksearchbox/com.google.android.apps.search.assistant.platform.pcp.validity.ValidityController_Receiver
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       type=RTC origWhen=292278994-08-17 07:12:55.807 window=0 exactAllowReason=permission repeatInterval=0 count=0 flags=0x5
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       policyWhenElapsed: requester=+24855d3h14m7s422ms app_standby=-4m19s852ms device_idle=-- battery_saver=-4m19s852ms tare=-4m19s852ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       whenElapsed=+24855d3h14m7s422ms maxWhenElapsed=+24855d3h14m7s422ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       operation=PendingIntent{ab0ca59: PendingIntentRecord{4c3761e com.google.android.googlequicksearchbox broadcastIntent}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   LazyAlarmStore stats:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     GET_NEXT_DELIVERY_TIME: count=786, total=0.1ms, avg=0.000ms, max calls/s=0 max dur/s=0.0ms max time=0.0ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     GET_NEXT_WAKEUP_DELIVERY_TIME: count=786, total=4.3ms, avg=0.005ms, max calls/s=63 max dur/s=3.8ms max time=3.8ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     GET_COUNT: count=0, total=0.0ms, avg=0.000ms, max calls/s=0 max dur/s=0.0ms max time=0.0ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Pending user blocked background alarms:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     none
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Pending alarms per uid: [1000:17, 1002:1, 1073:3, u0a89:1, u0a119:1, u0a129:1, u0a131:33, u0a132:1, u0a159:1, u0a168:2, u0a192:2]
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   App Alarm history:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     com.android.providers.calendar, u0: -1m53s969ms, -1m53s978ms, -4m22s938ms,
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     com.google.android.gms, u0: -46s366ms, -1m56s389ms, -2m22s145ms, -2m31s414ms, -3m9s811ms, -3m17s696ms, -3m27s681ms, -3m31s347ms, -3m48s206ms, -3m56s962ms, -3m57s533ms, -4m0s429ms, -4m5s501ms, -4m13s41ms,
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     com.google.android.apps.wallpaper, u0: -3m17s696ms,
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Temporary Quota Reserves:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Next wake from idle: Alarm{2a6900b type 0 origWhen 1794140820000 whenElapsed 86709723 com.inforprime.naoesquece}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     tag=*walarm*:com.inforprime.naoesquece.ALARME
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     type=RTC_WAKEUP origWhen=2026-11-08 12:27:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     policyWhenElapsed: requester=+23h59m57s614ms app_standby=-2s364ms device_idle=-- battery_saver=-- tare=-2s364ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     whenElapsed=+23h59m57s614ms maxWhenElapsed=+23h59m57s614ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     Alarm clock:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       triggerTime=2026-11-08 12:27:00.000
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       showIntent=PendingIntent{450dee8: PendingIntentRecord{795de4f com.inforprime.naoesquece startActivity (allowlist: efe30c4:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     operation=PendingIntent{9c9c901: PendingIntentRecord{def13a6 com.inforprime.naoesquece broadcastIntent}}
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=301, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Past-due non-wakeup alarms: (none)
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     Number of delayed alarms: 3, total delay time: +1s931ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     Max delay time: +1s931ms, max non-interactive time: +17s987ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Broadcast ref count: 0
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   PendingIntent send count: 26
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   PendingIntent finish count: 26
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Listener send count: 28
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Listener finish count: 28
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Allow while idle history:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Allow while idle compat history:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:   Removal history:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:     1000:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       #1: Reason=alarm_cancelled elapsed=-2s359ms rtc=2026-11-07 12:27:00.027
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:ScheduleConditionProvider.EVALUATE
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+9h32m57s614ms app_standby=-2s373ms device_idle=-- battery_saver=-- tare=-2s373ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       #2: Reason=alarm_cancelled elapsed=-2s378ms rtc=2026-11-07 12:27:00.007
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:ScheduleConditionProvider.EVALUATE
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+9h32m57s615ms app_standby=-1m58s811ms device_idle=-- battery_saver=-- tare=-1m58s811ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       #3: Reason=alarm_cancelled elapsed=-1m27s395ms rtc=2026-11-07 12:25:34.990
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:           type=ELAPSED_WAKEUP tag=*walarm*:WificondScannerImpl Scan Timeout
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-1m12s446ms app_standby=-1m27s446ms device_idle=-- battery_saver=-- tare=-1m27s446ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       #4: Reason=alarm_cancelled elapsed=-1m56s954ms rtc=2026-11-07 12:25:05.431
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:EventConditionProvider.EVALUATE
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+23h55m14s390ms app_standby=-4m45s239ms device_idle=-- battery_saver=-- tare=-4m45s607ms
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:       #5: Reason=alarm_cancelled elapsed=-1m58s811ms rtc=2026-11-07 12:25:03.574
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:ScheduleConditionProvider.EVALUATE
+11-07 12:27:02.403  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+9h32m57s614ms app_standby=-1m59s158ms device_idle=-- battery_saver=-- tare=-1m59s158ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #6: Reason=alarm_cancelled elapsed=-1m59s158ms rtc=2026-11-07 12:25:03.228
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:ScheduleConditionProvider.EVALUATE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+9h32m57s614ms app_standby=-1m59s177ms device_idle=-- battery_saver=-- tare=-1m59s177ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #7: Reason=alarm_cancelled elapsed=-1m59s177ms rtc=2026-11-07 12:25:03.209
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:ScheduleConditionProvider.EVALUATE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+9h32m57s614ms app_standby=-1m59s191ms device_idle=-- battery_saver=-- tare=-1m59s191ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #8: Reason=alarm_cancelled elapsed=-1m59s191ms rtc=2026-11-07 12:25:03.194
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:ScheduleConditionProvider.EVALUATE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+9h32m57s615ms app_standby=-1m59s211ms device_idle=-- battery_saver=-- tare=-1m59s211ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #9: Reason=alarm_cancelled elapsed=-1m59s213ms rtc=2026-11-07 12:25:03.173
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:ScheduleConditionProvider.EVALUATE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+9h32m57s614ms app_standby=-2m2s352ms device_idle=-- battery_saver=-- tare=-2m2s352ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #10: Reason=alarm_cancelled elapsed=-2m2s357ms rtc=2026-11-07 12:25:00.028
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:ScheduleConditionProvider.EVALUATE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+9h32m57s615ms app_standby=-3m43s403ms device_idle=-- battery_saver=-- tare=-3m43s403ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:     1073:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #1: Reason=alarm_cancelled elapsed=-4m34s563ms rtc=2026-11-07 12:22:27.822
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED_WAKEUP tag=*walarm*:IpClient.wlan0.EVENT_PROVISIONING_TIMEOUT
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-4m18s471ms app_standby=-4m36s471ms device_idle=-- battery_saver=-- tare=-4m36s471ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #2: Reason=alarm_cancelled elapsed=-4m35s9ms rtc=2026-11-07 12:22:27.376
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED_WAKEUP tag=*walarm*:IpClient.wlan0.EVENT_DHCPACTION_TIMEOUT
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-4m17s476ms app_standby=-4m35s282ms device_idle=-- battery_saver=-- tare=-4m35s282ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #3: Reason=alarm_cancelled elapsed=-4m35s11ms rtc=2026-11-07 12:22:27.374
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED_WAKEUP tag=*walarm*:DhcpClient.wlan0.KICK
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-4m34s16ms app_standby=-4m35s15ms device_idle=-- battery_saver=-- tare=-4m35s15ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #4: Reason=alarm_cancelled elapsed=-4m35s13ms rtc=2026-11-07 12:22:27.372
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED_WAKEUP tag=*walarm*:DhcpClient.wlan0.TIMEOUT
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-4m17s16ms app_standby=-4m35s16ms device_idle=-- battery_saver=-- tare=-4m35s16ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #5: Reason=alarm_cancelled elapsed=-4m35s16ms rtc=2026-11-07 12:22:27.369
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED_WAKEUP tag=*walarm*:DhcpClient.wlan0.KICK
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-4m34s140ms app_standby=-4m35s232ms device_idle=-- battery_saver=-- tare=-4m35s232ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:     u0a131:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #1: Reason=alarm_cancelled elapsed=-1ms rtc=2026-11-07 12:27:02.384
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED tag=*alarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+4s899ms app_standby=-101ms device_idle=-- battery_saver=-101ms tare=-101ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #2: Reason=alarm_cancelled elapsed=-101ms rtc=2026-11-07 12:27:02.284
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED tag=*alarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+4s850ms app_standby=-150ms device_idle=-- battery_saver=-150ms tare=-150ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #3: Reason=alarm_cancelled elapsed=-155ms rtc=2026-11-07 12:27:02.231
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED tag=*alarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+1s334ms app_standby=-46s363ms device_idle=-- battery_saver=-1m41s395ms tare=-1m41s395ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #4: Reason=alarm_cancelled elapsed=-39s328ms rtc=2026-11-07 12:26:23.057
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED tag=*alarm*:com.google.android.chimera.container.IntentOperationService.SAVED_INTENT
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+3649d23h59m13s641ms app_standby=-46s359ms device_idle=-- battery_saver=-46s359ms tare=-46s359ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #5: Reason=alarm_cancelled elapsed=-1m22s690ms rtc=2026-11-07 12:25:39.695
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED tag=*alarm*:com.google.android.chimera.container.IntentOperationService.SAVED_INTENT
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+3649d23h58m30s304ms app_standby=-1m29s696ms device_idle=-- battery_saver=-1m29s696ms tare=-1m29s696ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #6: Reason=alarm_cancelled elapsed=-1m34s455ms rtc=2026-11-07 12:25:27.931
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED tag=*alarm*:com.google.android.chimera.container.IntentOperationService.SAVED_INTENT
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+3649d23h56m17s17ms app_standby=-1m56s388ms device_idle=-- battery_saver=-3m42s983ms tare=-3m42s983ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #7: Reason=alarm_cancelled elapsed=-1m41s408ms rtc=2026-11-07 12:25:20.977
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED tag=*alarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-1m36s451ms app_standby=-1m41s448ms device_idle=-- battery_saver=-1m41s448ms tare=-1m41s448ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #8: Reason=alarm_cancelled elapsed=-1m41s456ms rtc=2026-11-07 12:25:20.929
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED tag=*alarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-1m36s458ms app_standby=-1m41s458ms device_idle=-- battery_saver=-1m41s458ms tare=-1m41s458ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #9: Reason=alarm_cancelled elapsed=-1m46s958ms rtc=2026-11-07 12:25:15.427
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED tag=*alarm*:com.google.android.chimera.container.IntentOperationService.SAVED_INTENT
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+3649d23h58m0s545ms app_standby=-1m56s388ms device_idle=-- battery_saver=-1m59s455ms tare=-1m59s455ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #10: Reason=alarm_cancelled elapsed=-1m59s478ms rtc=2026-11-07 12:25:02.907
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=ELAPSED tag=*alarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-1m40s811ms app_standby=-1m59s523ms device_idle=-- battery_saver=-1m59s523ms tare=-1m59s523ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:     u0a168:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #1: Reason=alarm_cancelled elapsed=-2s347ms rtc=2026-11-07 12:27:00.038
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC tag=*alarm*:lock_screen_next_alarm
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+11h59m57s615ms app_standby=-2s350ms device_idle=-- battery_saver=-2s350ms tare=-2s350ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #2: Reason=alarm_cancelled elapsed=-2s349ms rtc=2026-11-07 12:27:00.037
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC tag=*alarm*:lock_screen_next_alarm
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+11h59m57s615ms app_standby=-2s353ms device_idle=-- battery_saver=-2s353ms tare=-2s353ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #3: Reason=alarm_cancelled elapsed=-1m59s147ms rtc=2026-11-07 12:25:03.239
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC tag=*alarm*:lock_screen_next_alarm
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-1m54s171ms app_standby=-1m59s171ms device_idle=-- battery_saver=-1m59s171ms tare=-1m59s171ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #4: Reason=alarm_cancelled elapsed=-1m59s147ms rtc=2026-11-07 12:25:03.238
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC tag=*alarm*:lock_screen_next_alarm
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-1m54s175ms app_standby=-1m59s175ms device_idle=-- battery_saver=-1m59s175ms tare=-1m59s175ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #5: Reason=alarm_cancelled elapsed=-1m59s171ms rtc=2026-11-07 12:25:03.214
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC tag=*alarm*:lock_screen_next_alarm
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-1m54s182ms app_standby=-1m59s181ms device_idle=-- battery_saver=-1m59s181ms tare=-1m59s181ms
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:       #6: Reason=alarm_cancelled elapsed=-1m59s176ms rtc=2026-11-07 12:25:03.210
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           type=RTC tag=*alarm*:lock_screen_next_alarm
+11-07 12:27:02.404  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-1m54s183ms app_standby=-1m59s183ms device_idle=-- battery_saver=-1m59s183ms tare=-1m59s183ms
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       #7: Reason=alarm_cancelled elapsed=-1m59s182ms rtc=2026-11-07 12:25:03.204
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           type=RTC tag=*alarm*:lock_screen_next_alarm
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-1m54s206ms app_standby=-1m59s206ms device_idle=-- battery_saver=-1m59s206ms tare=-1m59s206ms
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       #8: Reason=alarm_cancelled elapsed=-1m59s183ms rtc=2026-11-07 12:25:03.203
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           type=RTC tag=*alarm*:lock_screen_next_alarm
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=-1m54s210ms app_standby=-1m59s210ms device_idle=-- battery_saver=-1m59s210ms tare=-1m59s210ms
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     u0a192:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       #1: Reason=alarm_cancelled elapsed=-1m59s155ms rtc=2026-11-07 12:25:03.230
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:com.inforprime.naoesquece.AVISO
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+56m57s614ms app_standby=-1m59s188ms device_idle=-- battery_saver=-1m59s188ms tare=-1m59s188ms
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       #2: Reason=alarm_cancelled elapsed=-1m59s159ms rtc=2026-11-07 12:25:03.227
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:com.inforprime.naoesquece.ALARME
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+57m57s614ms app_standby=-1m59s189ms device_idle=-- battery_saver=-- tare=-1m59s189ms
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       #3: Reason=alarm_cancelled elapsed=-1m59s191ms rtc=2026-11-07 12:25:03.194
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:com.inforprime.naoesquece.AVISO
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+56m57s615ms app_standby=-1m59s203ms device_idle=-- battery_saver=-1m59s203ms tare=-1m59s203ms
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       #4: Reason=alarm_cancelled elapsed=-1m59s192ms rtc=2026-11-07 12:25:03.193
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:         Snapshot:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           type=RTC_WAKEUP tag=*walarm*:com.inforprime.naoesquece.ALARME
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:           policyWhenElapsed: requester=+57m57s615ms app_standby=-1m59s214ms device_idle=-- battery_saver=-- tare=-1m59s214ms
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:   Top Alarms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +589ms running, 5 wakeups, 5 alarms: 1000:android
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:WifiConnectivityManager Restart Single Scan
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +310ms running, 2 wakeups, 2 alarms: u0a131:com.google.android.gms
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +291ms running, 2 wakeups, 2 alarms: u0a89:com.android.providers.calendar
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:com.android.providers.calendar.intent.CalendarProvider2
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +145ms running, 0 wakeups, 1 alarms: 1000:android
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *alarm*:com.android.server.action.NETWORK_STATS_POLL
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +86ms running, 3 wakeups, 3 alarms: u0a192:com.inforprime.naoesquece
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:com.inforprime.naoesquece.ALARME
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +66ms running, 1 wakeups, 1 alarms: 1000:android
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:WifiHealthMonitor Schedule Post-Boot Detection Timer
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +48ms running, 1 wakeups, 1 alarms: u0a168:com.android.systemui
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:ReverseChargingControl
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +45ms running, 6 wakeups, 6 alarms: 1000:android
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:*job.deadline*
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +42ms running, 2 wakeups, 2 alarms: u0a192:com.inforprime.naoesquece
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:com.inforprime.naoesquece.AVISO
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +37ms running, 0 wakeups, 2 alarms: 1000:android
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *alarm*:*job.delay*
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:   Alarm Stats:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:   1000:android +787ms running, 12 wakeups:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +589ms 5 wakes 5 alarms, last -4m35s686ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:WifiConnectivityManager Restart Single Scan
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +145ms 0 wakes 1 alarms, last -4m39s759ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *alarm*:com.android.server.action.NETWORK_STATS_POLL
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +66ms 1 wakes 1 alarms, last -4m5s501ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:WifiHealthMonitor Schedule Post-Boot Detection Timer
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +45ms 6 wakes 6 alarms, last -2m28s548ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:*job.deadline*
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +37ms 0 wakes 2 alarms, last -3m55s47ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *alarm*:*job.delay*
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +12ms 0 wakes 6 alarms, last -2s385ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *alarm*:TIME_TICK
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:   u0a89:com.android.providers.calendar +293ms running, 3 wakeups:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +291ms 2 wakes 2 alarms, last -1m53s978ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:com.android.providers.calendar.intent.CalendarProvider2
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +2ms 1 wakes 1 alarms, last -1m53s969ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:android.intent.action.PROVIDER_CHANGED
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:   u0a131:com.google.android.gms +367ms running, 8 wakeups:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +310ms 2 wakes 2 alarms, last -3m48s206ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:com.google.android.location.ALARM_WAKEUP_ACTIVITY_DETECTION
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +31ms 4 wakes 4 alarms, last -2m22s145ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:com.google.android.intent.action.GCM_RECONNECT
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +12ms 0 wakes 4 alarms, last -46s366ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *alarm*:com.google.android.gms.vision.DEPENDENCY
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +6ms 0 wakes 3 alarms, last -2m31s414ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *alarm*:com.google.android.gms.common.operation.LOG_CORE_ANALYTICS
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +5ms 1 wakes 1 alarms, last -4m0s429ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:CMAlarm
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +4ms 0 wakes 2 alarms, last -3m31s347ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *alarm*:com.google.android.gms.auth.authzen.cryptauth.DEVICE_STATE_CHECK_DELAY_COMPLETE
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +1ms 1 wakes 1 alarms, last -3m9s811ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:com.google.android.gms.drive.ApiService.RESET_AFTER_BOOT
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:   u0a159:com.google.android.apps.wallpaper +12ms running, 0 wakeups:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +12ms 0 wakes 1 alarms, last -3m17s696ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *alarm*:com.google.android.apps.wallpaper/com.android.wallpaper.module.DailyLoggingAlarmReceiver
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:   u0a168:com.android.systemui +55ms running, 1 wakeups:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +48ms 1 wakes 1 alarms, last -4m32s608ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:ReverseChargingControl
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +7ms 0 wakes 6 alarms, last -1m53s814ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *alarm*:lock_screen_next_alarm
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:   u0a192:com.inforprime.naoesquece +128ms running, 5 wakeups:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +86ms 3 wakes 3 alarms, last -2s385ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:com.inforprime.naoesquece.ALARME
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     +42ms 2 wakes 2 alarms, last -1m2s386ms:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:       *walarm*:com.inforprime.naoesquece.AVISO
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:   Alarm manager stats:
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     REORDER_ALARMS_FOR_STANDBY: count=248, total=2.0ms, avg=0.008ms, max calls/s=204 max dur/s=0.5ms max time=0.5ms
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     HAS_SCHEDULE_EXACT_ALARM: count=192, total=13.2ms, avg=0.069ms, max calls/s=70 max dur/s=6.2ms max time=6.2ms
+11-07 12:27:02.407  4596  4637 I NaoEsqueceTeste:     REORDER_ALARMS_FOR_TARE: count=0, total=0.0ms, avg=0.000ms, max calls/s=0 max dur/s=0.0ms max time=0.0ms
+11-07 12:27:02.411  5414  6111 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 312 [CONTEXT service_id=218 ]
+11-07 12:27:02.413  5414  6497 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 21 uptime_millis: 21 exec_start_elapsed_seconds: 312 [CONTEXT service_id=218 ]
+11-07 12:27:02.416  4596  4596 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+11-07 12:27:02.416  4596  4596 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+11-07 12:27:02.416   473   501 D NuPlayerDriver: reset(0x77f7496d4510) at state 8
+11-07 12:27:02.421   473  6483 D CCodecBuffers: [c2.android.vorbis.decoder#802:1D-Output.Impl[N]] Client returned a buffer it does not own according to our record: 0
+11-07 12:27:02.421   473  6483 D CCodecBuffers: [c2.android.vorbis.decoder#802:1D-Output.Impl[N]] Client returned a buffer it does not own according to our record: 1
+11-07 12:27:02.421   473  6483 D CCodecBuffers: [c2.android.vorbis.decoder#802:1D-Output.Impl[N]] Client returned a buffer it does not own according to our record: 2
+11-07 12:27:02.443   473  6483 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:02.443   481   492 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:02.443   481   492 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-07 12:27:02.446   473  6482 D MediaCodec: flushMediametrics
+11-07 12:27:02.451   473  6477 D NuPlayerDriver: notifyResetComplete(0x77f7496d4510)
+11-07 12:27:02.451   473   501 W AMessage: failed to post message as target looper for handler 0 is gone.
+11-07 12:27:02.459   520  2913 I MediaFocusControl: abandonAudioFocus() from uid/pid 10192/4596 clientId=android.media.AudioManager@1efcb17
+11-07 12:27:02.461  4596  4596 W MediaPlayer: mediaplayer went away with unhandled events
+11-07 12:27:02.461   520   535 I MediaFocusControl: abandonAudioFocus() from uid/pid 10192/4596 clientId=android.media.AudioManager@1efcb17
+11-07 12:27:02.464   831   965 V WallpaperService: Setting wallpaper dimming: 0
+11-07 12:27:02.472  4596  4637 I TestRunner: finished: g_repeteTocaEMarcaOProximo(com.inforprime.naoesquece.AlarmTest)
