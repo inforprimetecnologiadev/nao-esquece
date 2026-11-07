@@ -2,6 +2,13 @@
 
 Cada versão também aparece no app em **Ajustes › Sobre**.
 
+## 1.8.0 — 6 de novembro de 2026
+
+- Ditado novo, como no ChatGPT: o app continua ouvindo mesmo se você parar para pensar e só termina quando você toca em Concluir.
+- Botões Pausar e Continuar (segue de onde parou), Cancelar e Concluir, com o texto aparecendo enquanto você fala e o tempo de gravação.
+- Na pausa dá para corrigir o texto antes de colocar na nota. Diga "vírgula", "ponto final" ou "nova linha" para pontuar.
+- Sem internet, o ditado usa o reconhecimento de voz do próprio celular (quando o celular tem).
+
 ## 1.7.0 — 6 de novembro de 2026
 
 - Áudio em MP3 no app Android: as gravações novas e as antigas viram MP3 sozinhas, no próprio celular.

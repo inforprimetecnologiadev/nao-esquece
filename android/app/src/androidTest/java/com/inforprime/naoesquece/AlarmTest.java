@@ -510,6 +510,23 @@ public class AlarmTest {
         Log.i(TAG, "ditado: ok");
     }
 
+    @Test
+    public void m_ditadoReal() throws Exception {
+        if (!Dictation.available(c)) { Log.i(TAG, "sem reconhecedor real no emulador"); return; }
+        final List<String> ev = java.util.Collections.synchronizedList(new java.util.ArrayList<>());
+        final Dictation[] d = {null};
+        ui(() -> { d[0] = new Dictation(Dictation.android(c), (t, x) -> ev.add(t + ":" + x), "pt-BR", c.getPackageName()); d[0].start(); });
+        Thread.sleep(15000); // silêncio (o emulador não tem microfone): tem que continuar ouvindo, sem travar
+        Log.i(TAG, "ditado real, 15 s de silêncio: " + ev);
+        int ouvindo = 0;
+        for (String e : ev) if (e.equals("estado:ouvindo")) ouvindo++;
+        assertTrue("começou a ouvir", ouvindo >= 1);
+        assertTrue("continua ativo depois do silêncio: " + d[0].state(), d[0].state() == Dictation.LISTENING || ev.contains("erro:falhou"));
+        ui(() -> d[0].finish());
+        assertTrue("concluir termina", waitFor(() -> ev.contains("estado:fim"), 6000));
+        ui(() -> d[0].cancel());
+    }
+
     private int events(ContentResolver cr, String id, String[] title) {
         int n = 0;
         try (Cursor q = cr.query(CalendarContract.Events.CONTENT_URI, new String[]{CalendarContract.Events.TITLE, CalendarContract.Events.DESCRIPTION},
