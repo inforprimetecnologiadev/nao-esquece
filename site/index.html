@@ -615,6 +615,21 @@ html[data-tab="tarefas"] .notes{gap:10px}
 textarea.tkdesc{font:inherit;font-size:15px}
 /* aviso por cima do botão Nova nota/Nova tarefa, sem cobrir */
 @media not all and (min-width:900px) and (min-device-width:900px){.app:not(.show-editor) ~ .toast{bottom:calc(150px + env(safe-area-inset-bottom,0px))}}
+.wsteps{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;margin:4px 0 10px}
+.wst{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;background:var(--sunk);min-width:0}
+.wst>b{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--accent);font-size:14px}
+.wst .grow{flex:1;min-width:0;font-weight:700}
+.wst small{display:block;font-weight:500;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wst .wok{flex:none;color:transparent}
+.wst .wok svg{width:20px;height:20px}
+.wst.ok>b{background:var(--ok);color:var(--ok-ink)}
+.wst.ok .wok{color:var(--ok)}
+.mp3st{font-size:12.5px;color:var(--muted);padding:2px 4px 6px;animation:tkArt .3s}
+.aud-h .m3{font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:1px 6px;border-radius:6px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:1px}
+.rpgo2{width:100%;flex:none;height:50px;box-sizing:border-box;margin:2px 0 4px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.rpgo2 svg{width:20px;height:20px}
+#frShare,#frSave{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+#frShare svg,#frSave svg{width:19px;height:19px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
@@ -658,7 +673,7 @@ textarea.tkdesc{font:inherit;font-size:15px}
   <article class="rd-body" id="rdBody"></article>
 </div>
 <template id="tplTerms">
-<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 4).</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 5).</p>
 
 <h2>1. Aceitação</h2>
 <p>Ao tocar em "Aceitar e continuar", você concorda com estes Termos de Uso e com a Política de Privacidade. Se não concordar, não use o aplicativo.</p>
@@ -709,7 +724,7 @@ textarea.tkdesc{font:inherit;font-size:15px}
 <p>Central de ajuda e formulário de contato: <span class="lg-url">inforprimetecnologiadev.github.io/nao-esquece/suporte</span>. E-mail: <span class="lg-url">inforprimetecnologia@gmail.com</span>. Respondemos em até 5 dias úteis; pedidos de titular (LGPD), em até 15 dias.</p>
 </template>
 <template id="tplPrivacy">
-<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 4). Responsável: <b>Não Esquece</b>.</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 5). Responsável: <b>Não Esquece</b>.</p>
 
 <h2>1. Resumo</h2>
 <ul>
@@ -744,6 +759,9 @@ textarea.tkdesc{font:inherit;font-size:15px}
 </ul>
 <h3>3.4 Permissões do celular</h3>
 <p>Microfone e câmera são usados somente quando você toca para gravar um áudio, ditar um texto, tirar uma foto ou gravar um vídeo. A galeria é aberta somente quando você escolhe anexar um arquivo.</p>
+<p><b>Áudio em MP3</b> (app para Android): as gravações e os áudios anexados são convertidos para MP3 no próprio celular, sem enviar o som para fora. O MP3 fica no lugar do arquivo original, no celular e no seu Drive.</p>
+<p><b>PDF, Word e planilha:</b> os arquivos exportados (PDF, .docx, .doc e a planilha .xlsx do relatório) são montados no próprio celular. Eles levam o conteúdo da nota ou do relatório, inclusive fotos, áudios e vídeos, e vão só para onde você escolher enviar ou salvar.</p>
+<p><b>Link do Google Drive no PDF e no Word:</b> quando você exporta uma nota que tem áudio ou vídeo e a conta Google está conectada, o app libera, só para esses arquivos no seu Drive, o acesso de leitura para "qualquer pessoa com o link". Assim, quem receber o PDF ou o Word consegue ouvir ou assistir pelo celular. As outras notas e pastas continuam privadas. Para tirar o acesso, abra o arquivo no Google Drive › Compartilhar › Acesso geral › Restrito.</p>
 <p><b>Notificações e alarmes</b> (app para Android): usados para o aviso de 1 minuto antes e para o alarme de cada lembrete e de cada tarefa com hora, que tocam no próprio celular. Para o alarme tocar com o app fechado e bloqueado, o título, um trecho do texto e o horário de cada lembrete ficam guardados também na área privada do app no Android, fora do cofre criptografado. Esses dados não saem do celular e são apagados quando o lembrete é removido ou quando você cancela a inscrição.</p>
 <p><b>Calendário</b> (opcional, app para Android): se você permitir, o app coloca os lembretes e as tarefas com hora no calendário do celular, na agenda da conta Google conectada. Para isso, ele lê a lista de agendas do aparelho para achar a da sua conta e só cria, muda ou apaga os eventos que ele mesmo criou. Você pode desligar em <b>Ajustes › Alarmes e calendário</b>.</p>
 <p><b>Widget da tela inicial</b> (opcional, app para Android): se você colocar o widget "Hoje" na tela inicial, o título e a hora dos lembretes e das tarefas com hora do dia aparecem nela, inclusive com o app bloqueado pelo PIN. Para esconder, basta tirar o widget da tela inicial.</p>
@@ -843,7 +861,7 @@ textarea.tkdesc{font:inherit;font-size:15px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.6.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Etiquetas: o lápis ao lado de cada etiqueta muda a cor e o nome dela, e o botão da etiqueta na nota agora aparece na cor escolhida.</li><li>Áudio mais rápido, como no WhatsApp: toque em 1× para ouvir em 1,5× ou 2×. O app lembra a velocidade escolhida.</li><li>Vídeo também: no vídeo aberto, toque em 1× para assistir em 1,5×, 2× ou 0,5×.</li></ul><h2>Versão 1.6.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.</li><li>Marque a tarefa como feita e ela vai para Concluídas, com o dia em que foi feita. Dá para desfazer e voltar para pendentes.</li><li>Estrela nas tarefas importantes e a lista Com estrela, que junta as de todas as listas.</li><li>Ordenar por Minha ordem (segure e arraste), Data, Prazo, Estrela ou Título.</li><li>Cada tarefa pode ter detalhes, subtarefas, data, hora com alarme, repetição e prazo. Elas aparecem também em Hoje, no Calendário e no Relatório.</li><li>Menu da lista: renomear, enviar a lista pelo WhatsApp, excluir as concluídas e excluir a lista.</li></ul><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.7.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Áudio em MP3 no app Android: as gravações novas e as antigas viram MP3 sozinhas, no próprio celular.</li><li>PDF com o áudio dentro: o MP3 toca no PDF pelo Adobe Acrobat do computador, fica nos anexos do PDF e tem o link para ouvir no Google Drive.</li><li>WhatsApp completo e na ordem da nota: primeiro o texto e depois os áudios, as fotos e os vídeos, um depois do outro. O WhatsApp abre direto.</li><li>Exportar a nota para o Word (.docx) e para o Word 97-2003 (.doc), com o texto, as fotos, o áudio MP3 e o vídeo MP4 dentro do arquivo.</li><li>Relatório em planilha do Excel (.xlsx): data e hora com os segundos, situação, tipo, lista ou pasta, etiquetas, anexos e texto, com filtro em cada coluna, e as abas Por dia e Resumo.</li><li>No texto enviado, a checklist agora começa numa linha própria.</li></ul><h2>Versão 1.6.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Etiquetas: o lápis ao lado de cada etiqueta muda a cor e o nome dela, e o botão da etiqueta na nota agora aparece na cor escolhida.</li><li>Áudio mais rápido, como no WhatsApp: toque em 1× para ouvir em 1,5× ou 2×. O app lembra a velocidade escolhida.</li><li>Vídeo também: no vídeo aberto, toque em 1× para assistir em 1,5×, 2× ou 0,5×.</li></ul><h2>Versão 1.6.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.</li><li>Marque a tarefa como feita e ela vai para Concluídas, com o dia em que foi feita. Dá para desfazer e voltar para pendentes.</li><li>Estrela nas tarefas importantes e a lista Com estrela, que junta as de todas as listas.</li><li>Ordenar por Minha ordem (segure e arraste), Data, Prazo, Estrela ou Título.</li><li>Cada tarefa pode ter detalhes, subtarefas, data, hora com alarme, repetição e prazo. Elas aparecem também em Hoje, no Calendário e no Relatório.</li><li>Menu da lista: renomear, enviar a lista pelo WhatsApp, excluir as concluídas e excluir a lista.</li></ul><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -954,7 +972,7 @@ if(IS_APK){
     Object.defineProperty(navigator,'share',{configurable:true,value:async d=>{
       d=d||{}; const files=[];
       for(const f of (d.files||[])) files.push({name:f.name||'arquivo',type:f.type||'application/octet-stream',b64:await blobB64(f)});
-      await nativeCall('share',JSON.stringify({title:d.title||'',text:[d.text,d.url].filter(Boolean).join('\n'),files}));
+      await nativeCall('share',JSON.stringify({title:d.title||'',text:[d.text,d.url].filter(Boolean).join('\n'),files,app:d.app||''}));
     }});
   }catch(e){}
   // links que abririam outra janela: páginas do app abrem dentro dele; o resto, no app certo do celular
@@ -1044,6 +1062,8 @@ const ICONS = {
   sort:'<path d="M7.5 4v15.5M4 16l3.5 3.5L11 16"/><path d="M16.5 20V4.5M13 8l3.5-3.5L20 8"/>',
   down:'<path d="M6 9.5l6 6 6-6"/>',
   sub:'<path d="M6 4v8.5a3 3 0 0 0 3 3h10"/><path d="M15.5 12l3.5 3.5-3.5 3.5"/>',
+  word:'<path d="M6 3h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M8 12l1.3 5 1.7-4 1.7 4 1.3-5"/>',
+  sheet:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16M10 3v18"/>',
   home:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M16.5 13v7M13 16.5h7"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/>',
   user:'<circle cx="12" cy="8" r="4"/><path d="M4 20.5a8 8 0 0 1 16 0"/>',
@@ -1092,7 +1112,7 @@ const isTagView=f=>typeof f==='string'&&f.startsWith('tag:');
 const viewIsFolder=f=>!SPECIAL.includes(f)&&!isTagView(f);
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.6.1', TERMS_VERSION='2026-11-06.4';
+const APP_VERSION='1.7.0', TERMS_VERSION='2026-11-06.5';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
@@ -1158,6 +1178,7 @@ function cleanHTML(html){
   walk(root); return root.innerHTML;
 }
 function txt(html){ const d=inert(html), doc=d.ownerDocument;
+  d.querySelectorAll('p,div,ul,ol,h1,h2,h3,h4,blockquote').forEach(e=>{ const p=e.previousSibling; if(p&&(p.nodeType===3?p.data.trim():p.nodeType===1&&!/^(P|DIV|UL|OL|LI|H[1-4]|BLOCKQUOTE|BR)$/.test(p.tagName))) e.before(doc.createTextNode('\n')); });
   d.querySelectorAll('ul.ck>li').forEach(li=>li.insertBefore(doc.createTextNode(li.getAttribute('data-done')==='1'?'☑ ':'☐ '),li.firstChild));
   d.querySelectorAll('br').forEach(b=>b.replaceWith(doc.createTextNode('\n')));
   d.querySelectorAll('p,div,li,h1,h2,h3,h4').forEach(e=>e.appendChild(doc.createTextNode('\n')));
@@ -2338,7 +2359,7 @@ async function renderAtts(){
   box.hidden=false;
   const auds=list.filter(a=>/^audio\//.test(a.type)), media=list.filter(a=>!/^audio\//.test(a.type));
   box.innerHTML=`<div class="lbl">Anexos · ${list.length}</div>`
-    + auds.map(a=>`<div class="aud" data-aud="${a.id}"><div class="aud-h">${svg('wave')}<span class="grow">${esc(a.name.replace(/\.[^.]+$/,''))}${a.duration?` <small>· ${fmtDur(a.duration)}</small>`:''}</span>${a.driveId?'':`<span title="Aguardando envio ao Drive" style="color:var(--muted);display:inline-flex">${svg('cloudOff')}</span>`}${spdBtn('aud',a.id)}<button class="ib sm" data-aopt="${a.id}" aria-label="Opções do áudio">${svg('more')}</button></div><div class="aud-p"></div></div>`).join('')
+    + auds.map(a=>`<div class="aud" data-aud="${a.id}"><div class="aud-h">${svg('wave')}<span class="grow">${esc(a.name.replace(/\.[^.]+$/,''))}${a.duration?` <small>· ${fmtDur(a.duration)}</small>`:''}${isMp3(a)?'<span class="m3">MP3</span>':''}</span>${a.driveId?'':`<span title="Aguardando envio ao Drive" style="color:var(--muted);display:inline-flex">${svg('cloudOff')}</span>`}${spdBtn('aud',a.id)}<button class="ib sm" data-aopt="${a.id}" aria-label="Opções do áudio">${svg('more')}</button></div><div class="aud-p"></div></div>`).join('')
     + media.map(a=>`<button class="att" data-att="${a.id}" aria-label="Abrir ${esc(a.name)}"></button>`).join('');
   for(const a of list){
     const u=await attURL(a);
@@ -2346,7 +2367,7 @@ async function renderAtts(){
       const p=box.querySelector(`[data-aud="${a.id}"] .aud-p`); if(!p) continue;
       if(!u){ p.innerHTML=`<div class="miss2">${a.driveId?'Está no Drive. Baixando…':'Este áudio não está neste aparelho.'}</div>`;
         if(a.driveId) fetchAtt(a).then(ok=>{ if(ok&&cur.noteId===n.id) renderAtts(); }); continue; }
-      p.innerHTML=`<audio controls preload="metadata" src="${u}"></audio>`; const au=p.querySelector('audio'); setRate(au,rateOf('aud')); fixDur(au); continue;
+      p.innerHTML=`<audio controls preload="metadata" src="${u}"></audio>`; const au=p.querySelector('audio'); setRate(au,rateOf('aud')); fixDur(au); if(mp3Doing.has(a.id)) paintMp3State(); continue;
     }
     const el=box.querySelector(`[data-att="${a.id}"]`); if(!el) continue;
     if(a.type==='application/pdf'){ el.innerHTML=`<div class="pdft">${svg('pdf')}<b>${esc(a.name.replace(/\.pdf$/i,''))}</b><small>${a.pages?a.pages+(a.pages>1?' páginas':' página'):'PDF'}${u?'':' · no Drive'}</small></div>`+(a.driveId?'':`<span class="bd" title="Aguardando envio ao Drive">${svg('cloudOff')}</span>`); continue; }
@@ -2383,6 +2404,7 @@ async function addFiles(files, src){
     try{ await IDB.put(a.id,blob); }catch(e){ toast('Sem espaço no aparelho para este anexo.'); continue; }
     n.attachments.push(a); added++; if(isAud) auds++;
     if(isImg||isPdf) setTimeout(()=>queueOcr(n.id,a.id),300);
+    if(isAud&&a.type!=='audio/mpeg') setTimeout(()=>queueMp3(n.id,a.id),400);
   }
   if(added){ n.updatedAt=now(); delete n._fresh; changed(); renderAtts(); renderList(); toast(added===1?(auds?'Áudio anexado':'Anexo adicionado'):added+' anexos adicionados'); }
 }
@@ -2395,6 +2417,7 @@ async function addRecording(noteId,blob,secs){
   try{ await IDB.put(a.id,blob); }catch(e){ toast('Sem espaço no aparelho para salvar o áudio.'); return; }
   n.attachments=n.attachments||[]; n.attachments.push(a); n.updatedAt=now(); delete n._fresh; changed();
   if(cur.noteId===n.id) renderAtts(); renderList(); toast('Áudio salvo · '+fmtDur(secs));
+  setTimeout(()=>queueMp3(n.id,a.id),400);
 }
 function cleanupRec(){
   clearInterval(AR.iv); cancelAnimationFrame(AR.raf);
@@ -2587,12 +2610,16 @@ function shareMenu(){
   const k=(n.attachments||[]).length;
   openSheet(`<h3>Enviar ou exportar</h3><p class="sub">${esc(n.title||'Sem título')}${k?` · ${k} ${k===1?'anexo':'anexos'}`:''}</p>
     <button class="row wa" id="sWa"><span data-i="whats"></span><span class="grow">Enviar no WhatsApp<small>Negrito, itálico e listas no formato do WhatsApp</small></span></button>
-    <button class="row" id="sPdf"><span data-i="pdf"></span><span class="grow">Exportar em PDF<small>Folha A4 com o texto e as fotos</small></span></button>
+    <button class="row" id="sPdf"><span data-i="pdf"></span><span class="grow">Exportar em PDF<small>Folha A4 com o texto, as fotos, o áudio e o vídeo</small></span></button>
+    <button class="row" id="sDocx"><span data-i="word"></span><span class="grow">Exportar para o Word (.docx)<small>Texto, fotos, áudio MP3 e vídeo MP4 dentro do arquivo</small></span></button>
+    <button class="row" id="sDoc"><span data-i="word"></span><span class="grow">Word 97-2003 (.doc)<small>Para Word antigo, com o mesmo conteúdo</small></span></button>
     <button class="row" id="sOther"><span data-i="share"></span><span class="grow">Compartilhar em outros apps</span></button>
     <button class="row" id="sCopy"><span data-i="copy"></span><span class="grow">Copiar no formato do WhatsApp</span></button>`,
   s=>{
     s.querySelector('#sWa').onclick=()=>{ closeSheet(); sendWhatsApp(n); };
     s.querySelector('#sPdf').onclick=()=>{ closeSheet(); exportPDF(n); };
+    s.querySelector('#sDocx').onclick=()=>{ closeSheet(); exportWord(n,'docx'); };
+    s.querySelector('#sDoc').onclick=()=>{ closeSheet(); exportWord(n,'doc'); };
     s.querySelector('#sOther').onclick=()=>{ closeSheet(); shareText(n.title||'Nota',noteText(n)); };
     s.querySelector('#sCopy').onclick=async()=>{ closeSheet(); try{ await navigator.clipboard.writeText(waText(n)); toast('Copiado. Cole no WhatsApp.'); }catch(e){ toast('Não consegui copiar daqui.'); } };
   });
@@ -2606,6 +2633,7 @@ function waText(n){
     const tag=node.tagName; if(tag==='BR') return '\n';
     let inner='', i=0;
     for(const c of node.childNodes){
+      if(c.nodeType===1&&/^(P|DIV|H\d|UL|OL|BLOCKQUOTE)$/.test(c.tagName)&&inner&&!inner.endsWith('\n')) inner+='\n';
       if(c.tagName==='LI'){ i++; const mk=node.classList&&node.classList.contains('ck')?(c.getAttribute('data-done')==='1'?'☑ ':'☐ '):(tag==='OL'?i+'. ':'• '); inner+=mk+walk(c).trim()+'\n'; }
       else inner+=walk(c);
     }
@@ -2616,34 +2644,13 @@ function waText(n){
     if(/^(P|DIV|H\d|UL|OL|LI)$/.test(tag)) inner=inner.replace(/\n+$/,'')+'\n';
     return inner;
   };
-  let body=''; for(const c of d.childNodes) body+=walk(c);
+  let body=''; for(const c of d.childNodes){ if(c.nodeType===1&&/^(P|DIV|H\d|UL|OL|BLOCKQUOTE)$/.test(c.tagName)&&body&&!body.endsWith('\n')) body+='\n'; body+=walk(c); }
   body=body.replace(/[ \t]+\n/g,'\n').replace(/\n{3,}/g,'\n\n').trim();
   return (n.title?'*'+n.title.trim()+'*\n\n':'')+body;
 }
 function nshare(d){ extLaunch=now(); return navigator.share(d); }
 function openLink(url){ extLaunch=now(); if(IS_APK){ NA.openExternal(url); return; } const a=document.createElement('a'); a.href=url; a.target='_blank'; a.rel='noopener'; document.body.appendChild(a); a.click(); a.remove(); }
 const openWaText = text => openLink('https://api.whatsapp.com/send?text='+encodeURIComponent(text));
-function sendWhatsApp(n){
-  const text=waText(n), atts=n.attachments||[];
-  if(!atts.length){ openWaText(text); return; }
-  const fotos=atts.filter(a=>/^image\//.test(a.type)).length, auds=atts.filter(a=>/^audio\//.test(a.type)).length, vids=atts.length-fotos-auds;
-  const desc=[fotos?fotos+(fotos>1?' fotos':' foto'):'',auds?auds+(auds>1?' áudios':' áudio'):'',vids?vids+(vids>1?' vídeos':' vídeo'):''].filter(Boolean).join(' e ').replace(/ e (?=.* e )/,', ');
-  openSheet(`<h3>Enviar os anexos junto?</h3><p class="sub">Esta nota tem ${desc}. Quer enviar no WhatsApp junto com o texto? Na lista que abrir, escolha o WhatsApp.</p>
-    <div class="btns"><button class="btn" id="wNo">Só o texto</button><button class="btn pri" id="wYes">Texto + ${desc}</button></div>`,
-  s=>{
-    let files=[]; const prep=(async()=>{ for(const a of atts){ const b=await IDB.get(a.id).catch(()=>null); if(b) files.push(new File([b],a.name,{type:a.type})); } })();
-    s.querySelector('#wNo').onclick=()=>{ closeSheet(); openWaText(text); };
-    s.querySelector('#wYes').onclick=async()=>{
-      await prep; closeSheet();
-      if(!files.length){ toast('Os anexos ainda não estão neste aparelho. Abrindo o WhatsApp só com o texto.'); openWaText(text); return; }
-      if(files.length<atts.length) toast('Alguns anexos ainda não foram baixados do Drive e não irão.');
-      if(navigator.canShare && navigator.canShare({files})){
-        try{ await nshare({files,text}); }
-        catch(e){ if(e.name!=='AbortError'){ toast('Não consegui enviar os anexos. Abrindo o WhatsApp só com o texto.'); openWaText(text); } }
-      } else { toast('Este aparelho não envia arquivos por aqui. Abrindo o WhatsApp só com o texto.'); openWaText(text); }
-    };
-  });
-}
 /* ---------- PDF próprio (funciona 100% offline) ----------
    Desenha a nota em páginas A4 (150 dpi) num canvas e monta o arquivo PDF aqui mesmo. */
 const PW=1240, PH=1754, MX=110, MT=110, MB=130;
@@ -2738,8 +2745,8 @@ async function renderPages(n, links={}){
     });
     y+=Math.round(px*0.35);
   }
-  // anexos
-  const atts=n.attachments||[];
+  // anexos (na mesma ordem da tela: áudios primeiro)
+  const atts=attOrder(n);
   if(atts.length){
     if(y+80>bottom) newPage();
     y+=30; ctx.font=`700 20px Manrope,system-ui,sans-serif`; ctx.fillStyle=MUTED; ctx.fillText('ANEXOS',MX,y); y+=16;
@@ -2779,8 +2786,28 @@ async function renderPages(n, links={}){
         if(blob||link) pages.media.push(entry);
         continue;
       }
+      if(/^audio\//.test(a.type)){
+        const ch=128, link=links[a.id]||'', mp3=isMp3(a), play=!!(blob&&mp3);
+        if(y+ch+120>bottom) newPage(); y+=24;
+        const entry={page:pages.length-1,a,blob,box:[MX,y,maxW,ch],link,linkBox:null,play};
+        ctx.fillStyle='#eaf1fc'; ctx.beginPath(); if(ctx.roundRect) ctx.roundRect(MX,y,maxW,ch,24); else ctx.rect(MX,y,maxW,ch); ctx.fill();
+        const cx=MX+66, cy=y+ch/2; ctx.fillStyle=ACC; ctx.beginPath(); ctx.arc(cx,cy,40,0,Math.PI*2); ctx.fill();
+        ctx.fillStyle='#fff'; ctx.beginPath(); ctx.moveTo(cx-13,cy-20); ctx.lineTo(cx-13,cy+20); ctx.lineTo(cx+20,cy); ctx.closePath(); ctx.fill();
+        ctx.fillStyle=INK; ctx.font=`700 24px Manrope,system-ui,sans-serif`; ctx.fillText(fitTxt(ctx,audLabel(a.name),maxW-160),MX+130,y+48);
+        ctx.fillStyle=ACC; let sd=0; for(const c of a.name) sd=(sd*31+c.charCodeAt(0))>>>0;
+        for(let i=0;i<Math.floor((maxW-260)/14);i++){ sd=(sd*1103515245+12345)>>>0; const h=8+(sd%30); ctx.fillRect(MX+130+i*14,y+90-h/2,7,h); }
+        ctx.fillStyle=MUTED; ctx.font=`600 20px Manrope,system-ui,sans-serif`; ctx.textAlign='right'; ctx.fillText((a.duration?fmtDur(a.duration):'')+(mp3?' · MP3':''),MX+maxW-24,y+48); ctx.textAlign='left';
+        y+=ch;
+        if(link){ y+=36; ctx.font=`700 21px Manrope,system-ui,sans-serif`; ctx.fillStyle=ACC;
+          const tt='▶  Toque aqui para ouvir no Google Drive', tw=ctx.measureText(tt).width; ctx.fillText(tt,MX,y); ctx.fillRect(MX,y+5,tw,2); entry.linkBox=[MX-6,y-26,tw+12,38]; }
+        y+=30; ctx.font=`500 18px Manrope,system-ui,sans-serif`; ctx.fillStyle=MUTED;
+        ctx.fillText(play?(link?'No computador, o áudio também toca dentro deste PDF pelo Adobe Acrobat.':'No computador, toque no áudio para ouvir dentro deste PDF (Adobe Acrobat).'):blob?'O áudio está nos anexos deste PDF.':'O áudio ainda não foi baixado neste aparelho.',MX,y);
+        if(play) { y+=26; ctx.fillText('O MP3 também fica nos anexos do PDF, para abrir em qualquer celular.',MX,y); }
+        if(blob||link) pages.media.push(entry);
+        continue;
+      }
       if(y+50>bottom) newPage(); y+=46; ctx.font=`500 22px Manrope,system-ui,sans-serif`; ctx.fillStyle=MUTED;
-      ctx.fillText((/^audio\//.test(a.type)?'Áudio: ':'Anexo: ')+a.name+(a.duration?' · '+fmtDur(a.duration):'')+(blob?'':' (não baixado)'),MX,y);
+      ctx.fillText('Anexo: '+a.name+(blob?'':' (não baixado)'),MX,y);
     }
   }
   // rodapé
@@ -2818,14 +2845,14 @@ function buildPDF(pgs){
   const rect=([x,y,w,h])=>`[${(x*kx).toFixed(2)} ${((PH-y-h)*ky).toFixed(2)} ${((x+w)*kx).toFixed(2)} ${((PH-y)*ky).toFixed(2)}]`;
   const plan=pgs.map(pg=>({pg,P:alloc(),C:alloc(),I:alloc(),items:(pg.media||[]).map(m=>({m,
     lt:m.link?alloc():0, lx:(m.link&&m.linkBox)?alloc():0,
-    e:m.blob?{ef:alloc(),fs:alloc(),mc:alloc(),rd:alloc(),act:alloc(),scr:alloc(),ap:alloc()}:null}))}));
+    e:m.blob?Object.assign({ef:alloc(),fs:alloc()},m.play===false?{}:{mc:alloc(),rd:alloc(),act:alloc(),scr:alloc(),ap:alloc()}):null}))}));
   const embeds=[]; plan.forEach(p=>p.items.forEach(it=>{ if(it.e) embeds.push(it); }));
   push('%PDF-1.7\n%âãÏÓ\n');
   const names=embeds.length?` /Names << /EmbeddedFiles << /Names [${embeds.map((it,i)=>pdfText(String(i+1).padStart(3,'0')+' - '+it.m.a.name)+' '+it.e.fs+' 0 R').join(' ')}] >> >>`:'';
   obj(1,`<< /Type /Catalog /Pages 2 0 R${names} >>`);
   obj(2,`<< /Type /Pages /Kids [${plan.map(p=>p.P+' 0 R').join(' ')}] /Count ${plan.length} >>`);
   plan.forEach((p,i)=>{
-    const refs=[]; p.items.forEach(it=>{ if(it.lt) refs.push(it.lt); if(it.e) refs.push(it.e.scr); if(it.lx) refs.push(it.lx); });
+    const refs=[]; p.items.forEach(it=>{ if(it.lt) refs.push(it.lt); if(it.e&&it.e.scr) refs.push(it.e.scr); if(it.lx) refs.push(it.lx); });
     const cs=`q ${W} 0 0 ${H} 0 0 cm /Im${i} Do Q`, im=p.pg;
     obj(p.P,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] /Resources << /XObject << /Im${i} ${p.I} 0 R >> >> /Contents ${p.C} 0 R${refs.length?' /Annots ['+refs.map(r=>r+' 0 R').join(' ')+']':''} >>`);
     obj(p.C,()=>{ push(`<< /Length ${cs.length} >>\nstream\n`); push(cs); push('\nendstream'); });
@@ -2834,14 +2861,15 @@ function buildPDF(pgs){
       const m=it.m, uri=m.link?String(m.link).replace(/[^A-Za-z0-9:/._~?=&%#+-]/g,''):'';
       if(it.lt) obj(it.lt,`<< /Type /Annot /Subtype /Link /Rect ${rect(m.box)} /Border [0 0 0] /F 4 /P ${p.P} 0 R /A << /S /URI /URI (${uri}) >> >>`);
       if(it.lx) obj(it.lx,`<< /Type /Annot /Subtype /Link /Rect ${rect(m.linkBox)} /Border [0 0 0] /F 4 /P ${p.P} 0 R /A << /S /URI /URI (${uri}) >> >>`);
-      if(it.e){ const e=it.e, mime=/^video\/[\w.+-]+$/.test(m.a.type)?m.a.type:'video/mp4', nm=m.a.name;
+      if(it.e){ const e=it.e, isA=/^audio\//.test(m.a.type), mime=/^(video|audio)\/[\w.+-]+$/.test(m.a.type)?m.a.type:'video/mp4', nm=m.a.name;
         obj(e.ef,()=>{ push(`<< /Type /EmbeddedFile /Subtype /${pdfName(mime)} /Params << /Size ${m.blob.size} /ModDate ${pdfDate(m.a.addedAt)} >> /Length ${m.blob.size} >>\nstream\n`); push(m.blob); push('\nendstream'); });
-        obj(e.fs,`<< /Type /Filespec /F (${pdfAscii(nm)}) /UF ${pdfText(nm)} /Desc ${pdfText('Vídeo anexado no Não Esquece')} /EF << /F ${e.ef} 0 R >> >>`);
+        obj(e.fs,`<< /Type /Filespec /F (${pdfAscii(nm)}) /UF ${pdfText(nm)} /Desc ${pdfText((isA?'Áudio':'Vídeo')+' anexado no Não Esquece')} /EF << /F ${e.ef} 0 R >> >>`);
+        if(!e.scr) return;
         obj(e.mc,`<< /Type /MediaClip /S /MCD /N ${pdfText(nm)} /CT (${mime}) /D ${e.fs} 0 R /P << /TF (TEMPACCESS) >> >>`);
         obj(e.rd,`<< /Type /Rendition /S /MR /N ${pdfText(nm)} /C ${e.mc} 0 R /P << /BE << /C true >> >> /SP << /BE << /W 3 >> >> >>`);
         obj(e.act,`<< /Type /Action /S /Rendition /OP 0 /AN ${e.scr} 0 R /R ${e.rd} 0 R >>`);
         obj(e.ap,()=>{ push('<< /Type /XObject /Subtype /Form /BBox [0 0 1 1] /Length 0 >>\nstream\n'); push('\nendstream'); });
-        obj(e.scr,`<< /Type /Annot /Subtype /Screen /Rect ${rect(m.box)} /F 4 /P ${p.P} 0 R /T ${pdfText(nm)} /Contents ${pdfText('Vídeo: '+nm)} /A ${e.act} 0 R /AP << /N ${e.ap} 0 R >> >>`);
+        obj(e.scr,`<< /Type /Annot /Subtype /Screen /Rect ${rect(m.box)} /F 4 /P ${p.P} 0 R /T ${pdfText(nm)} /Contents ${pdfText((isA?'Áudio: ':'Vídeo: ')+nm)} /A ${e.act} 0 R /AP << /N ${e.ap} 0 R >> >>`);
       }
     });
   });
@@ -2853,24 +2881,25 @@ function buildPDF(pgs){
 /* Libera o link "qualquer pessoa com o link pode ver" só dos vídeos desta nota. */
 async function prepareVideoLinks(n){
   const links={}; let missing=0;
-  for(const a0 of (n.attachments||[]).filter(a=>/^video\//.test(a.type))){
+  for(const a0 of (n.attachments||[]).filter(a=>/^(video|audio)\//.test(a.type))){
     const r=liveAtt(n.id,a0.id), a=r&&r.a; if(!a) continue;
     if(a.driveId && !a.shared && cfg.linked && navigator.onLine && hasToken()){
       try{ await api(`${DRIVE}/${a.driveId}/permissions?fields=id`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({role:'reader',type:'anyone'})}); a.shared=true; r.n.updatedAt=now(); changed(); }
-      catch(e){ logErr('Liberar link do vídeo: '+e.message); }
+      catch(e){ logErr('Liberar link do anexo: '+e.message); }
     }
     if(a.driveId && a.shared) links[a.id]='https://drive.google.com/file/d/'+encodeURIComponent(a.driveId)+'/view';
-    else missing++;
+    else if(/^video\//.test(a.type)) missing++;
   }
   return {links,missing};
 }
 async function exportPDF(n){
   flushEdit();
-  const nv=(n.attachments||[]).filter(a=>/^video\//.test(a.type)).length;
-  toast(nv?'Gerando PDF com '+(nv>1?nv+' vídeos':'o vídeo')+'…':'Gerando PDF…');
+  const nv=(n.attachments||[]).filter(a=>/^video\//.test(a.type)).length, na=(n.attachments||[]).filter(a=>/^audio\//.test(a.type)).length;
+  toast(nv||na?'Gerando PDF com '+[na?(na>1?na+' áudios':'o áudio'):'',nv?(nv>1?nv+' vídeos':'o vídeo'):''].filter(Boolean).join(' e ')+'…':'Gerando PDF…');
   let blob, missing=0;
   try{
-    let links={}; if(nv){ const r=await prepareVideoLinks(n); links=r.links; missing=r.missing; }
+    await ensureMp3(n);
+    let links={}; if(nv||na){ const r=await prepareVideoLinks(n); links=r.links; missing=r.missing; }
     const pages=await renderPages(n,links); const pgs=[];
     for(let i=0;i<pages.length;i++){ const c=pages[i]; pgs.push({w:c.width,h:c.height,data:await canvasJPEG(c),media:pages.media.filter(m=>m.page===i)}); }
     blob=buildPDF(pgs);
@@ -2884,7 +2913,7 @@ async function exportPDF(n){
     try{ await nshare({files:[file],title:name}); return; }
     catch(e){ if(e.name==='AbortError') return; }
   }
-  openSheet(`<h3>PDF pronto</h3><p class="sub">${esc(name)} · ${blob.size>1048576?(blob.size/1048576).toFixed(1)+' MB':(blob.size/1024).toFixed(0)+' KB'}${nv?'<br>O vídeo está dentro do PDF (toca no Adobe Acrobat do computador)'+(missing<nv?' e a imagem dele abre o vídeo no Google Drive.':'.'):''}${canShare?'<br>Toque em Compartilhar para escolher o app (WhatsApp, Gmail, Drive…).':''}</p>
+  openSheet(`<h3>PDF pronto</h3><p class="sub">${esc(name)} · ${blob.size>1048576?(blob.size/1048576).toFixed(1)+' MB':(blob.size/1024).toFixed(0)+' KB'}${nv||na?'<br>'+(na&&nv?'O áudio e o vídeo estão':na?'O áudio (MP3) está':'O vídeo está')+' dentro do PDF (toca no Adobe Acrobat do computador e fica nos anexos do PDF)'+(missing<nv||na?' e o link abre no Google Drive.':'.'):''}${canShare?'<br>Toque em Compartilhar para escolher o app (WhatsApp, Gmail, Drive…).':''}</p>
     <div class="btns">${canShare?`<button class="btn pri" id="pShare">Compartilhar PDF</button>`:''}<button class="btn ${canShare?'':'pri'}" id="pDown">Baixar PDF</button></div>`,
   s=>{
     const sh=s.querySelector('#pShare'); if(sh) sh.onclick=async()=>{ closeSheet(); try{ await nshare({files:[file],title:name}); }catch(e){} };
@@ -3564,7 +3593,7 @@ function flushPendingOpen(){
   const n=id?noteById(id):null;
   if(n&&!n.deleted&&!n.trashed){ if(!$('#sheet').hidden) closeSheet(); openNote(id); }
 }
-setInterval(()=>{ if(!appReady||locked||secOpen) return; if(evCheck){ evCheck=false; processAlarmEvents(); importQuick(); queueOldOcr(); } flushPendingOpen();
+setInterval(()=>{ if(!appReady||locked||secOpen) return; if(evCheck){ evCheck=false; processAlarmEvents(); importQuick(); queueOldOcr(); setTimeout(queueOldMp3,8000); } flushPendingOpen();
   if(pendingTab){ const t=pendingTab; pendingTab=null; setTab(t); }
   if(pendingNew){ pendingNew=false; if($('#sheet').hidden) newNote(); } },700);
 document.addEventListener('visibilitychange',()=>{ if(document.visibilityState!=='visible') return; evCheck=true; if(HAS_ALARM){ refreshAlarmBlock(); refreshAlarmWarn(); scheduleAlarms(); } });
@@ -3841,13 +3870,14 @@ function repData(p){ const {s,e}=repRange(p), t=now(), done=[], pend=[];
   return {s,e,done,pend,late,fotos}; }
 function relHTML(){ const r=repData(rep.p), multi=rep.p!=='hoje'&&rep.p!=='ontem';
   return `<div class="lhead"><h2>Relatório</h2></div>
-  <div class="tnote" style="margin:0 0 8px">Um PDF com o que foi concluído, com hora, fotos e etiquetas, pronto para mandar no WhatsApp.</div>
+  <div class="tnote" style="margin:0 0 8px">Um PDF com o que foi concluído, com hora, fotos e etiquetas, pronto para mandar no WhatsApp. Ou uma planilha do Excel, com data e hora até os segundos.</div>
   <div class="seg wrap" id="rpP">${REP_P.map(([k,l])=>`<button data-rp="${k}" aria-pressed="${k===rep.p}">${l}</button>`).join('')}</div>
   <div class="rpper">${esc(periodLabel(rep.p,r.s,r.e).replace(/^./,c=>c.toUpperCase()))}</div>
   <div class="rpsum"><div class="ok"><b>${r.done.length}</b><span>${r.done.length===1?'concluída':'concluídas'}</span></div><div><b>${r.pend.length}</b><span>${r.pend.length===1?'pendente':'pendentes'}</span></div><div class="${r.late?'bad':''}"><b>${r.late}</b><span>${r.late===1?'atrasada':'atrasadas'}</span></div><div><b>${r.fotos}</b><span>${r.fotos===1?'foto':'fotos'}</span></div></div>
   <label class="tcheck"><input type="checkbox" id="rpF" ${rep.fotos?'checked':''}><span>Incluir fotos e assinaturas</span></label>
   <label class="tcheck"><input type="checkbox" id="rpPd" ${rep.pend?'checked':''}><span>Incluir o que ficou pendente</span></label>
   <button class="btn pri rpgo" id="rpGo" ${r.done.length||(rep.pend&&r.pend.length)?'':'disabled'}>${svg('whats')}Gerar PDF e enviar</button>
+  <button class="btn rpgo2" id="rpXls" ${r.done.length||r.pend.length?'':'disabled'}>${svg('sheet')}Planilha do Excel (.xlsx)</button>
   ${r.done.length?`<div class="hsec">Concluídas · ${r.done.length}</div>`+r.done.map(n=>`<div class="hrow past"><div class="htime">${hm(new Date(n.doneAt))}${multi?`<small>${new Date(n.doneAt).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}</small>`:''}</div>${n._tk?tkCard(n._tk):noteCard(n,'')}</div>`).join(''):'<div class="empty" style="padding:18px 12px">Nada concluído neste período ainda.</div>'}`; }
 document.addEventListener('change',e=>{ if(e.target.id==='rpF') rep.fotos=e.target.checked; else if(e.target.id==='rpPd'){ rep.pend=e.target.checked; renderList(); } });
 document.addEventListener('click',e=>{
@@ -3858,6 +3888,7 @@ document.addEventListener('click',e=>{
   if(t.closest('#calNew')){ newNoteOn(cal.sel); return; }
   const rp=t.closest('[data-rp]'); if(rp){ rep.p=rp.dataset.rp; renderList(); return; }
   if(t.closest('#rpGo')){ makeReport(); return; }
+  if(t.closest('#rpXls')){ makeXlsx(); return; }
 });
 function rr(g,x,y,w,h,r){ g.beginPath(); g.moveTo(x+r,y); g.arcTo(x+w,y,x+w,y+h,r); g.arcTo(x+w,y+h,x,y+h,r); g.arcTo(x,y+h,x,y,r); g.arcTo(x,y,x+w,y,r); g.closePath(); }
 function hexA(h,a){ const m=/^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(h); return m?`rgba(${parseInt(m[1],16)},${parseInt(m[2],16)},${parseInt(m[3],16)},${a})`:`rgba(90,101,121,${a})`; }
@@ -4074,7 +4105,7 @@ async function importQuick(){
         n.html=rest?rest.split(/\n{2,}/).map(p=>'<p>'+esc(p).replace(/\n/g,'<br>')+'</p>').join(''):''; }
       else if(q.type==='audio'){ const blob=b64Blob(await nativeCall('quickData',q.id),q.mime||'audio/mp4');
         const a={id:uid(),name:'Áudio '+stamp(t)+'.m4a',type:'audio/mp4',size:blob.size,addedAt:t,duration:+q.dur||undefined};
-        await IDB.put(a.id,blob); n.title='Áudio rápido · '+fmtFull(t); n.attachments=[a]; }
+        await IDB.put(a.id,blob); n.title='Áudio rápido · '+fmtFull(t); n.attachments=[a]; setTimeout(()=>queueMp3(n.id,a.id),1500); }
       else { NA.quickDone(q.id); continue; }
       db.notes.push(n); NA.quickDone(q.id); k++;
     }catch(e){ logErr('Nota rápida: '+e.message); }
@@ -4405,6 +4436,360 @@ document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closes
   if(k==='aud'){ document.querySelectorAll('#atts audio').forEach(a=>setRate(a,r)); document.querySelectorAll('.spd[data-k="aud"]').forEach(x=>paintSpd(x,'aud')); }
   else { setRate($('#vbody video'),r); paintSpd(b,'vid'); }
   try{ navigator.vibrate&&navigator.vibrate(8); }catch(x){} },true);
+
+/* ======== 1.7: áudio em MP3, WhatsApp completo, Word (.docx e .doc) e planilha do relatório ======== */
+var HAS_MP3=IS_APK&&typeof NA.toMp3==='function';
+const isMp3=a=>a&&(a.type==='audio/mpeg'||/\.mp3$/i.test(a.name||''));
+const mp3Q=[], mp3Doing=new Set(); let mp3Busy=false, mp3Old=false;
+function queueMp3(nid,aid){ if(!HAS_MP3) return Promise.resolve(false); return new Promise(res=>{ mp3Q.push({nid,aid,res}); runMp3(); }); }
+async function runMp3(){ if(mp3Busy) return; mp3Busy=true;
+  try{ while(mp3Q.length){ const j=mp3Q.shift(); let r=false; try{ r=await mp3One(j.nid,j.aid); }catch(e){ logErr('MP3: '+(e&&e.message)); } j.res(r); } }
+  finally{ mp3Busy=false; } }
+const audPlaying=()=>[...document.querySelectorAll('#atts audio')].some(x=>!x.paused&&!x.ended);
+async function mp3One(nid,aid){
+  const n=noteById(nid); if(!n) return false; const a=(n.attachments||[]).find(x=>x.id===aid);
+  if(!a||!/^audio\//.test(a.type)) return false; if(isMp3(a)) return aid; if((a.mp3Fail||0)>=2) return false;
+  const blob=await IDB.get(a.id).catch(()=>null); if(!blob) return false;
+  mp3Doing.add(aid); if(cur.noteId===nid) paintMp3State();
+  let r=null;
+  try{ r=JSON.parse(await nativeCall('toMp3',a.type,await blobB64(blob))); }
+  catch(e){ a.mp3Fail=(a.mp3Fail||0)+1; mp3Doing.delete(aid); if(cur.noteId===nid) paintMp3State(); persist(); return false; }
+  const mp3=b64Blob(r.b64||'','audio/mpeg'); if(!mp3.size){ mp3Doing.delete(aid); return false; }
+  // não troca o arquivo enquanto ele está tocando na tela
+  for(let k=0;k<300&&cur.noteId===nid&&audPlaying();k++) await new Promise(x=>setTimeout(x,2000));
+  const n2=noteById(nid), i=n2?(n2.attachments||[]).findIndex(x=>x.id===aid):-1; if(i<0){ mp3Doing.delete(aid); return false; }
+  const old=n2.attachments[i], base=old.name.replace(/\.[^.]+$/,'');
+  const na={id:uid(),name:'',type:'audio/mpeg',size:mp3.size,addedAt:old.addedAt||now(),duration:old.duration||(r.dur?Math.round(r.dur):undefined)};
+  try{ await IDB.put(na.id,mp3); }catch(e){ mp3Doing.delete(aid); return false; }
+  n2.attachments.splice(i,1); na.name=uniqueName(n2,base+'.mp3'); n2.attachments.splice(i,0,na);
+  dropAtts([old]); n2.updatedAt=now(); changed(); mp3Doing.delete(aid);
+  if(cur.noteId===nid) renderAtts(); renderList();
+  return na.id; }
+function queueOldMp3(){ if(!HAS_MP3||mp3Old) return; mp3Old=true;
+  for(const n of keptNotes()) for(const a of (n.attachments||[])) if(/^audio\//.test(a.type)&&!isMp3(a)&&(a.mp3Fail||0)<2) queueMp3(n.id,a.id); }
+async function ensureMp3(n){ if(!HAS_MP3||!n) return; const todo=(n.attachments||[]).filter(a=>/^audio\//.test(a.type)&&!isMp3(a)&&(a.mp3Fail||0)<2);
+  if(!todo.length) return; toast(todo.length>1?'Convertendo '+todo.length+' áudios para MP3…':'Convertendo o áudio para MP3…');
+  await Promise.all(todo.map(a=>queueMp3(n.id,a.id))); }
+function paintMp3State(){ document.querySelectorAll('#atts [data-aud]').forEach(el=>{ const on=mp3Doing.has(el.dataset.aud); let s=el.querySelector('.mp3st');
+  if(on&&!s){ s=document.createElement('div'); s.className='mp3st'; s.textContent='Convertendo para MP3…'; el.appendChild(s); } else if(!on&&s) s.remove(); }); }
+
+/* ordem dos anexos igual à da tela: áudios em cima, depois fotos, vídeos e PDFs */
+function attOrder(n){ const L=(n&&n.attachments)||[]; return [...L.filter(a=>/^audio\//.test(a.type)),...L.filter(a=>!/^audio\//.test(a.type))]; }
+const attKind=a=>/^audio\//.test(a.type)?'Áudio':/^video\//.test(a.type)?'Vídeo':/^image\//.test(a.type)?(a.kind==='assinatura'?'Assinatura':a.kind==='desenho'?'Desenho':'Foto'):a.type==='application/pdf'?'PDF':'Arquivo';
+function attDesc(atts){ const c={}; for(const a of atts){ const k=attKind(a); c[k]=(c[k]||0)+1; }
+  const pl={Foto:'fotos',Áudio:'áudios',Vídeo:'vídeos',PDF:'PDFs',Assinatura:'assinaturas',Desenho:'desenhos',Arquivo:'arquivos'};
+  const parts=Object.entries(c).map(([k,v])=>v+' '+(v>1?pl[k]:k.toLowerCase())); return parts.length>1?parts.slice(0,-1).join(', ')+' e '+parts[parts.length-1]:parts[0]||''; }
+async function attBlob(a){ let b=await IDB.get(a.id).catch(()=>null); if(!b&&a.driveId&&hasToken()&&navigator.onLine){ if(await fetchAtt(a)) b=await IDB.get(a.id).catch(()=>null); } return b; }
+
+/* ---------- WhatsApp: primeiro o texto, depois os anexos na ordem da nota ---------- */
+function sendWhatsApp(n){
+  flushEdit();
+  const text=waText(n), atts=attOrder(n);
+  if(!atts.length){ openWaText(text); return; }
+  let step=1;
+  const prev=text.replace(/[*_~]/g,'').replace(/\s+/g,' ').trim();
+  const rows=`<div class="wst" data-st="1"><b>1</b><span class="grow">Texto da nota<small>${esc(prev.length>80?prev.slice(0,80)+'…':prev)}</small></span><span class="wok">${svg('check')}</span></div>`
+    +atts.map((a,i)=>`<div class="wst" data-st="2"><b>${i+2}</b><span class="grow">${attKind(a)}<small>${esc(HAS_MP3&&/^audio\//.test(a.type)?a.name.replace(/\.[^.]+$/,'')+'.mp3':a.name)}${a.duration?' · '+fmtDur(a.duration):''}</small></span><span class="wok">${svg('check')}</span></div>`).join('');
+  openSheet(`<h3>Enviar no WhatsApp</h3><p class="sub">Vai tudo, na ordem da nota: primeiro o texto e depois ${attDesc(atts)}.</p><div class="wsteps">${rows}</div>
+    <p class="sub" id="wsHint">Toque em <b>1. Enviar o texto</b> e escolha a conversa. Depois volte aqui e mande os anexos <b>na mesma conversa</b>.</p>
+    <div class="btns"><button class="btn" id="wsOnly">Só o texto</button><button class="btn pri" id="wsGo">1. Enviar o texto</button></div>`,
+  s=>{
+    const go=s.querySelector('#wsGo');
+    s.querySelector('#wsOnly').onclick=()=>{ closeSheet(); openWaText(text); };
+    if(HAS_MP3) ensureMp3(n); // já vai convertendo enquanto o texto é enviado
+    go.onclick=async()=>{
+      if(step===1){ openWaText(text); step=2; s.querySelector('[data-st="1"]').classList.add('ok');
+        go.textContent='2. Enviar '+(atts.length===1?'o anexo':'os '+atts.length+' anexos');
+        s.querySelector('#wsHint').innerHTML='Agora toque em <b>2. Enviar</b> e escolha <b>a mesma conversa</b>. Eles vão um depois do outro, nesta ordem.'; return; }
+      go.disabled=true; go.textContent='Preparando os anexos…';
+      await ensureMp3(n);
+      const files=[]; let miss=0;
+      for(const a of attOrder(noteById(n.id)||n)){ const b=await attBlob(a); if(b) files.push(new File([b],a.name,{type:a.type})); else miss++; }
+      if(!files.length){ go.disabled=false; go.textContent='2. Enviar os anexos'; toast('Os anexos ainda não estão neste aparelho.'); return; }
+      s.querySelectorAll('[data-st="2"]').forEach(x=>x.classList.add('ok')); closeSheet();
+      if(miss) toast(miss>1?miss+' anexos ainda não foram baixados do Drive e não vão.':'Um anexo ainda não foi baixado do Drive e não vai.');
+      try{ await nshare({files,app:'whatsapp'}); }catch(e){ if(e.name!=='AbortError') toast('Não consegui abrir o WhatsApp com os anexos.'); }
+    };
+  });
+}
+
+/* ---------- ZIP (Word e Excel são arquivos ZIP por dentro) ---------- */
+const CRC_T=(()=>{ const t=new Uint32Array(256); for(let n=0;n<256;n++){ let c=n; for(let k=0;k<8;k++) c=c&1?0xEDB88320^(c>>>1):c>>>1; t[n]=c>>>0; } return t; })();
+function crc32(u){ let c=0xFFFFFFFF; for(let i=0;i<u.length;i++) c=CRC_T[(c^u[i])&255]^(c>>>8); return (c^0xFFFFFFFF)>>>0; }
+async function zipBlob(files,type){
+  const te=new TextEncoder(), parts=[], cen=[]; let off=0;
+  const d=new Date(), tm=(d.getHours()<<11)|(d.getMinutes()<<5)|(d.getSeconds()>>1), dt=((d.getFullYear()-1980)<<9)|((d.getMonth()+1)<<5)|d.getDate();
+  for(const f of files){
+    const data=typeof f.data==='string'?te.encode(f.data):f.data instanceof Blob?new Uint8Array(await f.data.arrayBuffer()):f.data;
+    const nm=te.encode(f.name), crc=crc32(data), h=new DataView(new ArrayBuffer(30));
+    h.setUint32(0,0x04034b50,true); h.setUint16(4,20,true); h.setUint16(6,0x0800,true); h.setUint16(8,0,true); h.setUint16(10,tm,true); h.setUint16(12,dt,true);
+    h.setUint32(14,crc,true); h.setUint32(18,data.length,true); h.setUint32(22,data.length,true); h.setUint16(26,nm.length,true); h.setUint16(28,0,true);
+    parts.push(h.buffer,nm,data);
+    const c=new DataView(new ArrayBuffer(46)); c.setUint32(0,0x02014b50,true); c.setUint16(4,20,true); c.setUint16(6,20,true); c.setUint16(8,0x0800,true); c.setUint16(10,0,true);
+    c.setUint16(12,tm,true); c.setUint16(14,dt,true); c.setUint32(16,crc,true); c.setUint32(20,data.length,true); c.setUint32(24,data.length,true); c.setUint16(28,nm.length,true); c.setUint32(42,off,true);
+    cen.push(c.buffer,nm); off+=30+nm.length+data.length;
+  }
+  const cs=cen.reduce((k,x)=>k+(x.byteLength||x.length),0), e=new DataView(new ArrayBuffer(22));
+  e.setUint32(0,0x06054b50,true); e.setUint16(8,files.length,true); e.setUint16(10,files.length,true); e.setUint32(12,cs,true); e.setUint32(16,off,true);
+  return new Blob([...parts,...cen,e.buffer],{type}); }
+const xesc=s=>String(s==null?'':s).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\uFFFE\uFFFF]/g,'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+/* ---------- objeto "Pacote" do Windows: o MP3/MP4 vai dentro do Word e abre com dois cliques ---------- */
+const PKG_CLSID=[0x0C,0x00,0x03,0x00,0x00,0x00,0x00,0x00,0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46];
+const asciiName=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^\x20-\x7e]/g,'_').replace(/[\\/:*?"<>|]/g,'_').slice(0,120)||'arquivo';
+function bcat(arr){ let n=0; for(const a of arr) n+=a.length; const o=new Uint8Array(n); let p=0; for(const a of arr){ o.set(a,p); p+=a.length; } return o; }
+const u16=v=>new Uint8Array([v&255,(v>>8)&255]), u32=v=>new Uint8Array([v&255,(v>>>8)&255,(v>>>16)&255,(v>>>24)&255]);
+const az=s=>{ const b=new Uint8Array(s.length+1); for(let i=0;i<s.length;i++) b[i]=s.charCodeAt(i)&255; return b; };
+function pkgNative(name,data){ const fn=asciiName(name), path='C:\\Nao Esquece\\'+fn;
+  return bcat([u16(2),az(fn),az(path),u16(0),u16(3),u32(path.length+1),az(path),u32(data.length),data]); }
+function compObj(){ return bcat([new Uint8Array([1,0,0xFE,0xFF,3,0x0A,0,0,0xFF,0xFF,0xFF,0xFF]),new Uint8Array(PKG_CLSID),u32(12),az('OLE Package'),u32(0),u32(8),az('Package'),u32(0x71B239F4),u32(0),u32(0),u32(0)]); }
+// arquivo composto (CFB v3, setores de 512 bytes) com a pasta raiz do pacote
+function cfbBuild(streams,clsid){
+  const SS=512, MS=64, CUT=4096, FREE=0xFFFFFFFF, END=0xFFFFFFFE, FATS=0xFFFFFFFD, DIFS=0xFFFFFFFC;
+  const small=streams.filter(s=>s.data.length<CUT), big=streams.filter(s=>s.data.length>=CUT);
+  const mfat=[]; for(const s of small){ const k=Math.ceil(s.data.length/MS); s.start=k?mfat.length:END; for(let i=0;i<k;i++) mfat.push(i<k-1?mfat.length+1:END); }
+  const miniLen=mfat.length*MS, ents=1+streams.length;
+  const nDir=Math.ceil(ents*128/SS), nMF=Math.ceil(mfat.length*4/SS), nMS=Math.ceil(miniLen/SS), nBig=big.map(s=>Math.ceil(s.data.length/SS));
+  const nData=nDir+nMF+nMS+nBig.reduce((a,b)=>a+b,0);
+  let nFat=1, nDif=0; for(;;){ nDif=nFat>109?Math.ceil((nFat-109)/127):0; const need=Math.ceil((nData+nFat+nDif)/128); if(need<=nFat) break; nFat=need; }
+  const total=nData+nFat+nDif, fat=new Uint32Array(nFat*128).fill(FREE); let p=0;
+  const chain=n=>{ const a=p; for(let i=0;i<n;i++) fat[p+i]=i<n-1?p+i+1:END; p+=n; return n?a:END; };
+  const dirS=chain(nDir), mfS=chain(nMF), msS=chain(nMS); big.forEach((s,i)=>{ s.start=chain(nBig[i]); });
+  const fatS=[]; for(let i=0;i<nFat;i++){ fat[p]=FATS; fatS.push(p++); } const difS=[]; for(let i=0;i<nDif;i++){ fat[p]=DIFS; difS.push(p++); }
+  const out=new Uint8Array(SS*(1+total)), dv=new DataView(out.buffer), sec=i=>SS*(1+i);
+  [0xD0,0xCF,0x11,0xE0,0xA1,0xB1,0x1A,0xE1].forEach((b,i)=>out[i]=b);
+  dv.setUint16(24,0x3E,true); dv.setUint16(26,3,true); dv.setUint16(28,0xFFFE,true); dv.setUint16(30,9,true); dv.setUint16(32,6,true);
+  dv.setUint32(44,nFat,true); dv.setUint32(48,dirS,true); dv.setUint32(56,CUT,true); dv.setUint32(60,nMF?mfS:END,true); dv.setUint32(64,nMF,true);
+  dv.setUint32(68,nDif?difS[0]:END,true); dv.setUint32(72,nDif,true);
+  for(let i=0;i<109;i++) dv.setUint32(76+i*4,i<nFat?fatS[i]:FREE,true);
+  difS.forEach((s,k)=>{ const b=sec(s); for(let j=0;j<127;j++){ const fi=109+k*127+j; dv.setUint32(b+j*4,fi<nFat?fatS[fi]:FREE,true); } dv.setUint32(b+508,k<nDif-1?difS[k+1]:END,true); });
+  fatS.forEach((s,k)=>{ const b=sec(s); for(let j=0;j<128;j++) dv.setUint32(b+j*4,fat[k*128+j],true); });
+  mfat.forEach((v,i)=>dv.setUint32(sec(mfS)+i*4,v,true)); for(let i=mfat.length;i<nMF*128;i++) dv.setUint32(sec(mfS)+i*4,FREE,true);
+  small.forEach(s=>{ if(s.start!==END) out.set(s.data,sec(msS)+s.start*MS); });
+  big.forEach(s=>out.set(s.data,sec(s.start)));
+  // diretório: raiz + árvore (rubro-negra) dos fluxos, ordenada pelo tamanho e depois pelo nome em maiúsculas
+  const L=streams.map((s,i)=>({s,id:i+1})).sort((a,b)=>a.s.name.length-b.s.name.length||(a.s.name.toUpperCase()<b.s.name.toUpperCase()?-1:1));
+  const meta=new Map(); let maxD=0;
+  const build=(lo,hi,d)=>{ if(lo>hi) return FREE; const m=(lo+hi)>>1; const x={l:build(lo,m-1,d+1),r:build(m+1,hi,d+1),d}; maxD=Math.max(maxD,d); meta.set(L[m].id,x); return L[m].id; };
+  const rootChild=build(0,L.length-1,0), perfect=L.length===(2**(maxD+1))-1;
+  const ent=(i,name,type,color,l,r,c,cls,start,size)=>{ const b=sec(dirS)+i*128; for(let k=0;k<name.length;k++) dv.setUint16(b+k*2,name.charCodeAt(k),true);
+    dv.setUint16(b+64,name?(name.length+1)*2:0,true); out[b+66]=type; out[b+67]=color; dv.setUint32(b+68,l,true); dv.setUint32(b+72,r,true); dv.setUint32(b+76,c,true);
+    if(cls) out.set(cls,b+80); dv.setUint32(b+116,start,true); dv.setUint32(b+120,size,true); };
+  ent(0,'Root Entry',5,1,FREE,FREE,rootChild,new Uint8Array(clsid),nMS?msS:END,miniLen);
+  streams.forEach((s,i)=>{ const x=meta.get(i+1); ent(i+1,s.name,2,(!perfect&&x.d===maxD)?0:1,x.l,x.r,FREE,null,s.start,s.data.length); });
+  for(let i=ents;i<nDir*4;i++) ent(i,'',0,0,FREE,FREE,FREE,null,0,0);
+  return out; }
+function oleObject(name,data){ const nat=pkgNative(name,data);
+  return cfbBuild([{name:'\u0001CompObj',data:compObj()},{name:'\u0001Ole10Native',data:bcat([u32(nat.length),nat])}],PKG_CLSID); }
+
+/* ---------- figura que aparece no Word no lugar do áudio/vídeo/PDF ---------- */
+async function mediaCard(a,blob){
+  const isV=/^video\//.test(a.type), isA=/^audio\//.test(a.type);
+  const fr=isV&&blob?await videoFrame(blob).catch(()=>null):null;
+  let W=900, H=isV?506:220; if(fr&&fr.canvas){ const k=Math.min(900/fr.canvas.width,700/fr.canvas.height); W=Math.round(fr.canvas.width*k); H=Math.round(fr.canvas.height*k); }
+  const c=document.createElement('canvas'); c.width=W; c.height=H+(isV?92:0); const g=c.getContext('2d');
+  const rr=(x,y,w,h,r)=>{ g.beginPath(); if(g.roundRect) g.roundRect(x,y,w,h,r); else g.rect(x,y,w,h); };
+  g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height);
+  if(isV){ if(fr&&fr.canvas) g.drawImage(fr.canvas,0,0,W,H); else { g.fillStyle='#1c2a45'; g.fillRect(0,0,W,H); }
+    const R=Math.min(70,W/8); g.fillStyle='rgba(0,0,0,.55)'; g.beginPath(); g.arc(W/2,H/2,R,0,Math.PI*2); g.fill();
+    g.fillStyle='#fff'; g.beginPath(); g.moveTo(W/2-R*.32,H/2-R*.45); g.lineTo(W/2-R*.32,H/2+R*.45); g.lineTo(W/2+R*.5,H/2); g.closePath(); g.fill();
+    g.fillStyle='#121a2b'; g.font='700 30px Manrope,system-ui,sans-serif'; g.fillText(fitTxt(g,'Vídeo: '+a.name,W-30),14,H+40);
+    g.fillStyle='#5a6579'; g.font='500 24px Manrope,system-ui,sans-serif'; const dd=fr&&fr.duration?fmtDur(fr.duration)+' · ':''; g.fillText(dd+'dois cliques para assistir (MP4)',14,H+76); return c; }
+  g.fillStyle=isA?'#e8f0fd':'#fdeceb'; rr(2,2,W-4,H-4,34); g.fill();
+  const cx=110, cy=H/2; g.fillStyle=isA?'#0a54c8':'#c8341f'; g.beginPath(); g.arc(cx,cy,62,0,Math.PI*2); g.fill(); g.fillStyle='#fff';
+  if(isA){ g.beginPath(); g.moveTo(cx-20,cy-30); g.lineTo(cx-20,cy+30); g.lineTo(cx+30,cy); g.closePath(); g.fill(); }
+  else { g.font='800 34px Manrope,system-ui,sans-serif'; g.textAlign='center'; g.fillText('PDF',cx,cy+12); g.textAlign='left'; }
+  g.fillStyle='#121a2b'; g.font='700 34px Manrope,system-ui,sans-serif'; g.fillText(fitTxt(g,isA?audLabel(a.name):'PDF: '+a.name,W-230),200,isA?86:100);
+  g.fillStyle='#5a6579'; g.font='500 26px Manrope,system-ui,sans-serif'; g.fillText((a.duration?fmtDur(a.duration)+' · ':'')+(isA?'dois cliques para ouvir ('+((a.name.match(/\.([a-z0-9]+)$/i)||[,'áudio'])[1].toUpperCase())+')':'dois cliques para abrir'),200,isA?130:146);
+  if(isA){ g.fillStyle='#0a54c8'; let sd=0; for(const ch of a.name) sd=(sd*31+ch.charCodeAt(0))>>>0; for(let i=0;i<40;i++){ sd=(sd*1103515245+12345)>>>0; const h=10+(sd%38); g.fillRect(200+i*16,175-h/2,8,h); } }
+  return c; }
+const audLabel=nm=>/^áudio/i.test(nm)?nm:'Áudio: '+nm;
+function fitTxt(g,t,w){ if(g.measureText(t).width<=w) return t; while(t.length>4&&g.measureText(t+'…').width>w) t=t.slice(0,-1); return t+'…'; }
+const canvasPNG=c=>new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej(new Error('png')),'image/png'));
+async function imgForDoc(blob,type){ // fotos em JPEG ou PNG, do tamanho certo para o documento
+  let bmp=null; try{ bmp=await createImageBitmap(blob); }catch(e){ return null; }
+  const k=Math.min(1,1600/Math.max(bmp.width,bmp.height));
+  if(k===1&&/^image\/(jpeg|png)$/.test(type)) return {blob,type,w:bmp.width,h:bmp.height};
+  const c=document.createElement('canvas'); c.width=Math.round(bmp.width*k); c.height=Math.round(bmp.height*k); const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height); g.drawImage(bmp,0,0,c.width,c.height);
+  return type==='image/png'?{blob:await canvasPNG(c),type:'image/png',w:c.width,h:c.height}:{blob:await canvasJPEG(c),type:'image/jpeg',w:c.width,h:c.height}; }
+
+/* ---------- conteúdo da nota pronto para Word (os dois formatos) ---------- */
+async function docModel(n,links){
+  const atts=[]; for(const a of attOrder(n)){ const blob=await IDB.get(a.id).catch(()=>null); atts.push({a,blob,link:links[a.id]||''}); }
+  return {title:n.title||'Sem título', meta:new Date(n.updatedAt).toLocaleString('pt-BR',{dateStyle:'long',timeStyle:'short'})+((folderById(n.folderId)||{}).name?'  ·  '+folderById(n.folderId).name:'')+(n.urgent?'  ·  Urgente':'')+(noteTags(n).length?'  ·  '+noteTags(n).map(t=>t.name).join(', '):''),
+    blocks:parseBlocks(n.html), atts}; }
+const DOC_W=9638; // largura útil da folha A4 com 2 cm de margem, em twips
+async function buildDocx(n,links){
+  const m=await docModel(n,links), rels=[], media=[]; let rid=10, pid=1;
+  const rel=(type,target,ext)=>{ const id='rId'+(rid++); rels.push(`<Relationship Id="${id}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/${type}" Target="${xesc(target)}"${ext?' TargetMode="External"':''}/>`); return id; };
+  const run=(t,o={})=>`<w:r><w:rPr>${o.b?'<w:b/>':''}${o.i?'<w:i/>':''}${o.u?'<w:u w:val="single"/>':''}${o.s?'<w:strike/>':''}${o.color?`<w:color w:val="${o.color}"/>`:''}${o.sz?`<w:sz w:val="${o.sz}"/><w:szCs w:val="${o.sz}"/>`:''}</w:rPr><w:t xml:space="preserve">${xesc(t)}</w:t></w:r>`;
+  const para=(inner,ppr='')=>`<w:p><w:pPr>${ppr}</w:pPr>${inner}</w:p>`;
+  const link=(url,t)=>`<w:hyperlink r:id="${rel('hyperlink',url,true)}" w:history="1">${run(t,{color:'0A54C8',u:true,b:true})}</w:hyperlink>`;
+  let body=para(run(m.title,{b:true,sz:40}),'<w:spacing w:after="60"/>')
+    +para(run(m.meta,{color:'5A6579',sz:20}),'<w:pBdr><w:bottom w:val="single" w:sz="12" w:space="6" w:color="0A54C8"/></w:pBdr><w:spacing w:after="240"/>');
+  for(const b of m.blocks){
+    const runs=b.runs.filter(r=>r.text!=='').map(r=>run(r.text.replace(/\n/g,' '),{b:r.b,i:r.i,u:r.u,s:r.s||(b.list==='ck'&&b.done),color:b.list==='ck'&&b.done?'5A6579':''})).join('');
+    const jc=b.align==='center'?'<w:jc w:val="center"/>':(b.align==='right'||b.align==='end')?'<w:jc w:val="right"/>':'';
+    if(b.list){ const mk=b.list==='ck'?(b.done?'☑':'☐'):b.list==='ol'?b.idx+'.':'•';
+      body+=para(run(mk+'\t',{color:b.list==='ck'&&b.done?'127A49':'0A54C8',b:b.list!=='ck'})+runs,`<w:tabs><w:tab w:val="left" w:pos="567"/></w:tabs><w:ind w:left="567" w:hanging="567"/>${jc}`); }
+    else body+=para(runs,jc);
+  }
+  let shapetype=false;
+  if(m.atts.length) body+=para(run('ANEXOS',{b:true,color:'5A6579',sz:20}),'<w:spacing w:before="360" w:after="120"/>');
+  for(const {a,blob,link:url} of m.atts){
+    if(blob&&/^image\//.test(a.type)){ const im=await imgForDoc(blob,a.type); if(im){ const ext=im.type==='image/png'?'png':'jpeg', fn=`media/imagem${pid}.${ext}`; media.push({name:'word/'+fn,data:im.blob});
+      const r=rel('image',fn), k=Math.min(1,(DOC_W*635)/(im.w*9525)), cx=Math.round(im.w*9525*k), cy=Math.round(im.h*9525*k), id=pid++;
+      body+=para(`<w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="${cx}" cy="${cy}"/><wp:docPr id="${id}" name="${xesc(a.name)}"/><wp:cNvGraphicFramePr><a:graphicFrameLocks noChangeAspect="1"/></wp:cNvGraphicFramePr><a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:pic><pic:nvPicPr><pic:cNvPr id="${id}" name="${xesc(a.name)}"/><pic:cNvPicPr/></pic:nvPicPr><pic:blipFill><a:blip r:embed="${r}"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill><pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="${cx}" cy="${cy}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r>`,'<w:jc w:val="center"/><w:spacing w:before="120" w:after="120"/>');
+      if(a.kind==='assinatura') body+=para(run('Assinatura'+(a.signer?' de '+a.signer:''),{color:'5A6579',sz:20}),'<w:jc w:val="center"/>');
+      continue; } }
+    const isA=/^audio\//.test(a.type), isV=/^video\//.test(a.type), what=isA?'Áudio':isV?'Vídeo':attKind(a);
+    if(blob){ const card=await mediaCard(a,blob), png=await canvasPNG(card), id=pid++;
+      media.push({name:`word/media/icone${id}.png`,data:png}); media.push({name:`word/embeddings/oleObject${id}.bin`,data:oleObject(a.name,new Uint8Array(await blob.arrayBuffer()))});
+      const ri=rel('image',`media/icone${id}.png`), ro=rel('oleObject',`embeddings/oleObject${id}.bin`);
+      const wpt=Math.min(DOC_W/20,card.width*0.5), hpt=Math.round(card.height*(wpt/card.width));
+      body+=para(`<w:r><w:object w:dxaOrig="${Math.round(wpt*20)}" w:dyaOrig="${hpt*20}">${shapetype?'':VML_T75}<v:shape id="_x0000_i${1024+id}" type="#_x0000_t75" style="width:${wpt}pt;height:${hpt}pt" o:ole=""><v:imagedata r:id="${ri}" o:title=""/></v:shape><o:OLEObject Type="Embed" ProgID="Package" ShapeID="_x0000_i${1024+id}" DrawAspect="Icon" ObjectID="_${1700000000+id}" r:id="${ro}"/></w:object></w:r>`,'<w:jc w:val="center"/><w:spacing w:before="120" w:after="60"/>');
+      shapetype=true;
+      body+=para(run(`${what} dentro deste documento: no Word do computador, dê dois cliques na figura para ${isA?'ouvir':isV?'assistir':'abrir'}.`,{color:'5A6579',sz:18}),'<w:jc w:val="center"/>'); }
+    else body+=para(run(`${what}: ${a.name} (ainda não foi baixado neste aparelho)`,{color:'5A6579'}));
+    if(url) body+=para(link(url,`▶ ${isA?'Ouvir':isV?'Assistir':'Abrir'} no Google Drive`),'<w:jc w:val="center"/><w:spacing w:after="200"/>');
+  }
+  body+=para(run('Feito no Não Esquece',{color:'8A94A6',sz:16}),'<w:jc w:val="right"/><w:spacing w:before="480"/>');
+  const doc=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"><w:body>${body}<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="709" w:footer="709" w:gutter="0"/></w:sectPr></w:body></w:document>`;
+  const styles=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:eastAsia="Calibri" w:cs="Calibri"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:val="pt-BR"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="100" w:line="276" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name w:val="Hyperlink"/><w:rPr><w:color w:val="0A54C8"/><w:u w:val="single"/></w:rPr></w:style></w:styles>`;
+  const iso=new Date().toISOString().replace(/\.\d+Z$/,'Z');
+  const files=[
+    {name:'[Content_Types].xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Default Extension="png" ContentType="image/png"/><Default Extension="jpeg" ContentType="image/jpeg"/><Default Extension="bin" ContentType="application/vnd.openxmlformats-officedocument.oleObject"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/><Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/><Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/></Types>`},
+    {name:'_rels/.rels',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/></Relationships>`},
+    {name:'docProps/core.xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${xesc(m.title)}</dc:title><dc:creator>Não Esquece</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">${iso}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">${iso}</dcterms:modified></cp:coreProperties>`},
+    {name:'docProps/app.xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>Não Esquece ${APP_VERSION}</Application></Properties>`},
+    {name:'word/document.xml',data:doc},{name:'word/styles.xml',data:styles},
+    {name:'word/_rels/document.xml.rels',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>${rels.join('')}</Relationships>`},
+    ...media];
+  return zipBlob(files,'application/vnd.openxmlformats-officedocument.wordprocessingml.document'); }
+var VML_T75='<v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f"><v:stroke joinstyle="miter"/><v:formulas><v:f eqn="if lineDrawn pixelLineWidth 0"/><v:f eqn="sum @0 1 0"/><v:f eqn="sum 0 0 @1"/><v:f eqn="prod @2 1 2"/><v:f eqn="prod @3 21600 pixelWidth"/><v:f eqn="prod @3 21600 pixelHeight"/><v:f eqn="sum @0 0 1"/><v:f eqn="prod @6 1 2"/><v:f eqn="prod @7 21600 pixelWidth"/><v:f eqn="sum @8 21600 0"/><v:f eqn="prod @7 21600 pixelHeight"/><v:f eqn="sum @10 21600 0"/></v:formulas><v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/><o:lock v:ext="edit" aspectratio="t"/></v:shapetype>';
+
+/* .doc (Word 97-2003): documento RTF, que o Word abre como .doc, com o MP3/MP4 dentro (objeto Pacote) */
+const HEX=(()=>{ const t=[]; for(let i=0;i<256;i++) t.push((i<16?'0':'')+i.toString(16)); return t; })();
+function hexParts(u8,out){ const CH=32768; for(let i=0;i<u8.length;i+=CH){ let s=''; const e=Math.min(u8.length,i+CH); for(let j=i;j<e;j++) s+=HEX[u8[j]]; out.push(s,'\n'); } }
+const rtfTxt=s=>{ let o=''; for(const ch of String(s)){ const c=ch.codePointAt(0); if(ch==='\\'||ch==='{'||ch==='}') o+='\\'+ch; else if(ch==='\n') o+='\\line '; else if(ch==='\t') o+='\\tab ';
+  else if(c<128) o+=ch; else if(c<0x10000) o+='\\u'+(c>32767?c-65536:c)+'?'; else { const h=0xD800+((c-0x10000)>>10), l=0xDC00+((c-0x10000)&1023); o+='\\u'+(h-65536)+'?\\u'+(l-65536)+'?'; } } return o; };
+async function buildDoc(n,links){
+  const m=await docModel(n,links), P=['{\\rtf1\\ansi\\ansicpg1252\\deff0\\uc1{\\fonttbl{\\f0\\fswiss\\fcharset0 Calibri;}{\\f1\\fnil\\fcharset0 Segoe UI Symbol;}}{\\colortbl ;\\red10\\green84\\blue200;\\red90\\green101\\blue121;\\red18\\green122\\blue73;}\\paperw11906\\paperh16838\\margl1134\\margr1134\\margt1134\\margb1134\\viewkind4\n'];
+  const par=(t,fmt='')=>P.push('\\pard\\sa120'+fmt+' '+t+'\\par\n');
+  par('\\b\\fs40 '+rtfTxt(m.title)+'\\b0\\fs24');
+  par('\\cf2\\fs20 '+rtfTxt(m.meta)+'\\cf0\\fs24','\\brdrb\\brdrs\\brdrw20\\brsp80\\brdrcf1');
+  for(const b of m.blocks){
+    const runs=b.runs.filter(r=>r.text!=='').map(r=>{ const s=r.s||(b.list==='ck'&&b.done); return '{'+(r.b?'\\b':'')+(r.i?'\\i':'')+(r.u?'\\ul':'')+(s?'\\strike':'')+(b.list==='ck'&&b.done?'\\cf2':'')+' '+rtfTxt(r.text.replace(/\n/g,' '))+'}'; }).join('');
+    const q=b.align==='center'?'\\qc':(b.align==='right'||b.align==='end')?'\\qr':'';
+    if(b.list){ const mk=b.list==='ck'?(b.done?'☑':'☐'):b.list==='ol'?b.idx+'.':'•'; par('{'+(b.list==='ck'?'\\f1':'\\b\\cf1')+' '+rtfTxt(mk)+'}\\tab '+runs,'\\li567\\fi-567\\tx567'+q); }
+    else par(runs||' ',q);
+  }
+  if(m.atts.length) par('\\b\\cf2\\fs20 ANEXOS\\b0\\cf0\\fs24','\\sb240');
+  for(const {a,blob,link:url} of m.atts){
+    if(blob&&/^image\//.test(a.type)){ const im=await imgForDoc(blob,a.type); if(im){ const k=Math.min(1,DOC_W/(im.w*15)), gw=Math.round(im.w*15*k), gh=Math.round(im.h*15*k);
+        P.push(`\\pard\\qc\\sa120{\\pict${im.type==='image/png'?'\\pngblip':'\\jpegblip'}\\picw${im.w}\\pich${im.h}\\picwgoal${gw}\\pichgoal${gh}\n`); hexParts(new Uint8Array(await im.blob.arrayBuffer()),P); P.push('}\\par\n');
+        if(a.kind==='assinatura') par('\\cf2\\fs20 '+rtfTxt('Assinatura'+(a.signer?' de '+a.signer:''))+'\\cf0\\fs24','\\qc');
+        continue; } }
+    const isA=/^audio\//.test(a.type), isV=/^video\//.test(a.type), what=isA?'Áudio':isV?'Vídeo':attKind(a);
+    if(blob){ const card=await mediaCard(a,blob), png=new Uint8Array(await (await canvasPNG(card)).arrayBuffer()), data=new Uint8Array(await blob.arrayBuffer());
+      const nat=pkgNative(a.name,data), gw=Math.min(DOC_W,Math.round(card.width*10)), gh=Math.round(card.height*(gw/card.width));
+      P.push(`\\pard\\qc\\sa60{\\object\\objemb\\objw${gw}\\objh${gh}{\\*\\objclass Package}{\\*\\objdata\n`);
+      hexParts(bcat([u32(0x0501),u32(2),u32(8),az('Package'),u32(0),u32(0),u32(nat.length)]),P); hexParts(nat,P); hexParts(bcat([u32(0x0501),u32(0)]),P);
+      P.push(`}{\\result{\\pict\\pngblip\\picw${card.width}\\pich${card.height}\\picwgoal${gw}\\pichgoal${gh}\n`); hexParts(png,P); P.push('}}}\\par\n');
+      par('\\cf2\\fs18 '+rtfTxt(`${what} dentro deste documento: no Word do computador, dê dois cliques na figura para ${isA?'ouvir':isV?'assistir':'abrir'}.`)+'\\cf0\\fs24','\\qc'); }
+    else par('\\cf2 '+rtfTxt(`${what}: ${a.name} (ainda não foi baixado neste aparelho)`)+'\\cf0');
+    if(url) par(`{\\field{\\*\\fldinst{HYPERLINK "${url.replace(/[\\"{}]/g,'')}"}}{\\fldrslt{\\ul\\b\\cf1 ${rtfTxt('▶ '+(isA?'Ouvir':isV?'Assistir':'Abrir')+' no Google Drive')}}}}`,'\\qc');
+  }
+  par('\\cf2\\fs16 '+rtfTxt('Feito no Não Esquece')+'\\cf0','\\qr\\sb480');
+  P.push('}');
+  return new Blob(P,{type:'application/msword'}); }
+
+/* exportar a nota para o Word */
+async function exportWord(n,fmt){
+  flushEdit(); const isDoc=fmt==='doc';
+  const nm=(n.attachments||[]).filter(a=>/^(audio|video)\//.test(a.type)).length;
+  toast(nm?'Gerando o Word com '+(nm>1?nm+' áudios e vídeos':'o áudio/vídeo')+'…':'Gerando o Word…');
+  let blob;
+  try{
+    await ensureMp3(n);
+    const {links}=nm?await prepareVideoLinks(n):{links:{}};
+    blob=isDoc?await buildDoc(n,links):await buildDocx(n,links);
+  }catch(e){ logErr('Word: '+(e&&e.message)); toast('Não consegui gerar o arquivo do Word.'); return; }
+  const name=safeName(n.title)+(isDoc?'.doc':'.docx'), type=isDoc?'application/msword':'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+  fileReady(name,blob,type,nm?`Os áudios (MP3) e vídeos (MP4) estão dentro do documento: no Word do computador, dois cliques na figura abrem cada um.`:'');
+}
+// arquivo pronto: compartilhar (WhatsApp, Gmail, Drive…) ou salvar no celular
+function fileReady(name,blob,type,extra){
+  const file=new File([blob],name,{type}), canShare=navigator.canShare&&navigator.canShare({files:[file]});
+  const sz=blob.size>1048576?(blob.size/1048576).toFixed(1)+' MB':Math.max(1,Math.round(blob.size/1024))+' KB';
+  openSheet(`<h3>Arquivo pronto</h3><p class="sub"><b>${esc(name)}</b> · ${sz}${extra?'<br>'+extra:''}</p>
+    <div class="btns">${canShare?`<button class="btn pri" id="frShare">${svg('share')}Enviar</button>`:''}<button class="btn ${canShare?'':'pri'}" id="frSave">${svg('download')}Salvar no celular</button></div>`,
+  s=>{ const sh=s.querySelector('#frShare'); if(sh) sh.onclick=async()=>{ closeSheet(); try{ await nshare({files:[file],title:name}); }catch(e){} };
+    s.querySelector('#frSave').onclick=()=>{ closeSheet(); download(name,blob,type); }; }); }
+
+/* ---------- relatório em planilha do Excel (.xlsx) ---------- */
+const xlSerial=t=>(t-new Date(t).getTimezoneOffset()*60000)/864e5+25569; // data e hora local no formato do Excel
+const XL={HEAD:1,DATE:2,TIME:3,DT:4,WRAP:5,BOLD:6,OK:7,BAD:8,PEND:9,TITLE:10,INT:11,LINK:12};
+function xlCell(ref,v,s){ if(v==null||v==='') return s?`<c r="${ref}" s="${s}"/>`:'';
+  if(typeof v==='number') return `<c r="${ref}"${s?` s="${s}"`:''}><v>${Number.isFinite(v)?+v.toFixed(8):0}</v></c>`;
+  const t=String(v).slice(0,32000); return `<c r="${ref}" t="inlineStr"${s?` s="${s}"`:''}><is><t xml:space="preserve">${xesc(t)}</t></is></c>`; }
+const xlCol=i=>{ let s=''; i++; while(i){ const m=(i-1)%26; s=String.fromCharCode(65+m)+s; i=Math.floor((i-1)/26); } return s; };
+function xlSheet(sh){ const rows=sh.rows.map((r,ri)=>`<row r="${ri+1}"${sh.heights&&sh.heights[ri]?` ht="${sh.heights[ri]}" customHeight="1"`:''}>${r.map((c,ci)=>{ const o=c&&typeof c==='object'&&!Array.isArray(c)?c:{v:c}; return xlCell(xlCol(ci)+(ri+1),o.v,o.s); }).join('')}</row>`).join('');
+  const last=xlCol(Math.max(0,...sh.rows.map(r=>r.length))-1)+sh.rows.length, hr=sh.head||1;
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><dimension ref="A1:${last}"/><sheetViews><sheetView workbookViewId="0"${sh.first?' tabSelected="1"':''}>${sh.freeze?`<pane ySplit="${hr}" topLeftCell="A${hr+1}" activePane="bottomLeft" state="frozen"/>`:''}</sheetView></sheetViews><sheetFormatPr defaultRowHeight="15"/><cols>${sh.cols.map((w,i)=>`<col min="${i+1}" max="${i+1}" width="${w}" customWidth="1"/>`).join('')}</cols><sheetData>${rows}</sheetData>${sh.filter&&sh.rows.length>hr?`<autoFilter ref="A${hr}:${xlCol(sh.rows[hr-1].length-1)}${sh.rows.length}"/>`:''}<pageMargins left="0.5" right="0.5" top="0.6" bottom="0.6" header="0.3" footer="0.3"/><pageSetup paperSize="9" orientation="landscape" fitToWidth="1" fitToHeight="0"/></worksheet>`; }
+function xlsxBlob(sheets,title){
+  const styles=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><numFmts count="3"><numFmt numFmtId="164" formatCode="dd/mm/yyyy"/><numFmt numFmtId="165" formatCode="hh:mm:ss"/><numFmt numFmtId="166" formatCode="dd/mm/yyyy hh:mm:ss"/></numFmts>
+<fonts count="8"><font><sz val="11"/><name val="Calibri"/><family val="2"/></font><font><b/><sz val="11"/><color rgb="FFFFFFFF"/><name val="Calibri"/><family val="2"/></font><font><b/><sz val="11"/><name val="Calibri"/><family val="2"/></font><font><b/><sz val="11"/><color rgb="FF127A49"/><name val="Calibri"/><family val="2"/></font><font><b/><sz val="11"/><color rgb="FFB42318"/><name val="Calibri"/><family val="2"/></font><font><b/><sz val="11"/><color rgb="FF9A6700"/><name val="Calibri"/><family val="2"/></font><font><b/><sz val="16"/><color rgb="FF0A54C8"/><name val="Calibri"/><family val="2"/></font><font><u/><sz val="11"/><color rgb="FF0A54C8"/><name val="Calibri"/><family val="2"/></font></fonts>
+<fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF0A54C8"/><bgColor indexed="64"/></patternFill></fill></fills>
+<borders count="2"><border><left/><right/><top/><bottom/><diagonal/></border><border><left/><right/><top/><bottom style="thin"><color rgb="FFD4DCEA"/></bottom><diagonal/></border></borders>
+<cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs>
+<cellXfs count="13"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment vertical="center" wrapText="1"/></xf><xf numFmtId="164" fontId="0" fillId="0" borderId="1" xfId="0" applyNumberFormat="1" applyBorder="1" applyAlignment="1"><alignment vertical="top"/></xf><xf numFmtId="165" fontId="0" fillId="0" borderId="1" xfId="0" applyNumberFormat="1" applyBorder="1" applyAlignment="1"><alignment vertical="top"/></xf><xf numFmtId="166" fontId="0" fillId="0" borderId="1" xfId="0" applyNumberFormat="1" applyBorder="1" applyAlignment="1"><alignment vertical="top"/></xf><xf numFmtId="0" fontId="0" fillId="0" borderId="1" xfId="0" applyBorder="1" applyAlignment="1"><alignment vertical="top" wrapText="1"/></xf><xf numFmtId="0" fontId="2" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1" applyAlignment="1"><alignment vertical="top" wrapText="1"/></xf><xf numFmtId="0" fontId="3" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1" applyAlignment="1"><alignment vertical="top"/></xf><xf numFmtId="0" fontId="4" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1" applyAlignment="1"><alignment vertical="top"/></xf><xf numFmtId="0" fontId="5" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1" applyAlignment="1"><alignment vertical="top"/></xf><xf numFmtId="0" fontId="6" fillId="0" borderId="0" xfId="0" applyFont="1"/><xf numFmtId="1" fontId="0" fillId="0" borderId="1" xfId="0" applyNumberFormat="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="top"/></xf><xf numFmtId="0" fontId="7" fillId="0" borderId="1" xfId="0" applyFont="1" applyBorder="1"/></cellXfs>
+<cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`;
+  const iso=new Date().toISOString().replace(/\.\d+Z$/,'Z'), sn=s=>s.replace(/[\\/?*[\]:]/g,'').slice(0,31);
+  const files=[
+    {name:'[Content_Types].xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>${sheets.map((s,i)=>`<Override PartName="/xl/worksheets/sheet${i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join('')}<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/><Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/></Types>`},
+    {name:'_rels/.rels',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/></Relationships>`},
+    {name:'docProps/core.xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${xesc(title)}</dc:title><dc:creator>Não Esquece</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">${iso}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">${iso}</dcterms:modified></cp:coreProperties>`},
+    {name:'docProps/app.xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>Não Esquece ${APP_VERSION}</Application></Properties>`},
+    {name:'xl/workbook.xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><bookViews><workbookView activeTab="0"/></bookViews><sheets>${sheets.map((s,i)=>`<sheet name="${xesc(sn(s.name))}" sheetId="${i+1}" r:id="rId${i+1}"/>`).join('')}</sheets><definedNames>${sheets.map((s,i)=>s.filter&&s.rows.length>(s.head||1)?`<definedName name="_xlnm._FilterDatabase" localSheetId="${i}" hidden="1">'${xesc(sn(s.name))}'!$A$${s.head||1}:$${xlCol(s.rows[(s.head||1)-1].length-1)}$${s.rows.length}</definedName>`:'').join('')}</definedNames></workbook>`},
+    {name:'xl/_rels/workbook.xml.rels',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${sheets.map((s,i)=>`<Relationship Id="rId${i+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i+1}.xml"/>`).join('')}<Relationship Id="rId${sheets.length+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`},
+    {name:'xl/styles.xml',data:styles},
+    ...sheets.map((s,i)=>({name:`xl/worksheets/sheet${i+1}.xml`,data:xlSheet({...s,first:i===0})}))];
+  return zipBlob(files,'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'); }
+function repSheets(p){ const r=repData(p), t=now(), DOW=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+  const items=[...r.done.map(n=>({n,st:'Concluída',at:n.doneAt})),...r.pend.map(n=>{ const due=new Date(n.remindAt).getTime(); return {n,st:(n._tk?tkLate(n._tk):due<t)?'Atrasada':'Pendente',at:due}; })].sort((a,b)=>a.at-b.at);
+  const H=['Data','Hora','Dia da semana','Situação','Tipo','Título','Lista ou pasta','Etiquetas','Prioridade','Lembrete / data','Concluída em','Criada em','Última alteração','Subtarefas ou checklist','Anexos','Texto'];
+  const rows=[H.map(h=>({v:h,s:XL.HEAD}))];
+  for(const {n,st,at} of items){ const tk=n._tk, real=tk?null:n;
+    const tags=real?noteTags(real).map(x=>x.name).join(', '):'';
+    const where=tk?(n._tl||'Tarefa'):((folderById(real.folderId)||{}).name||'Sem pasta');
+    const pr=[tk&&tk.star?'Com estrela':'',real&&real.urgent?'Urgente':''].filter(Boolean).join(', ');
+    let sub=''; if(tk){ const s=tk.subs||[]; if(s.length) sub=s.filter(x=>x.done).length+' de '+s.length+' feitas'; } else { const pg=ckProgress(real.html); if(pg) sub=pg.done+' de '+pg.all+' feitos'; }
+    const at2=(real&&real.attachments)||[]; const atxt=attDesc(at2);
+    const body=n.secret?'(nota secreta)':tk?(tk.notes||''):txt(real.html);
+    const remAt=tk?(tk.date?new Date(tk.date+'T'+(tk.time||'00:00')).getTime():null):(real.remindAt?new Date(real.remindAt).getTime():null);
+    rows.push([{v:xlSerial(at),s:XL.DATE},{v:xlSerial(at)%1,s:XL.TIME},{v:DOW[new Date(at).getDay()],s:XL.WRAP},{v:st,s:st==='Concluída'?XL.OK:st==='Atrasada'?XL.BAD:XL.PEND},{v:tk?'Tarefa':'Nota',s:XL.WRAP},{v:n.title||'Sem título',s:XL.BOLD},{v:where,s:XL.WRAP},{v:tags,s:XL.WRAP},{v:pr,s:XL.WRAP},
+      {v:remAt?xlSerial(remAt):'',s:XL.DT},{v:n.done&&n.doneAt?xlSerial(n.doneAt):'',s:XL.DT},{v:(tk?tk.createdAt:real.createdAt)?xlSerial(tk?tk.createdAt:real.createdAt):'',s:XL.DT},{v:(tk?tk.updatedAt:real.updatedAt)?xlSerial(tk?tk.updatedAt:real.updatedAt):'',s:XL.DT},
+      {v:sub,s:XL.WRAP},{v:atxt,s:XL.WRAP},{v:body.replace(/\n{3,}/g,'\n\n').slice(0,4000),s:XL.WRAP}]); }
+  // por dia (igual ao calendário)
+  const days=[['Data','Dia da semana','Concluídas','Pendentes','Atrasadas','Notas','Tarefas','Total'].map(h=>({v:h,s:XL.HEAD}))];
+  for(let d=new Date(r.s);d.getTime()<r.e;d.setDate(d.getDate()+1)){ const a=d.getTime(), b=new Date(d).setDate(d.getDate()+1);
+    const its=items.filter(x=>x.at>=a&&x.at<b), c=k=>its.filter(x=>x.st===k).length;
+    days.push([{v:xlSerial(a),s:XL.DATE},{v:DOW[d.getDay()],s:XL.WRAP},{v:c('Concluída'),s:XL.INT},{v:c('Pendente'),s:XL.INT},{v:c('Atrasada'),s:XL.INT},{v:its.filter(x=>!x.n._tk).length,s:XL.INT},{v:its.filter(x=>x.n._tk).length,s:XL.INT},{v:its.length,s:XL.INT}]); }
+  const lbl=periodLabel(p,r.s,r.e).replace(/^./,c=>c.toUpperCase());
+  const sum=[[{v:'Relatório do Não Esquece',s:XL.TITLE}],[],[{v:'Período',s:XL.BOLD},lbl],[{v:'De',s:XL.BOLD},{v:xlSerial(r.s),s:XL.DT}],[{v:'Até',s:XL.BOLD},{v:xlSerial(r.e-1000),s:XL.DT}],[{v:'Gerado em',s:XL.BOLD},{v:xlSerial(t),s:XL.DT}],[],
+    [{v:'Concluídas',s:XL.BOLD},{v:r.done.length,s:XL.INT}],[{v:'Pendentes',s:XL.BOLD},{v:r.pend.length-r.late,s:XL.INT}],[{v:'Atrasadas',s:XL.BOLD},{v:r.late,s:XL.INT}],[{v:'Notas',s:XL.BOLD},{v:items.filter(x=>!x.n._tk).length,s:XL.INT}],[{v:'Tarefas',s:XL.BOLD},{v:items.filter(x=>x.n._tk).length,s:XL.INT}],[{v:'Fotos nas concluídas',s:XL.BOLD},{v:r.fotos,s:XL.INT}],[],
+    [{v:'Datas e horas estão no formato do Excel (com os segundos): dá para filtrar, ordenar e somar.'}],[{v:'As abas Itens e Por dia têm filtro na primeira linha.'}]];
+  return {r,lbl,sheets:[{name:'Itens',cols:[11,9,14,11,8,32,18,18,13,19,19,19,19,16,20,60],rows,freeze:true,filter:true},{name:'Por dia',cols:[11,15,12,11,11,9,9,9],rows:days,freeze:true,filter:true},{name:'Resumo',cols:[24,40],rows:sum}]}; }
+async function makeXlsx(){
+  const b=$('#rpXls'); if(b){ b.disabled=true; b.lastChild.textContent='Gerando a planilha…'; }
+  let blob, name;
+  try{ const x=repSheets(rep.p), d=new Date(x.r.s), p=v=>String(v).padStart(2,'0'), f=t=>{ const z=new Date(t); return p(z.getDate())+'-'+p(z.getMonth()+1)+'-'+z.getFullYear(); };
+    name='Relatório '+(rep.p==='hoje'||rep.p==='ontem'?f(x.r.s):rep.p==='mes'?MESES[d.getMonth()]+' '+d.getFullYear():f(x.r.s)+' a '+f(x.r.e-1))+'.xlsx';
+    blob=await xlsxBlob(x.sheets,'Relatório · '+x.lbl); }
+  catch(e){ logErr('Planilha: '+(e&&e.message)); toast('Não consegui gerar a planilha.'); renderList(); return; }
+  renderList();
+  fileReady(name,blob,'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','Abre no Excel, no Google Planilhas e no LibreOffice. Datas e horas com os segundos, com filtro em cada coluna.'); }
 
 function checkReminders(){
   if(HAS_ALARM||!appReady||locked) return; // no app do celular quem avisa é o alarme do Android
