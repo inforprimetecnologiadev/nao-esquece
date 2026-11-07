@@ -630,6 +630,23 @@ textarea.tkdesc{font:inherit;font-size:15px}
 .rpgo2 svg{width:20px;height:20px}
 #frShare,#frSave{display:inline-flex;align-items:center;justify-content:center;gap:8px}
 #frShare svg,#frSave svg{width:19px;height:19px}
+.dict{display:grid;gap:10px}
+.dch{display:flex;align-items:center;gap:10px;font-size:17px}
+.dch b{font-family:var(--f-display)}
+.dch .grow{flex:1}
+.dcdot{width:12px;height:12px;border-radius:50%;background:var(--muted);flex:none;transition:background .2s}
+.dcdot.on{background:var(--rec);animation:dcPulse 1.2s ease-in-out infinite}
+@keyframes dcPulse{50%{box-shadow:0 0 0 7px color-mix(in srgb,var(--rec) 22%,transparent)}}
+.dctime{font-variant-numeric:tabular-nums;font-weight:700;color:var(--muted)}
+.dcwave{width:100%;height:56px;display:block}
+.dctext{min-height:120px;max-height:34vh;overflow-y:auto;padding:12px 14px;border-radius:16px;background:var(--sunk);font-size:17px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+.dcedit{display:block;width:100%;box-sizing:border-box;min-height:120px;max-height:34vh;padding:12px 14px;border-radius:16px;border:1px solid var(--accent);background:var(--bg);color:var(--ink);font:inherit;font-size:17px;line-height:1.5;resize:vertical;outline:none}
+.dcpart{color:var(--muted)}
+.dcph{color:var(--muted)}
+.dctip{margin:0;font-size:13px;color:var(--muted);line-height:1.45}
+.dcbtns{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px}
+.dcbtns .btn{min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:0 8px}
+.dcbtns .btn svg{width:19px;height:19px;flex:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
@@ -673,7 +690,7 @@ textarea.tkdesc{font:inherit;font-size:15px}
   <article class="rd-body" id="rdBody"></article>
 </div>
 <template id="tplTerms">
-<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 5).</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 6).</p>
 
 <h2>1. Aceitação</h2>
 <p>Ao tocar em "Aceitar e continuar", você concorda com estes Termos de Uso e com a Política de Privacidade. Se não concordar, não use o aplicativo.</p>
@@ -724,7 +741,7 @@ textarea.tkdesc{font:inherit;font-size:15px}
 <p>Central de ajuda e formulário de contato: <span class="lg-url">inforprimetecnologiadev.github.io/nao-esquece/suporte</span>. E-mail: <span class="lg-url">inforprimetecnologia@gmail.com</span>. Respondemos em até 5 dias úteis; pedidos de titular (LGPD), em até 15 dias.</p>
 </template>
 <template id="tplPrivacy">
-<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 5). Responsável: <b>Não Esquece</b>.</p>
+<p class="lg-meta">Versão de 6 de novembro de 2026 (revisão 6). Responsável: <b>Não Esquece</b>.</p>
 
 <h2>1. Resumo</h2>
 <ul>
@@ -759,6 +776,7 @@ textarea.tkdesc{font:inherit;font-size:15px}
 </ul>
 <h3>3.4 Permissões do celular</h3>
 <p>Microfone e câmera são usados somente quando você toca para gravar um áudio, ditar um texto, tirar uma foto ou gravar um vídeo. A galeria é aberta somente quando você escolhe anexar um arquivo.</p>
+<p><b>Ditado:</b> enquanto a janela de ditado está aberta, o som do microfone vai para o reconhecimento de voz do próprio celular (normalmente o do Google, que pode usar a internet para transformar a fala em texto). O Não Esquece recebe só o texto, não guarda o som do ditado e desliga o microfone ao pausar, concluir, cancelar ou sair do app.</p>
 <p><b>Áudio em MP3</b> (app para Android): as gravações e os áudios anexados são convertidos para MP3 no próprio celular, sem enviar o som para fora. O MP3 fica no lugar do arquivo original, no celular e no seu Drive.</p>
 <p><b>PDF, Word e planilha:</b> os arquivos exportados (PDF, .docx, .doc e a planilha .xlsx do relatório) são montados no próprio celular. Eles levam o conteúdo da nota ou do relatório, inclusive fotos, áudios e vídeos, e vão só para onde você escolher enviar ou salvar.</p>
 <p><b>Link do Google Drive no PDF e no Word:</b> quando você exporta uma nota que tem áudio ou vídeo e a conta Google está conectada, o app libera, só para esses arquivos no seu Drive, o acesso de leitura para "qualquer pessoa com o link". Assim, quem receber o PDF ou o Word consegue ouvir ou assistir pelo celular. As outras notas e pastas continuam privadas. Para tirar o acesso, abra o arquivo no Google Drive › Compartilhar › Acesso geral › Restrito.</p>
@@ -861,7 +879,7 @@ textarea.tkdesc{font:inherit;font-size:15px}
 <h2>Cancelar a inscrição</h2>
 <p>Em Ajustes › Privacidade e termos você pode cancelar a inscrição a qualquer momento. O app apaga o PIN, a biometria, a chave e o e-mail de recuperação e os dados deste celular, e não envia mais notificações nem mensagens ao e-mail cadastrado. <b>Depois de cancelar, não há como recuperar a senha nem desfazer.</b></p>
 </template>
-<template id="tplNews"><h2>Versão 1.7.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Áudio em MP3 no app Android: as gravações novas e as antigas viram MP3 sozinhas, no próprio celular.</li><li>PDF com o áudio dentro: o MP3 toca no PDF pelo Adobe Acrobat do computador, fica nos anexos do PDF e tem o link para ouvir no Google Drive.</li><li>WhatsApp completo e na ordem da nota: primeiro o texto e depois os áudios, as fotos e os vídeos, um depois do outro. O WhatsApp abre direto.</li><li>Exportar a nota para o Word (.docx) e para o Word 97-2003 (.doc), com o texto, as fotos, o áudio MP3 e o vídeo MP4 dentro do arquivo.</li><li>Relatório em planilha do Excel (.xlsx): data e hora com os segundos, situação, tipo, lista ou pasta, etiquetas, anexos e texto, com filtro em cada coluna, e as abas Por dia e Resumo.</li><li>No texto enviado, a checklist agora começa numa linha própria.</li></ul><h2>Versão 1.6.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Etiquetas: o lápis ao lado de cada etiqueta muda a cor e o nome dela, e o botão da etiqueta na nota agora aparece na cor escolhida.</li><li>Áudio mais rápido, como no WhatsApp: toque em 1× para ouvir em 1,5× ou 2×. O app lembra a velocidade escolhida.</li><li>Vídeo também: no vídeo aberto, toque em 1× para assistir em 1,5×, 2× ou 0,5×.</li></ul><h2>Versão 1.6.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.</li><li>Marque a tarefa como feita e ela vai para Concluídas, com o dia em que foi feita. Dá para desfazer e voltar para pendentes.</li><li>Estrela nas tarefas importantes e a lista Com estrela, que junta as de todas as listas.</li><li>Ordenar por Minha ordem (segure e arraste), Data, Prazo, Estrela ou Título.</li><li>Cada tarefa pode ter detalhes, subtarefas, data, hora com alarme, repetição e prazo. Elas aparecem também em Hoje, no Calendário e no Relatório.</li><li>Menu da lista: renomear, enviar a lista pelo WhatsApp, excluir as concluídas e excluir a lista.</li></ul><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
+<template id="tplNews"><h2>Versão 1.8.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Ditado novo, como no ChatGPT: o app continua ouvindo mesmo se você parar para pensar e só termina quando você toca em Concluir.</li><li>Botões Pausar e Continuar (segue de onde parou), Cancelar e Concluir, com o texto aparecendo enquanto você fala e o tempo de gravação.</li><li>Na pausa dá para corrigir o texto antes de colocar na nota. Diga "vírgula", "ponto final" ou "nova linha" para pontuar.</li><li>Sem internet, o ditado usa o reconhecimento de voz do próprio celular (quando o celular tem).</li></ul><h2>Versão 1.7.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Áudio em MP3 no app Android: as gravações novas e as antigas viram MP3 sozinhas, no próprio celular.</li><li>PDF com o áudio dentro: o MP3 toca no PDF pelo Adobe Acrobat do computador, fica nos anexos do PDF e tem o link para ouvir no Google Drive.</li><li>WhatsApp completo e na ordem da nota: primeiro o texto e depois os áudios, as fotos e os vídeos, um depois do outro. O WhatsApp abre direto.</li><li>Exportar a nota para o Word (.docx) e para o Word 97-2003 (.doc), com o texto, as fotos, o áudio MP3 e o vídeo MP4 dentro do arquivo.</li><li>Relatório em planilha do Excel (.xlsx): data e hora com os segundos, situação, tipo, lista ou pasta, etiquetas, anexos e texto, com filtro em cada coluna, e as abas Por dia e Resumo.</li><li>No texto enviado, a checklist agora começa numa linha própria.</li></ul><h2>Versão 1.6.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Etiquetas: o lápis ao lado de cada etiqueta muda a cor e o nome dela, e o botão da etiqueta na nota agora aparece na cor escolhida.</li><li>Áudio mais rápido, como no WhatsApp: toque em 1× para ouvir em 1,5× ou 2×. O app lembra a velocidade escolhida.</li><li>Vídeo também: no vídeo aberto, toque em 1× para assistir em 1,5×, 2× ou 0,5×.</li></ul><h2>Versão 1.6.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Aba Tarefas na barra de baixo: listas como "Minhas tarefas" e "Comprar coisas de casa", com o número de pendentes em cada uma e o botão Nova lista.</li><li>Marque a tarefa como feita e ela vai para Concluídas, com o dia em que foi feita. Dá para desfazer e voltar para pendentes.</li><li>Estrela nas tarefas importantes e a lista Com estrela, que junta as de todas as listas.</li><li>Ordenar por Minha ordem (segure e arraste), Data, Prazo, Estrela ou Título.</li><li>Cada tarefa pode ter detalhes, subtarefas, data, hora com alarme, repetição e prazo. Elas aparecem também em Hoje, no Calendário e no Relatório.</li><li>Menu da lista: renomear, enviar a lista pelo WhatsApp, excluir as concluídas e excluir a lista.</li></ul><h2>Versão 1.5.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Barra de navegação embaixo, no estilo do WhatsApp: Notas, Hoje, Calendário e Relatório, com o número de itens de hoje.</li><li>Calendário do mês: cada dia mostra os lembretes, as concluídas e as atrasadas. Dá para criar um lembrete num dia escolhido.</li><li>Relatório do dia, da semana ou do mês em PDF, com hora, fotos, assinaturas e etiquetas, pronto para mandar no WhatsApp.</li><li>Assinatura e desenho com o dedo: a assinatura sai com o nome, a data e a hora.</li><li>Ler o texto das fotos e dos PDFs no próprio celular, sem internet: copiar, colocar na nota e achar pela busca.</li><li>Nota rápida e gravar áudio sem abrir o app, pelos botões das configurações rápidas e pelo widget.</li><li>Histórico da nota: volte a nota para como ela estava antes.</li><li>Nota secreta: pede o PIN ou a digital para abrir.</li></ul><h2>Versão 1.4.1</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete: dia e hora em campos separados, e a hora escolhida sempre vale (antes alguns celulares ficavam na hora padrão).</li><li>Atalhos para marcar rápido: daqui a 30 minutos, daqui a 1 hora, hoje às 18:00 e amanhã às 08:00.</li></ul><h2>Versão 1.4.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Lembrete que repete: todo dia, dias úteis, toda semana ou todo mês. O alarme marca o próximo sozinho.</li><li>Tela Hoje: as atividades do dia em ordem de horário, com as atrasadas em destaque.</li><li>Widget na tela inicial com os lembretes de hoje e o botão Nova nota.</li><li>Prioridade e etiquetas: marque Urgente, crie etiquetas com cor e filtre por elas.</li><li>Escanear documento: a foto do papel vira PDF dentro da nota. Também dá para anexar PDFs.</li><li>O lembrete agora salva sozinho se você fechar a janela sem tocar em Salvar, e Ajustes mostra o próximo alarme.</li></ul><h2>Versão 1.3.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Alarme de verdade no celular: toca na hora marcada com o app fechado, a tela bloqueada e sem internet, com Parar, Adiar 5 min e Concluída.</li><li>Aviso 1 minuto antes do alarme, com som e vibração, só som ou só vibração.</li><li>Lembretes no calendário do celular, na mesma conta Google do app, sincronizando com os outros aparelhos dessa conta.</li><li>Ajustes › Alarmes e calendário: mostra o que falta liberar no Android e tem o botão Testar o alarme.</li><li>Os alarmes voltam sozinhos depois de reiniciar o celular, mudar a hora ou atualizar o app.</li></ul><h2>Versão 1.2.0</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>APK nativo: o app abre na própria tela, sem usar o Chrome e sem barra de endereço.</li><li>Login do Google pela tela de contas do Android, e reconexão automática quando o acesso expira.</li><li>Digital ou rosto, câmera, galeria, gravador, ditado, salvar em Downloads e compartilhar pelo próprio Android.</li></ul><h2>Versão 1.1.2</h2><p class='lg-meta'>6 de novembro de 2026</p><ul><li>Abre com o tamanho certo de celular mesmo quando o Chrome está com "Site para computador" ligado.</li><li>O app abre em tela cheia, sem a barra de endereço do navegador.</li></ul><h2>Versão 1.1.1</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Central de ajuda e contato, com perguntas frequentes, formulário e número de protocolo.</li><li>Política de Privacidade e Termos de Uso com o canal de atendimento, o e-mail e os prazos de resposta.</li><li>Atalho Ajuda e contato em Ajustes › Sobre.</li></ul><h2>Versão 1.1.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Termos de Uso e Política de Privacidade (LGPD) com aceite na primeira abertura.</li><li>Bloqueio com PIN de 6 números ou digital/rosto ao abrir e ao voltar para o app.</li><li>Dados do celular criptografados (AES-256) e limite de tentativas de PIN.</li><li>Chave de recuperação, e-mail de recuperação e opção de cancelar a inscrição.</li><li>Lembretes com aviso no Google Agenda, mesmo com o app fechado.</li><li>Gerente de requisições ao Google e bloqueio de navegadores automatizados.</li><li>ID próprio do Google para o Não Esquece.</li></ul><h2>Versão 1.0.0</h2><p class='lg-meta'>5 de novembro de 2026</p><ul><li>Primeira versão: notas, checklist, concluídas, lixeira, seleção múltipla, áudio, fotos, pastas no Google Drive e tema claro/escuro/automático.</li></ul></template>
 <div class="app" id="app">
   <aside class="side" id="side"></aside>
 
@@ -1064,6 +1082,8 @@ const ICONS = {
   sub:'<path d="M6 4v8.5a3 3 0 0 0 3 3h10"/><path d="M15.5 12l3.5 3.5-3.5 3.5"/>',
   word:'<path d="M6 3h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M8 12l1.3 5 1.7-4 1.7 4 1.3-5"/>',
   sheet:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16M10 3v18"/>',
+  pause:'<path d="M9 5.5v13M15 5.5v13"/>',
+  play:'<path d="M8 5.5v13l10.5-6.5z"/>',
   home:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M16.5 13v7M13 16.5h7"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/>',
   user:'<circle cx="12" cy="8" r="4"/><path d="M4 20.5a8 8 0 0 1 16 0"/>',
@@ -1112,7 +1132,7 @@ const isTagView=f=>typeof f==='string'&&f.startsWith('tag:');
 const viewIsFolder=f=>!SPECIAL.includes(f)&&!isTagView(f);
 const okId = v => typeof v==='string' && /^[\w-]{6,}$/.test(v);
 const okCal = v => typeof v==='string' && /^[\w.@-]{6,200}$/.test(v);
-const APP_VERSION='1.7.0', TERMS_VERSION='2026-11-06.5';
+const APP_VERSION='1.8.0', TERMS_VERSION='2026-11-06.6';
 const SUPPORT_URL='https://inforprimetecnologiadev.github.io/nao-esquece/suporte/';
 const TZ=(()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo'; }catch(e){ return 'America/Sao_Paulo'; } })();
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
@@ -1606,7 +1626,8 @@ async function nativeDictate(){
     insertAtSaved(t);
   }catch(e){ if(e.message==='indisponivel') toast('Este celular não tem o ditado do Google. Instale ou atualize o app Google para usar.'); }
 }
-function startMic(){
+function startMic(){ startDict(); }
+function startMicOld(){
   if(IS_APK){ nativeDictate(); return; }
   if(!SR){ toast('Este navegador não faz ditado. Use o Chrome no Android ou o Edge no computador.'); return; }
   const s=document.getSelection(); if(s.rangeCount&&ed.contains(s.anchorNode)) savedRange=s.getRangeAt(0).cloneRange();
@@ -1635,7 +1656,7 @@ $('#micBtn').onclick=()=>{
   const s=document.getSelection(); if(s.rangeCount&&ed.contains(s.anchorNode)) savedRange=s.getRangeAt(0).cloneRange();
   openSheet(`<h3>Microfone</h3><p class="sub">O que você quer fazer com a sua voz?</p>
     <button class="row" id="mRec"><span data-i="wave"></span><span class="grow">Gravar áudio<small>Guarda a gravação na nota, como um recado</small></span></button>
-    <button class="row" id="mDit"><span data-i="kbd"></span><span class="grow">Ditar texto<small>O que você falar vira texto escrito</small></span></button>`,
+    <button class="row" id="mDit"><span data-i="kbd"></span><span class="grow">Ditar texto<small>Fale à vontade: vira texto escrito. Tem Pausar e Concluir</small></span></button>`,
   sh=>{ sh.querySelector('#mRec').onclick=()=>{ closeSheet(); startRec(); }; sh.querySelector('#mDit').onclick=()=>{ closeSheet(); startMic(); }; });
 };
 
@@ -4790,6 +4811,129 @@ async function makeXlsx(){
   catch(e){ logErr('Planilha: '+(e&&e.message)); toast('Não consegui gerar a planilha.'); renderList(); return; }
   renderList();
   fileReady(name,blob,'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','Abre no Excel, no Google Planilhas e no LibreOffice. Datas e horas com os segundos, com filtro em cada coluna.'); }
+
+/* ======== 1.8: ditado contínuo, como no ChatGPT (não para no silêncio; Pausar, Continuar e Concluir) ======== */
+var HAS_DICT=IS_APK&&typeof NA.dictBegin==='function';
+const DC={on:false,state:'',text:'',partial:'',t0:0,acc:0,lv:[],raf:0,tick:0,eng:null,ending:false,armCancel:0,offline:false,pulse:0};
+function dictCmds(t){ // pontuação falada: "vírgula", "ponto final", "nova linha"…
+  return (' '+t+' ')
+    .replace(/\s+novo parágrafo(?=\s)/gi,'\n\n')
+    .replace(/\s+(nova linha|próxima linha|pular linha)(?=\s)/gi,'\n')
+    .replace(/\s+ponto e vírgula(?=\s)/gi,';')
+    .replace(/\s+vírgula(?=\s)/gi,',')
+    .replace(/\s+ponto de interrogação(?=\s)/gi,'?')
+    .replace(/\s+ponto de exclamação(?=\s)/gi,'!')
+    .replace(/\s+dois pontos(?=\s)/gi,':')
+    .replace(/\s+ponto final(?=\s)/gi,'.')
+    .replace(/[ \t]+([,.;:!?])/g,'$1').replace(/([,.;:!?])(?=[^\s\d,.;:!?])/g,'$1 ').replace(/[ \t]*\n[ \t]*/g,'\n').replace(/[ \t]{2,}/g,' ').replace(/^ +| +$/g,''); }
+function dictJoin(base,seg){ seg=dictCmds(seg); if(!seg) return base;
+  const end=base.replace(/[ \t]+$/,''), cap=!end.trim()||/[.!?]$|\n$/.test(end);
+  if(cap) seg=seg.replace(/^(\s*)(\S)/,(m,a,b)=>a+b.toUpperCase());
+  if(!end) return seg.replace(/^\s+/,''); if(/^[,.;:!?\n]/.test(seg)||/\n$/.test(end)) return end+seg; return end+' '+seg; }
+function capAfter(t){ return t.replace(/([.!?]\s+|\n)([a-zà-ú])/g,(m,a,b)=>a+b.toUpperCase()); }
+
+function webDictEngine(){
+  if(!SR) return null; let r=null, want=false;
+  const mk=()=>{ r=new SR(); r.lang='pt-BR'; r.continuous=true; r.interimResults=true;
+    r.onstart=()=>dictEv('estado','ouvindo');
+    r.onresult=e=>{ let p=''; for(let i=e.resultIndex;i<e.results.length;i++){ const x=e.results[i], t=(x[0].transcript||'').trim(); if(!t) continue; if(x.isFinal) dictEv('final',t); else p+=t+' '; } dictEv('parcial',p.trim()); DC.pulse=now(); };
+    r.onerror=e=>{ if(e.error==='not-allowed'||e.error==='service-not-allowed'){ want=false; dictEv('erro','permissao'); } else if(e.error==='network'){ want=false; dictEv('erro','rede'); } };
+    r.onend=()=>{ if(want){ try{ r.start(); return; }catch(x){} } dictEv('estado',DC.ending?'fim':'pausado'); }; };
+  return { begin(){ mk(); want=true; try{ r.start(); return 'ok'; }catch(e){ return 'erro'; } },
+    pause(){ want=false; try{ r.stop(); }catch(e){ dictEv('estado','pausado'); } },
+    resume(){ want=true; try{ r.start(); }catch(e){ mk(); try{ r.start(); }catch(x){ dictEv('erro','falhou'); } } },
+    finish(){ want=false; try{ r.stop(); }catch(e){ dictEv('estado','fim'); } },
+    cancel(){ want=false; try{ r.onend=null; r.abort(); }catch(e){} } }; }
+const nativeDictEngine={ begin:()=>NA.dictBegin('pt-BR'), pause:()=>NA.dictPause(), resume:()=>NA.dictResume(), finish:()=>NA.dictFinish(), cancel:()=>NA.dictCancel() };
+window.__dict=(t,d)=>{ try{ dictEv(t,d); }catch(e){} };
+
+function startDict(){
+  if(DC.on) return;
+  const eng=HAS_DICT?nativeDictEngine:webDictEngine();
+  if(!eng){ if(IS_APK){ nativeDictate(); return; } toast('Este navegador não faz ditado. Use o Chrome no Android ou o Edge no computador.'); return; }
+  Object.assign(DC,{on:true,state:'',text:'',partial:'',t0:0,acc:0,lv:[],eng,ending:false,armCancel:0,offline:false});
+  openSheet(`<div class="dict" id="dict">
+      <div class="dch"><span class="dcdot" id="dcDot"></span><b id="dcState">Ligando o microfone…</b><span class="grow"></span><span class="dctime" id="dcTime">0:00</span></div>
+      <canvas class="dcwave" id="dcWave" aria-hidden="true"></canvas>
+      <div class="dctext" id="dcText" aria-live="polite"></div>
+      <textarea class="dcedit" id="dcEdit" hidden aria-label="Texto ditado"></textarea>
+      <p class="dctip" id="dcTip">Fale com calma: o app continua ouvindo mesmo se você parar para pensar. Para pontuar, diga “vírgula”, “ponto final” ou “nova linha”.</p>
+      <div class="dcbtns"><button class="btn" id="dcCancel">${svg('x')}<span>Cancelar</span></button><button class="btn" id="dcPause">${svg('pause')}<span>Pausar</span></button><button class="btn pri" id="dcDone">${svg('check')}<span>Concluir</span></button></div>
+    </div>`,
+  s=>{
+    s.querySelector('#dcPause').onclick=()=>{ if(DC.ending) return; if(DC.state==='ouvindo'){ DC.eng.pause(); setDictBtn('pausando'); } else if(DC.state==='pausado'){ dictReadEdit(); DC.eng.resume(); setDictBtn('ligando'); } };
+    s.querySelector('#dcDone').onclick=()=>dictFinish();
+    s.querySelector('#dcCancel').onclick=e=>{ const t=(DC.text+' '+DC.partial).trim();
+      if(t&&now()-DC.armCancel>3500){ DC.armCancel=now(); e.currentTarget.lastChild.textContent='Descartar?'; setTimeout(()=>{ const b=$('#dcCancel'); if(b) b.lastChild.textContent='Cancelar'; },3500); return; }
+      dictStop(false); };
+    s.querySelector('#dcEdit').addEventListener('input',e=>{ DC.text=e.target.value; });
+    DC.tick=setInterval(paintDictTime,250); dictWave();
+    const r=DC.eng.begin();
+    if(r==='sem'){ dictStop(false,true); toast('Este celular não tem reconhecimento de voz. Abrindo o ditado do Google.'); setTimeout(nativeDictate,300); }
+    else if(r!=='ok'){ dictStop(false,true); toast('Não consegui ligar o ditado.'); }
+    else paintDict();
+  },
+  ()=>{ if(DC.on){ // fechou pelo Voltar ou tocando fora: não perde o que foi ditado
+      if(DC.state==='ouvindo'&&!DC.ending){ DC.ending=true; DC.closing=true; DC.eng.finish(); setTimeout(()=>{ if(DC.on) dictStop(true); },3000); }
+      else dictStop(true); } });
+}
+function setDictBtn(k){ const b=$('#dcPause'), st=$('#dcState'), dot=$('#dcDot'); if(!b) return;
+  const tip=$('#dcTip');
+  if(k==='ouvindo'){ b.innerHTML=svg('pause')+'<span>Pausar</span>'; st.textContent=DC.offline?'Ouvindo (sem internet)…':'Ouvindo…'; dot.className='dcdot on';
+    if(tip) tip.textContent=DC.offline?'Sem internet: usando o reconhecimento de voz do próprio celular.':'Fale com calma: o app continua ouvindo mesmo se você parar para pensar. Para pontuar, diga “vírgula”, “ponto final” ou “nova linha”.'; }
+  else if(k==='pausado'){ b.innerHTML=svg('play')+'<span>Continuar</span>'; st.textContent='Pausado'; dot.className='dcdot';
+    if(tip) tip.textContent='Pausado. Se quiser, corrija o texto aqui em cima. Depois toque em Continuar para falar mais, ou em Concluir.'; }
+  else if(k==='pausando'){ st.textContent='Pausando…'; }
+  else if(k==='ligando'){ st.textContent='Ligando o microfone…'; }
+  else if(k==='fim'){ st.textContent='Finalizando…'; dot.className='dcdot'; } }
+function paintDict(){ const box=$('#dcText'), ed2=$('#dcEdit'); if(!box) return;
+  const paused=DC.state==='pausado'&&!DC.ending;
+  box.hidden=paused; ed2.hidden=!paused;
+  if(paused){ if(document.activeElement!==ed2) ed2.value=DC.text; return; }
+  box.innerHTML=(DC.text||DC.partial)?esc(DC.text).replace(/\n/g,'<br>')+(DC.partial?`<span class="dcpart">${DC.text&&!/\n$/.test(DC.text)?' ':''}${esc(dictCmds(DC.partial))}</span>`:''):'<span class="dcph">O que você falar aparece aqui.</span>';
+  box.scrollTop=box.scrollHeight; }
+function dictReadEdit(){ const e=$('#dcEdit'); if(e&&!e.hidden) DC.text=e.value; }
+function paintDictTime(){ const el=$('#dcTime'); if(!el) return; const ms=DC.acc+(DC.state==='ouvindo'&&DC.t0?now()-DC.t0:0); el.textContent=fmtDur(ms/1000); }
+function dictWave(){ const c=$('#dcWave'); if(!c||!DC.on) return; const g=c.getContext('2d'), dpr=Math.min(2,window.devicePixelRatio||1);
+  const w=c.clientWidth, h=c.clientHeight; if(c.width!==Math.round(w*dpr)){ c.width=Math.round(w*dpr); c.height=Math.round(h*dpr); }
+  g.setTransform(dpr,0,0,dpr,0,0); g.clearRect(0,0,w,h);
+  const on=DC.state==='ouvindo', n=Math.floor(w/7), col=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#0a54c8';
+  if(on&&!HAS_DICT){ const k=Math.max(0,1-(now()-DC.pulse)/600); DC.lv.push(0.15+k*0.7*Math.random()); }
+  while(DC.lv.length>n) DC.lv.shift();
+  g.fillStyle=on?col:getComputedStyle(document.documentElement).getPropertyValue('--line').trim()||'#ccc';
+  for(let i=0;i<n;i++){ const v=on?(DC.lv[DC.lv.length-n+i]||0.06):0.06, bh=Math.max(3,v*h); g.beginPath(); const x=i*7+1; if(g.roundRect) g.roundRect(x,(h-bh)/2,4,bh,2); else g.rect(x,(h-bh)/2,4,bh); g.fill(); }
+  DC.raf=requestAnimationFrame(dictWave); }
+function dictEv(t,d){ if(!DC.on) return;
+  if(t==='estado'){
+    if(d==='ouvindo'){ if(DC.state!=='ouvindo') DC.t0=now(); DC.state='ouvindo'; if(!DC.ending) setDictBtn('ouvindo'); }
+    else if(d==='pausado'){ if(DC.state==='ouvindo'&&DC.t0) DC.acc+=now()-DC.t0; DC.t0=0; DC.state='pausado'; if(DC.partial){ DC.text=dictJoin(DC.text,DC.partial); DC.partial=''; } setDictBtn('pausado'); }
+    else if(d==='fim'){ if(DC.partial){ DC.text=dictJoin(DC.text,DC.partial); DC.partial=''; } dictStop(true); return; }
+    paintDict(); return; }
+  if(t==='parcial'){ DC.partial=d||''; paintDict(); return; }
+  if(t==='final'){ DC.text=dictJoin(DC.text,d||''); DC.partial=''; paintDict(); return; }
+  if(t==='nivel'){ const v=Math.max(0,Math.min(1,(parseFloat(d)+2)/12)); DC.lv.push(v); return; }
+  if(t==='aviso'&&d==='offline'){ DC.offline=true; const tp=$('#dcTip'); if(tp) tp.textContent='Sem internet: usando o reconhecimento de voz do próprio celular.'; setDictBtn(DC.state==='ouvindo'?'ouvindo':DC.state); return; }
+  if(t==='erro'){ const m={permissao:'Permita o microfone para o Não Esquece para poder ditar.',rede:'O ditado precisa de internet neste celular. O que já foi dito está guardado: toque em Continuar quando a internet voltar.',idioma:'O reconhecimento de voz deste celular não tem o português instalado.',falhou:'O reconhecimento de voz parou de responder. Toque em Continuar para tentar de novo.'}[d]||'O ditado parou.';
+    toast(m); if(d==='permissao'&&!DC.text) dictStop(false); return; } }
+function dictFinish(){ if(!DC.on||DC.ending) return; dictReadEdit(); DC.ending=true; setDictBtn('fim');
+  const b=$('#dcDone'); if(b) b.disabled=true;
+  if(DC.state==='ouvindo'||DC.state===''){ DC.eng.finish(); setTimeout(()=>{ if(DC.on) dictStop(true); },3500); }
+  else { DC.eng.finish(); setTimeout(()=>{ if(DC.on) dictStop(true); },600); } }
+function dictStop(keep,quiet){ if(!DC.on) return; dictReadEdit(); DC.on=false; clearInterval(DC.tick); cancelAnimationFrame(DC.raf);
+  try{ DC.eng.cancel(); }catch(e){}
+  const t=capAfter((DC.text+(DC.partial?' '+dictCmds(DC.partial):'')).replace(/[ \t]+\n/g,'\n').trim());
+  if(!$('#sheet').hidden&&$('#dict')) closeSheet();
+  if(!keep||quiet) return;
+  if(!t){ toast('Nada foi ditado.'); return; }
+  insertDictated(t); toast('Texto ditado colocado na nota'); }
+function insertDictated(text){
+  const prev=charBefore(); let t=text; if(prev&&!/[\s(]/.test(prev)&&!/^[,.;:!?]/.test(t)) t=' '+t;
+  let r=savedRange; if(!r||!ed.contains(r.startContainer)){ r=document.createRange(); r.selectNodeContents(ed); r.collapse(false); }
+  r.deleteContents(); const frag=document.createDocumentFragment(); let last=null;
+  t.split('\n').forEach((line,i)=>{ if(i){ last=document.createElement('br'); frag.appendChild(last); } if(line){ last=document.createTextNode(line); frag.appendChild(last); } });
+  if(!last) return; r.insertNode(frag);
+  r=document.createRange(); r.setStartAfter(last); r.collapse(true); savedRange=r;
+  if(document.activeElement===ed) restoreRange(); onEdit(); }
 
 function checkReminders(){
   if(HAS_ALARM||!appReady||locked) return; // no app do celular quem avisa é o alarme do Android
